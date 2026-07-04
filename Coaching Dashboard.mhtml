@@ -1,0 +1,1161 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: file:///home/chronos/u-f64751db07a6c24dc0418072d2114e86e2107083/MyFiles/Downloads/index.html
+Subject: Coaching Dashboard
+Date: Sat, 4 Jul 2026 19:52:53 +0100
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--GtbY0djjpLuvPexudFXKpJm8fZwN1mR3bxZ87qI8wn----"
+
+
+------MultipartBoundary--GtbY0djjpLuvPexudFXKpJm8fZwN1mR3bxZ87qI8wn----
+Content-Type: text/html
+Content-ID: <frame-0806D4EB67408B5A7A79A44086CDA17A@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///home/chronos/u-f64751db07a6c24dc0418072d2114e86e2107083/MyFiles/Downloads/index.html
+
+<!DOCTYPE html><html lang=3D"en"><head><meta http-equiv=3D"Content-Type" co=
+ntent=3D"text/html; charset=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/=
+css" href=3D"cid:css-224191dd-ec5a-48dc-8fab-c98ed1095369@mhtml.blink" />
+
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0, maximum-scale=3D1.0">
+<meta name=3D"theme-color" content=3D"#f97316">
+<meta name=3D"apple-mobile-web-app-capable" content=3D"yes">
+<meta name=3D"apple-mobile-web-app-status-bar-style" content=3D"black-trans=
+lucent">
+<title>Coaching Dashboard</title>
+<link rel=3D"manifest" href=3D"file:///home/chronos/u-f64751db07a6c24dc0418=
+072d2114e86e2107083/MyFiles/Downloads/manifest.json">
+
+
+</head>
+<body>
+
+<!-- AUTH SCREEN -->
+<div id=3D"auth" style=3D"display: none;">
+  <div class=3D"auth-box">
+    <h1>Coaching Dashboard</h1>
+    <p>V50 =C2=B7 Cardiff 5K build</p>
+    <input type=3D"password" id=3D"pw-input" placeholder=3D"=E2=80=A2=E2=80=
+=A2=E2=80=A2=E2=80=A2=E2=80=A2=E2=80=A2" autocomplete=3D"current-password">
+    <button>Enter</button>
+    <div class=3D"auth-err" id=3D"auth-err"></div>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div id=3D"app" style=3D"display: block;">
+  <div id=3D"header">
+    <div class=3D"header-top">
+      <div>
+        <div style=3D"display:flex;align-items:center;gap:8px;margin-bottom=
+:5px">
+          <div style=3D"width:6px;height:6px;border-radius:50%;background:#=
+f97316"></div>
+          <span style=3D"font-size:11px;letter-spacing:.1em;color:#8b949e;t=
+ext-transform:uppercase;font-weight:600">Strava + Garmin</span>
+        </div>
+        <h1 style=3D"font-size:18px;font-weight:700;color:#f0f6fc;letter-sp=
+acing:-.02em">Coaching Dashboard</h1>
+        <p style=3D"font-size:12px;color:#6e7681;margin-top:2px">V50 =C2=B7=
+ <span id=3D"today-date">4 Jul 2026</span></p>
+      </div>
+      <div class=3D"header-pills">
+        <div class=3D"pill" style=3D"border-color:#4ade8033">
+          <div class=3D"pill-val" id=3D"readiness-val" style=3D"color:#4ade=
+80">90</div>
+          <div class=3D"pill-label">Readiness</div>
+        </div>
+        <div class=3D"pill" style=3D"border-color:#f9731633">
+          <div class=3D"pill-val" id=3D"days-val" style=3D"color:#f97316">1=
+9</div>
+          <div class=3D"pill-label">Days =C2=B7 Cardiff</div>
+        </div>
+      </div>
+    </div>
+    <div class=3D"tabs" id=3D"tabs"><button class=3D"tab active" id=3D"tab-=
+overview">Overview</button><button class=3D"tab" id=3D"tab-acwr">ACWR</butt=
+on><button class=3D"tab" id=3D"tab-recovery">Recovery</button><button class=
+=3D"tab" id=3D"tab-log">Daily Log</button><button class=3D"tab" id=3D"tab-p=
+erformance">Performance</button><button class=3D"tab" id=3D"tab-predictor">=
+Predictor</button><button class=3D"tab" id=3D"tab-plan">Training Plan</butt=
+on><button class=3D"tab" id=3D"tab-races">Races</button></div>
+  </div>
+
+  <div id=3D"pages">
+    <!-- OVERVIEW -->
+    <div class=3D"page active" id=3D"page-overview">
+      <div class=3D"metrics" id=3D"overview-metrics"><div class=3D"metric">=
+<div class=3D"metric-label">ACWR</div><div class=3D"metric-val big" style=
+=3D"color:#4ade80">0.80</div><div class=3D"metric-sub">Optimal</div></div><=
+div class=3D"metric"><div class=3D"metric-label">BB High AM</div><div class=
+=3D"metric-val big" style=3D"color:#6b7a94">=E2=80=94</div><div class=3D"me=
+tric-sub">morning peak</div></div><div class=3D"metric"><div class=3D"metri=
+c-label">Sleep</div><div class=3D"metric-val big" style=3D"color:#6b7a94">=
+=E2=80=94</div><div class=3D"metric-sub">/100</div></div><div class=3D"metr=
+ic"><div class=3D"metric-label">Achilles AM</div><div class=3D"metric-val b=
+ig" style=3D"color:#4ade80">0/10</div><div class=3D"metric-sub">morning sti=
+ffness</div></div><div class=3D"metric"><div class=3D"metric-label">RHR</di=
+v><div class=3D"metric-val big" style=3D"color:#e6edf3">47bpm</div><div cla=
+ss=3D"metric-sub">resting</div></div></div>
+      <div class=3D"card">
+        <div class=3D"section-label">Load =C2=B7 BB High =C2=B7 Sleep =E2=
+=80=94 21 days</div>
+        <div class=3D"chart-wrap"><canvas id=3D"chart-overview" height=3D"1=
+80" style=3D"display: block; box-sizing: border-box; height: 180px; width: =
+1300px;" width=3D"1300"></canvas></div>
+        <div style=3D"display:flex;flex-wrap:wrap;gap:12px;margin-top:8px;f=
+ont-size:11px;color:#8b949e">
+          <span>=F0=9F=9F=A1 BB High</span><span>=F0=9F=9F=A3 Sleep</span><=
+span>=F0=9F=9F=A2 ACWR (right)</span><span>=F0=9F=94=B5 Effort (bars)</span=
+>
+        </div>
+      </div>
+      <div class=3D"card orange">
+        <div class=3D"section-label orange">=E2=9A=A1 Coaching Assessment</=
+div>
+        <div id=3D"assessment"><div style=3D"display:flex;gap:10px;margin-b=
+ottom:10px">
+    <div style=3D"font-size:10px;color:#4ade80;font-weight:700;min-width:62=
+px;padding-top:2px;letter-spacing:.06em;text-transform:uppercase">LOAD</div=
+>
+    <div style=3D"font-size:13px;color:#8b949e;line-height:1.6">ACWR 0.80 =
+=E2=80=94 optimal zone. Chronic load confirms genuine build.</div>
+  </div><div style=3D"display:flex;gap:10px;margin-bottom:10px">
+    <div style=3D"font-size:10px;color:#fbbf24;font-weight:700;min-width:62=
+px;padding-top:2px;letter-spacing:.06em;text-transform:uppercase">RECOVERY<=
+/div>
+    <div style=3D"font-size:13px;color:#8b949e;line-height:1.6">BB High avg=
+ 89/100. Waking well-recovered consistently. Daily drain normal.</div>
+  </div><div style=3D"display:flex;gap:10px;margin-bottom:10px">
+    <div style=3D"font-size:10px;color:#4ade80;font-weight:700;min-width:62=
+px;padding-top:2px;letter-spacing:.06em;text-transform:uppercase">ACHILLES<=
+/div>
+    <div style=3D"font-size:13px;color:#8b949e;line-height:1.6">0=E2=80=931=
+/10 consistently 3+ weeks under full load. Background monitoring only.</div=
+>
+  </div><div style=3D"display:flex;gap:10px;margin-bottom:10px">
+    <div style=3D"font-size:10px;color:#f87171;font-weight:700;min-width:62=
+px;padding-top:2px;letter-spacing:.06em;text-transform:uppercase">RISK</div=
+>
+    <div style=3D"font-size:13px;color:#8b949e;line-height:1.6">19 days to =
+Cardiff. Fitness banked. Every unnecessary hard session reduces your margin=
+.</div>
+  </div></div>
+      </div>
+    </div>
+
+    <!-- ACWR -->
+    <div class=3D"page" id=3D"page-acwr">
+      <div class=3D"metrics" id=3D"acwr-metrics"><div class=3D"metric"><div=
+ class=3D"metric-label">ACWR</div><div class=3D"metric-val big" style=3D"co=
+lor:#4ade80">0.80</div><div class=3D"metric-sub">Optimal</div></div><div cl=
+ass=3D"metric"><div class=3D"metric-label">Acute 7d</div><div class=3D"metr=
+ic-val big" style=3D"color:#f97316">196</div><div class=3D"metric-sub">sum =
+rel. effort</div></div><div class=3D"metric"><div class=3D"metric-label">Ch=
+ronic 28d</div><div class=3D"metric-val big" style=3D"color:#e6edf3">246</d=
+iv><div class=3D"metric-sub">weekly avg</div></div><div class=3D"metric"><d=
+iv class=3D"metric-label">Today effort</div><div class=3D"metric-val big" s=
+tyle=3D"color:#e6edf3">Rest</div><div class=3D"metric-sub">relative effort<=
+/div></div></div>
+      <div style=3D"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;=
+font-size:11px">
+        <span style=3D"color:#60a5fa">=E2=97=8F &lt;0.8 Underloading</span>
+        <span style=3D"color:#4ade80">=E2=97=8F 0.8=E2=80=931.3 Optimal</sp=
+an>
+        <span style=3D"color:#fbbf24">=E2=97=8F 1.3=E2=80=931.5 Caution</sp=
+an>
+        <span style=3D"color:#f87171">=E2=97=8F &gt;1.5 High risk</span>
+      </div>
+      <div class=3D"card">
+        <div class=3D"section-label">ACWR Trend =E2=80=94 14 days</div>
+        <div class=3D"chart-wrap"><canvas id=3D"chart-acwr" height=3D"170">=
+</canvas></div>
+      </div>
+      <div class=3D"card">
+        <div class=3D"section-label">Acute vs Chronic Load</div>
+        <div class=3D"chart-wrap"><canvas id=3D"chart-load" height=3D"140">=
+</canvas></div>
+      </div>
+      <div class=3D"card">
+        <div class=3D"section-label">Daily Effort =E2=80=94 14 days</div>
+        <div class=3D"chart-wrap"><canvas id=3D"chart-effort" height=3D"110=
+"></canvas></div>
+      </div>
+    </div>
+
+    <!-- RECOVERY -->
+    <div class=3D"page" id=3D"page-recovery">
+      <div class=3D"metrics" id=3D"recovery-metrics"><div class=3D"metric">=
+<div class=3D"metric-label">Avg Sleep</div><div class=3D"metric-val" style=
+=3D"color:#4ade80">86/100</div><div class=3D"metric-sub">30-day avg</div></=
+div><div class=3D"metric"><div class=3D"metric-label">Avg BB High</div><div=
+ class=3D"metric-val" style=3D"color:#4ade80">87/100</div><div class=3D"met=
+ric-sub">morning peak avg</div></div><div class=3D"metric"><div class=3D"me=
+tric-label">Avg HRV</div><div class=3D"metric-val" style=3D"color:#a78bfa">=
+40ms</div><div class=3D"metric-sub">range 33=E2=80=9346</div></div></div>
+      <div class=3D"card">
+        <div class=3D"section-label">Body Battery =E2=80=94 High &amp; Low =
+=C2=B7 30 days</div>
+        <div class=3D"chart-wrap"><canvas id=3D"chart-bb" height=3D"150"></=
+canvas></div>
+        <div style=3D"font-size:11px;color:#6e7681;margin-top:6px">=F0=9F=
+=9F=A1 BB High (morning) =C2=B7 =F0=9F=9F=A0 BB Low (after training)</div>
+      </div>
+      <div class=3D"card">
+        <div class=3D"section-label">Sleep Score =E2=80=94 30 days</div>
+        <div class=3D"chart-wrap"><canvas id=3D"chart-sleep" height=3D"130"=
+></canvas></div>
+      </div>
+      <div class=3D"card">
+        <div class=3D"section-label">HRV &amp; RHR Trend</div>
+        <div class=3D"chart-wrap"><canvas id=3D"chart-hrv" height=3D"140"><=
+/canvas></div>
+        <div style=3D"font-size:11px;color:#6e7681;margin-top:6px">=F0=9F=
+=9F=A3 HRV (ms, left) =C2=B7 =F0=9F=94=B5 RHR (bpm, right) =C2=B7 Log daily=
+ in Daily Log tab</div>
+      </div>
+      <div class=3D"card amber">
+        <div class=3D"section-label amber">Corrected Recovery Read</div>
+        <p style=3D"font-size:13px;color:#8b949e;line-height:1.7">
+          You're waking at avg <strong style=3D"color:#fbbf24">89/100</stro=
+ng> Body Battery =E2=80=94 excellent overnight recovery.
+          Daily drain to ~35 after training is normal depletion. Sleep aver=
+aging <strong style=3D"color:#818cf8">86/100</strong> =E2=80=94 a genuine a=
+sset.
+          HRV range 33=E2=80=9346ms with temperature as the dominant variab=
+le, not training load. RHR stable at 47=E2=80=9350bpm across race weeks and=
+ quality sessions.
+          <br><br><strong style=3D"color:#e6edf3">Taper signal:</strong> BB=
+ High should trend toward 95=E2=80=93100 consistently by July 15. If it's n=
+ot climbing, reduce load further.
+        </p>
+      </div>
+    </div>
+
+    <!-- DAILY LOG -->
+    <div class=3D"page" id=3D"page-log">
+      <div class=3D"toggle-row">
+        <button class=3D"toggle-btn active" id=3D"toggle-recovery">Morning =
+Recovery</button>
+        <button class=3D"toggle-btn" id=3D"toggle-session">Session Feedback=
+</button>
+      </div>
+
+      <div style=3D"margin-bottom:12px">
+        <label>Date</label>
+        <input type=3D"date" class=3D"inp" id=3D"log-date">
+      </div>
+
+      <!-- RECOVERY LOG -->
+      <div id=3D"log-recovery-form">
+        <div class=3D"card green">
+          <div class=3D"section-label green">Morning Recovery Metrics</div>
+          <div class=3D"form-grid three" style=3D"margin-bottom:12px">
+            <div><label>Achilles (0=E2=80=9310)</label><input type=3D"numbe=
+r" min=3D"0" max=3D"10" class=3D"inp" id=3D"log-achilles" placeholder=3D"0"=
+ style=3D"font-size:16px"></div>
+            <div><label>RHR (bpm)</label><input type=3D"number" class=3D"in=
+p" id=3D"log-rhr" placeholder=3D"47" style=3D"font-size:16px"></div>
+            <div><label>HRV (ms)</label><input type=3D"number" class=3D"inp=
+" id=3D"log-hrv" placeholder=3D"39" style=3D"font-size:16px"></div>
+          </div>
+          <button class=3D"btn primary" id=3D"save-recovery-btn">Save Recov=
+ery Entry</button>
+        </div>
+      </div>
+
+      <!-- SESSION LOG -->
+      <div id=3D"log-session-form" class=3D"hidden">
+        <div class=3D"card orange">
+          <div class=3D"section-label orange">Session Feedback</div>
+          <div style=3D"margin-bottom:10px">
+            <label>Session name</label>
+            <input type=3D"text" class=3D"inp" id=3D"log-sess-name" placeho=
+lder=3D"e.g. 5=C3=971km intervals" autocomplete=3D"off">
+          </div>
+          <div class=3D"form-grid three" style=3D"margin-bottom:10px">
+            <div>
+              <label>Type</label>
+              <select class=3D"inp" id=3D"log-sess-type">
+                <option>Easy</option><option selected=3D"">Quality</option>=
+<option>Long</option><option>Race</option><option>Relay</option>
+              </select>
+            </div>
+            <div><label>RPE (1=E2=80=9310)</label><input type=3D"number" mi=
+n=3D"1" max=3D"10" class=3D"inp" id=3D"log-sess-rpe" placeholder=3D"7" styl=
+e=3D"font-size:16px"></div>
+            <div>
+              <label>vs Target</label>
+              <select class=3D"inp" id=3D"log-sess-vst">
+                <option>Easier than expected</option><option selected=3D"">=
+On target</option>
+                <option>Harder than expected</option><option>Cut short</opt=
+ion><option>Could do more</option>
+              </select>
+            </div>
+          </div>
+          <div style=3D"margin-bottom:12px">
+            <label>Notes (optional)</label>
+            <textarea class=3D"inp" id=3D"log-sess-note" rows=3D"3" placeho=
+lder=3D"How did it feel? Achilles response, pacing, conditions..." style=3D=
+"resize:vertical"></textarea>
+          </div>
+          <button class=3D"btn primary" id=3D"save-session-btn">Save Sessio=
+n Feedback</button>
+        </div>
+      </div>
+
+      <!-- SESSION HISTORY -->
+      <div class=3D"card" id=3D"session-history"></div>
+
+      <!-- ACHILLES PROTOCOL -->
+      <div class=3D"card">
+        <div class=3D"section-label">Achilles Protocol</div>
+        <div class=3D"protocol-row"><span class=3D"protocol-range" style=3D=
+"color:#4ade80">0=E2=80=931/10</span><span class=3D"protocol-text">Continue=
+ as planned.</span></div>
+        <div class=3D"protocol-row"><span class=3D"protocol-range" style=3D=
+"color:#fbbf24">2/10</span><span class=3D"protocol-text">Flag to coach. No =
+additional quality. Easy only that day.</span></div>
+        <div class=3D"protocol-row"><span class=3D"protocol-range" style=3D=
+"color:#f97316">3/10</span><span class=3D"protocol-text">Hold progression. =
+Easy running only. No quality or racing.</span></div>
+        <div class=3D"protocol-row"><span class=3D"protocol-range" style=3D=
+"color:#f87171">4+/10</span><span class=3D"protocol-text">Reduce load signi=
+ficantly. Contact physio if persists 48hrs.</span></div>
+      </div>
+    </div>
+
+    <!-- PERFORMANCE -->
+    <div class=3D"page" id=3D"page-performance">
+      <div class=3D"card">
+        <div class=3D"section-label">Avg Pace =E2=80=94 Easy vs Quality (by=
+ week)</div>
+        <div class=3D"chart-wrap"><canvas id=3D"chart-pace" height=3D"170">=
+</canvas></div>
+        <div style=3D"font-size:11px;color:#6e7681;margin-top:6px">Lower =
+=3D faster. Improving easy pace =3D better aerobic efficiency.</div>
+      </div>
+      <div class=3D"card">
+        <div class=3D"section-label">Weekly Volume (km)</div>
+        <div class=3D"chart-wrap"><canvas id=3D"chart-vol" height=3D"120"><=
+/canvas></div>
+      </div>
+      <div class=3D"card">
+        <div class=3D"section-label">Training Zone Distribution</div>
+        <div id=3D"zone-list" class=3D"zone-list" style=3D"margin-bottom:12=
+px"></div>
+        <div class=3D"chart-wrap"><canvas id=3D"chart-zones" height=3D"160"=
+></canvas></div>
+      </div>
+    </div>
+
+    <!-- PREDICTOR -->
+    <div class=3D"page" id=3D"page-predictor">
+      <div class=3D"card orange">
+        <div class=3D"section-label orange">Race Predictions =E2=80=94 Thre=
+e Anchors</div>
+        <p style=3D"font-size:12px;color:#6e7681;margin-bottom:14px;line-he=
+ight:1.5">Riegel formula (1.06 exponent). Anchors: Mile 5:13 (8 May), 5K 18=
+:18 (10 Jun, GI issues), 10K 38:08 (28 Jun, no taper).</p>
+        <div id=3D"predictions">
+    <div class=3D"pred-row ">
+      <div><div class=3D"pred-dist" style=3D"color:#e6edf3">1 Mile</div></d=
+iv>
+      <div class=3D"pred-times">
+        <div class=3D"pred-time"><div class=3D"pred-time-val" style=3D"colo=
+r:#60a5fa">5:30</div><div class=3D"pred-time-label">From 10K</div></div>
+        <div class=3D"pred-time"><div class=3D"pred-time-val" style=3D"colo=
+r:#f97316">5:30</div><div class=3D"pred-time-label">From 5K</div></div>
+      </div>
+    </div>
+    <div class=3D"pred-row highlight">
+      <div><div class=3D"pred-dist" style=3D"color:#f97316">5K</div><div cl=
+ass=3D"pred-sub">Cardiff A-race</div></div>
+      <div class=3D"pred-times">
+        <div class=3D"pred-time"><div class=3D"pred-time-val" style=3D"colo=
+r:#60a5fa">18:17</div><div class=3D"pred-time-label">From 10K</div></div>
+        <div class=3D"pred-time"><div class=3D"pred-time-val" style=3D"colo=
+r:#f97316">18:18</div><div class=3D"pred-time-label">From 5K</div></div>
+      </div>
+    </div>
+    <div class=3D"pred-row ">
+      <div><div class=3D"pred-dist" style=3D"color:#e6edf3">10K</div><div c=
+lass=3D"pred-sub">Gloucester actual</div></div>
+      <div class=3D"pred-times">
+        <div class=3D"pred-time"><div class=3D"pred-time-val" style=3D"colo=
+r:#60a5fa">38:08</div><div class=3D"pred-time-label">From 10K</div></div>
+        <div class=3D"pred-time"><div class=3D"pred-time-val" style=3D"colo=
+r:#f97316">38:09</div><div class=3D"pred-time-label">From 5K</div></div>
+      </div>
+    </div>
+    <div class=3D"pred-row ">
+      <div><div class=3D"pred-dist" style=3D"color:#e6edf3">Half</div><div =
+class=3D"pred-sub">Cheltenham Sept</div></div>
+      <div class=3D"pred-times">
+        <div class=3D"pred-time"><div class=3D"pred-time-val" style=3D"colo=
+r:#60a5fa">1:24:09</div><div class=3D"pred-time-label">From 10K</div></div>
+        <div class=3D"pred-time"><div class=3D"pred-time-val" style=3D"colo=
+r:#f97316">1:24:12</div><div class=3D"pred-time-label">From 5K</div></div>
+      </div>
+    </div>
+    <div class=3D"pred-row ">
+      <div><div class=3D"pred-dist" style=3D"color:#e6edf3">Marathon</div><=
+/div>
+      <div class=3D"pred-times">
+        <div class=3D"pred-time"><div class=3D"pred-time-val" style=3D"colo=
+r:#60a5fa">2:55:27</div><div class=3D"pred-time-label">From 10K</div></div>
+        <div class=3D"pred-time"><div class=3D"pred-time-val" style=3D"colo=
+r:#f97316">2:55:32</div><div class=3D"pred-time-label">From 5K</div></div>
+      </div>
+    </div></div>
+      </div>
+      <div class=3D"card green">
+        <div class=3D"section-label green">Honest Assessment</div>
+        <p style=3D"font-size:13px;color:#8b949e;line-height:1.7">
+          Both Riegel models converge on <strong style=3D"color:#f97316">17=
+:48=E2=80=9317:55</strong> for Cardiff. With taper, <strong style=3D"color:=
+#e6edf3">17:35=E2=80=9317:50</strong> is realistic.<br><br>
+          <strong style=3D"color:#fbbf24">The mile anchor (5:13 =E2=86=92 1=
+7:24 predicted):</strong> Significantly faster than race data suggests. Eit=
+her the mile was set in ideal conditions or there's untapped speed availabl=
+e. Worth exploring post-Cardiff.<br><br>
+          <strong style=3D"color:#fbbf24">All-time context (age 47=E2=80=93=
+48):</strong> 16:33 5K, 35:58 10K, 1:20:46 HM. At 51 with 4 years of disrup=
+tion, closing from 18:18 to 17:35=E2=80=9317:50 in one season is a serious =
+result. Don't let PB-chasing cloud that.<br><br>
+          <strong style=3D"color:#e6edf3">Cardiff pacing (based on your May=
+ splits):</strong><br>
+          Km 1: 3:35 (crowd) =C2=B7 Km 2: 3:31 =C2=B7 Km 3: 3:37 (rise =E2=
+=80=94 effort not pace) =C2=B7 Km 4: 3:27 (downhill =E2=80=94 commit) =C2=
+=B7 Km 5: 3:30 (uphill =E2=80=94 hold form)<br>
+          <strong style=3D"color:#f97316">Target: 17:40</strong><br><br>
+          <strong style=3D"color:#e6edf3">Asthma note:</strong> Pre-race st=
+rides prime the bronchospasm response =E2=80=94 keep doing this. Symbicort =
+20 min before gun. Km 3 rise is highest asthma risk =E2=80=94 race effort, =
+not pace, through this section.
+        </p>
+      </div>
+    </div>
+
+    <!-- TRAINING PLAN -->
+    <div class=3D"page" id=3D"page-plan">
+      <div class=3D"card orange" style=3D"margin-bottom:12px">
+        <div class=3D"section-label orange">Adaptive Plan =E2=80=94 Cardiff=
+ 5K =C2=B7 22 Jul =C2=B7 <span id=3D"plan-days">19</span> days</div>
+        <p style=3D"font-size:13px;color:#8b949e;line-height:1.5">Fitness i=
+s built. Check your <strong style=3D"color:#e6edf3">Readiness score</strong=
+> each morning. Sessions marked =E2=98=85 are key =E2=80=94 protect these. =
+Everything else is negotiable based on metrics.</p>
+      </div>
+      <div class=3D"card" style=3D"margin-bottom:12px">
+        <div class=3D"section-label">Readiness Decision Rules</div>
+        <div class=3D"protocol-row"><span class=3D"protocol-range" style=3D=
+"color:#4ade80">=E2=89=A580</span><span class=3D"protocol-text">Train as pl=
+anned. Execute fully.</span></div>
+        <div class=3D"protocol-row"><span class=3D"protocol-range" style=3D=
+"color:#fbbf24">65=E2=80=9379</span><span class=3D"protocol-text">Proceed b=
+ut reduce volume 10=E2=80=9315%. Keep quality intention.</span></div>
+        <div class=3D"protocol-row"><span class=3D"protocol-range" style=3D=
+"color:#f87171">&lt;65</span><span class=3D"protocol-text">Reschedule quali=
+ty. Easy or rest only. Flag if 2 days running.</span></div>
+      </div>
+      <div id=3D"plan-weeks">
+    <div class=3D"plan-week">
+      <div class=3D"week-header"><div class=3D"week-bar" style=3D"backgroun=
+d:#f97316"></div>
+        <div><div class=3D"week-title">Week 1 =C2=B7 1=E2=80=936 Jul</div><=
+div class=3D"week-type" style=3D"color:#f97316">Full training</div></div>
+      </div>
+      <div class=3D"week-rationale" style=3D"border-left-color:#f9731644">M=
+aintain sharpness. Two quality stimuli. Volume held.</div>
+      <div class=3D"week-adaptive" style=3D"color:#f97316;background:#f9731=
+611;border-left-color:#f97316"><strong>If metrics flag:</strong> BB High &l=
+t;80 Tue =E2=86=92 drop Wed to 4=C3=971km. Achilles &gt;1/10 =E2=86=92 no s=
+trides, easy only.</div>
+     =20
+        <div class=3D"session-row " style=3D"">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#8b949e">Tue 1 =
+Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#6e7681">Easy+=
+Strides</div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#8b949e">8=E2=80=9310k=
+m easy + 4=E2=80=936=C3=9720s strides.</div>
+        </div>
+        <div class=3D"session-row highlight" style=3D"border-color:#f973164=
+4">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#f97316">Wed 2 =
+Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#f97316">Quali=
+ty =E2=98=85</div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#e6edf3">5=C3=971km @3=
+:42=E2=80=933:45/km, 90s jog. Hot: 6=C3=97800m same effort. Must finish wit=
+h one more rep in you.</div>
+        </div>
+        <div class=3D"session-row " style=3D"">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#8b949e">Thu 3 =
+Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#6e7681">Easy<=
+/div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#8b949e">7=E2=80=938km=
+ easy.</div>
+        </div>
+        <div class=3D"session-row " style=3D"">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#8b949e">Fri 4 =
+Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#6e7681">Easy/=
+Rest</div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#8b949e">20=E2=80=9330=
+min easy or rest. BB High guides this.</div>
+        </div>
+        <div class=3D"session-row highlight" style=3D"border-color:#f973164=
+4">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#f97316">Sat 5 =
+Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#f97316">Relay=
+ =E2=98=85</div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#e6edf3">12km hilly re=
+lay =E2=80=94 controlled. Conservative uphill, disciplined descent.</div>
+        </div>
+        <div class=3D"session-row " style=3D"">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#8b949e">Sun 6 =
+Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#6e7681">Easy =
+long</div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#8b949e">12km easy. No=
+ progression.</div>
+        </div>
+    </div>
+    <div class=3D"plan-week">
+      <div class=3D"week-header"><div class=3D"week-bar" style=3D"backgroun=
+d:#fbbf24"></div>
+        <div><div class=3D"week-title">Week 2 =C2=B7 7=E2=80=9313 Jul</div>=
+<div class=3D"week-type" style=3D"color:#fbbf24">Modest reduction (~10=E2=
+=80=9315%)</div></div>
+      </div>
+      <div class=3D"week-rationale" style=3D"border-left-color:#fbbf2444">S=
+mall volume reduction =E2=80=94 fresher, not flat. One quality session. Sha=
+rpness not fitness is the focus.</div>
+      <div class=3D"week-adaptive" style=3D"color:#fbbf24;background:#fbbf2=
+411;border-left-color:#fbbf24"><strong>If metrics flag:</strong> BB High &l=
+t;82 Mon =E2=86=92 full rest. Achilles &gt;1/10 =E2=86=92 skip strides all =
+week.</div>
+     =20
+        <div class=3D"session-row " style=3D"">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#8b949e">Mon 7 =
+Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#6e7681">Rest/=
+Easy</div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#8b949e">Rest or 20min=
+ easy. BB High &lt;82 =E2=86=92 full rest.</div>
+        </div>
+        <div class=3D"session-row " style=3D"">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#8b949e">Tue 8 =
+Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#6e7681">Easy+=
+Strides</div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#8b949e">7=E2=80=938km=
+ easy + 4=C3=9720s strides.</div>
+        </div>
+        <div class=3D"session-row highlight" style=3D"border-color:#fbbf244=
+4">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#fbbf24">Wed 9 =
+Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#fbbf24">Quali=
+ty =E2=98=85</div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#e6edf3">4=C3=971km @3=
+:38=E2=80=933:42/km, 90s jog. One fewer rep =E2=80=94 sharp not tired.</div=
+>
+        </div>
+        <div class=3D"session-row " style=3D"">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#8b949e">Thu 10=
+ Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#6e7681">Easy<=
+/div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#8b949e">6=E2=80=937km=
+ easy.</div>
+        </div>
+        <div class=3D"session-row " style=3D"">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#8b949e">Fri 11=
+ Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#6e7681">Rest<=
+/div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#8b949e">Full rest.</d=
+iv>
+        </div>
+        <div class=3D"session-row " style=3D"">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#8b949e">Sat 12=
+ Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#6e7681">Easy<=
+/div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#8b949e">5=E2=80=936km=
+ easy + 3=C3=9720s strides.</div>
+        </div>
+        <div class=3D"session-row " style=3D"">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#8b949e">Sun 13=
+ Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#6e7681">Easy<=
+/div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#8b949e">8=E2=80=9310k=
+m easy. Last meaningful volume.</div>
+        </div>
+    </div>
+    <div class=3D"plan-week">
+      <div class=3D"week-header"><div class=3D"week-bar" style=3D"backgroun=
+d:#4ade80"></div>
+        <div><div class=3D"week-title">Race Week =C2=B7 14=E2=80=9322 Jul</=
+div><div class=3D"week-type" style=3D"color:#4ade80">Minimal stimulus</div>=
+</div>
+      </div>
+      <div class=3D"week-rationale" style=3D"border-left-color:#4ade8044">F=
+itness is banked. Arrive fresh, sharp, confident. Every session should feel=
+ easy =E2=80=94 if it doesn't, rest.</div>
+      <div class=3D"week-adaptive" style=3D"color:#4ade80;background:#4ade8=
+011;border-left-color:#4ade80"><strong>If metrics flag:</strong> BB High &l=
+t;88 any morning =E2=86=92 replace run with walk. Achilles &gt;1/10 race mo=
+rning =E2=86=92 extend WU to 3km.</div>
+     =20
+        <div class=3D"session-row " style=3D"">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#8b949e">Mon 14=
+ Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#6e7681">Easy<=
+/div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#8b949e">20=E2=80=9325=
+min easy jog.</div>
+        </div>
+        <div class=3D"session-row highlight" style=3D"border-color:#4ade804=
+4">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#4ade80">Tue 15=
+ Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#4ade80">Easy+=
+Strides</div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#e6edf3">20min easy + =
+4=C3=9720s race-pace strides.</div>
+        </div>
+        <div class=3D"session-row " style=3D"">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#8b949e">Wed 16=
+ Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#6e7681">Rest<=
+/div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#8b949e">Full rest or =
+walk.</div>
+        </div>
+        <div class=3D"session-row " style=3D"">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#8b949e">Thu 17=
+ Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#6e7681">Easy<=
+/div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#8b949e">15=E2=80=9320=
+min easy + 3=C3=9720s strides.</div>
+        </div>
+        <div class=3D"session-row " style=3D"">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#8b949e">Fri 18=
+ Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#6e7681">Rest<=
+/div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#8b949e">Full rest. Sl=
+eep. Eat well.</div>
+        </div>
+        <div class=3D"session-row " style=3D"">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#8b949e">Sat 19=
+ Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#6e7681">Rest<=
+/div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#8b949e">Rest. Short w=
+alk if restless.</div>
+        </div>
+        <div class=3D"session-row " style=3D"">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#8b949e">Sun 20=
+ Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#6e7681">Rest<=
+/div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#8b949e">Rest. Prep ki=
+t. Sleep early.</div>
+        </div>
+        <div class=3D"session-row highlight" style=3D"border-color:#4ade804=
+4">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#4ade80">Mon 21=
+ Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#4ade80">Pre-r=
+ace</div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#e6edf3">10min easy + =
+4=C3=9720s strides. Done by 9am. Rest all day.</div>
+        </div>
+        <div class=3D"session-row highlight" style=3D"border-color:#4ade804=
+4">
+          <div class=3D"session-day">
+            <div class=3D"session-day-label" style=3D"color:#4ade80">Tue 22=
+ Jul</div>
+            <div class=3D"session-type-label" style=3D"color:#4ade80">RACE =
+=F0=9F=8F=86</div>
+          </div>
+          <div class=3D"session-desc" style=3D"color:#e6edf3">WU: 2=E2=80=
+=933km easy + 4 strides. Symbicort 20min before gun. Target: 17:40.</div>
+        </div>
+    </div></div>
+      <div class=3D"card green">
+        <div class=3D"section-label green">Race Day =C2=B7 22 Jul =C2=B7 Ca=
+rdiff 5K</div>
+        <p style=3D"font-size:13px;color:#8b949e;line-height:1.8">
+          <strong style=3D"color:#e6edf3">Asthma:</strong> Symbicort 20 min=
+ before gun. Pre-race strides prime the bronchospasm =E2=80=94 non-negotiab=
+le.<br>
+          <strong style=3D"color:#e6edf3">WU:</strong> 2=E2=80=933km easy +=
+ 4 strides at race pace. Complete 15 min before gun.<br>
+          <strong style=3D"color:#e6edf3">Km 1:</strong> 3:35 =E2=80=94 cro=
+wd will hold you. Don't fight it, don't hide behind it.<br>
+          <strong style=3D"color:#e6edf3">Km 2:</strong> 3:31 =E2=80=94 set=
+tle into discomfort, not comfort.<br>
+          <strong style=3D"color:#e6edf3">Km 3:</strong> 3:37 =E2=80=94 the=
+ rise. Race effort not pace. Let watch drift 5=E2=80=936 sec.<br>
+          <strong style=3D"color:#e6edf3">Km 4:</strong> 3:27 =E2=80=94 dow=
+nhill. Commit hard. Bank time here.<br>
+          <strong style=3D"color:#e6edf3">Km 5:</strong> 3:30 =E2=80=94 uph=
+ill finish. Hold form. Empty it.<br>
+          <strong style=3D"color:#f97316">Target: 17:40 =C2=B7 Do NOT repea=
+t bicarb experiment.</strong>
+        </p>
+      </div>
+    </div>
+
+    <!-- RACES -->
+    <div class=3D"page" id=3D"page-races">
+      <div id=3D"race-results">
+    <div class=3D"race-card">
+      <div><div class=3D"race-type">Mile =C2=B7 8 May 2026</div><div class=
+=3D"race-name">1 Mile</div><div class=3D"race-note">Training time trial</di=
+v></div>
+      <div class=3D"race-time">5:13</div>
+    </div>
+    <div class=3D"race-card">
+      <div><div class=3D"race-type">5K =C2=B7 10 Jun 2026</div><div class=
+=3D"race-name">Hereford 5K</div><div class=3D"race-note">No taper =C2=B7 GI=
+ issues from bicarb trial</div></div>
+      <div class=3D"race-time">18:18</div>
+    </div>
+    <div class=3D"race-card">
+      <div><div class=3D"race-type">10K =C2=B7 28 Jun 2026</div><div class=
+=3D"race-name">Gloucester 10K</div><div class=3D"race-note">V50 =F0=9F=8F=
+=86 Team =F0=9F=8F=86 =C2=B7 No taper =C2=B7 relay recce day before</div></=
+div>
+      <div class=3D"race-time">38:08</div>
+    </div></div>
+      <div style=3D"background:linear-gradient(135deg,#161b22,#0d1117);bord=
+er-radius:10px;padding:18px;border:1px solid #f9731633;margin-bottom:12px">
+        <div style=3D"font-size:10px;color:#f97316;text-transform:uppercase=
+;letter-spacing:.08em;font-weight:600;margin-bottom:8px">A-Race =C2=B7 22 J=
+ul 2026</div>
+        <div style=3D"font-size:18px;font-weight:700;color:#f0f6fc;margin-b=
+ottom:14px">Cardiff 5K</div>
+        <div style=3D"display:grid;grid-template-columns:1fr 1fr;gap:8px;ma=
+rgin-bottom:12px">
+          <div style=3D"background:#0d1117;border-radius:8px;padding:10px 1=
+2px"><div style=3D"font-size:10px;color:#6e7681;text-transform:uppercase">F=
+itness estimate</div><div style=3D"font-size:17px;font-weight:700;color:#f9=
+7316;margin-top:4px">17:35=E2=80=9317:50</div></div>
+          <div style=3D"background:#0d1117;border-radius:8px;padding:10px 1=
+2px"><div style=3D"font-size:10px;color:#6e7681;text-transform:uppercase">D=
+ays remaining</div><div style=3D"font-size:17px;font-weight:700;color:#e6ed=
+f3;margin-top:4px" id=3D"race-days-left">19 days</div></div>
+          <div style=3D"background:#0d1117;border-radius:8px;padding:10px 1=
+2px"><div style=3D"font-size:10px;color:#6e7681;text-transform:uppercase">S=
+eason best</div><div style=3D"font-size:17px;font-weight:700;color:#e6edf3;=
+margin-top:4px">18:18</div></div>
+          <div style=3D"background:#0d1117;border-radius:8px;padding:10px 1=
+2px"><div style=3D"font-size:10px;color:#6e7681;text-transform:uppercase">5=
+K all-time PB</div><div style=3D"font-size:17px;font-weight:700;color:#e6ed=
+f3;margin-top:4px">16:33</div></div>
+        </div>
+        <p style=3D"font-size:12px;color:#6e7681;line-height:1.6">Next race=
+: <strong style=3D"color:#e6edf3">Cheltenham Half Marathon =C2=B7 September=
+ 2026</strong>. Build starts post-Cardiff.</p>
+      </div>
+      <div class=3D"card">
+        <div class=3D"section-label">All-Time PBs</div>
+        <div id=3D"pb-list">
+    <div class=3D"log-row">
+      <div><span style=3D"font-size:13px;font-weight:600;color:#e6edf3">800=
+m</span></div>
+      <div style=3D"font-size:15px;font-weight:700;color:#f97316">2:17.4</d=
+iv>
+    </div>
+    <div class=3D"log-row">
+      <div><span style=3D"font-size:13px;font-weight:600;color:#e6edf3">150=
+0m</span></div>
+      <div style=3D"font-size:15px;font-weight:700;color:#f97316">4:42</div=
+>
+    </div>
+    <div class=3D"log-row">
+      <div><span style=3D"font-size:13px;font-weight:600;color:#e6edf3">1 M=
+ile</span><span style=3D"font-size:11px;color:#6e7681;margin-left:8px">Virt=
+ual =C2=B7 May 20</span></div>
+      <div style=3D"font-size:15px;font-weight:700;color:#f97316">5:02</div=
+>
+    </div>
+    <div class=3D"log-row">
+      <div><span style=3D"font-size:13px;font-weight:600;color:#e6edf3">1 M=
+ile</span><span style=3D"font-size:11px;color:#6e7681;margin-left:8px">Mete=
+or Mile =C2=B7 Aug 19</span></div>
+      <div style=3D"font-size:15px;font-weight:700;color:#f97316">5:05</div=
+>
+    </div>
+    <div class=3D"log-row">
+      <div><span style=3D"font-size:13px;font-weight:600;color:#e6edf3">3K<=
+/span><span style=3D"font-size:11px;color:#6e7681;margin-left:8px">Virtual =
+=C2=B7 May 20</span></div>
+      <div style=3D"font-size:15px;font-weight:700;color:#f97316">9:59</div=
+>
+    </div>
+    <div class=3D"log-row">
+      <div><span style=3D"font-size:13px;font-weight:600;color:#e6edf3">5K<=
+/span><span style=3D"font-size:11px;color:#6e7681;margin-left:8px">Virtual =
+/ Hereford =C2=B7 Jun 20/Apr 21</span></div>
+      <div style=3D"font-size:15px;font-weight:700;color:#f97316">16:33</di=
+v>
+    </div>
+    <div class=3D"log-row">
+      <div><span style=3D"font-size:13px;font-weight:600;color:#e6edf3">4 M=
+ile</span><span style=3D"font-size:11px;color:#6e7681;margin-left:8px">Beng=
+al Flyer =C2=B7 Nov 17</span></div>
+      <div style=3D"font-size:15px;font-weight:700;color:#f97316">23:42</di=
+v>
+    </div>
+    <div class=3D"log-row">
+      <div><span style=3D"font-size:13px;font-weight:600;color:#e6edf3">5 M=
+ile</span><span style=3D"font-size:11px;color:#6e7681;margin-left:8px">Lind=
+a Franks =C2=B7 Jan 19</span></div>
+      <div style=3D"font-size:15px;font-weight:700;color:#f97316">28:15</di=
+v>
+    </div>
+    <div class=3D"log-row">
+      <div><span style=3D"font-size:13px;font-weight:600;color:#e6edf3">10K=
+</span><span style=3D"font-size:11px;color:#6e7681;margin-left:8px">Bourton=
+ =C2=B7 Feb 20</span></div>
+      <div style=3D"font-size:15px;font-weight:700;color:#f97316">35:58</di=
+v>
+    </div>
+    <div class=3D"log-row">
+      <div><span style=3D"font-size:13px;font-weight:600;color:#e6edf3">10 =
+Mile</span><span style=3D"font-size:11px;color:#6e7681;margin-left:8px">Sev=
+ern 10 =C2=B7 Dec 20</span></div>
+      <div style=3D"font-size:15px;font-weight:700;color:#f97316">1:00:09</=
+div>
+    </div>
+    <div class=3D"log-row">
+      <div><span style=3D"font-size:13px;font-weight:600;color:#e6edf3">Hal=
+f</span><span style=3D"font-size:11px;color:#6e7681;margin-left:8px">Sheppe=
+rdine =C2=B7 Apr 21</span></div>
+      <div style=3D"font-size:15px;font-weight:700;color:#f97316">1:20:46</=
+div>
+    </div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</body></html>
+------MultipartBoundary--GtbY0djjpLuvPexudFXKpJm8fZwN1mR3bxZ87qI8wn----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-224191dd-ec5a-48dc-8fab-c98ed1095369@mhtml.blink
+
+@charset "utf-8";
+
+* { box-sizing: border-box; margin: 0px; padding: 0px; }
+
+body { font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif; b=
+ackground: rgb(13, 17, 23); color: rgb(230, 237, 243); font-size: 14px; min=
+-height: 100vh; }
+
+input, select, textarea, button { font-family: inherit; }
+
+.hidden { display: none !important; }
+
+#auth { position: fixed; inset: 0px; background: rgb(13, 17, 23); display: =
+flex; align-items: center; justify-content: center; z-index: 999; }
+
+.auth-box { background: rgb(22, 27, 34); border: 1px solid rgba(249, 115, 2=
+2, 0.267); border-radius: 16px; padding: 40px 32px; width: 320px; text-alig=
+n: center; }
+
+.auth-box h1 { font-size: 20px; font-weight: 700; color: rgb(240, 246, 252)=
+; margin-bottom: 4px; }
+
+.auth-box p { font-size: 12px; color: rgb(110, 118, 129); margin-bottom: 24=
+px; }
+
+.auth-box input { width: 100%; padding: 12px; background: rgb(13, 17, 23); =
+border: 1px solid rgb(48, 54, 61); border-radius: 8px; color: rgb(230, 237,=
+ 243); font-size: 16px; text-align: center; letter-spacing: 4px; margin-bot=
+tom: 12px; }
+
+.auth-box button { width: 100%; padding: 12px; background: rgb(249, 115, 22=
+); border-width: medium; border-style: none; border-color: currentcolor; bo=
+rder-image: initial; border-radius: 8px; color: rgb(255, 255, 255); font-si=
+ze: 14px; font-weight: 600; cursor: pointer; }
+
+.auth-err { color: rgb(248, 113, 113); font-size: 12px; margin-top: 8px; mi=
+n-height: 18px; }
+
+#header { background: rgb(13, 17, 23); border-bottom: 1px solid rgb(33, 38,=
+ 45); padding: 16px 16px 0px; position: sticky; top: 0px; z-index: 100; }
+
+.header-top { display: flex; justify-content: space-between; align-items: f=
+lex-start; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+
+.header-pills { display: flex; gap: 8px; }
+
+.pill { background: rgb(22, 27, 34); border: 1px solid rgb(33, 38, 45); bor=
+der-radius: 10px; padding: 8px 14px; text-align: center; min-width: 72px; }
+
+.pill-val { font-size: 22px; font-weight: 800; line-height: 1; }
+
+.pill-label { font-size: 9px; color: rgb(139, 148, 158); text-transform: up=
+percase; letter-spacing: 0.07em; margin-top: 2px; }
+
+.tabs { display: flex; overflow-x: auto; gap: 0px; scrollbar-width: none; }
+
+.tabs::-webkit-scrollbar { display: none; }
+
+.tab { padding: 8px 11px; border-width: medium medium 2px; border-style: no=
+ne none solid; border-color: currentcolor currentcolor transparent; border-=
+image: initial; white-space: nowrap; cursor: pointer; font-size: 12px; font=
+-weight: 500; background: transparent; color: rgb(139, 148, 158); transitio=
+n: 0.15s; flex-shrink: 0; }
+
+.tab.active { border-bottom-color: rgb(249, 115, 22); color: rgb(240, 246, =
+252); }
+
+#app { display: none; padding-bottom: 32px; }
+
+.page { display: none; padding: 16px; }
+
+.page.active { display: block; }
+
+.card { background: rgb(22, 27, 34); border-radius: 10px; padding: 16px; bo=
+rder: 1px solid rgb(33, 38, 45); margin-bottom: 12px; }
+
+.card.orange { border-color: rgba(249, 115, 22, 0.133); }
+
+.card.green { border-color: rgba(74, 222, 128, 0.2); }
+
+.card.amber { border-color: rgba(251, 191, 36, 0.2); }
+
+.section-label { font-size: 11px; color: rgb(139, 148, 158); text-transform=
+: uppercase; letter-spacing: 0.09em; margin-bottom: 12px; font-weight: 600;=
+ }
+
+.section-label.orange { color: rgb(249, 115, 22); }
+
+.section-label.green { color: rgb(74, 222, 128); }
+
+.section-label.amber { color: rgb(251, 191, 36); }
+
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(95=
+px, 1fr)); gap: 8px; margin-bottom: 12px; }
+
+.metric { background: rgb(22, 27, 34); border-radius: 8px; padding: 11px 12=
+px; border: 1px solid rgb(33, 38, 45); }
+
+.metric-label { font-size: 10px; color: rgb(110, 118, 129); text-transform:=
+ uppercase; letter-spacing: 0.08em; margin-bottom: 5px; }
+
+.metric-val { font-size: 20px; font-weight: 700; line-height: 1; }
+
+.metric-val.big { font-size: 24px; }
+
+.metric-sub { font-size: 10px; color: rgb(110, 118, 129); margin-top: 3px; =
+}
+
+.chart-wrap { position: relative; margin-bottom: 4px; }
+
+.inp { width: 100%; background: rgb(13, 17, 23); border: 1px solid rgb(48, =
+54, 61); border-radius: 6px; padding: 8px 10px; color: rgb(230, 237, 243); =
+font-size: 13px; }
+
+.inp:focus { outline: rgb(249, 115, 22) solid 1px; }
+
+label { font-size: 11px; color: rgb(110, 118, 129); display: block; margin-=
+bottom: 4px; }
+
+.form-grid { display: grid; gap: 10px; margin-bottom: 10px; }
+
+.form-grid.two { grid-template-columns: 1fr 1fr; }
+
+.form-grid.three { grid-template-columns: 1fr 1fr 1fr; }
+
+.btn { width: 100%; padding: 11px; border-radius: 6px; border-width: medium=
+; border-style: none; border-color: currentcolor; border-image: initial; cu=
+rsor: pointer; font-size: 13px; font-weight: 600; transition: background 0.=
+2s; }
+
+.btn.primary { background: rgb(249, 115, 22); color: rgb(255, 255, 255); }
+
+.btn.success { background: rgb(74, 222, 128); color: rgb(13, 17, 23); }
+
+.btn.secondary { background: rgb(22, 27, 34); color: rgb(139, 148, 158); bo=
+rder: 1px solid rgb(33, 38, 45); }
+
+.toggle-row { display: flex; gap: 4px; margin-bottom: 12px; }
+
+.toggle-btn { flex: 1 1 0%; padding: 9px; border-radius: 7px; border-width:=
+ medium; border-style: none; border-color: currentcolor; border-image: init=
+ial; cursor: pointer; font-size: 13px; font-weight: 500; background: rgb(22=
+, 27, 34); color: rgb(139, 148, 158); transition: 0.15s; }
+
+.toggle-btn.active { background: rgb(249, 115, 22); color: rgb(255, 255, 25=
+5); }
+
+.plan-week { margin-bottom: 16px; }
+
+.week-header { display: flex; align-items: center; gap: 10px; margin-bottom=
+: 8px; }
+
+.week-bar { width: 3px; height: 20px; border-radius: 2px; }
+
+.week-title { font-size: 13px; font-weight: 700; color: rgb(240, 246, 252);=
+ }
+
+.week-type { font-size: 11px; text-transform: uppercase; letter-spacing: 0.=
+07em; }
+
+.week-rationale { background: rgb(13, 17, 23); border-radius: 8px; padding:=
+ 10px 12px; margin-bottom: 6px; font-size: 12px; color: rgb(110, 118, 129);=
+ line-height: 1.5; border-left: 2px solid transparent; }
+
+.week-adaptive { border-radius: 8px; padding: 8px 12px; margin-bottom: 8px;=
+ font-size: 12px; line-height: 1.5; border-left: 2px solid; }
+
+.session-row { border-radius: 8px; padding: 11px 13px; margin-bottom: 5px; =
+border: 1px solid rgb(33, 38, 45); display: flex; gap: 12px; }
+
+.session-row.highlight { background: rgb(22, 27, 34); }
+
+.session-day { min-width: 72px; flex-shrink: 0; }
+
+.session-day-label { font-size: 11px; font-weight: 700; color: rgb(139, 148=
+, 158); }
+
+.session-type-label { font-size: 10px; color: rgb(110, 118, 129); margin-to=
+p: 2px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.session-desc { font-size: 13px; color: rgb(139, 148, 158); line-height: 1.=
+5; }
+
+.log-row { display: flex; justify-content: space-between; align-items: flex=
+-start; padding: 10px 0px; border-bottom: 1px solid rgb(33, 38, 45); }
+
+.log-row:last-child { border-bottom-width: medium; border-bottom-style: non=
+e; border-bottom-color: currentcolor; }
+
+.badge { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius=
+: 4px; margin-left: 6px; }
+
+.zone-list { display: flex; flex-direction: column; gap: 8px; }
+
+.zone-row { display: flex; align-items: center; gap: 8px; }
+
+.zone-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; =
+}
+
+.zone-name { font-size: 12px; color: rgb(230, 237, 243); font-weight: 500; =
+min-width: 90px; }
+
+.zone-bar-wrap { flex: 1 1 0%; height: 8px; background: rgb(33, 38, 45); bo=
+rder-radius: 4px; overflow: hidden; }
+
+.zone-bar { height: 100%; border-radius: 4px; }
+
+.zone-pct { font-size: 11px; color: rgb(110, 118, 129); min-width: 36px; te=
+xt-align: right; }
+
+.pred-row { display: flex; justify-content: space-between; align-items: cen=
+ter; padding: 11px 13px; background: rgb(13, 17, 23); border-radius: 8px; m=
+argin-bottom: 7px; border: 1px solid transparent; }
+
+.pred-row.highlight { background: rgb(29, 45, 62); border-color: rgba(249, =
+115, 22, 0.267); }
+
+.pred-dist { font-size: 13px; font-weight: 600; color: rgb(230, 237, 243); =
+}
+
+.pred-sub { font-size: 10px; color: rgb(110, 118, 129); margin-top: 2px; }
+
+.pred-times { display: flex; gap: 16px; }
+
+.pred-time { text-align: center; }
+
+.pred-time-val { font-size: 18px; font-weight: 700; }
+
+.pred-time-label { font-size: 9px; color: rgb(110, 118, 129); text-transfor=
+m: uppercase; letter-spacing: 0.06em; }
+
+.race-card { background: rgb(22, 27, 34); border-radius: 10px; padding: 16p=
+x; border: 1px solid rgb(33, 38, 45); margin-bottom: 10px; display: flex; j=
+ustify-content: space-between; align-items: flex-start; }
+
+.race-type { font-size: 10px; color: rgb(249, 115, 22); text-transform: upp=
+ercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: 4px; }
+
+.race-name { font-size: 15px; font-weight: 700; color: rgb(240, 246, 252); =
+}
+
+.race-note { font-size: 12px; color: rgb(110, 118, 129); margin-top: 4px; }
+
+.race-time { font-size: 26px; font-weight: 800; color: rgb(240, 246, 252); =
+letter-spacing: -0.02em; }
+
+.protocol-row { display: flex; gap: 10px; margin-bottom: 10px; align-items:=
+ flex-start; }
+
+.protocol-range { font-size: 12px; font-weight: 700; min-width: 50px; }
+
+.protocol-text { font-size: 13px; color: rgb(139, 148, 158); }
+------MultipartBoundary--GtbY0djjpLuvPexudFXKpJm8fZwN1mR3bxZ87qI8wn------
