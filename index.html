@@ -256,6 +256,11 @@ label{font-size:11px;color:#6e7681;display:block;margin-bottom:4px}
             <div><label>Achilles (0–10)</label><input type="number" min="0" max="10" class="inp" id="log-achilles" placeholder="0" style="font-size:16px"></div>
             <div><label>RHR (bpm)</label><input type="number" class="inp" id="log-rhr" placeholder="47" style="font-size:16px"></div>
             <div><label>HRV (ms)</label><input type="number" class="inp" id="log-hrv" placeholder="39" style="font-size:16px"></div>
+              </div>
+              <div class="form-grid three" style="margin-bottom:12px">
+                <div><label>ACWR</label><input type="number" step="0.01" class="inp" id="log-acwr" placeholder="1.05" style="font-size:16px"></div>
+                <div><label>Acute Load</label><input type="number" class="inp" id="log-acute" placeholder="320" style="font-size:16px"></div>
+                <div><label>Chronic Load</label><input type="number" class="inp" id="log-chronic" placeholder="280" style="font-size:16px"></div>
           </div>
           <button class="btn primary" id="save-recovery-btn" onclick="saveRecovery()">Save Recovery Entry</button>
         </div>
