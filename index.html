@@ -352,6 +352,7 @@ label{font-size:11px;color:#6e7681;display:block;margin-bottom:4px}
 
     <!-- TRAINING PLAN -->
     <div class="page" id="page-plan">
+      <div id="plan-warnings" style="margin-bottom:12px"></div>
       <div class="card orange" style="margin-bottom:12px">
         <div class="section-label orange">Adaptive Plan — Cardiff 5K · 22 Jul · <span id="plan-days"></span> days</div>
         <p style="font-size:13px;color:#8b949e;line-height:1.5">Fitness is built. Check your <strong style="color:#e6edf3">Readiness score</strong> each morning. Sessions marked ★ are key — protect these. Everything else is negotiable based on metrics.</p>
@@ -363,6 +364,40 @@ label{font-size:11px;color:#6e7681;display:block;margin-bottom:4px}
         <div class="protocol-row"><span class="protocol-range" style="color:#f87171">&lt;65</span><span class="protocol-text">Reschedule quality. Easy or rest only. Flag if 2 days running.</span></div>
       </div>
       <div id="plan-weeks"></div>
+      <script>
+      function renderAdaptivePlan() {
+        // Get latest logged metrics
+        const achilles = parseInt(localStorage.getItem('latest_achilles') || '0');
+        const acwr = parseFloat(localStorage.getItem('latest_acwr') || '1.0');
+        const days = daysToCardiff;
+        
+        // Flags
+        const highLoad = acwr > 1.3;
+        const achillesFlag = achilles >= 2;
+        const week = days > 14 ? 0 : days > 7 ? 1 : 2;
+        
+        const warnings = [];
+        if (highLoad) warnings.push({c:'#f87171', t:'ACWR above 1.3 — reduce intensity. Drop quality reps by one. No racing.'});
+        if (achillesFlag) warnings.push({c:'#f87171', t:'Achilles '+achilles+'/10 — quality sessions suspended. Easy running only today.'});
+        
+        const warnEl = document.getElementById('plan-warnings');
+        if (warnEl) {
+          warnEl.innerHTML = warnings.map(w => 
+            '<div style="background:'+w.c+'22;border-left:3px solid '+w.c+';padding:10px 14px;border-radius:6px;margin-bottom:8px;font-size:13px;color:'+w.c+'">⚠ '+w.t+'</div>'
+          ).join('');
+        }
+        
+        // Highlight current week
+        document.querySelectorAll('.plan-week').forEach((el, i) => {
+          el.style.opacity = i === week ? '1' : '0.5';
+          if (i === week) el.style.border = '1px solid #f9731644';
+          else el.style.border = 'none';
+          el.style.borderRadius = '8px';
+          el.style.padding = i === week ? '8px' : '0';
+        });
+      }
+      setTimeout(renderAdaptivePlan, 500);
+      </script>
       <div class="card green">
         <div class="section-label green">Race Day · 22 Jul · Cardiff 5K</div>
         <p style="font-size:13px;color:#8b949e;line-height:1.8">
@@ -927,6 +962,10 @@ function flashBtn(id){
 }
 
 function saveRecovery(){
+    const acwrVal = document.getElementById('log-acwr')?.value;
+    const achVal2 = document.getElementById('log-achilles')?.value;
+    if (acwrVal) localStorage.setItem('latest_acwr', acwrVal);
+    if (achVal2) localStorage.setItem('latest_achilles', achVal2);
   const date=document.getElementById('log-date').value;
   const a=document.getElementById('log-achilles').value;
   const r=document.getElementById('log-rhr').value;
