@@ -982,7 +982,24 @@ function init(){
   if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 }
 
-if(sessionStorage.getItem('auth')==='1') init();
+if(sessionStorage.getItem('auth')==='1'){
+  fetch('garmin_data.json?v='+Date.now())
+    .then(r=>r.json())
+    .then(data=>{
+      data.forEach(d=>{
+        const g=GARMIN.find(x=>x.date===d.date);
+        if(g){
+          if(d.sleep_score) g.sleep=d.sleep_score;
+          if(d.bb_high) g.bb_high=d.bb_high;
+          if(d.bb_low) g.bb_low=d.bb_low;
+        } else if(d.sleep_score||d.bb_high) {
+          GARMIN.push({date:d.date,sleep:d.sleep_score||null,bb_high:d.bb_high||null,bb_low:d.bb_low||null});
+        }
+      });
+    })
+    .catch(()=>{})
+    .finally(()=>init());
+}
 </script>
 </body>
 </html>
