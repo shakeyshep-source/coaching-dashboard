@@ -964,7 +964,14 @@ function flashBtn(id){
 function saveRecovery(){
     const acwrVal = document.getElementById('log-acwr')?.value;
     const achVal2 = document.getElementById('log-achilles')?.value;
-    if (acwrVal) localStorage.setItem('latest_acwr', acwrVal);
+    const acuteVal = document.getElementById('log-acute')?.value;
+    const chronicVal = document.getElementById('log-chronic')?.value;
+    if (acuteVal && chronicVal && parseFloat(chronicVal) > 0) {
+      const calcAcwr = (parseFloat(acuteVal) / parseFloat(chronicVal)).toFixed(2);
+      localStorage.setItem('latest_acwr', calcAcwr);
+      const acwrInput = document.getElementById('log-acwr');
+      if (acwrInput) acwrInput.value = calcAcwr;
+    } else if (acwrVal) localStorage.setItem('latest_acwr', acwrVal);
     if (achVal2) localStorage.setItem('latest_achilles', achVal2);
   const date=document.getElementById('log-date').value;
   const a=document.getElementById('log-achilles').value;
