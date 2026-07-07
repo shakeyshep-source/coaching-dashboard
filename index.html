@@ -972,6 +972,10 @@ function saveRecovery(){
       const acwrInput = document.getElementById('log-acwr');
       if (acwrInput) acwrInput.value = calcAcwr;
     } else if (acwrVal) localStorage.setItem('latest_acwr', acwrVal);
+    const acuteInput = document.getElementById('log-acute')?.value;
+    const chronicInput = document.getElementById('log-chronic')?.value;
+    if (acuteInput) localStorage.setItem('latest_acute', acuteInput);
+    if (chronicInput) localStorage.setItem('latest_chronic', chronicInput);
     if (achVal2) localStorage.setItem('latest_achilles', achVal2);
   const date=document.getElementById('log-date').value;
   const a=document.getElementById('log-achilles').value;
