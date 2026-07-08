@@ -911,10 +911,17 @@ function renderAll(){
     </div>`).join('');
 
   // Training plan
-  document.getElementById('plan-weeks').innerHTML=PLAN.map(w=>`
+  const WEEK_RANGES=[{start:'2026-07-01',end:'2026-07-06'},{start:'2026-07-07',end:'2026-07-13'},{start:'2026-07-14',end:'2026-07-22'}];
+  const _today=new Date(); _today.setHours(0,0,0,0);
+  const PLAN_VISIBLE=PLAN.map((w,i)=>{
+    const r=WEEK_RANGES[i]||{start:'2000-01-01',end:'2000-01-01'};
+    const s=new Date(r.start), e=new Date(r.end); e.setHours(23,59,59,999);
+    return {...w, _isCurrent:(_today>=s&&_today<=e), _isPast:(_today>e)};
+  }).filter(w=>!w._isPast);
+  document.getElementById('plan-weeks').innerHTML=PLAN_VISIBLE.map(w=>`
     <div class="plan-week">
       <div class="week-header"><div class="week-bar" style="background:${w.color}"></div>
-        <div><div class="week-title">${w.week}</div><div class="week-type" style="color:${w.color}">${w.type}</div></div>
+        <div><div class="week-title">${w.week}${w._isCurrent?' <span style="color:#4ade80;font-size:11px;font-weight:700">● CURRENT</span>':''}</div><div class="week-type" style="color:${w.color}">${w.type}</div></div>
       </div>
       <div class="week-rationale" style="border-left-color:${w.color}44">${w.rationale}</div>
       <div class="week-adaptive" style="color:${w.color};background:${w.color}11;border-left-color:${w.color}"><strong>If metrics flag:</strong> ${w.adaptive}</div>
