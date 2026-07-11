@@ -1,281 +1,281 @@
 [
   {
-    "date": "2026-06-06",
-    "rhr": null,
-    "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
-  },
-  {
-    "date": "2026-06-07",
-    "rhr": null,
-    "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
-  },
-  {
-    "date": "2026-06-08",
-    "rhr": null,
-    "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
-  },
-  {
-    "date": "2026-06-09",
-    "rhr": null,
-    "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
-  },
-  {
-    "date": "2026-06-10",
-    "rhr": null,
-    "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
-  },
-  {
     "date": "2026-06-11",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 74,
+    "sleep_duration_hrs": 6.2,
+    "body_battery_peak": 46
   },
   {
     "date": "2026-06-12",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 88,
+    "sleep_duration_hrs": 8.2,
+    "body_battery_peak": 64
   },
   {
     "date": "2026-06-13",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 87,
+    "sleep_duration_hrs": 8.5,
+    "body_battery_peak": 46
   },
   {
     "date": "2026-06-14",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 87,
+    "sleep_duration_hrs": 8.0,
+    "body_battery_peak": 65
   },
   {
     "date": "2026-06-15",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 81,
+    "sleep_duration_hrs": 8.3,
+    "body_battery_peak": 49
   },
   {
     "date": "2026-06-16",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 89,
+    "sleep_duration_hrs": 8.5,
+    "body_battery_peak": 49
   },
   {
     "date": "2026-06-17",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 86,
+    "sleep_duration_hrs": 8.0,
+    "body_battery_peak": 40
   },
   {
     "date": "2026-06-18",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 78,
+    "sleep_duration_hrs": 7.0,
+    "body_battery_peak": 55
   },
   {
     "date": "2026-06-19",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 87,
+    "sleep_duration_hrs": 8.8,
+    "body_battery_peak": 51
   },
   {
     "date": "2026-06-20",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 88,
+    "sleep_duration_hrs": 8.2,
+    "body_battery_peak": 61
   },
   {
     "date": "2026-06-21",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 89,
+    "sleep_duration_hrs": 8.2,
+    "body_battery_peak": 48
   },
   {
     "date": "2026-06-22",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 85,
+    "sleep_duration_hrs": 8.0,
+    "body_battery_peak": 58
   },
   {
     "date": "2026-06-23",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 92,
+    "sleep_duration_hrs": 7.9,
+    "body_battery_peak": 51
   },
   {
     "date": "2026-06-24",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 82,
+    "sleep_duration_hrs": 8.6,
+    "body_battery_peak": 55
   },
   {
     "date": "2026-06-25",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 86,
+    "sleep_duration_hrs": 8.1,
+    "body_battery_peak": 61
   },
   {
     "date": "2026-06-26",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 84,
+    "sleep_duration_hrs": 8.2,
+    "body_battery_peak": 59
   },
   {
     "date": "2026-06-27",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 94,
+    "sleep_duration_hrs": 7.6,
+    "body_battery_peak": 53
   },
   {
     "date": "2026-06-28",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 86,
+    "sleep_duration_hrs": 7.1,
+    "body_battery_peak": 66
   },
   {
     "date": "2026-06-29",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 92,
+    "sleep_duration_hrs": 7.8,
+    "body_battery_peak": 66
   },
   {
     "date": "2026-06-30",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 83,
+    "sleep_duration_hrs": 7.0,
+    "body_battery_peak": 60
   },
   {
     "date": "2026-07-01",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 83,
+    "sleep_duration_hrs": 7.0,
+    "body_battery_peak": 52
   },
   {
     "date": "2026-07-02",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 88,
+    "sleep_duration_hrs": 7.7,
+    "body_battery_peak": 52
   },
   {
     "date": "2026-07-03",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 91,
+    "sleep_duration_hrs": 7.8,
+    "body_battery_peak": 59
   },
   {
     "date": "2026-07-04",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 87,
+    "sleep_duration_hrs": 7.8,
+    "body_battery_peak": 42
   },
   {
     "date": "2026-07-05",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 85,
+    "sleep_duration_hrs": 8.2,
+    "body_battery_peak": 60
   },
   {
     "date": "2026-07-06",
     "rhr": null,
     "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_peak": null
+    "hrv_status": "BALANCED",
+    "sleep_score": 86,
+    "sleep_duration_hrs": 7.0,
+    "body_battery_peak": 56
+  },
+  {
+    "date": "2026-07-07",
+    "rhr": null,
+    "hrv_last_night": null,
+    "hrv_status": "BALANCED",
+    "sleep_score": 90,
+    "sleep_duration_hrs": 8.1,
+    "body_battery_peak": 46
+  },
+  {
+    "date": "2026-07-08",
+    "rhr": null,
+    "hrv_last_night": null,
+    "hrv_status": "BALANCED",
+    "sleep_score": 84,
+    "sleep_duration_hrs": 7.1,
+    "body_battery_peak": 55
+  },
+  {
+    "date": "2026-07-09",
+    "rhr": null,
+    "hrv_last_night": null,
+    "hrv_status": "BALANCED",
+    "sleep_score": 91,
+    "sleep_duration_hrs": 8.1,
+    "body_battery_peak": 53
+  },
+  {
+    "date": "2026-07-10",
+    "rhr": null,
+    "hrv_last_night": null,
+    "hrv_status": "BALANCED",
+    "sleep_score": 90,
+    "sleep_duration_hrs": 8.0,
+    "body_battery_peak": 62
+  },
+  {
+    "date": "2026-07-11",
+    "rhr": null,
+    "hrv_last_night": null,
+    "hrv_status": "BALANCED",
+    "sleep_score": 85,
+    "sleep_duration_hrs": 7.7,
+    "body_battery_peak": 47
   }
 ]
