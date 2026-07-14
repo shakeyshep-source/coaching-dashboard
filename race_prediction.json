@@ -1,0 +1,19 @@
+{
+  "race_name": "Cardiff 5K",
+  "race_date": "2026-07-22",
+  "generated_date": "2026-07-14",
+  "riegel_estimate": {
+    "predicted_time_fmt": "17:58.78",
+    "low_estimate_fmt": "17:29.72",
+    "high_estimate_fmt": "18:27.83",
+    "note": "Riegel estimate based on: Bourton Mile, Cardiff 5K (previous edition), Gloucester 10K. Excluded (compromised conditions): Lightning Bolt 10K (First race back after off-season. Logged for history, but excluded from prediction \u2014 3+ months old and early-season fitness isn't representative of current form for a race this far out.), Hereford 5K (GI issues from bicarbonate trial.), Cotswold Way Relay (leg) (Respiratory episode in heat. Relay leg, off-road and extremely hilly \u2014 not comparable to a flat standalone race. Excluded from Riegel projection.)"
+  },
+  "vo2max_note": "VO2max is 56.0, stable over the recent window.",
+  "recent_key_sessions": [
+    {
+      "date": "2026-07-08",
+      "description": "4x1km @ 3:37 avg, RPE 7-8"
+    }
+  ],
+  "key_sessions_note": "Logged for reference only \u2014 not converted into a predicted time. Converting interval-rep pace to race pace has no reliable formula; use your own judgement on what these sessions suggest."
+}

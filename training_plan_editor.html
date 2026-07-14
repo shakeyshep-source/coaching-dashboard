@@ -1,0 +1,178 @@
+<!--
+  training_plan_editor.html — separate from dashboard.html on purpose.
+
+  This is the only page that WRITES data. dashboard.html stays a pure
+  reader of computed_data.json. This page loads training_plan.json,
+  lets you add/edit/delete sessions in a form, then exports the file
+  for you to git add + commit — same manual-commit workflow as every
+  other file in this project, no backend/database needed.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Training Plan Editor</title>
+<style>
+  :root {
+    --bg: #0f1115; --surface: #171a20; --border: #262b33;
+    --text-primary: #eef0f3; --text-secondary: #9aa1ad; --text-muted: #6b7280;
+    --yellow: #EF9F27; --blue: #378ADD;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    padding: 1.5rem; max-width: 720px;
+  }
+  h1 { font-size: 20px; font-weight: 500; margin: 0 0 4px; }
+  .sub { font-size: 13px; color: var(--text-secondary); margin: 0 0 1.5rem; }
+
+  .form-card {
+    background: var(--surface); border-radius: 12px; padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  label { display: block; font-size: 13px; color: var(--text-muted); margin: 12px 0 4px; }
+  label:first-child { margin-top: 0; }
+  input, select, textarea {
+    width: 100%; background: var(--bg); border: 1px solid var(--border);
+    border-radius: 6px; color: var(--text-primary); padding: 8px 10px; font-size: 14px;
+  }
+  textarea { min-height: 60px; resize: vertical; }
+
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  button {
+    border: none; border-radius: 6px; padding: 10px 16px; font-size: 14px;
+    font-weight: 500; cursor: pointer; margin-top: 1rem;
+  }
+  .btn-primary { background: var(--yellow); color: #412402; }
+  .btn-secondary { background: var(--surface); color: var(--text-primary); border: 1px solid var(--border); }
+  .btn-danger { background: transparent; color: #E24B4A; border: 1px solid #791F1F; padding: 4px 10px; font-size: 12px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; color: var(--text-muted); font-weight: 500; padding: 8px; border-bottom: 1px solid var(--border); }
+  td { padding: 8px; border-bottom: 1px solid var(--border); }
+  tr:last-child td { border-bottom: none; }
+
+  .export-note {
+    background: var(--surface); border-radius: 8px; padding: 12px 16px;
+    font-size: 13px; color: var(--text-secondary); margin-top: 1rem;
+  }
+</style>
+</head>
+<body>
+
+  <h1>Training plan editor</h1>
+  <p class="sub">Edit planned sessions, then export and commit training_plan.json — same as any other data file.</p>
+
+  <div class="form-card">
+    <label for="date">Date</label>
+    <input type="date" id="date">
+
+    <div class="row">
+      <div>
+        <label for="sessionType">Session type</label>
+        <select id="sessionType">
+          <option value="easy">Easy</option>
+          <option value="intervals">Intervals</option>
+          <option value="tempo">Tempo</option>
+          <option value="long">Long run</option>
+          <option value="race">Race</option>
+          <option value="rest">Rest</option>
+        </select>
+      </div>
+      <div>
+        <label for="distance">Target distance (km)</label>
+        <input type="number" id="distance" step="0.1" min="0">
+      </div>
+    </div>
+
+    <label for="pace">Target pace</label>
+    <input type="text" id="pace" placeholder="e.g. 5:00-5:15/km">
+
+    <label for="notes">Notes</label>
+    <textarea id="notes" placeholder="Anything specific to this session"></textarea>
+
+    <button class="btn-primary" onclick="addSession()">Add session</button>
+  </div>
+
+  <table id="planTable">
+    <thead>
+      <tr><th>Date</th><th>Type</th><th>Distance</th><th>Pace</th><th>Notes</th><th></th></tr>
+    </thead>
+    <tbody id="planBody"></tbody>
+  </table>
+
+  <button class="btn-secondary" onclick="exportPlan()">Export training_plan.json</button>
+
+  <div class="export-note">
+    After exporting, move the downloaded file into <code>~/dashboard_rebuild/</code>, then:
+    <br><code>git add training_plan.json && git commit -m "Update training plan" && git push</code>
+  </div>
+
+<script>
+let plan = [];
+
+async function loadExisting() {
+  try {
+    const res = await fetch('training_plan.json?v=' + Date.now());
+    if (res.ok) plan = await res.json();
+  } catch (e) {
+    // no existing file yet, start empty
+  }
+  render();
+}
+
+function render() {
+  plan.sort((a, b) => a.date.localeCompare(b.date));
+  const body = document.getElementById('planBody');
+  body.innerHTML = plan.map((s, i) => `
+    <tr>
+      <td>${s.date}</td>
+      <td>${s.session_type}</td>
+      <td>${s.target_distance_km ?? '--'} km</td>
+      <td>${s.target_pace ?? '--'}</td>
+      <td>${s.notes ?? ''}</td>
+      <td><button class="btn-danger" onclick="removeSession(${i})">Remove</button></td>
+    </tr>
+  `).join('');
+}
+
+function addSession() {
+  const date = document.getElementById('date').value;
+  if (!date) { alert('Pick a date first.'); return; }
+  plan.push({
+    date,
+    session_type: document.getElementById('sessionType').value,
+    target_distance_km: parseFloat(document.getElementById('distance').value) || null,
+    target_pace: document.getElementById('pace').value || null,
+    notes: document.getElementById('notes').value || null,
+  });
+  document.getElementById('date').value = '';
+  document.getElementById('distance').value = '';
+  document.getElementById('pace').value = '';
+  document.getElementById('notes').value = '';
+  render();
+}
+
+function removeSession(i) {
+  plan.splice(i, 1);
+  render();
+}
+
+function exportPlan() {
+  const blob = new Blob([JSON.stringify(plan, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'training_plan.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+loadExisting();
+</script>
+
+</body>
+</html>

@@ -54,6 +54,9 @@ def pull_day(client, date_str):
         "body_battery_low": None,
         "training_load_acute": None,
         "training_load_chronic": None,
+        "vo2max": None,
+        "vo2max_date": None,
+        "training_status_feedback": None,
     }
 
     # --- RHR ---
@@ -100,6 +103,14 @@ def pull_day(client, date_str):
             row["training_load_chronic"] = acute_dto.get("dailyTrainingLoadChronic")
             row["acwr_garmin"] = acute_dto.get("dailyAcuteChronicWorkloadRatio")
             row["acwr_status"] = acute_dto.get("acwrStatus")
+            row["training_status_feedback"] = latest[device_id].get("trainingStatusFeedbackPhrase")
+        except (KeyError, IndexError):
+            pass
+
+        try:
+            vo2 = status.get("mostRecentVO2Max", {}).get("generic", {})
+            row["vo2max"] = vo2.get("vo2MaxValue")
+            row["vo2max_date"] = vo2.get("calendarDate")
         except (KeyError, IndexError):
             pass
 

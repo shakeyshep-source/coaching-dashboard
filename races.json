@@ -1,0 +1,68 @@
+[
+  {
+    "date": "2026-04-12",
+    "name": "Lightning Bolt 10K",
+    "distance_km": 10.0,
+    "time_seconds": 2355,
+    "time_fmt": "39:15",
+    "tapered": false,
+    "conditions_normal": true,
+    "include_in_prediction": false,
+    "notes": "First race back after off-season. Logged for history, but excluded from prediction — 3+ months old and early-season fitness isn't representative of current form for a race this far out."
+  },
+  {
+    "date": "2026-05-08",
+    "name": "Bourton Mile",
+    "distance_km": 1.60934,
+    "time_seconds": 313,
+    "time_fmt": "5:13",
+    "tapered": false,
+    "conditions_normal": true,
+    "include_in_prediction": true,
+    "notes": "Wet but not windy — rain alone over a mile isn't considered a meaningful performance disruptor here."
+  },
+  {
+    "date": "2026-05-20",
+    "name": "Cardiff 5K (previous edition)",
+    "distance_km": 5.0,
+    "time_seconds": 1099,
+    "time_fmt": "18:19",
+    "tapered": false,
+    "conditions_normal": true,
+    "include_in_prediction": true,
+    "notes": "Same race, earlier date — useful direct comparison for this year's target."
+  },
+  {
+    "date": "2026-05-24",
+    "name": "Hereford 5K",
+    "distance_km": 5.0,
+    "time_seconds": 1098,
+    "time_fmt": "18:18",
+    "tapered": false,
+    "conditions_normal": false,
+    "include_in_prediction": true,
+    "notes": "GI issues from bicarbonate trial."
+  },
+  {
+    "date": "2026-06-14",
+    "name": "Gloucester 10K",
+    "distance_km": 10.0,
+    "time_seconds": 2286,
+    "time_fmt": "38:06",
+    "tapered": false,
+    "conditions_normal": true,
+    "include_in_prediction": true,
+    "notes": "V50 category win. Untapered."
+  },
+  {
+    "date": "2026-06-28",
+    "name": "Cotswold Way Relay (leg)",
+    "distance_km": 14.59,
+    "time_seconds": 4024,
+    "time_fmt": "1:07:04",
+    "tapered": false,
+    "conditions_normal": true,
+    "include_in_prediction": false,
+    "notes": "Respiratory episode in heat. Relay leg, off-road and extremely hilly — not comparable to a flat standalone race. Excluded from Riegel projection."
+  }
+]

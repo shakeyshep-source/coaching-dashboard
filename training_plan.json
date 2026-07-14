@@ -1,0 +1,23 @@
+[
+  {
+    "date": "2026-07-12",
+    "session_type": "easy",
+    "target_distance_km": 7,
+    "target_pace": "5:00km pace",
+    "notes": "test"
+  },
+  {
+    "date": "2026-07-13",
+    "session_type": "easy",
+    "target_distance_km": 8,
+    "target_pace": "5:00-5:15/km",
+    "notes": "Recovery day after long effort."
+  },
+  {
+    "date": "2026-07-22",
+    "session_type": "race",
+    "target_distance_km": 5,
+    "target_pace": "3:30-3:32/km",
+    "notes": "Cardiff 5K. Target 17:30-17:40."
+  }
+]
