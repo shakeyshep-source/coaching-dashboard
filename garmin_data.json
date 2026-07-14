@@ -1,14 +1,5 @@
 [
   {
-    "date": "2026-06-13",
-    "rhr": 48.0,
-    "hrv_last_night": 36,
-    "hrv_status": "BALANCED",
-    "sleep_score": 87,
-    "sleep_duration_hrs": 8.5,
-    "body_battery_peak": 46
-  },
-  {
     "date": "2026-06-14",
     "rhr": 49.0,
     "hrv_last_night": 36,
@@ -276,6 +267,15 @@
     "hrv_status": "BALANCED",
     "sleep_score": 87,
     "sleep_duration_hrs": 8.4,
-    "body_battery_peak": 53
+    "body_battery_peak": 60
+  },
+  {
+    "date": "2026-07-14",
+    "rhr": 48.0,
+    "hrv_last_night": 42,
+    "hrv_status": "BALANCED",
+    "sleep_score": 95,
+    "sleep_duration_hrs": 7.7,
+    "body_battery_peak": 45
   }
 ]
