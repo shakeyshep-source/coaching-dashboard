@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-07-15",
+    "achilles_score": 1,
+    "session_type": "intervals",
+    "session_notes": "wu, 6 x 400, wd [90]\n3:35 paces",
+    "rpe": 4,
+    "on_target": true
+  },
+  {
     "date": "2026-07-12",
     "achilles_score": 0,
     "session_type": "easy",
