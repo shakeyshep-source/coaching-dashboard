@@ -36,7 +36,11 @@ from statistics import mean
 GARMIN_FILE = "garmin_data.json"
 MANUAL_FILE = "manual_log.json"
 WEATHER_FILE = "weather.json"
+PLAN_FILE = "training_plan.json"
+FLAGS_LOG_FILE = "flags_log.json"
 OUTPUT_FILE = "computed_data.json"
+
+HARD_SESSION_TYPES = {"intervals", "tempo", "long", "race"}
 
 
 def load(path):
@@ -57,6 +61,53 @@ def rolling_baseline(values, i, window=7):
     return round(mean(window_vals), 1) if window_vals else None
 
 
+def check_flags(planned_session, achilles_score, rhr_delta, hrv_delta, heat_risk):
+    """Returns a list of reason strings if today's signals suggest the
+    planned session should be reviewed. Never changes the plan itself —
+    that decision stays with the person, always.
+
+    Achilles flags fire regardless of what's planned (or not planned) —
+    a sore achilles is worth surfacing as its own signal, not just a
+    reason to skip a specific hard session. Recovery (HRV/RHR) and heat
+    flags only fire when a genuinely hard session is planned that day,
+    since those are specifically about whether that effort is wise —
+    on a rest day or easy day there's nothing to reconsider there.
+    """
+    reasons = []
+
+    if achilles_score is not None and achilles_score >= 3:
+        reasons.append(f"Achilles scored {achilles_score} — worth keeping an eye on regardless of today's plan.")
+
+    if not planned_session:
+        return reasons
+    is_hard_session = planned_session.get("session_type") in HARD_SESSION_TYPES
+
+    rhr_elevated = rhr_delta is not None and rhr_delta > 2
+    hrv_depressed = hrv_delta is not None and hrv_delta < -2
+    if is_hard_session and rhr_elevated and hrv_depressed:
+        reasons.append("Recovery below baseline on both HRV and RHR, and a hard session is planned.")
+
+    if is_hard_session and heat_risk == "high":
+        reasons.append("Heat risk is high and a hard session is planned.")
+
+    return reasons
+
+
+def update_flags_log(date_str, session_name, reasons, existing_log):
+    """Appends a new flag event if today isn't already logged. Avoids
+    duplicate entries when build_computed.py runs more than once on
+    the same day (e.g. manual re-runs after the automated cron pull).
+    """
+    if not reasons:
+        return existing_log
+    if any(entry["date"] == date_str for entry in existing_log):
+        return existing_log
+    existing_log.append({
+        "date": date_str,
+        "planned_session": session_name,
+        "reasons": reasons,
+    })
+    return existing_log
 def summarise(rhr_delta, hrv_delta, sleep_score, achilles, heat_risk):
     if achilles and achilles >= 3:
         return "Achilles flagged. Consider an easy day or rest."
@@ -83,8 +134,11 @@ def main():
     garmin_rows = load(GARMIN_FILE)
     manual_rows = load(MANUAL_FILE)
     weather_rows = load(WEATHER_FILE)
+    plan_rows = load(PLAN_FILE)
+    flags_log = load(FLAGS_LOG_FILE)
     manual_by_date = index_by_date(manual_rows)
     weather_by_date = index_by_date(weather_rows)
+    plan_by_date = index_by_date(plan_rows)
 
     garmin_rows.sort(key=lambda r: r["date"])
     hrv_series = [r.get("hrv_last_night") for r in garmin_rows]
@@ -113,6 +167,18 @@ def main():
         acwr = row.get("acwr_garmin")
         acwr_status = row.get("acwr_status")
 
+        planned_session = plan_by_date.get(row["date"])
+        flag_reasons = check_flags(
+            planned_session, manual.get("achilles_score"), rhr_delta, hrv_delta, heat_risk
+        )
+        if flag_reasons:
+            flags_log = update_flags_log(
+                row["date"],
+                planned_session.get("session_type") if planned_session else None,
+                flag_reasons,
+                flags_log,
+            )
+
         computed.append({
             "date": row["date"],
             "rhr": row.get("rhr"),
@@ -131,12 +197,17 @@ def main():
             "rhr_delta_from_baseline": rhr_delta,
             "heat_risk": heat_risk,
             "today_summary": summarise(rhr_delta, hrv_delta, row.get("sleep_score"), manual.get("achilles_score"), heat_risk),
+            "plan_flag_reasons": flag_reasons,
         })
 
     with open(OUTPUT_FILE, "w") as f:
         json.dump(computed, f, indent=2)
+    with open(FLAGS_LOG_FILE, "w") as f:
+        json.dump(flags_log, f, indent=2)
 
     print(f"Computed {len(computed)} days -> {OUTPUT_FILE}")
+    if flags_log:
+        print(f"Flags log has {len(flags_log)} total entries")
 
 
 if __name__ == "__main__":

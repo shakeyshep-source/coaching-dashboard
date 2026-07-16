@@ -133,6 +133,7 @@
   <div class="tabs">
     <button class="tab-btn active" data-tab="overview">Overview</button>
     <button class="tab-btn" data-tab="acwr">ACWR</button>
+    <button class="tab-btn" data-tab="plan">Plan</button>
     <button class="tab-btn" data-tab="performance">Performance</button>
     <button class="tab-btn" data-tab="predictor">Predictor</button>
     <button class="tab-btn" data-tab="races">Races</button>
@@ -143,6 +144,7 @@
   </div>
 
   <div id="tab-acwr" class="tab-panel" style="display:none;"></div>
+  <div id="tab-plan" class="tab-panel" style="display:none;"></div>
   <div id="tab-performance" class="tab-panel" style="display:none;"></div>
   <div id="tab-predictor" class="tab-panel" style="display:none;"></div>
   <div id="tab-races" class="tab-panel" style="display:none;"></div>
@@ -378,6 +380,7 @@ function setupTabs(data) {
   });
 
   buildAcwrTab(data);
+  buildPlanTab(data);
   buildPerformanceTab(data);
   buildPredictorTab();
   buildRacesTab();
@@ -434,6 +437,120 @@ function buildAcwrTab(data) {
 }
 
 loadDashboard().then(loadTrainingPlan);
+
+function getWeekStart(dateStr) {
+  const d = new Date(dateStr + 'T00:00:00');
+  const day = d.getDay(); // 0=Sun, 1=Mon...
+  const diff = day === 0 ? -6 : 1 - day; // shift to Monday
+  d.setDate(d.getDate() + diff);
+  return d.toISOString().slice(0, 10);
+}
+
+function fmtWeekLabel(weekStartStr) {
+  const start = new Date(weekStartStr + 'T00:00:00');
+  const end = new Date(start);
+  end.setDate(end.getDate() + 6);
+  const fmt = d => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+  return `Week of ${fmt(start)} - ${fmt(end)}`;
+}
+
+async function buildPlanTab(computedData) {
+  const panel = document.getElementById('tab-plan');
+  const today = computedData[computedData.length - 1];
+
+  let plan = [];
+  let flagsLog = [];
+  try {
+    const res = await fetch('training_plan.json?v=' + Date.now());
+    if (res.ok) plan = await res.json();
+  } catch (e) { /* no plan yet */ }
+  try {
+    const res = await fetch('flags_log.json?v=' + Date.now());
+    if (res.ok) flagsLog = await res.json();
+  } catch (e) { /* no flags yet */ }
+
+  let html = '';
+
+  // Today's flag banner, if today's computed row carries any reasons
+  if (today.plan_flag_reasons && today.plan_flag_reasons.length) {
+    html += `
+      <div style="background:#FFF4E5; border:1px solid #F0C674; border-radius:8px; padding:12px 16px; margin-bottom:1.5rem;">
+        <p style="font-size:13px; font-weight:500; color:#7A5200; margin:0 0 6px;">Worth reviewing today</p>
+        ${today.plan_flag_reasons.map(r => `<p style="font-size:13px; color:#7A5200; margin:2px 0;">• ${r}</p>`).join('')}
+      </div>
+    `;
+  }
+
+  // Group plan sessions by week
+  const grouped = {};
+  plan.sort((a, b) => a.date.localeCompare(b.date));
+  plan.forEach(s => {
+    const weekStart = getWeekStart(s.date);
+    if (!grouped[weekStart]) grouped[weekStart] = [];
+    grouped[weekStart].push(s);
+  });
+
+  const weekKeys = Object.keys(grouped).sort();
+  if (weekKeys.length === 0) {
+    html += '<p style="color:var(--text-muted); font-size:13px;">No sessions in the training plan yet.</p>';
+  } else {
+    weekKeys.forEach(weekStart => {
+      html += `
+        <div class="chart-card">
+          <p class="title">${fmtWeekLabel(weekStart)}</p>
+          <table style="width:100%; border-collapse:collapse; font-size:13px;">
+            <thead>
+              <tr style="text-align:left; color:var(--text-muted);">
+                <th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Type</th>
+                <th style="padding:6px 8px;">Distance</th><th style="padding:6px 8px;">Pace</th>
+                <th style="padding:6px 8px;">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${grouped[weekStart].map(s => `
+                <tr style="border-top:1px solid var(--border); ${s.date === today.date ? 'background:#FFFBEF;' : ''}">
+                  <td style="padding:6px 8px;">${s.date}${s.date === today.date ? ' (today)' : ''}</td>
+                  <td style="padding:6px 8px; text-transform:capitalize;">${s.session_type}</td>
+                  <td style="padding:6px 8px;">${s.target_distance_km ?? '--'} km</td>
+                  <td style="padding:6px 8px;">${s.target_pace ?? '--'}</td>
+                  <td style="padding:6px 8px; color:var(--text-secondary);">${s.notes ?? ''}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
+    });
+  }
+
+  // Flag history — only past events, most recent first
+  if (flagsLog.length) {
+    const sorted = [...flagsLog].sort((a, b) => b.date.localeCompare(a.date));
+    html += `
+      <div class="chart-card">
+        <p class="title">Flag history</p>
+        <table style="width:100%; border-collapse:collapse; font-size:13px;">
+          <thead>
+            <tr style="text-align:left; color:var(--text-muted);">
+              <th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Planned</th><th style="padding:6px 8px;">Reasons</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${sorted.map(f => `
+              <tr style="border-top:1px solid var(--border);">
+                <td style="padding:6px 8px;">${f.date}</td>
+                <td style="padding:6px 8px; text-transform:capitalize;">${f.planned_session ?? '--'}</td>
+                <td style="padding:6px 8px; color:var(--text-secondary);">${f.reasons.join(' ')}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  panel.innerHTML = html;
+}
 
 async function buildPredictorTab() {
   const panel = document.getElementById('tab-predictor');
