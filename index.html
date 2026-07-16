@@ -438,12 +438,22 @@ function buildAcwrTab(data) {
 
 loadDashboard().then(loadTrainingPlan);
 
+function toDateStr(d) {
+  // Always use LOCAL date components, never toISOString() — that
+  // converts to UTC and silently shifts dates back a day whenever
+  // the local timezone is ahead of UTC (e.g. UK on BST).
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+
 function getWeekStart(dateStr) {
   const d = new Date(dateStr + 'T00:00:00');
   const day = d.getDay(); // 0=Sun, 1=Mon...
   const diff = day === 0 ? -6 : 1 - day; // shift to Monday
   d.setDate(d.getDate() + diff);
-  return d.toISOString().slice(0, 10);
+  return toDateStr(d);
 }
 
 function fmtWeekLabel(weekStartStr) {
@@ -489,7 +499,7 @@ async function buildPlanTab(computedData) {
   const weekStarts = [0, 1, 2].map(offset => {
     const d = new Date(todayWeekStart + 'T00:00:00');
     d.setDate(d.getDate() + offset * 7);
-    return d.toISOString().slice(0, 10);
+    return toDateStr(d);
   });
 
   weekStarts.forEach(weekStart => {
@@ -497,7 +507,7 @@ async function buildPlanTab(computedData) {
     for (let i = 0; i < 7; i++) {
       const d = new Date(weekStart + 'T00:00:00');
       d.setDate(d.getDate() + i);
-      days.push(d.toISOString().slice(0, 10));
+      days.push(toDateStr(d));
     }
 
     html += `
