@@ -1,23 +1,51 @@
 [
   {
-    "date": "2026-07-12",
+    "date": "2026-07-16",
     "session_type": "easy",
-    "target_distance_km": 7,
-    "target_pace": "5:00km pace",
-    "notes": "test"
+    "target_distance_km": null,
+    "target_pace": null,
+    "notes": "30-40 min easy"
   },
   {
-    "date": "2026-07-13",
+    "date": "2026-07-17",
+    "session_type": "rest",
+    "target_distance_km": null,
+    "target_pace": null,
+    "notes": "Rest"
+  },
+  {
+    "date": "2026-07-18",
     "session_type": "easy",
-    "target_distance_km": 8,
-    "target_pace": "5:00-5:15/km",
-    "notes": "Recovery day after long effort."
+    "target_distance_km": null,
+    "target_pace": null,
+    "notes": "25-30 min easy + 4 short strides"
+  },
+  {
+    "date": "2026-07-19",
+    "session_type": "rest",
+    "target_distance_km": null,
+    "target_pace": null,
+    "notes": "Rest, or 20 min very easy"
+  },
+  {
+    "date": "2026-07-20",
+    "session_type": "easy",
+    "target_distance_km": null,
+    "target_pace": null,
+    "notes": "10-15 min easy + 4x20s strides. Done early, rest for the remainder of the day."
+  },
+  {
+    "date": "2026-07-21",
+    "session_type": "rest",
+    "target_distance_km": null,
+    "target_pace": null,
+    "notes": "Rest. Prep kit, sleep early."
   },
   {
     "date": "2026-07-22",
     "session_type": "race",
     "target_distance_km": 5,
     "target_pace": "3:30-3:32/km",
-    "notes": "Cardiff 5K. Target 17:30-17:40."
+    "notes": "Cardiff 5K. WU: 2-3km easy + 4 strides. Symbicort 20 min before gun, salbutamol 15 min before gun. Target 17:30-17:40."
   }
 ]
