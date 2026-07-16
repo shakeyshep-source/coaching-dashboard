@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-07-12",
+    "achilles_score": 0,
+    "session_type": "easy",
+    "session_notes": "22c with a breeze. Stayed easy after yesterday plus a late night.",
+    "rpe": 3,
+    "on_target": true
+  },
+  {
     "date": "2026-07-15",
     "achilles_score": 1,
     "session_type": "intervals",
@@ -8,11 +16,11 @@
     "on_target": true
   },
   {
-    "date": "2026-07-12",
+    "date": "2026-07-16",
     "achilles_score": 0,
     "session_type": "easy",
-    "session_notes": "22c with a breeze. Stayed easy after yesterday plus a late night.",
-    "rpe": 3,
-    "on_target": true
+    "rpe": 2.0,
+    "on_target": true,
+    "session_notes": "on / off road - 28c"
   }
 ]

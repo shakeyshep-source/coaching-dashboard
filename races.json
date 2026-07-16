@@ -8,7 +8,7 @@
     "tapered": false,
     "conditions_normal": true,
     "include_in_prediction": false,
-    "notes": "First race back after off-season. Logged for history, but excluded from prediction — 3+ months old and early-season fitness isn't representative of current form for a race this far out."
+    "notes": "First race back after off-season. Logged for history, but excluded from prediction \u2014 3+ months old and early-season fitness isn't representative of current form for a race this far out."
   },
   {
     "date": "2026-05-08",
@@ -19,7 +19,7 @@
     "tapered": false,
     "conditions_normal": true,
     "include_in_prediction": true,
-    "notes": "Wet but not windy — rain alone over a mile isn't considered a meaningful performance disruptor here."
+    "notes": "Wet but not windy \u2014 rain alone over a mile isn't considered a meaningful performance disruptor here."
   },
   {
     "date": "2026-05-20",
@@ -30,7 +30,7 @@
     "tapered": false,
     "conditions_normal": true,
     "include_in_prediction": true,
-    "notes": "Same race, earlier date — useful direct comparison for this year's target."
+    "notes": "Same race, earlier date \u2014 useful direct comparison for this year's target."
   },
   {
     "date": "2026-05-24",
@@ -63,6 +63,6 @@
     "tapered": false,
     "conditions_normal": true,
     "include_in_prediction": false,
-    "notes": "Respiratory episode in heat. Relay leg, off-road and extremely hilly — not comparable to a flat standalone race. Excluded from Riegel projection."
+    "notes": "Respiratory episode in heat. Relay leg, off-road and extremely hilly \u2014 not comparable to a flat standalone race. Excluded from Riegel projection."
   }
 ]
