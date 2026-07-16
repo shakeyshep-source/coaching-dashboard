@@ -469,9 +469,11 @@ async function buildPlanTab(computedData) {
     if (res.ok) flagsLog = await res.json();
   } catch (e) { /* no flags yet */ }
 
+  const planByDate = {};
+  plan.forEach(s => { planByDate[s.date] = s; });
+
   let html = '';
 
-  // Today's flag banner, if today's computed row carries any reasons
   if (today.plan_flag_reasons && today.plan_flag_reasons.length) {
     html += `
       <div style="background:#FFF4E5; border:1px solid #F0C674; border-radius:8px; padding:12px 16px; margin-bottom:1.5rem;">
@@ -481,47 +483,54 @@ async function buildPlanTab(computedData) {
     `;
   }
 
-  // Group plan sessions by week
-  const grouped = {};
-  plan.sort((a, b) => a.date.localeCompare(b.date));
-  plan.forEach(s => {
-    const weekStart = getWeekStart(s.date);
-    if (!grouped[weekStart]) grouped[weekStart] = [];
-    grouped[weekStart].push(s);
+  // Build full 7-day weeks: this week + next 2 weeks, showing every day
+  // (with or without a planned session), not just days that have entries.
+  const todayWeekStart = getWeekStart(today.date);
+  const weekStarts = [0, 1, 2].map(offset => {
+    const d = new Date(todayWeekStart + 'T00:00:00');
+    d.setDate(d.getDate() + offset * 7);
+    return d.toISOString().slice(0, 10);
   });
 
-  const weekKeys = Object.keys(grouped).sort();
-  if (weekKeys.length === 0) {
-    html += '<p style="color:var(--text-muted); font-size:13px;">No sessions in the training plan yet.</p>';
-  } else {
-    weekKeys.forEach(weekStart => {
-      html += `
-        <div class="chart-card">
-          <p class="title">${fmtWeekLabel(weekStart)}</p>
-          <table style="width:100%; border-collapse:collapse; font-size:13px;">
-            <thead>
-              <tr style="text-align:left; color:var(--text-muted);">
-                <th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Type</th>
-                <th style="padding:6px 8px;">Distance</th><th style="padding:6px 8px;">Pace</th>
-                <th style="padding:6px 8px;">Notes</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${grouped[weekStart].map(s => `
-                <tr style="border-top:1px solid var(--border); ${s.date === today.date ? 'background:#FFFBEF;' : ''}">
-                  <td style="padding:6px 8px;">${s.date}${s.date === today.date ? ' (today)' : ''}</td>
-                  <td style="padding:6px 8px; text-transform:capitalize;">${s.session_type}</td>
-                  <td style="padding:6px 8px;">${s.target_distance_km ?? '--'} km</td>
-                  <td style="padding:6px 8px;">${s.target_pace ?? '--'}</td>
-                  <td style="padding:6px 8px; color:var(--text-secondary);">${s.notes ?? ''}</td>
+  weekStarts.forEach(weekStart => {
+    const days = [];
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(weekStart + 'T00:00:00');
+      d.setDate(d.getDate() + i);
+      days.push(d.toISOString().slice(0, 10));
+    }
+
+    html += `
+      <div class="chart-card">
+        <p class="title">${fmtWeekLabel(weekStart)}</p>
+        <table style="width:100%; border-collapse:collapse; font-size:13px;">
+          <thead>
+            <tr style="text-align:left; color:var(--text-muted);">
+              <th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Type</th>
+              <th style="padding:6px 8px;">Distance</th><th style="padding:6px 8px;">Pace</th>
+              <th style="padding:6px 8px;">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${days.map(dateStr => {
+              const s = planByDate[dateStr];
+              const isToday = dateStr === today.date;
+              const dayName = new Date(dateStr + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short' });
+              return `
+                <tr style="border-top:1px solid var(--border); ${isToday ? 'background:#FFFBEF;' : ''}">
+                  <td style="padding:6px 8px;">${dayName} ${dateStr.slice(5)}${isToday ? ' (today)' : ''}</td>
+                  <td style="padding:6px 8px; text-transform:capitalize; ${!s ? 'color:var(--text-muted);' : ''}">${s ? s.session_type : 'Nothing planned'}</td>
+                  <td style="padding:6px 8px;">${s && s.target_distance_km ? s.target_distance_km + ' km' : '--'}</td>
+                  <td style="padding:6px 8px;">${s && s.target_pace ? s.target_pace : '--'}</td>
+                  <td style="padding:6px 8px; color:var(--text-secondary);">${s && s.notes ? s.notes : ''}</td>
                 </tr>
-              `).join('')}
-            </tbody>
-          </table>
-        </div>
-      `;
-    });
-  }
+              `;
+            }).join('')}
+          </tbody>
+        </table>
+      </div>
+    `;
+  });
 
   // Flag history — only past events, most recent first
   if (flagsLog.length) {
