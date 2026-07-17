@@ -1,17 +1,10 @@
 [
   {
-    "date": "2026-07-16",
-    "session_type": "easy",
-    "target_distance_km": null,
-    "target_pace": null,
-    "notes": "30-40 min easy"
-  },
-  {
     "date": "2026-07-17",
     "session_type": "rest",
     "target_distance_km": null,
     "target_pace": null,
-    "notes": "Rest"
+    "notes": "Rest. Recovery after yesterday's 8K easy."
   },
   {
     "date": "2026-07-18",
@@ -22,24 +15,24 @@
   },
   {
     "date": "2026-07-19",
-    "session_type": "rest",
+    "session_type": "easy",
     "target_distance_km": null,
     "target_pace": null,
-    "notes": "Rest, or 20 min very easy"
+    "notes": "30-35 min easy — keep the stimulus, don't go flat"
   },
   {
     "date": "2026-07-20",
     "session_type": "easy",
     "target_distance_km": null,
-    "target_pace": null,
-    "notes": "10-15 min easy + 4x20s strides. Done early, rest for the remainder of the day."
+    "target_pace": "race rhythm",
+    "notes": "4x200m at race rhythm. Done early, rest remainder of day."
   },
   {
     "date": "2026-07-21",
-    "session_type": "rest",
+    "session_type": "easy",
     "target_distance_km": null,
     "target_pace": null,
-    "notes": "Rest. Prep kit, sleep early."
+    "notes": "15 min easy + 4 strides. Prep kit, sleep early."
   },
   {
     "date": "2026-07-22",
