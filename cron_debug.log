@@ -122,3 +122,62 @@ OK: Google Forms sync
 OK: Computed layer build
 
 All steps completed.
+To https://github.com/shakeyshep-source/coaching-dashboard.git
+   de50da6..a082e83  main -> main
+Cron fired: Sun Jul 19 08:00:01 AM BST 2026
+=== run_all.py started 2026-07-19T08:00:02.917845 ===
+
+--- Garmin data pull (garmin_pull.py) ---
+
+FAILED: Garmin data pull
+Traceback (most recent call last):
+  File "/home/shakeyshep/coaching-dashboard/garmin_pull.py", line 143, in <module>
+    main()
+  File "/home/shakeyshep/coaching-dashboard/garmin_pull.py", line 129, in main
+    row = pull_day(client, date_str)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shakeyshep/coaching-dashboard/garmin_pull.py", line 99, in pull_day
+    latest = status["mostRecentTrainingStatus"]["latestTrainingStatusData"]
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+
+
+--- Weather pull (weather_pull.py) ---
+2026-07-19  Max: 24.2C  Humidity: 49%  Risk: high
+2026-07-20  Max: 26.0C  Humidity: 48%  Risk: high
+2026-07-21  Max: 27.2C  Humidity: 54%  Risk: high
+2026-07-22  Max: 26.0C  Humidity: 62%  Risk: high
+2026-07-23  Max: 26.7C  Humidity: 66%  Risk: high
+2026-07-24  Max: 26.0C  Humidity: 62%  Risk: high
+2026-07-25  Max: 24.2C  Humidity: 59%  Risk: high
+
+Saved 7 days to weather.json
+
+
+--- Race prediction (race_predictor.py) ---
+Riegel estimate: 17:27.72 - 18:25.83 (central: 17:56.78)
+
+
+--- Google Forms sync (sheets_pull.py) ---
+--- Sheets pull ---
+Pulling daily log...
+  1 sheet entries -> 3 total in manual_log.json
+Pulling training plan...
+  0 sheet entries -> 6 total in training_plan.json
+Pulling race log...
+  0 sheet entries -> 6 total in races.json
+Sheets pull complete.
+
+
+--- Computed layer build (build_computed.py) ---
+Computed 14 days -> computed_data.json
+
+
+=== Summary ===
+FAILED: Garmin data pull
+OK: Weather pull
+OK: Race prediction
+OK: Google Forms sync
+OK: Computed layer build
+
+One or more steps failed — check output above.
