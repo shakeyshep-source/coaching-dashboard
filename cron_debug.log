@@ -181,3 +181,64 @@ OK: Google Forms sync
 OK: Computed layer build
 
 One or more steps failed — check output above.
+Cron fired: Mon Jul 20 08:00:01 AM BST 2026
+=== run_all.py started 2026-07-20T08:00:01.940294 ===
+
+--- Garmin data pull (garmin_pull.py) ---
+2026-07-20  RHR: 46.0  HRV: 42  Sleep: 96  BB: 100
+2026-07-19  RHR: 48.0  HRV: 35  Sleep: 81  BB: 84
+2026-07-18  RHR: 47.0  HRV: 43  Sleep: 89  BB: 99
+2026-07-17  RHR: 47.0  HRV: 42  Sleep: 88  BB: 100
+2026-07-16  RHR: 48.0  HRV: 36  Sleep: 80  BB: 75
+2026-07-15  RHR: 49.0  HRV: 35  Sleep: 87  BB: 87
+2026-07-14  RHR: 48.0  HRV: 42  Sleep: 95  BB: 100
+2026-07-13  RHR: 47.0  HRV: 36  Sleep: 87  BB: 94
+2026-07-12  RHR: 51.0  HRV: 34  Sleep: 81  BB: 77
+2026-07-11  RHR: 48.0  HRV: 36  Sleep: 85  BB: 89
+2026-07-10  RHR: 49.0  HRV: 39  Sleep: 90  BB: 91
+2026-07-09  RHR: 48.0  HRV: 36  Sleep: 91  BB: 92
+2026-07-08  RHR: 49.0  HRV: 33  Sleep: 84  BB: 74
+2026-07-07  RHR: 48.0  HRV: 41  Sleep: 90  BB: 100
+
+Saved 14 days to garmin_data.json
+
+
+--- Weather pull (weather_pull.py) ---
+2026-07-20  Max: 26.2C  Humidity: 44%  Risk: high
+2026-07-21  Max: 26.4C  Humidity: 52%  Risk: high
+2026-07-22  Max: 24.2C  Humidity: 60%  Risk: high
+2026-07-23  Max: 27.1C  Humidity: 62%  Risk: high
+2026-07-24  Max: 27.1C  Humidity: 59%  Risk: high
+2026-07-25  Max: 25.0C  Humidity: 59%  Risk: high
+2026-07-26  Max: 24.1C  Humidity: 61%  Risk: high
+
+Saved 7 days to weather.json
+
+
+--- Race prediction (race_predictor.py) ---
+Riegel estimate: 17:27.72 - 18:25.83 (central: 17:56.78)
+
+
+--- Google Forms sync (sheets_pull.py) ---
+--- Sheets pull ---
+Pulling daily log...
+  1 sheet entries -> 3 total in manual_log.json
+Pulling training plan...
+  0 sheet entries -> 6 total in training_plan.json
+Pulling race log...
+  0 sheet entries -> 6 total in races.json
+Sheets pull complete.
+
+
+--- Computed layer build (build_computed.py) ---
+Computed 14 days -> computed_data.json
+
+
+=== Summary ===
+OK: Garmin data pull
+OK: Weather pull
+OK: Race prediction
+OK: Google Forms sync
+OK: Computed layer build
+
+All steps completed.
