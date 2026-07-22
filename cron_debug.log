@@ -305,3 +305,67 @@ OK: Google Forms sync
 OK: Computed layer build
 
 All steps completed.
+To https://github.com/shakeyshep-source/coaching-dashboard.git
+   82562b6..c2f96ae  main -> main
+Cron fired: Wed Jul 22 08:00:01 AM BST 2026
+=== run_all.py started 2026-07-22T08:00:02.049128 ===
+
+--- Garmin data pull (garmin_pull.py) ---
+2026-07-22  RHR: 48.0  HRV: 39  Sleep: 90  BB: 95
+2026-07-21  RHR: 48.0  HRV: 41  Sleep: 84  BB: 90
+2026-07-20  RHR: 46.0  HRV: 42  Sleep: 96  BB: 100
+2026-07-19  RHR: 48.0  HRV: 35  Sleep: 81  BB: 84
+2026-07-18  RHR: 47.0  HRV: 43  Sleep: 89  BB: 99
+2026-07-17  RHR: 47.0  HRV: 42  Sleep: 88  BB: 100
+2026-07-16  RHR: 48.0  HRV: 36  Sleep: 80  BB: 75
+2026-07-15  RHR: 49.0  HRV: 35  Sleep: 87  BB: 87
+2026-07-14  RHR: 48.0  HRV: 42  Sleep: 95  BB: 100
+2026-07-13  RHR: 47.0  HRV: 36  Sleep: 87  BB: 94
+2026-07-12  RHR: 51.0  HRV: 34  Sleep: 81  BB: 77
+2026-07-11  RHR: 48.0  HRV: 36  Sleep: 85  BB: 89
+2026-07-10  RHR: 49.0  HRV: 39  Sleep: 90  BB: 91
+2026-07-09  RHR: 48.0  HRV: 36  Sleep: 91  BB: 92
+
+Saved 14 days to garmin_data.json
+
+
+--- Weather pull (weather_pull.py) ---
+2026-07-22  Max: 27.3C  Humidity: 54%  Risk: high
+2026-07-23  Max: 27.6C  Humidity: 53%  Risk: high
+2026-07-24  Max: 27.5C  Humidity: 61%  Risk: high
+2026-07-25  Max: 26.1C  Humidity: 60%  Risk: high
+2026-07-26  Max: 24.6C  Humidity: 60%  Risk: high
+2026-07-27  Max: 24.2C  Humidity: 62%  Risk: high
+2026-07-28  Max: 26.6C  Humidity: 63%  Risk: high
+
+Saved 7 days to weather.json
+
+
+--- Race prediction (race_predictor.py) ---
+Riegel estimate: 17:27.72 - 18:25.83 (central: 17:56.78)
+
+
+--- Google Forms sync (sheets_pull.py) ---
+--- Sheets pull ---
+Pulling daily log...
+  1 sheet entries -> 3 total in manual_log.json
+Pulling training plan...
+  0 sheet entries -> 6 total in training_plan.json
+Pulling race log...
+  0 sheet entries -> 6 total in races.json
+Sheets pull complete.
+
+
+--- Computed layer build (build_computed.py) ---
+Computed 14 days -> computed_data.json
+Flags log has 1 total entries
+
+
+=== Summary ===
+OK: Garmin data pull
+OK: Weather pull
+OK: Race prediction
+OK: Google Forms sync
+OK: Computed layer build
+
+All steps completed.
