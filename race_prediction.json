@@ -1,14 +1,52 @@
 {
-  "race_name": "Cardiff 5K",
-  "race_date": "2026-07-22",
   "generated_date": "2026-07-23",
-  "riegel_estimate": {
-    "predicted_time_fmt": "17:58.78",
-    "low_estimate_fmt": "17:29.72",
-    "high_estimate_fmt": "18:27.83",
-    "note": "Riegel estimate based on: Bourton Mile, Cardiff 5K (previous edition), Gloucester 10K. Excluded (compromised conditions): Lightning Bolt 10K (First race back after off-season. Logged for history, but excluded from prediction \u2014 3+ months old and early-season fitness isn't representative of current form for a race this far out.), Hereford 5K (GI issues from bicarbonate trial.), Cotswold Way Relay (leg) (Respiratory episode in heat. Relay leg, off-road and extremely hilly \u2014 not comparable to a flat standalone race. Excluded from Riegel projection.)"
+  "next_race": null,
+  "predictions": {
+    "5K": {
+      "predicted_time_fmt": "17:58.78",
+      "low_estimate_fmt": "17:29.72",
+      "high_estimate_fmt": "18:27.83",
+      "note": "Based on 3 clean race result(s)."
+    },
+    "10K": {
+      "predicted_time_fmt": "37:29.18",
+      "low_estimate_fmt": "36:28.60",
+      "high_estimate_fmt": "38:29.75",
+      "note": "Based on 3 clean race result(s)."
+    },
+    "Half Marathon": {
+      "predicted_time_fmt": "1:22:42.59",
+      "low_estimate_fmt": "1:20:28.94",
+      "high_estimate_fmt": "1:24:56.24",
+      "note": "Based on 3 clean race result(s). Reasonably grounded if based on a 10K+ result; more of a stretch if only projected from 5K."
+    },
+    "Marathon": {
+      "predicted_time_fmt": "2:52:26.66",
+      "low_estimate_fmt": "2:47:48.00",
+      "high_estimate_fmt": "2:57:05.32",
+      "note": "Based on 3 clean race result(s). CAVEAT: marathon projections from short-race data are unreliable \u2014 doesn't account for fuelling or sustained multi-hour effort. Rough ballpark only."
+    }
   },
-  "vo2max_note": "VO2max is 56.0, stable over the recent window.",
+  "vo2max_note": "VO2max is 56.0 (up 0.0 since earliest reading).",
+  "based_on_races": [
+    "Bourton Mile",
+    "Cardiff 5K (previous edition)",
+    "Gloucester 10K"
+  ],
+  "excluded_races": [
+    {
+      "name": "Lightning Bolt 10K",
+      "reason": "First race back after off-season. Logged for history, but excluded from prediction \u2014 3+ months old and early-season fitness isn't representative of current form for a race this far out."
+    },
+    {
+      "name": "Hereford 5K",
+      "reason": "GI issues from bicarbonate trial."
+    },
+    {
+      "name": "Cotswold Way Relay (leg)",
+      "reason": "Respiratory episode in heat. Relay leg, off-road and extremely hilly \u2014 not comparable to a flat standalone race. Excluded from Riegel projection."
+    }
+  ],
   "recent_key_sessions": [
     {
       "date": "2026-07-08",

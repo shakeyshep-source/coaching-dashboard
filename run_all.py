@@ -19,8 +19,8 @@ from datetime import datetime
 STEPS = [
     ("garmin_pull.py", "Garmin data pull"),
     ("weather_pull.py", "Weather pull"),
-    ("race_predictor.py", "Race prediction"),
     ("sheets_pull.py", "Google Forms sync"),
+    ("race_predictor.py", "Race prediction"),
     ("build_computed.py", "Computed layer build"),
 ]
 

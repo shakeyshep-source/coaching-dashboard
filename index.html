@@ -583,29 +583,62 @@ async function buildPredictorTab() {
     return;
   }
 
-  const r = pred.riegel_estimate;
-  const daysToRace = Math.ceil((new Date(pred.race_date) - new Date(pred.generated_date)) / 86400000);
+  const distances = ['5K', '10K', 'Half Marathon', 'Marathon'];
+
+  let nextRaceHtml = '';
+  if (pred.next_race && pred.next_race.date) {
+    const daysToRace = Math.ceil((new Date(pred.next_race.date) - new Date(pred.generated_date)) / 86400000);
+    nextRaceHtml = `
+      <div class="card" style="margin-bottom:1.5rem;">
+        <p class="label">Next race</p>
+        <p class="value" style="font-size:18px;">${pred.next_race.name || 'Unnamed race'}</p>
+        <p class="delta flat">${pred.next_race.date} — ${daysToRace} days away</p>
+      </div>
+    `;
+  }
+
+  const cardsHtml = distances.map(label => {
+    const p = pred.predictions[label];
+    if (!p || !p.predicted_time_fmt) {
+      return `
+        <div class="card">
+          <p class="label">${label}</p>
+          <p class="value" style="font-size:16px; color:var(--text-muted);">No data</p>
+        </div>
+      `;
+    }
+    return `
+      <div class="card">
+        <p class="label">${label}</p>
+        <p class="value">${p.predicted_time_fmt}</p>
+        <p class="delta flat">${p.low_estimate_fmt} - ${p.high_estimate_fmt}</p>
+      </div>
+    `;
+  }).join('');
+
+  const notesHtml = distances.map(label => {
+    const p = pred.predictions[label];
+    if (!p || !p.note) return '';
+    return `<p style="font-size:12px; color:var(--text-secondary); margin:4px 0;"><strong>${label}:</strong> ${p.note}</p>`;
+  }).join('');
 
   panel.innerHTML = `
+    ${nextRaceHtml}
     <div class="card-grid">
-      <div class="card">
-        <p class="label">${pred.race_name}</p>
-        <p class="value">${r.predicted_time_fmt ?? '--'}</p>
-        <p class="delta flat">Riegel estimate</p>
-      </div>
-      <div class="card">
-        <p class="label">Range</p>
-        <p class="value" style="font-size:18px;">${r.low_estimate_fmt ?? '--'} - ${r.high_estimate_fmt ?? '--'}</p>
-      </div>
-      <div class="card">
-        <p class="label">Days to race</p>
-        <p class="value">${daysToRace}</p>
-      </div>
+      ${cardsHtml}
     </div>
     <div class="chart-card">
-      <p class="title">Basis</p>
-      <p style="font-size:13px; color:var(--text-secondary); margin:0 0 10px;">${r.note}</p>
-      <p style="font-size:13px; color:var(--text-secondary); margin:0 0 10px; border-top:1px solid var(--border); padding-top:10px;">${pred.vo2max_note}</p>
+      <p class="title">Basis for these estimates</p>
+      <p style="font-size:13px; color:var(--text-secondary); margin:0 0 10px;">${pred.vo2max_note}</p>
+      <p style="font-size:13px; color:var(--text-secondary); margin:0 0 10px; border-top:1px solid var(--border); padding-top:10px;">
+        Based on: ${pred.based_on_races.length ? pred.based_on_races.join(', ') : 'no clean races yet'}
+      </p>
+      ${pred.excluded_races && pred.excluded_races.length ? `
+        <p style="font-size:12px; color:var(--text-muted); margin:8px 0 0;">
+          Excluded: ${pred.excluded_races.map(r => `${r.name} (${r.reason})`).join('; ')}
+        </p>
+      ` : ''}
+      ${notesHtml}
       ${pred.recent_key_sessions && pred.recent_key_sessions.length ? `
         <p style="font-size:13px; color:var(--text-muted); margin:10px 0 4px; border-top:1px solid var(--border); padding-top:10px;">
           Recent key sessions (for reference — not converted into a predicted time):
@@ -613,7 +646,6 @@ async function buildPredictorTab() {
         ${pred.recent_key_sessions.map(s => `
           <p style="font-size:13px; color:var(--text-secondary); margin:2px 0;">${s.date}: ${s.description}</p>
         `).join('')}
-        <p style="font-size:12px; color:var(--text-muted); margin:8px 0 0;">${pred.key_sessions_note}</p>
       ` : ''}
     </div>
   `;
