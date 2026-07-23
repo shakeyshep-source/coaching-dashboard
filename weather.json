@@ -20,7 +20,7 @@
     "temp_max_c": 27.5,
     "temp_min_c": 14.2,
     "humidity_pct": 56,
-    "wind_speed_kmh": 22.3,
+    "wind_speed_kmh": 25.2,
     "heat_risk": "high"
   },
   {
@@ -36,7 +36,7 @@
     "temp_max_c": 26.5,
     "temp_min_c": 10.8,
     "humidity_pct": 61,
-    "wind_speed_kmh": 19.4,
+    "wind_speed_kmh": 18.4,
     "heat_risk": "high"
   },
   {
@@ -44,7 +44,7 @@
     "temp_max_c": 26.2,
     "temp_min_c": 15.1,
     "humidity_pct": 65,
-    "wind_speed_kmh": 19.8,
+    "wind_speed_kmh": 18.7,
     "heat_risk": "high"
   },
   {
@@ -52,7 +52,7 @@
     "temp_max_c": 28.0,
     "temp_min_c": 15.5,
     "humidity_pct": 61,
-    "wind_speed_kmh": 15.3,
+    "wind_speed_kmh": 15.8,
     "heat_risk": "high"
   }
 ]

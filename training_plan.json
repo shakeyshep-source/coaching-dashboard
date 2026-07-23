@@ -89,5 +89,12 @@
     "target_distance_km": null,
     "target_pace": null,
     "notes": "45-50 min easy - bridge week complete, HM build proper begins next week"
+  },
+  {
+    "date": "2026-09-20",
+    "session_type": "race",
+    "target_distance_km": 21.0975,
+    "target_pace": null,
+    "notes": "Cheltenham Half Marathon."
   }
 ]

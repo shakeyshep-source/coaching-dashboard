@@ -1,6 +1,10 @@
 {
   "generated_date": "2026-07-23",
-  "next_race": null,
+  "next_race": {
+    "name": "Cheltenham Half Marathon",
+    "date": "2026-09-20",
+    "distance_km": 21.0975
+  },
   "predictions": {
     "5K": {
       "predicted_time_fmt": "17:58.78",
