@@ -261,7 +261,7 @@
   },
   {
     "date": "2026-07-23",
-    "rhr": 51.0,
+    "rhr": 50.0,
     "hrv_last_night": 39,
     "sleep_score": 57,
     "body_battery_high": 74,
@@ -274,7 +274,7 @@
     "hrv_baseline_7d": 39.7,
     "hrv_delta_from_baseline": -0.7,
     "rhr_baseline_7d": 47.4,
-    "rhr_delta_from_baseline": 3.6,
+    "rhr_delta_from_baseline": 2.6,
     "heat_risk": "high",
     "today_summary": "Recovery slightly below baseline. Fine to train but stay conservative. Heat risk is high \u2014 watch for respiratory symptoms.",
     "plan_flag_reasons": []

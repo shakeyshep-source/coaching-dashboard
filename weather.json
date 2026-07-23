@@ -1,26 +1,26 @@
 [
   {
     "date": "2026-07-23",
-    "temp_max_c": 27.1,
+    "temp_max_c": 27.2,
     "temp_min_c": 15.9,
-    "humidity_pct": 55,
-    "wind_speed_kmh": 15.8,
+    "humidity_pct": 56,
+    "wind_speed_kmh": 18.0,
     "heat_risk": "high"
   },
   {
     "date": "2026-07-24",
-    "temp_max_c": 27.0,
-    "temp_min_c": 15.3,
-    "humidity_pct": 59,
-    "wind_speed_kmh": 16.9,
+    "temp_max_c": 27.2,
+    "temp_min_c": 15.0,
+    "humidity_pct": 57,
+    "wind_speed_kmh": 15.5,
     "heat_risk": "high"
   },
   {
     "date": "2026-07-25",
-    "temp_max_c": 27.5,
-    "temp_min_c": 14.2,
-    "humidity_pct": 56,
-    "wind_speed_kmh": 25.2,
+    "temp_max_c": 27.1,
+    "temp_min_c": 14.9,
+    "humidity_pct": 53,
+    "wind_speed_kmh": 22.8,
     "heat_risk": "high"
   },
   {
