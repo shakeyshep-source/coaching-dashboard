@@ -64,5 +64,16 @@
     "conditions_normal": true,
     "include_in_prediction": false,
     "notes": "Respiratory episode in heat. Relay leg, off-road and extremely hilly \u2014 not comparable to a flat standalone race. Excluded from Riegel projection."
+  },
+  {
+    "date": "2026-07-22",
+    "name": "Cardiff 5K",
+    "distance_km": 5.02,
+    "time_seconds": 1068,
+    "time_fmt": "17:48",
+    "tapered": true,
+    "conditions_normal": true,
+    "include_in_prediction": true,
+    "notes": "Chip time 17:48, gun 17:53. New fastest 5K of 2026 (PB by 1m2s vs previous 2026 time). 104th of 400 overall, 12th of 48 in M45 age group (top 50). 24-25C. Bang on plan through 3km, started to fade around 4.5km - stone in shoe caused a blister but nothing major. Nike Vaporfly."
   }
 ]

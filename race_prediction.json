@@ -7,35 +7,36 @@
   },
   "predictions": {
     "5K": {
-      "predicted_time_fmt": "17:58.78",
-      "low_estimate_fmt": "17:29.72",
-      "high_estimate_fmt": "18:27.83",
-      "note": "Based on 3 clean race result(s)."
+      "predicted_time_fmt": "17:54.96",
+      "low_estimate_fmt": "17:25.90",
+      "high_estimate_fmt": "18:24.01",
+      "note": "Based on 4 clean race result(s)."
     },
     "10K": {
-      "predicted_time_fmt": "37:29.18",
-      "low_estimate_fmt": "36:28.60",
-      "high_estimate_fmt": "38:29.75",
-      "note": "Based on 3 clean race result(s)."
+      "predicted_time_fmt": "37:21.21",
+      "low_estimate_fmt": "36:20.63",
+      "high_estimate_fmt": "38:21.78",
+      "note": "Based on 4 clean race result(s)."
     },
     "Half Marathon": {
-      "predicted_time_fmt": "1:22:42.59",
-      "low_estimate_fmt": "1:20:28.94",
-      "high_estimate_fmt": "1:24:56.24",
-      "note": "Based on 3 clean race result(s). Reasonably grounded if based on a 10K+ result; more of a stretch if only projected from 5K."
+      "predicted_time_fmt": "1:22:25.01",
+      "low_estimate_fmt": "1:20:11.36",
+      "high_estimate_fmt": "1:24:38.66",
+      "note": "Based on 4 clean race result(s). Reasonably grounded if based on a 10K+ result; more of a stretch if only projected from 5K."
     },
     "Marathon": {
-      "predicted_time_fmt": "2:52:26.66",
-      "low_estimate_fmt": "2:47:48.00",
-      "high_estimate_fmt": "2:57:05.32",
-      "note": "Based on 3 clean race result(s). CAVEAT: marathon projections from short-race data are unreliable \u2014 doesn't account for fuelling or sustained multi-hour effort. Rough ballpark only."
+      "predicted_time_fmt": "2:51:50.01",
+      "low_estimate_fmt": "2:47:11.35",
+      "high_estimate_fmt": "2:56:28.66",
+      "note": "Based on 4 clean race result(s). CAVEAT: marathon projections from short-race data are unreliable \u2014 doesn't account for fuelling or sustained multi-hour effort. Rough ballpark only."
     }
   },
   "vo2max_note": "VO2max is 56.0 (up 0.0 since earliest reading).",
   "based_on_races": [
     "Bourton Mile",
     "Cardiff 5K (previous edition)",
-    "Gloucester 10K"
+    "Gloucester 10K",
+    "Cardiff 5K"
   ],
   "excluded_races": [
     {
