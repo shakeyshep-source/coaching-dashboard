@@ -1,58 +1,58 @@
 [
   {
-    "date": "2026-07-23",
-    "temp_max_c": 27.2,
-    "temp_min_c": 15.9,
-    "humidity_pct": 56,
-    "wind_speed_kmh": 18.0,
-    "heat_risk": "high"
-  },
-  {
     "date": "2026-07-24",
-    "temp_max_c": 27.2,
-    "temp_min_c": 15.0,
-    "humidity_pct": 57,
-    "wind_speed_kmh": 15.5,
+    "temp_max_c": 27.8,
+    "temp_min_c": 15.2,
+    "humidity_pct": 54,
+    "wind_speed_kmh": 19.1,
     "heat_risk": "high"
   },
   {
     "date": "2026-07-25",
-    "temp_max_c": 27.1,
-    "temp_min_c": 14.9,
-    "humidity_pct": 53,
-    "wind_speed_kmh": 22.8,
+    "temp_max_c": 27.4,
+    "temp_min_c": 14.8,
+    "humidity_pct": 54,
+    "wind_speed_kmh": 21.2,
     "heat_risk": "high"
   },
   {
     "date": "2026-07-26",
-    "temp_max_c": 23.9,
-    "temp_min_c": 17.0,
-    "humidity_pct": 66,
-    "wind_speed_kmh": 21.6,
+    "temp_max_c": 23.1,
+    "temp_min_c": 18.0,
+    "humidity_pct": 65,
+    "wind_speed_kmh": 26.6,
     "heat_risk": "moderate"
   },
   {
     "date": "2026-07-27",
-    "temp_max_c": 26.5,
-    "temp_min_c": 10.8,
+    "temp_max_c": 25.7,
+    "temp_min_c": 13.8,
     "humidity_pct": 61,
-    "wind_speed_kmh": 18.4,
+    "wind_speed_kmh": 13.3,
     "heat_risk": "high"
   },
   {
     "date": "2026-07-28",
-    "temp_max_c": 26.2,
-    "temp_min_c": 15.1,
-    "humidity_pct": 65,
-    "wind_speed_kmh": 18.7,
+    "temp_max_c": 27.1,
+    "temp_min_c": 15.3,
+    "humidity_pct": 61,
+    "wind_speed_kmh": 17.6,
     "heat_risk": "high"
   },
   {
     "date": "2026-07-29",
-    "temp_max_c": 28.0,
-    "temp_min_c": 15.5,
-    "humidity_pct": 61,
-    "wind_speed_kmh": 15.8,
+    "temp_max_c": 28.2,
+    "temp_min_c": 14.1,
+    "humidity_pct": 65,
+    "wind_speed_kmh": 10.1,
+    "heat_risk": "high"
+  },
+  {
+    "date": "2026-07-30",
+    "temp_max_c": 26.8,
+    "temp_min_c": 17.0,
+    "humidity_pct": 58,
+    "wind_speed_kmh": 13.2,
     "heat_risk": "high"
   }
 ]
