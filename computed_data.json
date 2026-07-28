@@ -275,7 +275,7 @@
     "hrv_delta_from_baseline": -3.9,
     "rhr_baseline_7d": 48.0,
     "rhr_delta_from_baseline": 0.0,
-    "heat_risk": "moderate",
+    "heat_risk": null,
     "today_summary": "Recovery slightly below baseline. Fine to train but stay conservative.",
     "plan_flag_reasons": []
   }
