@@ -96,7 +96,9 @@ def pull_day(client, date_str):
     status = safe_get(client.get_training_status, date_str)
     if status:
         try:
-            latest = status["mostRecentTrainingStatus"]["latestTrainingStatusData"]
+            latest = (status.get("mostRecentTrainingStatus") or {}).get("latestTrainingStatusData") or {}
+            if not latest:
+                raise KeyError("no training status data for this date")
             device_id = list(latest.keys())[0]
             acute_dto = latest[device_id].get("acuteTrainingLoadDTO", {})
             row["training_load_acute"] = acute_dto.get("dailyTrainingLoadAcute")
@@ -104,14 +106,14 @@ def pull_day(client, date_str):
             row["acwr_garmin"] = acute_dto.get("dailyAcuteChronicWorkloadRatio")
             row["acwr_status"] = acute_dto.get("acwrStatus")
             row["training_status_feedback"] = latest[device_id].get("trainingStatusFeedbackPhrase")
-        except (KeyError, IndexError):
+        except (KeyError, IndexError, TypeError):
             pass
 
         try:
-            vo2 = status.get("mostRecentVO2Max", {}).get("generic", {})
+            vo2 = (status.get("mostRecentVO2Max") or {}).get("generic") or {}
             row["vo2max"] = vo2.get("vo2MaxValue")
             row["vo2max_date"] = vo2.get("calendarDate")
-        except (KeyError, IndexError):
+        except (KeyError, IndexError, TypeError, AttributeError):
             pass
 
     return row
