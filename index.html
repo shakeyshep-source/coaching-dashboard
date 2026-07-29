@@ -436,6 +436,45 @@ async function buildCoachTab() {
 
   let html = '';
 
+  // --- Road to race: the countdown panel every weekly decision hangs on ---
+  const rr = weekly && weekly.race_readiness;
+  if (rr) {
+    const rem = rr.remaining_key_sessions || {};
+    const longOk = rr.longest_run_recent_min != null && rr.longest_run_recent_min >= rr.long_run_target_min;
+    html += `
+      <div class="chart-card" style="border-left:3px solid var(--blue);">
+        <p class="title">Road to ${rr.race.name}</p>
+        <div class="card-grid" style="margin-bottom:0;">
+          <div class="card" style="border:none; box-shadow:none; padding:0.5rem;">
+            <p class="label">Countdown</p>
+            <p class="value">${rr.race.days_away}<span style="font-size:14px; color:var(--text-muted);"> days</span></p>
+            <p class="delta flat">${rr.weeks_to_race} weeks — ${rr.race.date}</p>
+          </div>
+          <div class="card" style="border:none; box-shadow:none; padding:0.5rem;">
+            <p class="label">Goal</p>
+            <p class="value" style="font-size:20px;">${rr.goal_time ? rr.goal_time.split('.')[0] : '--'}</p>
+            <p class="delta flat">${rr.goal_pace ? rr.goal_pace + ' — current prediction' : ''}</p>
+          </div>
+          <div class="card" style="border:none; box-shadow:none; padding:0.5rem;">
+            <p class="label">Taper begins</p>
+            <p class="value" style="font-size:20px;">${rr.taper_start.slice(5)}</p>
+            <p class="delta flat">last big load ends</p>
+          </div>
+          <div class="card" style="border:none; box-shadow:none; padding:0.5rem;">
+            <p class="label">Longest run (4 wk)</p>
+            <p class="value" style="font-size:20px;">${rr.longest_run_recent_min ?? '--'} min</p>
+            <p class="delta ${longOk ? 'flat' : 'up'}">target ${rr.long_run_target_min}+ min before taper</p>
+          </div>
+        </div>
+        <p style="font-size:13px; color:var(--text-secondary); margin:10px 0 0; border-top:1px solid var(--border); padding-top:10px;">
+          Key sessions left in the plan before taper:
+          <strong>${rem.tempo ?? 0}</strong> tempo · <strong>${rem.intervals ?? 0}</strong> intervals · <strong>${rem.long ?? 0}</strong> long
+          <span style="color:var(--text-muted);">(as currently written — the plan extends each weekly review)</span>
+        </p>
+      </div>
+    `;
+  }
+
   // --- Latest weekly review ---
   if (review) {
     const recColor = review.recommendation === 'hold' ? '#2E7D32' : 'var(--yellow-text)';
@@ -510,6 +549,8 @@ async function buildCoachTab() {
               <tr style="text-align:left; color:var(--text-muted);">
                 <th style="padding:5px 8px;">Week</th><th style="padding:5px 8px;">km</th>
                 <th style="padding:5px 8px;">Runs</th><th style="padding:5px 8px;">RPE</th>
+                <th style="padding:5px 8px;" title="Minutes of tempo/interval/race running — the sessions that convert fitness into race performance">Qual</th>
+                <th style="padding:5px 8px;" title="Share of running time at easy effort — should stay around 80%">Easy</th>
                 <th style="padding:5px 8px;">On target</th><th style="padding:5px 8px;">HRV</th>
                 <th style="padding:5px 8px;">RHR</th><th style="padding:5px 8px;">Sleep</th>
                 <th style="padding:5px 8px;" title="Easy-run metres per minute per heartbeat — higher over time = aerobic fitness improving">Effcy</th>
@@ -522,6 +563,8 @@ async function buildCoachTab() {
                   <td style="padding:5px 8px; font-weight:500;">${w.km ?? '--'}</td>
                   <td style="padding:5px 8px;">${w.runs ?? '--'}</td>
                   <td style="padding:5px 8px;">${w.avg_rpe ?? '--'}</td>
+                  <td style="padding:5px 8px;">${w.quality_time_min || '--'}</td>
+                  <td style="padding:5px 8px;">${w.easy_pct != null ? w.easy_pct + '%' : '--'}</td>
                   <td style="padding:5px 8px;">${w.on_target_pct != null ? w.on_target_pct + '%' : '--'}</td>
                   <td style="padding:5px 8px;">${w.avg_hrv ?? '--'}</td>
                   <td style="padding:5px 8px;">${w.avg_rhr ?? '--'}</td>
@@ -537,6 +580,14 @@ async function buildCoachTab() {
         <p class="title">Weekly volume (km)</p>
         <div class="chart-wrap"><canvas id="weeklyKmChart"></canvas></div>
       </div>
+      <div class="chart-card">
+        <p class="title">Long run progression (minutes${rr ? ' — target line at ' + rr.long_run_target_min : ''})</p>
+        <div class="chart-wrap"><canvas id="longRunChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <p class="title">Achilles score vs daily load — watch what provokes it</p>
+        <div class="chart-wrap"><canvas id="achillesLoadChart"></canvas></div>
+      </div>
     `;
 
     // Current week's session log: watch data + your thoughts side by side
@@ -551,7 +602,7 @@ async function buildCoachTab() {
                 <strong>${s.date.slice(5)}</strong>
                 <span style="text-transform:capitalize;"> ${s.session_type || 'run'}</span>
                 ${s.km ? ` — ${s.km} km` : ''}${s.pace ? ` @ ${Math.floor(s.pace)}:${String(Math.round((s.pace % 1) * 60)).padStart(2, '0')}/km` : ''}${s.avg_hr ? `, ${Math.round(s.avg_hr)} bpm` : ''}
-                ${s.rpe != null ? ` · RPE ${s.rpe}` : ''}${s.achilles_score ? ` · achilles ${s.achilles_score}` : ''}
+                ${s.rpe != null ? ` · RPE ${s.rpe}` : ''}${s.achilles_score ? ` · achilles ${s.achilles_score}` : ''}${s.temp_max_c != null ? ` · ${Math.round(s.temp_max_c)}°C` : ''}
               </p>
               ${s.note ? `<p style="font-size:12px; color:var(--text-secondary); margin:3px 0 0; font-style:italic;">"${s.note}"</p>` : ''}
             </div>
@@ -574,10 +625,16 @@ async function buildCoachTab() {
   }
 
   if (weekly && weekly.weeks && weekly.weeks.length && document.getElementById('weeklyKmChart')) {
+    const weekLabels = weekly.weeks.map(w => w.week_start.slice(5));
+    const axisOpts = {
+      y: { ticks: { color: '#6B7280' }, grid: { color: '#E5E5E3' } },
+      x: { ticks: { color: '#6B7280' }, grid: { display: false } },
+    };
+
     new Chart(document.getElementById('weeklyKmChart'), {
       type: 'bar',
       data: {
-        labels: weekly.weeks.map(w => w.week_start.slice(5)),
+        labels: weekLabels,
         datasets: [{
           label: 'km',
           data: weekly.weeks.map(w => w.km),
@@ -588,11 +645,79 @@ async function buildCoachTab() {
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        scales: {
-          y: { ticks: { color: '#6B7280' }, grid: { color: '#E5E5E3' } },
-          x: { ticks: { color: '#6B7280' }, grid: { display: false } },
-        },
+        scales: axisOpts,
         plugins: { legend: { display: false } },
+      },
+    });
+
+    const targetMin = weekly.race_readiness ? weekly.race_readiness.long_run_target_min : null;
+    new Chart(document.getElementById('longRunChart'), {
+      type: 'line',
+      data: {
+        labels: weekLabels,
+        datasets: [
+          {
+            label: 'Long run (min)',
+            data: weekly.weeks.map(w => w.long_run_min),
+            borderColor: '#2C6CB0',
+            backgroundColor: '#2C6CB0',
+            tension: 0.3,
+            spanGaps: true,
+            pointRadius: 4,
+          },
+          ...(targetMin ? [{
+            label: 'Target',
+            data: weekly.weeks.map(() => targetMin),
+            borderColor: '#2E7D32',
+            borderDash: [6, 4],
+            pointRadius: 0,
+          }] : []),
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: axisOpts,
+        plugins: { legend: { labels: { color: '#1A1A1A' } } },
+      },
+    });
+
+    // Flatten every week's session log into one daily series so achilles
+    // niggles can be read against the load that preceded them.
+    const daily = weekly.weeks.flatMap(w => w.session_log || []);
+    new Chart(document.getElementById('achillesLoadChart'), {
+      data: {
+        labels: daily.map(s => s.date.slice(5)),
+        datasets: [
+          {
+            type: 'bar',
+            label: 'km',
+            data: daily.map(s => s.km),
+            backgroundColor: '#E5D08A',
+            borderRadius: 3,
+          },
+          {
+            type: 'line',
+            label: 'Achilles (0-10)',
+            data: daily.map(s => s.achilles_score),
+            borderColor: '#A83232',
+            backgroundColor: '#A83232',
+            tension: 0.2,
+            spanGaps: true,
+            pointRadius: 3,
+            yAxisID: 'y1',
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: { position: 'left', ticks: { color: '#6B7280' }, grid: { color: '#E5E5E3' } },
+          y1: { position: 'right', min: 0, max: 10, ticks: { color: '#6B7280', stepSize: 2 }, grid: { display: false } },
+          x: { ticks: { color: '#6B7280', maxTicksLimit: 14 }, grid: { display: false } },
+        },
+        plugins: { legend: { labels: { color: '#1A1A1A' } } },
       },
     });
   }

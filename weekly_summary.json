@@ -6,6 +6,25 @@
     "distance_km": 21.0975,
     "days_away": 53
   },
+  "race_readiness": {
+    "race": {
+      "name": "Cheltenham Half Marathon",
+      "date": "2026-09-20",
+      "distance_km": 21.0975,
+      "days_away": 53
+    },
+    "weeks_to_race": 7.6,
+    "taper_start": "2026-09-10",
+    "remaining_key_sessions": {
+      "tempo": 2,
+      "intervals": 2,
+      "long": 2
+    },
+    "goal_time": "1:22:25.01",
+    "goal_pace": "3:54/km",
+    "long_run_target_min": 95,
+    "longest_run_recent_min": 77
+  },
   "weeks": [
     {
       "week_start": "2026-06-08",
@@ -16,6 +35,10 @@
       "planned_sessions": 0,
       "logged_sessions": 0,
       "hard_sessions_planned": 0,
+      "quality_time_min": 0,
+      "easy_pct": 100,
+      "long_run_min": 91,
+      "long_run_km": 12.3,
       "on_target_pct": null,
       "avg_rpe": null,
       "max_achilles": null,
@@ -29,6 +52,8 @@
       "session_log": [
         {
           "date": "2026-06-08",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -40,6 +65,8 @@
         },
         {
           "date": "2026-06-10",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -51,6 +78,8 @@
         },
         {
           "date": "2026-06-11",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -62,6 +91,8 @@
         },
         {
           "date": "2026-06-12",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -73,6 +104,8 @@
         },
         {
           "date": "2026-06-13",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -84,6 +117,8 @@
         },
         {
           "date": "2026-06-14",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -104,6 +139,10 @@
       "planned_sessions": 0,
       "logged_sessions": 0,
       "hard_sessions_planned": 0,
+      "quality_time_min": 0,
+      "easy_pct": 100,
+      "long_run_min": 122,
+      "long_run_km": 15.43,
       "on_target_pct": null,
       "avg_rpe": null,
       "max_achilles": null,
@@ -117,6 +156,8 @@
       "session_log": [
         {
           "date": "2026-06-16",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -128,6 +169,8 @@
         },
         {
           "date": "2026-06-17",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -139,6 +182,8 @@
         },
         {
           "date": "2026-06-18",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -150,6 +195,8 @@
         },
         {
           "date": "2026-06-19",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -161,6 +208,8 @@
         },
         {
           "date": "2026-06-20",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -172,6 +221,8 @@
         },
         {
           "date": "2026-06-21",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -192,6 +243,10 @@
       "planned_sessions": 0,
       "logged_sessions": 0,
       "hard_sessions_planned": 0,
+      "quality_time_min": 0,
+      "easy_pct": 100,
+      "long_run_min": 144,
+      "long_run_km": 19.36,
       "on_target_pct": null,
       "avg_rpe": null,
       "max_achilles": null,
@@ -205,6 +260,8 @@
       "session_log": [
         {
           "date": "2026-06-22",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -216,6 +273,8 @@
         },
         {
           "date": "2026-06-23",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -227,6 +286,8 @@
         },
         {
           "date": "2026-06-24",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -238,6 +299,8 @@
         },
         {
           "date": "2026-06-25",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -249,6 +312,8 @@
         },
         {
           "date": "2026-06-27",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -260,6 +325,8 @@
         },
         {
           "date": "2026-06-28",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -280,6 +347,10 @@
       "planned_sessions": 0,
       "logged_sessions": 0,
       "hard_sessions_planned": 0,
+      "quality_time_min": 0,
+      "easy_pct": 100,
+      "long_run_min": 67,
+      "long_run_km": 14.59,
       "on_target_pct": null,
       "avg_rpe": null,
       "max_achilles": null,
@@ -293,6 +364,8 @@
       "session_log": [
         {
           "date": "2026-06-29",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -304,6 +377,8 @@
         },
         {
           "date": "2026-06-30",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -315,6 +390,8 @@
         },
         {
           "date": "2026-07-01",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -326,6 +403,8 @@
         },
         {
           "date": "2026-07-02",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -337,6 +416,8 @@
         },
         {
           "date": "2026-07-04",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -357,6 +438,10 @@
       "planned_sessions": 0,
       "logged_sessions": 1,
       "hard_sessions_planned": 0,
+      "quality_time_min": 0,
+      "easy_pct": 100,
+      "long_run_min": 64,
+      "long_run_km": 12.19,
       "on_target_pct": 100,
       "avg_rpe": 3,
       "max_achilles": 0,
@@ -370,6 +455,8 @@
       "session_log": [
         {
           "date": "2026-07-07",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -381,6 +468,8 @@
         },
         {
           "date": "2026-07-08",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -392,6 +481,8 @@
         },
         {
           "date": "2026-07-11",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -403,6 +494,8 @@
         },
         {
           "date": "2026-07-12",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": "easy",
           "rpe": 3,
           "on_target": true,
@@ -423,6 +516,10 @@
       "planned_sessions": 2,
       "logged_sessions": 2,
       "hard_sessions_planned": 0,
+      "quality_time_min": 77,
+      "easy_pct": 71,
+      "long_run_min": 77,
+      "long_run_km": 11.45,
       "on_target_pct": 100,
       "avg_rpe": 3.0,
       "max_achilles": 1,
@@ -436,6 +533,8 @@
       "session_log": [
         {
           "date": "2026-07-13",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -447,6 +546,8 @@
         },
         {
           "date": "2026-07-15",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": "intervals",
           "rpe": 4,
           "on_target": true,
@@ -458,6 +559,8 @@
         },
         {
           "date": "2026-07-16",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": "easy",
           "rpe": 2.0,
           "on_target": true,
@@ -469,6 +572,8 @@
         },
         {
           "date": "2026-07-18",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -480,6 +585,8 @@
         },
         {
           "date": "2026-07-19",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -500,6 +607,10 @@
       "planned_sessions": 6,
       "logged_sessions": 0,
       "hard_sessions_planned": 2,
+      "quality_time_min": 33,
+      "easy_pct": 86,
+      "long_run_min": 73,
+      "long_run_km": 14.83,
       "on_target_pct": null,
       "avg_rpe": null,
       "max_achilles": null,
@@ -513,6 +624,8 @@
       "session_log": [
         {
           "date": "2026-07-21",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -524,6 +637,8 @@
         },
         {
           "date": "2026-07-22",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -535,6 +650,8 @@
         },
         {
           "date": "2026-07-24",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -546,6 +663,8 @@
         },
         {
           "date": "2026-07-25",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -557,6 +676,8 @@
         },
         {
           "date": "2026-07-26",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -577,6 +698,10 @@
       "planned_sessions": 6,
       "logged_sessions": 0,
       "hard_sessions_planned": 2,
+      "quality_time_min": 0,
+      "easy_pct": 100,
+      "long_run_min": 51,
+      "long_run_km": 10.75,
       "on_target_pct": null,
       "avg_rpe": null,
       "max_achilles": null,
@@ -590,6 +715,8 @@
       "session_log": [
         {
           "date": "2026-07-28",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
@@ -601,6 +728,8 @@
         },
         {
           "date": "2026-07-29",
+          "temp_max_c": null,
+          "heat_risk": null,
           "session_type": null,
           "rpe": null,
           "on_target": null,
