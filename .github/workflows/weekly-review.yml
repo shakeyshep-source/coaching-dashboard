@@ -1,0 +1,72 @@
+# Weekly coach review — a scheduled Claude session acting as the
+# endurance coach defined in CLAUDE.md.
+#
+# Every Sunday evening it reads the week's data + the athlete's notes,
+# writes the review (reviews/YYYY-MM-DD.md + weekly_review_latest.json)
+# and, if changes are warranted, a plan_proposal.json. It NEVER edits
+# training_plan.json — apply_review.py does that, and only after an
+# explicit "approve" via the weekly review form.
+#
+# Required repo secret (one of):
+#   CLAUDE_CODE_OAUTH_TOKEN — from `claude setup-token` on the laptop
+#                             (uses the existing Claude subscription), or
+#   ANTHROPIC_API_KEY       — a pay-as-you-go API key.
+# See AUTOMATION_SETUP.md step 3.
+
+name: Weekly coach review
+
+on:
+  schedule:
+    - cron: '40 17 * * 0'  # Sunday ~18:40 UK in summer
+  workflow_dispatch: {}     # run on demand from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-review
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run coach session
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Follow the "Weekly review procedure" in CLAUDE.md exactly.
+            Today is the review date. Read the brief and all the data
+            files it lists (weekly_summary.json, computed_data.json,
+            manual_log.json including every session note,
+            training_plan.json, plan_proposal.json, review_responses.json,
+            race_prediction.json), then:
+            - if the existing proposal is amend_requested, revise it per
+              the athlete's thoughts and refresh the review files;
+            - otherwise write this week's review to reviews/<today>.md,
+              update weekly_review_latest.json, and write
+              plan_proposal.json only if you are recommending changes.
+            Do NOT edit training_plan.json. Do NOT commit or push — the
+            workflow commits your files afterwards.
+          claude_args: |
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(git log:*),Bash(git diff:*),Bash(python3:*)"
+            --max-turns 50
+
+      - name: Commit and push review
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reviews/ weekly_review_latest.json plan_proposal.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No review output to commit."
+          else
+            git commit -m "Weekly coach review $(date -u +%F)"
+            git pull --rebase origin main
+            git push origin main
+          fi

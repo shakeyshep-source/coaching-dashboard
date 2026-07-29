@@ -1,0 +1,73 @@
+# Daily data pipeline — replaces the laptop cron entirely.
+#
+# Runs twice each morning (UTC): an early pull so the dashboard is fresh
+# before 8am UK, and a late-morning catch-up that picks up a late watch
+# sync or a form submitted after the first run. Safe to run repeatedly —
+# every step is idempotent and only changed files get committed.
+#
+# Required repo secret:
+#   GARMIN_TOKENS_B64 — base64 of the laptop's ~/.garmin_tokens directory.
+#   Generate with export_garmin_tokens.sh (see AUTOMATION_SETUP.md).
+#   Garmin's long-lived token lasts ~a year; regenerate when the pull
+#   starts failing with auth errors.
+
+name: Daily data pull
+
+on:
+  schedule:
+    - cron: '15 5 * * *'   # 06:15 UK in summer (05:15 in winter)
+    - cron: '30 10 * * *'  # late-morning catch-up
+  workflow_dispatch: {}     # manual "run now" button in the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-pull
+  cancel-in-progress: false
+
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Restore Garmin tokens
+        env:
+          GARMIN_TOKENS_B64: ${{ secrets.GARMIN_TOKENS_B64 }}
+        run: |
+          if [ -z "$GARMIN_TOKENS_B64" ]; then
+            echo "::warning::GARMIN_TOKENS_B64 secret not set - Garmin pull will fail, rest of pipeline still runs"
+          else
+            echo "$GARMIN_TOKENS_B64" | base64 -d | tar -xz -C "$HOME"
+            echo "Tokens restored to $HOME/.garmin_tokens"
+          fi
+
+      - name: Run pipeline
+        # run_all.py exits non-zero if any step failed but still builds
+        # the computed layer from whatever data it has — so we always
+        # continue to the commit step and surface failures as a warning.
+        env:
+          GARMIN_TOKENSTORE: /home/runner/.garmin_tokens
+        run: |
+          python run_all.py || echo "::warning::One or more pipeline steps failed - check the log above"
+
+      - name: Commit and push updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- '*.json'
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "Auto update $(date -u +%F) (cloud pipeline)"
+            git pull --rebase origin main
+            git push origin main
+          fi

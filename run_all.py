@@ -20,7 +20,9 @@ STEPS = [
     ("garmin_pull.py", "Garmin data pull"),
     ("weather_pull.py", "Weather pull"),
     ("sheets_pull.py", "Google Forms sync"),
+    ("apply_review.py", "Weekly review decision gate"),  # may update the plan, so runs before anything that reads it
     ("race_predictor.py", "Race prediction"),
+    ("build_weekly_summary.py", "Weekly summary build"),
     ("build_computed.py", "Computed layer build"),
 ]
 

@@ -130,8 +130,9 @@
     <a href="races_editor.html" style="font-size:13px; color:var(--blue); text-decoration:none;">Edit race results</a>
   </div>
 
-  <div class="tabs">
+  <div class="tabs" style="flex-wrap:wrap;">
     <button class="tab-btn active" data-tab="overview">Overview</button>
+    <button class="tab-btn" data-tab="coach">Coach</button>
     <button class="tab-btn" data-tab="acwr">ACWR</button>
     <button class="tab-btn" data-tab="plan">Plan</button>
     <button class="tab-btn" data-tab="performance">Performance</button>
@@ -143,6 +144,7 @@
     <p class="error" style="display:none;" id="errorBox"></p>
   </div>
 
+  <div id="tab-coach" class="tab-panel" style="display:none;"></div>
   <div id="tab-acwr" class="tab-panel" style="display:none;"></div>
   <div id="tab-plan" class="tab-panel" style="display:none;"></div>
   <div id="tab-performance" class="tab-panel" style="display:none;"></div>
@@ -150,6 +152,15 @@
   <div id="tab-races" class="tab-panel" style="display:none;"></div>
 
 <script>
+// If the Chart.js CDN is unreachable (offline PWA, network blip), stub
+// it out so cards, tables and the coach review still render — losing
+// the charts must never blank the whole dashboard.
+if (typeof Chart === 'undefined') window.Chart = class { constructor() {} };
+
+// Fill-in URL of the "Weekly review response" Google Form — powers the
+// Respond button on the Coach tab. See AUTOMATION_SETUP.md step 2.
+const REVIEW_FORM_URL = '';
+
 async function loadDashboard() {
   const content = document.getElementById('content');
   const errorBox = document.getElementById('errorBox');
@@ -379,11 +390,212 @@ function setupTabs(data) {
     });
   });
 
+  buildCoachTab();
   buildAcwrTab(data);
   buildPlanTab(data);
   buildPerformanceTab(data);
   buildPredictorTab();
   buildRacesTab();
+}
+
+// Minimal markdown renderer for the weekly review — headings, bold,
+// bullets, paragraphs. Content is coach-authored, but escape anyway.
+function renderMd(md) {
+  const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  return esc(md).split(/\n{2,}/).map(block => {
+    const lines = block.split('\n');
+    if (lines.every(l => /^\s*[-*] /.test(l))) {
+      return '<ul style="margin:8px 0; padding-left:20px;">' +
+        lines.map(l => `<li style="font-size:13px; color:var(--text-secondary); margin:3px 0;">${inline(l.replace(/^\s*[-*] /, ''))}</li>`).join('') +
+        '</ul>';
+    }
+    const h = block.match(/^(#{1,4}) (.*)$/);
+    if (h) return `<p style="font-size:14px; font-weight:600; margin:14px 0 4px;">${inline(h[2])}</p>`;
+    return `<p style="font-size:13px; color:var(--text-secondary); margin:8px 0; line-height:1.5;">${inline(block.replace(/\n/g, '<br>'))}</p>`;
+  }).join('');
+  function inline(s) {
+    return s.replace(/\*\*(.+?)\*\*/g, '<strong style="color:var(--text-primary);">$1</strong>');
+  }
+}
+
+async function fetchJson(name) {
+  try {
+    const res = await fetch(name + '?v=' + Date.now());
+    if (!res.ok) return null;
+    return await res.json();
+  } catch (e) { return null; }
+}
+
+async function buildCoachTab() {
+  const panel = document.getElementById('tab-coach');
+  const [review, proposal, weekly] = await Promise.all([
+    fetchJson('weekly_review_latest.json'),
+    fetchJson('plan_proposal.json'),
+    fetchJson('weekly_summary.json'),
+  ]);
+
+  let html = '';
+
+  // --- Latest weekly review ---
+  if (review) {
+    const recColor = review.recommendation === 'hold' ? '#2E7D32' : 'var(--yellow-text)';
+    const recLabel = review.recommendation === 'hold' ? 'Hold the plan' : 'Change proposed';
+    html += `
+      <div class="chart-card">
+        <p class="title">Weekly coach review — ${review.review_date}</p>
+        <p style="font-size:15px; font-weight:500; margin:0 0 6px;">${review.headline || ''}</p>
+        <p style="font-size:12px; font-weight:600; color:${recColor}; margin:0 0 10px; text-transform:uppercase; letter-spacing:0.03em;">${recLabel}</p>
+        <div id="reviewBody" style="display:none; border-top:1px solid var(--border); padding-top:8px;">${renderMd(review.review_md || '')}</div>
+        <button id="reviewToggle" style="background:none; border:none; color:var(--blue); font-size:13px; padding:0; cursor:pointer;">Read full review</button>
+      </div>
+    `;
+  } else {
+    html += `
+      <div class="chart-card">
+        <p class="title">Weekly coach review</p>
+        <p style="font-size:13px; color:var(--text-muted); margin:0;">No review yet — the first one lands after the next Sunday-evening coach session.</p>
+      </div>
+    `;
+  }
+
+  // --- Pending proposal + respond button ---
+  if (proposal && ['pending', 'amend_requested'].includes(proposal.status)) {
+    const statusLabel = proposal.status === 'pending'
+      ? 'Awaiting your response'
+      : 'Amendment requested — coach will revise';
+    html += `
+      <div style="background:#FFF4E5; border:1px solid #F0C674; border-radius:8px; padding:12px 16px; margin-bottom:1rem;">
+        <p style="font-size:13px; font-weight:600; color:#7A5200; margin:0 0 6px;">Plan proposal (${proposal.id}) — ${statusLabel}</p>
+        <p style="font-size:13px; color:#7A5200; margin:0 0 10px;">${proposal.rationale || ''}</p>
+        <table style="width:100%; border-collapse:collapse; font-size:12px; background:var(--surface); border-radius:6px;">
+          <thead>
+            <tr style="text-align:left; color:var(--text-muted);">
+              <th style="padding:5px 8px;">Date</th><th style="padding:5px 8px;">Session</th>
+              <th style="padding:5px 8px;">Dist</th><th style="padding:5px 8px;">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${(proposal.changes || []).map(c => `
+              <tr style="border-top:1px solid var(--border);">
+                <td style="padding:5px 8px; white-space:nowrap;">${c.date.slice(5)}</td>
+                <td style="padding:5px 8px; text-transform:capitalize;">${c.session_type === 'remove' ? '— remove —' : c.session_type}</td>
+                <td style="padding:5px 8px;">${c.target_distance_km ? c.target_distance_km + ' km' : '--'}</td>
+                <td style="padding:5px 8px; color:var(--text-secondary);">${c.notes || ''}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+        ${proposal.status === 'pending' ? (REVIEW_FORM_URL
+          ? `<a href="${REVIEW_FORM_URL}" target="_blank" style="display:inline-block; margin-top:10px; background:var(--blue); color:#fff; font-size:13px; padding:8px 14px; border-radius:6px; text-decoration:none;">Respond (approve / amend / reject)</a>`
+          : `<p style="font-size:12px; color:#7A5200; margin:10px 0 0;">Respond via the weekly review form (set REVIEW_FORM_URL in index.html to get a button here).</p>`) : ''}
+      </div>
+    `;
+  } else if (proposal && proposal.status === 'applied') {
+    html += `
+      <div style="background:#EFF7EF; border:1px solid #A5C9A5; border-radius:8px; padding:10px 16px; margin-bottom:1rem;">
+        <p style="font-size:13px; color:#2E7D32; margin:0;">Last proposal (${proposal.id}) approved and applied to the plan.</p>
+      </div>
+    `;
+  }
+
+  // --- Weekly stats ---
+  if (weekly && weekly.weeks && weekly.weeks.length) {
+    const weeks = weekly.weeks;
+    html += `
+      <div class="chart-card">
+        <p class="title">Weekly training summary</p>
+        <div style="overflow-x:auto;">
+          <table style="width:100%; border-collapse:collapse; font-size:12px; min-width:560px;">
+            <thead>
+              <tr style="text-align:left; color:var(--text-muted);">
+                <th style="padding:5px 8px;">Week</th><th style="padding:5px 8px;">km</th>
+                <th style="padding:5px 8px;">Runs</th><th style="padding:5px 8px;">RPE</th>
+                <th style="padding:5px 8px;">On target</th><th style="padding:5px 8px;">HRV</th>
+                <th style="padding:5px 8px;">RHR</th><th style="padding:5px 8px;">Sleep</th>
+                <th style="padding:5px 8px;" title="Easy-run metres per minute per heartbeat — higher over time = aerobic fitness improving">Effcy</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${[...weeks].reverse().map(w => `
+                <tr style="border-top:1px solid var(--border);">
+                  <td style="padding:5px 8px; white-space:nowrap;">${w.week_start.slice(5)}</td>
+                  <td style="padding:5px 8px; font-weight:500;">${w.km ?? '--'}</td>
+                  <td style="padding:5px 8px;">${w.runs ?? '--'}</td>
+                  <td style="padding:5px 8px;">${w.avg_rpe ?? '--'}</td>
+                  <td style="padding:5px 8px;">${w.on_target_pct != null ? w.on_target_pct + '%' : '--'}</td>
+                  <td style="padding:5px 8px;">${w.avg_hrv ?? '--'}</td>
+                  <td style="padding:5px 8px;">${w.avg_rhr ?? '--'}</td>
+                  <td style="padding:5px 8px;">${w.avg_sleep_score ?? '--'}</td>
+                  <td style="padding:5px 8px;">${w.efficiency ?? '--'}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="chart-card">
+        <p class="title">Weekly volume (km)</p>
+        <div class="chart-wrap"><canvas id="weeklyKmChart"></canvas></div>
+      </div>
+    `;
+
+    // Current week's session log: watch data + your thoughts side by side
+    const cur = weeks[weeks.length - 1];
+    if (cur.session_log && cur.session_log.length) {
+      html += `
+        <div class="chart-card">
+          <p class="title">This week's sessions</p>
+          ${cur.session_log.map(s => `
+            <div style="border-top:1px solid var(--border); padding:8px 0;">
+              <p style="font-size:13px; margin:0;">
+                <strong>${s.date.slice(5)}</strong>
+                <span style="text-transform:capitalize;"> ${s.session_type || 'run'}</span>
+                ${s.km ? ` — ${s.km} km` : ''}${s.pace ? ` @ ${Math.floor(s.pace)}:${String(Math.round((s.pace % 1) * 60)).padStart(2, '0')}/km` : ''}${s.avg_hr ? `, ${Math.round(s.avg_hr)} bpm` : ''}
+                ${s.rpe != null ? ` · RPE ${s.rpe}` : ''}${s.achilles_score ? ` · achilles ${s.achilles_score}` : ''}
+              </p>
+              ${s.note ? `<p style="font-size:12px; color:var(--text-secondary); margin:3px 0 0; font-style:italic;">"${s.note}"</p>` : ''}
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+  }
+
+  panel.innerHTML = html;
+
+  const toggle = document.getElementById('reviewToggle');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const body = document.getElementById('reviewBody');
+      const open = body.style.display !== 'none';
+      body.style.display = open ? 'none' : 'block';
+      toggle.textContent = open ? 'Read full review' : 'Hide full review';
+    });
+  }
+
+  if (weekly && weekly.weeks && weekly.weeks.length && document.getElementById('weeklyKmChart')) {
+    new Chart(document.getElementById('weeklyKmChart'), {
+      type: 'bar',
+      data: {
+        labels: weekly.weeks.map(w => w.week_start.slice(5)),
+        datasets: [{
+          label: 'km',
+          data: weekly.weeks.map(w => w.km),
+          backgroundColor: '#D4A800',
+          borderRadius: 4,
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: { ticks: { color: '#6B7280' }, grid: { color: '#E5E5E3' } },
+          x: { ticks: { color: '#6B7280' }, grid: { display: false } },
+        },
+        plugins: { legend: { display: false } },
+      },
+    });
+  }
 }
 
 function buildAcwrTab(data) {

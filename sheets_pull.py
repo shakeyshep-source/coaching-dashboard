@@ -24,10 +24,16 @@ DAILY_LOG_SHEET_ID    = "1eqsg4m9zmA6kKIfvpNjlZ1kuaFABcgm-JWsC7ErA2g4"
 TRAINING_PLAN_SHEET_ID = "1GJ4PkSXBRT6wBY6mLX3pBIu9PCQWzVW1G6i4JXxsgIc"
 RACE_LOG_SHEET_ID     = "14vCnLI1wYWep2FAyTotvdp2-wgsWawE_B19aE-oPNAI"
 
+# Weekly review response form — fill in once the form exists (see
+# AUTOMATION_SETUP.md for the exact form fields to create). Leave empty
+# to skip this pull without erroring.
+REVIEW_RESPONSE_SHEET_ID = ""
+
 # Output files — must match what build_computed.py and dashboard expect
 MANUAL_LOG_FILE    = "manual_log.json"
 TRAINING_PLAN_FILE = "training_plan.json"
 RACES_FILE         = "races.json"
+REVIEW_RESPONSES_FILE = "review_responses.json"
 
 
 def fetch_sheet_csv(sheet_id):
@@ -140,6 +146,31 @@ def pull_races():
     return sorted(by_date.values(), key=lambda r: r["date"])
 
 
+def pull_review_responses():
+    """Pull athlete responses to weekly coach reviews. Each response is
+    keyed on the review date it answers, so apply_review.py can match a
+    response to the pending plan proposal. Latest submission for a given
+    review date wins (you can change your mind before it's applied).
+    """
+    rows = fetch_sheet_csv(REVIEW_RESPONSE_SHEET_ID)
+    entries = []
+    for row in rows:
+        review_date = parse_date(row.get("Review date", ""))
+        if not review_date:
+            continue
+        decision = row.get("Decision", "").strip().lower() or None
+        entries.append({
+            "timestamp": row.get("Timestamp", "").strip(),
+            "review_date": review_date,
+            "decision": decision,          # "approve" | "amend" | "reject"
+            "thoughts": row.get("Thoughts", "").strip() or None,
+        })
+    by_review = {}
+    for e in entries:
+        by_review[e["review_date"]] = e  # later rows overwrite earlier ones
+    return sorted(by_review.values(), key=lambda r: r["review_date"])
+
+
 def load_existing(path):
     try:
         with open(path) as f:
@@ -182,6 +213,17 @@ def main():
     with open(RACES_FILE, "w") as f:
         json.dump(merged_races, f, indent=2)
     print(f"  {len(races)} sheet entries -> {len(merged_races)} total in {RACES_FILE}")
+
+    if REVIEW_RESPONSE_SHEET_ID:
+        print("Pulling weekly review responses...")
+        responses = pull_review_responses()
+        existing_responses = load_existing(REVIEW_RESPONSES_FILE)
+        merged_responses = merge(existing_responses, responses, key="review_date")
+        with open(REVIEW_RESPONSES_FILE, "w") as f:
+            json.dump(merged_responses, f, indent=2)
+        print(f"  {len(responses)} sheet entries -> {len(merged_responses)} total in {REVIEW_RESPONSES_FILE}")
+    else:
+        print("Review response sheet not configured yet - skipping (see AUTOMATION_SETUP.md)")
 
     print("Sheets pull complete.")
 

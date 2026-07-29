@@ -1,0 +1,109 @@
+{
+  "generated": "2026-07-29",
+  "next_race": {
+    "name": "Cheltenham Half Marathon",
+    "date": "2026-09-20",
+    "distance_km": 21.0975,
+    "days_away": 53
+  },
+  "weeks": [
+    {
+      "week_start": "2026-07-06",
+      "km": 0,
+      "runs": 0,
+      "time_min": 0,
+      "elevation_m": 0,
+      "planned_sessions": 0,
+      "logged_sessions": 1,
+      "hard_sessions_planned": 0,
+      "on_target_pct": 100,
+      "avg_rpe": 3,
+      "max_achilles": 0,
+      "avg_hrv": null,
+      "avg_rhr": null,
+      "avg_sleep_score": null,
+      "avg_sleep_hrs": null,
+      "easy_pace_min_km": null,
+      "easy_avg_hr": null,
+      "efficiency": null,
+      "session_log": [
+        {
+          "date": "2026-07-12",
+          "session_type": "easy",
+          "rpe": 3,
+          "on_target": true,
+          "achilles_score": 0,
+          "note": "22c with a breeze. Stayed easy after yesterday plus a late night.",
+          "km": null,
+          "pace": null,
+          "avg_hr": null
+        }
+      ]
+    },
+    {
+      "week_start": "2026-07-13",
+      "km": 0,
+      "runs": 0,
+      "time_min": 0,
+      "elevation_m": 0,
+      "planned_sessions": 2,
+      "logged_sessions": 2,
+      "hard_sessions_planned": 0,
+      "on_target_pct": 100,
+      "avg_rpe": 3.0,
+      "max_achilles": 1,
+      "avg_hrv": 39,
+      "avg_rhr": 47.5,
+      "avg_sleep_score": 84.5,
+      "avg_sleep_hrs": 7.6,
+      "easy_pace_min_km": null,
+      "easy_avg_hr": null,
+      "efficiency": null,
+      "session_log": [
+        {
+          "date": "2026-07-15",
+          "session_type": "intervals",
+          "rpe": 4,
+          "on_target": true,
+          "achilles_score": 1,
+          "note": "wu, 6 x 400, wd [90]\n3:35 paces",
+          "km": null,
+          "pace": null,
+          "avg_hr": null
+        },
+        {
+          "date": "2026-07-16",
+          "session_type": "easy",
+          "rpe": 2.0,
+          "on_target": true,
+          "achilles_score": 0,
+          "note": "on / off road - 28c",
+          "km": null,
+          "pace": null,
+          "avg_hr": null
+        }
+      ]
+    },
+    {
+      "week_start": "2026-07-27",
+      "km": 0,
+      "runs": 0,
+      "time_min": 0,
+      "elevation_m": 0,
+      "planned_sessions": 6,
+      "logged_sessions": 0,
+      "hard_sessions_planned": 2,
+      "on_target_pct": null,
+      "avg_rpe": null,
+      "max_achilles": null,
+      "avg_hrv": 46.7,
+      "avg_rhr": 45.7,
+      "avg_sleep_score": 91,
+      "avg_sleep_hrs": 9.0,
+      "easy_pace_min_km": null,
+      "easy_avg_hr": null,
+      "efficiency": null,
+      "session_log": []
+    }
+  ]
+}
