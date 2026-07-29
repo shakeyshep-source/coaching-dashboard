@@ -27,7 +27,7 @@ RACE_LOG_SHEET_ID     = "14vCnLI1wYWep2FAyTotvdp2-wgsWawE_B19aE-oPNAI"
 # Weekly review response form — fill in once the form exists (see
 # AUTOMATION_SETUP.md for the exact form fields to create). Leave empty
 # to skip this pull without erroring.
-REVIEW_RESPONSE_SHEET_ID = ""
+REVIEW_RESPONSE_SHEET_ID = "1KGrx82VLztRawTzt1DDVpsCgPok9eXYp3dXK1VOk5Ck"
 
 # Output files — must match what build_computed.py and dashboard expect
 MANUAL_LOG_FILE    = "manual_log.json"
