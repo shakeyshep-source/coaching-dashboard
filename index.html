@@ -157,6 +157,17 @@
 // the charts must never blank the whole dashboard.
 if (typeof Chart === 'undefined') window.Chart = class { constructor() {} };
 
+// UK-format date display helpers. Internal data stays ISO (YYYY-MM-DD)
+// everywhere — these are for what the eye reads, nothing else.
+function fmtDayMonth(dateStr) {          // "29 Jul"
+  if (!dateStr) return '--';
+  return new Date(dateStr + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+}
+function fmtDate(dateStr) {              // "29 Jul 2026"
+  if (!dateStr) return '--';
+  return new Date(dateStr + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+}
+
 // Fill-in URL of the "Weekly review response" Google Form — powers the
 // Respond button on the Coach tab. See AUTOMATION_SETUP.md step 2.
 const REVIEW_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSelVvuccMxIiMpIy9vjmGPHJjjV4mwHOB4ReQH0uel8d2PGcA/viewform';
@@ -185,7 +196,9 @@ async function loadDashboard() {
   data.sort((a, b) => a.date.localeCompare(b.date));
   const today = data[data.length - 1];
 
-  document.getElementById('dateLabel').textContent = today.date;
+  document.getElementById('dateLabel').textContent =
+    new Date(today.date + 'T00:00:00').toLocaleDateString('en-GB',
+      { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
 
   function deltaClass(delta) {
     if (delta === null || delta === undefined) return 'flat';
@@ -263,7 +276,7 @@ async function loadDashboard() {
     </div>
   `;
 
-  const labels = data.map(r => r.date.slice(5));
+  const labels = data.map(r => fmtDayMonth(r.date));
 
   new Chart(document.getElementById('hrvRhrChart'), {
     type: 'line',
@@ -448,7 +461,7 @@ async function buildCoachTab() {
           <div class="card" style="border:none; box-shadow:none; padding:0.5rem;">
             <p class="label">Countdown</p>
             <p class="value">${rr.race.days_away}<span style="font-size:14px; color:var(--text-muted);"> days</span></p>
-            <p class="delta flat">${rr.weeks_to_race} weeks — ${rr.race.date}</p>
+            <p class="delta flat">${rr.weeks_to_race} weeks — ${fmtDate(rr.race.date)}</p>
           </div>
           <div class="card" style="border:none; box-shadow:none; padding:0.5rem;">
             <p class="label">Goal</p>
@@ -457,7 +470,7 @@ async function buildCoachTab() {
           </div>
           <div class="card" style="border:none; box-shadow:none; padding:0.5rem;">
             <p class="label">Taper begins</p>
-            <p class="value" style="font-size:20px;">${rr.taper_start.slice(5)}</p>
+            <p class="value" style="font-size:20px;">${fmtDayMonth(rr.taper_start)}</p>
             <p class="delta flat">last big load ends</p>
           </div>
           <div class="card" style="border:none; box-shadow:none; padding:0.5rem;">
@@ -481,7 +494,7 @@ async function buildCoachTab() {
     const recLabel = review.recommendation === 'hold' ? 'Hold the plan' : 'Change proposed';
     html += `
       <div class="chart-card">
-        <p class="title">Weekly coach review — ${review.review_date}</p>
+        <p class="title">Weekly coach review — ${fmtDate(review.review_date)}</p>
         <p style="font-size:15px; font-weight:500; margin:0 0 6px;">${review.headline || ''}</p>
         <p style="font-size:12px; font-weight:600; color:${recColor}; margin:0 0 10px; text-transform:uppercase; letter-spacing:0.03em;">${recLabel}</p>
         <div id="reviewBody" style="display:none; border-top:1px solid var(--border); padding-top:8px;">${renderMd(review.review_md || '')}</div>
@@ -504,7 +517,7 @@ async function buildCoachTab() {
       : 'Amendment requested — coach will revise';
     html += `
       <div style="background:#FFF4E5; border:1px solid #F0C674; border-radius:8px; padding:12px 16px; margin-bottom:1rem;">
-        <p style="font-size:13px; font-weight:600; color:#7A5200; margin:0 0 6px;">Plan proposal (${proposal.id}) — ${statusLabel}</p>
+        <p style="font-size:13px; font-weight:600; color:#7A5200; margin:0 0 6px;">Plan proposal (${fmtDate(proposal.id)}) — ${statusLabel}</p>
         <p style="font-size:13px; color:#7A5200; margin:0 0 10px;">${proposal.rationale || ''}</p>
         <table style="width:100%; border-collapse:collapse; font-size:12px; background:var(--surface); border-radius:6px;">
           <thead>
@@ -516,7 +529,7 @@ async function buildCoachTab() {
           <tbody>
             ${(proposal.changes || []).map(c => `
               <tr style="border-top:1px solid var(--border);">
-                <td style="padding:5px 8px; white-space:nowrap;">${c.date.slice(5)}</td>
+                <td style="padding:5px 8px; white-space:nowrap;">${fmtDayMonth(c.date)}</td>
                 <td style="padding:5px 8px; text-transform:capitalize;">${c.session_type === 'remove' ? '— remove —' : c.session_type}</td>
                 <td style="padding:5px 8px;">${c.target_distance_km ? c.target_distance_km + ' km' : '--'}</td>
                 <td style="padding:5px 8px; color:var(--text-secondary);">${c.notes || ''}</td>
@@ -532,7 +545,7 @@ async function buildCoachTab() {
   } else if (proposal && proposal.status === 'applied') {
     html += `
       <div style="background:#EFF7EF; border:1px solid #A5C9A5; border-radius:8px; padding:10px 16px; margin-bottom:1rem;">
-        <p style="font-size:13px; color:#2E7D32; margin:0;">Last proposal (${proposal.id}) approved and applied to the plan.</p>
+        <p style="font-size:13px; color:#2E7D32; margin:0;">Last proposal (${fmtDate(proposal.id)}) approved and applied to the plan.</p>
       </div>
     `;
   }
@@ -559,7 +572,7 @@ async function buildCoachTab() {
             <tbody>
               ${[...weeks].reverse().map(w => `
                 <tr style="border-top:1px solid var(--border);">
-                  <td style="padding:5px 8px; white-space:nowrap;">${w.week_start.slice(5)}</td>
+                  <td style="padding:5px 8px; white-space:nowrap;">${fmtDayMonth(w.week_start)}</td>
                   <td style="padding:5px 8px; font-weight:500;">${w.km ?? '--'}</td>
                   <td style="padding:5px 8px;">${w.runs ?? '--'}</td>
                   <td style="padding:5px 8px;">${w.avg_rpe ?? '--'}</td>
@@ -599,7 +612,7 @@ async function buildCoachTab() {
           ${cur.session_log.map(s => `
             <div style="border-top:1px solid var(--border); padding:8px 0;">
               <p style="font-size:13px; margin:0;">
-                <strong>${s.date.slice(5)}</strong>
+                <strong>${new Date(s.date + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' })}</strong>
                 <span style="text-transform:capitalize;"> ${s.session_type || 'run'}</span>
                 ${s.km ? ` — ${s.km} km` : ''}${s.pace ? ` @ ${Math.floor(s.pace)}:${String(Math.round((s.pace % 1) * 60)).padStart(2, '0')}/km` : ''}${s.avg_hr ? `, ${Math.round(s.avg_hr)} bpm` : ''}
                 ${s.rpe != null ? ` · RPE ${s.rpe}` : ''}${s.achilles_score ? ` · achilles ${s.achilles_score}` : ''}${s.temp_max_c != null ? ` · ${Math.round(s.temp_max_c)}°C` : ''}
@@ -625,7 +638,7 @@ async function buildCoachTab() {
   }
 
   if (weekly && weekly.weeks && weekly.weeks.length && document.getElementById('weeklyKmChart')) {
-    const weekLabels = weekly.weeks.map(w => w.week_start.slice(5));
+    const weekLabels = weekly.weeks.map(w => fmtDayMonth(w.week_start));
     const axisOpts = {
       y: { ticks: { color: '#6B7280' }, grid: { color: '#E5E5E3' } },
       x: { ticks: { color: '#6B7280' }, grid: { display: false } },
@@ -687,7 +700,7 @@ async function buildCoachTab() {
     const daily = weekly.weeks.flatMap(w => w.session_log || []);
     new Chart(document.getElementById('achillesLoadChart'), {
       data: {
-        labels: daily.map(s => s.date.slice(5)),
+        labels: daily.map(s => fmtDayMonth(s.date)),
         datasets: [
           {
             type: 'bar',
@@ -745,7 +758,7 @@ function buildAcwrTab(data) {
     </div>
   `;
 
-  const labels = data.map(r => r.date.slice(5));
+  const labels = data.map(r => fmtDayMonth(r.date));
   new Chart(document.getElementById('acwrChart'), {
     type: 'line',
     data: {
@@ -865,7 +878,7 @@ async function buildPlanTab(computedData) {
               const dayName = new Date(dateStr + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short' });
               return `
                 <tr style="border-top:1px solid var(--border); ${isToday ? 'background:#FFFBEF;' : ''}">
-                  <td style="padding:6px 8px;">${dayName} ${dateStr.slice(5)}${isToday ? ' (today)' : ''}</td>
+                  <td style="padding:6px 8px;">${dayName} ${fmtDayMonth(dateStr)}${isToday ? ' (today)' : ''}</td>
                   <td style="padding:6px 8px; text-transform:capitalize; ${!s ? 'color:var(--text-muted);' : ''}">${s ? s.session_type : 'Nothing planned'}</td>
                   <td style="padding:6px 8px;">${s && s.target_distance_km ? s.target_distance_km + ' km' : '--'}</td>
                   <td style="padding:6px 8px;">${s && s.target_pace ? s.target_pace : '--'}</td>
@@ -894,7 +907,7 @@ async function buildPlanTab(computedData) {
           <tbody>
             ${sorted.map(f => `
               <tr style="border-top:1px solid var(--border);">
-                <td style="padding:6px 8px;">${f.date}</td>
+                <td style="padding:6px 8px;">${fmtDate(f.date)}</td>
                 <td style="padding:6px 8px; text-transform:capitalize;">${f.planned_session ?? '--'}</td>
                 <td style="padding:6px 8px; color:var(--text-secondary);">${f.reasons.join(' ')}</td>
               </tr>
@@ -929,7 +942,7 @@ async function buildPredictorTab() {
       <div class="card" style="margin-bottom:1.5rem;">
         <p class="label">Next race</p>
         <p class="value" style="font-size:18px;">${pred.next_race.name || 'Unnamed race'}</p>
-        <p class="delta flat">${pred.next_race.date} — ${daysToRace} days away</p>
+        <p class="delta flat">${fmtDate(pred.next_race.date)} — ${daysToRace} days away</p>
       </div>
     `;
   }
@@ -981,7 +994,7 @@ async function buildPredictorTab() {
           Recent key sessions (for reference — not converted into a predicted time):
         </p>
         ${pred.recent_key_sessions.map(s => `
-          <p style="font-size:13px; color:var(--text-secondary); margin:2px 0;">${s.date}: ${s.description}</p>
+          <p style="font-size:13px; color:var(--text-secondary); margin:2px 0;">${fmtDate(s.date)}: ${s.description}</p>
         `).join('')}
       ` : ''}
     </div>
@@ -999,7 +1012,7 @@ function buildPerformanceTab(data) {
       <div class="card">
         <p class="label">VO2max</p>
         <p class="value">${latestVo2 ? latestVo2.vo2max : '--'}</p>
-        <p class="delta flat">${latestVo2 ? 'as of ' + latestVo2.vo2max_date : 'no data yet'}</p>
+        <p class="delta flat">${latestVo2 ? 'as of ' + fmtDate(latestVo2.vo2max_date) : 'no data yet'}</p>
       </div>
       <div class="card">
         <p class="label">Training status</p>
@@ -1021,7 +1034,7 @@ function buildPerformanceTab(data) {
   new Chart(document.getElementById('vo2Chart'), {
     type: 'line',
     data: {
-      labels: vo2Rows.map(r => r.date.slice(5)),
+      labels: vo2Rows.map(r => fmtDayMonth(r.date)),
       datasets: [{
         label: 'VO2max',
         data: vo2Rows.map(r => r.vo2max),
@@ -1073,7 +1086,7 @@ async function buildRacesTab() {
         <tbody>
           ${races.map(r => `
             <tr style="border-top:1px solid var(--border);">
-              <td style="padding:6px 8px;">${r.date}</td>
+              <td style="padding:6px 8px;">${fmtDate(r.date)}</td>
               <td style="padding:6px 8px;">${r.name}</td>
               <td style="padding:6px 8px;">${r.distance_km ?? '--'} km</td>
               <td style="padding:6px 8px;">${r.time_fmt ?? '--'}</td>
@@ -1099,7 +1112,7 @@ async function loadTrainingPlan() {
     document.getElementById('planCard').style.display = 'block';
     document.getElementById('planRows').innerHTML = upcoming.map(s => `
       <tr style="border-top:1px solid var(--border);">
-        <td style="padding:6px 8px;">${s.date}</td>
+        <td style="padding:6px 8px;">${fmtDate(s.date)}</td>
         <td style="padding:6px 8px; text-transform:capitalize;">${s.session_type}</td>
         <td style="padding:6px 8px;">${s.target_distance_km ?? '--'} km</td>
         <td style="padding:6px 8px;">${s.target_pace ?? '--'}</td>
