@@ -834,3 +834,70 @@ OK: Computed layer build
 All steps completed.
 To https://github.com/shakeyshep-source/coaching-dashboard.git
    3cb0453..7a0fec4  main -> main
+Cron fired: Wed Jul 29 08:00:01 AM BST 2026
+=== run_all.py started 2026-07-29T08:00:02.142635 ===
+
+--- Garmin data pull (garmin_pull.py) ---
+2026-07-29  RHR: 46.0  HRV: 44  Sleep: 89  BB: 98
+2026-07-28  RHR: 44.0  HRV: 52  Sleep: 95  BB: 100
+2026-07-27  RHR: 47.0  HRV: 44  Sleep: 89  BB: 100
+2026-07-26  RHR: 46.0  HRV: 36  Sleep: 84  BB: 92
+2026-07-25  RHR: 49.0  HRV: 39  Sleep: 90  BB: 94
+2026-07-24  RHR: 47.0  HRV: 44  Sleep: 89  BB: 100
+2026-07-23  RHR: 50.0  HRV: 39  Sleep: 57  BB: 74
+2026-07-22  RHR: 48.0  HRV: 39  Sleep: 90  BB: 95
+2026-07-21  RHR: 48.0  HRV: 41  Sleep: 84  BB: 90
+2026-07-20  RHR: 46.0  HRV: 42  Sleep: 96  BB: 100
+2026-07-19  RHR: 48.0  HRV: 35  Sleep: 81  BB: 84
+2026-07-18  RHR: 47.0  HRV: 43  Sleep: 89  BB: 99
+2026-07-17  RHR: 47.0  HRV: 42  Sleep: 88  BB: 100
+2026-07-16  RHR: 48.0  HRV: 36  Sleep: 80  BB: 75
+
+Saved 14 days to garmin_data.json
+
+
+--- Weather pull (weather_pull.py) ---
+2026-07-29  Max: 27.4C  Humidity: 64%  Risk: high
+2026-07-30  Max: 24.2C  Humidity: 64%  Risk: high
+2026-07-31  Max: 23.1C  Humidity: 55%  Risk: moderate
+2026-08-01  Max: 23.6C  Humidity: 52%  Risk: moderate
+2026-08-02  Max: 25.9C  Humidity: 52%  Risk: high
+2026-08-03  Max: 28.7C  Humidity: 53%  Risk: high
+2026-08-04  Max: 25.1C  Humidity: 65%  Risk: high
+
+Saved 7 days to weather.json
+
+
+--- Google Forms sync (sheets_pull.py) ---
+--- Sheets pull ---
+Pulling daily log...
+  1 sheet entries -> 3 total in manual_log.json
+Pulling training plan...
+  0 sheet entries -> 28 total in training_plan.json
+Pulling race log...
+  0 sheet entries -> 7 total in races.json
+Sheets pull complete.
+
+
+--- Race prediction (race_predictor.py) ---
+Predictions:
+  5K: 17:25.90 - 18:24.01 (central: 17:54.96)
+  10K: 36:20.63 - 38:21.78 (central: 37:21.21)
+  Half Marathon: 1:20:11.36 - 1:24:38.66 (central: 1:22:25.01)
+  Marathon: 2:47:11.35 - 2:56:28.66 (central: 2:51:50.01)
+Next race: Cheltenham Half Marathon on 2026-09-20
+
+
+--- Computed layer build (build_computed.py) ---
+Computed 14 days -> computed_data.json
+Flags log has 1 total entries
+
+
+=== Summary ===
+OK: Garmin data pull
+OK: Weather pull
+OK: Google Forms sync
+OK: Race prediction
+OK: Computed layer build
+
+All steps completed.
