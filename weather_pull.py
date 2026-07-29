@@ -28,6 +28,12 @@ LATITUDE = 51.8642
 LONGITUDE = -2.2382
 OUTPUT_FILE = "weather.json"
 
+# weather.json is a rolling 7-day forecast window — past days fall out
+# of it on every pull. weather_log.json accumulates every day we've ever
+# seen (latest pull wins per date), so historical sessions can be
+# interpreted against the conditions they were actually run in.
+HISTORY_FILE = "weather_log.json"
+
 
 def classify_heat_risk(temp_max_c, humidity_pct):
     if temp_max_c >= 24 or (temp_max_c >= 20 and humidity_pct >= 70):
@@ -68,7 +74,20 @@ def main():
     with open(OUTPUT_FILE, "w") as f:
         json.dump(results, f, indent=2)
 
-    print(f"\nSaved {len(results)} days to {OUTPUT_FILE}")
+    try:
+        with open(HISTORY_FILE) as f:
+            history = json.load(f)
+    except FileNotFoundError:
+        history = []
+    by_date = {r["date"]: r for r in history}
+    for r in results:
+        by_date[r["date"]] = r
+    history = sorted(by_date.values(), key=lambda r: r["date"])
+    with open(HISTORY_FILE, "w") as f:
+        json.dump(history, f, indent=2)
+
+    print(f"\nSaved {len(results)} days to {OUTPUT_FILE}; "
+          f"{len(history)} days accumulated in {HISTORY_FILE}")
 
 
 if __name__ == "__main__":

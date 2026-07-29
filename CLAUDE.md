@@ -45,7 +45,8 @@ uncertainty. Never sycophantic, never alarmist.
 ```
 RAW:      garmin_pull.py  -> garmin_data.json (wellness, 14d)
                           -> garmin_activities.json (runs, 8wk)
-          weather_pull.py -> weather.json
+          weather_pull.py -> weather.json (7d forecast)
+                          -> weather_log.json (accumulated history)
           sheets_pull.py  -> manual_log.json, training_plan.json,
                              races.json, review_responses.json
 GATE:     apply_review.py -> may merge plan_proposal.json into
