@@ -29,9 +29,14 @@ import os
 from datetime import date, timedelta
 from garminconnect import Garmin
 
-TOKENSTORE = "/home/shakeyshep/.garmin_tokens"
+# Tokenstore path: overridable via env var so the same script runs on the
+# laptop (default path) and in GitHub Actions (tokens restored from the
+# GARMIN_TOKENS_B64 secret into the runner's home directory).
+TOKENSTORE = os.environ.get("GARMIN_TOKENSTORE", "/home/shakeyshep/.garmin_tokens")
 OUTPUT_FILE = "garmin_data.json"
+ACTIVITIES_FILE = "garmin_activities.json"
 DAYS_TO_PULL = 14  # rolling window; adjust as needed
+ACTIVITY_DAYS_TO_PULL = 56  # 8 weeks — enough for weekly trend stats
 
 
 def safe_get(fn, *args):
@@ -119,6 +124,61 @@ def pull_day(client, date_str):
     return row
 
 
+def pull_activities(client):
+    """Fetch recent activities (runs etc.) so distance/pace/HR stats are
+    automated — the manual log only needs to carry thoughts, RPE and
+    achilles score, never numbers the watch already knows.
+
+    LOCKED SCHEMA (garmin_activities.json, one row per activity):
+
+        {
+          "date": "YYYY-MM-DD",
+          "activity_id": int,
+          "name": str,
+          "type": str,              # e.g. "running", "trail_running"
+          "distance_km": float | null,
+          "duration_min": float | null,
+          "avg_pace_min_per_km": float | null,
+          "avg_hr": float | null,
+          "max_hr": float | null,
+          "elevation_gain_m": float | null,
+          "cadence": float | null,
+          "aerobic_te": float | null,
+          "anaerobic_te": float | null
+        }
+    """
+    today = date.today()
+    start = (today - timedelta(days=ACTIVITY_DAYS_TO_PULL)).isoformat()
+    raw = safe_get(client.get_activities_by_date, start, today.isoformat()) or []
+
+    rows = []
+    for a in raw:
+        distance_m = a.get("distance")
+        duration_s = a.get("duration")
+        avg_speed = a.get("averageSpeed")  # m/s
+        pace = None
+        if avg_speed:
+            pace = round((1000 / avg_speed) / 60, 2)  # min per km
+        rows.append({
+            "date": (a.get("startTimeLocal") or "")[:10],
+            "activity_id": a.get("activityId"),
+            "name": a.get("activityName"),
+            "type": (a.get("activityType") or {}).get("typeKey"),
+            "distance_km": round(distance_m / 1000, 2) if distance_m else None,
+            "duration_min": round(duration_s / 60, 1) if duration_s else None,
+            "avg_pace_min_per_km": pace,
+            "avg_hr": a.get("averageHR"),
+            "max_hr": a.get("maxHR"),
+            "elevation_gain_m": a.get("elevationGain"),
+            "cadence": a.get("averageRunningCadenceInStepsPerMinute"),
+            "aerobic_te": a.get("aerobicTrainingEffect"),
+            "anaerobic_te": a.get("anaerobicTrainingEffect"),
+        })
+
+    rows.sort(key=lambda r: (r["date"], r["activity_id"] or 0))
+    return rows
+
+
 def main():
     client = Garmin()
     client.login(tokenstore=TOKENSTORE)
@@ -139,6 +199,11 @@ def main():
         json.dump(results, f, indent=2)
 
     print(f"\nSaved {len(results)} days to {OUTPUT_FILE}")
+
+    activities = pull_activities(client)
+    with open(ACTIVITIES_FILE, "w") as f:
+        json.dump(activities, f, indent=2)
+    print(f"Saved {len(activities)} activities to {ACTIVITIES_FILE}")
 
 
 if __name__ == "__main__":
