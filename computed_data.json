@@ -21,6 +21,7 @@
     "rhr_delta_from_baseline": null,
     "heat_risk": null,
     "today_summary": "Recovery looks normal. Fine for planned training.",
+    "readiness_level": "good",
     "plan_flag_reasons": []
   },
   {
@@ -45,6 +46,7 @@
     "rhr_delta_from_baseline": 0.0,
     "heat_risk": null,
     "today_summary": "Recovery looks normal. Fine for planned training.",
+    "readiness_level": "good",
     "plan_flag_reasons": []
   },
   {
@@ -69,6 +71,7 @@
     "rhr_delta_from_baseline": 1.0,
     "heat_risk": null,
     "today_summary": "Recovery slightly below baseline. Fine to train but stay conservative.",
+    "readiness_level": "caution",
     "plan_flag_reasons": []
   },
   {
@@ -93,6 +96,7 @@
     "rhr_delta_from_baseline": -1.3,
     "heat_risk": null,
     "today_summary": "Recovery looks normal. Fine for planned training.",
+    "readiness_level": "good",
     "plan_flag_reasons": []
   },
   {
@@ -117,6 +121,7 @@
     "rhr_delta_from_baseline": 1.0,
     "heat_risk": null,
     "today_summary": "Recovery looks normal. Fine for planned training.",
+    "readiness_level": "good",
     "plan_flag_reasons": []
   },
   {
@@ -141,6 +146,7 @@
     "rhr_delta_from_baseline": 0.8,
     "heat_risk": null,
     "today_summary": "Recovery looks normal. Fine for planned training.",
+    "readiness_level": "good",
     "plan_flag_reasons": []
   },
   {
@@ -165,6 +171,7 @@
     "rhr_delta_from_baseline": 2.7,
     "heat_risk": null,
     "today_summary": "Recovery slightly below baseline. Fine to train but stay conservative.",
+    "readiness_level": "caution",
     "plan_flag_reasons": []
   },
   {
@@ -189,6 +196,7 @@
     "rhr_delta_from_baseline": -0.7,
     "heat_risk": null,
     "today_summary": "Recovery looks normal. Fine for planned training.",
+    "readiness_level": "good",
     "plan_flag_reasons": []
   },
   {
@@ -213,6 +221,7 @@
     "rhr_delta_from_baseline": 1.3,
     "heat_risk": null,
     "today_summary": "Recovery looks normal. Fine for planned training.",
+    "readiness_level": "good",
     "plan_flag_reasons": []
   },
   {
@@ -237,6 +246,7 @@
     "rhr_delta_from_baseline": -2.0,
     "heat_risk": null,
     "today_summary": "Recovery slightly below baseline. Fine to train but stay conservative.",
+    "readiness_level": "caution",
     "plan_flag_reasons": []
   },
   {
@@ -261,6 +271,7 @@
     "rhr_delta_from_baseline": -0.7,
     "heat_risk": null,
     "today_summary": "Recovery looks normal. Fine for planned training.",
+    "readiness_level": "good",
     "plan_flag_reasons": []
   },
   {
@@ -285,6 +296,7 @@
     "rhr_delta_from_baseline": -3.9,
     "heat_risk": null,
     "today_summary": "Recovery looks normal. Fine for planned training.",
+    "readiness_level": "good",
     "plan_flag_reasons": []
   },
   {
@@ -309,6 +321,7 @@
     "rhr_delta_from_baseline": -1.3,
     "heat_risk": null,
     "today_summary": "Recovery looks normal. Fine for planned training.",
+    "readiness_level": "good",
     "plan_flag_reasons": []
   },
   {
@@ -333,6 +346,7 @@
     "rhr_delta_from_baseline": -1.0,
     "heat_risk": "moderate",
     "today_summary": "Recovery looks normal. Fine for planned training.",
+    "readiness_level": "good",
     "plan_flag_reasons": []
   }
 ]
