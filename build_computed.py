@@ -108,6 +108,20 @@ def update_flags_log(date_str, session_name, reasons, existing_log):
         "reasons": reasons,
     })
     return existing_log
+def readiness_level(rhr_delta, hrv_delta, sleep_score, achilles, heat_risk):
+    """Traffic light for the dashboard hero: 'good' | 'caution' | 'flag'.
+    Mirrors summarise() severity so the light and the sentence never
+    disagree."""
+    rhr_elevated = rhr_delta is not None and rhr_delta > 2
+    hrv_depressed = hrv_delta is not None and hrv_delta < -2
+    if (achilles and achilles >= 3) or (rhr_elevated and hrv_depressed):
+        return "flag"
+    if rhr_elevated or hrv_depressed or heat_risk == "high" or \
+       (sleep_score is not None and sleep_score < 70):
+        return "caution"
+    return "good"
+
+
 def summarise(rhr_delta, hrv_delta, sleep_score, achilles, heat_risk):
     if achilles and achilles >= 3:
         return "Achilles flagged. Consider an easy day or rest."
@@ -201,6 +215,7 @@ def main():
             "rhr_delta_from_baseline": rhr_delta,
             "heat_risk": heat_risk,
             "today_summary": summarise(rhr_delta, hrv_delta, row.get("sleep_score"), manual.get("achilles_score"), heat_risk),
+            "readiness_level": readiness_level(rhr_delta, hrv_delta, row.get("sleep_score"), manual.get("achilles_score"), heat_risk),
             "plan_flag_reasons": flag_reasons,
         })
 

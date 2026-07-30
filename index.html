@@ -10,9 +10,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#2C6CB0">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#131312">
 <title>Coaching Dashboard</title>
+<link rel="manifest" href="manifest.json">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <style>
+  /* Theme: club yellow + blue carry identity and data series; green/
+     amber/red are RESERVED for status (readiness, achilles, heat, ACWR
+     zone) and never used decoratively. Dark palette steps validated
+     separately against the dark surface — not an automatic flip. */
   :root {
     --bg: #F7F7F5;
     --surface: #FFFFFF;
@@ -20,9 +27,37 @@
     --text-primary: #1A1A1A;
     --text-secondary: #4A4A4A;
     --text-muted: #6B7280;
-    --yellow: #F5C518;
+    --club-blue: #2C6CB0;
+    --club-yellow: #D4A800;
+    --club-yellow-bright: #F5C518;
+    --good: #2E7D32;      --good-bg: #EAF4EA;
+    --warn: #B45309;      --warn-bg: #FCF1E3;
+    --bad:  #A83232;      --bad-bg:  #F9ECEC;
+    --grid: #E5E5E3;
+    --tick: #6B7280;
+    /* legacy aliases used by older markup */
+    --yellow: var(--club-yellow-bright);
     --yellow-text: #A88400;
-    --blue: #2C6CB0;
+    --blue: var(--club-blue);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #131312;
+      --surface: #1E1E1C;
+      --border: #33332F;
+      --text-primary: #ECECEA;
+      --text-secondary: #C2C2BE;
+      --text-muted: #8B8B86;
+      --club-blue: #4A8CC8;
+      --club-yellow: #AE922C;
+      --club-yellow-bright: #C9A93B;
+      --good: #6CBB72;      --good-bg: #1E2C1F;
+      --warn: #D89A50;      --warn-bg: #302518;
+      --bad:  #D97070;      --bad-bg:  #321D1D;
+      --grid: #2C2C29;
+      --tick: #8B8B86;
+      --yellow-text: #C9A93B;
+    }
   }
   * { box-sizing: border-box; }
   body {
@@ -31,7 +66,49 @@
     color: var(--text-primary);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     padding: 1.5rem;
+    padding-top: calc(1.5rem + 4px);
+    font-variant-numeric: tabular-nums;
   }
+  /* Club identity: a thin blue->yellow bar across the very top */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--club-blue) 0%, var(--club-blue) 55%, var(--club-yellow-bright) 55%, var(--club-yellow-bright) 100%);
+    z-index: 10;
+  }
+
+  /* Hero briefing */
+  .hero {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  .hero .session { font-size: 20px; font-weight: 600; margin: 2px 0 2px; }
+  .hero .session .stype { text-transform: capitalize; }
+  .hero .session-notes { font-size: 13px; color: var(--text-secondary); margin: 0 0 10px; }
+  .readiness {
+    display: flex; align-items: flex-start; gap: 8px;
+    border-radius: 8px; padding: 10px 12px;
+    font-size: 13px;
+  }
+  .readiness.good    { background: var(--good-bg); color: var(--good); }
+  .readiness.caution { background: var(--warn-bg); color: var(--warn); }
+  .readiness.flag    { background: var(--bad-bg);  color: var(--bad); }
+  .readiness .icon { font-size: 14px; line-height: 1.4; }
+  .chip {
+    display: inline-block; font-size: 12px; border-radius: 999px;
+    padding: 2px 10px; margin: 8px 6px 0 0;
+    background: var(--bg); border: 1px solid var(--border); color: var(--text-secondary);
+  }
+  .chip.warn { background: var(--warn-bg); border-color: transparent; color: var(--warn); }
+  .chip.bad  { background: var(--bad-bg);  border-color: transparent; color: var(--bad); }
+
+  .spark-wrap { height: 34px; margin-top: 6px; position: relative; }
   .header { margin-bottom: 1.25rem; }
   .header .eyebrow { font-size: 13px; color: var(--text-muted); margin: 0; }
   .header h1 { font-size: 22px; font-weight: 500; margin: 4px 0 0; }
@@ -70,6 +147,11 @@
   .card .label { font-size: 13px; color: var(--text-muted); margin: 0 0 4px; }
   .card .value { font-size: 24px; font-weight: 500; margin: 0; }
   .card .delta { font-size: 12px; margin: 4px 0 0; }
+  /* Delta chips are semantic: direction alone isn't good or bad — the
+     metric decides (HRV up = good, RHR up = worth noting). Arrow glyphs
+     carry the direction so colour is never the only signal. */
+  .delta.good { color: var(--good); }
+  .delta.warn { color: var(--warn); }
   .delta.up { color: var(--yellow-text); }
   .delta.down { color: var(--blue); }
   .delta.flat { color: var(--text-muted); }
@@ -86,9 +168,9 @@
   .chart-wrap { position: relative; height: 220px; }
 
   .error {
-    background: #FDF0F0;
-    border: 1px solid #E5A0A0;
-    color: #A83232;
+    background: var(--bad-bg);
+    border: 1px solid var(--bad);
+    color: var(--bad);
     padding: 1rem;
     border-radius: 8px;
     font-size: 14px;
@@ -99,6 +181,10 @@
     gap: 4px;
     border-bottom: 1px solid var(--border);
     margin-bottom: 1.25rem;
+    position: sticky;
+    top: 4px;
+    background: var(--bg);
+    z-index: 5;
   }
   .tab-btn {
     background: none;
@@ -157,6 +243,85 @@
 // the charts must never blank the whole dashboard.
 if (typeof Chart === 'undefined') window.Chart = class { constructor() {} };
 
+// Chart colours come from the CSS theme so light/dark stay in sync.
+// Values are read once at load; if the OS theme flips mid-session the
+// next reload picks it up (matchMedia listener below forces that).
+function cssVar(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+const THEME = {};
+function loadTheme() {
+  THEME.blue = cssVar('--club-blue');
+  THEME.yellow = cssVar('--club-yellow');
+  THEME.good = cssVar('--good');
+  THEME.warn = cssVar('--warn');
+  THEME.bad = cssVar('--bad');
+  THEME.grid = cssVar('--grid');
+  THEME.tick = cssVar('--tick');
+  THEME.ink = cssVar('--text-primary');
+  THEME.muted = cssVar('--text-muted');
+}
+loadTheme();
+if (window.matchMedia) {
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => location.reload());
+}
+function axisXY(opts = {}) {
+  return {
+    y: Object.assign({ ticks: { color: THEME.tick }, grid: { color: THEME.grid } }, opts.y || {}),
+    x: Object.assign({ ticks: { color: THEME.tick }, grid: { display: false } }, opts.x || {}),
+  };
+}
+
+// Shades a horizontal band (e.g. the ACWR 0.8-1.3 safe zone) behind the
+// data so "in the zone" is visible without remembering the range.
+const bandPlugin = {
+  id: 'band',
+  beforeDatasetsDraw(chart, args, opts) {
+    if (!opts || opts.min == null) return;
+    const { ctx, chartArea, scales } = chart;
+    if (!chartArea || !scales.y) return;
+    const top = scales.y.getPixelForValue(opts.max);
+    const bottom = scales.y.getPixelForValue(opts.min);
+    ctx.save();
+    ctx.fillStyle = opts.color;
+    ctx.fillRect(chartArea.left, top, chartArea.right - chartArea.left, bottom - top);
+    ctx.restore();
+  },
+};
+
+// Tiny axis-less trend line inside a stat card.
+function sparkline(canvasId, values, color) {
+  const el = document.getElementById(canvasId);
+  if (!el) return;
+  new Chart(el, {
+    type: 'line',
+    data: {
+      labels: values.map((_, i) => i),
+      datasets: [{ data: values, borderColor: color, borderWidth: 2, pointRadius: 0, tension: 0.35, spanGaps: true }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: { x: { display: false }, y: { display: false } },
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      animation: false,
+    },
+  });
+}
+
+// Semantic delta chip: the metric decides whether "up" is good.
+function deltaChip(delta, unit, upIsGood) {
+  if (delta === null || delta === undefined) return '<p class="delta flat">—</p>';
+  const arrow = delta > 0.5 ? '▲' : delta < -0.5 ? '▼' : '●';
+  let cls = 'flat';
+  if (Math.abs(delta) > 0.5) {
+    const isGood = (delta > 0) === upIsGood;
+    cls = isGood ? 'good' : 'warn';
+  }
+  const sign = delta > 0 ? '+' : '';
+  return `<p class="delta ${cls}">${arrow} ${sign}${delta}${unit} vs 7d</p>`;
+}
+
 // UK-format date display helpers. Internal data stays ISO (YYYY-MM-DD)
 // everywhere — these are for what the eye reads, nothing else.
 function fmtDayMonth(dateStr) {          // "29 Jul"
@@ -200,66 +365,83 @@ async function loadDashboard() {
     new Date(today.date + 'T00:00:00').toLocaleDateString('en-GB',
       { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
 
-  function deltaClass(delta) {
-    if (delta === null || delta === undefined) return 'flat';
-    if (delta > 0.5) return 'up';
-    if (delta < -0.5) return 'down';
-    return 'flat';
-  }
-  function fmtDelta(delta, unit) {
-    if (delta === null || delta === undefined) return '';
-    const sign = delta > 0 ? '+' : '';
-    return `${sign}${delta}${unit} vs 7d avg`;
-  }
+  // Today's planned session for the hero briefing
+  let todayPlan = null;
+  try {
+    const planRes = await fetch('training_plan.json?v=' + Date.now());
+    if (planRes.ok) {
+      const plan = await planRes.json();
+      todayPlan = plan.find(s => s.date === today.date) || null;
+    }
+  } catch (e) { /* hero renders without the session */ }
+
+  const level = today.readiness_level || 'good';
+  const levelIcon = { good: '✓', caution: '△', flag: '✕' }[level] || '✓';
+  const heatChip = today.heat_risk === 'high'
+    ? '<span class="chip bad">Heat risk high</span>'
+    : today.heat_risk === 'moderate' ? '<span class="chip warn">Heat moderate</span>' : '';
 
   content.innerHTML = `
-    <div class="summary-strip">
-      <span class="dot"></span>
-      <span>${today.today_summary || 'No summary available.'}</span>
+    <div class="hero">
+      <p class="label" style="font-size:13px; color:var(--text-muted); margin:0;">Today's session</p>
+      <p class="session"><span class="stype">${todayPlan ? todayPlan.session_type : 'Nothing planned'}</span>${todayPlan && todayPlan.target_distance_km ? ` — ${todayPlan.target_distance_km} km` : ''}</p>
+      ${todayPlan && todayPlan.notes ? `<p class="session-notes">${todayPlan.notes}</p>` : ''}
+      <div class="readiness ${level}">
+        <span class="icon">${levelIcon}</span>
+        <span>${today.today_summary || 'No readiness data yet.'}</span>
+      </div>
+      <div>
+        ${heatChip}
+        ${today.achilles_score >= 3 ? `<span class="chip bad">Achilles ${today.achilles_score}/10</span>` : ''}
+        ${today.acwr ? `<span class="chip">ACWR ${today.acwr}${today.acwr_status ? ' · ' + today.acwr_status.toLowerCase() : ''}</span>` : ''}
+      </div>
     </div>
 
     <div class="card-grid">
       <div class="card">
         <p class="label">RHR</p>
-        <p class="value">${today.rhr ?? '--'}</p>
-        <p class="delta ${deltaClass(today.rhr_delta_from_baseline)}">${fmtDelta(today.rhr_delta_from_baseline, ' bpm')}</p>
+        <p class="value">${today.rhr ?? '--'}<span style="font-size:13px; color:var(--text-muted);"> bpm</span></p>
+        ${deltaChip(today.rhr_delta_from_baseline, ' bpm', false)}
+        <div class="spark-wrap"><canvas id="sparkRhr"></canvas></div>
       </div>
       <div class="card">
         <p class="label">HRV</p>
-        <p class="value">${today.hrv_last_night ?? '--'}</p>
-        <p class="delta ${deltaClass(today.hrv_delta_from_baseline)}">${fmtDelta(today.hrv_delta_from_baseline, ' ms')}</p>
+        <p class="value">${today.hrv_last_night ?? '--'}<span style="font-size:13px; color:var(--text-muted);"> ms</span></p>
+        ${deltaChip(today.hrv_delta_from_baseline, ' ms', true)}
+        <div class="spark-wrap"><canvas id="sparkHrv"></canvas></div>
       </div>
       <div class="card">
         <p class="label">Sleep score</p>
         <p class="value">${today.sleep_score ?? '--'}</p>
+        <p class="delta flat">${today.sleep_duration_hrs ? today.sleep_duration_hrs + ' hrs' : ''}</p>
+        <div class="spark-wrap"><canvas id="sparkSleep"></canvas></div>
       </div>
       <div class="card">
         <p class="label">Body battery</p>
         <p class="value">${today.body_battery_high ?? '--'}</p>
-      </div>
-      <div class="card">
-        <p class="label">ACWR</p>
-        <p class="value">${today.acwr ?? '--'}</p>
-      </div>
-      <div class="card">
-        <p class="label">Heat risk today</p>
-        <p class="value" style="text-transform:capitalize;">${today.heat_risk ?? 'n/a'}</p>
+        <p class="delta flat">peak</p>
+        <div class="spark-wrap"><canvas id="sparkBb"></canvas></div>
       </div>
     </div>
 
     <div class="chart-card">
-      <p class="title">HRV &amp; RHR trend</p>
-      <div class="chart-wrap"><canvas id="hrvRhrChart"></canvas></div>
+      <p class="title">HRV — 14 days (dashed = 7-day baseline)</p>
+      <div class="chart-wrap" style="height:160px;"><canvas id="hrvChart"></canvas></div>
+    </div>
+
+    <div class="chart-card">
+      <p class="title">RHR — 14 days (dashed = 7-day baseline)</p>
+      <div class="chart-wrap" style="height:160px;"><canvas id="rhrChart"></canvas></div>
     </div>
 
     <div class="chart-card">
       <p class="title">Sleep score &amp; body battery</p>
-      <div class="chart-wrap"><canvas id="sleepBbChart"></canvas></div>
+      <div class="chart-wrap" style="height:180px;"><canvas id="sleepBbChart"></canvas></div>
     </div>
 
     <div class="chart-card">
       <p class="title">Achilles score (0 = no issue, 10 = severe)</p>
-      <div class="chart-wrap"><canvas id="achillesChart"></canvas></div>
+      <div class="chart-wrap" style="height:160px;"><canvas id="achillesChart"></canvas></div>
     </div>
 
     <div class="chart-card" id="planCard" style="display:none;">
@@ -278,107 +460,73 @@ async function loadDashboard() {
 
   const labels = data.map(r => fmtDayMonth(r.date));
 
-  new Chart(document.getElementById('hrvRhrChart'), {
-    type: 'line',
-    data: {
-      labels,
-      datasets: [
-        {
-          label: 'HRV (ms)',
-          data: data.map(r => r.hrv_last_night),
-          borderColor: '#D4A800',
-          backgroundColor: '#D4A800',
-          tension: 0.3,
-          spanGaps: true,
-        },
-        {
-          label: 'RHR (bpm)',
-          data: data.map(r => r.rhr),
-          borderColor: '#2C6CB0',
-          backgroundColor: '#2C6CB0',
-          tension: 0.3,
-          spanGaps: true,
-          yAxisID: 'y1',
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      scales: {
-        y: { position: 'left', ticks: { color: '#6B7280' }, grid: { color: '#E5E5E3' } },
-        y1: { position: 'right', ticks: { color: '#6B7280' }, grid: { display: false } },
-        x: { ticks: { color: '#6B7280' }, grid: { color: '#E5E5E3' } },
-      },
-      plugins: { legend: { labels: { color: '#1A1A1A' } } },
-    },
-  });
+  sparkline('sparkRhr', data.map(r => r.rhr), THEME.blue);
+  sparkline('sparkHrv', data.map(r => r.hrv_last_night), THEME.blue);
+  sparkline('sparkSleep', data.map(r => r.sleep_score), THEME.blue);
+  sparkline('sparkBb', data.map(r => r.body_battery_high), THEME.blue);
 
+  // One metric per chart, own scale, with its 7-day baseline dashed —
+  // never two scales on one plot.
+  function metricChart(canvasId, series, baseline, color) {
+    new Chart(document.getElementById(canvasId), {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          { label: 'daily', data: series, borderColor: color, backgroundColor: color, borderWidth: 2, tension: 0.3, spanGaps: true, pointRadius: 2 },
+          { label: '7d baseline', data: baseline, borderColor: THEME.muted, borderDash: [5, 4], borderWidth: 1.5, pointRadius: 0, spanGaps: true },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: axisXY(),
+        plugins: { legend: { display: false } },
+      },
+    });
+  }
+  metricChart('hrvChart', data.map(r => r.hrv_last_night), data.map(r => r.hrv_baseline_7d), THEME.blue);
+  metricChart('rhrChart', data.map(r => r.rhr), data.map(r => r.rhr_baseline_7d), THEME.yellow);
+
+  // Sleep + body battery share one genuine 0-100 scale, so one chart is fine.
   new Chart(document.getElementById('sleepBbChart'), {
     type: 'line',
     data: {
       labels,
       datasets: [
-        {
-          label: 'Sleep score',
-          data: data.map(r => r.sleep_score),
-          borderColor: '#2C6CB0',
-          backgroundColor: '#2C6CB0',
-          tension: 0.3,
-          spanGaps: true,
-        },
-        {
-          label: 'Body battery',
-          data: data.map(r => r.body_battery_high),
-          borderColor: '#D4A800',
-          backgroundColor: '#D4A800',
-          tension: 0.3,
-          spanGaps: true,
-        },
+        { label: 'Sleep score', data: data.map(r => r.sleep_score), borderColor: THEME.blue, backgroundColor: THEME.blue, borderWidth: 2, tension: 0.3, spanGaps: true, pointRadius: 2 },
+        { label: 'Body battery', data: data.map(r => r.body_battery_high), borderColor: THEME.yellow, backgroundColor: THEME.yellow, borderWidth: 2, tension: 0.3, spanGaps: true, pointRadius: 2 },
       ],
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      scales: {
-        y: { ticks: { color: '#6B7280' }, grid: { color: '#E5E5E3' } },
-        x: { ticks: { color: '#6B7280' }, grid: { color: '#E5E5E3' } },
-      },
-      plugins: { legend: { labels: { color: '#1A1A1A' } } },
+      scales: axisXY({ y: { min: 0, max: 100 } }),
+      plugins: { legend: { labels: { color: THEME.ink } } },
     },
   });
 
+  // Achilles is a status metric — it wears the status colour.
   new Chart(document.getElementById('achillesChart'), {
     type: 'line',
     data: {
       labels,
-      datasets: [
-        {
-          label: 'Achilles (0-10)',
-          data: data.map(r => r.achilles_score),
-          borderColor: '#D4A800',
-          backgroundColor: '#D4A800',
-          tension: 0.2,
-          spanGaps: true,
-          pointRadius: 4,
-        },
-      ],
+      datasets: [{
+        label: 'Achilles (0-10)',
+        data: data.map(r => r.achilles_score),
+        borderColor: THEME.bad,
+        backgroundColor: THEME.bad,
+        borderWidth: 2,
+        tension: 0.2,
+        spanGaps: true,
+        pointRadius: 4,
+      }],
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      scales: {
-        y: {
-          min: 0, max: 10,
-          ticks: { color: '#6B7280', stepSize: 1 },
-          grid: { color: '#E5E5E3' },
-        },
-        x: { ticks: { color: '#6B7280' }, grid: { color: '#E5E5E3' } },
-      },
-      plugins: {
-        legend: { display: false },
-        annotation: undefined,
-      },
+      scales: axisXY({ y: { min: 0, max: 10, ticks: { color: THEME.tick, stepSize: 2 } } }),
+      plugins: { legend: { display: false } },
     },
   });
 
@@ -490,7 +638,7 @@ async function buildCoachTab() {
 
   // --- Latest weekly review ---
   if (review) {
-    const recColor = review.recommendation === 'hold' ? '#2E7D32' : 'var(--yellow-text)';
+    const recColor = review.recommendation === 'hold' ? 'var(--good)' : 'var(--warn)';
     const recLabel = review.recommendation === 'hold' ? 'Hold the plan' : 'Change proposed';
     html += `
       <div class="chart-card">
@@ -516,9 +664,9 @@ async function buildCoachTab() {
       ? 'Awaiting your response'
       : 'Amendment requested — coach will revise';
     html += `
-      <div style="background:#FFF4E5; border:1px solid #F0C674; border-radius:8px; padding:12px 16px; margin-bottom:1rem;">
-        <p style="font-size:13px; font-weight:600; color:#7A5200; margin:0 0 6px;">Plan proposal (${fmtDate(proposal.id)}) — ${statusLabel}</p>
-        <p style="font-size:13px; color:#7A5200; margin:0 0 10px;">${proposal.rationale || ''}</p>
+      <div style="background:var(--warn-bg); border:1px solid var(--warn); border-radius:8px; padding:12px 16px; margin-bottom:1rem;">
+        <p style="font-size:13px; font-weight:600; color:var(--warn); margin:0 0 6px;">Plan proposal (${fmtDate(proposal.id)}) — ${statusLabel}</p>
+        <p style="font-size:13px; color:var(--warn); margin:0 0 10px;">${proposal.rationale || ''}</p>
         <table style="width:100%; border-collapse:collapse; font-size:12px; background:var(--surface); border-radius:6px;">
           <thead>
             <tr style="text-align:left; color:var(--text-muted);">
@@ -539,13 +687,13 @@ async function buildCoachTab() {
         </table>
         ${proposal.status === 'pending' ? (REVIEW_FORM_URL
           ? `<a href="${REVIEW_FORM_URL}" target="_blank" style="display:inline-block; margin-top:10px; background:var(--blue); color:#fff; font-size:13px; padding:8px 14px; border-radius:6px; text-decoration:none;">Respond (approve / amend / reject)</a>`
-          : `<p style="font-size:12px; color:#7A5200; margin:10px 0 0;">Respond via the weekly review form (set REVIEW_FORM_URL in index.html to get a button here).</p>`) : ''}
+          : `<p style="font-size:12px; color:var(--warn); margin:10px 0 0;">Respond via the weekly review form (set REVIEW_FORM_URL in index.html to get a button here).</p>`) : ''}
       </div>
     `;
   } else if (proposal && proposal.status === 'applied') {
     html += `
-      <div style="background:#EFF7EF; border:1px solid #A5C9A5; border-radius:8px; padding:10px 16px; margin-bottom:1rem;">
-        <p style="font-size:13px; color:#2E7D32; margin:0;">Last proposal (${fmtDate(proposal.id)}) approved and applied to the plan.</p>
+      <div style="background:var(--good-bg); border:1px solid var(--good); border-radius:8px; padding:10px 16px; margin-bottom:1rem;">
+        <p style="font-size:13px; color:var(--good); margin:0;">Last proposal (${fmtDate(proposal.id)}) approved and applied to the plan.</p>
       </div>
     `;
   }
@@ -598,8 +746,9 @@ async function buildCoachTab() {
         <div class="chart-wrap"><canvas id="longRunChart"></canvas></div>
       </div>
       <div class="chart-card">
-        <p class="title">Achilles score vs daily load — watch what provokes it</p>
-        <div class="chart-wrap"><canvas id="achillesLoadChart"></canvas></div>
+        <p class="title">Daily load (km) with achilles score below — watch what provokes it</p>
+        <div class="chart-wrap" style="height:140px;"><canvas id="dailyLoadChart"></canvas></div>
+        <div class="chart-wrap" style="height:110px; margin-top:4px;"><canvas id="achillesDailyChart"></canvas></div>
       </div>
     `;
 
@@ -639,10 +788,7 @@ async function buildCoachTab() {
 
   if (weekly && weekly.weeks && weekly.weeks.length && document.getElementById('weeklyKmChart')) {
     const weekLabels = weekly.weeks.map(w => fmtDayMonth(w.week_start));
-    const axisOpts = {
-      y: { ticks: { color: '#6B7280' }, grid: { color: '#E5E5E3' } },
-      x: { ticks: { color: '#6B7280' }, grid: { display: false } },
-    };
+    const axisOpts = axisXY();
 
     new Chart(document.getElementById('weeklyKmChart'), {
       type: 'bar',
@@ -651,7 +797,7 @@ async function buildCoachTab() {
         datasets: [{
           label: 'km',
           data: weekly.weeks.map(w => w.km),
-          backgroundColor: '#D4A800',
+          backgroundColor: THEME.yellow,
           borderRadius: 4,
         }],
       },
@@ -672,8 +818,9 @@ async function buildCoachTab() {
           {
             label: 'Long run (min)',
             data: weekly.weeks.map(w => w.long_run_min),
-            borderColor: '#2C6CB0',
-            backgroundColor: '#2C6CB0',
+            borderColor: THEME.blue,
+            backgroundColor: THEME.blue,
+            borderWidth: 2,
             tension: 0.3,
             spanGaps: true,
             pointRadius: 4,
@@ -681,7 +828,7 @@ async function buildCoachTab() {
           ...(targetMin ? [{
             label: 'Target',
             data: weekly.weeks.map(() => targetMin),
-            borderColor: '#2E7D32',
+            borderColor: THEME.good,
             borderDash: [6, 4],
             pointRadius: 0,
           }] : []),
@@ -691,46 +838,51 @@ async function buildCoachTab() {
         responsive: true,
         maintainAspectRatio: false,
         scales: axisOpts,
-        plugins: { legend: { labels: { color: '#1A1A1A' } } },
+        plugins: { legend: { labels: { color: THEME.ink } } },
       },
     });
 
     // Flatten every week's session log into one daily series so achilles
-    // niggles can be read against the load that preceded them.
+    // niggles can be read against the load that preceded them. Two
+    // stacked charts sharing the same x axis — never two y-scales on one.
     const daily = weekly.weeks.flatMap(w => w.session_log || []);
-    new Chart(document.getElementById('achillesLoadChart'), {
+    const dailyLabels = daily.map(s => fmtDayMonth(s.date));
+    new Chart(document.getElementById('dailyLoadChart'), {
+      type: 'bar',
       data: {
-        labels: daily.map(s => fmtDayMonth(s.date)),
-        datasets: [
-          {
-            type: 'bar',
-            label: 'km',
-            data: daily.map(s => s.km),
-            backgroundColor: '#E5D08A',
-            borderRadius: 3,
-          },
-          {
-            type: 'line',
-            label: 'Achilles (0-10)',
-            data: daily.map(s => s.achilles_score),
-            borderColor: '#A83232',
-            backgroundColor: '#A83232',
-            tension: 0.2,
-            spanGaps: true,
-            pointRadius: 3,
-            yAxisID: 'y1',
-          },
-        ],
+        labels: dailyLabels,
+        datasets: [{ label: 'km', data: daily.map(s => s.km), backgroundColor: THEME.yellow, borderRadius: 3 }],
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        scales: {
-          y: { position: 'left', ticks: { color: '#6B7280' }, grid: { color: '#E5E5E3' } },
-          y1: { position: 'right', min: 0, max: 10, ticks: { color: '#6B7280', stepSize: 2 }, grid: { display: false } },
-          x: { ticks: { color: '#6B7280', maxTicksLimit: 14 }, grid: { display: false } },
-        },
-        plugins: { legend: { labels: { color: '#1A1A1A' } } },
+        scales: axisXY({ x: { ticks: { display: false } } }),
+        plugins: { legend: { display: false } },
+      },
+    });
+    new Chart(document.getElementById('achillesDailyChart'), {
+      type: 'line',
+      data: {
+        labels: dailyLabels,
+        datasets: [{
+          label: 'Achilles (0-10)',
+          data: daily.map(s => s.achilles_score),
+          borderColor: THEME.bad,
+          backgroundColor: THEME.bad,
+          borderWidth: 2,
+          tension: 0.2,
+          spanGaps: true,
+          pointRadius: 3,
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: axisXY({
+          y: { min: 0, max: 10, ticks: { color: THEME.tick, stepSize: 5 } },
+          x: { ticks: { color: THEME.tick, maxTicksLimit: 10 } },
+        }),
+        plugins: { legend: { display: false } },
       },
     });
   }
@@ -739,7 +891,7 @@ async function buildCoachTab() {
 function buildAcwrTab(data) {
   const panel = document.getElementById('tab-acwr');
   const today = data[data.length - 1];
-  const statusColor = { LOW: 'var(--blue)', OPTIMAL: '#2E7D32', HIGH: 'var(--yellow-text)', undefined: 'var(--text-muted)' };
+  const statusColor = { LOW: 'var(--club-blue)', OPTIMAL: 'var(--good)', HIGH: 'var(--warn)', undefined: 'var(--text-muted)' };
 
   panel.innerHTML = `
     <div class="card-grid">
@@ -753,7 +905,7 @@ function buildAcwrTab(data) {
       </div>
     </div>
     <div class="chart-card">
-      <p class="title">ACWR trend (0.8-1.3 typically considered safe range)</p>
+      <p class="title">ACWR trend — shaded band is the 0.8-1.3 safe zone</p>
       <div class="chart-wrap"><canvas id="acwrChart"></canvas></div>
     </div>
   `;
@@ -761,14 +913,16 @@ function buildAcwrTab(data) {
   const labels = data.map(r => fmtDayMonth(r.date));
   new Chart(document.getElementById('acwrChart'), {
     type: 'line',
+    plugins: [bandPlugin],
     data: {
       labels,
       datasets: [
         {
           label: 'ACWR',
           data: data.map(r => r.acwr),
-          borderColor: '#D4A800',
-          backgroundColor: '#D4A800',
+          borderColor: THEME.blue,
+          backgroundColor: THEME.blue,
+          borderWidth: 2,
           tension: 0.3,
           spanGaps: true,
         },
@@ -777,16 +931,20 @@ function buildAcwrTab(data) {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      scales: {
-        y: { ticks: { color: '#6B7280' }, grid: { color: '#E5E5E3' } },
-        x: { ticks: { color: '#6B7280' }, grid: { color: '#E5E5E3' } },
+      scales: axisXY({ y: { suggestedMin: 0.5, suggestedMax: 1.6 } }),
+      plugins: {
+        legend: { display: false },
+        band: { min: 0.8, max: 1.3, color: 'rgba(46, 125, 50, 0.10)' },
       },
-      plugins: { legend: { display: false } },
     },
   });
 }
 
 loadDashboard().then(loadTrainingPlan);
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(() => { /* PWA optional */ });
+}
 
 function toDateStr(d) {
   // Always use LOCAL date components, never toISOString() — that
@@ -836,9 +994,9 @@ async function buildPlanTab(computedData) {
 
   if (today.plan_flag_reasons && today.plan_flag_reasons.length) {
     html += `
-      <div style="background:#FFF4E5; border:1px solid #F0C674; border-radius:8px; padding:12px 16px; margin-bottom:1.5rem;">
-        <p style="font-size:13px; font-weight:500; color:#7A5200; margin:0 0 6px;">Worth reviewing today</p>
-        ${today.plan_flag_reasons.map(r => `<p style="font-size:13px; color:#7A5200; margin:2px 0;">• ${r}</p>`).join('')}
+      <div style="background:var(--warn-bg); border:1px solid var(--warn); border-radius:8px; padding:12px 16px; margin-bottom:1.5rem;">
+        <p style="font-size:13px; font-weight:500; color:var(--warn); margin:0 0 6px;">Worth reviewing today</p>
+        ${today.plan_flag_reasons.map(r => `<p style="font-size:13px; color:var(--warn); margin:2px 0;">• ${r}</p>`).join('')}
       </div>
     `;
   }
@@ -877,7 +1035,7 @@ async function buildPlanTab(computedData) {
               const isToday = dateStr === today.date;
               const dayName = new Date(dateStr + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short' });
               return `
-                <tr style="border-top:1px solid var(--border); ${isToday ? 'background:#FFFBEF;' : ''}">
+                <tr style="border-top:1px solid var(--border); ${isToday ? 'background:color-mix(in srgb, var(--club-yellow) 10%, transparent);' : ''}">
                   <td style="padding:6px 8px;">${dayName} ${fmtDayMonth(dateStr)}${isToday ? ' (today)' : ''}</td>
                   <td style="padding:6px 8px; text-transform:capitalize; ${!s ? 'color:var(--text-muted);' : ''}">${s ? s.session_type : 'Nothing planned'}</td>
                   <td style="padding:6px 8px;">${s && s.target_distance_km ? s.target_distance_km + ' km' : '--'}</td>
@@ -1038,8 +1196,9 @@ function buildPerformanceTab(data) {
       datasets: [{
         label: 'VO2max',
         data: vo2Rows.map(r => r.vo2max),
-        borderColor: '#D4A800',
-        backgroundColor: '#D4A800',
+        borderColor: THEME.blue,
+        backgroundColor: THEME.blue,
+        borderWidth: 2,
         tension: 0.3,
         pointRadius: 4,
       }],
@@ -1047,10 +1206,7 @@ function buildPerformanceTab(data) {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      scales: {
-        y: { ticks: { color: '#6B7280' }, grid: { color: '#E5E5E3' } },
-        x: { ticks: { color: '#6B7280' }, grid: { color: '#E5E5E3' } },
-      },
+      scales: axisXY(),
       plugins: { legend: { display: false } },
     },
   });
