@@ -13,12 +13,14 @@
 
 name: Daily data pull
 
-# GitHub fires scheduled runs late under load — often 30-90 min behind
-# the cron time. The early slot is therefore set well before the "fresh
-# by 8am UK" requirement so even a badly delayed run still makes it.
+# GitHub fires scheduled runs late under load — observed ~2.5h behind
+# the cron time on this repo (30 Jul: the 05:15 slot ran 07:42, the
+# 10:30 slot ran 12:09). Slots are therefore set far enough ahead of
+# the "fresh by 8am UK" requirement that even a badly delayed run
+# still makes it.
 on:
   schedule:
-    - cron: '30 4 * * *'   # 05:30 UK in summer (04:30 winter) + delay buffer
+    - cron: '30 3 * * *'   # 04:30 UK summer; ~7am UK even with a 2.5h delay
     - cron: '20 6 * * *'   # ~07:20 UK backstop if the first run lagged or watch hadn't synced
     - cron: '30 10 * * *'  # late-morning catch-up for form entries
   workflow_dispatch: {}     # manual "run now" button in the Actions tab
