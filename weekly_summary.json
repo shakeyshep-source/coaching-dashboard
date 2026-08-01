@@ -1,22 +1,22 @@
 {
-  "generated": "2026-07-31",
+  "generated": "2026-08-01",
   "next_race": {
     "name": "Cheltenham Half Marathon",
     "date": "2026-09-20",
     "distance_km": 21.0975,
-    "days_away": 51
+    "days_away": 50
   },
   "race_readiness": {
     "race": {
       "name": "Cheltenham Half Marathon",
       "date": "2026-09-20",
       "distance_km": 21.0975,
-      "days_away": 51
+      "days_away": 50
     },
-    "weeks_to_race": 7.3,
+    "weeks_to_race": 7.1,
     "taper_start": "2026-09-10",
     "remaining_key_sessions": {
-      "tempo": 2,
+      "tempo": 1,
       "intervals": 2,
       "long": 2
     },
@@ -523,10 +523,10 @@
       "on_target_pct": 100,
       "avg_rpe": 3.0,
       "max_achilles": 1,
-      "avg_hrv": 39,
-      "avg_rhr": 47.5,
-      "avg_sleep_score": 85,
-      "avg_sleep_hrs": 7.5,
+      "avg_hrv": 35,
+      "avg_rhr": 48.0,
+      "avg_sleep_score": 81,
+      "avg_sleep_hrs": 7.1,
       "easy_pace_min_km": 5.0,
       "easy_avg_hr": 137.5,
       "efficiency": 1.456,
@@ -691,10 +691,10 @@
     },
     {
       "week_start": "2026-07-27",
-      "km": 27.9,
-      "runs": 3,
-      "time_min": 137.0,
-      "elevation_m": 358.0,
+      "km": 36.6,
+      "runs": 4,
+      "time_min": 178.0,
+      "elevation_m": 423.0,
       "planned_sessions": 6,
       "logged_sessions": 0,
       "hard_sessions_planned": 2,
@@ -705,13 +705,13 @@
       "on_target_pct": null,
       "avg_rpe": null,
       "max_achilles": null,
-      "avg_hrv": 46.6,
-      "avg_rhr": 45.8,
-      "avg_sleep_score": 88.4,
-      "avg_sleep_hrs": 7.9,
-      "easy_pace_min_km": 4.94,
-      "easy_avg_hr": 139.0,
-      "efficiency": 1.461,
+      "avg_hrv": 45.5,
+      "avg_rhr": 46.2,
+      "avg_sleep_score": 88.5,
+      "avg_sleep_hrs": 8.0,
+      "easy_pace_min_km": 4.89,
+      "easy_avg_hr": 138.8,
+      "efficiency": 1.478,
       "session_log": [
         {
           "date": "2026-07-28",
@@ -751,6 +751,19 @@
           "km": 8.0,
           "pace": 5.31,
           "avg_hr": 132.0
+        },
+        {
+          "date": "2026-07-31",
+          "temp_max_c": 23.4,
+          "heat_risk": "moderate",
+          "session_type": null,
+          "rpe": null,
+          "on_target": null,
+          "achilles_score": null,
+          "note": null,
+          "km": 8.8,
+          "pace": 4.74,
+          "avg_hr": 138.0
         }
       ]
     }
