@@ -20,7 +20,7 @@
       "intervals": 2,
       "long": 2
     },
-    "goal_time": "1:22:23.01",
+    "goal_time": "1:22:25.01",
     "goal_pace": "3:54/km",
     "long_run_target_min": 95,
     "longest_run_recent_min": 77
@@ -691,15 +691,15 @@
     },
     {
       "week_start": "2026-07-27",
-      "km": 36.6,
-      "runs": 4,
-      "time_min": 178.0,
-      "elevation_m": 423.0,
+      "km": 39.6,
+      "runs": 5,
+      "time_min": 193.0,
+      "elevation_m": 426.0,
       "planned_sessions": 6,
       "logged_sessions": 0,
       "hard_sessions_planned": 2,
-      "quality_time_min": 0,
-      "easy_pct": 100,
+      "quality_time_min": 15,
+      "easy_pct": 92,
       "long_run_min": 51,
       "long_run_km": 10.75,
       "on_target_pct": null,
@@ -709,9 +709,9 @@
       "avg_rhr": 46.2,
       "avg_sleep_score": 88.5,
       "avg_sleep_hrs": 8.0,
-      "easy_pace_min_km": 4.89,
-      "easy_avg_hr": 138.8,
-      "efficiency": 1.478,
+      "easy_pace_min_km": 4.9,
+      "easy_avg_hr": 139.2,
+      "efficiency": 1.468,
       "session_log": [
         {
           "date": "2026-07-28",
@@ -764,6 +764,19 @@
           "km": 8.8,
           "pace": 4.74,
           "avg_hr": 138.0
+        },
+        {
+          "date": "2026-08-01",
+          "temp_max_c": 23.6,
+          "heat_risk": "moderate",
+          "session_type": null,
+          "rpe": null,
+          "on_target": null,
+          "achilles_score": null,
+          "note": null,
+          "km": 3.0,
+          "pace": 4.96,
+          "avg_hr": 141.0
         }
       ]
     }
