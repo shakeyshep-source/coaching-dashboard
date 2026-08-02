@@ -16,6 +16,7 @@ SHEET IDs — update these if sheets are ever recreated:
 import csv
 import io
 import json
+import re
 import requests
 from datetime import datetime
 
@@ -36,12 +37,75 @@ RACES_FILE         = "races.json"
 REVIEW_RESPONSES_FILE = "review_responses.json"
 
 
-def fetch_sheet_csv(sheet_id):
-    """Fetch a Google Sheet as CSV using the public export endpoint."""
+def fetch_sheet_csv(sheet_id, gid=None):
+    """Fetch a Google Sheet as CSV using the public export endpoint.
+    Without a gid this returns the FIRST tab, which is not necessarily
+    the one the form is currently writing to — see fetch_form_responses.
+    """
     url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
-    resp = requests.get(url, timeout=10)
+    if gid is not None:
+        url += f"&gid={gid}"
+    resp = requests.get(url, timeout=15)
     resp.raise_for_status()
     return list(csv.DictReader(io.StringIO(resp.text)))
+
+
+def list_tabs(sheet_id):
+    """Every tab in a publicly-viewable spreadsheet, as [(gid, name)].
+    Best effort: returns [] if the page layout ever changes, in which
+    case callers fall back to the default first-tab export."""
+    url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/htmlview"
+    resp = requests.get(url, timeout=15)
+    resp.raise_for_status()
+    tabs = re.findall(r'id="sheet-button-(\d+)"[^>]*>([^<]*)<', resp.text)
+    if not tabs:
+        tabs = re.findall(r'href="#gid=(\d+)"[^>]*>([^<]*)<', resp.text)
+    seen, out = set(), []
+    for gid, name in tabs:
+        if gid not in seen:
+            seen.add(gid)
+            out.append((gid, name.strip()))
+    return out
+
+
+def fetch_form_responses(sheet_id, date_column, label):
+    """Read a form's responses from whichever tab actually holds them.
+
+    Unlinking and relinking a Google Form to the same spreadsheet leaves
+    the original "Form Responses 1" tab behind, frozen, and starts a new
+    "Form Responses 2" — while the default CSV export keeps returning the
+    first tab. That failure is silent and looks exactly like an athlete
+    who stopped logging, so pick the tab with the most usable rows rather
+    than trusting tab order. Self-healing if the form is relinked again.
+    """
+    best_rows = fetch_sheet_csv(sheet_id)
+    best_name, best_n = "(first tab)", count_dated(best_rows, date_column)
+
+    try:
+        tabs = list_tabs(sheet_id)
+    except Exception as exc:
+        print(f"  {label}: could not list tabs ({exc}); using the first tab")
+        tabs = []
+
+    if len(tabs) > 1:
+        print(f"  {label}: {len(tabs)} tabs found: {[n for _, n in tabs]}")
+    for gid, name in tabs:
+        try:
+            rows = fetch_sheet_csv(sheet_id, gid)
+        except Exception:
+            continue
+        n = count_dated(rows, date_column)
+        if n > best_n:
+            best_rows, best_name, best_n = rows, name or f"gid={gid}", n
+
+    print(f"  {label}: using tab {best_name} — {best_n} dated row(s)"
+          f"{'; columns: ' + str(list(best_rows[0].keys())) if best_rows else ''}")
+    return best_rows
+
+
+def count_dated(rows, date_column):
+    """How many rows carry a parseable date in the expected column."""
+    return sum(1 for r in rows if parse_date(r.get(date_column, "")))
 
 
 def parse_date(raw):
@@ -72,14 +136,7 @@ def parse_float(raw):
 
 
 def pull_daily_log():
-    rows = fetch_sheet_csv(DAILY_LOG_SHEET_ID)
-    # Report what the sheet actually contains. A form whose question
-    # titles don't match the column names below silently yields zero
-    # usable entries, which looks identical to "he stopped logging".
-    if rows:
-        print(f"  daily log sheet: {len(rows)} raw row(s); columns: {list(rows[0].keys())}")
-    else:
-        print("  daily log sheet: NO ROWS - is this the sheet the daily form writes to?")
+    rows = fetch_form_responses(DAILY_LOG_SHEET_ID, "Date", "daily log")
     entries = []
     skipped = 0
     for row in rows:
@@ -105,7 +162,7 @@ def pull_daily_log():
 
 
 def pull_training_plan():
-    rows = fetch_sheet_csv(TRAINING_PLAN_SHEET_ID)
+    rows = fetch_form_responses(TRAINING_PLAN_SHEET_ID, "Session date", "training plan")
     entries = []
     for row in rows:
         date = parse_date(row.get("Session date", ""))
@@ -125,7 +182,7 @@ def pull_training_plan():
 
 
 def pull_races():
-    rows = fetch_sheet_csv(RACE_LOG_SHEET_ID)
+    rows = fetch_form_responses(RACE_LOG_SHEET_ID, "Date", "race log")
     entries = []
     for row in rows:
         date = parse_date(row.get("Date", ""))
@@ -163,7 +220,7 @@ def pull_review_responses():
     response to the pending plan proposal. Latest submission for a given
     review date wins (you can change your mind before it's applied).
     """
-    rows = fetch_sheet_csv(REVIEW_RESPONSE_SHEET_ID)
+    rows = fetch_form_responses(REVIEW_RESPONSE_SHEET_ID, "Review date", "review responses")
     entries = []
     for row in rows:
         review_date = parse_date(row.get("Review date", ""))
