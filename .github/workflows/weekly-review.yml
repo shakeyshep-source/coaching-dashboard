@@ -22,6 +22,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write   # claude-code-action exchanges an OIDC token for its GitHub token
 
 concurrency:
   group: weekly-review
@@ -40,6 +41,10 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Supplied explicitly so the action never needs the OIDC
+          # exchange — this session only touches local files, the
+          # workflow's own final step does the committing.
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           prompt: |
             Follow the "Weekly review procedure" in CLAUDE.md exactly.
             Today is the review date. Read the brief and all the data
