@@ -5,5 +5,13 @@
     "reasons": [
       "Heat risk is high and a hard session is planned."
     ]
+  },
+  {
+    "date": "2026-08-02",
+    "planned_session": "long",
+    "reasons": [
+      "Recovery below baseline on both HRV and RHR, and a hard session is planned.",
+      "Heat risk is high and a hard session is planned."
+    ]
   }
 ]
