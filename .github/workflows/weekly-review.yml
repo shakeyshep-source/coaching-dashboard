@@ -36,23 +36,36 @@ jobs:
         with:
           fetch-depth: 0
 
-      # The action hides Claude's output for security, so an auth failure
-      # surfaces only as an instant is_error with no explanation. This
-      # reports presence and length only — never the secret itself, which
-      # Actions masks in logs regardless.
-      - name: Preflight — Claude credentials present?
+      # The action hides Claude's output for security, so a bad credential
+      # surfaces only as an instant is_error with no explanation. Check
+      # presence AND shape here: a token saved with a stray newline or
+      # extra text is accepted by GitHub but rejected by the API as an
+      # invalid Authorization header. Reports length and shape only,
+      # never the value.
+      - name: Preflight — Claude credential present and well-formed?
         env:
           OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           APIKEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           if [ -n "$OAUTH" ]; then
-            echo "CLAUDE_CODE_OAUTH_TOKEN present (${#OAUTH} chars)"
+            NAME=CLAUDE_CODE_OAUTH_TOKEN; VAL="$OAUTH"; PREFIX=sk-ant-oat
           elif [ -n "$APIKEY" ]; then
-            echo "ANTHROPIC_API_KEY present (${#APIKEY} chars)"
+            NAME=ANTHROPIC_API_KEY; VAL="$APIKEY"; PREFIX=sk-ant-api
           else
-            echo "::error::No Claude credential found. Add CLAUDE_CODE_OAUTH_TOKEN (run 'claude setup-token' on the laptop) or ANTHROPIC_API_KEY under Settings -> Secrets and variables -> Actions."
+            echo "::error::No Claude credential set. Run 'claude setup-token' on the laptop and save it as CLAUDE_CODE_OAUTH_TOKEN under Settings -> Secrets and variables -> Actions."
             exit 1
           fi
+          echo "$NAME: ${#VAL} characters"
+          case "$VAL" in
+            *[[:space:]]*)
+              echo "::error::$NAME contains a space or newline, which makes the Authorization header invalid. Re-copy just the token - no quotes, no surrounding text, no trailing newline - and save the secret again."
+              exit 1 ;;
+          esac
+          if [ "${VAL#$PREFIX}" = "$VAL" ]; then
+            echo "::error::$NAME does not begin with '$PREFIX', so the wrong value was probably pasted. Re-run 'claude setup-token' and copy only the token it prints."
+            exit 1
+          fi
+          echo "$NAME is present and well-formed."
 
       - name: Run coach session
         uses: anthropics/claude-code-action@v1
@@ -63,10 +76,6 @@ jobs:
           # exchange — this session only touches local files, the
           # workflow's own final step does the committing.
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # Temporarily on: the action otherwise hides the reason a run
-          # failed, which made an auth rejection undiagnosable. Public
-          # repo, and Actions masks secrets, so nothing sensitive leaks.
-          show_full_output: true
           prompt: |
             Follow the "Weekly review procedure" in CLAUDE.md exactly.
             Today is the review date. Read the brief and all the data
