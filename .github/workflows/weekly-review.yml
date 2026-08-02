@@ -63,6 +63,10 @@ jobs:
           # exchange — this session only touches local files, the
           # workflow's own final step does the committing.
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Temporarily on: the action otherwise hides the reason a run
+          # failed, which made an auth rejection undiagnosable. Public
+          # repo, and Actions masks secrets, so nothing sensitive leaks.
+          show_full_output: true
           prompt: |
             Follow the "Weekly review procedure" in CLAUDE.md exactly.
             Today is the review date. Read the brief and all the data
