@@ -229,12 +229,12 @@
     "sleep_duration_hrs": 6.92,
     "body_battery_high": 64,
     "body_battery_low": 30,
-    "training_load_acute": 801,
-    "training_load_chronic": 816,
+    "training_load_acute": 988,
+    "training_load_chronic": 849,
     "vo2max": 58.0,
-    "vo2max_date": "2026-08-01",
+    "vo2max_date": "2026-08-02",
     "training_status_feedback": "PRODUCTIVE_3",
-    "acwr_garmin": 0.9,
+    "acwr_garmin": 1.1,
     "acwr_status": "OPTIMAL"
   }
 ]

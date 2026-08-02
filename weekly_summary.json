@@ -691,17 +691,17 @@
     },
     {
       "week_start": "2026-07-27",
-      "km": 48.5,
-      "runs": 7,
-      "time_min": 232.0,
-      "elevation_m": 458.0,
+      "km": 62.5,
+      "runs": 8,
+      "time_min": 301.0,
+      "elevation_m": 591.0,
       "planned_sessions": 6,
       "logged_sessions": 0,
       "hard_sessions_planned": 2,
       "quality_time_min": 53,
-      "easy_pct": 77,
-      "long_run_min": 51,
-      "long_run_km": 10.75,
+      "easy_pct": 82,
+      "long_run_min": 69,
+      "long_run_km": 14.01,
       "on_target_pct": null,
       "avg_rpe": null,
       "max_achilles": null,
@@ -709,9 +709,9 @@
       "avg_rhr": 46.7,
       "avg_sleep_score": 85.6,
       "avg_sleep_hrs": 7.8,
-      "easy_pace_min_km": 4.76,
-      "easy_avg_hr": 141.9,
-      "efficiency": 1.49,
+      "easy_pace_min_km": 4.79,
+      "easy_avg_hr": 141.6,
+      "efficiency": 1.484,
       "session_log": [
         {
           "date": "2026-07-28",
@@ -777,6 +777,19 @@
           "km": 11.9,
           "pace": 3.85,
           "avg_hr": 157.0
+        },
+        {
+          "date": "2026-08-02",
+          "temp_max_c": 28.2,
+          "heat_risk": "high",
+          "session_type": null,
+          "rpe": null,
+          "on_target": null,
+          "achilles_score": null,
+          "note": null,
+          "km": 14.0,
+          "pace": 4.95,
+          "avg_hr": 140.0
         }
       ]
     }
