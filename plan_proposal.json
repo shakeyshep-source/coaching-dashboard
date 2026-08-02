@@ -1,0 +1,281 @@
+{
+  "id": "2026-08-02",
+  "created": "2026-08-02T19:23:49",
+  "status": "pending",
+  "rationale": "This week's training needs no change - it was executed, recovery is trending up and efficiency is improving. What needs changing is that the plan runs out on 12 August with seven weeks still to run. This extends it to race day: the long run climbs 17-19-20-21km so it clears the 95-minute pre-taper target from 23 August, volume peaks at ~68km in the week of 24 August then unwinds, the Saturday tempo / Wednesday intervals spine is preserved throughout, goal-pace (3:54/km) work arrives in the final two quality sessions before taper, and a 10-day taper starts 10 September into race week. Nothing here raises intensity on the strength of Saturday's fast session alone - if that effort was genuinely controlled, say so in your response and I'll revisit goal pace next Sunday with more evidence.",
+  "changes": [
+    {
+      "date": "2026-08-13",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "Easy 8km"
+    },
+    {
+      "date": "2026-08-14",
+      "session_type": "easy",
+      "target_distance_km": 6,
+      "target_pace": null,
+      "notes": "Easy 6km, legs fresh for tomorrow"
+    },
+    {
+      "date": "2026-08-15",
+      "session_type": "tempo",
+      "target_distance_km": 13,
+      "target_pace": null,
+      "notes": "SATURDAY SPEED SESSION 1/2: 2x15min at threshold, 3min jog between, inside 13km total."
+    },
+    {
+      "date": "2026-08-16",
+      "session_type": "long",
+      "target_distance_km": 19,
+      "target_pace": null,
+      "notes": "Long run 19km (~90min) - building toward the 95min+ target"
+    },
+    {
+      "date": "2026-08-17",
+      "session_type": "rest",
+      "target_distance_km": null,
+      "target_pace": null,
+      "notes": "Rest"
+    },
+    {
+      "date": "2026-08-18",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "Easy 8km"
+    },
+    {
+      "date": "2026-08-19",
+      "session_type": "intervals",
+      "target_distance_km": 10,
+      "target_pace": null,
+      "notes": "WEDNESDAY SPEED SESSION 2/2: 5x1200m at 10K effort, 2min jog recovery, inside 10km total."
+    },
+    {
+      "date": "2026-08-20",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "Easy 8km"
+    },
+    {
+      "date": "2026-08-21",
+      "session_type": "easy",
+      "target_distance_km": 6,
+      "target_pace": null,
+      "notes": "Easy 6km"
+    },
+    {
+      "date": "2026-08-22",
+      "session_type": "tempo",
+      "target_distance_km": 14,
+      "target_pace": null,
+      "notes": "SATURDAY SPEED SESSION 1/2: 3x12min at threshold, 2min jog between, inside 14km total."
+    },
+    {
+      "date": "2026-08-23",
+      "session_type": "long",
+      "target_distance_km": 20,
+      "target_pace": null,
+      "notes": "Long run 20km (~97min) - first long run past the 95min target"
+    },
+    {
+      "date": "2026-08-24",
+      "session_type": "rest",
+      "target_distance_km": null,
+      "target_pace": null,
+      "notes": "Rest"
+    },
+    {
+      "date": "2026-08-25",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "Easy 8km"
+    },
+    {
+      "date": "2026-08-26",
+      "session_type": "intervals",
+      "target_distance_km": 10,
+      "target_pace": null,
+      "notes": "WEDNESDAY SPEED SESSION 2/2: 6x1km at 10K effort, 90s jog recovery, inside 10km total."
+    },
+    {
+      "date": "2026-08-27",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "Easy 8km"
+    },
+    {
+      "date": "2026-08-28",
+      "session_type": "easy",
+      "target_distance_km": 6,
+      "target_pace": null,
+      "notes": "Easy 6km"
+    },
+    {
+      "date": "2026-08-29",
+      "session_type": "tempo",
+      "target_distance_km": 15,
+      "target_pace": "3:54/km for the second block",
+      "notes": "SATURDAY SPEED SESSION 1/2: 20min at threshold, then 15min at HM goal pace. First race-pace work of the build."
+    },
+    {
+      "date": "2026-08-30",
+      "session_type": "long",
+      "target_distance_km": 21,
+      "target_pace": null,
+      "notes": "Long run 21km (~102min) - race distance, easy throughout. Peak week."
+    },
+    {
+      "date": "2026-08-31",
+      "session_type": "rest",
+      "target_distance_km": null,
+      "target_pace": null,
+      "notes": "Rest"
+    },
+    {
+      "date": "2026-09-01",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "Easy 8km"
+    },
+    {
+      "date": "2026-09-02",
+      "session_type": "intervals",
+      "target_distance_km": 9,
+      "target_pace": null,
+      "notes": "WEDNESDAY SPEED SESSION 2/2: 5x1km at 10K effort, 90s jog recovery, inside 9km total."
+    },
+    {
+      "date": "2026-09-03",
+      "session_type": "easy",
+      "target_distance_km": 7,
+      "target_pace": null,
+      "notes": "Easy 7km"
+    },
+    {
+      "date": "2026-09-04",
+      "session_type": "easy",
+      "target_distance_km": 6,
+      "target_pace": null,
+      "notes": "Easy 6km"
+    },
+    {
+      "date": "2026-09-05",
+      "session_type": "tempo",
+      "target_distance_km": 14,
+      "target_pace": "3:54/km",
+      "notes": "SATURDAY SPEED SESSION 1/2: 2x20min at HM goal pace, 3min jog between. The key race-specific session of the build."
+    },
+    {
+      "date": "2026-09-06",
+      "session_type": "long",
+      "target_distance_km": 18,
+      "target_pace": null,
+      "notes": "Long run 18km (~88min) - volume starts easing, quality holds"
+    },
+    {
+      "date": "2026-09-07",
+      "session_type": "rest",
+      "target_distance_km": null,
+      "target_pace": null,
+      "notes": "Rest"
+    },
+    {
+      "date": "2026-09-08",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "Easy 8km"
+    },
+    {
+      "date": "2026-09-09",
+      "session_type": "intervals",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "WEDNESDAY SPEED SESSION 2/2: 4x1km at 10K effort, 90s jog. Last full interval session."
+    },
+    {
+      "date": "2026-09-10",
+      "session_type": "easy",
+      "target_distance_km": 6,
+      "target_pace": null,
+      "notes": "TAPER BEGINS. Easy 6km - from here volume drops, intensity stays sharp."
+    },
+    {
+      "date": "2026-09-11",
+      "session_type": "easy",
+      "target_distance_km": 5,
+      "target_pace": null,
+      "notes": "Easy 5km"
+    },
+    {
+      "date": "2026-09-12",
+      "session_type": "tempo",
+      "target_distance_km": 10,
+      "target_pace": "3:54/km",
+      "notes": "15min at HM goal pace inside 10km. Sharpener, not a session - finish feeling you could do more."
+    },
+    {
+      "date": "2026-09-13",
+      "session_type": "long",
+      "target_distance_km": 14,
+      "target_pace": null,
+      "notes": "Long run 14km easy (~68min) - last longer run before the race"
+    },
+    {
+      "date": "2026-09-14",
+      "session_type": "rest",
+      "target_distance_km": null,
+      "target_pace": null,
+      "notes": "Rest"
+    },
+    {
+      "date": "2026-09-15",
+      "session_type": "easy",
+      "target_distance_km": 6,
+      "target_pace": null,
+      "notes": "Easy 6km + 4 strides"
+    },
+    {
+      "date": "2026-09-16",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": "race rhythm",
+      "notes": "8km easy with 6x400m at HM rhythm. Legs sharp, effort light."
+    },
+    {
+      "date": "2026-09-17",
+      "session_type": "easy",
+      "target_distance_km": 5,
+      "target_pace": null,
+      "notes": "Easy 5km"
+    },
+    {
+      "date": "2026-09-18",
+      "session_type": "rest",
+      "target_distance_km": null,
+      "target_pace": null,
+      "notes": "Rest, or 20min very easy entirely by feel"
+    },
+    {
+      "date": "2026-09-19",
+      "session_type": "easy",
+      "target_distance_km": 4,
+      "target_pace": null,
+      "notes": "Easy 4km + 4 strides. Kit and race number ready, Symbicort packed, early night."
+    },
+    {
+      "date": "2026-09-20",
+      "session_type": "race",
+      "target_distance_km": 21.0975,
+      "target_pace": "3:52-3:56/km",
+      "notes": "CHELTENHAM HALF MARATHON. Target 1:21-1:23. Symbicort 20 min before gun, salbutamol 15 min before. WU: 2km easy + 4 strides. First 5km no faster than 3:56 - the race is won after 15km, not before 5km."
+    }
+  ]
+}
