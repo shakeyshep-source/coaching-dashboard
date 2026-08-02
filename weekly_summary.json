@@ -60,8 +60,10 @@
           "achilles_score": null,
           "note": null,
           "km": 7.1,
-          "pace": 5.04,
-          "avg_hr": 122.12447940768163
+          "pace": 5.07,
+          "avg_hr": 122,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-06-10",
@@ -73,8 +75,34 @@
           "achilles_score": null,
           "note": null,
           "km": 9.8,
-          "pace": 3.68,
-          "avg_hr": 172.0
+          "pace": 6.78,
+          "avg_hr": 136,
+          "segments": [
+            {
+              "km": 2.73,
+              "min": 14.7,
+              "pace": 5.39,
+              "avg_hr": 147.0
+            },
+            {
+              "km": 4.99,
+              "min": 18.4,
+              "pace": 3.68,
+              "avg_hr": 172.0
+            },
+            {
+              "km": 2.11,
+              "min": 33.3,
+              "pace": 15.75,
+              "avg_hr": 111.0
+            }
+          ],
+          "fastest_segment": {
+            "km": 4.99,
+            "min": 18.4,
+            "pace": 3.68,
+            "avg_hr": 172.0
+          }
         },
         {
           "date": "2026-06-11",
@@ -87,7 +115,9 @@
           "note": null,
           "km": 6.3,
           "pace": 5.11,
-          "avg_hr": 132.0
+          "avg_hr": 132,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-06-12",
@@ -99,8 +129,10 @@
           "achilles_score": null,
           "note": null,
           "km": 7.7,
-          "pace": 5.17,
-          "avg_hr": 136.0
+          "pace": 5.19,
+          "avg_hr": 136,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-06-13",
@@ -112,8 +144,10 @@
           "achilles_score": null,
           "note": null,
           "km": 12.3,
-          "pace": 7.39,
-          "avg_hr": 132.0
+          "pace": 7.4,
+          "avg_hr": 132,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-06-14",
@@ -125,8 +159,10 @@
           "achilles_score": null,
           "note": null,
           "km": 15.5,
-          "pace": 5.34,
-          "avg_hr": 134.0
+          "pace": 5.35,
+          "avg_hr": 134,
+          "segments": null,
+          "fastest_segment": null
         }
       ]
     },
@@ -165,7 +201,9 @@
           "note": null,
           "km": 10.0,
           "pace": 4.85,
-          "avg_hr": 139.0
+          "avg_hr": 139,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-06-17",
@@ -177,8 +215,10 @@
           "achilles_score": null,
           "note": null,
           "km": 12.8,
-          "pace": 4.9,
-          "avg_hr": 142.0
+          "pace": 4.91,
+          "avg_hr": 142,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-06-18",
@@ -190,8 +230,10 @@
           "achilles_score": null,
           "note": null,
           "km": 8.0,
-          "pace": 4.84,
-          "avg_hr": 139.0
+          "pace": 4.85,
+          "avg_hr": 139,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-06-19",
@@ -203,8 +245,10 @@
           "achilles_score": null,
           "note": null,
           "km": 9.0,
-          "pace": 5.45,
-          "avg_hr": 136.0
+          "pace": 5.46,
+          "avg_hr": 136,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-06-20",
@@ -216,8 +260,10 @@
           "achilles_score": null,
           "note": null,
           "km": 15.4,
-          "pace": 7.87,
-          "avg_hr": 119.0
+          "pace": 7.89,
+          "avg_hr": 119,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-06-21",
@@ -230,7 +276,9 @@
           "note": null,
           "km": 13.0,
           "pace": 5.31,
-          "avg_hr": 137.0
+          "avg_hr": 137,
+          "segments": null,
+          "fastest_segment": null
         }
       ]
     },
@@ -268,8 +316,10 @@
           "achilles_score": null,
           "note": null,
           "km": 7.3,
-          "pace": 5.22,
-          "avg_hr": 138.0
+          "pace": 5.25,
+          "avg_hr": 138,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-06-23",
@@ -281,8 +331,10 @@
           "achilles_score": null,
           "note": null,
           "km": 10.7,
-          "pace": 5.51,
-          "avg_hr": 138.0
+          "pace": 5.52,
+          "avg_hr": 138,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-06-24",
@@ -294,8 +346,10 @@
           "achilles_score": null,
           "note": null,
           "km": 7.5,
-          "pace": 5.01,
-          "avg_hr": 136.0
+          "pace": 5.0,
+          "avg_hr": 136,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-06-25",
@@ -307,8 +361,10 @@
           "achilles_score": null,
           "note": null,
           "km": 7.5,
-          "pace": 6.19,
-          "avg_hr": 133.0
+          "pace": 6.21,
+          "avg_hr": 133,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-06-27",
@@ -320,8 +376,10 @@
           "achilles_score": null,
           "note": null,
           "km": 19.4,
-          "pace": 7.43,
-          "avg_hr": 126.0
+          "pace": 7.42,
+          "avg_hr": 126,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-06-28",
@@ -333,8 +391,34 @@
           "achilles_score": null,
           "note": null,
           "km": 14.2,
-          "pace": 3.82,
-          "avg_hr": 169.0
+          "pace": 5.85,
+          "avg_hr": 135,
+          "segments": [
+            {
+              "km": 3.42,
+              "min": 38.1,
+              "pace": 11.13,
+              "avg_hr": 104.0
+            },
+            {
+              "km": 9.99,
+              "min": 38.1,
+              "pace": 3.82,
+              "avg_hr": 169.0
+            },
+            {
+              "km": 0.75,
+              "min": 6.8,
+              "pace": 9.09,
+              "avg_hr": 124.0
+            }
+          ],
+          "fastest_segment": {
+            "km": 9.99,
+            "min": 38.1,
+            "pace": 3.82,
+            "avg_hr": 169.0
+          }
         }
       ]
     },
@@ -372,8 +456,10 @@
           "achilles_score": null,
           "note": null,
           "km": 10.0,
-          "pace": 4.79,
-          "avg_hr": 139.0
+          "pace": 4.8,
+          "avg_hr": 139,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-06-30",
@@ -385,8 +471,10 @@
           "achilles_score": null,
           "note": null,
           "km": 8.8,
-          "pace": 4.69,
-          "avg_hr": 143.0
+          "pace": 4.66,
+          "avg_hr": 143,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-07-01",
@@ -398,8 +486,10 @@
           "achilles_score": null,
           "note": null,
           "km": 12.1,
-          "pace": 5.4,
-          "avg_hr": 140.0
+          "pace": 5.39,
+          "avg_hr": 140,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-07-02",
@@ -412,7 +502,9 @@
           "note": null,
           "km": 6.0,
           "pace": 4.93,
-          "avg_hr": 141.0
+          "avg_hr": 141,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-07-04",
@@ -424,8 +516,28 @@
           "achilles_score": null,
           "note": null,
           "km": 15.2,
-          "pace": 4.6,
-          "avg_hr": 169.0
+          "pace": 4.68,
+          "avg_hr": 167,
+          "segments": [
+            {
+              "km": 0.64,
+              "min": 4.0,
+              "pace": 6.18,
+              "avg_hr": 133.0
+            },
+            {
+              "km": 14.59,
+              "min": 67.1,
+              "pace": 4.6,
+              "avg_hr": 169.0
+            }
+          ],
+          "fastest_segment": {
+            "km": 14.59,
+            "min": 67.1,
+            "pace": 4.6,
+            "avg_hr": 169.0
+          }
         }
       ]
     },
@@ -463,8 +575,10 @@
           "achilles_score": null,
           "note": null,
           "km": 12.2,
-          "pace": 5.21,
-          "avg_hr": 143.0
+          "pace": 5.2,
+          "avg_hr": 143,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-07-08",
@@ -476,8 +590,10 @@
           "achilles_score": null,
           "note": null,
           "km": 7.6,
-          "pace": 5.0,
-          "avg_hr": 139.0
+          "pace": 4.97,
+          "avg_hr": 139,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-07-11",
@@ -489,8 +605,10 @@
           "achilles_score": null,
           "note": null,
           "km": 12.0,
-          "pace": 5.01,
-          "avg_hr": 142.0
+          "pace": 5.02,
+          "avg_hr": 142,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-07-12",
@@ -503,7 +621,9 @@
           "note": "22c with a breeze. Stayed easy after yesterday plus a late night.",
           "km": 7.5,
           "pace": 4.81,
-          "avg_hr": 140.0
+          "avg_hr": 140,
+          "segments": null,
+          "fastest_segment": null
         }
       ]
     },
@@ -541,8 +661,10 @@
           "achilles_score": null,
           "note": null,
           "km": 8.5,
-          "pace": 4.82,
-          "avg_hr": 141.0
+          "pace": 4.84,
+          "avg_hr": 141,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-07-15",
@@ -554,8 +676,10 @@
           "achilles_score": 1,
           "note": "wu, 6 x 400, wd [90]\n3:35 paces",
           "km": 11.4,
-          "pace": 6.71,
-          "avg_hr": 129.0
+          "pace": 6.74,
+          "avg_hr": 129,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-07-16",
@@ -567,8 +691,10 @@
           "achilles_score": 0,
           "note": "on / off road - 28c",
           "km": 7.2,
-          "pace": 5.1,
-          "avg_hr": 136.0
+          "pace": 5.11,
+          "avg_hr": 136,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-07-18",
@@ -580,8 +706,10 @@
           "achilles_score": null,
           "note": null,
           "km": 14.2,
-          "pace": 5.23,
-          "avg_hr": 137.0
+          "pace": 5.21,
+          "avg_hr": 137,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-07-19",
@@ -593,8 +721,10 @@
           "achilles_score": null,
           "note": null,
           "km": 7.2,
-          "pace": 4.85,
-          "avg_hr": 136.0
+          "pace": 4.86,
+          "avg_hr": 136,
+          "segments": null,
+          "fastest_segment": null
         }
       ]
     },
@@ -618,9 +748,9 @@
       "avg_rhr": 47.7,
       "avg_sleep_score": 84.3,
       "avg_sleep_hrs": 7.5,
-      "easy_pace_min_km": 4.82,
-      "easy_avg_hr": 146.0,
-      "efficiency": 1.442,
+      "easy_pace_min_km": 5.01,
+      "easy_avg_hr": 140.2,
+      "efficiency": 1.426,
       "session_log": [
         {
           "date": "2026-07-21",
@@ -632,8 +762,10 @@
           "achilles_score": null,
           "note": null,
           "km": 4.2,
-          "pace": 5.41,
-          "avg_hr": 138.0
+          "pace": 5.43,
+          "avg_hr": 138,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-07-22",
@@ -645,8 +777,28 @@
           "achilles_score": null,
           "note": null,
           "km": 7.9,
-          "pace": 3.57,
-          "avg_hr": 174.0
+          "pace": 4.19,
+          "avg_hr": 159,
+          "segments": [
+            {
+              "km": 2.89,
+              "min": 15.3,
+              "pace": 5.31,
+              "avg_hr": 141.0
+            },
+            {
+              "km": 4.99,
+              "min": 17.8,
+              "pace": 3.57,
+              "avg_hr": 174.0
+            }
+          ],
+          "fastest_segment": {
+            "km": 4.99,
+            "min": 17.8,
+            "pace": 3.57,
+            "avg_hr": 174.0
+          }
         },
         {
           "date": "2026-07-24",
@@ -659,7 +811,9 @@
           "note": null,
           "km": 7.9,
           "pace": 4.81,
-          "avg_hr": 144.0
+          "avg_hr": 144,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-07-25",
@@ -671,8 +825,10 @@
           "achilles_score": null,
           "note": null,
           "km": 12.6,
-          "pace": 4.87,
-          "avg_hr": 142.0
+          "pace": 4.88,
+          "avg_hr": 142,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-07-26",
@@ -684,8 +840,10 @@
           "achilles_score": null,
           "note": null,
           "km": 14.8,
-          "pace": 4.95,
-          "avg_hr": 137.0
+          "pace": 4.96,
+          "avg_hr": 137,
+          "segments": null,
+          "fastest_segment": null
         }
       ]
     },
@@ -709,9 +867,9 @@
       "avg_rhr": 46.7,
       "avg_sleep_score": 85.6,
       "avg_sleep_hrs": 7.8,
-      "easy_pace_min_km": 4.79,
-      "easy_avg_hr": 141.6,
-      "efficiency": 1.484,
+      "easy_pace_min_km": 4.9,
+      "easy_avg_hr": 139.0,
+      "efficiency": 1.471,
       "session_log": [
         {
           "date": "2026-07-28",
@@ -723,8 +881,10 @@
           "achilles_score": null,
           "note": null,
           "km": 9.1,
-          "pace": 4.74,
-          "avg_hr": 145.0
+          "pace": 4.73,
+          "avg_hr": 145,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-07-29",
@@ -736,8 +896,10 @@
           "achilles_score": null,
           "note": null,
           "km": 10.8,
-          "pace": 4.76,
-          "avg_hr": 140.0
+          "pace": 4.74,
+          "avg_hr": 140,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-07-30",
@@ -749,8 +911,10 @@
           "achilles_score": null,
           "note": null,
           "km": 8.0,
-          "pace": 5.31,
-          "avg_hr": 132.0
+          "pace": 5.33,
+          "avg_hr": 132,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-07-31",
@@ -762,8 +926,10 @@
           "achilles_score": null,
           "note": null,
           "km": 8.8,
-          "pace": 4.74,
-          "avg_hr": 138.0
+          "pace": 4.72,
+          "avg_hr": 138,
+          "segments": null,
+          "fastest_segment": null
         },
         {
           "date": "2026-08-01",
@@ -775,12 +941,38 @@
           "achilles_score": null,
           "note": null,
           "km": 11.9,
-          "pace": 3.85,
-          "avg_hr": 157.0
+          "pace": 4.48,
+          "avg_hr": 147,
+          "segments": [
+            {
+              "km": 3.01,
+              "min": 14.9,
+              "pace": 4.96,
+              "avg_hr": 141.0
+            },
+            {
+              "km": 5.19,
+              "min": 20.0,
+              "pace": 3.85,
+              "avg_hr": 157.0
+            },
+            {
+              "km": 3.7,
+              "min": 18.4,
+              "pace": 4.98,
+              "avg_hr": 140.0
+            }
+          ],
+          "fastest_segment": {
+            "km": 5.19,
+            "min": 20.0,
+            "pace": 3.85,
+            "avg_hr": 157.0
+          }
         },
         {
           "date": "2026-08-02",
-          "temp_max_c": 28.2,
+          "temp_max_c": 27.9,
           "heat_risk": "high",
           "session_type": null,
           "rpe": null,
@@ -788,8 +980,10 @@
           "achilles_score": null,
           "note": null,
           "km": 14.0,
-          "pace": 4.95,
-          "avg_hr": 140.0
+          "pace": 4.96,
+          "avg_hr": 140,
+          "segments": null,
+          "fastest_segment": null
         }
       ]
     }
