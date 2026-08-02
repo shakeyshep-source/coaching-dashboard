@@ -73,10 +73,19 @@ def parse_float(raw):
 
 def pull_daily_log():
     rows = fetch_sheet_csv(DAILY_LOG_SHEET_ID)
+    # Report what the sheet actually contains. A form whose question
+    # titles don't match the column names below silently yields zero
+    # usable entries, which looks identical to "he stopped logging".
+    if rows:
+        print(f"  daily log sheet: {len(rows)} raw row(s); columns: {list(rows[0].keys())}")
+    else:
+        print("  daily log sheet: NO ROWS - is this the sheet the daily form writes to?")
     entries = []
+    skipped = 0
     for row in rows:
         date = parse_date(row.get("Date", ""))
         if not date:
+            skipped += 1
             continue
         entries.append({
             "date": date,
@@ -86,6 +95,8 @@ def pull_daily_log():
             "on_target": parse_bool(row.get("On target", ""), default=True),
             "session_notes": row.get("Notes", "").strip() or None,
         })
+    if skipped:
+        print(f"  daily log: SKIPPED {skipped} row(s) with no usable 'Date' column value")
     # Deduplicate by date, keeping most recent submission for each day
     by_date = {}
     for e in entries:

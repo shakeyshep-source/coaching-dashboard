@@ -152,10 +152,15 @@ def main():
         longest = max(runs, key=lambda a: a.get("duration_min") or 0, default=None)
 
         on_target_vals = [1 if l.get("on_target") else 0 for l in logs if l.get("on_target") is not None]
+        # Efficiency must not be contaminated by quality work. A tempo
+        # block uploaded as its own activity looks like a wonderfully
+        # "efficient" easy run - fast pace, only moderate HR - and drags
+        # the trend up. Skip quality days whole rather than trying to
+        # separate warm-up from work inside the day.
         easy_runs = [
             a for a in runs
             if a.get("avg_hr") and a.get("avg_pace_min_per_km")
-            and (manual_by_date.get(a["date"], {}).get("session_type") in ("easy", "long", None))
+            and day_type(a["date"]) not in QUALITY_TYPES
         ]
         efficiency_vals = [
             (1000 / a["avg_pace_min_per_km"]) / a["avg_hr"] for a in easy_runs
@@ -167,8 +172,22 @@ def main():
             day_runs = [a for a in activities_by_date.get(d, []) if is_run(a)]
             if not log and not day_runs:
                 continue
-            main_run = max(day_runs, key=lambda a: a.get("distance_km") or 0) if day_runs else {}
             day_weather = weather_by_date.get(d, {})
+            # A session split into warm-up / work / cool-down arrives as
+            # separate activities. Pair the day's TOTAL distance with the
+            # day's OVERALL pace - never with one segment's pace, which
+            # made a 20-minute tempo look like a 12km race - and keep the
+            # segments so the shape of the session stays readable.
+            day_km = round(sum(a.get("distance_km") or 0 for a in day_runs), 1)
+            day_min = sum(a.get("duration_min") or 0 for a in day_runs)
+            segments = [
+                {"km": a.get("distance_km"), "min": a.get("duration_min"),
+                 "pace": a.get("avg_pace_min_per_km"), "avg_hr": a.get("avg_hr")}
+                for a in sorted(day_runs, key=lambda x: x.get("activity_id") or 0)
+            ]
+            hr_weighted = [a for a in day_runs if a.get("avg_hr") and a.get("duration_min")]
+            fastest = min((g for g in segments if g["km"] and g["km"] >= 1 and g["pace"]),
+                          key=lambda g: g["pace"], default=None)
             session_log.append({
                 "date": d,
                 "temp_max_c": day_weather.get("temp_max_c"),
@@ -178,9 +197,13 @@ def main():
                 "on_target": log.get("on_target"),
                 "achilles_score": log.get("achilles_score"),
                 "note": log.get("session_notes"),
-                "km": round(sum(a.get("distance_km") or 0 for a in day_runs), 1) or None,
-                "pace": main_run.get("avg_pace_min_per_km"),
-                "avg_hr": main_run.get("avg_hr"),
+                "km": day_km or None,
+                "pace": round(day_min / day_km, 2) if day_km and day_min else None,
+                "avg_hr": (round(sum(a["avg_hr"] * a["duration_min"] for a in hr_weighted)
+                                 / sum(a["duration_min"] for a in hr_weighted))
+                           if hr_weighted else None),
+                "segments": segments if len(segments) > 1 else None,
+                "fastest_segment": fastest if len(segments) > 1 else None,
             })
 
         weeks.append({
