@@ -36,42 +36,54 @@ jobs:
         with:
           fetch-depth: 0
 
-      # The action hides Claude's output for security, so a bad credential
-      # surfaces only as an instant is_error with no explanation. Check
-      # presence AND shape here: a token saved with a stray newline or
-      # extra text is accepted by GitHub but rejected by the API as an
-      # invalid Authorization header. Reports length and shape only,
-      # never the value.
-      - name: Preflight — Claude credential present and well-formed?
+      # A token copied from a terminal very often carries a trailing
+      # newline, or a line break where the terminal wrapped it on screen.
+      # GitHub stores that whitespace verbatim and the API then rejects
+      # the Authorization header as invalid, with no usable error. These
+      # tokens never legitimately contain whitespace, so strip it here,
+      # re-mask the cleaned value and hand that to the action. Reports
+      # lengths and shape only, never the value.
+      - name: Preflight — normalise and check the Claude credential
         env:
           OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           APIKEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          if [ -n "$OAUTH" ]; then
-            NAME=CLAUDE_CODE_OAUTH_TOKEN; VAL="$OAUTH"; PREFIX=sk-ant-oat
-          elif [ -n "$APIKEY" ]; then
-            NAME=ANTHROPIC_API_KEY; VAL="$APIKEY"; PREFIX=sk-ant-api
+          OAUTH_CLEAN="$(printf '%s' "$OAUTH" | tr -d '[:space:]')"
+          APIKEY_CLEAN="$(printf '%s' "$APIKEY" | tr -d '[:space:]')"
+          if [ -n "$OAUTH_CLEAN" ]; then echo "::add-mask::$OAUTH_CLEAN"; fi
+          if [ -n "$APIKEY_CLEAN" ]; then echo "::add-mask::$APIKEY_CLEAN"; fi
+
+          if [ -n "$OAUTH_CLEAN" ]; then
+            NAME=CLAUDE_CODE_OAUTH_TOKEN; VAL="$OAUTH_CLEAN"; RAW="$OAUTH"; PREFIX=sk-ant-oat
+          elif [ -n "$APIKEY_CLEAN" ]; then
+            NAME=ANTHROPIC_API_KEY; VAL="$APIKEY_CLEAN"; RAW="$APIKEY"; PREFIX=sk-ant-api
           else
             echo "::error::No Claude credential set. Run 'claude setup-token' on the laptop and save it as CLAUDE_CODE_OAUTH_TOKEN under Settings -> Secrets and variables -> Actions."
             exit 1
           fi
-          echo "$NAME: ${#VAL} characters"
-          case "$VAL" in
-            *[[:space:]]*)
-              echo "::error::$NAME contains a space or newline, which makes the Authorization header invalid. Re-copy just the token - no quotes, no surrounding text, no trailing newline - and save the secret again."
-              exit 1 ;;
-          esac
+
+          STRIPPED=$(( ${#RAW} - ${#VAL} ))
+          if [ "$STRIPPED" -gt 0 ]; then
+            echo "::notice::$NAME contained $STRIPPED whitespace character(s) from the copy-paste - stripped automatically."
+          fi
+          echo "$NAME: ${#VAL} characters after cleaning"
+
           if [ "${VAL#$PREFIX}" = "$VAL" ]; then
             echo "::error::$NAME does not begin with '$PREFIX', so the wrong value was probably pasted. Re-run 'claude setup-token' and copy only the token it prints."
             exit 1
           fi
-          echo "$NAME is present and well-formed."
+
+          {
+            echo "OAUTH_CLEAN=$OAUTH_CLEAN"
+            echo "APIKEY_CLEAN=$APIKEY_CLEAN"
+          } >> "$GITHUB_ENV"
+          echo "$NAME is present and usable."
 
       - name: Run coach session
         uses: anthropics/claude-code-action@v1
         with:
-          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude_code_oauth_token: ${{ env.OAUTH_CLEAN }}
+          anthropic_api_key: ${{ env.APIKEY_CLEAN }}
           # Supplied explicitly so the action never needs the OIDC
           # exchange — this session only touches local files, the
           # workflow's own final step does the committing.
