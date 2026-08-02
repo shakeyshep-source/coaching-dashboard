@@ -30,6 +30,18 @@ RACE_LOG_SHEET_ID     = "14vCnLI1wYWep2FAyTotvdp2-wgsWawE_B19aE-oPNAI"
 # to skip this pull without erroring.
 REVIEW_RESPONSE_SHEET_ID = "1KGrx82VLztRawTzt1DDVpsCgPok9eXYp3dXK1VOk5Ck"
 
+# Explicit tab (gid) per sheet. A spreadsheet can hold several response
+# tabs — relinking a form leaves the old one frozen and starts a new one
+# — and the default CSV export always returns the FIRST tab, which may
+# be the empty historical one. Automatic tab discovery is attempted
+# first, but it depends on Google's page markup and cannot be relied on.
+# To pin a tab: open the spreadsheet, click the tab holding the live
+# responses, and copy the number after "#gid=" in the address bar.
+DAILY_LOG_GID      = None
+TRAINING_PLAN_GID  = None
+RACE_LOG_GID       = None
+REVIEW_RESPONSE_GID = None
+
 # Output files — must match what build_computed.py and dashboard expect
 MANUAL_LOG_FILE    = "manual_log.json"
 TRAINING_PLAN_FILE = "training_plan.json"
@@ -68,7 +80,7 @@ def list_tabs(sheet_id):
     return out
 
 
-def fetch_form_responses(sheet_id, date_column, label):
+def fetch_form_responses(sheet_id, date_column, label, gid=None):
     """Read a form's responses from whichever tab actually holds them.
 
     Unlinking and relinking a Google Form to the same spreadsheet leaves
@@ -78,6 +90,13 @@ def fetch_form_responses(sheet_id, date_column, label):
     who stopped logging, so pick the tab with the most usable rows rather
     than trusting tab order. Self-healing if the form is relinked again.
     """
+    if gid is not None:
+        rows = fetch_sheet_csv(sheet_id, gid)
+        n = count_dated(rows, date_column)
+        print(f"  {label}: using pinned tab gid={gid} — {n} dated row(s)"
+              f"{'; columns: ' + str(list(rows[0].keys())) if rows else ''}")
+        return rows
+
     best_rows = fetch_sheet_csv(sheet_id)
     best_name, best_n = "(first tab)", count_dated(best_rows, date_column)
 
@@ -89,6 +108,9 @@ def fetch_form_responses(sheet_id, date_column, label):
 
     if len(tabs) > 1:
         print(f"  {label}: {len(tabs)} tabs found: {[n for _, n in tabs]}")
+    elif not tabs:
+        print(f"  {label}: tab discovery found nothing (Google markup) - "
+              f"first tab only; pin a gid above if responses live elsewhere")
     for gid, name in tabs:
         try:
             rows = fetch_sheet_csv(sheet_id, gid)
@@ -136,7 +158,7 @@ def parse_float(raw):
 
 
 def pull_daily_log():
-    rows = fetch_form_responses(DAILY_LOG_SHEET_ID, "Date", "daily log")
+    rows = fetch_form_responses(DAILY_LOG_SHEET_ID, "Date", "daily log", DAILY_LOG_GID)
     entries = []
     skipped = 0
     for row in rows:
@@ -162,7 +184,7 @@ def pull_daily_log():
 
 
 def pull_training_plan():
-    rows = fetch_form_responses(TRAINING_PLAN_SHEET_ID, "Session date", "training plan")
+    rows = fetch_form_responses(TRAINING_PLAN_SHEET_ID, "Session date", "training plan", TRAINING_PLAN_GID)
     entries = []
     for row in rows:
         date = parse_date(row.get("Session date", ""))
@@ -182,7 +204,7 @@ def pull_training_plan():
 
 
 def pull_races():
-    rows = fetch_form_responses(RACE_LOG_SHEET_ID, "Date", "race log")
+    rows = fetch_form_responses(RACE_LOG_SHEET_ID, "Date", "race log", RACE_LOG_GID)
     entries = []
     for row in rows:
         date = parse_date(row.get("Date", ""))
@@ -220,7 +242,7 @@ def pull_review_responses():
     response to the pending plan proposal. Latest submission for a given
     review date wins (you can change your mind before it's applied).
     """
-    rows = fetch_form_responses(REVIEW_RESPONSE_SHEET_ID, "Review date", "review responses")
+    rows = fetch_form_responses(REVIEW_RESPONSE_SHEET_ID, "Review date", "review responses", REVIEW_RESPONSE_GID)
     entries = []
     for row in rows:
         review_date = parse_date(row.get("Review date", ""))
