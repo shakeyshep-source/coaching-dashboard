@@ -36,6 +36,24 @@ jobs:
         with:
           fetch-depth: 0
 
+      # The action hides Claude's output for security, so an auth failure
+      # surfaces only as an instant is_error with no explanation. This
+      # reports presence and length only — never the secret itself, which
+      # Actions masks in logs regardless.
+      - name: Preflight — Claude credentials present?
+        env:
+          OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          APIKEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -n "$OAUTH" ]; then
+            echo "CLAUDE_CODE_OAUTH_TOKEN present (${#OAUTH} chars)"
+          elif [ -n "$APIKEY" ]; then
+            echo "ANTHROPIC_API_KEY present (${#APIKEY} chars)"
+          else
+            echo "::error::No Claude credential found. Add CLAUDE_CODE_OAUTH_TOKEN (run 'claude setup-token' on the laptop) or ANTHROPIC_API_KEY under Settings -> Secrets and variables -> Actions."
+            exit 1
+          fi
+
       - name: Run coach session
         uses: anthropics/claude-code-action@v1
         with:
