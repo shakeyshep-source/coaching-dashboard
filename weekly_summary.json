@@ -889,7 +889,7 @@
       "session_log": [
         {
           "date": "2026-08-03",
-          "temp_max_c": 30.0,
+          "temp_max_c": 31.1,
           "heat_risk": "high",
           "session_type": "rest",
           "rpe": 1.0,
