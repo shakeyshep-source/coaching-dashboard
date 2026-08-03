@@ -206,8 +206,16 @@ def main():
                 "fastest_segment": fastest if len(segments) > 1 else None,
             })
 
+        week_end = (datetime.strptime(start, "%Y-%m-%d").date() + timedelta(days=6)).isoformat()
         weeks.append({
             "week_start": start,
+            # Charts label weeks by their END date: the long run lands on
+            # Sunday, so a week labelled by its start makes the newest
+            # data look seven days stale.
+            "week_end": week_end,
+            # The current week is still being run - its totals are partial
+            # and must not read as a collapse in volume.
+            "in_progress": start == this_week,
             "km": round(sum(a.get("distance_km") or 0 for a in runs), 1),
             "runs": len(runs),
             "time_min": round(sum(a.get("duration_min") or 0 for a in runs), 0),
@@ -272,8 +280,10 @@ def main():
                 goal_pace = fmt_pace(total_s / 60 / next_race["distance_km"])
 
         # Current capability, not history — a big run 6 weeks ago doesn't
-        # say what the legs can do this week, so look at the last 4 only.
-        long_runs = [w["long_run_min"] for w in weeks[-4:] if w.get("long_run_min")]
+        # say what the legs can do this week, so look at the last 4
+        # COMPLETED weeks; a part-run week would otherwise use up a slot.
+        completed = [w for w in weeks if not w["in_progress"]]
+        long_runs = [w["long_run_min"] for w in completed[-4:] if w.get("long_run_min")]
         race_readiness = {
             "race": next_race,
             "weeks_to_race": round(next_race["days_away"] / 7, 1),

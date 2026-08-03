@@ -717,6 +717,8 @@ async function buildCoachTab() {
   // --- Weekly stats ---
   if (weekly && weekly.weeks && weekly.weeks.length) {
     const weeks = weekly.weeks;
+    const inProgressNote = weeks[weeks.length - 1].in_progress
+      ? ' · last bar is this week so far' : '';
     html += `
       <div class="chart-card">
         <p class="title">Weekly training summary</p>
@@ -724,7 +726,7 @@ async function buildCoachTab() {
           <table style="width:100%; border-collapse:collapse; font-size:12px; min-width:560px;">
             <thead>
               <tr style="text-align:left; color:var(--text-muted);">
-                <th style="padding:5px 8px;">Week</th><th style="padding:5px 8px;">km</th>
+                <th style="padding:5px 8px;">Week end</th><th style="padding:5px 8px;">km</th>
                 <th style="padding:5px 8px;">Runs</th><th style="padding:5px 8px;">RPE</th>
                 <th style="padding:5px 8px;" title="Minutes of tempo/interval/race running — the sessions that convert fitness into race performance">Qual</th>
                 <th style="padding:5px 8px;" title="Share of running time at easy effort — should stay around 80%">Easy</th>
@@ -736,7 +738,7 @@ async function buildCoachTab() {
             <tbody>
               ${[...weeks].reverse().map(w => `
                 <tr style="border-top:1px solid var(--border);">
-                  <td style="padding:5px 8px; white-space:nowrap;">${fmtDayMonth(w.week_start)}</td>
+                  <td style="padding:5px 8px; white-space:nowrap;">${fmtDayMonth(w.week_end || w.week_start)}${w.in_progress ? ' <span style="color:var(--text-muted);">(so far)</span>' : ''}</td>
                   <td style="padding:5px 8px; font-weight:500;">${w.km ?? '--'}</td>
                   <td style="padding:5px 8px;">${w.runs ?? '--'}</td>
                   <td style="padding:5px 8px;">${w.avg_rpe ?? '--'}</td>
@@ -754,11 +756,11 @@ async function buildCoachTab() {
         </div>
       </div>
       <div class="chart-card">
-        <p class="title">Weekly volume (km)</p>
+        <p class="title">Weekly volume (km) — week ending${inProgressNote}</p>
         <div class="chart-wrap"><canvas id="weeklyKmChart"></canvas></div>
       </div>
       <div class="chart-card">
-        <p class="title">Long run progression (minutes${rr ? ' — target line at ' + rr.long_run_target_min : ''})</p>
+        <p class="title">Long run progression (minutes, week ending${rr ? ' — target line at ' + rr.long_run_target_min : ''})</p>
         <div class="chart-wrap"><canvas id="longRunChart"></canvas></div>
       </div>
       <div class="chart-card">
@@ -803,7 +805,10 @@ async function buildCoachTab() {
   }
 
   if (weekly && weekly.weeks && weekly.weeks.length && document.getElementById('weeklyKmChart')) {
-    const weekLabels = weekly.weeks.map(w => fmtDayMonth(w.week_start));
+    // Label by week ENDING - the long run is on Sunday, so a week
+    // labelled by its start makes the newest point look a week old.
+    const weekLabels = weekly.weeks.map(w => fmtDayMonth(w.week_end || w.week_start));
+    const inProg = weekly.weeks.map(w => !!w.in_progress);
     const axisOpts = axisXY();
 
     new Chart(document.getElementById('weeklyKmChart'), {
@@ -813,7 +818,8 @@ async function buildCoachTab() {
         datasets: [{
           label: 'km',
           data: weekly.weeks.map(w => w.km),
-          backgroundColor: THEME.yellow,
+          backgroundColor: weekly.weeks.map(w =>
+            w.in_progress ? 'rgba(212,168,0,0.35)' : THEME.yellow),
           borderRadius: 4,
         }],
       },
