@@ -131,9 +131,97 @@ def predict_for_distance(clean_races, target_km, latest_vo2, vo2_change):
 
     return {
         "predicted_time_fmt": fmt_time(central),
+        "predicted_time_seconds": round(central, 1),
         "low_estimate_fmt": fmt_time(central - band),
         "high_estimate_fmt": fmt_time(central + band),
         "note": note,
+    }
+
+
+def fmt_pace(sec_per_km):
+    """Seconds per km -> '3:50/km'."""
+    if sec_per_km is None:
+        return None
+    m = int(sec_per_km // 60)
+    sec = int(round(sec_per_km - m * 60))
+    if sec == 60:
+        m, sec = m + 1, 0
+    return f"{m}:{sec:02d}/km"
+
+
+def riegel_pace(clean_races, target_km):
+    """Average Riegel-projected race pace at target_km, seconds per km."""
+    if not clean_races:
+        return None
+    preds = [riegel_predict(r["time_seconds"], r["distance_km"], target_km)
+             for r in clean_races]
+    return (sum(preds) / len(preds)) / target_km
+
+
+def threshold_pace(clean_races):
+    """Lactate threshold pace, taken as the pace sustainable for a race
+    of about an hour — the standard working definition, and one this
+    model can derive honestly rather than guessing a percentage.
+
+    Rearranging Riegel for the distance that takes 3600s:
+        D2 = D1 * (3600 / T1) ** (1 / exponent)
+    """
+    if not clean_races:
+        return None
+    paces = [
+        3600 / (r["distance_km"] * (3600 / r["time_seconds"]) ** (1 / RIEGEL_EXPONENT))
+        for r in clean_races
+    ]
+    return sum(paces) / len(paces)
+
+
+def build_training_paces(clean_races, predictions):
+    """Every pace a session might name, derived from the same clean race
+    results as the time predictions - so it re-derives itself whenever a
+    new race is logged, instead of being a fixed table that quietly goes
+    stale as fitness moves.
+
+    Easy and long-run bands are multiples of threshold rather than of
+    race pace: the aerobic end scales with the aerobic ceiling, and this
+    keeps the two ends of the range from drifting apart.
+    """
+    t = threshold_pace(clean_races)
+    if t is None:
+        return None
+
+    def race_pace(label, km):
+        secs = (predictions.get(label) or {}).get("predicted_time_seconds")
+        return secs / km if secs else None
+
+    def band(lo_mult, hi_mult):
+        return f"{fmt_pace(t * lo_mult)} - {fmt_pace(t * hi_mult)}"
+
+    zones = [
+        {"name": "Easy / recovery", "pace": band(1.25, 1.35),
+         "purpose": "Most of the week. Conversational - if in doubt, slower."},
+        {"name": "Long run", "pace": band(1.20, 1.30),
+         "purpose": "Sunday. Steady, not easy-plus - the last few km may drift quicker."},
+        {"name": "Half marathon (goal)", "pace": fmt_pace(race_pace("Half Marathon", 21.0975)),
+         "purpose": "Cheltenham race pace. Race-specific blocks late in the build."},
+        {"name": "Threshold / tempo", "pace": fmt_pace(t),
+         "purpose": "Comfortably hard, ~1hr race pace. The Saturday session."},
+        {"name": "10K pace", "pace": fmt_pace(race_pace("10K", 10.0)),
+         "purpose": "The '10K effort' in interval sessions - 1km reps sit here."},
+        {"name": "5K pace", "pace": fmt_pace(race_pace("5K", 5.0)),
+         "purpose": "Short, sharp reps of 3-5 minutes."},
+        {"name": "Interval / VO2max", "pace": fmt_pace(riegel_pace(clean_races, 3.0)),
+         "purpose": "3K race pace. Hard 800m-1km reps with full recovery."},
+        {"name": "Reps / strides", "pace": fmt_pace(riegel_pace(clean_races, 1.5)),
+         "purpose": "1500m pace. 200-400m reps and strides - speed, not stamina."},
+    ]
+    return {
+        "zones": zones,
+        "basis": (f"Derived from {len(clean_races)} clean race result(s) via the same Riegel "
+                  f"projection as the time predictions, so these update themselves whenever a "
+                  f"new race is logged."),
+        "caveat": ("Guides, not gospel. Heat, hills, wind and fatigue all justify running slower "
+                   "than the table on any given day - effort beats pace. Super shoes flatter pace "
+                   "by roughly 5-8 sec/km, so a session in racers is not directly comparable."),
     }
 
 
@@ -181,6 +269,7 @@ def main():
         "excluded_races": [
             {"name": r["name"], "reason": r.get("notes", "no reason given")} for r in excluded
         ],
+        "training_paces": build_training_paces(clean_races, predictions_by_distance),
         "recent_key_sessions": KEY_SESSIONS,
         "key_sessions_note": ("Logged for reference only — not converted into a predicted time. "
                                "Converting interval-rep pace to race pace has no reliable formula; "

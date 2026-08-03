@@ -1111,6 +1111,10 @@ async function buildPlanTab(computedData) {
   panel.innerHTML = html;
 }
 
+// Race times carry hundredths from the projection maths; nobody needs
+// to see them, and they imply a precision the model does not have.
+function trimSecs(t) { return t ? t.replace(/\.\d+$/, '') : t; }
+
 async function buildPredictorTab() {
   const panel = document.getElementById('tab-predictor');
   let pred;
@@ -1150,8 +1154,8 @@ async function buildPredictorTab() {
     return `
       <div class="card">
         <p class="label">${label}</p>
-        <p class="value">${p.predicted_time_fmt}</p>
-        <p class="delta flat">${p.low_estimate_fmt} - ${p.high_estimate_fmt}</p>
+        <p class="value">${trimSecs(p.predicted_time_fmt)}</p>
+        <p class="delta flat">${trimSecs(p.low_estimate_fmt)} - ${trimSecs(p.high_estimate_fmt)}</p>
       </div>
     `;
   }).join('');
@@ -1162,11 +1166,33 @@ async function buildPredictorTab() {
     return `<p style="font-size:12px; color:var(--text-secondary); margin:4px 0;"><strong>${label}:</strong> ${p.note}</p>`;
   }).join('');
 
+  // Training paces: what a session means when it says "10K effort" or
+  // "threshold". Derived from the same race results as the predictions,
+  // so it re-derives itself as fitness moves.
+  const tp = pred.training_paces;
+  const pacesHtml = tp ? `
+    <div class="chart-card">
+      <p class="title">Training paces — what the session names mean</p>
+      ${tp.zones.map(z => `
+        <div style="border-top:1px solid var(--border); padding:9px 0;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px;">
+            <span style="font-size:14px;">${z.name}</span>
+            <span style="font-size:15px; font-weight:600; color:var(--club-blue); white-space:nowrap;">${z.pace ?? '--'}</span>
+          </div>
+          <p style="font-size:12px; color:var(--text-secondary); margin:3px 0 0;">${z.purpose}</p>
+        </div>
+      `).join('')}
+      <p style="font-size:12px; color:var(--text-muted); margin:10px 0 0; border-top:1px solid var(--border); padding-top:10px;">${tp.basis}</p>
+      <p style="font-size:12px; color:var(--text-muted); margin:6px 0 0;">${tp.caveat}</p>
+    </div>
+  ` : '';
+
   panel.innerHTML = `
     ${nextRaceHtml}
     <div class="card-grid">
       ${cardsHtml}
     </div>
+    ${pacesHtml}
     <div class="chart-card">
       <p class="title">Basis for these estimates</p>
       <p style="font-size:13px; color:var(--text-secondary); margin:0 0 10px;">${pred.vo2max_note}</p>

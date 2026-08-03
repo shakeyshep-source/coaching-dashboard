@@ -8,24 +8,28 @@
   "predictions": {
     "5K": {
       "predicted_time_fmt": "17:52.96",
+      "predicted_time_seconds": 1073.0,
       "low_estimate_fmt": "17:23.90",
       "high_estimate_fmt": "18:22.01",
       "note": "Based on 4 clean race result(s). VO2max up 1.0 since earliest reading \u2014 nudged faster."
     },
     "10K": {
       "predicted_time_fmt": "37:19.21",
+      "predicted_time_seconds": 2239.2,
       "low_estimate_fmt": "36:18.63",
       "high_estimate_fmt": "38:19.78",
       "note": "Based on 4 clean race result(s). VO2max up 1.0 since earliest reading \u2014 nudged faster."
     },
     "Half Marathon": {
       "predicted_time_fmt": "1:22:23.01",
+      "predicted_time_seconds": 4943.0,
       "low_estimate_fmt": "1:20:09.36",
       "high_estimate_fmt": "1:24:36.66",
       "note": "Based on 4 clean race result(s). VO2max up 1.0 since earliest reading \u2014 nudged faster. Reasonably grounded if based on a 10K+ result; more of a stretch if only projected from 5K."
     },
     "Marathon": {
       "predicted_time_fmt": "2:51:48.01",
+      "predicted_time_seconds": 10308.0,
       "low_estimate_fmt": "2:47:09.35",
       "high_estimate_fmt": "2:56:26.66",
       "note": "Based on 4 clean race result(s). VO2max up 1.0 since earliest reading \u2014 nudged faster. CAVEAT: marathon projections from short-race data are unreliable \u2014 doesn't account for fuelling or sustained multi-hour effort. Rough ballpark only."
@@ -52,6 +56,52 @@
       "reason": "Respiratory episode in heat. Relay leg, off-road and extremely hilly \u2014 not comparable to a flat standalone race. Excluded from Riegel projection."
     }
   ],
+  "training_paces": {
+    "zones": [
+      {
+        "name": "Easy / recovery",
+        "pace": "4:48/km - 5:11/km",
+        "purpose": "Most of the week. Conversational - if in doubt, slower."
+      },
+      {
+        "name": "Long run",
+        "pace": "4:36/km - 4:59/km",
+        "purpose": "Sunday. Steady, not easy-plus - the last few km may drift quicker."
+      },
+      {
+        "name": "Half marathon (goal)",
+        "pace": "3:54/km",
+        "purpose": "Cheltenham race pace. Race-specific blocks late in the build."
+      },
+      {
+        "name": "Threshold / tempo",
+        "pace": "3:50/km",
+        "purpose": "Comfortably hard, ~1hr race pace. The Saturday session."
+      },
+      {
+        "name": "10K pace",
+        "pace": "3:44/km",
+        "purpose": "The '10K effort' in interval sessions - 1km reps sit here."
+      },
+      {
+        "name": "5K pace",
+        "pace": "3:35/km",
+        "purpose": "Short, sharp reps of 3-5 minutes."
+      },
+      {
+        "name": "Interval / VO2max",
+        "pace": "3:29/km",
+        "purpose": "3K race pace. Hard 800m-1km reps with full recovery."
+      },
+      {
+        "name": "Reps / strides",
+        "pace": "3:20/km",
+        "purpose": "1500m pace. 200-400m reps and strides - speed, not stamina."
+      }
+    ],
+    "basis": "Derived from 4 clean race result(s) via the same Riegel projection as the time predictions, so these update themselves whenever a new race is logged.",
+    "caveat": "Guides, not gospel. Heat, hills, wind and fatigue all justify running slower than the table on any given day - effort beats pace. Super shoes flatter pace by roughly 5-8 sec/km, so a session in racers is not directly comparable."
+  },
   "recent_key_sessions": [
     {
       "date": "2026-07-08",
