@@ -389,7 +389,7 @@ async function loadDashboard() {
   const logStripHtml = loggedToday
     ? `<p style="font-size:12px; color:var(--good); margin:10px 0 0;">✓ Today's session logged</p>`
     : (DAILY_FORM_URL
-        ? `<a href="${DAILY_FORM_URL}" target="_blank" style="display:inline-block; margin-top:12px; background:var(--club-blue); color:#fff; font-size:13px; font-weight:500; padding:9px 16px; border-radius:8px; text-decoration:none;">Log today's session</a>`
+        ? `<a href="${DAILY_FORM_URL}" rel="noopener" style="display:inline-block; margin-top:12px; background:var(--club-blue); color:#fff; font-size:13px; font-weight:500; padding:9px 16px; border-radius:8px; text-decoration:none;">Log today's session</a>`
         : `<p style="font-size:12px; color:var(--text-muted); margin:10px 0 0;">Not logged today — set DAILY_FORM_URL in index.html for a one-tap button here.</p>`);
 
   const level = today.readiness_level || 'good';
@@ -704,7 +704,7 @@ async function buildCoachTab() {
           </tbody>
         </table>
         ${proposal.status === 'pending' ? (REVIEW_FORM_URL
-          ? `<a href="${REVIEW_FORM_URL}" target="_blank" style="display:inline-block; margin-top:10px; background:var(--blue); color:#fff; font-size:13px; padding:8px 14px; border-radius:6px; text-decoration:none;">Respond (approve / amend / reject)</a>`
+          ? `<a href="${REVIEW_FORM_URL}" rel="noopener" style="display:inline-block; margin-top:10px; background:var(--blue); color:#fff; font-size:13px; padding:8px 14px; border-radius:6px; text-decoration:none;">Respond (approve / amend / reject)</a>`
           : `<p style="font-size:12px; color:var(--warn); margin:10px 0 0;">Respond via the weekly review form (set REVIEW_FORM_URL in index.html to get a button here).</p>`) : ''}
       </div>
     `;
