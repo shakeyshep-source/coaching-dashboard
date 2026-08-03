@@ -1,7 +1,7 @@
 {
   "id": "2026-08-02",
   "created": "2026-08-02T20:00:17",
-  "status": "pending",
+  "status": "applied",
   "rationale": "REVISED after Shep's response. Saturday's tempo was 20min at 3:51/km, HR 157, and felt comfortable - exactly as prescribed, not an over-cooked session (the first version misread it because of a bug, now fixed). Sunday's recovery dip was alcohol, not fatigue. Achilles has been zero throughout and he's feeling strong and wants to push on.\n\nSo: push the specific things a half marathon needs, not the weekly total. Long run accelerated to 18-20-21km, clearing the 95-minute pre-taper target a week earlier than first proposed and finishing with 21km carrying the last 5km at goal pace - the most race-specific session available. Goal-pace work brought forward to 22 August. Weekly volume deliberately unchanged at a 68km peak: he's a masters athlete seven weeks out with an achilles watch item, and the return on 75km is negative. Goal pace held at 3:54/km for now - the tempo was in super shoes, worth 5-8 sec/km, and one session isn't enough to rewrite it. Revisit on 9 August with two data points.",
   "changes": [
     {
@@ -284,5 +284,12 @@
       "target_pace": "3:52-3:56/km",
       "notes": "CHELTENHAM HALF MARATHON. Target 1:21-1:23. Symbicort 20 min before gun, salbutamol 15 min before. WU: 2km easy + 4 strides. First 5km no faster than 3:56 - the race is won after 15km, not before 5km."
     }
-  ]
+  ],
+  "athlete_response": {
+    "timestamp": "03/08/2026 08:03:53",
+    "review_date": "2026-08-02",
+    "decision": "approve",
+    "thoughts": "thanks"
+  },
+  "applied_at": "2026-08-03T07:07:28"
 }

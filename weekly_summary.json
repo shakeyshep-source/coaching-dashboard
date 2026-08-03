@@ -1,14 +1,14 @@
 {
   "generated": "2026-08-03",
   "next_race": {
-    "name": "Cheltenham Half Marathon",
+    "name": "CHELTENHAM HALF MARATHON",
     "date": "2026-09-20",
     "distance_km": 21.0975,
     "days_away": 48
   },
   "race_readiness": {
     "race": {
-      "name": "Cheltenham Half Marathon",
+      "name": "CHELTENHAM HALF MARATHON",
       "date": "2026-09-20",
       "distance_km": 21.0975,
       "days_away": 48
@@ -16,9 +16,9 @@
     "weeks_to_race": 6.9,
     "taper_start": "2026-09-10",
     "remaining_key_sessions": {
-      "tempo": 1,
-      "intervals": 2,
-      "long": 1
+      "tempo": 5,
+      "intervals": 6,
+      "long": 5
     },
     "goal_time": "1:22:23.01",
     "goal_pace": "3:54/km",
@@ -854,15 +854,15 @@
       "time_min": 0,
       "elevation_m": 0,
       "planned_sessions": 6,
-      "logged_sessions": 0,
+      "logged_sessions": 1,
       "hard_sessions_planned": 3,
       "quality_time_min": 0,
       "easy_pct": null,
       "long_run_min": null,
       "long_run_km": null,
-      "on_target_pct": null,
-      "avg_rpe": null,
-      "max_achilles": null,
+      "on_target_pct": 100,
+      "avg_rpe": 1.0,
+      "max_achilles": 1,
       "avg_hrv": 36,
       "avg_rhr": 47.0,
       "avg_sleep_score": 90,
@@ -870,7 +870,23 @@
       "easy_pace_min_km": null,
       "easy_avg_hr": null,
       "efficiency": null,
-      "session_log": []
+      "session_log": [
+        {
+          "date": "2026-08-03",
+          "temp_max_c": 31.8,
+          "heat_risk": "high",
+          "session_type": "rest",
+          "rpe": 1.0,
+          "on_target": true,
+          "achilles_score": 1,
+          "note": "all good",
+          "km": null,
+          "pace": null,
+          "avg_hr": null,
+          "segments": null,
+          "fastest_segment": null
+        }
+      ]
     }
   ]
 }

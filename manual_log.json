@@ -22,5 +22,13 @@
     "rpe": 2.0,
     "on_target": true,
     "session_notes": "on / off road - 28c"
+  },
+  {
+    "date": "2026-08-03",
+    "achilles_score": 1,
+    "session_type": "rest",
+    "rpe": 1.0,
+    "on_target": true,
+    "session_notes": "all good"
   }
 ]
