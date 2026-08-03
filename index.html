@@ -333,6 +333,12 @@ function fmtDate(dateStr) {              // "29 Jul 2026"
   return new Date(dateStr + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 }
 
+// Fill-in URL of the daily log Google Form — powers the "Log today's
+// session" button in the hero. The watch supplies distance, pace and HR;
+// this form carries the things only Shep knows: achilles, RPE, and what
+// the session actually felt like.
+const DAILY_FORM_URL = '';
+
 // Fill-in URL of the "Weekly review response" Google Form — powers the
 // Respond button on the Coach tab. See AUTOMATION_SETUP.md step 2.
 const REVIEW_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSelVvuccMxIiMpIy9vjmGPHJjjV4mwHOB4ReQH0uel8d2PGcA/viewform';
@@ -375,6 +381,17 @@ async function loadDashboard() {
     }
   } catch (e) { /* hero renders without the session */ }
 
+  // Has today been logged? achilles_score is the field the form always
+  // carries, so its presence is the reliable "logged" signal. Nudge only
+  // when it's missing — a silent dashboard is how two weeks of logging
+  // quietly disappeared once already.
+  const loggedToday = today.achilles_score !== null && today.achilles_score !== undefined;
+  const logStripHtml = loggedToday
+    ? `<p style="font-size:12px; color:var(--good); margin:10px 0 0;">✓ Today's session logged</p>`
+    : (DAILY_FORM_URL
+        ? `<a href="${DAILY_FORM_URL}" target="_blank" style="display:inline-block; margin-top:12px; background:var(--club-blue); color:#fff; font-size:13px; font-weight:500; padding:9px 16px; border-radius:8px; text-decoration:none;">Log today's session</a>`
+        : `<p style="font-size:12px; color:var(--text-muted); margin:10px 0 0;">Not logged today — set DAILY_FORM_URL in index.html for a one-tap button here.</p>`);
+
   const level = today.readiness_level || 'good';
   const levelIcon = { good: '✓', caution: '△', flag: '✕' }[level] || '✓';
   const heatChip = today.heat_risk === 'high'
@@ -395,6 +412,7 @@ async function loadDashboard() {
         ${today.achilles_score >= 3 ? `<span class="chip bad">Achilles ${today.achilles_score}/10</span>` : ''}
         ${today.acwr ? `<span class="chip">ACWR ${today.acwr}${today.acwr_status ? ' · ' + today.acwr_status.toLowerCase() : ''}</span>` : ''}
       </div>
+      ${logStripHtml}
     </div>
 
     <div class="card-grid">

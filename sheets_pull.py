@@ -16,7 +16,6 @@ SHEET IDs — update these if sheets are ever recreated:
 import csv
 import io
 import json
-import re
 import requests
 from datetime import datetime
 
@@ -30,13 +29,12 @@ RACE_LOG_SHEET_ID     = "14vCnLI1wYWep2FAyTotvdp2-wgsWawE_B19aE-oPNAI"
 # to skip this pull without erroring.
 REVIEW_RESPONSE_SHEET_ID = "1KGrx82VLztRawTzt1DDVpsCgPok9eXYp3dXK1VOk5Ck"
 
-# Explicit tab (gid) per sheet. A spreadsheet can hold several response
-# tabs — relinking a form leaves the old one frozen and starts a new one
-# — and the default CSV export always returns the FIRST tab, which may
-# be the empty historical one. Automatic tab discovery is attempted
-# first, but it depends on Google's page markup and cannot be relied on.
-# To pin a tab: open the spreadsheet, click the tab holding the live
-# responses, and copy the number after "#gid=" in the address bar.
+# Explicit tab (gid) per sheet. Leave None to read the first tab, which
+# is correct today. If a form is ever unlinked and relinked, Google
+# freezes the original tab and starts a new one while the export keeps
+# returning the old one — pin the gid here if that happens. Find it by
+# opening the spreadsheet, clicking the tab holding the live responses,
+# and copying the number after "#gid=" in the address bar.
 DAILY_LOG_GID      = None
 TRAINING_PLAN_GID  = None
 RACE_LOG_GID       = None
@@ -62,67 +60,22 @@ def fetch_sheet_csv(sheet_id, gid=None):
     return list(csv.DictReader(io.StringIO(resp.text)))
 
 
-def list_tabs(sheet_id):
-    """Every tab in a publicly-viewable spreadsheet, as [(gid, name)].
-    Best effort: returns [] if the page layout ever changes, in which
-    case callers fall back to the default first-tab export."""
-    url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/htmlview"
-    resp = requests.get(url, timeout=15)
-    resp.raise_for_status()
-    tabs = re.findall(r'id="sheet-button-(\d+)"[^>]*>([^<]*)<', resp.text)
-    if not tabs:
-        tabs = re.findall(r'href="#gid=(\d+)"[^>]*>([^<]*)<', resp.text)
-    seen, out = set(), []
-    for gid, name in tabs:
-        if gid not in seen:
-            seen.add(gid)
-            out.append((gid, name.strip()))
-    return out
-
-
 def fetch_form_responses(sheet_id, date_column, label, gid=None):
-    """Read a form's responses from whichever tab actually holds them.
+    """Read a form's responses, optionally from a pinned tab.
 
-    Unlinking and relinking a Google Form to the same spreadsheet leaves
-    the original "Form Responses 1" tab behind, frozen, and starts a new
-    "Form Responses 2" — while the default CSV export keeps returning the
-    first tab. That failure is silent and looks exactly like an athlete
-    who stopped logging, so pick the tab with the most usable rows rather
-    than trusting tab order. Self-healing if the form is relinked again.
+    The default CSV export returns the FIRST tab. If a form is ever
+    relinked, Google leaves the original tab frozen and starts a new one,
+    and the export keeps returning the empty historical tab - silently,
+    looking exactly like an athlete who stopped logging. Pin the gid
+    above if that ever happens. Row count and column names are logged so
+    a header mismatch is never mistaken for missing entries either.
     """
-    if gid is not None:
-        rows = fetch_sheet_csv(sheet_id, gid)
-        n = count_dated(rows, date_column)
-        print(f"  {label}: using pinned tab gid={gid} — {n} dated row(s)"
-              f"{'; columns: ' + str(list(rows[0].keys())) if rows else ''}")
-        return rows
-
-    best_rows = fetch_sheet_csv(sheet_id)
-    best_name, best_n = "(first tab)", count_dated(best_rows, date_column)
-
-    try:
-        tabs = list_tabs(sheet_id)
-    except Exception as exc:
-        print(f"  {label}: could not list tabs ({exc}); using the first tab")
-        tabs = []
-
-    if len(tabs) > 1:
-        print(f"  {label}: {len(tabs)} tabs found: {[n for _, n in tabs]}")
-    elif not tabs:
-        print(f"  {label}: tab discovery found nothing (Google markup) - "
-              f"first tab only; pin a gid above if responses live elsewhere")
-    for gid, name in tabs:
-        try:
-            rows = fetch_sheet_csv(sheet_id, gid)
-        except Exception:
-            continue
-        n = count_dated(rows, date_column)
-        if n > best_n:
-            best_rows, best_name, best_n = rows, name or f"gid={gid}", n
-
-    print(f"  {label}: using tab {best_name} — {best_n} dated row(s)"
-          f"{'; columns: ' + str(list(best_rows[0].keys())) if best_rows else ''}")
-    return best_rows
+    rows = fetch_sheet_csv(sheet_id, gid)
+    n = count_dated(rows, date_column)
+    where = f"pinned tab gid={gid}" if gid is not None else "first tab"
+    print(f"  {label}: {where} - {len(rows)} row(s), {n} with a usable date"
+          f"{'; columns: ' + str(list(rows[0].keys())) if rows else ''}")
+    return rows
 
 
 def count_dated(rows, date_column):
