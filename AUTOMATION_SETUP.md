@@ -79,6 +79,28 @@ Scheduled GitHub Actions only run from the default branch, and the
 weekly coach review reads/writes `main`. Merge
 `claude/review-previous-dashboard-802lfc` → `main` to go live.
 
+## Google Forms — publish them, and keep the links here
+
+A Google Form must be **published** before anyone, including its owner,
+can submit. An unpublished form answers its responder link with
+"We're sorry. This document is not published." — which is exactly how
+two weeks of daily logs went missing: the entries were never rejected,
+they were never submittable. If a form ever stops accepting entries,
+check Publish first.
+
+Responder links currently wired into `index.html`:
+
+| Form | Where it appears | Link |
+|---|---|---|
+| Daily running log | Hero "Log today's session" + header | `/forms/d/e/1FAIpQLSe7Bnpz45kG…/viewform` |
+| Weekly review response | Coach tab "Respond" | `/forms/d/e/1FAIpQLSelVvuccMxI…/viewform` |
+| Training plan entry | Header | `/forms/d/e/1FAIpQLSfnpMureLGU…/viewform` |
+| Race Result Log | Header | `/forms/d/e/1FAIpQLSeyiW4JbXtw…/viewform` |
+
+Note these are the `/forms/d/e/<responder-id>/viewform` links from each
+form's Send dialog — **not** the `/forms/d/<file-id>/` editing URL, which
+only works for the owner and not as a responder link.
+
 ## 5. Retire the laptop cron
 
 Once the first cloud run has committed successfully (check the Actions

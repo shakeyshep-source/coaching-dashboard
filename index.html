@@ -210,11 +210,7 @@
     <p class="sub" id="dateLabel">Loading...</p>
   </div>
 
-  <div style="display:flex; gap:16px; margin-bottom:1.25rem;">
-    <a href="manual_log_editor.html" style="font-size:13px; color:var(--blue); text-decoration:none;">Edit session log</a>
-    <a href="training_plan_editor.html" style="font-size:13px; color:var(--blue); text-decoration:none;">Edit training plan</a>
-    <a href="races_editor.html" style="font-size:13px; color:var(--blue); text-decoration:none;">Edit race results</a>
-  </div>
+  <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:1.25rem;" id="formLinks"></div>
 
   <div class="tabs" style="flex-wrap:wrap;">
     <button class="tab-btn active" data-tab="overview">Overview</button>
@@ -337,11 +333,13 @@ function fmtDate(dateStr) {              // "29 Jul 2026"
 // session" button in the hero. The watch supplies distance, pace and HR;
 // this form carries the things only Shep knows: achilles, RPE, and what
 // the session actually felt like.
-const DAILY_FORM_URL = 'https://docs.google.com/forms/d/15ghHVZ5_b11eTnSJha9tZ_EYkk1c5rBIvTi3LpYzFVA/viewform';
+const DAILY_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSe7Bnpz45kGDxRVz8KQKbb-B9-7j7ThcAul5xJbVWftQTHL6A/viewform';
+const PLAN_FORM_URL  = 'https://docs.google.com/forms/d/e/1FAIpQLSfnpMureLGUjyN_6NG48_ruoC4twGbw6SGsUNH8HpP5G_3oDg/viewform';
+const RACE_FORM_URL  = 'https://docs.google.com/forms/d/e/1FAIpQLSeyiW4JbXtwu1pNrYdwGJzQTpDO_oaVP4idEzRbarEwY7XQ2Q/viewform';
 
 // Fill-in URL of the "Weekly review response" Google Form — powers the
 // Respond button on the Coach tab. See AUTOMATION_SETUP.md step 2.
-const REVIEW_FORM_URL = 'https://docs.google.com/forms/d/1LX28UhpeScVNojWJ3FO2WLBaLWKh1PvqBzkFenoaH48/viewform';
+const REVIEW_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSelVvuccMxIiMpIy9vjmGPHJjjV4mwHOB4ReQH0uel8d2PGcA/viewform';
 
 async function loadDashboard() {
   const content = document.getElementById('content');
@@ -957,6 +955,16 @@ function buildAcwrTab(data) {
     },
   });
 }
+
+// Quick links to the four Google Forms — the actual input path for
+// everything the watch can't supply.
+document.getElementById('formLinks').innerHTML = [
+  ['Log session', DAILY_FORM_URL],
+  ['Add plan entry', PLAN_FORM_URL],
+  ['Log race result', RACE_FORM_URL],
+].map(([label, url]) =>
+  `<a href="${url}" rel="noopener" style="font-size:13px; color:var(--club-blue); text-decoration:none;">${label}</a>`
+).join('');
 
 loadDashboard().then(loadTrainingPlan);
 
