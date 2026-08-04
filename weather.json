@@ -1,17 +1,17 @@
 [
   {
     "date": "2026-08-04",
-    "temp_max_c": 25.4,
-    "temp_min_c": 19.5,
-    "humidity_pct": 59,
-    "wind_speed_kmh": 22.7,
+    "temp_max_c": 26.4,
+    "temp_min_c": 19.1,
+    "humidity_pct": 61,
+    "wind_speed_kmh": 20.2,
     "heat_risk": "high"
   },
   {
     "date": "2026-08-05",
     "temp_max_c": 22.1,
-    "temp_min_c": 15.9,
-    "humidity_pct": 61,
+    "temp_min_c": 15.5,
+    "humidity_pct": 60,
     "wind_speed_kmh": 24.5,
     "heat_risk": "moderate"
   },
