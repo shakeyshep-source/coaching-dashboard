@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-06-08",
-    "activity_id": 23178261344,
-    "name": "Gloucester Running",
-    "type": "running",
-    "distance_km": 7.14,
-    "duration_min": 36.0,
-    "avg_pace_min_per_km": 5.04,
-    "avg_hr": 122.12447940768163,
-    "max_hr": 139.0,
-    "elevation_gain_m": 62.40000915527344,
-    "cadence": 156.19990745025453,
-    "aerobic_te": 2.5999999046325684,
-    "anaerobic_te": 1.7999999523162842
-  },
-  {
     "date": "2026-06-10",
     "activity_id": 23203897562,
     "name": "Herefordshire Running",
