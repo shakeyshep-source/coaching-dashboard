@@ -223,16 +223,18 @@
   {
     "date": "2026-08-05",
     "rhr": 47.0,
-    "hrv_last_night": null,
-    "hrv_status": null,
-    "sleep_score": null,
-    "sleep_duration_hrs": null,
-    "body_battery_high": 77,
+    "hrv_last_night": 39,
+    "hrv_status": "BALANCED",
+    "sleep_score": 88,
+    "sleep_duration_hrs": 8.88,
+    "body_battery_high": 94,
     "body_battery_low": 45,
-    "training_load_acute": null,
-    "training_load_chronic": null,
-    "vo2max": null,
-    "vo2max_date": null,
-    "training_status_feedback": null
+    "training_load_acute": 658,
+    "training_load_chronic": 785,
+    "vo2max": 58.0,
+    "vo2max_date": "2026-08-04",
+    "training_status_feedback": "PRODUCTIVE_3",
+    "acwr_garmin": 0.8,
+    "acwr_status": "OPTIMAL"
   }
 ]
