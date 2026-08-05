@@ -30,5 +30,13 @@
     "rpe": 1.0,
     "on_target": true,
     "session_notes": "all good"
+  },
+  {
+    "date": "2026-08-04",
+    "achilles_score": 0,
+    "session_type": "easy",
+    "rpe": 1.0,
+    "on_target": true,
+    "session_notes": "Today's low HRV and sleep was due to works curry and beers Monday evening"
   }
 ]
