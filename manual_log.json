@@ -38,5 +38,13 @@
     "rpe": 1.0,
     "on_target": true,
     "session_notes": "Today's low HRV and sleep was due to works curry and beers Monday evening"
+  },
+  {
+    "date": "2026-08-05",
+    "achilles_score": 0,
+    "session_type": "intervals",
+    "rpe": 7.0,
+    "on_target": true,
+    "session_notes": "We had wind! 12mph"
   }
 ]
