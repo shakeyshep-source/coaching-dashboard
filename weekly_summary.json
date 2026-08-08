@@ -1,26 +1,26 @@
 {
-  "generated": "2026-08-07",
+  "generated": "2026-08-08",
   "next_race": {
     "name": "CHELTENHAM HALF MARATHON",
     "date": "2026-09-20",
     "distance_km": 21.0975,
-    "days_away": 44
+    "days_away": 43
   },
   "race_readiness": {
     "race": {
       "name": "CHELTENHAM HALF MARATHON",
       "date": "2026-09-20",
       "distance_km": 21.0975,
-      "days_away": 44
+      "days_away": 43
     },
-    "weeks_to_race": 6.3,
+    "weeks_to_race": 6.1,
     "taper_start": "2026-09-10",
     "remaining_key_sessions": {
-      "tempo": 5,
+      "tempo": 4,
       "intervals": 5,
       "long": 5
     },
-    "goal_time": "1:22:21.01",
+    "goal_time": "1:22:23.01",
     "goal_pace": "3:54/km",
     "long_run_target_min": 95,
     "longest_run_recent_min": 77
@@ -616,10 +616,10 @@
       "on_target_pct": null,
       "avg_rpe": null,
       "max_achilles": null,
-      "avg_hrv": 37.5,
-      "avg_rhr": 47.5,
-      "avg_sleep_score": 87,
-      "avg_sleep_hrs": 7.9,
+      "avg_hrv": 36,
+      "avg_rhr": 46.0,
+      "avg_sleep_score": 84,
+      "avg_sleep_hrs": 8.2,
       "easy_pace_min_km": 5.01,
       "easy_avg_hr": 140.2,
       "efficiency": 1.426,
@@ -865,27 +865,27 @@
       "week_start": "2026-08-03",
       "week_end": "2026-08-09",
       "in_progress": true,
-      "km": 30.0,
-      "runs": 3,
-      "time_min": 153.0,
-      "elevation_m": 157.0,
+      "km": 37.4,
+      "runs": 4,
+      "time_min": 188.0,
+      "elevation_m": 209.0,
       "planned_sessions": 6,
-      "logged_sessions": 4,
+      "logged_sessions": 5,
       "hard_sessions_planned": 3,
       "quality_time_min": 75,
-      "easy_pct": 51,
+      "easy_pct": 60,
       "long_run_min": 75,
       "long_run_km": 13.99,
       "on_target_pct": 100,
-      "avg_rpe": 2.5,
+      "avg_rpe": 2.2,
       "max_achilles": 1,
       "avg_hrv": 36.6,
-      "avg_rhr": 48.4,
+      "avg_rhr": 48.5,
       "avg_sleep_score": 87,
       "avg_sleep_hrs": 7.9,
-      "easy_pace_min_km": 4.85,
-      "easy_avg_hr": 136.5,
-      "efficiency": 1.511,
+      "easy_pace_min_km": 4.81,
+      "easy_avg_hr": 138.7,
+      "efficiency": 1.501,
       "session_log": [
         {
           "date": "2026-08-03",
@@ -944,6 +944,21 @@
           "km": 8.0,
           "pace": 4.92,
           "avg_hr": 133,
+          "segments": null,
+          "fastest_segment": null
+        },
+        {
+          "date": "2026-08-07",
+          "temp_max_c": 23.5,
+          "heat_risk": "moderate",
+          "session_type": "easy",
+          "rpe": 1.0,
+          "on_target": true,
+          "achilles_score": 0,
+          "note": "Maybe a little quicker than usual easy run but felt easy",
+          "km": 7.4,
+          "pace": 4.7,
+          "avg_hr": 143,
           "segments": null,
           "fastest_segment": null
         }

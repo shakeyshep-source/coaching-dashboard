@@ -13,5 +13,19 @@
       "Recovery below baseline on both HRV and RHR, and a hard session is planned.",
       "Heat risk is high and a hard session is planned."
     ]
+  },
+  {
+    "date": "2026-08-01",
+    "planned_session": "tempo",
+    "reasons": [
+      "Recovery below baseline on both HRV and RHR, and a hard session is planned."
+    ]
+  },
+  {
+    "date": "2026-08-08",
+    "planned_session": "tempo",
+    "reasons": [
+      "Heat risk is high and a hard session is planned."
+    ]
   }
 ]
