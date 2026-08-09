@@ -1,50 +1,5 @@
 [
   {
-    "date": "2026-06-13",
-    "activity_id": 23232675302,
-    "name": "Stroud Running",
-    "type": "running",
-    "distance_km": 12.3,
-    "duration_min": 91.0,
-    "avg_pace_min_per_km": 7.39,
-    "avg_hr": 132.0,
-    "max_hr": 159.0,
-    "elevation_gain_m": 484.0,
-    "cadence": 126.390625,
-    "aerobic_te": 3.200000047683716,
-    "anaerobic_te": 0.10000000149011612
-  },
-  {
-    "date": "2026-06-13",
-    "activity_id": 23237447726,
-    "name": "Strength",
-    "type": "strength_training",
-    "distance_km": null,
-    "duration_min": 37.2,
-    "avg_pace_min_per_km": null,
-    "avg_hr": 94.0,
-    "max_hr": 132.0,
-    "elevation_gain_m": null,
-    "cadence": null,
-    "aerobic_te": 0.699999988079071,
-    "anaerobic_te": 0.20000000298023224
-  },
-  {
-    "date": "2026-06-13",
-    "activity_id": 23237448267,
-    "name": "Tewkesbury SPA retreat",
-    "type": "other",
-    "distance_km": 0.44,
-    "duration_min": 39.7,
-    "avg_pace_min_per_km": 90.09,
-    "avg_hr": 91.0,
-    "max_hr": 123.0,
-    "elevation_gain_m": 118.0,
-    "cadence": 0.921875,
-    "aerobic_te": 0.5,
-    "anaerobic_te": 0.0
-  },
-  {
     "date": "2026-06-14",
     "activity_id": 23245071153,
     "name": "Tewkesbury Running",
@@ -1303,5 +1258,20 @@
     "cadence": 171.78125,
     "aerobic_te": 4.800000190734863,
     "anaerobic_te": 0.699999988079071
+  },
+  {
+    "date": "2026-08-08",
+    "activity_id": 23897855064,
+    "name": "Tewkesbury SPA retreat",
+    "type": "other",
+    "distance_km": 0.95,
+    "duration_min": 51.1,
+    "avg_pace_min_per_km": 53.59,
+    "avg_hr": 100.0,
+    "max_hr": 154.0,
+    "elevation_gain_m": 161.0,
+    "cadence": 2.484375,
+    "aerobic_te": 1.100000023841858,
+    "anaerobic_te": 0.6000000238418579
   }
 ]
