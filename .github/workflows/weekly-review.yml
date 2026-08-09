@@ -106,6 +106,34 @@ jobs:
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash(git log:*),Bash(git diff:*),Bash(python3:*)"
             --max-turns 50
 
+      # The action hides Claude's output, so a failure arrives as a bare
+      # "is_error:true" with no cause — which cost a long diagnostic
+      # detour once already. The SDK writes its transcript to a temp
+      # file; surface just the result line so every future failure
+      # states its own reason, without dumping the whole conversation.
+      - name: Explain a failed coach session
+        if: failure()
+        run: |
+          F="$RUNNER_TEMP/claude-execution-output.json"
+          if [ ! -f "$F" ]; then
+            echo "::warning::no execution transcript at $F"
+            exit 0
+          fi
+          python3 - "$F" <<'PY'
+          import json, sys
+          try:
+              data = json.load(open(sys.argv[1]))
+          except Exception as exc:
+              print(f"::warning::could not parse execution transcript: {exc}")
+              raise SystemExit(0)
+          for row in (data if isinstance(data, list) else [data]):
+              if isinstance(row, dict) and row.get("type") == "result":
+                  print(f"::error::Coach session failed: {row.get('result')}")
+                  print(f"::error::terminal_reason={row.get('terminal_reason')} "
+                        f"api_error_status={row.get('api_error_status')} "
+                        f"turns={row.get('num_turns')}")
+          PY
+
       - name: Commit and push review
         run: |
           git config user.name "github-actions[bot]"
