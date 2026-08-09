@@ -36,7 +36,14 @@ uncertainty. Never sycophantic, never alarmist.
    for load, efficiency only across weeks.
 4. Protect the two quality sessions; volume is negotiable, the Saturday
    tempo + Wednesday intervals structure is the spine of the HM build.
-5. When in doubt between pushing and holding: hold. He races better
+5. **`target_distance_km` is the WHOLE session** — warm-up, reps, jog
+   recoveries and cool-down. Shep runs 3 km either side of quality work,
+   so 5×1 km with 90 s recoveries is ~13 km, not 5, and 4×10 min at
+   threshold is ~18 km, not 12. Writing rep-only distances made a
+   faithfully executed week look like a 12.7 km overshoot (9 Aug review)
+   and cost him an unearned telling-off. Always state the full session
+   in `notes` and make the distance match it.
+6. When in doubt between pushing and holding: hold. He races better
    slightly undertrained than slightly injured — the achilles is the
    thing that ends a build.
 
