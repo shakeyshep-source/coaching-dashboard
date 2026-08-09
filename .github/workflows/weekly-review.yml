@@ -15,9 +15,15 @@
 
 name: Weekly coach review
 
+# Two Sunday slots. The API can fail transiently - the 9 Aug run died
+# in 536ms on an api_error and the identical re-run succeeded minutes
+# later with no code change. A second attempt costs nothing (it skips
+# immediately if the review already exists) and means one blip no longer
+# costs a week's review.
 on:
   schedule:
     - cron: '40 17 * * 0'  # Sunday ~18:40 UK in summer
+    - cron: '40 19 * * 0'  # backstop ~20:40 UK, only runs if the first produced nothing
   workflow_dispatch: {}     # run on demand from the Actions tab
 
 permissions:
@@ -36,6 +42,19 @@ jobs:
         with:
           fetch-depth: 0
 
+      # Europe/London, per the brief - never UTC for day boundaries.
+      - name: Has today's review already been written?
+        id: check
+        run: |
+          TODAY=$(TZ=Europe/London date +%F)
+          if [ -f "reviews/$TODAY.md" ]; then
+            echo "done=true" >> "$GITHUB_OUTPUT"
+            echo "Review for $TODAY already exists - nothing to do."
+          else
+            echo "done=false" >> "$GITHUB_OUTPUT"
+            echo "No review for $TODAY yet - running the coach session."
+          fi
+
       # A token copied from a terminal very often carries a trailing
       # newline, or a line break where the terminal wrapped it on screen.
       # GitHub stores that whitespace verbatim and the API then rejects
@@ -44,6 +63,7 @@ jobs:
       # re-mask the cleaned value and hand that to the action. Reports
       # lengths and shape only, never the value.
       - name: Preflight — normalise and check the Claude credential
+        if: steps.check.outputs.done == 'false'
         env:
           OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           APIKEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -80,6 +100,7 @@ jobs:
           echo "$NAME is present and usable."
 
       - name: Run coach session
+        if: steps.check.outputs.done == 'false'
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ env.OAUTH_CLEAN }}
@@ -112,7 +133,7 @@ jobs:
       # file; surface just the result line so every future failure
       # states its own reason, without dumping the whole conversation.
       - name: Explain a failed coach session
-        if: failure()
+        if: failure() && steps.check.outputs.done == 'false'
         run: |
           F="$RUNNER_TEMP/claude-execution-output.json"
           if [ ! -f "$F" ]; then
@@ -135,6 +156,7 @@ jobs:
           PY
 
       - name: Commit and push review
+        if: steps.check.outputs.done == 'false'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
