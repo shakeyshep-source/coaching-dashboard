@@ -179,42 +179,54 @@
     "session_type": "easy",
     "target_distance_km": 8,
     "target_pace": null,
-    "notes": "Easy 8km - recovery before Wednesday's speed session"
+    "notes": "Easy 8km",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-08-12",
     "session_type": "intervals",
-    "target_distance_km": 9,
-    "target_pace": null,
-    "notes": "WEDNESDAY SPEED SESSION 2/2: 6x1km at 10K-ish effort, 90s jog recovery, within an easy 7-9km total"
+    "target_distance_km": 13,
+    "target_pace": "3:44/km for the reps",
+    "notes": "WEDNESDAY SESSION 2/2: 3km easy warm-up, 6x1km at 10K pace (3:44/km) with 90s jog recovery, 3km cool-down. ~13km all in - that is the whole session, not just the reps.",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-08-13",
     "session_type": "easy",
-    "target_distance_km": 8,
+    "target_distance_km": 6,
     "target_pace": null,
-    "notes": "Easy 8km"
+    "notes": "Easy 6km",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-08-14",
     "session_type": "easy",
-    "target_distance_km": 6,
+    "target_distance_km": 5,
     "target_pace": null,
-    "notes": "Easy 6km, legs fresh for tomorrow"
+    "notes": "Easy 5km, legs fresh for tomorrow",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-08-15",
     "session_type": "tempo",
-    "target_distance_km": 13,
-    "target_pace": null,
-    "notes": "SATURDAY SPEED SESSION 1/2: 2x15min at threshold, 3min jog between, inside 13km. Normal session shoes."
+    "target_distance_km": 14,
+    "target_pace": "3:50/km for the blocks",
+    "notes": "SATURDAY SESSION 1/2: 3km warm-up, 2x15min at threshold (3:50/km) with 3min jog between, 3km cool-down. ~14km all in.",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-08-16",
     "session_type": "long",
     "target_distance_km": 20,
-    "target_pace": null,
-    "notes": "Long run 20km (~97min) - clears the 95min pre-taper target"
+    "target_pace": "4:36-4:59/km",
+    "notes": "Long run 20km (~97min) - clears the 95min pre-taper target",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-08-17",
@@ -228,42 +240,54 @@
     "session_type": "easy",
     "target_distance_km": 8,
     "target_pace": null,
-    "notes": "Easy 8km"
+    "notes": "Easy 8km",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-08-19",
     "session_type": "intervals",
-    "target_distance_km": 10,
-    "target_pace": null,
-    "notes": "WEDNESDAY SPEED SESSION 2/2: 5x1200m at 10K effort, 2min jog recovery, inside 10km."
+    "target_distance_km": 13,
+    "target_pace": "3:44/km for the reps",
+    "notes": "WEDNESDAY SESSION 2/2: 3km warm-up, 5x1200m at 10K pace with 2min jog recovery, 3km cool-down. ~13km all in.",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-08-20",
     "session_type": "easy",
-    "target_distance_km": 8,
+    "target_distance_km": 7,
     "target_pace": null,
-    "notes": "Easy 8km"
+    "notes": "Easy 7km",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-08-21",
     "session_type": "easy",
-    "target_distance_km": 6,
+    "target_distance_km": 5,
     "target_pace": null,
-    "notes": "Easy 6km"
+    "notes": "Easy 5km",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-08-22",
     "session_type": "tempo",
     "target_distance_km": 14,
-    "target_pace": "3:54/km for the second block",
-    "notes": "SATURDAY SPEED SESSION 1/2: 20min at threshold, 3min jog, then 10min at HM goal pace. First race-pace work - brought forward a week because the 1 Aug tempo was comfortable."
+    "target_pace": "3:50/km then 3:54/km",
+    "notes": "SATURDAY SESSION 1/2: 3km warm-up, 20min at threshold, 3min jog, then 10min at HM goal pace (3:54/km), 3km cool-down. ~14km all in. First race-pace work of the build.",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-08-23",
     "session_type": "long",
     "target_distance_km": 21,
-    "target_pace": null,
-    "notes": "Long run 21km (~102min) - race distance, easy throughout"
+    "target_pace": "4:36-4:59/km",
+    "notes": "Long run 21km (~102min) - race distance, easy throughout",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-08-24",
@@ -277,42 +301,54 @@
     "session_type": "easy",
     "target_distance_km": 8,
     "target_pace": null,
-    "notes": "Easy 8km"
+    "notes": "Easy 8km",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-08-26",
     "session_type": "intervals",
-    "target_distance_km": 10,
-    "target_pace": null,
-    "notes": "WEDNESDAY SPEED SESSION 2/2: 6x1km at 10K effort, 90s jog recovery, inside 10km."
+    "target_distance_km": 13,
+    "target_pace": "3:44/km for the reps",
+    "notes": "WEDNESDAY SESSION 2/2: 3km warm-up, 6x1km at 10K pace with 90s jog recovery, 3km cool-down. ~13km all in.",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-08-27",
     "session_type": "easy",
-    "target_distance_km": 8,
+    "target_distance_km": 7,
     "target_pace": null,
-    "notes": "Easy 8km"
+    "notes": "Easy 7km",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-08-28",
     "session_type": "easy",
-    "target_distance_km": 6,
+    "target_distance_km": 5,
     "target_pace": null,
-    "notes": "Easy 6km"
+    "notes": "Easy 5km",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-08-29",
     "session_type": "tempo",
-    "target_distance_km": 15,
-    "target_pace": "3:54/km for the second block",
-    "notes": "SATURDAY SPEED SESSION 1/2: 20min at threshold, then 15min at HM goal pace."
+    "target_distance_km": 16,
+    "target_pace": "3:50/km then 3:54/km",
+    "notes": "SATURDAY SESSION 1/2: 3km warm-up, 20min at threshold, 3min jog, 15min at HM goal pace, 3km cool-down. ~16km all in.",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-08-30",
     "session_type": "long",
     "target_distance_km": 21,
-    "target_pace": "last 5km at 3:54/km",
-    "notes": "PEAK LONG RUN: 21km with the LAST 5km at HM goal pace. The most race-specific session of the build - finishing at pace on tired legs is exactly what Cheltenham asks for."
+    "target_pace": "easy, last 5km at 3:54/km",
+    "notes": "PEAK LONG RUN: 21km with the LAST 5km at HM goal pace. Finishing at pace on tired legs is what Cheltenham actually asks for.",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-08-31",
@@ -324,44 +360,56 @@
   {
     "date": "2026-09-01",
     "session_type": "easy",
-    "target_distance_km": 8,
+    "target_distance_km": 7,
     "target_pace": null,
-    "notes": "Easy 8km"
+    "notes": "Easy 7km",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-09-02",
     "session_type": "intervals",
-    "target_distance_km": 9,
-    "target_pace": null,
-    "notes": "WEDNESDAY SPEED SESSION 2/2: 5x1km at 10K effort, 90s jog recovery, inside 9km."
+    "target_distance_km": 12,
+    "target_pace": "3:44/km for the reps",
+    "notes": "WEDNESDAY SESSION 2/2: 3km warm-up, 5x1km at 10K pace with 90s jog recovery, 3km cool-down. ~12km all in.",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-09-03",
     "session_type": "easy",
-    "target_distance_km": 7,
+    "target_distance_km": 5,
     "target_pace": null,
-    "notes": "Easy 7km"
+    "notes": "Easy 5km",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-09-04",
     "session_type": "easy",
-    "target_distance_km": 6,
+    "target_distance_km": 5,
     "target_pace": null,
-    "notes": "Easy 6km"
+    "notes": "Easy 5km",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-09-05",
     "session_type": "tempo",
-    "target_distance_km": 14,
+    "target_distance_km": 17,
     "target_pace": "3:54/km",
-    "notes": "SATURDAY SPEED SESSION 1/2: 2x20min at HM goal pace, 3min jog between. Key race-specific session. Good day for a dress rehearsal in the Fast R 3s."
+    "notes": "SATURDAY SESSION 1/2: 3km warm-up, 2x20min at HM goal pace with 3min jog between, 3km cool-down. ~17km all in. The key race-specific session - good day for the Fast R 3s as a dress rehearsal.",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-09-06",
     "session_type": "long",
     "target_distance_km": 18,
-    "target_pace": null,
-    "notes": "Long run 18km (~87min) - volume eases, quality holds"
+    "target_pace": "4:36-4:59/km",
+    "notes": "Long run 18km (~87min) - volume eases, quality holds",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-09-07",
@@ -375,14 +423,18 @@
     "session_type": "easy",
     "target_distance_km": 8,
     "target_pace": null,
-    "notes": "Easy 8km"
+    "notes": "Easy 8km",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-09-09",
     "session_type": "intervals",
-    "target_distance_km": 8,
-    "target_pace": null,
-    "notes": "WEDNESDAY SPEED SESSION 2/2: 4x1km at 10K effort, 90s jog. Last full interval session."
+    "target_distance_km": 11,
+    "target_pace": "3:44/km for the reps",
+    "notes": "WEDNESDAY SESSION 2/2: 3km warm-up, 4x1km at 10K pace with 90s jog recovery, 3km cool-down. ~11km all in. Last full interval session.",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-09-10",
@@ -401,9 +453,11 @@
   {
     "date": "2026-09-12",
     "session_type": "tempo",
-    "target_distance_km": 10,
+    "target_distance_km": 8,
     "target_pace": "3:54/km",
-    "notes": "15min at HM goal pace inside 10km. Sharpener, not a session - finish feeling you could do more."
+    "notes": "2km warm-up, 15min at HM goal pace, 2km cool-down. ~8km all in. Sharpener, not a session - finish feeling you could do more.",
+    "source": "coach",
+    "updated_at": "2026-08-09T20:48:16"
   },
   {
     "date": "2026-09-13",

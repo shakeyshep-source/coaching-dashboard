@@ -1,7 +1,7 @@
 {
   "id": "2026-08-09",
   "created": "2026-08-09T20:26:59",
-  "status": "pending",
+  "status": "applied",
   "rationale": "CORRECTION. The 9 Aug review recorded a 12.7km overshoot and read it as training beyond the plan. It was not. Shep ran both sessions exactly as prescribed - Wednesday 5x1km with 90s jog recoveries, Saturday 4x10min at threshold with jog recoveries, each inside a 3km warm-up and 3km cool-down. The fault is that the plan's target distances counted only the reps: 5x1km with recoveries and a warm-up cannot be done in 8km (it is 12km minimum), and 4x10min at threshold cannot be done in 12km (it is 18km). About 10km of the apparent overshoot was my arithmetic.\n\nEvery remaining session now states the whole session - warm-up, work, recoveries, cool-down - and a target distance that matches it, so planned and actual are finally comparable. Easy days are trimmed to hold the true weekly totals at 66, 68, 70 (peak) and 64km. That is a genuine reduction on the 73.7km just run, which is the right response to HRV falling 43.9 to 36.3 and RHR rising 46.7 to 48.7 across the week - that load was real even though the execution was faithful. Quality sessions and the long-run progression are untouched.",
   "changes": [
     {
@@ -193,5 +193,12 @@
       "target_pace": "3:54/km",
       "notes": "2km warm-up, 15min at HM goal pace, 2km cool-down. ~8km all in. Sharpener, not a session - finish feeling you could do more."
     }
-  ]
+  ],
+  "athlete_response": {
+    "timestamp": "09/08/2026 21:34:55",
+    "review_date": "2026-08-09",
+    "decision": "approve",
+    "thoughts": "Happy with plan as HRV falling and RHR rising, this week will be hot too"
+  },
+  "applied_at": "2026-08-09T20:48:16"
 }
