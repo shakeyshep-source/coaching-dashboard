@@ -49,9 +49,14 @@ def save(path, data):
         json.dump(data, f, indent=2)
 
 
-def merge_plan(plan_rows, changes):
+def merge_plan(plan_rows, changes, applied_at):
     """Merge proposed sessions into the plan by date — proposal wins.
-    A change with session_type null/"remove" deletes that date's entry."""
+    A change with session_type null/"remove" deletes that date's entry.
+
+    Each merged session is stamped with when it was applied, so a plan
+    entry submitted earlier via the training-plan form can't re-apply on
+    the next pull and revert a change the athlete just approved.
+    """
     by_date = {r["date"]: r for r in plan_rows}
     for change in changes:
         if change.get("session_type") in (None, "remove"):
@@ -63,6 +68,8 @@ def merge_plan(plan_rows, changes):
                 "target_distance_km": change.get("target_distance_km"),
                 "target_pace": change.get("target_pace"),
                 "notes": change.get("notes"),
+                "source": "coach",
+                "updated_at": applied_at,
             }
     return sorted(by_date.values(), key=lambda r: r["date"])
 
@@ -107,12 +114,13 @@ def main():
     decision = (response.get("decision") or "").lower()
 
     if decision == "approve":
+        applied_at = datetime.now().isoformat(timespec="seconds")
         plan = load(PLAN_FILE, default=[])
-        merged = merge_plan(plan, proposal.get("changes", []))
+        merged = merge_plan(plan, proposal.get("changes", []), applied_at)
         save(PLAN_FILE, merged)
         proposal["status"] = "applied"
         proposal["athlete_response"] = response
-        proposal["applied_at"] = datetime.now().isoformat(timespec="seconds")
+        proposal["applied_at"] = applied_at
         save(PROPOSAL_FILE, proposal)
         update_latest_review_status(proposal["id"], "applied")
         log_decision(proposal, response, "plan_updated")

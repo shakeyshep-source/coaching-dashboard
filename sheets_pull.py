@@ -95,6 +95,19 @@ def parse_date(raw):
     return raw.strip()
 
 
+def parse_timestamp(raw):
+    """Google Forms submission time -> ISO. Used to decide which of a
+    form entry and an approved coach change is the more recent edit."""
+    if not raw:
+        return None
+    for fmt in ("%d/%m/%Y %H:%M:%S", "%m/%d/%Y %H:%M:%S", "%Y-%m-%d %H:%M:%S"):
+        try:
+            return datetime.strptime(raw.strip(), fmt).isoformat(timespec="seconds")
+        except ValueError:
+            continue
+    return None
+
+
 def parse_bool(raw, default=True):
     """Parse Yes/No responses from Google Forms."""
     if not raw:
@@ -149,11 +162,35 @@ def pull_training_plan():
             "target_distance_km": parse_float(row.get("Target distance", "")),
             "target_pace": row.get("Targetpace", "").strip() or None,
             "notes": row.get("Notes", "").strip() or None,
+            "source": "form",
+            "updated_at": parse_timestamp(row.get("Timestamp", "")),
         })
     by_date = {}
     for e in entries:
         by_date[e["date"]] = e
     return sorted(by_date.values(), key=lambda r: r["date"])
+
+
+def merge_plan(existing, new_entries):
+    """The plan needs more care than the other merges.
+
+    The response sheet is cumulative, so every plan entry ever submitted
+    is re-read on every pull. With a plain "new wins" merge, a form row
+    submitted weeks ago would re-apply every morning and silently revert
+    a coach change the athlete had explicitly approved — the plan would
+    quietly snap back and nobody would know why. Compare edit times and
+    let the most recent one stand, whichever side it came from.
+    """
+    merged = {e["date"]: e for e in existing}
+    for e in new_entries:
+        cur = merged.get(e["date"])
+        if (cur and cur.get("updated_at") and e.get("updated_at")
+                and cur["updated_at"] > e["updated_at"]):
+            print(f"  training plan: keeping newer {cur.get('source', 'existing')} entry "
+                  f"for {e['date']} over an older form submission")
+            continue
+        merged[e["date"]] = e
+    return sorted(merged.values(), key=lambda r: r["date"])
 
 
 def pull_races():
@@ -244,7 +281,7 @@ def main():
     print("Pulling training plan...")
     plan = pull_training_plan()
     existing_plan = load_existing(TRAINING_PLAN_FILE)
-    merged_plan = merge(existing_plan, plan)
+    merged_plan = merge_plan(existing_plan, plan)
     with open(TRAINING_PLAN_FILE, "w") as f:
         json.dump(merged_plan, f, indent=2)
     print(f"  {len(plan)} sheet entries -> {len(merged_plan)} total in {TRAINING_PLAN_FILE}")
