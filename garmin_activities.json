@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-06-14",
-    "activity_id": 23245071153,
-    "name": "Tewkesbury Running",
-    "type": "running",
-    "distance_km": 15.54,
-    "duration_min": 83.0,
-    "avg_pace_min_per_km": 5.34,
-    "avg_hr": 134.0,
-    "max_hr": 158.0,
-    "elevation_gain_m": 50.0,
-    "cadence": 163.078125,
-    "aerobic_te": 3.799999952316284,
-    "anaerobic_te": 0.10000000149011612
-  },
-  {
-    "date": "2026-06-14",
-    "activity_id": 23245072626,
-    "name": "Tewkesbury SPA retreat",
-    "type": "other",
-    "distance_km": 0.59,
-    "duration_min": 50.0,
-    "avg_pace_min_per_km": 84.18,
-    "avg_hr": 89.0,
-    "max_hr": 128.0,
-    "elevation_gain_m": 478.0,
-    "cadence": 2.5,
-    "aerobic_te": 0.6000000238418579,
-    "anaerobic_te": 0.0
-  },
-  {
     "date": "2026-06-16",
     "activity_id": 23272706515,
     "name": "Tewkesbury Running",
