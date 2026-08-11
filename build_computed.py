@@ -31,6 +31,7 @@ LOCKED SCHEMA:
 """
 
 import json
+import re
 from datetime import date
 from statistics import mean
 
@@ -116,6 +117,32 @@ def update_flags_log(date_str, session_name, reasons, existing_log):
         "reasons": reasons,
     })
     return existing_log
+
+# Non-training explanations for a recovery dip. Alcohol, a short night,
+# illness or travel all suppress HRV and lift RHR with no training stress
+# behind them — and cutting the training block in response would be
+# treating the wrong problem entirely.
+#
+# Deliberately a signal for a human to weigh, never an automatic
+# override: alcohol explains one flat morning, it does not explain a
+# baseline sliding for a week. Persistence beats the excuse.
+CONFOUNDER_PATTERNS = {
+    "alcohol": r"\b(beers?|wine|pints?|drinks?|drinking|pub|alcohol|hangover)\b",
+    "short night": r"\b(late night|bad night|barely slept|poor sleep|broken sleep|up all night|no sleep)\b",
+    "illness": r"\b(ill|unwell|illness|cold|flu|virus|bug|sore throat|fever|chesty)\b",
+    "stress": r"\b(stress(ed|ful)?)\b",
+    "travel": r"\b(travell?ing|travelled|flight|flew|jet ?lag|long drive)\b",
+}
+
+
+def detect_confounders(note):
+    """Non-training causes the athlete himself flagged in his notes."""
+    if not note:
+        return []
+    text = note.lower()
+    return sorted(name for name, pat in CONFOUNDER_PATTERNS.items() if re.search(pat, text))
+
+
 def readiness_level(rhr_delta, hrv_delta, sleep_score, achilles, heat_risk):
     """Traffic light for the dashboard hero: 'good' | 'caution' | 'flag'.
     Mirrors summarise() severity so the light and the sentence never
@@ -130,27 +157,40 @@ def readiness_level(rhr_delta, hrv_delta, sleep_score, achilles, heat_risk):
     return "good"
 
 
-def summarise(rhr_delta, hrv_delta, sleep_score, achilles, heat_risk):
+def summarise(rhr_delta, hrv_delta, sleep_score, achilles, heat_risk, confounders=()):
+    """One sentence for the hero strip.
+
+    When a dip coincides with a non-training cause the athlete has noted
+    himself, name that cause rather than implying training load — and say
+    plainly that the week doesn't need changing. A drink genuinely does
+    suppress recovery, so "keep today easy" still stands; what would be
+    wrong is concluding the block is too hard and cutting it.
+    """
     if achilles and achilles >= 3:
         return "Achilles flagged. Consider an easy day or rest."
+
     rhr_elevated = rhr_delta is not None and rhr_delta > 2
     hrv_depressed = hrv_delta is not None and hrv_delta < -2
+    heat = " Heat risk is high today too — watch for respiratory symptoms." if heat_risk == "high" else ""
+    reason = ", ".join(confounders)
+
     if rhr_elevated and hrv_depressed:
-        base = "Recovery below baseline on both HRV and RHR. Keep today easy."
-        if heat_risk == "high":
-            return base + " Heat risk is high today too — extra caution on intensity."
-        return base
+        if confounders:
+            return (f"Recovery down on both HRV and RHR, but you noted {reason} — read it as that, "
+                    f"not training load. Keep today easy; no reason to change the week." + heat)
+        return "Recovery below baseline on both HRV and RHR. Keep today easy." + heat
+
     if rhr_elevated or hrv_depressed:
-        base = "Recovery slightly below baseline. Fine to train but stay conservative."
-        if heat_risk == "high":
-            return base + " Heat risk is high — watch for respiratory symptoms."
-        return base
+        if confounders:
+            return (f"Recovery slightly below baseline, but you noted {reason} — "
+                    f"likely that rather than training load. Train as planned unless it persists." + heat)
+        return "Recovery slightly below baseline. Fine to train but stay conservative." + heat
+
     if heat_risk == "high":
         return "Recovery looks normal but heat risk is high today. Adjust effort accordingly."
     if sleep_score is not None and sleep_score < 70:
         return "Sleep below average last night. Ease into today."
     return "Recovery looks normal. Fine for planned training."
-
 
 
 # How many days after a hard session to keep looking for a return to
@@ -219,9 +259,18 @@ def recovery_after_sessions(history, plan_by_date, manual_by_date, weather_by_da
             day_type(dates[k]) in QUALITY_TYPES
             for k in range(i + 1, min(i + (overall or RECOVERY_WINDOW_DAYS) + 1, len(dates)))
         )
+        # A drink or a short night inside the window stretches recovery for
+        # reasons that have nothing to do with the session, so record it
+        # rather than letting it quietly inflate the trend.
+        window_confounders = sorted({
+            c
+            for k in range(i, min(i + (overall or RECOVERY_WINDOW_DAYS) + 1, len(dates)))
+            for c in detect_confounders((manual_by_date.get(dates[k]) or {}).get("session_notes"))
+        })
         sessions.append({
             "date": d,
             "session_type": day_type(d),
+            "confounders_in_window": window_confounders,
             "hrv_reference": hrv_ref,
             "hrv_recovery_days": hrv_days,
             "rhr_reference": rhr_ref,
@@ -294,6 +343,7 @@ def main():
         acwr = row.get("acwr_garmin")
         acwr_status = row.get("acwr_status")
 
+        confounders = detect_confounders(manual.get("session_notes"))
         planned_session = plan_by_date.get(row["date"])
         flag_reasons = check_flags(
             planned_session, manual.get("achilles_score"), rhr_delta, hrv_delta, heat_risk
@@ -327,7 +377,8 @@ def main():
             "rhr_baseline_7d": rhr_baseline,
             "rhr_delta_from_baseline": rhr_delta,
             "heat_risk": heat_risk,
-            "today_summary": summarise(rhr_delta, hrv_delta, row.get("sleep_score"), manual.get("achilles_score"), heat_risk),
+            "recovery_confounders": confounders,
+            "today_summary": summarise(rhr_delta, hrv_delta, row.get("sleep_score"), manual.get("achilles_score"), heat_risk, confounders),
             "readiness_level": readiness_level(rhr_delta, hrv_delta, row.get("sleep_score"), manual.get("achilles_score"), heat_risk),
             "plan_flag_reasons": flag_reasons,
         })

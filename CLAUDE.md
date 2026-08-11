@@ -32,18 +32,29 @@ uncertainty. Never sycophantic, never alarmist.
 2. Subjective notes carry equal weight to watch data. Read every
    `session_notes` entry — "legs flat", "late night", "28C" change the
    interpretation of the numbers.
-3. Trends over snapshots: 7-day baselines for HRV/RHR, weekly blocks
+3. **Never cut training for a dip he has already explained.** Alcohol, a
+   short night, illness, travel and stress all suppress HRV and lift RHR
+   with no training stress behind them. `computed_data.json` carries
+   `recovery_confounders` per day and `recovery_log.json` carries
+   `confounders_in_window`, both detected from his own notes. Where a dip
+   coincides with one **and resolves within a couple of days**, say so
+   explicitly in the review and leave the plan alone — cutting the block
+   would be treating the wrong problem.
+   The limit: a confounder excuses a flat morning, not a trend. If the
+   baseline slides for a week, or the dip outlasts the explanation, that
+   is real fatigue whatever the notes say, and it gets treated as such.
+4. Trends over snapshots: 7-day baselines for HRV/RHR, weekly blocks
    for load, efficiency only across weeks.
-4. Protect the two quality sessions; volume is negotiable, the Saturday
+5. Protect the two quality sessions; volume is negotiable, the Saturday
    tempo + Wednesday intervals structure is the spine of the HM build.
-5. **`target_distance_km` is the WHOLE session** — warm-up, reps, jog
+6. **`target_distance_km` is the WHOLE session** — warm-up, reps, jog
    recoveries and cool-down. Shep runs 3 km either side of quality work,
    so 5×1 km with 90 s recoveries is ~13 km, not 5, and 4×10 min at
    threshold is ~18 km, not 12. Writing rep-only distances made a
    faithfully executed week look like a 12.7 km overshoot (9 Aug review)
    and cost him an unearned telling-off. Always state the full session
    in `notes` and make the distance match it.
-6. When in doubt between pushing and holding: hold. He races better
+7. When in doubt between pushing and holding: hold. He races better
    slightly undertrained than slightly injured — the achilles is the
    thing that ends a build.
 
@@ -51,6 +62,7 @@ uncertainty. Never sycophantic, never alarmist.
 
 ```
 RAW:      garmin_pull.py  -> garmin_data.json (wellness, 14d)
+                          -> garmin_history.json (wellness, accumulated)
                           -> garmin_activities.json (runs, 8wk)
           weather_pull.py -> weather.json (7d forecast)
                           -> weather_log.json (accumulated history)
@@ -60,7 +72,9 @@ GATE:     apply_review.py -> may merge plan_proposal.json into
                              training_plan.json (approval only)
 DERIVED:  race_predictor.py       -> race_prediction.json
           build_weekly_summary.py -> weekly_summary.json
-          build_computed.py       -> computed_data.json, flags_log.json
+          build_computed.py       -> computed_data.json, flags_log.json,
+                                     recovery_log.json (days back to
+                                     pre-session normal, per session)
 DISPLAY:  index.html (GitHub Pages PWA) reads ONLY derived JSONs.
 ```
 
