@@ -1217,11 +1217,53 @@ async function buildPredictorTab() {
   `;
 }
 
-function buildPerformanceTab(data) {
+async function buildPerformanceTab(data) {
   const panel = document.getElementById('tab-performance');
+  const rec = await fetchJson('recovery_log.json');
   const today = data[data.length - 1];
   const vo2Rows = data.filter(r => r.vo2max);
   const latestVo2 = vo2Rows.length ? vo2Rows[vo2Rows.length - 1] : null;
+
+  // Days for HRV and RHR to return to where they sat BEFORE a quality
+  // session. The number itself matters less than which way it moves over
+  // months — lengthening recovery shows up before soreness does.
+  const measured = ((rec && rec.sessions) || []).filter(s => s.recovery_days !== null);
+  const trendColour = !rec || !rec.trend ? 'var(--text-muted)'
+    : rec.trend.direction.startsWith('lengthening') ? 'var(--warn)'
+    : rec.trend.direction.startsWith('shortening') ? 'var(--good)' : 'var(--text-secondary)';
+  const recoveryHtml = !rec || !rec.sessions.length ? '' : `
+    <div class="chart-card">
+      <p class="title">Recovery after quality sessions — days back to pre-session normal</p>
+      ${rec.trend ? `
+        <p style="font-size:14px; margin:0 0 4px;">
+          Recent average <strong>${rec.trend.recent_avg_days} days</strong>${rec.trend.prior_avg_days != null ? `, previously ${rec.trend.prior_avg_days}` : ''}
+        </p>
+        <p style="font-size:13px; color:${trendColour}; margin:0 0 10px;">${rec.trend.direction}</p>
+      ` : `
+        <p style="font-size:13px; color:var(--text-muted); margin:0 0 10px;">
+          ${measured.length} session${measured.length === 1 ? '' : 's'} measured so far — a trend needs four.
+          This one is built to be read over months, not weeks.
+        </p>
+      `}
+      ${rec.sessions.slice(-8).reverse().map(s => {
+        const d = s.recovery_days;
+        const colour = d === null ? 'var(--bad)' : d <= 2 ? 'var(--good)' : d <= 3 ? 'var(--text-secondary)' : 'var(--warn)';
+        return `
+        <div style="border-top:1px solid var(--border); padding:8px 0;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px;">
+            <span style="font-size:13px;">${fmtDayMonth(s.date)} <span style="text-transform:capitalize; color:var(--text-secondary);">${s.session_type}</span></span>
+            <span style="font-size:14px; font-weight:600; color:${colour}; white-space:nowrap;">${d === null ? 'not within 7d' : d + ' day' + (d === 1 ? '' : 's')}</span>
+          </div>
+          <p style="font-size:12px; color:var(--text-muted); margin:3px 0 0;">
+            HRV ${s.hrv_recovery_days ?? '—'}d · RHR ${s.rhr_recovery_days ?? '—'}d${s.temp_max_c != null ? ` · ${Math.round(s.temp_max_c)}°C` : ''}${s.interrupted_by_next_session ? ' · another hard session landed inside the window' : ''}
+          </p>
+        </div>`;
+      }).join('')}
+      <p style="font-size:12px; color:var(--text-muted); margin:10px 0 0; border-top:1px solid var(--border); padding-top:10px;">
+        Measured against the 7-day baseline as it stood <em>before</em> the session, not the rolling one — a rolling baseline drifts down to meet a tiring athlete and would call a suppressed week fully recovered.
+      </p>
+    </div>
+  `;
 
   panel.innerHTML = `
     <div class="card-grid">
@@ -1239,6 +1281,7 @@ function buildPerformanceTab(data) {
       <p class="title">VO2max trend</p>
       <div class="chart-wrap"><canvas id="vo2Chart"></canvas></div>
     </div>
+    ${recoveryHtml}
   `;
 
   if (vo2Rows.length < 2) {
