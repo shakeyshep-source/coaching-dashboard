@@ -20,6 +20,7 @@
     "rhr_baseline_7d": null,
     "rhr_delta_from_baseline": null,
     "heat_risk": null,
+    "recovery_confounders": [],
     "today_summary": "Recovery looks normal. Fine for planned training.",
     "readiness_level": "good",
     "plan_flag_reasons": []
@@ -45,6 +46,7 @@
     "rhr_baseline_7d": 46.0,
     "rhr_delta_from_baseline": 0.0,
     "heat_risk": "moderate",
+    "recovery_confounders": [],
     "today_summary": "Recovery looks normal. Fine for planned training.",
     "readiness_level": "good",
     "plan_flag_reasons": []
@@ -70,6 +72,7 @@
     "rhr_baseline_7d": 46.0,
     "rhr_delta_from_baseline": 0.0,
     "heat_risk": "moderate",
+    "recovery_confounders": [],
     "today_summary": "Recovery looks normal. Fine for planned training.",
     "readiness_level": "good",
     "plan_flag_reasons": []
@@ -95,6 +98,7 @@
     "rhr_baseline_7d": 46.0,
     "rhr_delta_from_baseline": 2.0,
     "heat_risk": "moderate",
+    "recovery_confounders": [],
     "today_summary": "Recovery slightly below baseline. Fine to train but stay conservative.",
     "readiness_level": "caution",
     "plan_flag_reasons": []
@@ -120,7 +124,8 @@
     "rhr_baseline_7d": 46.5,
     "rhr_delta_from_baseline": 3.5,
     "heat_risk": "high",
-    "today_summary": "Recovery below baseline on both HRV and RHR. Keep today easy. Heat risk is high today too \u2014 extra caution on intensity.",
+    "recovery_confounders": [],
+    "today_summary": "Recovery below baseline on both HRV and RHR. Keep today easy. Heat risk is high today too \u2014 watch for respiratory symptoms.",
     "readiness_level": "flag",
     "plan_flag_reasons": [
       "Recovery below baseline on both HRV and RHR, and a hard session is planned.",
@@ -148,7 +153,8 @@
     "rhr_baseline_7d": 47.2,
     "rhr_delta_from_baseline": -0.2,
     "heat_risk": "high",
-    "today_summary": "Recovery slightly below baseline. Fine to train but stay conservative. Heat risk is high \u2014 watch for respiratory symptoms.",
+    "recovery_confounders": [],
+    "today_summary": "Recovery slightly below baseline. Fine to train but stay conservative. Heat risk is high today too \u2014 watch for respiratory symptoms.",
     "readiness_level": "caution",
     "plan_flag_reasons": []
   },
@@ -173,7 +179,10 @@
     "rhr_baseline_7d": 47.2,
     "rhr_delta_from_baseline": 2.8,
     "heat_risk": "high",
-    "today_summary": "Recovery below baseline on both HRV and RHR. Keep today easy. Heat risk is high today too \u2014 extra caution on intensity.",
+    "recovery_confounders": [
+      "alcohol"
+    ],
+    "today_summary": "Recovery down on both HRV and RHR, but you noted alcohol \u2014 read it as that, not training load. Keep today easy; no reason to change the week. Heat risk is high today too \u2014 watch for respiratory symptoms.",
     "readiness_level": "flag",
     "plan_flag_reasons": []
   },
@@ -198,6 +207,7 @@
     "rhr_baseline_7d": 47.6,
     "rhr_delta_from_baseline": -0.6,
     "heat_risk": "moderate",
+    "recovery_confounders": [],
     "today_summary": "Recovery looks normal. Fine for planned training.",
     "readiness_level": "good",
     "plan_flag_reasons": []
@@ -223,6 +233,7 @@
     "rhr_baseline_7d": 47.7,
     "rhr_delta_from_baseline": 0.3,
     "heat_risk": "moderate",
+    "recovery_confounders": [],
     "today_summary": "Recovery looks normal. Fine for planned training.",
     "readiness_level": "good",
     "plan_flag_reasons": []
@@ -248,6 +259,7 @@
     "rhr_baseline_7d": 48.0,
     "rhr_delta_from_baseline": 2.0,
     "heat_risk": "moderate",
+    "recovery_confounders": [],
     "today_summary": "Recovery looks normal. Fine for planned training.",
     "readiness_level": "good",
     "plan_flag_reasons": []
@@ -273,6 +285,7 @@
     "rhr_baseline_7d": 48.6,
     "rhr_delta_from_baseline": 0.4,
     "heat_risk": "high",
+    "recovery_confounders": [],
     "today_summary": "Recovery looks normal but heat risk is high today. Adjust effort accordingly.",
     "readiness_level": "caution",
     "plan_flag_reasons": [
@@ -300,6 +313,7 @@
     "rhr_baseline_7d": 48.7,
     "rhr_delta_from_baseline": 0.3,
     "heat_risk": "high",
+    "recovery_confounders": [],
     "today_summary": "Recovery looks normal but heat risk is high today. Adjust effort accordingly.",
     "readiness_level": "caution",
     "plan_flag_reasons": [
@@ -327,6 +341,7 @@
     "rhr_baseline_7d": 48.6,
     "rhr_delta_from_baseline": -0.6,
     "heat_risk": "high",
+    "recovery_confounders": [],
     "today_summary": "Recovery looks normal but heat risk is high today. Adjust effort accordingly.",
     "readiness_level": "caution",
     "plan_flag_reasons": []
@@ -352,6 +367,7 @@
     "rhr_baseline_7d": 48.7,
     "rhr_delta_from_baseline": -2.7,
     "heat_risk": "high",
+    "recovery_confounders": [],
     "today_summary": "Recovery looks normal but heat risk is high today. Adjust effort accordingly.",
     "readiness_level": "caution",
     "plan_flag_reasons": []

@@ -408,6 +408,8 @@ async function loadDashboard() {
       <div>
         ${heatChip}
         ${today.achilles_score >= 3 ? `<span class="chip bad">Achilles ${today.achilles_score}/10</span>` : ''}
+        ${(today.recovery_confounders || []).map(c =>
+          `<span class="chip">${c} noted</span>`).join('')}
         ${today.acwr ? `<span class="chip">ACWR ${today.acwr}${today.acwr_status ? ' · ' + today.acwr_status.toLowerCase() : ''}</span>` : ''}
       </div>
       ${logStripHtml}

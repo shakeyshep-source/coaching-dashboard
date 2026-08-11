@@ -5,6 +5,9 @@
     {
       "date": "2026-08-01",
       "session_type": "tempo",
+      "confounders_in_window": [
+        "alcohol"
+      ],
       "hrv_reference": 45.7,
       "hrv_recovery_days": null,
       "rhr_reference": 46.0,
@@ -18,6 +21,7 @@
     {
       "date": "2026-08-05",
       "session_type": "intervals",
+      "confounders_in_window": [],
       "hrv_reference": 39.7,
       "hrv_recovery_days": 1,
       "rhr_reference": 47.6,
@@ -31,6 +35,7 @@
     {
       "date": "2026-08-08",
       "session_type": "intervals",
+      "confounders_in_window": [],
       "hrv_reference": 36.7,
       "hrv_recovery_days": 2,
       "rhr_reference": 48.6,
