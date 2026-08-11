@@ -34,6 +34,10 @@ from garminconnect import Garmin
 # GARMIN_TOKENS_B64 secret into the runner's home directory).
 TOKENSTORE = os.environ.get("GARMIN_TOKENSTORE", "/home/shakeyshep/.garmin_tokens")
 OUTPUT_FILE = "garmin_data.json"
+# garmin_data.json is a rolling 14-day window — days fall out of it as
+# it moves. Recovery trends need months, not a fortnight, so every day
+# seen is also accumulated here and never dropped.
+HISTORY_FILE = "garmin_history.json"
 ACTIVITIES_FILE = "garmin_activities.json"
 DAYS_TO_PULL = 14  # rolling window; adjust as needed
 ACTIVITY_DAYS_TO_PULL = 56  # 8 weeks — enough for weekly trend stats
@@ -199,6 +203,23 @@ def main():
         json.dump(results, f, indent=2)
 
     print(f"\nSaved {len(results)} days to {OUTPUT_FILE}")
+
+    try:
+        with open(HISTORY_FILE) as f:
+            history = json.load(f)
+    except FileNotFoundError:
+        history = []
+    by_date = {r["date"]: r for r in history}
+    for r in results:
+        # A freshly pulled day wins: Garmin backfills sleep and HRV for a
+        # day some hours after it ends, so today's value for yesterday is
+        # more complete than yesterday's was.
+        by_date[r["date"]] = r
+    history = sorted(by_date.values(), key=lambda r: r["date"])
+    with open(HISTORY_FILE, "w") as f:
+        json.dump(history, f, indent=2)
+    print(f"Wellness history now spans {len(history)} days "
+          f"({history[0]['date']} to {history[-1]['date']})")
 
     activities = pull_activities(client)
     with open(ACTIVITIES_FILE, "w") as f:

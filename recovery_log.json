@@ -1,0 +1,46 @@
+{
+  "generated": "2026-08-11",
+  "window_days": 7,
+  "sessions": [
+    {
+      "date": "2026-08-01",
+      "session_type": "tempo",
+      "hrv_reference": 45.7,
+      "hrv_recovery_days": null,
+      "rhr_reference": 46.0,
+      "rhr_recovery_days": null,
+      "recovery_days": null,
+      "recovered": false,
+      "interrupted_by_next_session": true,
+      "temp_max_c": 23.3,
+      "note": null
+    },
+    {
+      "date": "2026-08-05",
+      "session_type": "intervals",
+      "hrv_reference": 39.7,
+      "hrv_recovery_days": 1,
+      "rhr_reference": 47.6,
+      "rhr_recovery_days": 6,
+      "recovery_days": 6,
+      "recovered": true,
+      "interrupted_by_next_session": true,
+      "temp_max_c": 21.7,
+      "note": "We had wind! 12mph"
+    },
+    {
+      "date": "2026-08-08",
+      "session_type": "intervals",
+      "hrv_reference": 36.7,
+      "hrv_recovery_days": 2,
+      "rhr_reference": 48.6,
+      "rhr_recovery_days": 2,
+      "recovery_days": 2,
+      "recovered": true,
+      "interrupted_by_next_session": false,
+      "temp_max_c": 26.5,
+      "note": "Quite warm, reps 1&2 seemed tough but 3 OK and 4 too but I'd say I felt more flat footed on the 4th"
+    }
+  ],
+  "trend": null
+}

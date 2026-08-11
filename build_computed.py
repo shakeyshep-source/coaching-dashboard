@@ -31,16 +31,24 @@ LOCKED SCHEMA:
 """
 
 import json
+from datetime import date
 from statistics import mean
 
 GARMIN_FILE = "garmin_data.json"
+HISTORY_FILE = "garmin_history.json"
 MANUAL_FILE = "manual_log.json"
 WEATHER_FILE = "weather.json"
+# weather.json only looks forward; past days need the accumulated log.
+WEATHER_LOG_FILE = "weather_log.json"
 PLAN_FILE = "training_plan.json"
 FLAGS_LOG_FILE = "flags_log.json"
+RECOVERY_FILE = "recovery_log.json"
 OUTPUT_FILE = "computed_data.json"
 
 HARD_SESSION_TYPES = {"intervals", "tempo", "long", "race"}
+# Long runs are hard, but they're aerobic volume — recovery from them is a
+# different question, so the recovery metric watches the sharp stuff only.
+QUALITY_TYPES = {"intervals", "tempo", "race"}
 
 
 def load(path):
@@ -144,10 +152,115 @@ def summarise(rhr_delta, hrv_delta, sleep_score, achilles, heat_risk):
     return "Recovery looks normal. Fine for planned training."
 
 
+
+# How many days after a hard session to keep looking for a return to
+# normal before calling it unrecovered.
+RECOVERY_WINDOW_DAYS = 7
+
+
+def recovery_after_sessions(history, plan_by_date, manual_by_date, weather_by_date):
+    """How long HRV and RHR take to come back after each quality session.
+
+    The point of this metric is the DURATION, tracked over months. Fresh,
+    you bounce back inside a day; as fatigue accumulates it stretches to
+    two or three, and that stretching shows up before anything hurts.
+
+    Crucially the reference is the 7-day baseline as it stood the day
+    BEFORE the session, not the rolling baseline on the day. A rolling
+    baseline drifts down to meet a tiring athlete — through the week of
+    3-9 Aug it fell 45.7 to 36.3, so by the Saturday a genuinely
+    suppressed HRV of 37 read as +0.3, "fully recovered". Freezing the
+    reference before the session avoids grading the week against its own
+    decline.
+    """
+    rows = sorted(history, key=lambda r: r["date"])
+    dates = [r["date"] for r in rows]
+    idx = {d: i for i, d in enumerate(dates)}
+    hrv = [r.get("hrv_last_night") for r in rows]
+    rhr = [r.get("rhr") for r in rows]
+
+    def day_type(d):
+        logged = (manual_by_date.get(d) or {}).get("session_type")
+        return logged or (plan_by_date.get(d) or {}).get("session_type")
+
+    sessions = []
+    for i, d in enumerate(dates):
+        if day_type(d) not in QUALITY_TYPES:
+            continue
+        # Reference = normal as it stood before this session landed.
+        hrv_ref = rolling_baseline(hrv, i)
+        rhr_ref = rolling_baseline(rhr, i)
+        if hrv_ref is None and rhr_ref is None:
+            continue
+
+        def days_back(series, ref, recovered):
+            """Days until the metric returns to ref, or None if it hasn't
+            yet (and None too if we simply ran out of data to look at)."""
+            if ref is None:
+                return None, True
+            for step in range(1, RECOVERY_WINDOW_DAYS + 1):
+                j = i + step
+                if j >= len(series):
+                    return None, False        # window not yet complete
+                if series[j] is not None and recovered(series[j], ref):
+                    return step, True
+            return None, True                  # looked, never came back
+
+        hrv_days, hrv_settled = days_back(hrv, hrv_ref, lambda v, r: v >= r)
+        rhr_days, rhr_settled = days_back(rhr, rhr_ref, lambda v, r: v <= r)
+        if not (hrv_settled and rhr_settled):
+            continue                           # too recent to judge
+
+        found = [x for x in (hrv_days, rhr_days) if x is not None]
+        # The slower metric governs — both have to be back to call it recovered.
+        overall = max(found) if len(found) == 2 else None
+        # Another hard session inside the window muddies the reading.
+        interrupted = any(
+            day_type(dates[k]) in QUALITY_TYPES
+            for k in range(i + 1, min(i + (overall or RECOVERY_WINDOW_DAYS) + 1, len(dates)))
+        )
+        sessions.append({
+            "date": d,
+            "session_type": day_type(d),
+            "hrv_reference": hrv_ref,
+            "hrv_recovery_days": hrv_days,
+            "rhr_reference": rhr_ref,
+            "rhr_recovery_days": rhr_days,
+            "recovery_days": overall,
+            "recovered": overall is not None,
+            "interrupted_by_next_session": interrupted,
+            "temp_max_c": (weather_by_date.get(d) or {}).get("temp_max_c"),
+            "note": (manual_by_date.get(d) or {}).get("session_notes"),
+        })
+
+    clean = [s for s in sessions if s["recovery_days"] is not None]
+    trend = None
+    if len(clean) >= 4:
+        recent = [s["recovery_days"] for s in clean[-3:]]
+        prior = [s["recovery_days"] for s in clean[-6:-3]] or None
+        recent_avg = round(mean(recent), 1)
+        prior_avg = round(mean(prior), 1) if prior else None
+        direction = "not enough history"
+        if prior_avg is not None:
+            gap = recent_avg - prior_avg
+            direction = ("lengthening — recovery is taking longer than it was"
+                         if gap >= 0.5 else
+                         "shortening — bouncing back quicker than before"
+                         if gap <= -0.5 else "stable")
+        trend = {"recent_avg_days": recent_avg, "prior_avg_days": prior_avg,
+                 "direction": direction, "sessions_measured": len(clean)}
+
+    return {"generated": date.today().isoformat() if hasattr(date, "today") else None,
+            "window_days": RECOVERY_WINDOW_DAYS,
+            "sessions": sessions, "trend": trend}
+
+
 def main():
     garmin_rows = load(GARMIN_FILE)
     manual_rows = load(MANUAL_FILE)
-    weather_rows = load(WEATHER_FILE)
+    # Merge the accumulated history with the forecast so past days carry
+    # their real conditions and future days still carry the forecast.
+    weather_rows = load(WEATHER_LOG_FILE) + load(WEATHER_FILE)
     plan_rows = load(PLAN_FILE)
     flags_log = load(FLAGS_LOG_FILE)
     manual_by_date = index_by_date(manual_rows)
@@ -219,12 +332,23 @@ def main():
             "plan_flag_reasons": flag_reasons,
         })
 
+    # Recovery works off accumulated history, not the 14-day window, so
+    # the trend can eventually span months rather than a fortnight.
+    history = load(HISTORY_FILE) or garmin_rows
+    recovery = recovery_after_sessions(history, plan_by_date, manual_by_date, weather_by_date)
+    with open(RECOVERY_FILE, "w") as f:
+        json.dump(recovery, f, indent=2)
+
     with open(OUTPUT_FILE, "w") as f:
         json.dump(computed, f, indent=2)
     with open(FLAGS_LOG_FILE, "w") as f:
         json.dump(flags_log, f, indent=2)
 
     print(f"Computed {len(computed)} days -> {OUTPUT_FILE}")
+    meas = [x for x in recovery["sessions"] if x["recovery_days"] is not None]
+    print(f"Recovery: {len(meas)} measurable session(s) -> {RECOVERY_FILE}"
+          + (f"; recent avg {recovery['trend']['recent_avg_days']}d, "
+             f"{recovery['trend']['direction']}" if recovery.get("trend") else ""))
     if flags_log:
         print(f"Flags log has {len(flags_log)} total entries")
 
