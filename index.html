@@ -1217,6 +1217,70 @@ async function buildPredictorTab() {
   `;
 }
 
+// Recovery days per quality session, with a rolling average over the
+// last three. The individual bars are noisy — heat, a late night, a hard
+// week all move them — so the dashed line is the thing to actually read.
+// Sessions that never came back inside the 7-day window are drawn at the
+// ceiling in the alert colour rather than dropped, since silently hiding
+// the worst results would defeat the point.
+function drawRecoveryChart(rec) {
+  const el = document.getElementById('recoveryChart');
+  if (!el || !rec || !rec.sessions.length) return;
+  const sessions = rec.sessions.slice(-12);
+  const cap = rec.window_days || 7;
+  const values = sessions.map(s => s.recovery_days === null ? cap : s.recovery_days);
+  const capped = sessions.map(s => s.recovery_days === null);
+
+  // Rolling mean of the last three, so a single bad session doesn't read
+  // as a trend. Capped sessions count as the ceiling — a floor on how bad
+  // they were, which is better than excluding them and flattering the line.
+  const rolling = values.map((_, i) => {
+    if (i < 2) return null;
+    const w = values.slice(i - 2, i + 1);
+    return Math.round((w.reduce((a, b) => a + b, 0) / w.length) * 10) / 10;
+  });
+
+  new Chart(el, {
+    plugins: [bandPlugin],
+    data: {
+      labels: sessions.map(s => fmtDayMonth(s.date)),
+      datasets: [
+        {
+          type: 'bar',
+          label: 'Days to recover',
+          data: values,
+          backgroundColor: capped.map(c => c ? THEME.bad : THEME.blue),
+          borderRadius: 4,
+        },
+        {
+          type: 'line',
+          label: 'Rolling average (3 sessions)',
+          data: rolling,
+          borderColor: THEME.yellow,
+          borderDash: [6, 4],
+          borderWidth: 2,
+          pointRadius: 0,
+          spanGaps: true,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: axisXY({
+        y: { min: 0, max: cap, ticks: { color: THEME.tick, stepSize: 1 } },
+        x: { ticks: { color: THEME.tick, maxTicksLimit: 8 } },
+      }),
+      plugins: {
+        legend: { labels: { color: THEME.ink, boxWidth: 12, font: { size: 11 } } },
+        // Shading the quick-turnaround zone means "is this good?" is
+        // answered by where the bar sits, not by remembering a threshold.
+        band: { min: 0, max: 2, color: 'rgba(46, 125, 50, 0.10)' },
+      },
+    },
+  });
+}
+
 async function buildPerformanceTab(data) {
   const panel = document.getElementById('tab-performance');
   const rec = await fetchJson('recovery_log.json');
@@ -1245,6 +1309,7 @@ async function buildPerformanceTab(data) {
           This one is built to be read over months, not weeks.
         </p>
       `}
+      <div class="chart-wrap" style="height:190px; margin-bottom:6px;"><canvas id="recoveryChart"></canvas></div>
       ${rec.sessions.slice(-8).reverse().map(s => {
         const d = s.recovery_days;
         const colour = d === null ? 'var(--bad)' : d <= 2 ? 'var(--good)' : d <= 3 ? 'var(--text-secondary)' : 'var(--warn)';
@@ -1260,6 +1325,7 @@ async function buildPerformanceTab(data) {
         </div>`;
       }).join('')}
       <p style="font-size:12px; color:var(--text-muted); margin:10px 0 0; border-top:1px solid var(--border); padding-top:10px;">
+        Shaded band is a 0-2 day turnaround. A red bar at the ceiling means recovery never came inside ${rec.window_days} days.
         Measured against the 7-day baseline as it stood <em>before</em> the session, not the rolling one — a rolling baseline drifts down to meet a tiring athlete and would call a suppressed week fully recovered.
       </p>
     </div>
@@ -1283,6 +1349,8 @@ async function buildPerformanceTab(data) {
     </div>
     ${recoveryHtml}
   `;
+
+  drawRecoveryChart(rec);
 
   if (vo2Rows.length < 2) {
     document.querySelector('#tab-performance .chart-wrap').innerHTML =
