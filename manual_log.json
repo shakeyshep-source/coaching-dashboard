@@ -78,5 +78,21 @@
     "rpe": 5.0,
     "on_target": true,
     "session_notes": "Felt tired when I woke up so was wondering how this would go. Couldn't quite recall the long run pace, so just settled into a pace that felt comfortable which actually turned out to be a little faster"
+  },
+  {
+    "date": "2026-08-10",
+    "achilles_score": 0,
+    "session_type": "rest",
+    "rpe": 0.0,
+    "on_target": true,
+    "session_notes": "rest day"
+  },
+  {
+    "date": "2026-08-11",
+    "achilles_score": 0,
+    "session_type": "easy",
+    "rpe": 1.0,
+    "on_target": true,
+    "session_notes": "Easy"
   }
 ]

@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-06-16",
-    "activity_id": 23272706515,
-    "name": "Tewkesbury Running",
-    "type": "running",
-    "distance_km": 10.01,
-    "duration_min": 48.5,
-    "avg_pace_min_per_km": 4.85,
-    "avg_hr": 139.0,
-    "max_hr": 152.0,
-    "elevation_gain_m": 70.0,
-    "cadence": 167.75,
-    "aerobic_te": 3.4000000953674316,
-    "anaerobic_te": 0.6000000238418579
-  },
-  {
     "date": "2026-06-17",
     "activity_id": 23285986072,
     "name": "Gloucester Running",
@@ -1288,5 +1273,20 @@
     "cadence": 5.984375,
     "aerobic_te": 0.30000001192092896,
     "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-08-11",
+    "activity_id": 23939394427,
+    "name": "Gloucester Running",
+    "type": "running",
+    "distance_km": 8.06,
+    "duration_min": 38.7,
+    "avg_pace_min_per_km": 4.8,
+    "avg_hr": 140.0,
+    "max_hr": 159.0,
+    "elevation_gain_m": 51.0,
+    "cadence": 167.3125,
+    "aerobic_te": 3.299999952316284,
+    "anaerobic_te": 0.10000000149011612
   }
 ]
