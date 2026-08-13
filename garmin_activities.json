@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-06-17",
-    "activity_id": 23285986072,
-    "name": "Gloucester Running",
-    "type": "running",
-    "distance_km": 12.8,
-    "duration_min": 62.8,
-    "avg_pace_min_per_km": 4.9,
-    "avg_hr": 142.0,
-    "max_hr": 167.0,
-    "elevation_gain_m": 36.0,
-    "cadence": 166.953125,
-    "aerobic_te": 4.0,
-    "anaerobic_te": 2.299999952316284
-  },
-  {
     "date": "2026-06-18",
     "activity_id": 23293615302,
     "name": "Gloucester Running",
