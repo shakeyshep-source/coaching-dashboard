@@ -169,10 +169,10 @@
   },
   {
     "date": "2026-08-20",
-    "temp_max_c": 19.0,
+    "temp_max_c": 22.1,
     "temp_min_c": 12.3,
-    "humidity_pct": 75,
-    "wind_speed_kmh": 24.2,
+    "humidity_pct": 66,
+    "wind_speed_kmh": 14.2,
     "heat_risk": "moderate"
   }
 ]
