@@ -195,11 +195,11 @@
   {
     "date": "2026-08-13",
     "session_type": "easy",
-    "target_distance_km": 6,
-    "target_pace": null,
-    "notes": "Easy 6km",
-    "source": "coach",
-    "updated_at": "2026-08-09T20:48:16"
+    "target_distance_km": null,
+    "target_pace": "6min per km",
+    "notes": "hot one tonight and although plan said 6km i planned the run with alice and meg and most of the run was in the shade and also at megs request to keep it very easy so the extra few miles wont have made a difference as easy usually around 4:50 - 5 per km",
+    "source": "form",
+    "updated_at": "2026-08-13T20:20:58"
   },
   {
     "date": "2026-08-14",

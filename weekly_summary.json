@@ -1,19 +1,19 @@
 {
-  "generated": "2026-08-13",
+  "generated": "2026-08-14",
   "next_race": {
     "name": "CHELTENHAM HALF MARATHON",
     "date": "2026-09-20",
     "distance_km": 21.0975,
-    "days_away": 38
+    "days_away": 37
   },
   "race_readiness": {
     "race": {
       "name": "CHELTENHAM HALF MARATHON",
       "date": "2026-09-20",
       "distance_km": 21.0975,
-      "days_away": 38
+      "days_away": 37
     },
-    "weeks_to_race": 5.4,
+    "weeks_to_race": 5.3,
     "taper_start": "2026-09-10",
     "remaining_key_sessions": {
       "tempo": 4,
@@ -619,10 +619,10 @@
       "on_target_pct": null,
       "avg_rpe": null,
       "max_achilles": null,
-      "avg_hrv": 41.7,
-      "avg_rhr": 48.0,
-      "avg_sleep_score": 77,
-      "avg_sleep_hrs": 6.8,
+      "avg_hrv": 37,
+      "avg_rhr": 49.0,
+      "avg_sleep_score": 78.5,
+      "avg_sleep_hrs": 7.6,
       "easy_pace_min_km": 4.9,
       "easy_avg_hr": 139.0,
       "efficiency": 1.471,
@@ -880,27 +880,27 @@
       "week_start": "2026-08-10",
       "week_end": "2026-08-16",
       "in_progress": true,
-      "km": 22.1,
-      "runs": 2,
-      "time_min": 103.0,
-      "elevation_m": 88.0,
+      "km": 32.1,
+      "runs": 3,
+      "time_min": 167.0,
+      "elevation_m": 145.0,
       "planned_sessions": 6,
       "logged_sessions": 3,
       "hard_sessions_planned": 3,
       "quality_time_min": 65,
-      "easy_pct": 37,
+      "easy_pct": 61,
       "long_run_min": 65,
       "long_run_km": 13.99,
       "on_target_pct": 100,
       "avg_rpe": 2.7,
       "max_achilles": 0,
       "avg_hrv": 38,
-      "avg_rhr": 47.5,
+      "avg_rhr": 48.0,
       "avg_sleep_score": 88.2,
       "avg_sleep_hrs": 7.8,
-      "easy_pace_min_km": 4.8,
-      "easy_avg_hr": 140.0,
-      "efficiency": 1.488,
+      "easy_pace_min_km": 5.56,
+      "easy_avg_hr": 133.0,
+      "efficiency": 1.371,
       "session_log": [
         {
           "date": "2026-08-10",
@@ -944,6 +944,21 @@
           "km": 14.0,
           "pace": 4.61,
           "avg_hr": 147,
+          "segments": null,
+          "fastest_segment": null
+        },
+        {
+          "date": "2026-08-13",
+          "temp_max_c": 35.9,
+          "heat_risk": "high",
+          "session_type": null,
+          "rpe": null,
+          "on_target": null,
+          "achilles_score": null,
+          "note": null,
+          "km": 10.1,
+          "pace": 6.33,
+          "avg_hr": 126,
           "segments": null,
           "fastest_segment": null
         }
