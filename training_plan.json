@@ -204,11 +204,11 @@
   {
     "date": "2026-08-14",
     "session_type": "easy",
-    "target_distance_km": 5,
-    "target_pace": null,
-    "notes": "Easy 5km, legs fresh for tomorrow",
-    "source": "coach",
-    "updated_at": "2026-08-09T20:48:16"
+    "target_distance_km": null,
+    "target_pace": "N/A",
+    "notes": "Didn't run, did a cardio session in the gym, ski erg, rower, air bike, recovery min, for 30mins, with some friends. I didn't push though kept it easy, av HR for it was 127",
+    "source": "form",
+    "updated_at": "2026-08-14T12:38:12"
   },
   {
     "date": "2026-08-15",
