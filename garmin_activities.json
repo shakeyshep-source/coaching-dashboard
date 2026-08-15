@@ -1273,5 +1273,50 @@
     "cadence": 1.125,
     "aerobic_te": 0.0,
     "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-08-15",
+    "activity_id": 23983914326,
+    "name": "Tewkesbury Running",
+    "type": "running",
+    "distance_km": 15.73,
+    "duration_min": 76.5,
+    "avg_pace_min_per_km": 4.86,
+    "avg_hr": 143.0,
+    "max_hr": 167.0,
+    "elevation_gain_m": 85.0,
+    "cadence": 165.875,
+    "aerobic_te": 3.799999952316284,
+    "anaerobic_te": 1.2000000476837158
+  },
+  {
+    "date": "2026-08-15",
+    "activity_id": 23984049596,
+    "name": "Strength",
+    "type": "strength_training",
+    "distance_km": null,
+    "duration_min": 10.0,
+    "avg_pace_min_per_km": null,
+    "avg_hr": 96.0,
+    "max_hr": 114.0,
+    "elevation_gain_m": null,
+    "cadence": null,
+    "aerobic_te": 0.10000000149011612,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-08-15",
+    "activity_id": 23984431239,
+    "name": "Tewkesbury SPA retreat",
+    "type": "other",
+    "distance_km": 0.14,
+    "duration_min": 24.3,
+    "avg_pace_min_per_km": 179.21,
+    "avg_hr": 85.0,
+    "max_hr": 131.0,
+    "elevation_gain_m": 185.0,
+    "cadence": 4.15625,
+    "aerobic_te": 0.20000000298023224,
+    "anaerobic_te": 0.0
   }
 ]
