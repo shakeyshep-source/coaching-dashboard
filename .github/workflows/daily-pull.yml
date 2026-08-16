@@ -27,6 +27,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write   # claude-code-action wants it available even when github_token is supplied
 
 concurrency:
   group: daily-pull
@@ -64,6 +65,79 @@ jobs:
           GARMIN_TOKENSTORE: /home/runner/.garmin_tokens
         run: |
           python run_all.py || echo "::warning::One or more pipeline steps failed - check the log above"
+
+      # A query against a "hold" review has no proposal to approve, so
+      # it used to wait for the next Sunday session - up to a week for
+      # an answer. apply_review.py marks a freshly logged response
+      # athlete_response_status="logged"; if one is sitting there, reply
+      # to it now. The reply step flips it to "answered", so this fires
+      # once and not on every subsequent pull.
+      - name: Is a review query waiting for a reply?
+        id: query
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          try:
+              latest = json.load(open("weekly_review_latest.json"))
+          except Exception:
+              latest = {}
+          waiting = bool(latest.get("athlete_response")) and \
+              latest.get("athlete_response_status") == "logged"
+          print(f"reply={'true' if waiting else 'false'}")
+          PY
+          cat "$GITHUB_OUTPUT"
+
+      - name: Normalise the Claude credential
+        if: steps.query.outputs.reply == 'true'
+        env:
+          OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          APIKEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          OAUTH_CLEAN="$(printf '%s' "$OAUTH" | tr -d '[:space:]')"
+          APIKEY_CLEAN="$(printf '%s' "$APIKEY" | tr -d '[:space:]')"
+          if [ -n "$OAUTH_CLEAN" ]; then echo "::add-mask::$OAUTH_CLEAN"; fi
+          if [ -n "$APIKEY_CLEAN" ]; then echo "::add-mask::$APIKEY_CLEAN"; fi
+          if [ -z "$OAUTH_CLEAN" ] && [ -z "$APIKEY_CLEAN" ]; then
+            echo "::warning::No Claude credential set - the review query stays logged for Sunday's session."
+          fi
+          {
+            echo "OAUTH_CLEAN=$OAUTH_CLEAN"
+            echo "APIKEY_CLEAN=$APIKEY_CLEAN"
+          } >> "$GITHUB_ENV"
+
+      - name: Reply to the review query
+        if: steps.query.outputs.reply == 'true' && (env.OAUTH_CLEAN != '' || env.APIKEY_CLEAN != '')
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ env.OAUTH_CLEAN }}
+          anthropic_api_key: ${{ env.APIKEY_CLEAN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Shep has queried the latest weekly review. Follow the
+            "Answering a review query" section of CLAUDE.md exactly.
+            Read the brief, weekly_review_latest.json (his words are in
+            athlete_response), the review it refers to in reviews/, plus
+            weekly_summary.json, computed_data.json, manual_log.json
+            (every session note), training_plan.json and
+            race_prediction.json.
+
+            Answer him directly and honestly: what he said, whether the
+            evidence supports it, and what you are doing about it. If it
+            changes nothing, say so and say why - agreeing to keep him
+            happy is a failure, not a courtesy. If it does change the
+            read, write plan_proposal.json (status "pending", id =
+            today's date) so it still goes through his approval.
+
+            Write the reply into weekly_review_latest.json as
+            "coach_reply" (markdown, a few short paragraphs) with
+            "coach_reply_at" (ISO timestamp) and set
+            "athlete_response_status" to "answered".
+
+            Do NOT edit training_plan.json. Do NOT commit or push - the
+            workflow commits afterwards.
+          claude_args: |
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(python3:*)"
+            --max-turns 30
 
       - name: Commit and push updated data
         run: |
