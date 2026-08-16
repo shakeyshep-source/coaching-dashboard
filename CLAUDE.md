@@ -161,6 +161,10 @@ Runs every Sunday evening. The session must:
    it changes the read, and if it does, propose the change (step 5).
    Disagreeing with a hold is a legitimate input, not noise — but it
    doesn't override the evidence on its own. Say plainly which it is.
+   If `athlete_response_status` is already `"answered"`, the mid-week
+   reply (see "Answering a review query") dealt with it — read that
+   reply, carry its conclusion forward and say how the week since bore
+   it out. Do not re-argue it from scratch.
 3. Write the weekly review to `reviews/YYYY-MM-DD.md` (that day's date):
    how the week actually went vs plan, how he's coping (data + his own
    words), recovery trends, achilles, efficiency trend, race countdown,
@@ -201,6 +205,41 @@ Runs every Sunday evening. The session must:
 
 Shep responds via the weekly review Google Form (approve / amend /
 reject + thoughts); the next morning's pipeline applies his decision.
+
+## Answering a review query (mid-week, runs in the daily pipeline)
+
+A query against a "hold" review has no proposal to approve, so waiting
+for the next Sunday session meant up to a week of silence. Instead, the
+morning after he submits it, the daily pipeline runs a short coach
+session — this section — and he gets an answer the same day.
+
+Trigger: `weekly_review_latest.json` has an `athlete_response` and
+`athlete_response_status: "logged"`. The session must:
+
+1. Read this brief, `weekly_review_latest.json` (his words in
+   `athlete_response`), the review it refers to in `reviews/`, and the
+   usual data files — `weekly_summary.json`, `computed_data.json`,
+   `manual_log.json` (every note), `training_plan.json`,
+   `race_prediction.json`.
+2. Answer him directly, in a few short paragraphs: what he said, whether
+   the evidence supports it, and what happens as a result. Weigh it
+   against the same trends the review used — this is a reply from the
+   same coach, not a second opinion that forgot the first.
+   **Agreeing to keep him happy is a failure, not a courtesy.** If the
+   answer is still hold, say so and say why. If he has raised something
+   the review genuinely missed — a note not accounted for, a session
+   that felt different from how it read — say that plainly too.
+3. If it changes the plan, write `plan_proposal.json` with
+   `status: "pending"` and `id` = today's date, exactly as in step 5
+   above. The approval gate does not move: a mid-week reply can propose,
+   it can never apply.
+4. Write the reply into `weekly_review_latest.json` as `coach_reply`
+   (markdown) with `coach_reply_at` (ISO timestamp), and set
+   `athlete_response_status` to `"answered"` — that flag is what stops
+   the pipeline replying again on the next pull.
+
+The Sunday session then sees `"answered"` and does not re-argue it from
+scratch; it picks up where the reply left off.
 
 ## Practical notes
 
