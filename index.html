@@ -577,10 +577,12 @@ function setupTabs(data) {
   buildRacesTab();
 }
 
+const esc = s => String(s == null ? '' : s)
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
 // Minimal markdown renderer for the weekly review — headings, bold,
 // bullets, paragraphs. Content is coach-authored, but escape anyway.
 function renderMd(md) {
-  const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   return esc(md).split(/\n{2,}/).map(block => {
     const lines = block.split('\n');
     if (lines.every(l => /^\s*[-*] /.test(l))) {
@@ -658,6 +660,29 @@ async function buildCoachTab() {
   if (review) {
     const recColor = review.recommendation === 'hold' ? 'var(--good)' : 'var(--warn)';
     const recLabel = review.recommendation === 'hold' ? 'Hold the plan' : 'Change proposed';
+
+    // A "hold" review writes no proposal, so the respond button used to
+    // render nowhere and there was no way to push back on a decision to
+    // hold. Every review is answerable: when a proposal is pending the
+    // button lives with the proposal below, otherwise it lives here.
+    const proposalPending = proposal && proposal.status === 'pending';
+    const answered = review.athlete_response;
+    let respondBlock = '';
+    if (answered) {
+      respondBlock = `
+        <div style="border-top:1px solid var(--border); margin-top:10px; padding-top:10px;">
+          <p style="font-size:12px; font-weight:600; color:var(--good); margin:0 0 4px;">Your response logged ${esc(answered.timestamp || '')}</p>
+          ${answered.thoughts ? `<p style="font-size:13px; color:var(--text-secondary); margin:0;">"${esc(answered.thoughts)}"</p>` : ''}
+          <p style="font-size:12px; color:var(--text-muted); margin:6px 0 0;">The coach reads this at the next session.</p>
+        </div>`;
+    } else if (!proposalPending && REVIEW_FORM_URL) {
+      respondBlock = `
+        <div style="border-top:1px solid var(--border); margin-top:10px; padding-top:10px;">
+          <a href="${REVIEW_FORM_URL}" rel="noopener" style="display:inline-block; background:var(--blue); color:#fff; font-size:13px; padding:8px 14px; border-radius:6px; text-decoration:none;">Query this review</a>
+          <p style="font-size:12px; color:var(--text-muted); margin:6px 0 0;">No plan change proposed — but if you disagree with holding, say so here and the coach picks it up next session.</p>
+        </div>`;
+    }
+
     html += `
       <div class="chart-card">
         <p class="title">Weekly coach review — ${fmtDate(review.review_date)}</p>
@@ -665,6 +690,7 @@ async function buildCoachTab() {
         <p style="font-size:12px; font-weight:600; color:${recColor}; margin:0 0 10px; text-transform:uppercase; letter-spacing:0.03em;">${recLabel}</p>
         <div id="reviewBody" style="display:none; border-top:1px solid var(--border); padding-top:8px;">${renderMd(review.review_md || '')}</div>
         <button id="reviewToggle" style="background:none; border:none; color:var(--blue); font-size:13px; padding:0; cursor:pointer;">Read full review</button>
+        ${respondBlock}
       </div>
     `;
   } else {
