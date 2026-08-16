@@ -101,6 +101,57 @@ Note these are the `/forms/d/e/<responder-id>/viewform` links from each
 form's Send dialog — **not** the `/forms/d/<file-id>/` editing URL, which
 only works for the owner and not as a responder link.
 
+## 6. Make form submissions trigger the pipeline instantly (10 min)
+
+Without this, a form entry waits for the next scheduled run — and
+scheduled runs on this repo have arrived up to 2.5 hours late. With it,
+submitting a form fires the pipeline within about a minute, so a query
+on the weekly review is answered while you are still thinking about it.
+
+**a. Create a token GitHub will accept.**
+On GitHub: **Settings → Developer settings → Personal access tokens →
+Fine-grained tokens → Generate new token**
+- Repository access: **Only select repositories** → `coaching-dashboard`
+- Repository permissions: **Contents → Read and write**
+  (that is what the dispatch endpoint requires; nothing else is needed)
+- Expiry: whatever you are comfortable re-doing — 1 year is fine
+
+Copy the token now; GitHub won't show it again.
+
+**b. Add the script to the responses spreadsheet.**
+Open the spreadsheet the forms write to →
+**Extensions → Apps Script**. Delete the placeholder code, paste the
+contents of `form_submit_trigger.gs` from this repo, and save.
+
+**c. Give the script the token.**
+In the Apps Script editor: **Project Settings (gear) → Script
+Properties → Add script property**
+- Property: `GH_TOKEN`
+- Value: the token from step (a)
+
+The token lives in the script's own properties, not in the code — so it
+is never in a file, and never in this repo.
+
+**d. Wire it to form submissions.**
+In the Apps Script editor: **Triggers (clock icon) → Add trigger**
+- Function: `onFormSubmitNudgeGitHub`
+- Event source: **From spreadsheet**
+- Event type: **On form submit**
+
+Google will ask you to authorise the script — it is your own script on
+your own sheet, so approve it.
+
+**e. Test.** Submit anything on any of the forms, then watch the
+**Actions** tab: a **Form response** run should appear within a minute.
+
+One trigger covers all four forms, since they all write to the same
+spreadsheet — so logging a session updates the dashboard immediately
+too, not just review responses.
+
+If the trigger ever breaks, nothing is lost: the same workflow also
+runs hourly through the day as a backstop, and the morning pull catches
+anything the hourly missed.
+
 ## 5. Retire the laptop cron
 
 Once the first cloud run has committed successfully (check the Actions
@@ -117,7 +168,12 @@ writers is pointless noise.
 
 | When | What |
 |---|---|
-| ~06:15 daily | Full data pull → dashboard fresh before 8am |
+| Within ~1 min of any form submission | Forms sync, decision applied, and any query on the review answered |
+| Hourly, 06:00–22:00 | Backstop for the above, in case the Apps Script trigger fails |
+| ~06:15 daily | Full data pull (Garmin + weather) → dashboard fresh before 8am |
 | ~11:30 daily | Catch-up pull (late watch sync, morning form entries) |
 | Sunday ~18:40 | Scheduled Claude coach session (GitHub Action): weekly review + plan proposal |
-| Next morning after you respond | `apply_review.py` applies / flags your decision |
+
+Approving a proposal applies it on the next run — which, with step 6 in
+place, is roughly a minute after you submit the form, not the next
+morning.

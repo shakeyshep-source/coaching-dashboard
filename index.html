@@ -669,8 +669,9 @@ async function buildCoachTab() {
     const answered = review.athlete_response;
     let respondBlock = '';
     if (answered) {
-      // The coach replies on the next morning's pipeline run, so this
-      // block shows "waiting" for a few hours and then the reply.
+      // The reply lands a minute or two after the form is submitted
+      // (review-response.yml), so this block shows "writing" only
+      // briefly before the reply itself appears.
       const reply = review.coach_reply;
       respondBlock = `
         <div style="border-top:1px solid var(--border); margin-top:10px; padding-top:10px;">
@@ -681,7 +682,7 @@ async function buildCoachTab() {
                  <p style="font-size:12px; font-weight:600; color:var(--blue); margin:0 0 4px; text-transform:uppercase; letter-spacing:0.03em;">Coach reply</p>
                  <div style="font-size:13px;">${renderMd(reply)}</div>
                </div>`
-            : `<p style="font-size:12px; color:var(--text-muted); margin:6px 0 0;">The coach replies on the next morning's data pull.</p>`}
+            : `<p style="font-size:12px; color:var(--text-muted); margin:6px 0 0;">Coach is writing a reply — refresh in a minute.</p>`}
         </div>`;
     } else if (!proposalPending && REVIEW_FORM_URL) {
       respondBlock = `
