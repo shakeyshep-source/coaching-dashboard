@@ -118,8 +118,20 @@ Fine-grained tokens → Generate new token**
 
 Copy the token now; GitHub won't show it again.
 
-**b. Add the script to the responses spreadsheet.**
-Open the spreadsheet the forms write to →
+**b. Add the script to a responses spreadsheet.**
+Each form has its **own** spreadsheet, so this is done per sheet. Start
+with the weekly review response one — that is the query-and-reply loop
+this exists for:
+
+| Form | Responses spreadsheet |
+|---|---|
+| **Weekly review response** | `1KGrx82VLztRawTzt1DDVpsCgPok9eXYp3dXK1VOk5Ck` |
+| Daily running log | `1eqsg4m9zmA6kKIfvpNjlZ1kuaFABcgm-JWsC7ErA2g4` |
+| Training plan entry | `1GJ4PkSXBRT6wBY6mLX3pBIu9PCQWzVW1G6i4JXxsgIc` |
+| Race result log | `14vCnLI1wYWep2FAyTotvdp2-wgsWawE_B19aE-oPNAI` |
+
+Open it at `https://docs.google.com/spreadsheets/d/<id>/edit` (or from
+the form: **Responses → the green Sheets icon**), then
 **Extensions → Apps Script**. Delete the placeholder code, paste the
 contents of `form_submit_trigger.gs` from this repo, and save.
 
@@ -141,12 +153,14 @@ In the Apps Script editor: **Triggers (clock icon) → Add trigger**
 Google will ask you to authorise the script — it is your own script on
 your own sheet, so approve it.
 
-**e. Test.** Submit anything on any of the forms, then watch the
-**Actions** tab: a **Form response** run should appear within a minute.
+**e. Test.** Submit that form, then watch the **Actions** tab: a
+**Form response** run should appear within a minute.
 
-One trigger covers all four forms, since they all write to the same
-spreadsheet — so logging a session updates the dashboard immediately
-too, not just review responses.
+**f. Repeat (b)–(d) for the other three sheets if you want.** Same
+script, same token, same trigger — about two minutes each. Doing the
+daily log one means a logged session shows on the dashboard straight
+away instead of at the next pull. The review response sheet is the only
+one that actually needs it; the rest are convenience.
 
 If the trigger ever breaks, nothing is lost: the same workflow also
 runs hourly through the day as a backstop, and the morning pull catches

@@ -10,8 +10,9 @@
  * reply is waiting by the time the phone is back in a pocket.
  *
  * It sends a repository_dispatch event — no data, just a nudge. The
- * pipeline then reads the sheet itself, exactly as it always has, so
- * nothing here needs to know the shape of any form.
+ * pipeline then reads every sheet itself, exactly as it always has, so
+ * nothing here needs to know the shape of any form, and the same file
+ * goes into each of the four responses spreadsheets unchanged.
  */
 
 const GH_REPO = 'shakeyshep-source/coaching-dashboard';
