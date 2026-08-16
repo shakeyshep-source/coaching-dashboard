@@ -115,9 +115,12 @@ jobs:
             files it lists (weekly_summary.json, computed_data.json,
             manual_log.json including every session note,
             training_plan.json, plan_proposal.json, review_responses.json,
-            race_prediction.json), then:
+            race_prediction.json, weekly_review_latest.json), then:
             - if the existing proposal is amend_requested, revise it per
               the athlete's thoughts and refresh the review files;
+            - if weekly_review_latest.json carries an athlete_response
+              (a query against a review that proposed nothing), answer it
+              at the top of this week's review, per step 2b of the brief;
             - otherwise write this week's review to reviews/<today>.md,
               update weekly_review_latest.json, and write
               plan_proposal.json only if you are recommending changes.

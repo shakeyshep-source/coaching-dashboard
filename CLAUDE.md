@@ -147,10 +147,20 @@ Runs every Sunday evening. The session must:
 
 1. `git pull` latest `main`; read this brief, `weekly_summary.json`,
    `computed_data.json`, `manual_log.json` (notes!), `training_plan.json`,
-   `plan_proposal.json`, `review_responses.json`, `race_prediction.json`.
+   `plan_proposal.json`, `review_responses.json`, `race_prediction.json`,
+   `weekly_review_latest.json` (last week's review and any response to it).
 2. If the current proposal is `amend_requested`: read Shep's thoughts in
    `athlete_response`, revise the proposal accordingly (same `id`,
    status back to `pending`), and skip to step 5.
+2b. **Answer any query on the last review.** A "hold" review proposes
+   nothing, so a response to it can't reach the proposal gate — instead
+   `apply_review.py` attaches it to `weekly_review_latest.json` as
+   `athlete_response` with `athlete_response_status: "logged"`. If last
+   week's review carries one and this session hasn't answered it yet,
+   open the new review by addressing it directly: what he said, whether
+   it changes the read, and if it does, propose the change (step 5).
+   Disagreeing with a hold is a legitimate input, not noise — but it
+   doesn't override the evidence on its own. Say plainly which it is.
 3. Write the weekly review to `reviews/YYYY-MM-DD.md` (that day's date):
    how the week actually went vs plan, how he's coping (data + his own
    words), recovery trends, achilles, efficiency trend, race countdown,
@@ -168,6 +178,9 @@ Runs every Sunday evening. The session must:
      "proposal_status": "pending" | null
    }
    ```
+   Write it fresh each week — do **not** carry last week's
+   `athlete_response` / `athlete_response_status` across, or the
+   dashboard will show an old reply against a new review.
 5. If (and only if) recommending changes, write `plan_proposal.json`:
    ```json
    {

@@ -94,16 +94,60 @@ def update_latest_review_status(proposal_id, status):
         save(LATEST_REVIEW_FILE, latest)
 
 
+def record_review_query(responses):
+    """Handle a form response against a review that proposed nothing.
+
+    A "hold" review writes no plan_proposal.json, so the approve /amend /
+    reject gate above has nothing to match and the response used to be
+    dropped on the floor - leaving no way to disagree with a decision to
+    hold. Attach it to weekly_review_latest.json and log it, so the next
+    coach session reads it and the dashboard can show it was received.
+    """
+    latest = load(LATEST_REVIEW_FILE)
+    if not latest or latest.get("proposal_id"):
+        return
+    review_date = latest.get("review_date")
+    matches = [r for r in responses if r.get("review_date") == review_date]
+    if not matches:
+        return
+    response = matches[-1]
+
+    if (latest.get("athlete_response") or {}).get("timestamp") == response.get("timestamp"):
+        print(f"Response on review {review_date} already recorded - waiting for the next coach session.")
+        return
+
+    latest["athlete_response"] = response
+    latest["athlete_response_status"] = "logged"
+    save(LATEST_REVIEW_FILE, latest)
+
+    log = load(DECISIONS_LOG_FILE, default=[])
+    log.append({
+        "logged_at": datetime.now().isoformat(timespec="seconds"),
+        "proposal_id": None,
+        "review_date": review_date,
+        "decision": response.get("decision"),
+        "action_taken": "review_query_logged",
+        "athlete_thoughts": response.get("thoughts"),
+        "changes_count": 0,
+    })
+    save(DECISIONS_LOG_FILE, log)
+    print(f"Response logged against review {review_date} (no proposal to act on) - "
+          f"the next coach session will answer it. Plan untouched.")
+
+
 def main():
+    responses = load(RESPONSES_FILE, default=[])
     proposal = load(PROPOSAL_FILE)
+
     if not proposal:
-        print("No plan proposal on file - nothing to do.")
+        print("No plan proposal on file.")
+        record_review_query(responses)
         return
     if proposal.get("status") not in ("pending", "amend_requested"):
         print(f"Proposal {proposal.get('id')} already {proposal.get('status')} - nothing to do.")
+        record_review_query(responses)
         return
 
-    responses = load(RESPONSES_FILE, default=[])
     response = next(
         (r for r in responses if r.get("review_date") == proposal.get("id")), None
     )
