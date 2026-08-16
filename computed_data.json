@@ -354,10 +354,10 @@
     "sleep_score": 73,
     "sleep_duration_hrs": 7.08,
     "body_battery_high": 60,
-    "achilles_score": null,
-    "rpe": null,
-    "session_type_logged": null,
-    "session_notes": null,
+    "achilles_score": 0,
+    "rpe": 4.0,
+    "session_type_logged": "long",
+    "session_notes": "Ignore this mornings RHR and HRV as it was the athletic club's social yesterday so late night and a lot of ciders were consumed.\nRun was fine, just set off slow and gradually increased the pace",
     "acwr": 1.0,
     "acwr_status": "OPTIMAL",
     "vo2max": 59.0,
@@ -368,8 +368,10 @@
     "rhr_baseline_7d": 47.7,
     "rhr_delta_from_baseline": 4.3,
     "heat_risk": "high",
-    "recovery_confounders": [],
-    "today_summary": "Recovery below baseline on both HRV and RHR. Keep today easy. Heat risk is high today too \u2014 watch for respiratory symptoms.",
+    "recovery_confounders": [
+      "short night"
+    ],
+    "today_summary": "Recovery down on both HRV and RHR, but you noted short night \u2014 read it as that, not training load. Keep today easy; no reason to change the week. Heat risk is high today too \u2014 watch for respiratory symptoms.",
     "readiness_level": "flag",
     "plan_flag_reasons": [
       "Recovery below baseline on both HRV and RHR, and a hard session is planned.",
