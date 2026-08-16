@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-06-20",
-    "activity_id": 23315737574,
-    "name": "Stroud Running",
-    "type": "running",
-    "distance_km": 15.43,
-    "duration_min": 121.5,
-    "avg_pace_min_per_km": 7.87,
-    "avg_hr": 119.0,
-    "max_hr": 151.0,
-    "elevation_gain_m": 408.0,
-    "cadence": 115.71875,
-    "aerobic_te": 3.0999999046325684,
-    "anaerobic_te": 0.10000000149011612
-  },
-  {
-    "date": "2026-06-20",
-    "activity_id": 23316807748,
-    "name": "Tewkesbury SPA retreat",
-    "type": "other",
-    "distance_km": 0.33,
-    "duration_min": 40.0,
-    "avg_pace_min_per_km": 119.9,
-    "avg_hr": 94.0,
-    "max_hr": 132.0,
-    "elevation_gain_m": 204.0,
-    "cadence": 1.65625,
-    "aerobic_te": 0.800000011920929,
-    "anaerobic_te": 0.20000000298023224
-  },
-  {
     "date": "2026-06-21",
     "activity_id": 23325872558,
     "name": "Gloucester Running",
