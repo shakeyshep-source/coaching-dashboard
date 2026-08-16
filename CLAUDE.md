@@ -138,7 +138,11 @@ DISPLAY:  index.html (GitHub Pages PWA) reads ONLY derived JSONs.
 ```
 
 Orchestrated by `run_all.py`, run by `.github/workflows/daily-pull.yml`
-twice each morning (no laptop needed). Data commits go to `main`.
+three times each morning (no laptop needed). `review-response.yml` runs
+the same pipeline with `--forms-only` (no Garmin, no weather) within a
+minute of any form submission, fired by an Apps Script
+`repository_dispatch` from the responses spreadsheet, with an hourly
+schedule as backstop. Data commits go to `main`.
 Schemas are LOCKED — add fields, never rename or remove.
 
 ## Weekly review procedure (scheduled coach session)
@@ -210,8 +214,11 @@ reject + thoughts); the next morning's pipeline applies his decision.
 
 A query against a "hold" review has no proposal to approve, so waiting
 for the next Sunday session meant up to a week of silence. Instead, the
-morning after he submits it, the daily pipeline runs a short coach
-session — this section — and he gets an answer the same day.
+form submission fires the pipeline within about a minute, and it runs a
+short coach session — this section — so the answer is on the dashboard
+while he is still holding the phone. He asks these questions when they
+occur to him, usually on a Sunday evening; by Monday the week has
+started and the moment has gone.
 
 Trigger: `weekly_review_latest.json` has an `athlete_response` and
 `athlete_response_status: "logged"`. The session must:

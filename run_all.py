@@ -26,6 +26,18 @@ STEPS = [
     ("build_computed.py", "Computed layer build"),
 ]
 
+# --forms-only: the fast lane, run the moment a form is submitted.
+# Garmin and the weather have nothing new to say seconds after a form
+# entry, and Garmin is the slowest step by far — skipping both takes the
+# run from ~2 minutes to ~15 seconds, which is the difference between a
+# reply that feels immediate and one that doesn't.
+FORMS_ONLY_STEPS = [
+    ("sheets_pull.py", "Google Forms sync"),
+    ("apply_review.py", "Weekly review decision gate"),
+    ("build_weekly_summary.py", "Weekly summary build"),
+    ("build_computed.py", "Computed layer build"),
+]
+
 
 def run_step(script, label):
     print(f"\n--- {label} ({script}) ---")
@@ -42,9 +54,12 @@ def run_step(script, label):
 
 
 def main():
-    print(f"=== run_all.py started {datetime.now().isoformat()} ===")
+    forms_only = "--forms-only" in sys.argv
+    steps = FORMS_ONLY_STEPS if forms_only else STEPS
+    mode = " (forms only)" if forms_only else ""
+    print(f"=== run_all.py started {datetime.now().isoformat()}{mode} ===")
     results = {}
-    for script, label in STEPS:
+    for script, label in steps:
         results[label] = run_step(script, label)
 
     print("\n=== Summary ===")

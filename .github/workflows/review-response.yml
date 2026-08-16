@@ -1,0 +1,70 @@
+# Form response fast lane — runs within a minute of a form submission.
+#
+# The daily pull is the wrong place to answer a question: a query sent
+# on Sunday night waited until Monday morning, by which point the week
+# has started. A Google Apps Script on the responses spreadsheet fires
+# a repository_dispatch the moment any form is submitted, and this
+# workflow picks it up.
+#
+# It skips Garmin and the weather (--forms-only): neither has anything
+# new to say seconds after a form entry, and Garmin is much the slowest
+# step. That takes the run from ~2 minutes to ~15 seconds.
+#
+# Setting up the Apps Script trigger is step 6 of AUTOMATION_SETUP.md.
+# The hourly schedule below is the backstop if that trigger ever fails
+# (or before it is set up) — nothing here depends on it existing.
+
+name: Form response
+
+on:
+  repository_dispatch:
+    types: [form-response]
+  schedule:
+    # Hourly through the waking day as a backstop. UTC, so an hour
+    # earlier in UK terms once the clocks go back.
+    - cron: '5 5-21 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  id-token: write
+
+# Shared with the daily pull so the two can never push over each other.
+concurrency:
+  group: data-pipeline
+  cancel-in-progress: false
+
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Sync forms and apply any decision
+        run: |
+          python run_all.py --forms-only || echo "::warning::One or more steps failed - check the log above"
+
+      - name: Commit and push updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- '*.json'
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "Form response sync $(TZ=Europe/London date +'%F %H:%M')"
+            git pull --rebase origin main
+            git push origin main
+          fi
+
+  reply:
+    needs: pull
+    uses: ./.github/workflows/coach-reply.yml
+    secrets: inherit
