@@ -38,6 +38,8 @@ concurrency:
 jobs:
   pull:
     runs-on: ubuntu-latest
+    outputs:
+      reply: ${{ steps.query.outputs.reply }}
     steps:
       - uses: actions/checkout@v4
 
@@ -81,9 +83,30 @@ jobs:
             git push origin main
           fi
 
+      # Decides whether the reply job runs at all. A job that references
+      # claude-code-action downloads it during setup regardless of any
+      # step-level `if:`, so an unconditional reply job meant ~17 needless
+      # downloads a day — and on 17 Aug one of them hit a GitHub CDN 503
+      # and sent a failure email for a job that had nothing to do.
+      - name: Is a review query waiting for a reply?
+        id: query
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          try:
+              latest = json.load(open("weekly_review_latest.json"))
+          except Exception:
+              latest = {}
+          waiting = bool(latest.get("athlete_response")) and \
+              latest.get("athlete_response_status") == "logged"
+          print(f"reply={'true' if waiting else 'false'}")
+          PY
+          cat "$GITHUB_OUTPUT"
+
   # If a review query came in overnight and the fast lane missed it,
   # the morning pull still answers it.
   reply:
     needs: pull
+    if: needs.pull.outputs.reply == 'true'
     uses: ./.github/workflows/coach-reply.yml
     secrets: inherit
