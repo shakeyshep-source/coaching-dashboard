@@ -661,34 +661,43 @@ async function buildCoachTab() {
     const recColor = review.recommendation === 'hold' ? 'var(--good)' : 'var(--warn)';
     const recLabel = review.recommendation === 'hold' ? 'Hold the plan' : 'Change proposed';
 
-    // A "hold" review writes no proposal, so the respond button used to
-    // render nowhere and there was no way to push back on a decision to
-    // hold. Every review is answerable: when a proposal is pending the
-    // button lives with the proposal below, otherwise it lives here.
+    // The ask-the-coach thread. It began as a one-shot "query this
+    // review" button, which meant one question per week: once a reply
+    // had been written the button vanished until the next Sunday. It is
+    // a running conversation instead — ask any day, as often as needed,
+    // and each exchange stays on the card until the next review.
     const proposalPending = proposal && proposal.status === 'pending';
-    const answered = review.athlete_response;
-    let respondBlock = '';
-    if (answered) {
-      // The reply lands a minute or two after the form is submitted
-      // (review-response.yml), so this block shows "writing" only
-      // briefly before the reply itself appears.
-      const reply = review.coach_reply;
-      respondBlock = `
+    const turns = (review.conversation || []).map(t => ({
+      timestamp: t.athlete_timestamp, thoughts: t.athlete_thoughts, reply: t.coach_reply,
+    }));
+    if (review.athlete_response) {
+      turns.push({
+        timestamp: review.athlete_response.timestamp,
+        thoughts: review.athlete_response.thoughts,
+        reply: review.coach_reply,
+      });
+    }
+    const awaitingReply = turns.length && !turns[turns.length - 1].reply;
+
+    let respondBlock = turns.map(t => `
+      <div style="border-top:1px solid var(--border); margin-top:10px; padding-top:10px;">
+        <p style="font-size:12px; font-weight:600; color:var(--good); margin:0 0 4px;">You asked ${esc(t.timestamp || '')}</p>
+        ${t.thoughts ? `<p style="font-size:13px; color:var(--text-secondary); margin:0;">"${esc(t.thoughts)}"</p>` : ''}
+        ${t.reply
+          ? `<div style="border-left:3px solid var(--blue); padding-left:12px; margin-top:12px;">
+               <p style="font-size:12px; font-weight:600; color:var(--blue); margin:0 0 4px; text-transform:uppercase; letter-spacing:0.03em;">Coach reply</p>
+               <div style="font-size:13px;">${renderMd(t.reply)}</div>
+             </div>`
+          : `<p style="font-size:12px; color:var(--text-muted); margin:6px 0 0;">Coach is writing a reply — refresh in a minute.</p>`}
+      </div>`).join('');
+
+    // Hidden only while a reply is being written, or when a pending
+    // proposal puts the same form one card below under its own button.
+    if (REVIEW_FORM_URL && !awaitingReply && !proposalPending) {
+      respondBlock += `
         <div style="border-top:1px solid var(--border); margin-top:10px; padding-top:10px;">
-          <p style="font-size:12px; font-weight:600; color:var(--good); margin:0 0 4px;">Your response logged ${esc(answered.timestamp || '')}</p>
-          ${answered.thoughts ? `<p style="font-size:13px; color:var(--text-secondary); margin:0;">"${esc(answered.thoughts)}"</p>` : ''}
-          ${reply
-            ? `<div style="border-left:3px solid var(--blue); padding-left:12px; margin-top:12px;">
-                 <p style="font-size:12px; font-weight:600; color:var(--blue); margin:0 0 4px; text-transform:uppercase; letter-spacing:0.03em;">Coach reply</p>
-                 <div style="font-size:13px;">${renderMd(reply)}</div>
-               </div>`
-            : `<p style="font-size:12px; color:var(--text-muted); margin:6px 0 0;">Coach is writing a reply — refresh in a minute.</p>`}
-        </div>`;
-    } else if (!proposalPending && REVIEW_FORM_URL) {
-      respondBlock = `
-        <div style="border-top:1px solid var(--border); margin-top:10px; padding-top:10px;">
-          <a href="${REVIEW_FORM_URL}" rel="noopener" style="display:inline-block; background:var(--blue); color:#fff; font-size:13px; padding:8px 14px; border-radius:6px; text-decoration:none;">Query this review</a>
-          <p style="font-size:12px; color:var(--text-muted); margin:6px 0 0;">No plan change proposed — but if you disagree with holding, say so here and the coach picks it up next session.</p>
+          <a href="${REVIEW_FORM_URL}" rel="noopener" style="display:inline-block; background:var(--blue); color:#fff; font-size:13px; padding:8px 14px; border-radius:6px; text-decoration:none;">${turns.length ? 'Ask a follow-up' : 'Ask the coach'}</a>
+          <p style="font-size:12px; color:var(--text-muted); margin:6px 0 0;">Any day, as often as you like — question, disagreement, or how a session felt. Reply lands here in about a minute.</p>
         </div>`;
     }
 
