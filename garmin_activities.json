@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-06-21",
-    "activity_id": 23325872558,
-    "name": "Gloucester Running",
-    "type": "running",
-    "distance_km": 13.01,
-    "duration_min": 69.0,
-    "avg_pace_min_per_km": 5.31,
-    "avg_hr": 137.0,
-    "max_hr": 162.0,
-    "elevation_gain_m": 44.0,
-    "cadence": 156.0,
-    "aerobic_te": 3.799999952316284,
-    "anaerobic_te": 0.699999988079071
-  },
-  {
-    "date": "2026-06-22",
-    "activity_id": 23341883122,
-    "name": "Gloucester Running",
-    "type": "running",
-    "distance_km": 7.33,
-    "duration_min": 38.3,
-    "avg_pace_min_per_km": 5.22,
-    "avg_hr": 138.0,
-    "max_hr": 150.0,
-    "elevation_gain_m": 53.0,
-    "cadence": 158.875,
-    "aerobic_te": 3.0999999046325684,
-    "anaerobic_te": 0.0
-  },
-  {
     "date": "2026-06-23",
     "activity_id": 23348763241,
     "name": "Gloucester Running",

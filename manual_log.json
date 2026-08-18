@@ -118,5 +118,21 @@
     "rpe": 4.0,
     "on_target": true,
     "session_notes": "Ignore this mornings RHR and HRV as it was the athletic club's social yesterday so late night and a lot of ciders were consumed.\nRun was fine, just set off slow and gradually increased the pace"
+  },
+  {
+    "date": "2026-08-17",
+    "achilles_score": 0,
+    "session_type": "rest",
+    "rpe": 0.0,
+    "on_target": true,
+    "session_notes": "Rest"
+  },
+  {
+    "date": "2026-08-18",
+    "achilles_score": 0,
+    "session_type": "easy",
+    "rpe": 1.0,
+    "on_target": true,
+    "session_notes": "A bit sluggish to start but then fine, finished with 4*20sec, about 21c"
   }
 ]
