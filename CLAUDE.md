@@ -192,8 +192,10 @@ Runs every Sunday evening. The session must:
    }
    ```
    Write it fresh each week — do **not** carry last week's
-   `athlete_response` / `athlete_response_status` across, or the
-   dashboard will show an old reply against a new review.
+   `athlete_response`, `athlete_response_status`, `coach_reply` or
+   `conversation` across, or the dashboard will show old exchanges
+   against a new review. Read the whole of last week's `conversation`
+   first, though: what he asked mid-week is part of how the week went.
 5. If (and only if) recommending changes, write `plan_proposal.json`:
    ```json
    {
@@ -215,26 +217,36 @@ Runs every Sunday evening. The session must:
 Shep responds via the weekly review Google Form (approve / amend /
 reject + thoughts); the next morning's pipeline applies his decision.
 
-## Answering a review query (mid-week, runs in the daily pipeline)
+## Answering him (any day, runs on form submit)
 
-A query against a "hold" review has no proposal to approve, so waiting
-for the next Sunday session meant up to a week of silence. Instead, the
-form submission fires the pipeline within about a minute, and it runs a
-short coach session — this section — so the answer is on the dashboard
-while he is still holding the phone. He asks these questions when they
-occur to him, usually on a Sunday evening; by Monday the week has
-started and the moment has gone.
+The weekly review form is not only for responding to a review — it is
+the ask-the-coach channel, and the one he will use most. A question, a
+disagreement, "the reps felt flat, is that the heat?" — any of it, any
+day, as often as he likes. The form submission fires the pipeline within
+about a minute and it runs a short coach session (this section), so the
+answer is on the dashboard while he is still holding the phone.
+
+Two things follow from that. It is **not** limited to one question a
+week: each new submission opens another turn, and `conversation` on
+`weekly_review_latest.json` holds the exchanges already had this week.
+And a question needn't be about the review at all — answer what he
+actually asked.
 
 Trigger: `weekly_review_latest.json` has an `athlete_response` and
 `athlete_response_status: "logged"`. The session must:
 
-1. Read this brief, `weekly_review_latest.json` (his words in
-   `athlete_response`), the review it refers to in `reviews/`, and the
-   usual data files — `weekly_summary.json`, `computed_data.json`,
+1. Read this brief, `weekly_review_latest.json` — his question is in
+   `athlete_response`, and any earlier exchanges this week are in
+   `conversation`. **Read those first.** It is one continuing thread
+   with one coach; he should never have to repeat himself, and a reply
+   that contradicts what was said on Tuesday without acknowledging it is
+   worse than no reply. Then the review it refers to in `reviews/`, and
+   the usual data files — `weekly_summary.json`, `computed_data.json`,
    `manual_log.json` (every note), `training_plan.json`,
    `race_prediction.json`.
-2. Answer him directly, in a few short paragraphs: what he said, whether
-   the evidence supports it, and what happens as a result. Weigh it
+2. Answer him directly, in a few short paragraphs: what he asked,
+   whether the evidence supports it, and what happens as a result.
+   Answer the question he asked, not the one the review anticipated. Weigh it
    against the same trends the review used — this is a reply from the
    same coach, not a second opinion that forgot the first.
    **Agreeing to keep him happy is a failure, not a courtesy.** If the
@@ -248,7 +260,9 @@ Trigger: `weekly_review_latest.json` has an `athlete_response` and
 4. Write the reply into `weekly_review_latest.json` as `coach_reply`
    (markdown) with `coach_reply_at` (ISO timestamp), and set
    `athlete_response_status` to `"answered"` — that flag is what stops
-   the pipeline replying again on the next pull.
+   the pipeline replying again on the next pull. Leave `conversation`
+   alone; `apply_review.py` moves the finished exchange into it when the
+   next question arrives.
 
 The Sunday session then sees `"answered"` and does not re-argue it from
 scratch; it picks up where the reply left off.

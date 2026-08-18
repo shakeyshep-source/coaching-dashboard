@@ -116,8 +116,26 @@ def record_review_query(responses):
         print(f"Response on review {review_date} already recorded - waiting for the next coach session.")
         return
 
+    # A second question in the same week is a follow-up, not a duplicate:
+    # park the exchange just finished in `conversation` and make the new
+    # one current. Anything unanswered is kept too - a question asked
+    # twice in the minute before a reply lands must not be dropped.
+    previous = latest.get("athlete_response")
+    if previous:
+        history = latest.get("conversation") or []
+        history.append({
+            "athlete_timestamp": previous.get("timestamp"),
+            "athlete_decision": previous.get("decision"),
+            "athlete_thoughts": previous.get("thoughts"),
+            "coach_reply": latest.get("coach_reply"),
+            "coach_reply_at": latest.get("coach_reply_at"),
+        })
+        latest["conversation"] = history
+
     latest["athlete_response"] = response
     latest["athlete_response_status"] = "logged"
+    latest.pop("coach_reply", None)
+    latest.pop("coach_reply_at", None)
     save(LATEST_REVIEW_FILE, latest)
 
     log = load(DECISIONS_LOG_FILE, default=[])

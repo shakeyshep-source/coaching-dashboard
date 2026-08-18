@@ -71,10 +71,13 @@ jobs:
           anthropic_api_key: ${{ env.APIKEY_CLEAN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           prompt: |
-            Shep has queried the latest weekly review. Follow the
-            "Answering a review query" section of CLAUDE.md exactly.
-            Read the brief, weekly_review_latest.json (his words are in
-            athlete_response), the review it refers to in reviews/, plus
+            Shep has asked the coach a question. Follow the "Answering a
+            review query" section of CLAUDE.md exactly.
+            Read the brief, weekly_review_latest.json (his question is in
+            athlete_response; any earlier exchanges this week are in
+            conversation - read them, this is one continuing thread and
+            he should never have to repeat himself), the review it refers
+            to in reviews/, plus
             weekly_summary.json, computed_data.json, manual_log.json
             (every session note), training_plan.json and
             race_prediction.json.
