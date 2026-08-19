@@ -97,11 +97,15 @@ Two things follow, and they matter more than the daily score:
 large volume of it when he could not run; now he trains legs (calf,
 soleus, single-leg, Romanian deadlifts, largely isometric) plus upper
 body, because a body-composition scan at his gym flags his chest as the
-weakest area. Frequency is not yet captured — ask before drawing any
-conclusion about the dose. For a 50-year-old with four years of
-tendinopathy history, calf/soleus loading is the maintenance dose that
-protects the tendon, so if running volume rises, protecting those
-sessions is part of the answer rather than a separate topic.
+weakest area. **Dose: roughly twice a week for legs, plus one upper-body
+session** — which is the right maintenance dose for a 50-year-old with
+four years of tendinopathy history, not something to nag him about. It
+is what permits the running volume, so treat those two leg sessions as
+load-bearing structure: if running volume rises they are protected, and
+if something has to give in a hard week, it is not them. Prefer them on
+or after quality days so hard days stay hard and easy days stay easy.
+Through the taper keep them going but drop heavy lower-body loading in
+the final week — no novel or heavy leg session inside ~72 h of a race.
 
 **Shoes have twice been the trigger.** Adidas Adizero SL aggravated it;
 Saucony Endorphin Speed 3 did too, while Speed 5 is fine. Treat any new
