@@ -134,5 +134,13 @@
     "rpe": 1.0,
     "on_target": true,
     "session_notes": "A bit sluggish to start but then fine, finished with 4*20sec, about 21c"
+  },
+  {
+    "date": "2026-08-19",
+    "achilles_score": 0,
+    "session_type": "intervals",
+    "rpe": 6.0,
+    "on_target": true,
+    "session_notes": "21c, 12mph winds\nFelt strong, probably went off a bit quick each time into the wind but eased off so I was at target pace. Could have done more."
   }
 ]
