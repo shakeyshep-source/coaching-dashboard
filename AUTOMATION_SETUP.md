@@ -29,7 +29,7 @@ match exactly — the pipeline parses the sheet by column name):
 
 | Question title | Type |
 |---|---|
-| `Review date` | Date — the date shown on the review you're answering |
+| `Review date` | Date — advisory only; responses are matched by submission time, so a wrong date costs nothing |
 | `Decision` | Multiple choice: `Approve` / `Amend` / `Reject` |
 | `Thoughts` | Paragraph — your reasoning, amendments, anything the coach should factor in |
 

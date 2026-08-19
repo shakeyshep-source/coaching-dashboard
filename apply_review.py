@@ -94,63 +94,143 @@ def update_latest_review_status(proposal_id, status):
         save(LATEST_REVIEW_FILE, latest)
 
 
-def record_review_query(responses):
-    """Handle a form response against a review that proposed nothing.
+def parse_timestamp(ts):
+    """Google Forms writes DD/MM/YYYY HH:MM:SS. Seconds are sometimes
+    absent depending on the sheet's locale formatting."""
+    for fmt in ("%d/%m/%Y %H:%M:%S", "%d/%m/%Y %H:%M",
+                "%Y-%m-%dT%H:%M:%S", "%Y-%m-%d %H:%M:%S"):
+        try:
+            return datetime.strptime(ts or "", fmt)
+        except (ValueError, TypeError):
+            continue
+    return None
 
-    A "hold" review writes no plan_proposal.json, so the approve /amend /
-    reject gate above has nothing to match and the response used to be
-    dropped on the floor - leaving no way to disagree with a decision to
-    hold. Attach it to weekly_review_latest.json and log it, so the next
-    coach session reads it and the dashboard can show it was received.
+
+def handled_timestamps(latest, proposal):
+    """Every response already dealt with, by submission timestamp - the
+    only field the athlete cannot mistype."""
+    seen = set()
+    for src in (latest.get("athlete_response"), (proposal or {}).get("athlete_response")):
+        if src and src.get("timestamp"):
+            seen.add(src["timestamp"])
+    for turn in latest.get("conversation") or []:
+        if turn.get("athlete_timestamp"):
+            seen.add(turn["athlete_timestamp"])
+    return seen
+
+
+def unhandled_responses(responses, handled, not_before):
+    """Responses submitted on or after `not_before` that nothing has
+    consumed yet, oldest first.
+
+    Deliberately ignores the form's "Review date" field. That field is
+    typed by hand and was never a reliable key: a question asked on the
+    19th about the review of the 16th got dated the 19th, matched
+    nothing, and was silently dropped - the form said "submitted", the
+    dashboard showed nothing, and there was no error anywhere. The
+    submission timestamp cannot be mistyped, so it is what we match on.
+    """
+    rows = []
+    for r in responses:
+        if r.get("timestamp") in handled:
+            continue
+        ts = parse_timestamp(r.get("timestamp"))
+        if not_before and ts and ts.date() < not_before:
+            continue
+        rows.append((ts or datetime.min, r))
+    rows.sort(key=lambda pair: pair[0])
+    return [r for _, r in rows]
+
+
+def as_date(value):
+    try:
+        return datetime.strptime(value, "%Y-%m-%d").date()
+    except (ValueError, TypeError):
+        return None
+
+
+def record_review_query(responses, proposal=None):
+    """Handle form responses that the approve/amend/reject gate cannot.
+
+    A "hold" review writes no plan_proposal.json, so a response to it has
+    no proposal to act on and used to be dropped on the floor - leaving
+    no way to disagree with a decision to hold. Anything submitted since
+    the current review that nothing else has consumed is treated as a
+    question for the coach and attached to weekly_review_latest.json.
     """
     latest = load(LATEST_REVIEW_FILE)
-    if not latest or latest.get("proposal_id"):
+    if not latest:
         return
     review_date = latest.get("review_date")
-    matches = [r for r in responses if r.get("review_date") == review_date]
-    if not matches:
+    pending = unhandled_responses(
+        responses,
+        handled_timestamps(latest, proposal),
+        as_date(review_date),
+    )
+    if not pending:
         return
-    response = matches[-1]
 
-    if (latest.get("athlete_response") or {}).get("timestamp") == response.get("timestamp"):
-        print(f"Response on review {review_date} already recorded - waiting for the next coach session.")
-        return
+    # Each new question is a follow-up, not a duplicate: park the
+    # exchange just finished in `conversation` and make the new one
+    # current. An unanswered previous turn is kept too - two questions
+    # inside the same minute must not cost the first one.
+    for response in pending:
+        previous = latest.get("athlete_response")
+        if previous:
+            history = latest.get("conversation") or []
+            history.append({
+                "athlete_timestamp": previous.get("timestamp"),
+                "athlete_decision": previous.get("decision"),
+                "athlete_thoughts": previous.get("thoughts"),
+                "coach_reply": latest.get("coach_reply"),
+                "coach_reply_at": latest.get("coach_reply_at"),
+            })
+            latest["conversation"] = history
 
-    # A second question in the same week is a follow-up, not a duplicate:
-    # park the exchange just finished in `conversation` and make the new
-    # one current. Anything unanswered is kept too - a question asked
-    # twice in the minute before a reply lands must not be dropped.
-    previous = latest.get("athlete_response")
-    if previous:
-        history = latest.get("conversation") or []
-        history.append({
-            "athlete_timestamp": previous.get("timestamp"),
-            "athlete_decision": previous.get("decision"),
-            "athlete_thoughts": previous.get("thoughts"),
-            "coach_reply": latest.get("coach_reply"),
-            "coach_reply_at": latest.get("coach_reply_at"),
+        latest["athlete_response"] = response
+        latest["athlete_response_status"] = "logged"
+        latest.pop("coach_reply", None)
+        latest.pop("coach_reply_at", None)
+
+        log = load(DECISIONS_LOG_FILE, default=[])
+        log.append({
+            "logged_at": datetime.now().isoformat(timespec="seconds"),
+            "proposal_id": None,
+            "review_date": review_date,
+            "response_timestamp": response.get("timestamp"),
+            "decision": response.get("decision"),
+            "action_taken": "review_query_logged",
+            "athlete_thoughts": response.get("thoughts"),
+            "changes_count": 0,
         })
-        latest["conversation"] = history
+        save(DECISIONS_LOG_FILE, log)
 
-    latest["athlete_response"] = response
-    latest["athlete_response_status"] = "logged"
-    latest.pop("coach_reply", None)
-    latest.pop("coach_reply_at", None)
     save(LATEST_REVIEW_FILE, latest)
+    print(f"Logged {len(pending)} question(s) against review {review_date} - "
+          f"the coach reply session will answer. Plan untouched.")
 
-    log = load(DECISIONS_LOG_FILE, default=[])
-    log.append({
-        "logged_at": datetime.now().isoformat(timespec="seconds"),
-        "proposal_id": None,
-        "review_date": review_date,
-        "decision": response.get("decision"),
-        "action_taken": "review_query_logged",
-        "athlete_thoughts": response.get("thoughts"),
-        "changes_count": 0,
-    })
-    save(DECISIONS_LOG_FILE, log)
-    print(f"Response logged against review {review_date} (no proposal to act on) - "
-          f"the next coach session will answer it. Plan untouched.")
+
+def response_for_proposal(responses, proposal):
+    """The athlete's decision on this proposal.
+
+    Matches the typed "Review date" against the proposal id first. If
+    that misses - the date is hand-entered and easily a day out - falls
+    back to the newest unconsumed response submitted since the proposal
+    was created. A mistyped date must not silently cost an approval.
+    """
+    exact = [r for r in responses if r.get("review_date") == proposal.get("id")]
+    if exact:
+        return exact[-1], "review_date"
+
+    latest = load(LATEST_REVIEW_FILE, default={}) or {}
+    created = parse_timestamp(proposal.get("created")) or None
+    not_before = created.date() if created else as_date(proposal.get("id"))
+    pending = unhandled_responses(
+        responses, handled_timestamps(latest, proposal), not_before
+    )
+    if pending:
+        return pending[-1], "timestamp"
+    return None, None
 
 
 def main():
@@ -159,16 +239,18 @@ def main():
 
     if not proposal:
         print("No plan proposal on file.")
-        record_review_query(responses)
+        record_review_query(responses, proposal)
         return
     if proposal.get("status") not in ("pending", "amend_requested"):
         print(f"Proposal {proposal.get('id')} already {proposal.get('status')} - nothing to do.")
-        record_review_query(responses)
+        record_review_query(responses, proposal)
         return
 
-    response = next(
-        (r for r in responses if r.get("review_date") == proposal.get("id")), None
-    )
+    response, matched_by = response_for_proposal(responses, proposal)
+    if response and matched_by == "timestamp":
+        print(f"Matched response {response.get('timestamp')} to proposal "
+              f"{proposal.get('id')} by submission time - the form's review date "
+              f"said {response.get('review_date')!r}.")
     if not response:
         print(f"Proposal {proposal.get('id')} is {proposal.get('status')} - no athlete response yet.")
         return
