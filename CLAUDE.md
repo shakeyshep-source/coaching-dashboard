@@ -156,6 +156,13 @@ terrain, fatigue and — above all — **session intent**. Judge it on
 execution against its purpose, not on pace alone. A tempo run 8 sec/km
 slower in 28 °C on tired legs may be a better execution than a quick one.
 
+**Recovery-jog distance is not a fatigue signal on his lapped course.**
+He runs reps on a ~1500 m lap and paces the fixed 2 min recovery to
+finish at the same start point each time — 30 s walk then a slow jog —
+so the distance covered falls across a session by design (19 Aug: 0.35,
+0.31, 0.29, 0.27 km, read wrongly as accumulating cost). Ask what the
+route was before reading anything into recovery pace.
+
 Running power is deliberately not used. Garmin gives us none (0 of 50
 recent runs carry it), and unlike cycling power it is not a standardised
 physical measurement — it is a vendor model, not comparable between
