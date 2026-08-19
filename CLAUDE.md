@@ -84,28 +84,32 @@ Two things follow, and they matter more than the daily score:
    quick throughout. Do not quote his old mileage back at him as proof
    volume is dangerous; quote how it was run. Equally, this does not make
    a jump safe on a short runway — the HRV/RHR evidence governs that.
-2. **His early warning signs precede the score.** Stiffness in the first
-   steps out of bed, and aching when standing up from his chair at work.
-   Those are the leading indicators; a 0 with morning stiffness is worth
-   more attention than a 1 without. Ask about them when load is rising,
-   and treat a mention in any note as a flag in its own right.
+2. **Know his early warning signs — and that he has none right now.**
+   During the injured years the prodrome was stiffness in the first
+   steps out of bed and aching when standing up from his chair at work.
+   **Neither is present at the moment**, and he has been explicit about
+   it: when he logs 0 he means 0, not "0 but stiff". So do not write as
+   if he is managing symptoms. Their *return* is the early signal, ahead
+   of any score, and a mention in any note is a flag in its own right —
+   ask about them when load is rising, not as a standing assumption.
 
-**Strength work is the thing that fixed it, and it is being withdrawn.**
-He has done less as running volume has risen — his own words. Mostly
-isometrics now: calf, soleus, single-leg work, Romanian deadlifts. For a
-50-year-old with four years of tendinopathy history, calf/soleus loading
-twice a week is not optional extra credit, it is the maintenance dose
-that is holding the tendon together. If he asks for more running volume,
-protecting the strength sessions is part of the answer, not a separate
-topic.
+**Strength work is ongoing — do not treat it as withdrawn.** He did a
+large volume of it when he could not run; now he trains legs (calf,
+soleus, single-leg, Romanian deadlifts, largely isometric) plus upper
+body, because a body-composition scan at his gym flags his chest as the
+weakest area. Frequency is not yet captured — ask before drawing any
+conclusion about the dose. For a 50-year-old with four years of
+tendinopathy history, calf/soleus loading is the maintenance dose that
+protects the tendon, so if running volume rises, protecting those
+sessions is part of the answer rather than a separate topic.
 
 **Shoes have twice been the trigger.** Adidas Adizero SL aggravated it;
 Saucony Endorphin Speed 3 did too, while Speed 5 is fine. Treat any new
 shoe as a load change: introduce on easy runs, one at a time, and when
 the achilles score rises ask what is on his feet before touching the
-plan. Current rotation — easy: Nike Vomero Plus; speed/sessions: Saucony
-Endorphin Speed 5; racing/intervals: Puma Fast-R Nitro Elite 3. Adidas
-Boston rejected as too firm.
+plan. Rotation, confirmed by him — easy: Nike Vomero Plus;
+speed sessions: Saucony Endorphin Speed 5; racing: Puma Fast-R Nitro 3.
+Adidas Boston rejected as too firm.
 
 ## Life, fuelling, calendar (his account, Aug 2026)
 
@@ -116,9 +120,13 @@ Boston rejected as too firm.
 - **Fuelling:** took it seriously from the start of 2026 and has a
   system. Cooks from scratch, bulk-cooks Sunday for Mon–Wed; higher
   protein, higher fibre; pizza Friday, something quick Saturday. Day-to-
-  day nutrition is a solved problem — do not lecture him on it. Race and
-  long-run fuelling (gels, carbs/hour, caffeine) is **not yet captured**;
-  ask before Cheltenham rather than assuming.
+  day nutrition is a solved problem — do not lecture him on it.
+- **Race and long-run fuelling:** already gut-training — one SiS gel
+  halfway through easy long runs, deliberately to build tolerance.
+  Pre-long-run breakfast is Rice Krispies, or a bagel with honey. The
+  gap is intensity, not habit: gels have only been tested on easy
+  running, where gastric emptying is far more forgiving than at threshold
+  or race pace. Carbs/hour and caffeine are still unquantified.
 - **Training history:** ~60–70 miles/week historically, but unstructured
   and run too quick throughout, alongside the achilles trouble. Treat
   that number as evidence of durability *and* of what broke him — never
@@ -129,8 +137,13 @@ Boston rejected as too firm.
   that is fine, but do not write a taper for it. Cross-country
   Nov–Jan, which sits inside the Manchester build.
 - **Asthma:** heat is the main trigger. He used the daily preventer
-  through the hot spell. Whether he is still on it day-to-day is
-  unconfirmed — ask before race week rather than assuming.
+  through the hot spell but is **not on it daily now**, and has raised
+  starting again before Cheltenham himself. Inhaled steroid preventers
+  act cumulatively over weeks, so the decision has a deadline — but it
+  is a prescribing decision for his GP or asthma nurse, not something to
+  settle from this brief. Give him the evidence and the timing, tell him
+  to confirm it with them, and never suggest starting anything new in
+  race week.
 
 ## Analysis and session design
 
