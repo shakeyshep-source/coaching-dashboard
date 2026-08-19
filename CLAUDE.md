@@ -56,12 +56,81 @@ daily, weekly review, or ad-hoc — starts from this brief.
   heat + hard session as a genuine flag, not noise.
 - **Achilles tendinopathy (previous):** the standing watch item,
   self-scored 0–10 daily in the form. Score ≥3 = flag. Trend matters
-  more than any single day.
+  more than any single day. See the history below — it changes what the
+  score means.
 - **Hamstring:** occasional issues. Not currently captured by any field —
   if he mentions it in a session note, treat it as significant.
 - Never prescribe a session without weighing injury risk. **Keeping him
   training consistently beats any one perfect workout** — that is his
   stated preference and it matches the evidence for masters athletes.
+
+## The achilles history (his account, Aug 2026 — read before any load call)
+
+Four years on and off, uncoached. What drove it was **not volume alone**:
+volume, speed and hills all high at once, and lunchtime runs with a
+faster mate who went to ~7 min/mile from the gun off a token warm-up. He
+ran almost everything too hard because he was training with people
+quicker than him. Then the loop: flare → stop → do nothing → return
+before it was ready → flare again. No rehab at all in those years.
+
+What changed it: about a year of gym work (started when he could not
+run), a physio, and structured training. It has read 0 for months.
+
+Two things follow, and they matter more than the daily score:
+
+1. **The historical cause was intensity discipline, not mileage as
+   such.** So easy volume added *as genuinely easy running* is not the
+   same risk as the 60–70 mile weeks that broke him — those were run too
+   quick throughout. Do not quote his old mileage back at him as proof
+   volume is dangerous; quote how it was run. Equally, this does not make
+   a jump safe on a short runway — the HRV/RHR evidence governs that.
+2. **His early warning signs precede the score.** Stiffness in the first
+   steps out of bed, and aching when standing up from his chair at work.
+   Those are the leading indicators; a 0 with morning stiffness is worth
+   more attention than a 1 without. Ask about them when load is rising,
+   and treat a mention in any note as a flag in its own right.
+
+**Strength work is the thing that fixed it, and it is being withdrawn.**
+He has done less as running volume has risen — his own words. Mostly
+isometrics now: calf, soleus, single-leg work, Romanian deadlifts. For a
+50-year-old with four years of tendinopathy history, calf/soleus loading
+twice a week is not optional extra credit, it is the maintenance dose
+that is holding the tendon together. If he asks for more running volume,
+protecting the strength sessions is part of the answer, not a separate
+topic.
+
+**Shoes have twice been the trigger.** Adidas Adizero SL aggravated it;
+Saucony Endorphin Speed 3 did too, while Speed 5 is fine. Treat any new
+shoe as a load change: introduce on easy runs, one at a time, and when
+the achilles score rises ask what is on his feet before touching the
+plan. Current rotation — easy: Nike Vomero Plus; speed/sessions: Saucony
+Endorphin Speed 5; racing/intervals: Puma Fast-R Nitro Elite 3. Adidas
+Boston rejected as too firm.
+
+## Life, fuelling, calendar (his account, Aug 2026)
+
+- **Work/life:** desk job, 9–5 at a computer, deliberately gets up and
+  moves through the day. Bed ~22:00–22:30. No shift work or travel
+  disrupting the week — so an unexplained HRV dip is more likely to be
+  training or illness than lifestyle.
+- **Fuelling:** took it seriously from the start of 2026 and has a
+  system. Cooks from scratch, bulk-cooks Sunday for Mon–Wed; higher
+  protein, higher fibre; pizza Friday, something quick Saturday. Day-to-
+  day nutrition is a solved problem — do not lecture him on it. Race and
+  long-run fuelling (gels, carbs/hour, caffeine) is **not yet captured**;
+  ask before Cheltenham rather than assuming.
+- **Training history:** ~60–70 miles/week historically, but unstructured
+  and run too quick throughout, alongside the achilles trouble. Treat
+  that number as evidence of durability *and* of what broke him — never
+  as a target to get back to.
+- **Racing calendar:** nothing before Cheltenham (20 Sep). **10K in
+  Crete, very start of October** — explicitly a fun race with beers on
+  the way over, not a target; it falls in the HM recovery window, and
+  that is fine, but do not write a taper for it. Cross-country
+  Nov–Jan, which sits inside the Manchester build.
+- **Asthma:** heat is the main trigger. He used the daily preventer
+  through the hot spell. Whether he is still on it day-to-day is
+  unconfirmed — ask before race week rather than assuming.
 
 ## Analysis and session design
 
