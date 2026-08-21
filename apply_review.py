@@ -218,16 +218,22 @@ def response_for_proposal(responses, proposal):
     back to the newest unconsumed response submitted since the proposal
     was created. A mistyped date must not silently cost an approval.
     """
-    exact = [r for r in responses if r.get("review_date") == proposal.get("id")]
+    latest = load(LATEST_REVIEW_FILE, default={}) or {}
+    handled = handled_timestamps(latest, proposal)
+
+    # Exclude anything already consumed. A question that *caused* this
+    # proposal carries the same date as it, so an unfiltered date match
+    # read the question itself as an "amend" on its own answer and
+    # bounced the proposal straight to amend_requested (21 Aug).
+    exact = [r for r in responses
+             if r.get("review_date") == proposal.get("id")
+             and r.get("timestamp") not in handled]
     if exact:
         return exact[-1], "review_date"
 
-    latest = load(LATEST_REVIEW_FILE, default={}) or {}
     created = parse_timestamp(proposal.get("created")) or None
     not_before = created.date() if created else as_date(proposal.get("id"))
-    pending = unhandled_responses(
-        responses, handled_timestamps(latest, proposal), not_before
-    )
+    pending = unhandled_responses(responses, handled, not_before)
     if pending:
         return pending[-1], "timestamp"
     return None, None
