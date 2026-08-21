@@ -142,5 +142,21 @@
     "rpe": 6.0,
     "on_target": true,
     "session_notes": "21c, 12mph winds\nFelt strong, probably went off a bit quick each time into the wind but eased off so I was at target pace. Could have done more."
+  },
+  {
+    "date": "2026-08-20",
+    "achilles_score": 0,
+    "session_type": "easy",
+    "rpe": 1.0,
+    "on_target": true,
+    "session_notes": "easy plod on the trials to keep the pace down"
+  },
+  {
+    "date": "2026-08-21",
+    "achilles_score": 0,
+    "session_type": "easy",
+    "rpe": 1.0,
+    "on_target": true,
+    "session_notes": "easy plod at lunch"
   }
 ]

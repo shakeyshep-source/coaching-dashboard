@@ -274,11 +274,11 @@
   {
     "date": "2026-08-22",
     "session_type": "tempo",
-    "target_distance_km": 14,
+    "target_distance_km": 16,
     "target_pace": "3:50/km then 3:54/km",
-    "notes": "SATURDAY SESSION 1/2: 3km warm-up, 20min at threshold, 3min jog, then 10min at HM goal pace (3:54/km), 3km cool-down. ~14km all in. First race-pace work of the build.",
+    "notes": "SATURDAY SESSION 1/2: 3km warm-up, 20min at threshold (3:50/km), 3min jog, then 15min at HM goal pace (3:54/km), 3km cool-down. ~16km all in. Bumped from the original 10min HM-pace block per your Fri 21 Aug request - moved up by 5min rather than the full 10, since this is the first continuous goal-pace running of the block.",
     "source": "coach",
-    "updated_at": "2026-08-09T20:48:16"
+    "updated_at": "2026-08-21T14:41:39"
   },
   {
     "date": "2026-08-23",
@@ -335,11 +335,11 @@
   {
     "date": "2026-08-29",
     "session_type": "tempo",
-    "target_distance_km": 16,
+    "target_distance_km": 17,
     "target_pace": "3:50/km then 3:54/km",
-    "notes": "SATURDAY SESSION 1/2: 3km warm-up, 20min at threshold, 3min jog, 15min at HM goal pace, 3km cool-down. ~16km all in.",
+    "notes": "SATURDAY SESSION 1/2: 3km warm-up, 20min at threshold, 3min jog, 20min at HM goal pace, 3km cool-down. ~17km all in. Second step of the goal-pace progression - one full 20/20 block before 5 Sep removes the threshold buffer entirely.",
     "source": "coach",
-    "updated_at": "2026-08-09T20:48:16"
+    "updated_at": "2026-08-21T14:41:39"
   },
   {
     "date": "2026-08-30",

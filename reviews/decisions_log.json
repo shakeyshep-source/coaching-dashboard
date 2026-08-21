@@ -43,5 +43,41 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": "Tonight's session felt really comfortable",
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-08-21T12:11:04",
+    "proposal_id": null,
+    "review_date": "2026-08-16",
+    "response_timestamp": "21/08/2026 13:10:50",
+    "decision": "amend",
+    "action_taken": "review_query_logged",
+    "athlete_thoughts": "the ACWR as well below the green, should the runs be so short? or will tomorrows session and sundays long run spike them to where they should be",
+    "changes_count": 0
+  },
+  {
+    "logged_at": "2026-08-21T14:26:26",
+    "proposal_id": null,
+    "review_date": "2026-08-16",
+    "response_timestamp": "21/08/2026 15:26:10",
+    "decision": "amend",
+    "action_taken": "review_query_logged",
+    "athlete_thoughts": "sat session - im happy to start further along so 20 mins threshold 20 half pace, rather than the 10 mins.. just feels like it will be too easy",
+    "changes_count": 0
+  },
+  {
+    "logged_at": "2026-08-21T14:36:47",
+    "proposal_id": "2026-08-21",
+    "decision": "amend",
+    "action_taken": "amendment_requested",
+    "athlete_thoughts": "sat session - im happy to start further along so 20 mins threshold 20 half pace, rather than the 10 mins.. just feels like it will be too easy",
+    "changes_count": 2
+  },
+  {
+    "logged_at": "2026-08-21T14:41:39",
+    "proposal_id": "2026-08-21",
+    "decision": "approve",
+    "action_taken": "plan_updated",
+    "athlete_thoughts": "thanks",
+    "changes_count": 2
   }
 ]

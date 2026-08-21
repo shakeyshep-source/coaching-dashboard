@@ -1,204 +1,29 @@
 {
-  "id": "2026-08-09",
-  "created": "2026-08-09T20:26:59",
+  "id": "2026-08-21",
+  "created": "2026-08-21T16:10:00+01:00",
   "status": "applied",
-  "rationale": "CORRECTION. The 9 Aug review recorded a 12.7km overshoot and read it as training beyond the plan. It was not. Shep ran both sessions exactly as prescribed - Wednesday 5x1km with 90s jog recoveries, Saturday 4x10min at threshold with jog recoveries, each inside a 3km warm-up and 3km cool-down. The fault is that the plan's target distances counted only the reps: 5x1km with recoveries and a warm-up cannot be done in 8km (it is 12km minimum), and 4x10min at threshold cannot be done in 12km (it is 18km). About 10km of the apparent overshoot was my arithmetic.\n\nEvery remaining session now states the whole session - warm-up, work, recoveries, cool-down - and a target distance that matches it, so planned and actual are finally comparable. Easy days are trimmed to hold the true weekly totals at 66, 68, 70 (peak) and 64km. That is a genuine reduction on the 73.7km just run, which is the right response to HRV falling 43.9 to 36.3 and RHR rising 46.7 to 48.7 across the week - that load was real even though the execution was faithful. Quality sessions and the long-run progression are untouched.",
+  "rationale": "Shep asked for tomorrow's Saturday session to go straight to 20min threshold + 20min HM pace instead of the planned 20+10, worried the 10min block will feel too easy. The readiness evidence backs pushing further than planned: this is the best-recovered stretch of the block (HRV baseline 38.6->41.3 this week, RHR steady ~47.6-47.9, sleep scores 83-91), achilles has read 0 every day since mid-July bar two isolated 1s, no breathing complaints, and Wednesday's interval session was run comfortably (RPE 6, 'could have done more'). Moderate heat forecast for both Sat and Sun (20-22C) removes that as a constraint. But going straight to 20+20 does two things at once: it hands him, three weeks early and in one jump, the exact total quality volume (40min) currently scheduled as the 5 Sep key session, and it does it on the very first exposure to continuous HM-pace running this block - a stimulus his own achilles history says deserves gradual introduction, since intensity discipline (not mileage) was what caused the original injury. Compromise: move tomorrow to 20T+15H (what was already sitting on 29 Aug), and step 29 Aug up to 20T+20H. That gives him a real increase now, keeps the block progressing one step at a time toward the 5 Sep session (which removes the threshold buffer entirely and stays the qualitatively biggest step), and avoids stacking a first-time 20min goal-pace block onto an already-hard 20min threshold effort without a prior tolerance check.",
   "changes": [
-    {
-      "date": "2026-08-11",
-      "session_type": "easy",
-      "target_distance_km": 8,
-      "target_pace": null,
-      "notes": "Easy 8km"
-    },
-    {
-      "date": "2026-08-12",
-      "session_type": "intervals",
-      "target_distance_km": 13,
-      "target_pace": "3:44/km for the reps",
-      "notes": "WEDNESDAY SESSION 2/2: 3km easy warm-up, 6x1km at 10K pace (3:44/km) with 90s jog recovery, 3km cool-down. ~13km all in - that is the whole session, not just the reps."
-    },
-    {
-      "date": "2026-08-13",
-      "session_type": "easy",
-      "target_distance_km": 6,
-      "target_pace": null,
-      "notes": "Easy 6km"
-    },
-    {
-      "date": "2026-08-14",
-      "session_type": "easy",
-      "target_distance_km": 5,
-      "target_pace": null,
-      "notes": "Easy 5km, legs fresh for tomorrow"
-    },
-    {
-      "date": "2026-08-15",
-      "session_type": "tempo",
-      "target_distance_km": 14,
-      "target_pace": "3:50/km for the blocks",
-      "notes": "SATURDAY SESSION 1/2: 3km warm-up, 2x15min at threshold (3:50/km) with 3min jog between, 3km cool-down. ~14km all in."
-    },
-    {
-      "date": "2026-08-16",
-      "session_type": "long",
-      "target_distance_km": 20,
-      "target_pace": "4:36-4:59/km",
-      "notes": "Long run 20km (~97min) - clears the 95min pre-taper target"
-    },
-    {
-      "date": "2026-08-18",
-      "session_type": "easy",
-      "target_distance_km": 8,
-      "target_pace": null,
-      "notes": "Easy 8km"
-    },
-    {
-      "date": "2026-08-19",
-      "session_type": "intervals",
-      "target_distance_km": 13,
-      "target_pace": "3:44/km for the reps",
-      "notes": "WEDNESDAY SESSION 2/2: 3km warm-up, 5x1200m at 10K pace with 2min jog recovery, 3km cool-down. ~13km all in."
-    },
-    {
-      "date": "2026-08-20",
-      "session_type": "easy",
-      "target_distance_km": 7,
-      "target_pace": null,
-      "notes": "Easy 7km"
-    },
-    {
-      "date": "2026-08-21",
-      "session_type": "easy",
-      "target_distance_km": 5,
-      "target_pace": null,
-      "notes": "Easy 5km"
-    },
     {
       "date": "2026-08-22",
       "session_type": "tempo",
-      "target_distance_km": 14,
+      "target_distance_km": 16,
       "target_pace": "3:50/km then 3:54/km",
-      "notes": "SATURDAY SESSION 1/2: 3km warm-up, 20min at threshold, 3min jog, then 10min at HM goal pace (3:54/km), 3km cool-down. ~14km all in. First race-pace work of the build."
-    },
-    {
-      "date": "2026-08-23",
-      "session_type": "long",
-      "target_distance_km": 21,
-      "target_pace": "4:36-4:59/km",
-      "notes": "Long run 21km (~102min) - race distance, easy throughout"
-    },
-    {
-      "date": "2026-08-25",
-      "session_type": "easy",
-      "target_distance_km": 8,
-      "target_pace": null,
-      "notes": "Easy 8km"
-    },
-    {
-      "date": "2026-08-26",
-      "session_type": "intervals",
-      "target_distance_km": 13,
-      "target_pace": "3:44/km for the reps",
-      "notes": "WEDNESDAY SESSION 2/2: 3km warm-up, 6x1km at 10K pace with 90s jog recovery, 3km cool-down. ~13km all in."
-    },
-    {
-      "date": "2026-08-27",
-      "session_type": "easy",
-      "target_distance_km": 7,
-      "target_pace": null,
-      "notes": "Easy 7km"
-    },
-    {
-      "date": "2026-08-28",
-      "session_type": "easy",
-      "target_distance_km": 5,
-      "target_pace": null,
-      "notes": "Easy 5km"
+      "notes": "SATURDAY SESSION 1/2: 3km warm-up, 20min at threshold (3:50/km), 3min jog, then 15min at HM goal pace (3:54/km), 3km cool-down. ~16km all in. Bumped from the original 10min HM-pace block per your Fri 21 Aug request - moved up by 5min rather than the full 10, since this is the first continuous goal-pace running of the block."
     },
     {
       "date": "2026-08-29",
       "session_type": "tempo",
-      "target_distance_km": 16,
-      "target_pace": "3:50/km then 3:54/km",
-      "notes": "SATURDAY SESSION 1/2: 3km warm-up, 20min at threshold, 3min jog, 15min at HM goal pace, 3km cool-down. ~16km all in."
-    },
-    {
-      "date": "2026-08-30",
-      "session_type": "long",
-      "target_distance_km": 21,
-      "target_pace": "easy, last 5km at 3:54/km",
-      "notes": "PEAK LONG RUN: 21km with the LAST 5km at HM goal pace. Finishing at pace on tired legs is what Cheltenham actually asks for."
-    },
-    {
-      "date": "2026-09-01",
-      "session_type": "easy",
-      "target_distance_km": 7,
-      "target_pace": null,
-      "notes": "Easy 7km"
-    },
-    {
-      "date": "2026-09-02",
-      "session_type": "intervals",
-      "target_distance_km": 12,
-      "target_pace": "3:44/km for the reps",
-      "notes": "WEDNESDAY SESSION 2/2: 3km warm-up, 5x1km at 10K pace with 90s jog recovery, 3km cool-down. ~12km all in."
-    },
-    {
-      "date": "2026-09-03",
-      "session_type": "easy",
-      "target_distance_km": 5,
-      "target_pace": null,
-      "notes": "Easy 5km"
-    },
-    {
-      "date": "2026-09-04",
-      "session_type": "easy",
-      "target_distance_km": 5,
-      "target_pace": null,
-      "notes": "Easy 5km"
-    },
-    {
-      "date": "2026-09-05",
-      "session_type": "tempo",
       "target_distance_km": 17,
-      "target_pace": "3:54/km",
-      "notes": "SATURDAY SESSION 1/2: 3km warm-up, 2x20min at HM goal pace with 3min jog between, 3km cool-down. ~17km all in. The key race-specific session - good day for the Fast R 3s as a dress rehearsal."
-    },
-    {
-      "date": "2026-09-06",
-      "session_type": "long",
-      "target_distance_km": 18,
-      "target_pace": "4:36-4:59/km",
-      "notes": "Long run 18km (~87min) - volume eases, quality holds"
-    },
-    {
-      "date": "2026-09-08",
-      "session_type": "easy",
-      "target_distance_km": 8,
-      "target_pace": null,
-      "notes": "Easy 8km"
-    },
-    {
-      "date": "2026-09-09",
-      "session_type": "intervals",
-      "target_distance_km": 11,
-      "target_pace": "3:44/km for the reps",
-      "notes": "WEDNESDAY SESSION 2/2: 3km warm-up, 4x1km at 10K pace with 90s jog recovery, 3km cool-down. ~11km all in. Last full interval session."
-    },
-    {
-      "date": "2026-09-12",
-      "session_type": "tempo",
-      "target_distance_km": 8,
-      "target_pace": "3:54/km",
-      "notes": "2km warm-up, 15min at HM goal pace, 2km cool-down. ~8km all in. Sharpener, not a session - finish feeling you could do more."
+      "target_pace": "3:50/km then 3:54/km",
+      "notes": "SATURDAY SESSION 1/2: 3km warm-up, 20min at threshold, 3min jog, 20min at HM goal pace, 3km cool-down. ~17km all in. Second step of the goal-pace progression - one full 20/20 block before 5 Sep removes the threshold buffer entirely."
     }
   ],
   "athlete_response": {
-    "timestamp": "09/08/2026 21:34:55",
-    "review_date": "2026-08-09",
+    "timestamp": "21/08/2026 15:41:28",
+    "review_date": "2026-08-21",
     "decision": "approve",
-    "thoughts": "Happy with plan as HRV falling and RHR rising, this week will be hot too"
+    "thoughts": "thanks"
   },
-  "applied_at": "2026-08-09T20:48:16"
+  "applied_at": "2026-08-21T14:41:39"
 }
