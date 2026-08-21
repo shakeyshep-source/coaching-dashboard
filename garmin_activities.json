@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-06-25",
-    "activity_id": 23372527022,
-    "name": "Gloucester Running",
-    "type": "running",
-    "distance_km": 7.53,
-    "duration_min": 46.6,
-    "avg_pace_min_per_km": 6.19,
-    "avg_hr": 133.0,
-    "max_hr": 152.0,
-    "elevation_gain_m": 44.0,
-    "cadence": 142.578125,
-    "aerobic_te": 3.0,
-    "anaerobic_te": 2.4000000953674316
-  },
-  {
-    "date": "2026-06-25",
-    "activity_id": 23377769172,
-    "name": "Tewkesbury SPA retreat",
-    "type": "other",
-    "distance_km": 0.25,
-    "duration_min": 81.3,
-    "avg_pace_min_per_km": 326.8,
-    "avg_hr": 74.0,
-    "max_hr": 173.0,
-    "elevation_gain_m": 52.0,
-    "cadence": 1.4375,
-    "aerobic_te": 0.30000001192092896,
-    "anaerobic_te": 1.7999999523162842
-  },
-  {
     "date": "2026-06-26",
     "activity_id": 23386105347,
     "name": "Strength",
@@ -1228,5 +1198,35 @@
     "cadence": 170.609375,
     "aerobic_te": 3.5999999046325684,
     "anaerobic_te": 1.600000023841858
+  },
+  {
+    "date": "2026-08-20",
+    "activity_id": 24048546416,
+    "name": "Gloucester Running",
+    "type": "running",
+    "distance_km": 7.15,
+    "duration_min": 37.5,
+    "avg_pace_min_per_km": 5.24,
+    "avg_hr": 131.0,
+    "max_hr": 147.0,
+    "elevation_gain_m": 48.0,
+    "cadence": 163.265625,
+    "aerobic_te": 2.5,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-08-20",
+    "activity_id": 24052275507,
+    "name": "Strength",
+    "type": "strength_training",
+    "distance_km": null,
+    "duration_min": 73.3,
+    "avg_pace_min_per_km": null,
+    "avg_hr": 83.0,
+    "max_hr": 125.0,
+    "elevation_gain_m": null,
+    "cadence": null,
+    "aerobic_te": 0.20000000298023224,
+    "anaerobic_te": 0.0
   }
 ]
