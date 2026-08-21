@@ -71,5 +71,13 @@
     "action_taken": "amendment_requested",
     "athlete_thoughts": "sat session - im happy to start further along so 20 mins threshold 20 half pace, rather than the 10 mins.. just feels like it will be too easy",
     "changes_count": 2
+  },
+  {
+    "logged_at": "2026-08-21T14:41:39",
+    "proposal_id": "2026-08-21",
+    "decision": "approve",
+    "action_taken": "plan_updated",
+    "athlete_thoughts": "thanks",
+    "changes_count": 2
   }
 ]
