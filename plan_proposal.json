@@ -1,7 +1,7 @@
 {
   "id": "2026-08-21",
   "created": "2026-08-21T16:10:00+01:00",
-  "status": "pending",
+  "status": "amend_requested",
   "rationale": "Shep asked for tomorrow's Saturday session to go straight to 20min threshold + 20min HM pace instead of the planned 20+10, worried the 10min block will feel too easy. The readiness evidence backs pushing further than planned: this is the best-recovered stretch of the block (HRV baseline 38.6->41.3 this week, RHR steady ~47.6-47.9, sleep scores 83-91), achilles has read 0 every day since mid-July bar two isolated 1s, no breathing complaints, and Wednesday's interval session was run comfortably (RPE 6, 'could have done more'). Moderate heat forecast for both Sat and Sun (20-22C) removes that as a constraint. But going straight to 20+20 does two things at once: it hands him, three weeks early and in one jump, the exact total quality volume (40min) currently scheduled as the 5 Sep key session, and it does it on the very first exposure to continuous HM-pace running this block - a stimulus his own achilles history says deserves gradual introduction, since intensity discipline (not mileage) was what caused the original injury. Compromise: move tomorrow to 20T+15H (what was already sitting on 29 Aug), and step 29 Aug up to 20T+20H. That gives him a real increase now, keeps the block progressing one step at a time toward the 5 Sep session (which removes the threshold buffer entirely and stays the qualitatively biggest step), and avoids stacking a first-time 20min goal-pace block onto an already-hard 20min threshold effort without a prior tolerance check.",
   "changes": [
     {
@@ -18,5 +18,11 @@
       "target_pace": "3:50/km then 3:54/km",
       "notes": "SATURDAY SESSION 1/2: 3km warm-up, 20min at threshold, 3min jog, 20min at HM goal pace, 3km cool-down. ~17km all in. Second step of the goal-pace progression - one full 20/20 block before 5 Sep removes the threshold buffer entirely."
     }
-  ]
+  ],
+  "athlete_response": {
+    "timestamp": "21/08/2026 15:26:10",
+    "review_date": "2026-08-21",
+    "decision": "amend",
+    "thoughts": "sat session - im happy to start further along so 20 mins threshold 20 half pace, rather than the 10 mins.. just feels like it will be too easy"
+  }
 }
