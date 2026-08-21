@@ -666,7 +666,6 @@ async function buildCoachTab() {
     // had been written the button vanished until the next Sunday. It is
     // a running conversation instead — ask any day, as often as needed,
     // and each exchange stays on the card until the next review.
-    const proposalPending = proposal && proposal.status === 'pending';
     const turns = (review.conversation || []).map(t => ({
       timestamp: t.athlete_timestamp, thoughts: t.athlete_thoughts, reply: t.coach_reply,
     }));
@@ -678,6 +677,10 @@ async function buildCoachTab() {
       });
     }
     const awaitingReply = turns.length && !turns[turns.length - 1].reply;
+    // A live proposal carries its own respond button in the block
+    // below, so the card does not repeat it — but every other state
+    // must offer a way in.
+    const proposalLive = proposal && ['pending', 'amend_requested'].includes(proposal.status);
 
     let respondBlock = turns.map(t => `
       <div style="border-top:1px solid var(--border); margin-top:10px; padding-top:10px;">
@@ -693,11 +696,13 @@ async function buildCoachTab() {
 
     // Hidden only while a reply is being written, or when a pending
     // proposal puts the same form one card below under its own button.
-    if (REVIEW_FORM_URL && !awaitingReply && !proposalPending) {
+    if (REVIEW_FORM_URL && !proposalLive) {
       respondBlock += `
         <div style="border-top:1px solid var(--border); margin-top:10px; padding-top:10px;">
           <a href="${REVIEW_FORM_URL}" rel="noopener" style="display:inline-block; background:var(--blue); color:#fff; font-size:13px; padding:8px 14px; border-radius:6px; text-decoration:none;">${turns.length ? 'Ask a follow-up' : 'Ask the coach'}</a>
-          <p style="font-size:12px; color:var(--text-muted); margin:6px 0 0;">Any day, as often as you like — question, disagreement, or how a session felt. Reply lands here in about a minute.</p>
+          <p style="font-size:12px; color:var(--text-muted); margin:6px 0 0;">${awaitingReply
+            ? 'A reply to the question above is being written — but ask another any time.'
+            : 'Any day, as often as you like — question, disagreement, or how a session felt. Reply lands here in about a minute.'}</p>
         </div>`;
     }
 
@@ -747,9 +752,9 @@ async function buildCoachTab() {
             `).join('')}
           </tbody>
         </table>
-        ${proposal.status === 'pending' ? (REVIEW_FORM_URL
+        ${REVIEW_FORM_URL
           ? `<a href="${REVIEW_FORM_URL}" rel="noopener" style="display:inline-block; margin-top:10px; background:var(--blue); color:#fff; font-size:13px; padding:8px 14px; border-radius:6px; text-decoration:none;">Respond (approve / amend / reject)</a>`
-          : `<p style="font-size:12px; color:var(--warn); margin:10px 0 0;">Respond via the weekly review form (set REVIEW_FORM_URL in index.html to get a button here).</p>`) : ''}
+          : `<p style="font-size:12px; color:var(--warn); margin:10px 0 0;">Respond via the weekly review form (set REVIEW_FORM_URL in index.html to get a button here).</p>`}
       </div>
     `;
   } else if (proposal && proposal.status === 'applied') {
