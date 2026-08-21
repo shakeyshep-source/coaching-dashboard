@@ -7,14 +7,12 @@
   "proposal_id": null,
   "proposal_status": null,
   "athlete_response": {
-    "timestamp": "19/08/2026 20:07:12",
-    "review_date": "2026-08-19",
+    "timestamp": "21/08/2026 13:10:50",
+    "review_date": "2026-08-21",
     "decision": "amend",
-    "thoughts": "Tonight's session felt really comfortable"
+    "thoughts": "the ACWR as well below the green, should the runs be so short? or will tomorrows session and sundays long run spike them to where they should be"
   },
-  "athlete_response_status": "answered",
-  "coach_reply": "Shep — good session, and worth saying plainly: 5x1200m at 3:44/km, on target throughout, RPE 6, achilles 0, into a 12mph wind, and you still had gas left. That's a well-executed 10K-effort session, and today's numbers back it up — HRV baseline 38.9 (+4.1 on the week), RHR baseline 47.9 (-1.9), both still trending the right way after Sunday's review. No confounders, no flags. Genuinely good session.\n\nBut I don't think it moves anything, and it's worth being precise about why. \"Could have done more\" on a 10K-effort rep session with jog recoveries isn't a sign you're under-loaded — it's what the session is designed to feel like. Reps at 3:44/km with 2min recovery are built to be hard but repeatable, not a ceiling test; if you were emptying the tank on every rep it'd be the wrong session, not evidence you're ready for a bigger one. One comfortable Wednesday doesn't reopen Tuesday's mileage question either — that call was made on a within-block comparison (HRV/RHR reversing direction between a ~68km week and a ~74km week), and a single good interval session is a much smaller, noisier signal than a week-long trend. If anything, tonight is consistent with the plan working, not evidence it's under-shooting.\n\nSo: no change. Same plan — easy 7 tomorrow, easy 5 Friday, tempo 14 with the first HM-pace work Saturday, long 21 (race distance) Sunday. If sessions keep feeling like this through the peak week and taper, that's real evidence — for how the Manchester build gets loaded in the autumn, not for adding to the five weeks left here.",
-  "coach_reply_at": "2026-08-19T21:20:00+01:00",
+  "athlete_response_status": "logged",
   "conversation": [
     {
       "athlete_timestamp": "16/08/2026 19:32:17",
@@ -29,6 +27,13 @@
       "athlete_thoughts": "I'm now at 9months since starting back from achillies issues and probably around June time since finally getting 0/10 so some months... Does this mean it's healed fully??",
       "coach_reply": "Shep \u2014 good question, and good news first: since mid-July (the earliest window the daily log gives me here), `achilles_score` has read 0 on every day bar two isolated 1s (15 Jul, 3 Aug), neither repeated, nowhere near the \u22653 flag threshold that's been in place all block. It stayed at 0 through the heaviest fully-executed week (73.7 km, 3\u20139 Aug) and every quality session since. That's a genuinely strong tolerance signal at current load.\n\nBut \"does this mean it's healed\" isn't something a daily 0\u201310 self-score can answer, and saying yes would be overclaiming what this data shows. What it actually tells you is that the achilles isn't being provoked by what you're currently asking of it \u2014 60\u201368 km weeks, two quality sessions, long runs up to 20 km. Tendons are notoriously quiet while still remodelling; the standard caution with tendinopathy is that pain-free training under a given load doesn't confirm restored capacity above it \u2014 you only find the real ceiling by testing near it (single-leg calf raise to fatigue, hopping, a proper load test), not by staying comfortably under it, which is exactly what a structured plan does by design. Nine months out with several consistent clean months is a good prognosis. Confirming \"fully healed\" is a question for whoever treated it, with an actual capacity test \u2014 not the training log.\n\nPractically, this changes nothing. Keep logging it daily \u2014 a run of zeros is exactly what you want and it's still the number that would end a build if it moved. And to be direct about the context: this doesn't reopen Tuesday's mileage question. That call was made on the HRV/RHR evidence from an actual within-block volume experiment, not achilles risk \u2014 a clean achilles was already priced in and it wasn't the constraint. If the trend holds through taper and Cheltenham, it's a genuine asset for how hard the Manchester build can go in the autumn. Not a reason to move anything in the next five weeks.",
       "coach_reply_at": "2026-08-19T20:15:00+01:00"
+    },
+    {
+      "athlete_timestamp": "19/08/2026 20:07:12",
+      "athlete_decision": "amend",
+      "athlete_thoughts": "Tonight's session felt really comfortable",
+      "coach_reply": "Shep \u2014 good session, and worth saying plainly: 5x1200m at 3:44/km, on target throughout, RPE 6, achilles 0, into a 12mph wind, and you still had gas left. That's a well-executed 10K-effort session, and today's numbers back it up \u2014 HRV baseline 38.9 (+4.1 on the week), RHR baseline 47.9 (-1.9), both still trending the right way after Sunday's review. No confounders, no flags. Genuinely good session.\n\nBut I don't think it moves anything, and it's worth being precise about why. \"Could have done more\" on a 10K-effort rep session with jog recoveries isn't a sign you're under-loaded \u2014 it's what the session is designed to feel like. Reps at 3:44/km with 2min recovery are built to be hard but repeatable, not a ceiling test; if you were emptying the tank on every rep it'd be the wrong session, not evidence you're ready for a bigger one. One comfortable Wednesday doesn't reopen Tuesday's mileage question either \u2014 that call was made on a within-block comparison (HRV/RHR reversing direction between a ~68km week and a ~74km week), and a single good interval session is a much smaller, noisier signal than a week-long trend. If anything, tonight is consistent with the plan working, not evidence it's under-shooting.\n\nSo: no change. Same plan \u2014 easy 7 tomorrow, easy 5 Friday, tempo 14 with the first HM-pace work Saturday, long 21 (race distance) Sunday. If sessions keep feeling like this through the peak week and taper, that's real evidence \u2014 for how the Manchester build gets loaded in the autumn, not for adding to the five weeks left here.",
+      "coach_reply_at": "2026-08-19T21:20:00+01:00"
     }
   ]
 }
