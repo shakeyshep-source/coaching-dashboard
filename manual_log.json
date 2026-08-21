@@ -150,5 +150,13 @@
     "rpe": 1.0,
     "on_target": true,
     "session_notes": "easy plod on the trials to keep the pace down"
+  },
+  {
+    "date": "2026-08-21",
+    "achilles_score": 0,
+    "session_type": "easy",
+    "rpe": 1.0,
+    "on_target": true,
+    "session_notes": "easy plod at lunch"
   }
 ]
