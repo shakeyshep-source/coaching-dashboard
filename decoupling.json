@@ -20,8 +20,10 @@
       },
       "distance_km": 19.36,
       "gradient_m_per_km": 24.0,
+      "pace_delta_pct": 12.2,
       "unreliable_reasons": [
-        "hilly (24 m/km climb)"
+        "hilly (24 m/km climb)",
+        "not steady \u2014 second half 12% slower"
       ]
     },
     {
@@ -42,6 +44,7 @@
       },
       "distance_km": 10.02,
       "gradient_m_per_km": 7.9,
+      "pace_delta_pct": 1.8,
       "unreliable_reasons": []
     },
     {
@@ -62,6 +65,7 @@
       },
       "distance_km": 8.75,
       "gradient_m_per_km": 5.7,
+      "pace_delta_pct": 1.6,
       "unreliable_reasons": []
     },
     {
@@ -82,6 +86,7 @@
       },
       "distance_km": 12.08,
       "gradient_m_per_km": 8.9,
+      "pace_delta_pct": -4.0,
       "unreliable_reasons": [
         "quality session \u2014 halves are not comparable"
       ]
@@ -104,8 +109,10 @@
       },
       "distance_km": 14.59,
       "gradient_m_per_km": 23.5,
+      "pace_delta_pct": -9.9,
       "unreliable_reasons": [
-        "hilly (24 m/km climb)"
+        "hilly (24 m/km climb)",
+        "not steady \u2014 second half 10% quicker"
       ]
     },
     {
@@ -126,8 +133,10 @@
       },
       "distance_km": 12.19,
       "gradient_m_per_km": 4.2,
+      "pace_delta_pct": 16.7,
       "unreliable_reasons": [
-        "quality session \u2014 halves are not comparable"
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 17% slower"
       ]
     },
     {
@@ -148,6 +157,7 @@
       },
       "distance_km": 12.01,
       "gradient_m_per_km": 15.1,
+      "pace_delta_pct": 0.9,
       "unreliable_reasons": [
         "hilly (15 m/km climb)"
       ]
@@ -170,6 +180,7 @@
       },
       "distance_km": 8.53,
       "gradient_m_per_km": 8.7,
+      "pace_delta_pct": 2.4,
       "unreliable_reasons": []
     },
     {
@@ -190,8 +201,10 @@
       },
       "distance_km": 11.45,
       "gradient_m_per_km": 4.7,
+      "pace_delta_pct": -9.5,
       "unreliable_reasons": [
-        "quality session \u2014 halves are not comparable"
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 10% quicker"
       ]
     },
     {
@@ -212,6 +225,7 @@
       },
       "distance_km": 14.15,
       "gradient_m_per_km": 5.8,
+      "pace_delta_pct": -4.6,
       "unreliable_reasons": []
     },
     {
@@ -232,6 +246,7 @@
       },
       "distance_km": 12.63,
       "gradient_m_per_km": 7.9,
+      "pace_delta_pct": 1.6,
       "unreliable_reasons": []
     },
     {
@@ -252,7 +267,10 @@
       },
       "distance_km": 14.83,
       "gradient_m_per_km": 7.7,
-      "unreliable_reasons": []
+      "pace_delta_pct": 7.6,
+      "unreliable_reasons": [
+        "not steady \u2014 second half 8% slower"
+      ]
     },
     {
       "date": "2026-07-28",
@@ -272,7 +290,10 @@
       },
       "distance_km": 9.08,
       "gradient_m_per_km": 6.7,
-      "unreliable_reasons": []
+      "pace_delta_pct": 11.7,
+      "unreliable_reasons": [
+        "not steady \u2014 second half 12% slower"
+      ]
     },
     {
       "date": "2026-07-29",
@@ -292,6 +313,7 @@
       },
       "distance_km": 10.75,
       "gradient_m_per_km": 22.8,
+      "pace_delta_pct": 1.4,
       "unreliable_reasons": [
         "hilly (23 m/km climb)"
       ]
@@ -314,6 +336,7 @@
       },
       "distance_km": 8.02,
       "gradient_m_per_km": 9.7,
+      "pace_delta_pct": 4.2,
       "unreliable_reasons": []
     },
     {
@@ -334,6 +357,7 @@
       },
       "distance_km": 8.76,
       "gradient_m_per_km": 8.7,
+      "pace_delta_pct": -0.3,
       "unreliable_reasons": []
     },
     {
@@ -354,7 +378,10 @@
       },
       "distance_km": 14.01,
       "gradient_m_per_km": 10.4,
-      "unreliable_reasons": []
+      "pace_delta_pct": -6.1,
+      "unreliable_reasons": [
+        "not steady \u2014 second half 6% quicker"
+      ]
     },
     {
       "date": "2026-08-05",
@@ -374,8 +401,10 @@
       },
       "distance_km": 13.99,
       "gradient_m_per_km": 5.2,
+      "pace_delta_pct": 32.0,
       "unreliable_reasons": [
-        "quality session \u2014 halves are not comparable"
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 32% slower"
       ]
     },
     {
@@ -396,8 +425,10 @@
       },
       "distance_km": 18.34,
       "gradient_m_per_km": 4.2,
+      "pace_delta_pct": 34.1,
       "unreliable_reasons": [
-        "quality session \u2014 halves are not comparable"
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 34% slower"
       ]
     },
     {
@@ -418,6 +449,7 @@
       },
       "distance_km": 18.01,
       "gradient_m_per_km": 7.0,
+      "pace_delta_pct": -2.9,
       "unreliable_reasons": []
     },
     {
@@ -438,8 +470,10 @@
       },
       "distance_km": 13.99,
       "gradient_m_per_km": 3.9,
+      "pace_delta_pct": 18.5,
       "unreliable_reasons": [
-        "quality session \u2014 halves are not comparable"
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 18% slower"
       ]
     },
     {
@@ -460,7 +494,10 @@
       },
       "distance_km": 10.1,
       "gradient_m_per_km": 7.6,
-      "unreliable_reasons": []
+      "pace_delta_pct": -6.7,
+      "unreliable_reasons": [
+        "not steady \u2014 second half 7% quicker"
+      ]
     },
     {
       "date": "2026-08-15",
@@ -480,8 +517,10 @@
       },
       "distance_km": 15.73,
       "gradient_m_per_km": 6.6,
+      "pace_delta_pct": 43.0,
       "unreliable_reasons": [
-        "quality session \u2014 halves are not comparable"
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 43% slower"
       ]
     },
     {
@@ -502,7 +541,10 @@
       },
       "distance_km": 20.02,
       "gradient_m_per_km": 5.4,
-      "unreliable_reasons": []
+      "pace_delta_pct": -5.8,
+      "unreliable_reasons": [
+        "not steady \u2014 second half 6% quicker"
+      ]
     },
     {
       "date": "2026-08-18",
@@ -522,6 +564,7 @@
       },
       "distance_km": 8.62,
       "gradient_m_per_km": 9.7,
+      "pace_delta_pct": -1.9,
       "unreliable_reasons": []
     },
     {
@@ -542,8 +585,10 @@
       },
       "distance_km": 14.01,
       "gradient_m_per_km": 4.7,
+      "pace_delta_pct": 8.6,
       "unreliable_reasons": [
-        "quality session \u2014 halves are not comparable"
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 9% slower"
       ]
     },
     {
@@ -564,15 +609,17 @@
       },
       "distance_km": 17.02,
       "gradient_m_per_km": 7.4,
+      "pace_delta_pct": 20.5,
       "unreliable_reasons": [
-        "quality session \u2014 halves are not comparable"
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 20% slower"
       ]
     }
   ],
   "trend": {
-    "comparable_runs": 14,
-    "recent_avg_pct": -2.42,
-    "prior_avg_pct": 2.58,
-    "direction": "improving \u2014 pace is costing fewer beats late in runs"
+    "comparable_runs": 9,
+    "recent_avg_pct": 0.31,
+    "prior_avg_pct": 1.17,
+    "direction": "stable"
   }
 }
