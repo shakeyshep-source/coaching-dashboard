@@ -23,6 +23,7 @@ STEPS = [
     ("apply_review.py", "Weekly review decision gate"),  # may update the plan, so runs before anything that reads it
     ("race_predictor.py", "Race prediction"),
     ("build_weekly_summary.py", "Weekly summary build"),
+    ("build_session_detail.py", "Session detail build"),  # reads garmin_laps.json
     ("build_computed.py", "Computed layer build"),
 ]
 

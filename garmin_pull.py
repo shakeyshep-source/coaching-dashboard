@@ -39,8 +39,14 @@ OUTPUT_FILE = "garmin_data.json"
 # seen is also accumulated here and never dropped.
 HISTORY_FILE = "garmin_history.json"
 ACTIVITIES_FILE = "garmin_activities.json"
+# Per-lap splits. garmin_activities.json carries whole-run averages only,
+# which say almost nothing about a rep session: "14.01 km at 4:39/km"
+# hides five 1200s inside 1.6 seconds of each other. One request per
+# activity, so results are kept and only new activities are fetched.
+LAPS_FILE = "garmin_laps.json"
 DAYS_TO_PULL = 14  # rolling window; adjust as needed
 ACTIVITY_DAYS_TO_PULL = 56  # 8 weeks — enough for weekly trend stats
+LAP_ACTIVITY_TYPES = ("running", "trail_running", "track_running", "treadmill_running")
 
 
 def safe_get(fn, *args):
@@ -183,6 +189,80 @@ def pull_activities(client):
     return rows
 
 
+def parse_laps(payload):
+    """Turn Garmin's split payload into our lap rows.
+
+    LOCKED SCHEMA (one row per lap, inside garmin_laps.json):
+
+        {
+          "index": int,             # 1-based, in the order run
+          "intensity_type": str|null,  # ACTIVE / REST / WARMUP / COOLDOWN
+          "distance_km": float|null,
+          "duration_sec": float|null,
+          "pace_min_per_km": float|null,
+          "avg_hr": float|null,
+          "max_hr": float|null,
+          "cadence": float|null,
+          "elevation_gain_m": float|null
+        }
+
+    Kept as a pure function of the payload so it can be tested without a
+    Garmin session — the pull itself cannot run outside the Action.
+    """
+    laps = (payload or {}).get("lapDTOs") or []
+    rows = []
+    for i, lap in enumerate(laps, start=1):
+        distance_m = lap.get("distance")
+        duration_s = lap.get("duration")
+        pace = None
+        if distance_m and duration_s and distance_m > 0:
+            pace = round((duration_s / 60) / (distance_m / 1000), 2)
+        rows.append({
+            "index": i,
+            "intensity_type": lap.get("intensityType"),
+            "distance_km": round(distance_m / 1000, 3) if distance_m else None,
+            "duration_sec": round(duration_s, 1) if duration_s else None,
+            "pace_min_per_km": pace,
+            "avg_hr": lap.get("averageHR"),
+            "max_hr": lap.get("maxHR"),
+            "cadence": lap.get("averageRunCadence"),
+            "elevation_gain_m": lap.get("elevationGain"),
+        })
+    return rows
+
+
+def pull_laps(client, activities, existing):
+    """Fetch splits for runs we do not already hold.
+
+    One HTTP request per activity, so this only ever asks about activities
+    missing from garmin_laps.json — a normal daily run adds one request,
+    and a first run over 8 weeks of history adds ~50 once.
+    """
+    have = {row.get("activity_id") for row in existing}
+    rows = list(existing)
+    fetched = 0
+    for a in activities:
+        activity_id = a.get("activity_id")
+        if not activity_id or activity_id in have:
+            continue
+        if (a.get("type") or "") not in LAP_ACTIVITY_TYPES:
+            continue
+        payload = safe_get(client.get_activity_splits, activity_id)
+        laps = parse_laps(payload)
+        if not laps:
+            continue
+        rows.append({
+            "activity_id": activity_id,
+            "date": a.get("date"),
+            "name": a.get("name"),
+            "type": a.get("type"),
+            "laps": laps,
+        })
+        fetched += 1
+    rows.sort(key=lambda r: (r.get("date") or "", r.get("activity_id") or 0))
+    return rows, fetched
+
+
 def main():
     client = Garmin()
     client.login(tokenstore=TOKENSTORE)
@@ -225,6 +305,17 @@ def main():
     with open(ACTIVITIES_FILE, "w") as f:
         json.dump(activities, f, indent=2)
     print(f"Saved {len(activities)} activities to {ACTIVITIES_FILE}")
+
+    try:
+        with open(LAPS_FILE) as f:
+            existing_laps = json.load(f)
+    except FileNotFoundError:
+        existing_laps = []
+    laps, fetched = pull_laps(client, activities, existing_laps)
+    with open(LAPS_FILE, "w") as f:
+        json.dump(laps, f, indent=2)
+    print(f"Laps: {fetched} new activity/activities fetched, "
+          f"{len(laps)} held in {LAPS_FILE}")
 
 
 if __name__ == "__main__":

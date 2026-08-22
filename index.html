@@ -1334,7 +1334,10 @@ function drawRecoveryChart(rec) {
 
 async function buildPerformanceTab(data) {
   const panel = document.getElementById('tab-performance');
-  const rec = await fetchJson('recovery_log.json');
+  const [rec, detail] = await Promise.all([
+    fetchJson('recovery_log.json'),
+    fetchJson('session_detail.json'),
+  ]);
   const today = data[data.length - 1];
   const vo2Rows = data.filter(r => r.vo2max);
   const latestVo2 = vo2Rows.length ? vo2Rows[vo2Rows.length - 1] : null;
@@ -1382,6 +1385,54 @@ async function buildPerformanceTab(data) {
     </div>
   `;
 
+  // Rep-by-rep execution. The whole-run average hides the thing that
+  // matters: "14.01 km at 4:39/km" was 5x1200m within 1.8 sec of each
+  // other. Spread is the headline — how evenly the set was judged.
+  const repSessions = (detail || []).filter(s => s.reps).slice(-6).reverse();
+  // Even reps get "5 x 1200m"; a tempo built from unequal blocks would be
+  // misdescribed by the first one's length, so it just says "2 blocks".
+  const repLabel = (r) => {
+    const d = (r.distance_km_each || []).filter(Boolean);
+    if (!d.length) return `${r.count} reps`;
+    const even = Math.max(...d) - Math.min(...d) <= Math.min(...d) * 0.05;
+    return even ? `${r.count} x ${(d[0] * 1000).toFixed(0)}m` : `${r.count} blocks`;
+  };
+  const sessionHtml = !repSessions.length ? '' : `
+    <div class="chart-card">
+      <p class="title">Session execution — how the reps actually went</p>
+      ${repSessions.map(s => {
+        const r = s.reps;
+        const spreadColour = r.spread_sec_per_km <= 3 ? 'var(--good)'
+          : r.spread_sec_per_km <= 8 ? 'var(--text-secondary)' : 'var(--warn)';
+        const driftLabel = r.drift_sec_per_km > 1.5 ? `faded ${r.drift_sec_per_km.toFixed(1)}s/km`
+          : r.drift_sec_per_km < -1.5 ? `negative split ${Math.abs(r.drift_sec_per_km).toFixed(1)}s/km`
+          : 'held throughout';
+        return `
+        <div style="border-top:1px solid var(--border); padding:10px 0;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px;">
+            <span style="font-size:13px;">${fmtDayMonth(s.date)}
+              <span style="color:var(--text-secondary);">${repLabel(r)}</span>
+            </span>
+            <span style="font-size:14px; font-weight:600; white-space:nowrap;">${r.mean_pace_fmt}/km</span>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:4px; margin:8px 0 6px;">
+            ${r.pace_fmt.map((p, i) => `
+              <span style="font-size:12px; font-variant-numeric:tabular-nums; padding:3px 7px; border-radius:4px;
+                background:var(--surface-alt, rgba(127,127,127,0.12));
+                ${i === r.fastest_rep - 1 ? 'font-weight:700;' : ''}">${p}</span>
+            `).join('')}
+          </div>
+          <p style="font-size:12px; color:var(--text-muted); margin:0;">
+            spread <span style="color:${spreadColour}; font-weight:600;">${r.spread_sec_per_km}s/km</span> · ${driftLabel}${r.mean_hr ? ` · ${Math.round(r.mean_hr)} bpm avg` : ''}${s.volume.total_km ? ` · ${s.volume.total_km} km all in` : ''}${s.structured ? '' : ' · reps inferred from pace'}
+          </p>
+        </div>`;
+      }).join('')}
+      <p style="font-size:12px; color:var(--text-muted); margin:10px 0 0; border-top:1px solid var(--border); padding-top:10px;">
+        Spread is fastest to slowest rep — under 3 sec/km is a well-judged set. Recovery distances are not shown as a fatigue signal: on a lapped course they are paced to finish where the next rep starts.
+      </p>
+    </div>
+  `;
+
   panel.innerHTML = `
     <div class="card-grid">
       <div class="card">
@@ -1398,6 +1449,7 @@ async function buildPerformanceTab(data) {
       <p class="title">VO2max trend</p>
       <div class="chart-wrap"><canvas id="vo2Chart"></canvas></div>
     </div>
+    ${sessionHtml}
     ${recoveryHtml}
   `;
 
