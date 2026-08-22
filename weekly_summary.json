@@ -955,7 +955,7 @@
         },
         {
           "date": "2026-08-22",
-          "temp_max_c": 20.8,
+          "temp_max_c": 21.0,
           "heat_risk": "moderate",
           "session_type": "tempo",
           "rpe": 6.0,
