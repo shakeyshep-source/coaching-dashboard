@@ -167,12 +167,17 @@ length, for principle 6). `structured: false` means the reps were
 inferred from pace rather than taken from the watch's own workout —
 say so if quoting them.
 
-**Recovery-jog distance is not a fatigue signal on his lapped course.**
-He runs reps on a ~1500 m lap and paces the fixed 2 min recovery to
-finish at the same start point each time — 30 s walk then a slow jog —
-so the distance covered falls across a session by design (19 Aug: 0.35,
-0.31, 0.29, 0.27 km, read wrongly as accumulating cost). Ask what the
-route was before reading anything into recovery pace.
+**Recovery-jog distance means nothing on its own — ask first.**
+The recoveries are a fixed time, so the distance covered depends on what
+he was doing that day, and it varies. On 19 Aug he happened to be
+starting each rep from the same point on a ~1500 m lap (30 s walk, then
+a slow jog), so the distances fell across the session by design — 0.35,
+0.31, 0.29, 0.27 km — and reading that as accumulating fatigue was
+wrong. But that was that session, **not a standing habit**: usually the
+recovery does not line up with the lap at all. So neither reading is
+available for free. If recovery pace looks like it is telling you
+something, ask him what the route and the intent were before deciding
+it is fatigue — and do not assert he paces to a landmark.
 
 **Aerobic decoupling (`decoupling.json`) is the durability metric.**
 Efficiency factor — speed per heartbeat — in the first half of a steady
