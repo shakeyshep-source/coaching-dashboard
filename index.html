@@ -966,6 +966,31 @@ function buildAcwrTab(data) {
   const today = data[data.length - 1];
   const statusColor = { LOW: 'var(--club-blue)', OPTIMAL: 'var(--good)', HIGH: 'var(--warn)', undefined: 'var(--text-muted)' };
 
+  const decRuns = ((dec && dec.runs) || []);
+  const decClean = decRuns.filter(r => !r.unreliable_reasons.length);
+  const decLatest = decClean.length ? decClean[decClean.length - 1] : null;
+  const decHtml = !decRuns.length ? '' : `
+    <div class="chart-card">
+      <p class="title">Aerobic decoupling — does pace still cost the same late in a run?</p>
+      ${decLatest ? `
+        <p style="font-size:14px; margin:0 0 4px;">
+          Last steady run <strong style="color:${decLatest.within_threshold ? 'var(--good)' : 'var(--warn)'};">${decLatest.decoupling_pct > 0 ? '+' : ''}${decLatest.decoupling_pct}%</strong>
+          <span style="color:var(--text-muted);">— ${decLatest.first_half.pace}/km at ${Math.round(decLatest.first_half.avg_hr)} bpm, then ${decLatest.second_half.pace}/km at ${Math.round(decLatest.second_half.avg_hr)} bpm</span>
+        </p>` : ''}
+      <p style="font-size:13px; color:var(--text-secondary); margin:0 0 10px;">
+        ${dec.trend && dec.trend.direction ? dec.trend.direction
+          : `${(dec.trend && dec.trend.comparable_runs) || 0} clean steady run${((dec.trend && dec.trend.comparable_runs) || 0) === 1 ? '' : 's'} so far — a direction needs four.`}
+      </p>
+      <div class="chart-wrap" style="height:190px; margin-bottom:6px;"><canvas id="decouplingChart"></canvas></div>
+      <p style="font-size:12px; color:var(--text-muted); margin:8px 0 0; border-top:1px solid var(--border); padding-top:10px;">
+        Speed per heartbeat in the first half of a run against the second, ignoring the first ${dec.warmup_excluded_min || 10} minutes while heart rate catches up.
+        Shaded below ${dec.threshold_pct}% is the aerobic system holding; above it, pace late in the run is costing more beats than pace early on.
+        Grey bars are runs not to be read — hills or quality sessions, where the two halves were never comparable.
+        This is a months metric: it answers whether an 82-minute half or a three-hour marathon will hold together, and it moves slowly.
+      </p>
+    </div>
+  `;
+
   panel.innerHTML = `
     <div class="card-grid">
       <div class="card">
@@ -1274,6 +1299,47 @@ async function buildPredictorTab() {
 // Sessions that never came back inside the 7-day window are drawn at the
 // ceiling in the alert colour rather than dropped, since silently hiding
 // the worst results would defeat the point.
+
+// Aerobic decoupling: how much pace costs late in a run versus early.
+// Under 5% is Friel's "the aerobic system held". Unreliable runs (hills,
+// quality sessions) are drawn hollow rather than hidden — excluding them
+// silently would flatter the line.
+function drawDecouplingChart(dec) {
+  const el = document.getElementById('decouplingChart');
+  if (!el || !dec || !dec.runs || !dec.runs.length) return;
+  const runs = dec.runs.slice(-14);
+  const clean = runs.map(r => !r.unreliable_reasons.length);
+  const values = runs.map(r => r.decoupling_pct);
+  const threshold = dec.threshold_pct || 5;
+
+  new Chart(el, {
+    plugins: [bandPlugin],
+    data: {
+      labels: runs.map(r => fmtDayMonth(r.date)),
+      datasets: [{
+        type: 'bar',
+        label: 'Decoupling %',
+        data: values,
+        backgroundColor: runs.map((r, i) => !clean[i] ? 'rgba(127,127,127,0.28)'
+          : r.decoupling_pct <= threshold ? THEME.blue : THEME.warn),
+        borderRadius: 4,
+      }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: axisXY({
+        y: { ticks: { color: THEME.tick }, title: { display: false } },
+        x: { ticks: { color: THEME.tick, maxTicksLimit: 8 } },
+      }),
+      plugins: {
+        legend: { display: false },
+        band: { min: -100, max: threshold, color: 'rgba(46, 125, 50, 0.10)' },
+      },
+    },
+  });
+}
+
 function drawRecoveryChart(rec) {
   const el = document.getElementById('recoveryChart');
   if (!el || !rec || !rec.sessions.length) return;
@@ -1334,9 +1400,10 @@ function drawRecoveryChart(rec) {
 
 async function buildPerformanceTab(data) {
   const panel = document.getElementById('tab-performance');
-  const [rec, detail] = await Promise.all([
+  const [rec, detail, dec] = await Promise.all([
     fetchJson('recovery_log.json'),
     fetchJson('session_detail.json'),
+    fetchJson('decoupling.json'),
   ]);
   const today = data[data.length - 1];
   const vo2Rows = data.filter(r => r.vo2max);
@@ -1450,11 +1517,13 @@ async function buildPerformanceTab(data) {
       <p class="title">VO2max trend</p>
       <div class="chart-wrap"><canvas id="vo2Chart"></canvas></div>
     </div>
+    ${decHtml}
     ${sessionHtml}
     ${recoveryHtml}
   `;
 
   drawRecoveryChart(rec);
+  drawDecouplingChart(dec);
 
   if (vo2Rows.length < 2) {
     document.querySelector('#tab-performance .chart-wrap').innerHTML =

@@ -174,6 +174,17 @@ so the distance covered falls across a session by design (19 Aug: 0.35,
 0.31, 0.29, 0.27 km, read wrongly as accumulating cost). Ask what the
 route was before reading anything into recovery pace.
 
+**Aerobic decoupling (`decoupling.json`) is the durability metric.**
+Efficiency factor — speed per heartbeat — in the first half of a steady
+run against the second. Under 5% means the aerobic system held; above it,
+pace late in the run cost more beats than pace early on. It answers the
+question a half marathon actually asks, and a marathon asks louder, so it
+carries real weight for Manchester. Three cautions: it moves over months,
+not weeks, so never read one run; anything with `unreliable_reasons` set
+(hills, quality sessions) is not comparable and must not be quoted as if
+it were; and a negative value usually means a progression run, not a
+miracle. The first 10 minutes are excluded because HR lags pace.
+
 Running power is deliberately not used. Garmin gives us none (0 of 50
 recent runs carry it), and unlike cycling power it is not a standardised
 physical measurement — it is a vendor model, not comparable between
@@ -233,6 +244,8 @@ RAW:      garmin_pull.py  -> garmin_data.json (wellness, 14d)
                           -> garmin_history.json (wellness, accumulated)
                           -> garmin_activities.json (runs, 8wk)
                           -> garmin_laps.json (per-lap splits, accumulated)
+                          -> garmin_streams.json (within-run HR/speed
+                             samples, ~300 per run, for decoupling)
           weather_pull.py -> weather.json (7d forecast)
                           -> weather_log.json (accumulated history)
           sheets_pull.py  -> manual_log.json, training_plan.json,
@@ -243,6 +256,8 @@ DERIVED:  race_predictor.py       -> race_prediction.json
           build_weekly_summary.py -> weekly_summary.json
           build_session_detail.py -> session_detail.json (per-rep
                                      execution from garmin_laps.json)
+          build_decoupling.py     -> decoupling.json (aerobic durability
+                                     from garmin_streams.json)
           build_computed.py       -> computed_data.json, flags_log.json,
                                      recovery_log.json (days back to
                                      pre-session normal, per session)

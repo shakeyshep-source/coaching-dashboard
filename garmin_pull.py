@@ -47,6 +47,16 @@ LAPS_FILE = "garmin_laps.json"
 DAYS_TO_PULL = 14  # rolling window; adjust as needed
 ACTIVITY_DAYS_TO_PULL = 56  # 8 weeks — enough for weekly trend stats
 LAP_ACTIVITY_TYPES = ("running", "trail_running", "track_running", "treadmill_running")
+# Within-run HR and speed samples, for aerobic decoupling. Garmin will
+# downsample server-side to whatever we ask for, so we request a fixed
+# ~300 points rather than storing a 1Hz series that would add megabytes
+# to a repo committed three times a day. That is enough resolution for
+# half-vs-half comparison and nothing here needs more.
+STREAMS_FILE = "garmin_streams.json"
+STREAM_SAMPLES = 300
+# Decoupling is meaningless on a short run - HR lag and the warm-up
+# dominate. Only runs long enough to have a steady middle are fetched.
+STREAM_MIN_DURATION_MIN = 40
 
 
 def safe_get(fn, *args):
@@ -263,6 +273,89 @@ def pull_laps(client, activities, existing):
     return rows, fetched
 
 
+def parse_stream(payload):
+    """Turn Garmin's activity-details payload into time/HR/speed samples.
+
+    The payload gives a list of metric descriptors and a parallel list of
+    value arrays, so every field has to be looked up by key rather than
+    position — the indices differ between activities.
+
+    LOCKED SCHEMA (one row per sample, inside garmin_streams.json):
+
+        {"t_sec": float, "hr": float|null,
+         "speed_mps": float|null, "distance_km": float|null,
+         "elevation_m": float|null}
+    """
+    descriptors = (payload or {}).get("metricDescriptors") or []
+    index = {}
+    for d in descriptors:
+        key = d.get("key")
+        if key is not None and d.get("metricsIndex") is not None:
+            index[key] = d["metricsIndex"]
+
+    def value(metrics, key):
+        i = index.get(key)
+        if i is None or i >= len(metrics):
+            return None
+        return metrics[i]
+
+    rows = []
+    start_ms = None
+    for point in (payload or {}).get("activityDetailMetrics") or []:
+        metrics = point.get("metrics") or []
+        elapsed = value(metrics, "sumElapsedDuration")
+        if elapsed is None:
+            elapsed = value(metrics, "sumDuration")
+        if elapsed is None:
+            stamp = value(metrics, "directTimestamp")
+            if stamp is None:
+                continue
+            start_ms = start_ms if start_ms is not None else stamp
+            elapsed = (stamp - start_ms) / 1000.0
+
+        distance = value(metrics, "sumDistance")
+        rows.append({
+            "t_sec": round(float(elapsed), 1),
+            "hr": value(metrics, "directHeartRate"),
+            "speed_mps": value(metrics, "directSpeed"),
+            # Garmin reports sumDistance in metres on some activities and
+            # kilometres on others; normalise on the way in.
+            "distance_km": (round(distance / 1000, 4) if distance and distance > 100
+                            else round(distance, 4) if distance else None),
+            "elevation_m": value(metrics, "directElevation"),
+        })
+    rows.sort(key=lambda r: r["t_sec"])
+    return rows
+
+
+def pull_streams(client, activities, existing):
+    """Fetch within-run samples for long enough runs we do not hold."""
+    have = {row.get("activity_id") for row in existing}
+    rows = list(existing)
+    fetched = 0
+    for a in activities:
+        activity_id = a.get("activity_id")
+        if not activity_id or activity_id in have:
+            continue
+        if (a.get("type") or "") not in LAP_ACTIVITY_TYPES:
+            continue
+        if (a.get("duration_min") or 0) < STREAM_MIN_DURATION_MIN:
+            continue
+        payload = safe_get(client.get_activity_details, activity_id, STREAM_SAMPLES, 0)
+        samples = parse_stream(payload)
+        if len(samples) < 20:
+            continue
+        rows.append({
+            "activity_id": activity_id,
+            "date": a.get("date"),
+            "type": a.get("type"),
+            "samples": samples,
+        })
+        fetched += 1
+    rows.sort(key=lambda r: (r.get("date") or "", r.get("activity_id") or 0))
+    return rows, fetched
+
+
 def main():
     client = Garmin()
     client.login(tokenstore=TOKENSTORE)
@@ -316,6 +409,17 @@ def main():
         json.dump(laps, f, indent=2)
     print(f"Laps: {fetched} new activity/activities fetched, "
           f"{len(laps)} held in {LAPS_FILE}")
+
+    try:
+        with open(STREAMS_FILE) as f:
+            existing_streams = json.load(f)
+    except FileNotFoundError:
+        existing_streams = []
+    streams, stream_count = pull_streams(client, activities, existing_streams)
+    with open(STREAMS_FILE, "w") as f:
+        json.dump(streams, f, indent=2)
+    print(f"Streams: {stream_count} new run(s) fetched, "
+          f"{len(streams)} held in {STREAMS_FILE}")
 
 
 if __name__ == "__main__":
