@@ -209,9 +209,10 @@
     "rhr_delta_from_baseline": 2.3,
     "heat_risk": "high",
     "recovery_confounders": [
+      "alcohol",
       "short night"
     ],
-    "today_summary": "Recovery down on both HRV and RHR, but you noted short night \u2014 read it as that, not training load. Keep today easy; no reason to change the week. Heat risk is high today too \u2014 watch for respiratory symptoms.",
+    "today_summary": "Recovery down on both HRV and RHR, but you noted alcohol, short night \u2014 read it as that, not training load. Keep today easy; no reason to change the week. Heat risk is high today too \u2014 watch for respiratory symptoms.",
     "readiness_level": "flag",
     "plan_flag_reasons": [
       "Recovery below baseline on both HRV and RHR, and a hard session is planned.",
@@ -369,8 +370,10 @@
     "rhr_baseline_7d": 47.6,
     "rhr_delta_from_baseline": -0.6,
     "heat_risk": "moderate",
-    "recovery_confounders": [],
-    "today_summary": "Recovery slightly below baseline. Fine to train but stay conservative.",
+    "recovery_confounders": [
+      "alcohol"
+    ],
+    "today_summary": "Recovery slightly below baseline, but you noted alcohol \u2014 likely that rather than training load. Train as planned unless it persists.",
     "readiness_level": "caution",
     "plan_flag_reasons": []
   }

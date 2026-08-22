@@ -32,12 +32,14 @@ LOCKED SCHEMA:
 
 import json
 import re
-from datetime import date
+from datetime import date, datetime
 from statistics import mean
 
 GARMIN_FILE = "garmin_data.json"
 HISTORY_FILE = "garmin_history.json"
 MANUAL_FILE = "manual_log.json"
+# His words to the coach count as notes too - see coach_thread_notes().
+LATEST_REVIEW_FILE = "weekly_review_latest.json"
 WEATHER_FILE = "weather.json"
 # weather.json only looks forward; past days need the accumulated log.
 WEATHER_LOG_FILE = "weather_log.json"
@@ -127,20 +129,64 @@ def update_flags_log(date_str, session_name, reasons, existing_log):
 # override: alcohol explains one flat morning, it does not explain a
 # baseline sliding for a week. Persistence beats the excuse.
 CONFOUNDER_PATTERNS = {
-    "alcohol": r"\b(beers?|wine|pints?|drinks?|drinking|pub|alcohol|hangover)\b",
+    # His own word is "ciders", which this missed twice - 16 Aug ("a lot
+    # of ciders were consumed") and 22 Aug ("a couple of ciders watching
+    # the football") both came out with no alcohol flag. Match how he
+    # actually writes, not a tidy list of drink names.
+    "alcohol": r"\b(beers?|wine|pints?|drinks?|drinking|pub|alcohol|hangover"
+               r"|ciders?|lagers?|ale|stout|guinness|prosecco|champagne"
+               r"|gin|vodka|rum|whisk(e)?y|cocktails?|booze|boozy|tipsy"
+               r"|night out|few too many)\b",
     "short night": r"\b(late night|bad night|barely slept|poor sleep|broken sleep|up all night|no sleep)\b",
-    "illness": r"\b(ill|unwell|illness|cold|flu|virus|bug|sore throat|fever|chesty)\b",
+    # "cold" on its own is weather far more often than illness in his
+    # notes ("cold and windy", "cooler, 14c"), so it needs company.
+    "illness": r"\b(ill|unwell|illness|flu|virus|bug|sore throat|fever|chesty"
+               r"|man ?flu|streaming|snotty)\b|\b(a|bad|head|chest|full of|rotten) cold\b",
     "stress": r"\b(stress(ed|ful)?)\b",
     "travel": r"\b(travell?ing|travelled|flight|flew|jet ?lag|long drive)\b",
 }
 
 
-def detect_confounders(note):
-    """Non-training causes the athlete himself flagged in his notes."""
-    if not note:
+def detect_confounders(*notes):
+    """Non-training causes the athlete himself flagged, from any of his
+    own words for that day — the daily log note and anything he told the
+    coach through the review form."""
+    text = " ".join(n.lower() for n in notes if n)
+    if not text:
         return []
-    text = note.lower()
     return sorted(name for name, pat in CONFOUNDER_PATTERNS.items() if re.search(pat, text))
+
+
+def coach_thread_notes():
+    """What he said to the coach, keyed by the day he said it.
+
+    Principle 3 says never cut training for a dip he has already
+    explained — but the explanation only counted if it went in the daily
+    log. On 22 Aug he told the coach "a couple of ciders last night
+    watching the football, in case recovery looks off" and the day still
+    came out with no confounder, because this file only ever read
+    manual_log.json. The ask-the-coach thread is his words too.
+    """
+    latest = load(LATEST_REVIEW_FILE) or {}
+    if isinstance(latest, list):
+        return {}
+    entries = []
+    current = latest.get("athlete_response")
+    if current:
+        entries.append((current.get("timestamp"), current.get("thoughts")))
+    for turn in latest.get("conversation") or []:
+        entries.append((turn.get("athlete_timestamp"), turn.get("athlete_thoughts")))
+
+    by_date = {}
+    for stamp, text in entries:
+        if not stamp or not text:
+            continue
+        try:
+            day = datetime.strptime(stamp.split()[0], "%d/%m/%Y").date().isoformat()
+        except (ValueError, IndexError):
+            continue
+        by_date[day] = (by_date.get(day, "") + " " + text).strip()
+    return by_date
 
 
 def readiness_level(rhr_delta, hrv_delta, sleep_score, achilles, heat_risk):
@@ -198,7 +244,8 @@ def summarise(rhr_delta, hrv_delta, sleep_score, achilles, heat_risk, confounder
 RECOVERY_WINDOW_DAYS = 7
 
 
-def recovery_after_sessions(history, plan_by_date, manual_by_date, weather_by_date):
+def recovery_after_sessions(history, plan_by_date, manual_by_date, weather_by_date,
+                            thread_by_date=None):
     """How long HRV and RHR take to come back after each quality session.
 
     The point of this metric is the DURATION, tracked over months. Fresh,
@@ -213,6 +260,7 @@ def recovery_after_sessions(history, plan_by_date, manual_by_date, weather_by_da
     reference before the session avoids grading the week against its own
     decline.
     """
+    thread_by_date = thread_by_date or {}
     rows = sorted(history, key=lambda r: r["date"])
     dates = [r["date"] for r in rows]
     idx = {d: i for i, d in enumerate(dates)}
@@ -265,7 +313,10 @@ def recovery_after_sessions(history, plan_by_date, manual_by_date, weather_by_da
         window_confounders = sorted({
             c
             for k in range(i, min(i + (overall or RECOVERY_WINDOW_DAYS) + 1, len(dates)))
-            for c in detect_confounders((manual_by_date.get(dates[k]) or {}).get("session_notes"))
+            for c in detect_confounders(
+                (manual_by_date.get(dates[k]) or {}).get("session_notes"),
+                thread_by_date.get(dates[k]),
+            )
         })
         sessions.append({
             "date": d,
@@ -313,6 +364,7 @@ def main():
     plan_rows = load(PLAN_FILE)
     flags_log = load(FLAGS_LOG_FILE)
     manual_by_date = index_by_date(manual_rows)
+    thread_by_date = coach_thread_notes()
     weather_by_date = index_by_date(weather_rows)
     plan_by_date = index_by_date(plan_rows)
 
@@ -343,7 +395,9 @@ def main():
         acwr = row.get("acwr_garmin")
         acwr_status = row.get("acwr_status")
 
-        confounders = detect_confounders(manual.get("session_notes"))
+        confounders = detect_confounders(
+            manual.get("session_notes"), thread_by_date.get(row["date"])
+        )
         planned_session = plan_by_date.get(row["date"])
         flag_reasons = check_flags(
             planned_session, manual.get("achilles_score"), rhr_delta, hrv_delta, heat_risk
@@ -386,7 +440,8 @@ def main():
     # Recovery works off accumulated history, not the 14-day window, so
     # the trend can eventually span months rather than a fortnight.
     history = load(HISTORY_FILE) or garmin_rows
-    recovery = recovery_after_sessions(history, plan_by_date, manual_by_date, weather_by_date)
+    recovery = recovery_after_sessions(history, plan_by_date, manual_by_date,
+                                       weather_by_date, thread_by_date)
     with open(RECOVERY_FILE, "w") as f:
         json.dump(recovery, f, indent=2)
 
