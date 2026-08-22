@@ -49,6 +49,13 @@ MIN_SAMPLES_PER_HALF = 8
 GOOD_THRESHOLD_PCT = 5.0
 # Above roughly this gradient the pace-for-HR bargain is about the hill.
 HILLY_M_PER_KM = 12.0
+# Decoupling assumes a steady effort. Shep habitually starts slow and
+# finishes quicker, and on the first real data the biggest readings were
+# simply the runs where pace moved most: 28 Jul ran 11.8% slower in the
+# second half and scored +9.65%, 2 Aug ran 5.9% quicker and scored
+# -9.64%. Those measure pacing, not durability. A run whose halves differ
+# by more than this is recorded but not treated as comparable.
+STEADY_PACE_TOLERANCE_PCT = 5.0
 
 
 def load(path, default=None):
@@ -120,12 +127,23 @@ def analyse(stream, activity, is_quality):
     if gradient is not None and gradient > HILLY_M_PER_KM:
         unreliable.append(f"hilly ({gradient:.0f} m/km climb)")
 
-    def pace_fmt(ef_samples):
+    def pace_sec_per_km(ef_samples):
         speeds = [s["speed_mps"] for s in ef_samples if s.get("speed_mps")]
-        if not speeds:
+        return 1000 / mean(speeds) if speeds else None
+
+    def pace_fmt(ef_samples):
+        sec_per_km = pace_sec_per_km(ef_samples)
+        if sec_per_km is None:
             return None
-        sec_per_km = 1000 / mean(speeds)
         return f"{int(sec_per_km // 60)}:{int(round(sec_per_km % 60)):02d}"
+
+    pace_first, pace_second = pace_sec_per_km(first), pace_sec_per_km(second)
+    pace_delta = (round((pace_second - pace_first) / pace_first * 100, 1)
+                  if pace_first and pace_second else None)
+    if pace_delta is not None and abs(pace_delta) > STEADY_PACE_TOLERANCE_PCT:
+        faster_slower = "slower" if pace_delta > 0 else "quicker"
+        unreliable.append(
+            f"not steady — second half {abs(pace_delta):.0f}% {faster_slower}")
 
     return {
         "date": stream.get("date"),
@@ -141,6 +159,7 @@ def analyse(stream, activity, is_quality):
                         "ef": round(ef_second, 5)},
         "distance_km": (activity or {}).get("distance_km"),
         "gradient_m_per_km": gradient,
+        "pace_delta_pct": pace_delta,
         # Present and non-empty means: read this one with caution, or not
         # at all. The number is still recorded rather than hidden.
         "unreliable_reasons": unreliable,

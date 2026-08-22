@@ -179,11 +179,20 @@ Efficiency factor — speed per heartbeat — in the first half of a steady
 run against the second. Under 5% means the aerobic system held; above it,
 pace late in the run cost more beats than pace early on. It answers the
 question a half marathon actually asks, and a marathon asks louder, so it
-carries real weight for Manchester. Three cautions: it moves over months,
+carries real weight for Manchester. Four cautions: it moves over months,
 not weeks, so never read one run; anything with `unreliable_reasons` set
-(hills, quality sessions) is not comparable and must not be quoted as if
-it were; and a negative value usually means a progression run, not a
-miracle. The first 10 minutes are excluded because HR lags pace.
+is not comparable and must not be quoted as if it were; a negative value
+usually means a progression run, not a miracle; and the first 10 minutes
+are excluded because HR lags pace.
+
+The exclusions matter more than the number. On the first real data, 13
+of 27 runs were unusable — quality sessions, hills, and above all runs he
+did not pace evenly, which is most of them, since he habitually starts
+slow and finishes quicker. Without that filter the metric read
+"improving"; with it, "stable". If it ever seems to move sharply, check
+`pace_delta_pct` before believing it. The honest reading today is that
+**the aerobic base is holding steady** — around 0-1% on clean runs, well
+inside the 5% threshold — not that it is improving.
 
 Running power is deliberately not used. Garmin gives us none (0 of 50
 recent runs carry it), and unlike cycling power it is not a standardised
