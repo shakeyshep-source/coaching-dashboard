@@ -64,6 +64,51 @@ def pace_sec(lap):
     return pace * 60 if pace else None
 
 
+def merge_runs(laps, key):
+    """Collapse consecutive laps that share a classification into one.
+
+    Garmin's lapDTOs are auto-lap kilometres cut again at every workout
+    step, so a 1200m rep arrives as a 1.0 km row plus a 0.2 km row and a
+    3.5 km warm-up as four rows. Read raw, that turned 5x1200m into
+    "10x1000m" and an ordinary easy run into seven reps. Consecutive laps
+    of the same kind are one interval, which is what was actually run.
+    """
+    merged = []
+    for lap in laps:
+        k = key(lap)
+        if k is None:
+            continue
+        distance = lap.get("distance_km") or 0
+        duration = lap.get("duration_sec") or 0
+        if merged and merged[-1]["kind"] == k:
+            cur = merged[-1]
+            cur["distance_km"] += distance
+            cur["duration_sec"] += duration
+            cur["_hr_weighted"] += (lap.get("avg_hr") or 0) * duration
+            cur["_hr_duration"] += duration if lap.get("avg_hr") else 0
+            cur["max_hr"] = max(cur["max_hr"] or 0, lap.get("max_hr") or 0) or None
+            cur["lap_count"] += 1
+        else:
+            merged.append({
+                "kind": k,
+                "distance_km": distance,
+                "duration_sec": duration,
+                "_hr_weighted": (lap.get("avg_hr") or 0) * duration,
+                "_hr_duration": duration if lap.get("avg_hr") else 0,
+                "max_hr": lap.get("max_hr"),
+                "lap_count": 1,
+            })
+
+    for m in merged:
+        m["distance_km"] = round(m["distance_km"], 3)
+        m["duration_sec"] = round(m["duration_sec"], 1)
+        m["avg_hr"] = round(m["_hr_weighted"] / m["_hr_duration"], 1) if m["_hr_duration"] else None
+        m["pace_min_per_km"] = (round((m["duration_sec"] / 60) / m["distance_km"], 3)
+                                if m["distance_km"] else None)
+        del m["_hr_weighted"], m["_hr_duration"]
+    return merged
+
+
 def classify(laps):
     """Split laps into work and recovery.
 
@@ -73,10 +118,17 @@ def classify(laps):
     """
     typed = [l for l in laps if l.get("intensity_type")]
     if typed:
-        work = [l for l in laps if (l.get("intensity_type") or "").upper() in WORK_TYPES]
-        rest = [l for l in laps if (l.get("intensity_type") or "").upper() in REST_TYPES]
-        if work:
+        intervals = merge_runs(laps, lambda l: (l.get("intensity_type") or "").upper() or None)
+        work = [m for m in intervals if m["kind"] in WORK_TYPES]
+        rest = [m for m in intervals if m["kind"] in REST_TYPES]
+        warm = [m for m in intervals if m["kind"] in WARMUP_TYPES | COOLDOWN_TYPES]
+        # A single work block with nothing around it is an ordinary run
+        # that happened to be recorded as one step - not a session. Real
+        # structure means several efforts, or one effort bracketed by a
+        # warm-up or cool-down.
+        if work and (len(work) > 1 or rest or warm):
             return work, rest, True
+        return [], [], True
 
     paces = [p for p in (pace_sec(l) for l in laps) if p]
     if len(paces) < 3:
@@ -84,12 +136,17 @@ def classify(laps):
     ordered = sorted(paces)
     median = ordered[len(ordered) // 2]
     threshold = median * FALLBACK_WORK_MARGIN
-    work, rest = [], []
-    for lap in laps:
+
+    def kind(lap):
         p = pace_sec(lap)
-        if p is None:
-            continue
-        (work if p <= threshold else rest).append(lap)
+        return None if p is None else ("work" if p <= threshold else "rest")
+
+    intervals = merge_runs(laps, kind)
+    work = [m for m in intervals if m["kind"] == "work"]
+    rest = [m for m in intervals if m["kind"] == "rest"]
+    # Same rule: one quick stretch in an otherwise steady run is not a set.
+    if len(work) < 2:
+        return [], [], False
     return work, rest, False
 
 
@@ -112,8 +169,16 @@ def summarise_reps(work):
     third = max(1, len(paces) // 3)
     drift = mean(paces[-third:]) - mean(paces[:third])
 
+    distances = [l.get("distance_km") or 0 for l in reps]
+    # Blocks of different lengths are different targets - 20min at
+    # threshold then 15min at goal pace is meant to be slower, and
+    # calling that a fade would be nonsense. Drift is only comparable
+    # across reps of the same intent.
+    even = bool(distances) and (max(distances) - min(distances)) <= min(distances) * 0.05
+
     return {
         "count": len(reps),
+        "even_reps": even,
         "distance_km_each": [l.get("distance_km") for l in reps],
         "pace_sec_per_km": [round(p, 1) for p in paces],
         "pace_fmt": [fmt_pace(p) for p in paces],
@@ -128,7 +193,8 @@ def summarise_reps(work):
         "fastest_rep": fastest + 1,
         "slowest_rep": slowest + 1,
         "finished_fastest": fastest == len(paces) - 1,
-        # Positive = slowed through the session, negative = negative split.
+        # Positive = slowed through the session, negative = negative
+        # split. Meaningful only when even_reps is true.
         "drift_sec_per_km": round(drift, 1),
         "mean_hr": round(mean(hrs), 1) if hrs else None,
         "max_hr": max((l["max_hr"] for l in reps if l.get("max_hr")), default=None),
@@ -156,9 +222,10 @@ def summarise_recoveries(rest):
 def volume_split(laps, work, rest):
     """Warm-up and cool-down volume, so the session's real total can be
     checked against target_distance_km."""
-    typed = {id(l): (l.get("intensity_type") or "").upper() for l in laps}
-    warmup = sum(l.get("distance_km") or 0 for l in laps if typed[id(l)] in WARMUP_TYPES)
-    cooldown = sum(l.get("distance_km") or 0 for l in laps if typed[id(l)] in COOLDOWN_TYPES)
+    warmup = sum(l.get("distance_km") or 0 for l in laps
+                 if (l.get("intensity_type") or "").upper() in WARMUP_TYPES)
+    cooldown = sum(l.get("distance_km") or 0 for l in laps
+                   if (l.get("intensity_type") or "").upper() in COOLDOWN_TYPES)
     return {
         "warmup_km": round(warmup, 2) or None,
         "cooldown_km": round(cooldown, 2) or None,
