@@ -1,1 +1,1390 @@
-[]
+[
+  {
+    "date": "2026-06-27",
+    "activity_id": 23395617712,
+    "name": "Cotswold Running",
+    "structured": true,
+    "lap_count": 20,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 19.36
+    },
+    "avg_hr": 126.0,
+    "aerobic_te": 3.5,
+    "anaerobic_te": 0.8999999761581421
+  },
+  {
+    "date": "2026-06-28",
+    "activity_id": 23405300598,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 4,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 3.42
+    },
+    "avg_hr": 104.0,
+    "aerobic_te": 2.0,
+    "anaerobic_te": 1.0
+  },
+  {
+    "date": "2026-06-28",
+    "activity_id": 23405305582,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 10,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 9.99
+    },
+    "avg_hr": 169.0,
+    "aerobic_te": 5.0,
+    "anaerobic_te": 1.100000023841858
+  },
+  {
+    "date": "2026-06-29",
+    "activity_id": 23421076797,
+    "name": "Tewkesbury Running",
+    "structured": true,
+    "lap_count": 11,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 10.02
+    },
+    "avg_hr": 139.0,
+    "aerobic_te": 3.4000000953674316,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-06-30",
+    "activity_id": 23432995456,
+    "name": "Tewkesbury Running",
+    "structured": true,
+    "lap_count": 9,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 8.75
+    },
+    "avg_hr": 143.0,
+    "aerobic_te": 3.4000000953674316,
+    "anaerobic_te": 0.10000000149011612
+  },
+  {
+    "date": "2026-07-01",
+    "activity_id": 23444841193,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 17,
+    "reps": {
+      "count": 5,
+      "even_reps": true,
+      "distance_km_each": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pace_sec_per_km": [
+        223.5,
+        222.8,
+        221.3,
+        222.7,
+        220.6
+      ],
+      "pace_fmt": [
+        "3:44",
+        "3:43",
+        "3:41",
+        "3:43",
+        "3:41"
+      ],
+      "duration_sec": [
+        223.5,
+        222.8,
+        221.3,
+        222.7,
+        220.6
+      ],
+      "mean_pace_sec_per_km": 222.2,
+      "mean_pace_fmt": "3:42",
+      "fastest_pace_fmt": "3:41",
+      "slowest_pace_fmt": "3:44",
+      "spread_sec_per_km": 2.9,
+      "fastest_rep": 5,
+      "slowest_rep": 1,
+      "finished_fastest": true,
+      "drift_sec_per_km": -2.9,
+      "mean_hr": 158.6,
+      "max_hr": 169.0
+    },
+    "recoveries": {
+      "count": 4,
+      "duration_sec": [
+        90.0,
+        90.0,
+        90.0,
+        90.0
+      ],
+      "distance_km": [
+        0.203,
+        0.213,
+        0.209,
+        0.206
+      ],
+      "mean_duration_sec": 90.0,
+      "mean_pace_fmt": "7:13"
+    },
+    "volume": {
+      "warmup_km": 4.66,
+      "cooldown_km": 1.59,
+      "work_km": 5.0,
+      "recovery_km": 0.83,
+      "total_km": 12.07
+    },
+    "avg_hr": 140.0,
+    "aerobic_te": 3.700000047683716,
+    "anaerobic_te": 3.200000047683716
+  },
+  {
+    "date": "2026-07-02",
+    "activity_id": 23452945302,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 7,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 6.01
+    },
+    "avg_hr": 141.0,
+    "aerobic_te": 2.9000000953674316,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-07-04",
+    "activity_id": 23477157286,
+    "name": "Stroud Running",
+    "structured": true,
+    "lap_count": 15,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 14.59
+    },
+    "avg_hr": 169.0,
+    "aerobic_te": 5.0,
+    "anaerobic_te": 3.5999999046325684
+  },
+  {
+    "date": "2026-07-07",
+    "activity_id": 23513968384,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 17,
+    "reps": {
+      "count": 4,
+      "even_reps": true,
+      "distance_km_each": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pace_sec_per_km": [
+        216.5,
+        217.9,
+        216.1,
+        216.9
+      ],
+      "pace_fmt": [
+        "3:36",
+        "3:38",
+        "3:36",
+        "3:37"
+      ],
+      "duration_sec": [
+        216.5,
+        217.9,
+        216.1,
+        216.9
+      ],
+      "mean_pace_sec_per_km": 216.9,
+      "mean_pace_fmt": "3:37",
+      "fastest_pace_fmt": "3:36",
+      "slowest_pace_fmt": "3:38",
+      "spread_sec_per_km": 1.8,
+      "fastest_rep": 3,
+      "slowest_rep": 2,
+      "finished_fastest": false,
+      "drift_sec_per_km": 0.4,
+      "mean_hr": 163.0,
+      "max_hr": 173.0
+    },
+    "recoveries": {
+      "count": 3,
+      "duration_sec": [
+        90.0,
+        90.0,
+        90.0
+      ],
+      "distance_km": [
+        0.22,
+        0.189,
+        0.18
+      ],
+      "mean_duration_sec": 90.0,
+      "mean_pace_fmt": "7:42"
+    },
+    "volume": {
+      "warmup_km": 4.12,
+      "cooldown_km": 3.47,
+      "work_km": 4.0,
+      "recovery_km": 0.59,
+      "total_km": 12.19
+    },
+    "avg_hr": 143.0,
+    "aerobic_te": 3.799999952316284,
+    "anaerobic_te": 3.200000047683716
+  },
+  {
+    "date": "2026-07-08",
+    "activity_id": 23526007652,
+    "name": "Tewkesbury Running",
+    "structured": true,
+    "lap_count": 8,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 7.58
+    },
+    "avg_hr": 139.0,
+    "aerobic_te": 3.0999999046325684,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-07-11",
+    "activity_id": 23555244773,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 13,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 12.01
+    },
+    "avg_hr": 142.0,
+    "aerobic_te": 3.700000047683716,
+    "anaerobic_te": 0.10000000149011612
+  },
+  {
+    "date": "2026-07-12",
+    "activity_id": 23567917271,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 8,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 7.51
+    },
+    "avg_hr": 140.0,
+    "aerobic_te": 3.299999952316284,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-07-13",
+    "activity_id": 23584639976,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 9,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 8.53
+    },
+    "avg_hr": 141.0,
+    "aerobic_te": 3.299999952316284,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-07-15",
+    "activity_id": 23610312282,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 29,
+    "reps": {
+      "count": 6,
+      "even_reps": true,
+      "distance_km_each": [
+        0.4,
+        0.4,
+        0.4,
+        0.4,
+        0.4,
+        0.4
+      ],
+      "pace_sec_per_km": [
+        213.5,
+        213.5,
+        213.2,
+        209.5,
+        216.0,
+        209.5
+      ],
+      "pace_fmt": [
+        "3:33",
+        "3:33",
+        "3:33",
+        "3:30",
+        "3:36",
+        "3:30"
+      ],
+      "duration_sec": [
+        85.4,
+        85.4,
+        85.3,
+        83.8,
+        86.4,
+        83.8
+      ],
+      "mean_pace_sec_per_km": 212.5,
+      "mean_pace_fmt": "3:33",
+      "fastest_pace_fmt": "3:30",
+      "slowest_pace_fmt": "3:36",
+      "spread_sec_per_km": 6.5,
+      "fastest_rep": 4,
+      "slowest_rep": 5,
+      "finished_fastest": false,
+      "drift_sec_per_km": -0.7,
+      "mean_hr": 146.7,
+      "max_hr": 165.0
+    },
+    "recoveries": {
+      "count": 9,
+      "duration_sec": [
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        1.4,
+        1.3,
+        2.3
+      ],
+      "distance_km": [
+        0.021,
+        0.043,
+        0.021,
+        0.049,
+        0.024,
+        0.027,
+        0.003,
+        0.002
+      ],
+      "mean_duration_sec": 60.6,
+      "mean_pace_fmt": "44:06"
+    },
+    "volume": {
+      "warmup_km": 7.28,
+      "cooldown_km": 1.56,
+      "work_km": 2.41,
+      "recovery_km": 0.19,
+      "total_km": 11.45
+    },
+    "avg_hr": 129.0,
+    "aerobic_te": 3.200000047683716,
+    "anaerobic_te": 2.9000000953674316
+  },
+  {
+    "date": "2026-07-16",
+    "activity_id": 23621249211,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 8,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 7.22
+    },
+    "avg_hr": 136.0,
+    "aerobic_te": 3.0999999046325684,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-07-18",
+    "activity_id": 23639184572,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 20,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 14.15
+    },
+    "avg_hr": 137.0,
+    "aerobic_te": 3.5,
+    "anaerobic_te": 1.399999976158142
+  },
+  {
+    "date": "2026-07-19",
+    "activity_id": 23656457823,
+    "name": "Tewkesbury Running",
+    "structured": true,
+    "lap_count": 8,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 7.21
+    },
+    "avg_hr": 136.0,
+    "aerobic_te": 3.0999999046325684,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-07-21",
+    "activity_id": 23680572015,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 11,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 4.21
+    },
+    "avg_hr": 138.0,
+    "aerobic_te": 2.700000047683716,
+    "anaerobic_te": 2.4000000953674316
+  },
+  {
+    "date": "2026-07-22",
+    "activity_id": 23695164432,
+    "name": "Cardiff Running",
+    "structured": true,
+    "lap_count": 3,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 2.89
+    },
+    "avg_hr": 141.0,
+    "aerobic_te": 2.299999952316284,
+    "anaerobic_te": 1.399999976158142
+  },
+  {
+    "date": "2026-07-22",
+    "activity_id": 23695165259,
+    "name": "Cardiff Running",
+    "structured": true,
+    "lap_count": 5,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 4.99
+    },
+    "avg_hr": 174.0,
+    "aerobic_te": 4.0,
+    "anaerobic_te": 2.299999952316284
+  },
+  {
+    "date": "2026-07-24",
+    "activity_id": 23714110658,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 8,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 7.89
+    },
+    "avg_hr": 144.0,
+    "aerobic_te": 3.299999952316284,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-07-25",
+    "activity_id": 23724105350,
+    "name": "Tewkesbury Running",
+    "structured": true,
+    "lap_count": 13,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 12.63
+    },
+    "avg_hr": 142.0,
+    "aerobic_te": 3.5,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-07-26",
+    "activity_id": 23736111946,
+    "name": "Tewkesbury Running",
+    "structured": true,
+    "lap_count": 15,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 14.83
+    },
+    "avg_hr": 137.0,
+    "aerobic_te": 3.5999999046325684,
+    "anaerobic_te": 0.10000000149011612
+  },
+  {
+    "date": "2026-07-28",
+    "activity_id": 23766384183,
+    "name": "Tewkesbury Running",
+    "structured": true,
+    "lap_count": 17,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 9.08
+    },
+    "avg_hr": 145.0,
+    "aerobic_te": 3.5,
+    "anaerobic_te": 1.7999999523162842
+  },
+  {
+    "date": "2026-07-29",
+    "activity_id": 23779390108,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 11,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 10.75
+    },
+    "avg_hr": 140.0,
+    "aerobic_te": 3.4000000953674316,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-07-30",
+    "activity_id": 23787776616,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 9,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 8.02
+    },
+    "avg_hr": 132.0,
+    "aerobic_te": 3.200000047683716,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-07-31",
+    "activity_id": 23803254690,
+    "name": "Tewkesbury Running",
+    "structured": true,
+    "lap_count": 9,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 8.76
+    },
+    "avg_hr": 138.0,
+    "aerobic_te": 3.200000047683716,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-08-01",
+    "activity_id": 23808712826,
+    "name": "Tewkesbury Running",
+    "structured": true,
+    "lap_count": 4,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 3.01
+    },
+    "avg_hr": 141.0,
+    "aerobic_te": 2.299999952316284,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-08-01",
+    "activity_id": 23809049912,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 6,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 5.19
+    },
+    "avg_hr": 157.0,
+    "aerobic_te": 3.299999952316284,
+    "anaerobic_te": 0.10000000149011612
+  },
+  {
+    "date": "2026-08-01",
+    "activity_id": 23809445965,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 4,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 3.7
+    },
+    "avg_hr": 140.0,
+    "aerobic_te": 2.5999999046325684,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-08-02",
+    "activity_id": 23822225588,
+    "name": "Tewkesbury Running",
+    "structured": true,
+    "lap_count": 15,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 14.02
+    },
+    "avg_hr": 140.0,
+    "aerobic_te": 3.5999999046325684,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-08-04",
+    "activity_id": 23852211245,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 9,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 8.01
+    },
+    "avg_hr": 140.0,
+    "aerobic_te": 3.200000047683716,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-08-05",
+    "activity_id": 23865706278,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 20,
+    "reps": {
+      "count": 5,
+      "even_reps": true,
+      "distance_km_each": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pace_sec_per_km": [
+        223.4,
+        220.7,
+        222.5,
+        220.5,
+        219.6
+      ],
+      "pace_fmt": [
+        "3:43",
+        "3:41",
+        "3:42",
+        "3:40",
+        "3:40"
+      ],
+      "duration_sec": [
+        223.4,
+        220.7,
+        222.5,
+        220.5,
+        219.6
+      ],
+      "mean_pace_sec_per_km": 221.3,
+      "mean_pace_fmt": "3:41",
+      "fastest_pace_fmt": "3:40",
+      "slowest_pace_fmt": "3:43",
+      "spread_sec_per_km": 3.8,
+      "fastest_rep": 5,
+      "slowest_rep": 1,
+      "finished_fastest": true,
+      "drift_sec_per_km": -3.8,
+      "mean_hr": 158.4,
+      "max_hr": 167.0
+    },
+    "recoveries": {
+      "count": 5,
+      "duration_sec": [
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0
+      ],
+      "distance_km": [
+        0.273,
+        0.284,
+        0.282,
+        0.29,
+        0.124
+      ],
+      "mean_duration_sec": 90.0,
+      "mean_pace_fmt": "6:40"
+    },
+    "volume": {
+      "warmup_km": 3.43,
+      "cooldown_km": 4.3,
+      "work_km": 5.0,
+      "recovery_km": 1.25,
+      "total_km": 13.99
+    },
+    "avg_hr": 136.0,
+    "aerobic_te": 3.9000000953674316,
+    "anaerobic_te": 2.0999999046325684
+  },
+  {
+    "date": "2026-08-06",
+    "activity_id": 23873808820,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 9,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 8.01
+    },
+    "avg_hr": 133.0,
+    "aerobic_te": 2.9000000953674316,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-08-07",
+    "activity_id": 23889480015,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 8,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 7.36
+    },
+    "avg_hr": 143.0,
+    "aerobic_te": 3.299999952316284,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-08-08",
+    "activity_id": 23897071110,
+    "name": "Tewkesbury Running",
+    "structured": true,
+    "lap_count": 23,
+    "reps": {
+      "count": 4,
+      "even_reps": true,
+      "distance_km_each": [
+        2.609,
+        2.586,
+        2.619,
+        2.621
+      ],
+      "pace_sec_per_km": [
+        230.0,
+        232.0,
+        229.1,
+        228.9
+      ],
+      "pace_fmt": [
+        "3:50",
+        "3:52",
+        "3:49",
+        "3:49"
+      ],
+      "duration_sec": [
+        600.0,
+        600.0,
+        600.0,
+        600.0
+      ],
+      "mean_pace_sec_per_km": 230.0,
+      "mean_pace_fmt": "3:50",
+      "fastest_pace_fmt": "3:49",
+      "slowest_pace_fmt": "3:52",
+      "spread_sec_per_km": 3.1,
+      "fastest_rep": 4,
+      "slowest_rep": 2,
+      "finished_fastest": true,
+      "drift_sec_per_km": -1.1,
+      "mean_hr": 162.0,
+      "max_hr": 170.0
+    },
+    "recoveries": {
+      "count": 3,
+      "duration_sec": [
+        120.0,
+        120.0,
+        120.0
+      ],
+      "distance_km": [
+        0.374,
+        0.254,
+        0.306
+      ],
+      "mean_duration_sec": 120.0,
+      "mean_pace_fmt": "6:35"
+    },
+    "volume": {
+      "warmup_km": 3.46,
+      "cooldown_km": 3.51,
+      "work_km": 10.44,
+      "recovery_km": 0.93,
+      "total_km": 18.34
+    },
+    "avg_hr": 150.0,
+    "aerobic_te": 4.800000190734863,
+    "anaerobic_te": 0.699999988079071
+  },
+  {
+    "date": "2026-08-09",
+    "activity_id": 23909081558,
+    "name": "Tewkesbury Running",
+    "structured": true,
+    "lap_count": 19,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 18.01
+    },
+    "avg_hr": 150.0,
+    "aerobic_te": 4.599999904632568,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-08-11",
+    "activity_id": 23939394427,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 9,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 8.06
+    },
+    "avg_hr": 140.0,
+    "aerobic_te": 3.299999952316284,
+    "anaerobic_te": 0.10000000149011612
+  },
+  {
+    "date": "2026-08-12",
+    "activity_id": 23946870472,
+    "name": "Tewkesbury Running",
+    "structured": true,
+    "lap_count": 19,
+    "reps": {
+      "count": 6,
+      "even_reps": true,
+      "distance_km_each": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pace_sec_per_km": [
+        220.5,
+        219.0,
+        219.3,
+        219.4,
+        219.6,
+        222.0
+      ],
+      "pace_fmt": [
+        "3:40",
+        "3:39",
+        "3:39",
+        "3:39",
+        "3:40",
+        "3:42"
+      ],
+      "duration_sec": [
+        220.5,
+        219.0,
+        219.3,
+        219.4,
+        219.6,
+        222.0
+      ],
+      "mean_pace_sec_per_km": 220.0,
+      "mean_pace_fmt": "3:40",
+      "fastest_pace_fmt": "3:39",
+      "slowest_pace_fmt": "3:42",
+      "spread_sec_per_km": 3.0,
+      "fastest_rep": 2,
+      "slowest_rep": 6,
+      "finished_fastest": false,
+      "drift_sec_per_km": 1.1,
+      "mean_hr": 159.2,
+      "max_hr": 170.0
+    },
+    "recoveries": {
+      "count": 5,
+      "duration_sec": [
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0
+      ],
+      "distance_km": [
+        0.288,
+        0.297,
+        0.292,
+        0.27,
+        0.26
+      ],
+      "mean_duration_sec": 90.0,
+      "mean_pace_fmt": "5:21"
+    },
+    "volume": {
+      "warmup_km": 3.02,
+      "cooldown_km": 3.56,
+      "work_km": 6.0,
+      "recovery_km": 1.41,
+      "total_km": 13.99
+    },
+    "avg_hr": 147.0,
+    "aerobic_te": 4.199999809265137,
+    "anaerobic_te": 2.200000047683716
+  },
+  {
+    "date": "2026-08-13",
+    "activity_id": 23965968418,
+    "name": "Tewkesbury Running",
+    "structured": true,
+    "lap_count": 11,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 10.1
+    },
+    "avg_hr": 126.0,
+    "aerobic_te": 2.700000047683716,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-08-15",
+    "activity_id": 23983914326,
+    "name": "Tewkesbury Running",
+    "structured": true,
+    "lap_count": 17,
+    "reps": {
+      "count": 2,
+      "even_reps": true,
+      "distance_km_each": [
+        3.936,
+        3.929
+      ],
+      "pace_sec_per_km": [
+        228.7,
+        229.1
+      ],
+      "pace_fmt": [
+        "3:49",
+        "3:49"
+      ],
+      "duration_sec": [
+        900.0,
+        900.0
+      ],
+      "mean_pace_sec_per_km": 228.9,
+      "mean_pace_fmt": "3:49",
+      "fastest_pace_fmt": "3:49",
+      "slowest_pace_fmt": "3:49",
+      "spread_sec_per_km": 0.4,
+      "fastest_rep": 1,
+      "slowest_rep": 2,
+      "finished_fastest": false,
+      "drift_sec_per_km": 0.4,
+      "mean_hr": 159.7,
+      "max_hr": 167.0
+    },
+    "recoveries": {
+      "count": 1,
+      "duration_sec": [
+        180.0
+      ],
+      "distance_km": [
+        0.515
+      ],
+      "mean_duration_sec": 180.0,
+      "mean_pace_fmt": "5:50"
+    },
+    "volume": {
+      "warmup_km": 3.46,
+      "cooldown_km": 3.89,
+      "work_km": 7.87,
+      "recovery_km": 0.52,
+      "total_km": 15.73
+    },
+    "avg_hr": 143.0,
+    "aerobic_te": 3.799999952316284,
+    "anaerobic_te": 1.2000000476837158
+  },
+  {
+    "date": "2026-08-16",
+    "activity_id": 23996558947,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 21,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 20.02
+    },
+    "avg_hr": 137.0,
+    "aerobic_te": 3.5,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-08-18",
+    "activity_id": 24026019730,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 17,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 8.62
+    },
+    "avg_hr": 134.0,
+    "aerobic_te": 3.0,
+    "anaerobic_te": 1.7999999523162842
+  },
+  {
+    "date": "2026-08-19",
+    "activity_id": 24039476892,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 23,
+    "reps": {
+      "count": 5,
+      "even_reps": true,
+      "distance_km_each": [
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ],
+      "pace_sec_per_km": [
+        220.5,
+        220.7,
+        221.8,
+        221.4,
+        220.9
+      ],
+      "pace_fmt": [
+        "3:40",
+        "3:41",
+        "3:42",
+        "3:41",
+        "3:41"
+      ],
+      "duration_sec": [
+        264.6,
+        264.8,
+        266.1,
+        265.7,
+        265.1
+      ],
+      "mean_pace_sec_per_km": 221.1,
+      "mean_pace_fmt": "3:41",
+      "fastest_pace_fmt": "3:40",
+      "slowest_pace_fmt": "3:42",
+      "spread_sec_per_km": 1.3,
+      "fastest_rep": 1,
+      "slowest_rep": 3,
+      "finished_fastest": false,
+      "drift_sec_per_km": 0.4,
+      "mean_hr": 157.2,
+      "max_hr": 168.0
+    },
+    "recoveries": {
+      "count": 4,
+      "duration_sec": [
+        120.0,
+        120.0,
+        120.0,
+        120.0
+      ],
+      "distance_km": [
+        0.35,
+        0.312,
+        0.29,
+        0.267
+      ],
+      "mean_duration_sec": 120.0,
+      "mean_pace_fmt": "6:38"
+    },
+    "volume": {
+      "warmup_km": 3.54,
+      "cooldown_km": 3.25,
+      "work_km": 6.0,
+      "recovery_km": 1.22,
+      "total_km": 14.01
+    },
+    "avg_hr": 142.0,
+    "aerobic_te": 3.5999999046325684,
+    "anaerobic_te": 1.600000023841858
+  },
+  {
+    "date": "2026-08-20",
+    "activity_id": 24048546416,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 8,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 7.15
+    },
+    "avg_hr": 131.0,
+    "aerobic_te": 2.5,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-08-21",
+    "activity_id": 24059767750,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 6,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 5.01
+    },
+    "avg_hr": 139.0,
+    "aerobic_te": 2.5,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-08-22",
+    "activity_id": 24070157039,
+    "name": "Tewkesbury - 20 & 15",
+    "structured": true,
+    "lap_count": 21,
+    "reps": {
+      "count": 2,
+      "even_reps": false,
+      "distance_km_each": [
+        5.222,
+        3.822
+      ],
+      "pace_sec_per_km": [
+        229.8,
+        235.4
+      ],
+      "pace_fmt": [
+        "3:50",
+        "3:55"
+      ],
+      "duration_sec": [
+        1200.1,
+        899.9
+      ],
+      "mean_pace_sec_per_km": 232.6,
+      "mean_pace_fmt": "3:53",
+      "fastest_pace_fmt": "3:50",
+      "slowest_pace_fmt": "3:55",
+      "spread_sec_per_km": 5.6,
+      "fastest_rep": 1,
+      "slowest_rep": 2,
+      "finished_fastest": false,
+      "drift_sec_per_km": 5.6,
+      "mean_hr": 156.9,
+      "max_hr": 167.0
+    },
+    "recoveries": {
+      "count": 1,
+      "duration_sec": [
+        180.0
+      ],
+      "distance_km": [
+        0.512
+      ],
+      "mean_duration_sec": 180.0,
+      "mean_pace_fmt": "5:52"
+    },
+    "volume": {
+      "warmup_km": 3.25,
+      "cooldown_km": 4.22,
+      "work_km": 9.04,
+      "recovery_km": 0.51,
+      "total_km": 17.02
+    },
+    "avg_hr": 145.0,
+    "aerobic_te": 4.099999904632568,
+    "anaerobic_te": 0.0
+  }
+]

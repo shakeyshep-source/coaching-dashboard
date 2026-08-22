@@ -1394,17 +1394,18 @@ async function buildPerformanceTab(data) {
   const repLabel = (r) => {
     const d = (r.distance_km_each || []).filter(Boolean);
     if (!d.length) return `${r.count} reps`;
-    const even = Math.max(...d) - Math.min(...d) <= Math.min(...d) * 0.05;
-    return even ? `${r.count} x ${(d[0] * 1000).toFixed(0)}m` : `${r.count} blocks`;
+    return r.even_reps ? `${r.count} x ${(d[0] * 1000).toFixed(0)}m` : `${r.count} blocks`;
   };
   const sessionHtml = !repSessions.length ? '' : `
     <div class="chart-card">
       <p class="title">Session execution — how the reps actually went</p>
       ${repSessions.map(s => {
         const r = s.reps;
-        const spreadColour = r.spread_sec_per_km <= 3 ? 'var(--good)'
+        const spreadColour = !r.even_reps ? 'var(--text-secondary)'
+          : r.spread_sec_per_km <= 3 ? 'var(--good)'
           : r.spread_sec_per_km <= 8 ? 'var(--text-secondary)' : 'var(--warn)';
-        const driftLabel = r.drift_sec_per_km > 1.5 ? `faded ${r.drift_sec_per_km.toFixed(1)}s/km`
+        const driftLabel = !r.even_reps ? 'blocks at different targets'
+          : r.drift_sec_per_km > 1.5 ? `faded ${r.drift_sec_per_km.toFixed(1)}s/km`
           : r.drift_sec_per_km < -1.5 ? `negative split ${Math.abs(r.drift_sec_per_km).toFixed(1)}s/km`
           : 'held throughout';
         return `

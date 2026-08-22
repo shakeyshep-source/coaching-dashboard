@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-21",
+  "generated": "2026-08-22",
   "window_days": 7,
   "sessions": [
     {
@@ -75,12 +75,26 @@
       "interrupted_by_next_session": false,
       "temp_max_c": 25.9,
       "note": "20c and breezy"
+    },
+    {
+      "date": "2026-08-19",
+      "session_type": "intervals",
+      "confounders_in_window": [],
+      "hrv_reference": 38.9,
+      "hrv_recovery_days": 1,
+      "rhr_reference": 47.9,
+      "rhr_recovery_days": 3,
+      "recovery_days": 3,
+      "recovered": true,
+      "interrupted_by_next_session": true,
+      "temp_max_c": 22.1,
+      "note": "21c, 12mph winds\nFelt strong, probably went off a bit quick each time into the wind but eased off so I was at target pace. Could have done more."
     }
   ],
   "trend": {
-    "recent_avg_days": 2.3,
-    "prior_avg_days": 6,
+    "recent_avg_days": 2.7,
+    "prior_avg_days": 4,
     "direction": "shortening \u2014 bouncing back quicker than before",
-    "sessions_measured": 4
+    "sessions_measured": 5
   }
 }

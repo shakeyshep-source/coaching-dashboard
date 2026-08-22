@@ -79,5 +79,15 @@
     "action_taken": "plan_updated",
     "athlete_thoughts": "thanks",
     "changes_count": 2
+  },
+  {
+    "logged_at": "2026-08-22T12:00:16",
+    "proposal_id": null,
+    "review_date": "2026-08-16",
+    "response_timestamp": "22/08/2026 12:59:57",
+    "decision": "approve",
+    "action_taken": "review_query_logged",
+    "athlete_thoughts": "Just to note a couple of ciders last night watching the football, in case recovery looks off",
+    "changes_count": 0
   }
 ]
