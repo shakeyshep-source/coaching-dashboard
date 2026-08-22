@@ -1213,5 +1213,35 @@
     "cadence": 168.53125,
     "aerobic_te": 2.5,
     "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-08-22",
+    "activity_id": 24070157039,
+    "name": "Tewkesbury - 20 & 15",
+    "type": "running",
+    "distance_km": 17.02,
+    "duration_min": 76.8,
+    "avg_pace_min_per_km": 4.51,
+    "avg_hr": 145.0,
+    "max_hr": 167.0,
+    "elevation_gain_m": 113.0,
+    "cadence": 173.390625,
+    "aerobic_te": 4.099999904632568,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-08-22",
+    "activity_id": 24070170812,
+    "name": "Strength",
+    "type": "strength_training",
+    "distance_km": null,
+    "duration_min": 18.1,
+    "avg_pace_min_per_km": null,
+    "avg_hr": 94.0,
+    "max_hr": 131.0,
+    "elevation_gain_m": null,
+    "cadence": null,
+    "aerobic_te": 0.30000001192092896,
+    "anaerobic_te": 0.0
   }
 ]
