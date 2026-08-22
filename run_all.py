@@ -24,6 +24,7 @@ STEPS = [
     ("race_predictor.py", "Race prediction"),
     ("build_weekly_summary.py", "Weekly summary build"),
     ("build_session_detail.py", "Session detail build"),  # reads garmin_laps.json
+    ("build_decoupling.py", "Aerobic decoupling build"),  # reads garmin_streams.json
     ("build_computed.py", "Computed layer build"),
 ]
 
