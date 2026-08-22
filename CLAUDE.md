@@ -156,6 +156,17 @@ terrain, fatigue and — above all — **session intent**. Judge it on
 execution against its purpose, not on pace alone. A tempo run 8 sec/km
 slower in 28 °C on tired legs may be a better execution than a quick one.
 
+**Judge quality sessions from `session_detail.json`, not the run average.**
+`garmin_activities.json` holds whole-run averages, and a rep session
+averaged over its warm-up, recoveries and cool-down is nearly
+meaningless — 19 Aug reads as "14.01 km at 4:39/km" there and as
+"5x1200m at 3:41 with a 1.8 sec spread" here. Use `spread_sec_per_km`
+(how evenly the set was judged), `drift_sec_per_km` (positive = faded,
+negative = negative split) and `volume.total_km` (the real session
+length, for principle 6). `structured: false` means the reps were
+inferred from pace rather than taken from the watch's own workout —
+say so if quoting them.
+
 **Recovery-jog distance is not a fatigue signal on his lapped course.**
 He runs reps on a ~1500 m lap and paces the fixed 2 min recovery to
 finish at the same start point each time — 30 s walk then a slow jog —
@@ -221,6 +232,7 @@ why it suits *his* racing.
 RAW:      garmin_pull.py  -> garmin_data.json (wellness, 14d)
                           -> garmin_history.json (wellness, accumulated)
                           -> garmin_activities.json (runs, 8wk)
+                          -> garmin_laps.json (per-lap splits, accumulated)
           weather_pull.py -> weather.json (7d forecast)
                           -> weather_log.json (accumulated history)
           sheets_pull.py  -> manual_log.json, training_plan.json,
@@ -229,6 +241,8 @@ GATE:     apply_review.py -> may merge plan_proposal.json into
                              training_plan.json (approval only)
 DERIVED:  race_predictor.py       -> race_prediction.json
           build_weekly_summary.py -> weekly_summary.json
+          build_session_detail.py -> session_detail.json (per-rep
+                                     execution from garmin_laps.json)
           build_computed.py       -> computed_data.json, flags_log.json,
                                      recovery_log.json (days back to
                                      pre-session normal, per session)
