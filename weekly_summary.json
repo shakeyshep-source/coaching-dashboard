@@ -1,22 +1,22 @@
 {
-  "generated": "2026-08-21",
+  "generated": "2026-08-22",
   "next_race": {
     "name": "CHELTENHAM HALF MARATHON",
     "date": "2026-09-20",
     "distance_km": 21.0975,
-    "days_away": 30
+    "days_away": 29
   },
   "race_readiness": {
     "race": {
       "name": "CHELTENHAM HALF MARATHON",
       "date": "2026-09-20",
       "distance_km": 21.0975,
-      "days_away": 30
+      "days_away": 29
     },
-    "weeks_to_race": 4.3,
+    "weeks_to_race": 4.1,
     "taper_start": "2026-09-10",
     "remaining_key_sessions": {
-      "tempo": 3,
+      "tempo": 2,
       "intervals": 3,
       "long": 3
     },
@@ -619,10 +619,10 @@
       "on_target_pct": 100,
       "avg_rpe": 3.3,
       "max_achilles": 1,
-      "avg_hrv": 36,
+      "avg_hrv": 35,
       "avg_rhr": 49.0,
-      "avg_sleep_score": 87,
-      "avg_sleep_hrs": 8.7,
+      "avg_sleep_score": 88,
+      "avg_sleep_hrs": 8.9,
       "easy_pace_min_km": 4.72,
       "easy_avg_hr": 141.5,
       "efficiency": 1.498,
@@ -856,27 +856,27 @@
       "week_start": "2026-08-17",
       "week_end": "2026-08-23",
       "in_progress": true,
-      "km": 29.8,
-      "runs": 3,
-      "time_min": 147.0,
-      "elevation_m": 146.0,
+      "km": 34.8,
+      "runs": 4,
+      "time_min": 171.0,
+      "elevation_m": 191.0,
       "planned_sessions": 6,
       "logged_sessions": 5,
       "hard_sessions_planned": 3,
       "quality_time_min": 65,
-      "easy_pct": 56,
+      "easy_pct": 62,
       "long_run_min": 65,
       "long_run_km": 14.01,
       "on_target_pct": 100,
       "avg_rpe": 1.8,
       "max_achilles": 0,
       "avg_hrv": 42.6,
-      "avg_rhr": 47.4,
+      "avg_rhr": 48.2,
       "avg_sleep_score": 86.4,
       "avg_sleep_hrs": 8.4,
-      "easy_pace_min_km": 5.2,
-      "easy_avg_hr": 132.5,
-      "efficiency": 1.453,
+      "easy_pace_min_km": 5.07,
+      "easy_avg_hr": 134.7,
+      "efficiency": 1.466,
       "session_log": [
         {
           "date": "2026-08-17",
@@ -947,9 +947,9 @@
           "on_target": true,
           "achilles_score": 0,
           "note": "easy plod at lunch",
-          "km": null,
-          "pace": null,
-          "avg_hr": null,
+          "km": 5.0,
+          "pace": 4.84,
+          "avg_hr": 139,
           "segments": null,
           "fastest_segment": null
         }
