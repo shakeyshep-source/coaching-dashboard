@@ -966,30 +966,6 @@ function buildAcwrTab(data) {
   const today = data[data.length - 1];
   const statusColor = { LOW: 'var(--club-blue)', OPTIMAL: 'var(--good)', HIGH: 'var(--warn)', undefined: 'var(--text-muted)' };
 
-  const decRuns = ((dec && dec.runs) || []);
-  const decClean = decRuns.filter(r => !r.unreliable_reasons.length);
-  const decLatest = decClean.length ? decClean[decClean.length - 1] : null;
-  const decHtml = !decRuns.length ? '' : `
-    <div class="chart-card">
-      <p class="title">Aerobic decoupling — does pace still cost the same late in a run?</p>
-      ${decLatest ? `
-        <p style="font-size:14px; margin:0 0 4px;">
-          Last steady run <strong style="color:${decLatest.within_threshold ? 'var(--good)' : 'var(--warn)'};">${decLatest.decoupling_pct > 0 ? '+' : ''}${decLatest.decoupling_pct}%</strong>
-          <span style="color:var(--text-muted);">— ${decLatest.first_half.pace}/km at ${Math.round(decLatest.first_half.avg_hr)} bpm, then ${decLatest.second_half.pace}/km at ${Math.round(decLatest.second_half.avg_hr)} bpm</span>
-        </p>` : ''}
-      <p style="font-size:13px; color:var(--text-secondary); margin:0 0 10px;">
-        ${dec.trend && dec.trend.direction ? dec.trend.direction
-          : `${(dec.trend && dec.trend.comparable_runs) || 0} clean steady run${((dec.trend && dec.trend.comparable_runs) || 0) === 1 ? '' : 's'} so far — a direction needs four.`}
-      </p>
-      <div class="chart-wrap" style="height:190px; margin-bottom:6px;"><canvas id="decouplingChart"></canvas></div>
-      <p style="font-size:12px; color:var(--text-muted); margin:8px 0 0; border-top:1px solid var(--border); padding-top:10px;">
-        Speed per heartbeat in the first half of a run against the second, ignoring the first ${dec.warmup_excluded_min || 10} minutes while heart rate catches up.
-        Shaded below ${dec.threshold_pct}% is the aerobic system holding; above it, pace late in the run is costing more beats than pace early on.
-        Grey bars are runs not to be read — hills or quality sessions, where the two halves were never comparable.
-        This is a months metric: it answers whether an 82-minute half or a three-hour marathon will hold together, and it moves slowly.
-      </p>
-    </div>
-  `;
 
   panel.innerHTML = `
     <div class="card-grid">
@@ -1448,6 +1424,31 @@ async function buildPerformanceTab(data) {
       <p style="font-size:12px; color:var(--text-muted); margin:10px 0 0; border-top:1px solid var(--border); padding-top:10px;">
         Shaded band is a 0-2 day turnaround. A red bar at the ceiling means recovery never came inside ${rec.window_days} days.
         Measured against the 7-day baseline as it stood <em>before</em> the session, not the rolling one — a rolling baseline drifts down to meet a tiring athlete and would call a suppressed week fully recovered.
+      </p>
+    </div>
+  `;
+
+  const decRuns = ((dec && dec.runs) || []);
+  const decClean = decRuns.filter(r => !r.unreliable_reasons.length);
+  const decLatest = decClean.length ? decClean[decClean.length - 1] : null;
+  const decHtml = !decRuns.length ? '' : `
+    <div class="chart-card">
+      <p class="title">Aerobic decoupling — does pace still cost the same late in a run?</p>
+      ${decLatest ? `
+        <p style="font-size:14px; margin:0 0 4px;">
+          Last steady run <strong style="color:${decLatest.within_threshold ? 'var(--good)' : 'var(--warn)'};">${decLatest.decoupling_pct > 0 ? '+' : ''}${decLatest.decoupling_pct}%</strong>
+          <span style="color:var(--text-muted);">— ${decLatest.first_half.pace}/km at ${Math.round(decLatest.first_half.avg_hr)} bpm, then ${decLatest.second_half.pace}/km at ${Math.round(decLatest.second_half.avg_hr)} bpm</span>
+        </p>` : ''}
+      <p style="font-size:13px; color:var(--text-secondary); margin:0 0 10px;">
+        ${dec.trend && dec.trend.direction ? dec.trend.direction
+          : `${(dec.trend && dec.trend.comparable_runs) || 0} clean steady run${((dec.trend && dec.trend.comparable_runs) || 0) === 1 ? '' : 's'} so far — a direction needs four.`}
+      </p>
+      <div class="chart-wrap" style="height:190px; margin-bottom:6px;"><canvas id="decouplingChart"></canvas></div>
+      <p style="font-size:12px; color:var(--text-muted); margin:8px 0 0; border-top:1px solid var(--border); padding-top:10px;">
+        Speed per heartbeat in the first half of a run against the second, ignoring the first ${dec.warmup_excluded_min || 10} minutes while heart rate catches up.
+        Shaded below ${dec.threshold_pct}% is the aerobic system holding; above it, pace late in the run is costing more beats than pace early on.
+        Grey bars are runs not to be read — hills or quality sessions, where the two halves were never comparable.
+        This is a months metric: it answers whether an 82-minute half or a three-hour marathon will hold together, and it moves slowly.
       </p>
     </div>
   `;
