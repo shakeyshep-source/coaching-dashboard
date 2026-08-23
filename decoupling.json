@@ -18,11 +18,10 @@
         "avg_hr": 125.3,
         "ef": 0.01901
       },
-      "distance_km": 19.36,
-      "gradient_m_per_km": 24.0,
+      "distance_km": null,
+      "gradient_m_per_km": null,
       "pace_delta_pct": 12.2,
       "unreliable_reasons": [
-        "hilly (24 m/km climb)",
         "not steady \u2014 second half 12% slower"
       ]
     },
