@@ -80,9 +80,7 @@
     {
       "date": "2026-08-19",
       "session_type": "intervals",
-      "confounders_in_window": [
-        "alcohol"
-      ],
+      "confounders_in_window": [],
       "hrv_reference": 38.9,
       "hrv_recovery_days": 1,
       "rhr_reference": 47.9,

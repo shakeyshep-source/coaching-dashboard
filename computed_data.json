@@ -342,10 +342,8 @@
     "rhr_baseline_7d": 47.6,
     "rhr_delta_from_baseline": -0.6,
     "heat_risk": "moderate",
-    "recovery_confounders": [
-      "alcohol"
-    ],
-    "today_summary": "Recovery slightly below baseline, but you noted alcohol \u2014 likely that rather than training load. Train as planned unless it persists.",
+    "recovery_confounders": [],
+    "today_summary": "Recovery slightly below baseline. Fine to train but stay conservative.",
     "readiness_level": "caution",
     "plan_flag_reasons": []
   },
