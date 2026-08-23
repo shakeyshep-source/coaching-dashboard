@@ -166,5 +166,13 @@
     "rpe": 6.0,
     "on_target": true,
     "session_notes": "Cooler, still sunny, 14c\nRun fine\nVery slight achillies on warm down but still below a 1/10"
+  },
+  {
+    "date": "2026-08-23",
+    "achilles_score": 0,
+    "session_type": "long",
+    "rpe": 4.0,
+    "on_target": true,
+    "session_notes": "12c\nChatty run\nDidn't look at watch till end\nEasy day, speed only fluctuated in rises and downhills"
   }
 ]
