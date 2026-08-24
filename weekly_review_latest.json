@@ -7,14 +7,12 @@
   "proposal_id": null,
   "proposal_status": null,
   "athlete_response": {
-    "timestamp": "23/08/2026 20:55:32",
-    "review_date": "2026-08-23",
+    "timestamp": "24/08/2026 11:23:00",
+    "review_date": "2026-08-24",
     "decision": "approve",
-    "thoughts": "Achillies nothing since, felt fine"
+    "thoughts": "quick note, when looking at stats,  didnt wear watch last night as it needed charging"
   },
-  "athlete_response_status": "answered",
-  "coach_reply": "Shep — good, that closes it out. No stiffness in the first steps, no ache from sitting, nothing since Saturday — that's not the old pattern, it's what a first exposure to continuous HM-pace running looks like on a tendon that's been asymptomatic for months: a small transient signal after a genuinely new stimulus, gone within a day. Worth asking rather than assuming, and worth you volunteering it unprompted — keep flagging anything like that the moment it shows up, not after.\n\nNothing changes. The hold stands and next week runs as written: rest Mon, easy 8 Tue, intervals 13 (6x1km @ 3:44/km) Wed, easy 7/5 Thu/Fri, tempo 17 (20T+20H, the full goal-pace block) Sat, long 21 with the last 5km at HM pace Sun. That's the second continuous HM-pace exposure of the build — same watch, same question if anything recurs, but a one-off with no change in load doesn't need a plan change on its own.\n\nOne practical note: Wednesday's intervals (not Tuesday — small correction on my part) lands in the warm patch forecast for Mon–Thu (24–26°C, high heat risk). Symbicort 20 min before, salbutamol 15 before, same as race protocol, if that heat holds.",
-  "coach_reply_at": "2026-08-23T21:10:00+01:00",
+  "athlete_response_status": "logged",
   "conversation": [
     {
       "athlete_timestamp": "23/08/2026 15:17:38",
@@ -22,6 +20,13 @@
       "athlete_thoughts": "You were expecting the ACWR to be right at the top end of the green after today... It's only just in the green at the bottom end. Just trying to understand it",
       "coach_reply": "Shep \u2014 fair to push on this again, the review's version was buried in a wall of numbers. Here's the direct version.\n\nToday's Garmin ACWR is 0.9: acute load 924, chronic load 957 \u2014 bottom of the OPTIMAL band (0.8\u20131.3), not the top. The comparison that matters is 9 August, the last time chronic load sat this high (925, essentially identical to today's 957) \u2014 but acute load that day was 1,309, a third higher than today's 924. That was the weekend that tipped you into overreaching and triggered the correction two reviews ago.\n\nSo the difference isn't that this week loaded light \u2014 72.8 km is close to peak \u2014 it's that chronic load (your rolling fitness baseline) has climbed from 925 to 957 since early August, which is a genuine gain, and a higher chronic load needs a bigger acute number to produce the same ratio. On 9 August, 1,309 acute against 925 chronic gave you 1.4 (HIGH). Today, 924 acute against the now-higher 957 chronic gives 0.9. Same-ish acute effort, higher denominator, lower ratio \u2014 arithmetic, not a training problem.\n\nTo see ACWR back near the top of OPTIMAL at this chronic level you'd need an acute week noticeably bigger than this one \u2014 which is a description of a fitter athlete carrying more load comfortably, not something to chase. Nothing here changes the hold: this reading is confirmatory, not a flag.",
       "coach_reply_at": "2026-08-23T20:45:00+01:00"
+    },
+    {
+      "athlete_timestamp": "23/08/2026 20:55:32",
+      "athlete_decision": "approve",
+      "athlete_thoughts": "Achillies nothing since, felt fine",
+      "coach_reply": "Shep \u2014 good, that closes it out. No stiffness in the first steps, no ache from sitting, nothing since Saturday \u2014 that's not the old pattern, it's what a first exposure to continuous HM-pace running looks like on a tendon that's been asymptomatic for months: a small transient signal after a genuinely new stimulus, gone within a day. Worth asking rather than assuming, and worth you volunteering it unprompted \u2014 keep flagging anything like that the moment it shows up, not after.\n\nNothing changes. The hold stands and next week runs as written: rest Mon, easy 8 Tue, intervals 13 (6x1km @ 3:44/km) Wed, easy 7/5 Thu/Fri, tempo 17 (20T+20H, the full goal-pace block) Sat, long 21 with the last 5km at HM pace Sun. That's the second continuous HM-pace exposure of the build \u2014 same watch, same question if anything recurs, but a one-off with no change in load doesn't need a plan change on its own.\n\nOne practical note: Wednesday's intervals (not Tuesday \u2014 small correction on my part) lands in the warm patch forecast for Mon\u2013Thu (24\u201326\u00b0C, high heat risk). Symbicort 20 min before, salbutamol 15 before, same as race protocol, if that heat holds.",
+      "coach_reply_at": "2026-08-23T21:10:00+01:00"
     }
   ]
 }

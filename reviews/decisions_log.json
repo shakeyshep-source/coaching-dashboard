@@ -119,5 +119,15 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": "Achillies nothing since, felt fine",
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-08-24T10:23:17",
+    "proposal_id": null,
+    "review_date": "2026-08-23",
+    "response_timestamp": "24/08/2026 11:23:00",
+    "decision": "approve",
+    "action_taken": "review_query_logged",
+    "athlete_thoughts": "quick note, when looking at stats,  didnt wear watch last night as it needed charging",
+    "changes_count": 0
   }
 ]
