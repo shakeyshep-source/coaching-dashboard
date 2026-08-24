@@ -33,9 +33,9 @@
       "recovery_km": null,
       "total_km": 3.42
     },
-    "avg_hr": 104.0,
-    "aerobic_te": 2.0,
-    "anaerobic_te": 1.0
+    "avg_hr": null,
+    "aerobic_te": null,
+    "anaerobic_te": null
   },
   {
     "date": "2026-06-28",
@@ -52,9 +52,9 @@
       "recovery_km": null,
       "total_km": 9.99
     },
-    "avg_hr": 169.0,
-    "aerobic_te": 5.0,
-    "anaerobic_te": 1.100000023841858
+    "avg_hr": null,
+    "aerobic_te": null,
+    "anaerobic_te": null
   },
   {
     "date": "2026-06-29",
