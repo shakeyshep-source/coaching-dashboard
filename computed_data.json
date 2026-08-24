@@ -349,7 +349,7 @@
   },
   {
     "date": "2026-08-24",
-    "rhr": 48.0,
+    "rhr": 51.0,
     "hrv_last_night": null,
     "sleep_score": null,
     "sleep_duration_hrs": null,
@@ -366,10 +366,10 @@
     "hrv_baseline_7d": 40,
     "hrv_delta_from_baseline": null,
     "rhr_baseline_7d": 47.3,
-    "rhr_delta_from_baseline": 0.7,
-    "heat_risk": "high",
+    "rhr_delta_from_baseline": 3.7,
+    "heat_risk": "moderate",
     "recovery_confounders": [],
-    "today_summary": "Recovery looks normal but heat risk is high today. Adjust effort accordingly.",
+    "today_summary": "Recovery slightly below baseline. Fine to train but stay conservative.",
     "readiness_level": "caution",
     "plan_flag_reasons": []
   }
