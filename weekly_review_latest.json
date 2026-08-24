@@ -12,7 +12,9 @@
     "decision": "approve",
     "thoughts": "quick note, when looking at stats,  didnt wear watch last night as it needed charging"
   },
-  "athlete_response_status": "logged",
+  "athlete_response_status": "answered",
+  "coach_reply": "Shep — noted, thanks for flagging it. Today's `computed_data.json` confirms it: HRV, sleep score, sleep duration and achilles score for last night are all null, because there's nothing for the watch to have recorded. RHR (48) and body battery (86) are still there — those come from the watch being on you at some point today rather than needing a full night, so they're not affected the same way.\n\nNothing to correct and nothing to read into it. It's a gap, not a low reading — different from a night where the watch was worn and HRV genuinely dropped. I won't count today against the 7-day HRV/RHR baselines as if it were a real data point, and today's a scheduled rest day anyway, so there's no session to misjudge off the back of it. If you're not wearing it again tomorrow night before Tuesday's easy 8, same treatment — just say so and I'll read around the gap rather than into it.\n\nNo change to the plan. Wednesday's intervals (6x1km @ 3:44/km) still lands in the forecast warm patch (24–26°C, high heat risk) — Symbicort 20 min before, salbutamol 15 before, as flagged Saturday.",
+  "coach_reply_at": "2026-08-24T11:35:00+01:00",
   "conversation": [
     {
       "athlete_timestamp": "23/08/2026 15:17:38",
