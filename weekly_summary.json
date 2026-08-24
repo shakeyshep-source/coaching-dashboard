@@ -873,15 +873,15 @@
       "time_min": 0,
       "elevation_m": 0,
       "planned_sessions": 6,
-      "logged_sessions": 0,
+      "logged_sessions": 1,
       "hard_sessions_planned": 3,
       "quality_time_min": 0,
       "easy_pct": null,
       "long_run_min": null,
       "long_run_km": null,
-      "on_target_pct": null,
-      "avg_rpe": null,
-      "max_achilles": null,
+      "on_target_pct": 100,
+      "avg_rpe": 2.0,
+      "max_achilles": 0,
       "avg_hrv": null,
       "avg_rhr": 51.0,
       "avg_sleep_score": null,
@@ -889,7 +889,23 @@
       "easy_pace_min_km": null,
       "easy_avg_hr": null,
       "efficiency": null,
-      "session_log": []
+      "session_log": [
+        {
+          "date": "2026-08-24",
+          "temp_max_c": 23.8,
+          "heat_risk": "moderate",
+          "session_type": "easy",
+          "rpe": 2.0,
+          "on_target": true,
+          "achilles_score": 0,
+          "note": "Switching rest days as likely unable to run tomorrow",
+          "km": null,
+          "pace": null,
+          "avg_hr": null,
+          "segments": null,
+          "fastest_segment": null
+        }
+      ]
     }
   ]
 }
