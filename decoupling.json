@@ -41,8 +41,8 @@
         "avg_hr": 139.8,
         "ef": 0.0249
       },
-      "distance_km": 10.02,
-      "gradient_m_per_km": 7.9,
+      "distance_km": null,
+      "gradient_m_per_km": null,
       "pace_delta_pct": 1.8,
       "unreliable_reasons": []
     },
@@ -634,11 +634,32 @@
       "gradient_m_per_km": 6.5,
       "pace_delta_pct": 1.9,
       "unreliable_reasons": []
+    },
+    {
+      "date": "2026-08-24",
+      "activity_id": 24100407316,
+      "decoupling_pct": 0.87,
+      "within_threshold": true,
+      "analysed_min": 30.6,
+      "first_half": {
+        "pace": "4:44",
+        "avg_hr": 139.2,
+        "ef": 0.02529
+      },
+      "second_half": {
+        "pace": "4:56",
+        "avg_hr": 134.6,
+        "ef": 0.02507
+      },
+      "distance_km": 8.38,
+      "gradient_m_per_km": 9.6,
+      "pace_delta_pct": 4.4,
+      "unreliable_reasons": []
     }
   ],
   "trend": {
-    "comparable_runs": 10,
-    "recent_avg_pct": 0.59,
+    "comparable_runs": 11,
+    "recent_avg_pct": 0.64,
     "prior_avg_pct": 1.05,
     "direction": "stable"
   }
