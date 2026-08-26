@@ -70,6 +70,15 @@ jobs:
         run: |
           python run_all.py || echo "::warning::One or more pipeline steps failed - check the log above"
 
+      # Keeps the long VO2max series current. Dates already held are
+      # skipped, so this is one or two requests a day, not 35.
+      - name: Top up VO2max history
+        env:
+          GARMIN_TOKENSTORE: /home/runner/.garmin_tokens
+        run: |
+          python backfill_vo2max.py "$(date -d '-21 days' +%F)" \
+            || echo "::warning::VO2max top-up failed - trend may lag a few days"
+
       - name: Commit and push updated data
         run: |
           git config user.name "github-actions[bot]"

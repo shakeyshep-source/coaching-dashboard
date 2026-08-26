@@ -1,0 +1,62 @@
+# One-off (re-runnable) VO2max backfill.
+#
+# garmin_history.json only holds days the automation has seen — it starts
+# 2026-07-29. VO2max is the one metric whose story is a year long, and
+# Garmin still holds it, so this recovers it: weekly samples from a start
+# date up to today, merged into vo2max_history.json.
+#
+# Run it from the Actions tab. Existing dates are never refetched, so
+# re-running is cheap and safe.
+
+name: Backfill VO2max history
+
+on:
+  workflow_dispatch:
+    inputs:
+      start_date:
+        description: 'First date to sample (YYYY-MM-DD)'
+        required: false
+        default: '2026-01-01'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-pipeline
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Restore Garmin tokens
+        env:
+          GARMIN_TOKENS_B64: ${{ secrets.GARMIN_TOKENS_B64 }}
+        run: |
+          if [ -z "$GARMIN_TOKENS_B64" ]; then
+            echo "::error::GARMIN_TOKENS_B64 not set - cannot reach Garmin."
+            exit 1
+          fi
+          echo "$GARMIN_TOKENS_B64" | base64 -d | tar -xz -C "$HOME"
+      - name: Backfill
+        env:
+          GARMIN_TOKENSTORE: /home/runner/.garmin_tokens
+        run: python backfill_vo2max.py "${{ inputs.start_date }}"
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add vo2max_history.json
+          if git diff --cached --quiet; then
+            echo "No new VO2max readings."
+          else
+            git commit -m "Backfill VO2max history from ${{ inputs.start_date }}"
+            git pull --rebase origin main
+            git push origin main
+          fi

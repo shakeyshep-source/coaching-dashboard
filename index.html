@@ -1382,7 +1382,13 @@ async function buildPerformanceTab(data) {
     fetchJson('decoupling.json'),
   ]);
   const today = data[data.length - 1];
-  const vo2Rows = data.filter(r => r.vo2max);
+  // Prefer the long series (vo2max_history.json, weekly back to January)
+  // over the 14-day computed window — VO2max moves over months, and a
+  // fortnight of it says nothing.
+  const vo2Long = await fetchJson('vo2max_history.json');
+  const vo2Rows = (vo2Long && vo2Long.length >= 2)
+    ? vo2Long
+    : data.filter(r => r.vo2max);
   const latestVo2 = vo2Rows.length ? vo2Rows[vo2Rows.length - 1] : null;
 
   // Days for HRV and RHR to return to where they sat BEFORE a quality
@@ -1549,7 +1555,10 @@ async function buildPerformanceTab(data) {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      scales: axisXY(),
+      scales: axisXY({
+        y: { ticks: { color: THEME.tick } },
+        x: { ticks: { color: THEME.tick, maxTicksLimit: 8 } },
+      }),
       plugins: { legend: { display: false } },
     },
   });
