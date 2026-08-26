@@ -90,12 +90,26 @@
       "interrupted_by_next_session": true,
       "temp_max_c": 22.1,
       "note": "21c, 12mph winds\nFelt strong, probably went off a bit quick each time into the wind but eased off so I was at target pace. Could have done more."
+    },
+    {
+      "date": "2026-08-22",
+      "session_type": "tempo",
+      "confounders_in_window": [],
+      "hrv_reference": 41.6,
+      "hrv_recovery_days": 4,
+      "rhr_reference": 47.6,
+      "rhr_recovery_days": 1,
+      "recovery_days": 4,
+      "recovered": true,
+      "interrupted_by_next_session": true,
+      "temp_max_c": 21.0,
+      "note": "Cooler, still sunny, 14c\nRun fine\nVery slight achillies on warm down but still below a 1/10"
     }
   ],
   "trend": {
-    "recent_avg_days": 2.7,
-    "prior_avg_days": 4,
+    "recent_avg_days": 3,
+    "prior_avg_days": 3.7,
     "direction": "shortening \u2014 bouncing back quicker than before",
-    "sessions_measured": 5
+    "sessions_measured": 6
   }
 }
