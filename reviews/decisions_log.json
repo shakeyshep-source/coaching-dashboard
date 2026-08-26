@@ -129,5 +129,15 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": "quick note, when looking at stats,  didnt wear watch last night as it needed charging",
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-08-26T21:48:48",
+    "proposal_id": null,
+    "review_date": "2026-08-23",
+    "response_timestamp": "26/08/2026 22:48:36",
+    "decision": "approve",
+    "action_taken": "review_query_logged",
+    "athlete_thoughts": "Be interested in your thoughts on today's interval",
+    "changes_count": 0
   }
 ]

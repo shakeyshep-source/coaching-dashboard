@@ -7,14 +7,12 @@
   "proposal_id": null,
   "proposal_status": null,
   "athlete_response": {
-    "timestamp": "24/08/2026 11:23:00",
-    "review_date": "2026-08-24",
+    "timestamp": "26/08/2026 22:48:36",
+    "review_date": "2026-08-26",
     "decision": "approve",
-    "thoughts": "quick note, when looking at stats,  didnt wear watch last night as it needed charging"
+    "thoughts": "Be interested in your thoughts on today's interval"
   },
-  "athlete_response_status": "answered",
-  "coach_reply": "Shep — noted, thanks for flagging it. Today's `computed_data.json` confirms it: HRV, sleep score, sleep duration and achilles score for last night are all null, because there's nothing for the watch to have recorded. RHR (48) and body battery (86) are still there — those come from the watch being on you at some point today rather than needing a full night, so they're not affected the same way.\n\nNothing to correct and nothing to read into it. It's a gap, not a low reading — different from a night where the watch was worn and HRV genuinely dropped. I won't count today against the 7-day HRV/RHR baselines as if it were a real data point, and today's a scheduled rest day anyway, so there's no session to misjudge off the back of it. If you're not wearing it again tomorrow night before Tuesday's easy 8, same treatment — just say so and I'll read around the gap rather than into it.\n\nNo change to the plan. Wednesday's intervals (6x1km @ 3:44/km) still lands in the forecast warm patch (24–26°C, high heat risk) — Symbicort 20 min before, salbutamol 15 before, as flagged Saturday.",
-  "coach_reply_at": "2026-08-24T11:35:00+01:00",
+  "athlete_response_status": "logged",
   "conversation": [
     {
       "athlete_timestamp": "23/08/2026 15:17:38",
@@ -29,6 +27,13 @@
       "athlete_thoughts": "Achillies nothing since, felt fine",
       "coach_reply": "Shep \u2014 good, that closes it out. No stiffness in the first steps, no ache from sitting, nothing since Saturday \u2014 that's not the old pattern, it's what a first exposure to continuous HM-pace running looks like on a tendon that's been asymptomatic for months: a small transient signal after a genuinely new stimulus, gone within a day. Worth asking rather than assuming, and worth you volunteering it unprompted \u2014 keep flagging anything like that the moment it shows up, not after.\n\nNothing changes. The hold stands and next week runs as written: rest Mon, easy 8 Tue, intervals 13 (6x1km @ 3:44/km) Wed, easy 7/5 Thu/Fri, tempo 17 (20T+20H, the full goal-pace block) Sat, long 21 with the last 5km at HM pace Sun. That's the second continuous HM-pace exposure of the build \u2014 same watch, same question if anything recurs, but a one-off with no change in load doesn't need a plan change on its own.\n\nOne practical note: Wednesday's intervals (not Tuesday \u2014 small correction on my part) lands in the warm patch forecast for Mon\u2013Thu (24\u201326\u00b0C, high heat risk). Symbicort 20 min before, salbutamol 15 before, same as race protocol, if that heat holds.",
       "coach_reply_at": "2026-08-23T21:10:00+01:00"
+    },
+    {
+      "athlete_timestamp": "24/08/2026 11:23:00",
+      "athlete_decision": "approve",
+      "athlete_thoughts": "quick note, when looking at stats,  didnt wear watch last night as it needed charging",
+      "coach_reply": "Shep \u2014 noted, thanks for flagging it. Today's `computed_data.json` confirms it: HRV, sleep score, sleep duration and achilles score for last night are all null, because there's nothing for the watch to have recorded. RHR (48) and body battery (86) are still there \u2014 those come from the watch being on you at some point today rather than needing a full night, so they're not affected the same way.\n\nNothing to correct and nothing to read into it. It's a gap, not a low reading \u2014 different from a night where the watch was worn and HRV genuinely dropped. I won't count today against the 7-day HRV/RHR baselines as if it were a real data point, and today's a scheduled rest day anyway, so there's no session to misjudge off the back of it. If you're not wearing it again tomorrow night before Tuesday's easy 8, same treatment \u2014 just say so and I'll read around the gap rather than into it.\n\nNo change to the plan. Wednesday's intervals (6x1km @ 3:44/km) still lands in the forecast warm patch (24\u201326\u00b0C, high heat risk) \u2014 Symbicort 20 min before, salbutamol 15 before, as flagged Saturday.",
+      "coach_reply_at": "2026-08-24T11:35:00+01:00"
     }
   ]
 }
