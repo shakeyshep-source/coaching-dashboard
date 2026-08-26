@@ -62,8 +62,8 @@
         "avg_hr": 144.8,
         "ef": 0.02421
       },
-      "distance_km": 8.75,
-      "gradient_m_per_km": 5.7,
+      "distance_km": null,
+      "gradient_m_per_km": null,
       "pace_delta_pct": 1.6,
       "unreliable_reasons": []
     },

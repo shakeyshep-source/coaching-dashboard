@@ -90,9 +90,9 @@
       "recovery_km": null,
       "total_km": 8.75
     },
-    "avg_hr": 143.0,
-    "aerobic_te": 3.4000000953674316,
-    "anaerobic_te": 0.10000000149011612
+    "avg_hr": null,
+    "aerobic_te": null,
+    "anaerobic_te": null
   },
   {
     "date": "2026-07-01",
