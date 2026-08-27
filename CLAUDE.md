@@ -135,6 +135,13 @@ Adidas Boston rejected as too firm.
   and run too quick throughout, alongside the achilles trouble. Treat
   that number as evidence of durability *and* of what broke him — never
   as a target to get back to.
+- **Not only a runner.** He races Hyrox — doubles in Malaga, 19 Apr 2026,
+  59:59, age-group win — alongside the gym work. Garmin files these as
+  *running* activities (that one: 8.55 km at 7:47/km, HR 152, because the
+  stations sit between the runs), so they distort any pace-for-HR metric
+  and are easy to miss when scanning for hard efforts. `build_efficiency`
+  excludes them by name and by outlier rule. If a month looks odd, check
+  what else he was doing before blaming running load.
 - **Racing calendar:** nothing before Cheltenham (20 Sep). **10K in
   Crete, very start of October** — explicitly a fun race with beers on
   the way over, not a target; it falls in the HM recovery window, and

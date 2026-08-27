@@ -50,6 +50,16 @@ MIN_DURATION_MIN = 20
 # is about the terrain.
 HILLY_M_PER_KM = 12.0
 MIN_RUNS_PER_MONTH = 3
+# Anything this far from his own median is not steady running, whatever
+# Garmin calls it. The Hyrox doubles on 19 Apr 2026 arrives as a
+# "running" activity — 8.55km at 7:47/km with an average HR of 152,
+# because the sled pushes and wall balls sit between the runs — and
+# scored 0.85 against a norm near 1.40. Left in, one event pulled a whole
+# month down. Walk-run hikes land the same way.
+OUTLIER_LOW = 0.80
+OUTLIER_HIGH = 1.25
+# Events Garmin files as runs but which are nothing of the sort.
+EVENT_KEYWORDS = ("hyrox", "parkrun", "race", "relay", "duathlon", "triathlon")
 
 
 def load(path, default=None):
@@ -92,6 +102,7 @@ def easy_runs(activities, plan_by_date, manual_by_date, quality_ids):
         rows.append({
             "date": date,
             "activity_id": a.get("activity_id"),
+            "name": a.get("name"),
             "distance_km": a.get("distance_km"),
             "pace_min_per_km": a["avg_pace_min_per_km"],
             "avg_hr": a["avg_hr"],
@@ -101,6 +112,28 @@ def easy_runs(activities, plan_by_date, manual_by_date, quality_ids):
         })
     rows.sort(key=lambda r: r["date"])
     return rows
+
+
+def drop_outliers(rows):
+    """Remove what is not steady running, and say what went.
+
+    Judged against his own median rather than a fixed band, so it stays
+    right as fitness changes.
+    """
+    if len(rows) < 5:
+        return rows, []
+    mid = median(r["efficiency"] for r in rows)
+    kept, dropped = [], []
+    for r in rows:
+        ratio = r["efficiency"] / mid
+        name = (r.get("name") or "").lower()
+        if any(k in name for k in EVENT_KEYWORDS):
+            dropped.append({**r, "excluded": "event, not an easy run"})
+        elif ratio < OUTLIER_LOW or ratio > OUTLIER_HIGH:
+            dropped.append({**r, "excluded": f"{ratio:.0%} of median — not steady running"})
+        else:
+            kept.append(r)
+    return kept, dropped
 
 
 def by_month(rows, temp_by_date):
@@ -155,14 +188,18 @@ def main():
     temp_by_date = {r["date"]: r["temp_max_c"] for r in load(WEATHER_LOG_FILE, default=[])
                     if r.get("date") and r.get("temp_max_c") is not None}
 
-    rows = easy_runs(activities, plan_by_date, manual_by_date, quality_ids)
+    candidates = easy_runs(activities, plan_by_date, manual_by_date, quality_ids)
+    rows, dropped = drop_outliers(candidates)
     months = by_month(rows, temp_by_date)
-    result = {"runs": rows, "months": months, "summary": summarise(months)}
+    result = {"runs": rows, "excluded": dropped, "months": months,
+              "summary": summarise(months)}
 
     with open(OUTPUT_FILE, "w") as f:
         json.dump(result, f, indent=2)
 
     print(f"Efficiency: {len(rows)} easy run(s) across {len(months)} month(s) -> {OUTPUT_FILE}")
+    for d in dropped:
+        print(f"  excluded {d['date']} ({d.get('name') or 'unnamed'}): {d['excluded']}")
     for m in months:
         temp = f", {m['avg_temp_c']}C" if m["avg_temp_c"] is not None else ""
         print(f"  {m['month']}: {m['efficiency']} "
