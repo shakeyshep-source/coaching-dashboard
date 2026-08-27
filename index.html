@@ -1280,6 +1280,36 @@ async function buildPredictorTab() {
 // Under 5% is Friel's "the aerobic system held". Unreliable runs (hills,
 // quality sessions) are drawn hollow rather than hidden — excluding them
 // silently would flatter the line.
+function drawEfficiencyChart(eff) {
+  const el = document.getElementById('efficiencyChart');
+  const months = (eff && eff.months) || [];
+  if (!el || months.length < 2) return;
+  new Chart(el, {
+    type: 'line',
+    data: {
+      labels: months.map(m => m.month),
+      datasets: [{
+        label: 'm/min per bpm',
+        data: months.map(m => m.efficiency),
+        borderColor: THEME.blue,
+        backgroundColor: THEME.blue,
+        borderWidth: 2,
+        tension: 0.3,
+        pointRadius: 4,
+      }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: axisXY({
+        y: { ticks: { color: THEME.tick } },
+        x: { ticks: { color: THEME.tick, maxTicksLimit: 12 } },
+      }),
+      plugins: { legend: { display: false } },
+    },
+  });
+}
+
 function drawDecouplingChart(dec) {
   const el = document.getElementById('decouplingChart');
   if (!el || !dec || !dec.runs || !dec.runs.length) return;
@@ -1376,10 +1406,11 @@ function drawRecoveryChart(rec) {
 
 async function buildPerformanceTab(data) {
   const panel = document.getElementById('tab-performance');
-  const [rec, detail, dec] = await Promise.all([
+  const [rec, detail, dec, eff] = await Promise.all([
     fetchJson('recovery_log.json'),
     fetchJson('session_detail.json'),
     fetchJson('decoupling.json'),
+    fetchJson('efficiency_history.json'),
   ]);
   const today = data[data.length - 1];
   // Prefer the long series (vo2max_history.json, weekly back to January)
@@ -1459,6 +1490,28 @@ async function buildPerformanceTab(data) {
     </div>
   `;
 
+  // Speed per heartbeat on easy runs — the everyday aerobic marker.
+  // Monthly medians, because run to run this is noise.
+  const effMonths = (eff && eff.months) || [];
+  const effSummary = (eff && eff.summary) || {};
+  const effHtml = effMonths.length < 2 ? '' : `
+    <div class="chart-card">
+      <p class="title">Easy-run efficiency — speed per heartbeat</p>
+      <p style="font-size:14px; margin:0 0 4px;">
+        ${effSummary.from_month} to ${effSummary.to_month}:
+        <strong style="color:${effSummary.change_pct >= 0 ? 'var(--good)' : 'var(--warn)'};">${effSummary.change_pct > 0 ? '+' : ''}${effSummary.change_pct}%</strong>
+      </p>
+      <p style="font-size:13px; color:var(--text-secondary); margin:0 0 10px;">
+        ${effSummary.from_hr_at_pace} &rarr; ${effSummary.to_hr_at_pace}${effSummary.warmer_now ? ' — and it is warmer now, which pushes heart rate up, so the gain is if anything understated.' : ''}
+      </p>
+      <div class="chart-wrap" style="height:190px; margin-bottom:6px;"><canvas id="efficiencyChart"></canvas></div>
+      <p style="font-size:12px; color:var(--text-muted); margin:8px 0 0; border-top:1px solid var(--border); padding-top:10px;">
+        Metres per minute divided by average heart rate, easy runs only — quality sessions, hills and runs under 20 minutes excluded. Monthly medians, so one hot plod cannot move a month.
+        Rising means a given easy pace is costing fewer beats. Two cautions: heat inflates heart rate, so a summer dip is weather rather than lost fitness; and deep fatigue can suppress heart rate, so a sudden jump inside a heavy block is a question, not a triumph.
+      </p>
+    </div>
+  `;
+
   // Rep-by-rep execution. The whole-run average hides the thing that
   // matters: "14.01 km at 4:39/km" was 5x1200m within 1.8 sec of each
   // other. Spread is the headline — how evenly the set was judged.
@@ -1525,12 +1578,14 @@ async function buildPerformanceTab(data) {
       <div class="chart-wrap"><canvas id="vo2Chart"></canvas></div>
     </div>
     ${decHtml}
+    ${effHtml}
     ${sessionHtml}
     ${recoveryHtml}
   `;
 
   drawRecoveryChart(rec);
   drawDecouplingChart(dec);
+  drawEfficiencyChart(eff);
 
   if (vo2Rows.length < 2) {
     document.querySelector('#tab-performance .chart-wrap').innerHTML =

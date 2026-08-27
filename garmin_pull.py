@@ -394,10 +394,21 @@ def main():
     print(f"Wellness history now spans {len(history)} days "
           f"({history[0]['date']} to {history[-1]['date']})")
 
-    activities = pull_activities(client)
+    fresh = pull_activities(client)
+    try:
+        with open(ACTIVITIES_FILE) as f:
+            known = {a.get("activity_id"): a for a in json.load(f)}
+    except FileNotFoundError:
+        known = {}
+    # A freshly pulled activity wins — Garmin revises HR and pace after a
+    # sync — but anything outside the 56-day window is kept rather than
+    # dropped, so the history accumulates like the wellness data does.
+    for a in fresh:
+        known[a.get("activity_id")] = a
+    activities = sorted(known.values(), key=lambda a: (a.get("date") or "", a.get("activity_id") or 0))
     with open(ACTIVITIES_FILE, "w") as f:
         json.dump(activities, f, indent=2)
-    print(f"Saved {len(activities)} activities to {ACTIVITIES_FILE}")
+    print(f"Saved {len(fresh)} recent activities; {len(activities)} held in {ACTIVITIES_FILE}")
 
     try:
         with open(LAPS_FILE) as f:
