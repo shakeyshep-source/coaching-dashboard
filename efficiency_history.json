@@ -1,6 +1,1140 @@
 {
   "runs": [
     {
+      "date": "2026-01-01",
+      "activity_id": 21409924029,
+      "distance_km": 8.19,
+      "pace_min_per_km": 5.48,
+      "avg_hr": 133.0,
+      "efficiency": 1.372,
+      "gradient_m_per_km": 4.9
+    },
+    {
+      "date": "2026-01-07",
+      "activity_id": 21474331447,
+      "distance_km": 8.09,
+      "pace_min_per_km": 4.7,
+      "avg_hr": 152.0,
+      "efficiency": 1.3998,
+      "gradient_m_per_km": 1.5
+    },
+    {
+      "date": "2026-01-09",
+      "activity_id": 21494425803,
+      "distance_km": 5.14,
+      "pace_min_per_km": 4.81,
+      "avg_hr": 132.0,
+      "efficiency": 1.575,
+      "gradient_m_per_km": null
+    },
+    {
+      "date": "2026-01-10",
+      "activity_id": 21499650050,
+      "distance_km": 13.02,
+      "pace_min_per_km": 4.73,
+      "avg_hr": 142.0,
+      "efficiency": 1.4888,
+      "gradient_m_per_km": 6.2
+    },
+    {
+      "date": "2026-01-11",
+      "activity_id": 21513863182,
+      "distance_km": 6.0,
+      "pace_min_per_km": 5.01,
+      "avg_hr": 131.0,
+      "efficiency": 1.5237,
+      "gradient_m_per_km": null
+    },
+    {
+      "date": "2026-01-15",
+      "activity_id": 21558640238,
+      "distance_km": 10.55,
+      "pace_min_per_km": 4.9,
+      "avg_hr": 142.0,
+      "efficiency": 1.4372,
+      "gradient_m_per_km": 4.5
+    },
+    {
+      "date": "2026-01-16",
+      "activity_id": 21568226305,
+      "distance_km": 8.01,
+      "pace_min_per_km": 5.26,
+      "avg_hr": 135.0,
+      "efficiency": 1.4083,
+      "gradient_m_per_km": 4.7
+    },
+    {
+      "date": "2026-01-17",
+      "activity_id": 21573812646,
+      "distance_km": 14.85,
+      "pace_min_per_km": 4.88,
+      "avg_hr": 147.0,
+      "efficiency": 1.394,
+      "gradient_m_per_km": 2.6
+    },
+    {
+      "date": "2026-01-19",
+      "activity_id": 21600241942,
+      "distance_km": 8.17,
+      "pace_min_per_km": 5.12,
+      "avg_hr": 142.0,
+      "efficiency": 1.3754,
+      "gradient_m_per_km": 7.0
+    },
+    {
+      "date": "2026-01-21",
+      "activity_id": 21622131395,
+      "distance_km": 9.37,
+      "pace_min_per_km": 4.82,
+      "avg_hr": 143.0,
+      "efficiency": 1.4508,
+      "gradient_m_per_km": 3.6
+    },
+    {
+      "date": "2026-01-23",
+      "activity_id": 21642223627,
+      "distance_km": 8.27,
+      "pace_min_per_km": 5.17,
+      "avg_hr": 141.0,
+      "efficiency": 1.3718,
+      "gradient_m_per_km": 6.9
+    },
+    {
+      "date": "2026-01-24",
+      "activity_id": 21647397032,
+      "distance_km": 12.01,
+      "pace_min_per_km": 5.23,
+      "avg_hr": 137.0,
+      "efficiency": 1.3957,
+      "gradient_m_per_km": 5.0
+    },
+    {
+      "date": "2026-01-25",
+      "activity_id": 21657335766,
+      "distance_km": 8.84,
+      "pace_min_per_km": 6.88,
+      "avg_hr": 135.0,
+      "efficiency": 1.0767,
+      "gradient_m_per_km": 2.7
+    },
+    {
+      "date": "2026-01-27",
+      "activity_id": 21682837264,
+      "distance_km": 10.53,
+      "pace_min_per_km": 4.77,
+      "avg_hr": 145.0,
+      "efficiency": 1.4458,
+      "gradient_m_per_km": 5.6
+    },
+    {
+      "date": "2026-01-28",
+      "activity_id": 21693387581,
+      "distance_km": 8.65,
+      "pace_min_per_km": 4.91,
+      "avg_hr": 143.0,
+      "efficiency": 1.4242,
+      "gradient_m_per_km": 1.7
+    },
+    {
+      "date": "2026-01-31",
+      "activity_id": 21718571370,
+      "distance_km": 9.99,
+      "pace_min_per_km": 5.12,
+      "avg_hr": 147.0,
+      "efficiency": 1.3287,
+      "gradient_m_per_km": 2.4
+    },
+    {
+      "date": "2026-02-01",
+      "activity_id": 21728084447,
+      "distance_km": 12.13,
+      "pace_min_per_km": 4.91,
+      "avg_hr": 142.0,
+      "efficiency": 1.4343,
+      "gradient_m_per_km": 4.9
+    },
+    {
+      "date": "2026-02-03",
+      "activity_id": 21754117787,
+      "distance_km": 7.84,
+      "pace_min_per_km": 4.92,
+      "avg_hr": 140.0,
+      "efficiency": 1.4518,
+      "gradient_m_per_km": 4.7
+    },
+    {
+      "date": "2026-02-04",
+      "activity_id": 21765048398,
+      "distance_km": 12.03,
+      "pace_min_per_km": 4.61,
+      "avg_hr": 147.0,
+      "efficiency": 1.4756,
+      "gradient_m_per_km": 1.7
+    },
+    {
+      "date": "2026-02-05",
+      "activity_id": 21775279490,
+      "distance_km": 8.13,
+      "pace_min_per_km": 5.02,
+      "avg_hr": 144.0,
+      "efficiency": 1.3834,
+      "gradient_m_per_km": 4.4
+    },
+    {
+      "date": "2026-02-07",
+      "activity_id": 21790180978,
+      "distance_km": 10.49,
+      "pace_min_per_km": 4.96,
+      "avg_hr": 153.0,
+      "efficiency": 1.3177,
+      "gradient_m_per_km": 1.7
+    },
+    {
+      "date": "2026-02-07",
+      "activity_id": 21790605959,
+      "distance_km": 4.85,
+      "pace_min_per_km": 5.82,
+      "avg_hr": 128.0,
+      "efficiency": 1.3424,
+      "gradient_m_per_km": 1.6
+    },
+    {
+      "date": "2026-02-08",
+      "activity_id": 21801969823,
+      "distance_km": 8.17,
+      "pace_min_per_km": 4.91,
+      "avg_hr": 146.0,
+      "efficiency": 1.395,
+      "gradient_m_per_km": 4.7
+    },
+    {
+      "date": "2026-02-09",
+      "activity_id": 21815237628,
+      "distance_km": 10.81,
+      "pace_min_per_km": 4.82,
+      "avg_hr": 140.0,
+      "efficiency": 1.4819,
+      "gradient_m_per_km": 9.3
+    },
+    {
+      "date": "2026-02-10",
+      "activity_id": 21827166561,
+      "distance_km": 8.31,
+      "pace_min_per_km": 5.1,
+      "avg_hr": 138.0,
+      "efficiency": 1.4209,
+      "gradient_m_per_km": 6.5
+    },
+    {
+      "date": "2026-02-12",
+      "activity_id": 21848438253,
+      "distance_km": 8.1,
+      "pace_min_per_km": 4.98,
+      "avg_hr": 139.0,
+      "efficiency": 1.4446,
+      "gradient_m_per_km": 4.6
+    },
+    {
+      "date": "2026-02-14",
+      "activity_id": 21863578803,
+      "distance_km": 11.72,
+      "pace_min_per_km": 5.29,
+      "avg_hr": 139.0,
+      "efficiency": 1.36,
+      "gradient_m_per_km": 4.0
+    },
+    {
+      "date": "2026-02-15",
+      "activity_id": 21873791325,
+      "distance_km": 10.35,
+      "pace_min_per_km": 4.91,
+      "avg_hr": 141.0,
+      "efficiency": 1.4444,
+      "gradient_m_per_km": 5.4
+    },
+    {
+      "date": "2026-02-16",
+      "activity_id": 21887962007,
+      "distance_km": 5.01,
+      "pace_min_per_km": 5.3,
+      "avg_hr": 128.0,
+      "efficiency": 1.4741,
+      "gradient_m_per_km": 4.2
+    },
+    {
+      "date": "2026-02-17",
+      "activity_id": 21900185288,
+      "distance_km": 11.03,
+      "pace_min_per_km": 4.74,
+      "avg_hr": 142.0,
+      "efficiency": 1.4857,
+      "gradient_m_per_km": 4.7
+    },
+    {
+      "date": "2026-02-18",
+      "activity_id": 21910177444,
+      "distance_km": 12.8,
+      "pace_min_per_km": 4.88,
+      "avg_hr": 140.0,
+      "efficiency": 1.4637,
+      "gradient_m_per_km": 2.3
+    },
+    {
+      "date": "2026-02-21",
+      "activity_id": 21935289799,
+      "distance_km": 6.22,
+      "pace_min_per_km": 4.82,
+      "avg_hr": 153.0,
+      "efficiency": 1.356,
+      "gradient_m_per_km": 1.9
+    },
+    {
+      "date": "2026-02-22",
+      "activity_id": 21945531905,
+      "distance_km": 2.67,
+      "pace_min_per_km": 11.58,
+      "avg_hr": 110.0,
+      "efficiency": 0.7851,
+      "gradient_m_per_km": 2.2
+    },
+    {
+      "date": "2026-02-24",
+      "activity_id": 21972934297,
+      "distance_km": 11.08,
+      "pace_min_per_km": 4.78,
+      "avg_hr": 153.0,
+      "efficiency": 1.3674,
+      "gradient_m_per_km": 4.2
+    },
+    {
+      "date": "2026-02-25",
+      "activity_id": 21984567952,
+      "distance_km": 10.14,
+      "pace_min_per_km": 4.48,
+      "avg_hr": 152.0,
+      "efficiency": 1.4685,
+      "gradient_m_per_km": 1.7
+    },
+    {
+      "date": "2026-02-28",
+      "activity_id": 22011602150,
+      "distance_km": 14.02,
+      "pace_min_per_km": 4.74,
+      "avg_hr": 147.0,
+      "efficiency": 1.4352,
+      "gradient_m_per_km": 4.1
+    },
+    {
+      "date": "2026-03-01",
+      "activity_id": 22022275818,
+      "distance_km": 15.02,
+      "pace_min_per_km": 5.08,
+      "avg_hr": 139.0,
+      "efficiency": 1.4162,
+      "gradient_m_per_km": 3.9
+    },
+    {
+      "date": "2026-03-02",
+      "activity_id": 22038598628,
+      "distance_km": 9.31,
+      "pace_min_per_km": 4.88,
+      "avg_hr": 137.0,
+      "efficiency": 1.4958,
+      "gradient_m_per_km": 3.4
+    },
+    {
+      "date": "2026-03-03",
+      "activity_id": 22050357294,
+      "distance_km": 10.63,
+      "pace_min_per_km": 4.7,
+      "avg_hr": 148.0,
+      "efficiency": 1.4376,
+      "gradient_m_per_km": 1.5
+    },
+    {
+      "date": "2026-03-05",
+      "activity_id": 22073627347,
+      "distance_km": 10.86,
+      "pace_min_per_km": 5.16,
+      "avg_hr": 138.0,
+      "efficiency": 1.4043,
+      "gradient_m_per_km": 4.2
+    },
+    {
+      "date": "2026-03-07",
+      "activity_id": 22089516965,
+      "distance_km": 13.13,
+      "pace_min_per_km": 4.88,
+      "avg_hr": 144.0,
+      "efficiency": 1.423,
+      "gradient_m_per_km": 2.8
+    },
+    {
+      "date": "2026-03-08",
+      "activity_id": 22101397744,
+      "distance_km": 15.02,
+      "pace_min_per_km": 4.89,
+      "avg_hr": 136.0,
+      "efficiency": 1.5037,
+      "gradient_m_per_km": 4.1
+    },
+    {
+      "date": "2026-03-10",
+      "activity_id": 22130310225,
+      "distance_km": 10.42,
+      "pace_min_per_km": 5.45,
+      "avg_hr": 131.0,
+      "efficiency": 1.4007,
+      "gradient_m_per_km": 6.6
+    },
+    {
+      "date": "2026-03-11",
+      "activity_id": 22141637439,
+      "distance_km": 14.26,
+      "pace_min_per_km": 4.59,
+      "avg_hr": 151.0,
+      "efficiency": 1.4428,
+      "gradient_m_per_km": 1.8
+    },
+    {
+      "date": "2026-03-13",
+      "activity_id": 22162978712,
+      "distance_km": 9.64,
+      "pace_min_per_km": 5.38,
+      "avg_hr": 137.0,
+      "efficiency": 1.3567,
+      "gradient_m_per_km": 2.5
+    },
+    {
+      "date": "2026-03-14",
+      "activity_id": 22168901554,
+      "distance_km": 13.64,
+      "pace_min_per_km": 4.78,
+      "avg_hr": 144.0,
+      "efficiency": 1.4528,
+      "gradient_m_per_km": 2.6
+    },
+    {
+      "date": "2026-03-15",
+      "activity_id": 22180413638,
+      "distance_km": 15.25,
+      "pace_min_per_km": 4.9,
+      "avg_hr": 137.0,
+      "efficiency": 1.4896,
+      "gradient_m_per_km": 5.6
+    },
+    {
+      "date": "2026-03-16",
+      "activity_id": 22195176499,
+      "distance_km": 9.02,
+      "pace_min_per_km": 5.14,
+      "avg_hr": 131.0,
+      "efficiency": 1.4851,
+      "gradient_m_per_km": 6.1
+    },
+    {
+      "date": "2026-03-17",
+      "activity_id": 22207253260,
+      "distance_km": 9.28,
+      "pace_min_per_km": 4.71,
+      "avg_hr": 141.0,
+      "efficiency": 1.5058,
+      "gradient_m_per_km": 4.4
+    },
+    {
+      "date": "2026-03-18",
+      "activity_id": 22218118134,
+      "distance_km": 10.83,
+      "pace_min_per_km": 4.6,
+      "avg_hr": 148.0,
+      "efficiency": 1.4689,
+      "gradient_m_per_km": 1.4
+    },
+    {
+      "date": "2026-03-20",
+      "activity_id": 22240635526,
+      "distance_km": 5.01,
+      "pace_min_per_km": 5.52,
+      "avg_hr": 129.0,
+      "efficiency": 1.4043,
+      "gradient_m_per_km": 4.4
+    },
+    {
+      "date": "2026-03-21",
+      "activity_id": 22247647641,
+      "distance_km": 15.01,
+      "pace_min_per_km": 4.84,
+      "avg_hr": 143.0,
+      "efficiency": 1.4448,
+      "gradient_m_per_km": 2.5
+    },
+    {
+      "date": "2026-03-22",
+      "activity_id": 22256431580,
+      "distance_km": 8.06,
+      "pace_min_per_km": 4.91,
+      "avg_hr": 145.0,
+      "efficiency": 1.4046,
+      "gradient_m_per_km": 2.6
+    },
+    {
+      "date": "2026-03-22",
+      "activity_id": 22259274651,
+      "distance_km": 4.35,
+      "pace_min_per_km": 10.82,
+      "avg_hr": 107.0,
+      "efficiency": 0.8638,
+      "gradient_m_per_km": 2.5
+    },
+    {
+      "date": "2026-03-23",
+      "activity_id": 22274547880,
+      "distance_km": 5.32,
+      "pace_min_per_km": 5.01,
+      "avg_hr": 137.0,
+      "efficiency": 1.4569,
+      "gradient_m_per_km": 8.3
+    },
+    {
+      "date": "2026-03-24",
+      "activity_id": 22286726897,
+      "distance_km": 10.01,
+      "pace_min_per_km": 4.97,
+      "avg_hr": 137.0,
+      "efficiency": 1.4687,
+      "gradient_m_per_km": 8.0
+    },
+    {
+      "date": "2026-03-25",
+      "activity_id": 22298059796,
+      "distance_km": 11.06,
+      "pace_min_per_km": 4.68,
+      "avg_hr": 145.0,
+      "efficiency": 1.4736,
+      "gradient_m_per_km": 2.1
+    },
+    {
+      "date": "2026-03-27",
+      "activity_id": 22318700313,
+      "distance_km": 7.79,
+      "pace_min_per_km": 5.2,
+      "avg_hr": 132.0,
+      "efficiency": 1.4569,
+      "gradient_m_per_km": 4.5
+    },
+    {
+      "date": "2026-03-28",
+      "activity_id": 22325751879,
+      "distance_km": 15.02,
+      "pace_min_per_km": 4.92,
+      "avg_hr": 144.0,
+      "efficiency": 1.4115,
+      "gradient_m_per_km": 3.6
+    },
+    {
+      "date": "2026-03-29",
+      "activity_id": 22337146513,
+      "distance_km": 21.51,
+      "pace_min_per_km": 5.43,
+      "avg_hr": 122.0,
+      "efficiency": 1.5095,
+      "gradient_m_per_km": 5.9
+    },
+    {
+      "date": "2026-04-01",
+      "activity_id": 22374664443,
+      "distance_km": 8.01,
+      "pace_min_per_km": 4.99,
+      "avg_hr": 130.0,
+      "efficiency": 1.5415,
+      "gradient_m_per_km": 6.1
+    },
+    {
+      "date": "2026-04-02",
+      "activity_id": 22385764114,
+      "distance_km": 10.01,
+      "pace_min_per_km": 4.95,
+      "avg_hr": 135.0,
+      "efficiency": 1.4964,
+      "gradient_m_per_km": 6.2
+    },
+    {
+      "date": "2026-04-04",
+      "activity_id": 22402636721,
+      "distance_km": 8.14,
+      "pace_min_per_km": 5.34,
+      "avg_hr": 136.0,
+      "efficiency": 1.377,
+      "gradient_m_per_km": 1.6
+    },
+    {
+      "date": "2026-04-05",
+      "activity_id": 22413607097,
+      "distance_km": 17.45,
+      "pace_min_per_km": 4.98,
+      "avg_hr": 133.0,
+      "efficiency": 1.5098,
+      "gradient_m_per_km": 7.8
+    },
+    {
+      "date": "2026-04-06",
+      "activity_id": 22425460449,
+      "distance_km": 7.3,
+      "pace_min_per_km": 5.09,
+      "avg_hr": 134.0,
+      "efficiency": 1.4661,
+      "gradient_m_per_km": 3.4
+    },
+    {
+      "date": "2026-04-07",
+      "activity_id": 22442779014,
+      "distance_km": 12.01,
+      "pace_min_per_km": 4.91,
+      "avg_hr": 144.0,
+      "efficiency": 1.4143,
+      "gradient_m_per_km": 1.5
+    },
+    {
+      "date": "2026-04-08",
+      "activity_id": 22456277846,
+      "distance_km": 6.65,
+      "pace_min_per_km": 5.18,
+      "avg_hr": 132.0,
+      "efficiency": 1.4625,
+      "gradient_m_per_km": 7.4
+    },
+    {
+      "date": "2026-04-09",
+      "activity_id": 22465180598,
+      "distance_km": 7.02,
+      "pace_min_per_km": 4.84,
+      "avg_hr": 139.0,
+      "efficiency": 1.4864,
+      "gradient_m_per_km": 8.1
+    },
+    {
+      "date": "2026-04-11",
+      "activity_id": 22486722861,
+      "distance_km": 5.75,
+      "pace_min_per_km": 5.05,
+      "avg_hr": 137.0,
+      "efficiency": 1.4454,
+      "gradient_m_per_km": 3.7
+    },
+    {
+      "date": "2026-04-12",
+      "activity_id": 22498521348,
+      "distance_km": 10.01,
+      "pace_min_per_km": 3.92,
+      "avg_hr": 164.0,
+      "efficiency": 1.5555,
+      "gradient_m_per_km": 2.5
+    },
+    {
+      "date": "2026-04-14",
+      "activity_id": 22525942642,
+      "distance_km": 10.42,
+      "pace_min_per_km": 4.77,
+      "avg_hr": 149.0,
+      "efficiency": 1.407,
+      "gradient_m_per_km": 1.6
+    },
+    {
+      "date": "2026-04-16",
+      "activity_id": 22546883643,
+      "distance_km": 7.19,
+      "pace_min_per_km": 5.01,
+      "avg_hr": 148.0,
+      "efficiency": 1.3487,
+      "gradient_m_per_km": 7.5
+    },
+    {
+      "date": "2026-04-16",
+      "activity_id": 22550218725,
+      "distance_km": 6.78,
+      "pace_min_per_km": 5.99,
+      "avg_hr": 125.0,
+      "efficiency": 1.3356,
+      "gradient_m_per_km": 4.3
+    },
+    {
+      "date": "2026-04-18",
+      "activity_id": 22571844719,
+      "distance_km": 11.09,
+      "pace_min_per_km": 5.53,
+      "avg_hr": 138.0,
+      "efficiency": 1.3104,
+      "gradient_m_per_km": 1.4
+    },
+    {
+      "date": "2026-04-19",
+      "activity_id": 22584645441,
+      "distance_km": 8.55,
+      "pace_min_per_km": 7.77,
+      "avg_hr": 152.0,
+      "efficiency": 0.8467,
+      "gradient_m_per_km": 1.9
+    },
+    {
+      "date": "2026-04-21",
+      "activity_id": 22609112120,
+      "distance_km": 8.53,
+      "pace_min_per_km": 5.54,
+      "avg_hr": 137.0,
+      "efficiency": 1.3176,
+      "gradient_m_per_km": 5.0
+    },
+    {
+      "date": "2026-04-22",
+      "activity_id": 22621453927,
+      "distance_km": 9.22,
+      "pace_min_per_km": 5.54,
+      "avg_hr": 136.0,
+      "efficiency": 1.3272,
+      "gradient_m_per_km": 2.6
+    },
+    {
+      "date": "2026-04-23",
+      "activity_id": 22633113894,
+      "distance_km": 7.44,
+      "pace_min_per_km": 5.03,
+      "avg_hr": 139.0,
+      "efficiency": 1.4303,
+      "gradient_m_per_km": 4.6
+    },
+    {
+      "date": "2026-04-25",
+      "activity_id": 22651017054,
+      "distance_km": 13.02,
+      "pace_min_per_km": 5.02,
+      "avg_hr": 144.0,
+      "efficiency": 1.3834,
+      "gradient_m_per_km": 1.8
+    },
+    {
+      "date": "2026-04-28",
+      "activity_id": 22692288154,
+      "distance_km": 8.01,
+      "pace_min_per_km": 5.15,
+      "avg_hr": 135.0,
+      "efficiency": 1.4383,
+      "gradient_m_per_km": 5.7
+    },
+    {
+      "date": "2026-04-29",
+      "activity_id": 22705224115,
+      "distance_km": 7.16,
+      "pace_min_per_km": 7.11,
+      "avg_hr": 133.0,
+      "efficiency": 1.0575,
+      "gradient_m_per_km": 4.3
+    },
+    {
+      "date": "2026-04-30",
+      "activity_id": 22713635220,
+      "distance_km": 6.99,
+      "pace_min_per_km": 5.11,
+      "avg_hr": 148.0,
+      "efficiency": 1.3223,
+      "gradient_m_per_km": 8.4
+    },
+    {
+      "date": "2026-05-02",
+      "activity_id": 22735196979,
+      "distance_km": 10.13,
+      "pace_min_per_km": 4.62,
+      "avg_hr": 150.0,
+      "efficiency": 1.443,
+      "gradient_m_per_km": 2.2
+    },
+    {
+      "date": "2026-05-03",
+      "activity_id": 22746628132,
+      "distance_km": 13.2,
+      "pace_min_per_km": 4.91,
+      "avg_hr": 146.0,
+      "efficiency": 1.395,
+      "gradient_m_per_km": 5.9
+    },
+    {
+      "date": "2026-05-04",
+      "activity_id": 22758456805,
+      "distance_km": 7.01,
+      "pace_min_per_km": 5.42,
+      "avg_hr": 137.0,
+      "efficiency": 1.3467,
+      "gradient_m_per_km": 3.3
+    },
+    {
+      "date": "2026-05-06",
+      "activity_id": 22787674819,
+      "distance_km": 8.02,
+      "pace_min_per_km": 4.94,
+      "avg_hr": 137.0,
+      "efficiency": 1.4776,
+      "gradient_m_per_km": 8.0
+    },
+    {
+      "date": "2026-05-10",
+      "activity_id": 22828623458,
+      "distance_km": 10.1,
+      "pace_min_per_km": 4.99,
+      "avg_hr": 140.0,
+      "efficiency": 1.4314,
+      "gradient_m_per_km": 4.1
+    },
+    {
+      "date": "2026-05-11",
+      "activity_id": 22845523938,
+      "distance_km": 7.79,
+      "pace_min_per_km": 5.0,
+      "avg_hr": 138.0,
+      "efficiency": 1.4493,
+      "gradient_m_per_km": 4.4
+    },
+    {
+      "date": "2026-05-13",
+      "activity_id": 22869671257,
+      "distance_km": 10.95,
+      "pace_min_per_km": 5.11,
+      "avg_hr": 145.0,
+      "efficiency": 1.3496,
+      "gradient_m_per_km": 1.6
+    },
+    {
+      "date": "2026-05-14",
+      "activity_id": 22881465009,
+      "distance_km": 7.21,
+      "pace_min_per_km": 5.0,
+      "avg_hr": 143.0,
+      "efficiency": 1.3986,
+      "gradient_m_per_km": 4.2
+    },
+    {
+      "date": "2026-05-16",
+      "activity_id": 22900221161,
+      "distance_km": 10.7,
+      "pace_min_per_km": 4.66,
+      "avg_hr": 148.0,
+      "efficiency": 1.4499,
+      "gradient_m_per_km": 1.6
+    },
+    {
+      "date": "2026-05-17",
+      "activity_id": 22909939061,
+      "distance_km": 12.02,
+      "pace_min_per_km": 4.69,
+      "avg_hr": 146.0,
+      "efficiency": 1.4604,
+      "gradient_m_per_km": 6.1
+    },
+    {
+      "date": "2026-05-18",
+      "activity_id": 22926232722,
+      "distance_km": 7.17,
+      "pace_min_per_km": 5.29,
+      "avg_hr": 136.0,
+      "efficiency": 1.39,
+      "gradient_m_per_km": 7.0
+    },
+    {
+      "date": "2026-05-19",
+      "activity_id": 22938967477,
+      "distance_km": 7.03,
+      "pace_min_per_km": 5.55,
+      "avg_hr": 135.0,
+      "efficiency": 1.3347,
+      "gradient_m_per_km": 1.7
+    },
+    {
+      "date": "2026-05-20",
+      "activity_id": 22951430616,
+      "distance_km": 2.63,
+      "pace_min_per_km": 10.91,
+      "avg_hr": 116.0,
+      "efficiency": 0.7902,
+      "gradient_m_per_km": 1.5
+    },
+    {
+      "date": "2026-05-22",
+      "activity_id": 22974386384,
+      "distance_km": 8.03,
+      "pace_min_per_km": 5.81,
+      "avg_hr": 132.0,
+      "efficiency": 1.3039,
+      "gradient_m_per_km": 11.3
+    },
+    {
+      "date": "2026-05-23",
+      "activity_id": 22980462533,
+      "distance_km": 13.5,
+      "pace_min_per_km": 5.09,
+      "avg_hr": 149.0,
+      "efficiency": 1.3185,
+      "gradient_m_per_km": 3.2
+    },
+    {
+      "date": "2026-05-25",
+      "activity_id": 23003232560,
+      "distance_km": 10.58,
+      "pace_min_per_km": 5.48,
+      "avg_hr": 130.0,
+      "efficiency": 1.4037,
+      "gradient_m_per_km": 3.9
+    },
+    {
+      "date": "2026-05-27",
+      "activity_id": 23034955691,
+      "distance_km": 7.31,
+      "pace_min_per_km": 6.54,
+      "avg_hr": 137.0,
+      "efficiency": 1.1161,
+      "gradient_m_per_km": 2.5
+    },
+    {
+      "date": "2026-05-28",
+      "activity_id": 23043276348,
+      "distance_km": 7.64,
+      "pace_min_per_km": 5.27,
+      "avg_hr": 140.0,
+      "efficiency": 1.3554,
+      "gradient_m_per_km": 4.6
+    },
+    {
+      "date": "2026-05-30",
+      "activity_id": 23064688352,
+      "distance_km": 14.12,
+      "pace_min_per_km": 5.05,
+      "avg_hr": 145.0,
+      "efficiency": 1.3657,
+      "gradient_m_per_km": 3.7
+    },
+    {
+      "date": "2026-05-31",
+      "activity_id": 23076276503,
+      "distance_km": 13.02,
+      "pace_min_per_km": 5.0,
+      "avg_hr": 140.0,
+      "efficiency": 1.4286,
+      "gradient_m_per_km": 6.9
+    },
+    {
+      "date": "2026-06-01",
+      "activity_id": 23093701072,
+      "distance_km": 8.01,
+      "pace_min_per_km": 4.81,
+      "avg_hr": 140.0,
+      "efficiency": 1.485,
+      "gradient_m_per_km": 3.9
+    },
+    {
+      "date": "2026-06-02",
+      "activity_id": 23106470729,
+      "distance_km": 8.43,
+      "pace_min_per_km": 4.69,
+      "avg_hr": 141.0,
+      "efficiency": 1.5122,
+      "gradient_m_per_km": 5.0
+    },
+    {
+      "date": "2026-06-03",
+      "activity_id": 23118899402,
+      "distance_km": 9.87,
+      "pace_min_per_km": 4.8,
+      "avg_hr": 147.0,
+      "efficiency": 1.4172,
+      "gradient_m_per_km": 5.8
+    },
+    {
+      "date": "2026-06-04",
+      "activity_id": 23127237404,
+      "distance_km": 8.69,
+      "pace_min_per_km": 4.8,
+      "avg_hr": 146.0,
+      "efficiency": 1.4269,
+      "gradient_m_per_km": 5.6
+    },
+    {
+      "date": "2026-06-05",
+      "activity_id": 23142443025,
+      "distance_km": 10.02,
+      "pace_min_per_km": 5.06,
+      "avg_hr": 142.0,
+      "efficiency": 1.3917,
+      "gradient_m_per_km": 3.6
+    },
+    {
+      "date": "2026-06-06",
+      "activity_id": 23149124368,
+      "distance_km": 15.01,
+      "pace_min_per_km": 5.52,
+      "avg_hr": 133.0,
+      "efficiency": 1.3621,
+      "gradient_m_per_km": 4.8
+    },
+    {
+      "date": "2026-06-07",
+      "activity_id": 23160256450,
+      "distance_km": 10.02,
+      "pace_min_per_km": 4.89,
+      "avg_hr": 140.0,
+      "efficiency": 1.4607,
+      "gradient_m_per_km": 7.0
+    },
+    {
+      "date": "2026-06-08",
+      "activity_id": 23178261344,
+      "distance_km": 7.14,
+      "pace_min_per_km": 5.04,
+      "avg_hr": 122.12447940768163,
+      "efficiency": 1.6247,
+      "gradient_m_per_km": 8.7
+    },
+    {
+      "date": "2026-06-10",
+      "activity_id": 23203899734,
+      "distance_km": 2.11,
+      "pace_min_per_km": 15.75,
+      "avg_hr": 111.0,
+      "efficiency": 0.572,
+      "gradient_m_per_km": 4.3
+    },
+    {
+      "date": "2026-06-11",
+      "activity_id": 23211463742,
+      "distance_km": 6.29,
+      "pace_min_per_km": 5.11,
+      "avg_hr": 132.0,
+      "efficiency": 1.4825,
+      "gradient_m_per_km": 8.9
+    },
+    {
+      "date": "2026-06-12",
+      "activity_id": 23220325479,
+      "distance_km": 7.74,
+      "pace_min_per_km": 5.17,
+      "avg_hr": 136.0,
+      "efficiency": 1.4222,
+      "gradient_m_per_km": 4.4
+    },
+    {
+      "date": "2026-06-14",
+      "activity_id": 23245071153,
+      "distance_km": 15.54,
+      "pace_min_per_km": 5.34,
+      "avg_hr": 134.0,
+      "efficiency": 1.3975,
+      "gradient_m_per_km": 3.2
+    },
+    {
+      "date": "2026-06-16",
+      "activity_id": 23272706515,
+      "distance_km": 10.01,
+      "pace_min_per_km": 4.85,
+      "avg_hr": 139.0,
+      "efficiency": 1.4833,
+      "gradient_m_per_km": 7.0
+    },
+    {
+      "date": "2026-06-17",
+      "activity_id": 23285986072,
+      "distance_km": 12.8,
+      "pace_min_per_km": 4.9,
+      "avg_hr": 142.0,
+      "efficiency": 1.4372,
+      "gradient_m_per_km": 2.8
+    },
+    {
+      "date": "2026-06-18",
+      "activity_id": 23293615302,
+      "distance_km": 8.02,
+      "pace_min_per_km": 4.84,
+      "avg_hr": 139.0,
+      "efficiency": 1.4864,
+      "gradient_m_per_km": 5.7
+    },
+    {
+      "date": "2026-06-19",
+      "activity_id": 23308266794,
+      "distance_km": 9.01,
+      "pace_min_per_km": 5.45,
+      "avg_hr": 136.0,
+      "efficiency": 1.3492,
+      "gradient_m_per_km": 7.9
+    },
+    {
+      "date": "2026-06-21",
+      "activity_id": 23325872558,
+      "distance_km": 13.01,
+      "pace_min_per_km": 5.31,
+      "avg_hr": 137.0,
+      "efficiency": 1.3746,
+      "gradient_m_per_km": 3.4
+    },
+    {
+      "date": "2026-06-22",
+      "activity_id": 23341883122,
+      "distance_km": 7.33,
+      "pace_min_per_km": 5.22,
+      "avg_hr": 138.0,
+      "efficiency": 1.3882,
+      "gradient_m_per_km": 7.2
+    },
+    {
+      "date": "2026-06-23",
+      "activity_id": 23348763241,
+      "distance_km": 10.71,
+      "pace_min_per_km": 5.51,
+      "avg_hr": 138.0,
+      "efficiency": 1.3151,
+      "gradient_m_per_km": 4.3
+    },
+    {
+      "date": "2026-06-25",
+      "activity_id": 23372527022,
+      "distance_km": 7.53,
+      "pace_min_per_km": 6.19,
+      "avg_hr": 133.0,
+      "efficiency": 1.2147,
+      "gradient_m_per_km": 5.8
+    },
+    {
+      "date": "2026-06-28",
+      "activity_id": 23405300598,
+      "distance_km": 3.42,
+      "pace_min_per_km": 11.13,
+      "avg_hr": 104.0,
+      "efficiency": 0.8639,
+      "gradient_m_per_km": 1.8
+    },
+    {
+      "date": "2026-06-28",
+      "activity_id": 23405305582,
+      "distance_km": 9.99,
+      "pace_min_per_km": 3.82,
+      "avg_hr": 169.0,
+      "efficiency": 1.549,
+      "gradient_m_per_km": 4.7
+    },
+    {
+      "date": "2026-06-29",
+      "activity_id": 23421076797,
+      "distance_km": 10.02,
+      "pace_min_per_km": 4.79,
+      "avg_hr": 139.0,
+      "efficiency": 1.5019,
+      "gradient_m_per_km": 6.7
+    },
+    {
+      "date": "2026-06-30",
+      "activity_id": 23432995456,
+      "distance_km": 8.75,
+      "pace_min_per_km": 4.69,
+      "avg_hr": 143.0,
+      "efficiency": 1.491,
+      "gradient_m_per_km": 3.3
+    },
+    {
       "date": "2026-07-02",
       "activity_id": 23452945302,
       "distance_km": 6.01,
@@ -242,9 +1376,66 @@
       "avg_hr": 139.0,
       "efficiency": 1.4833,
       "gradient_m_per_km": 7.6
+    },
+    {
+      "date": "2026-08-27",
+      "activity_id": 24135405638,
+      "distance_km": 7.15,
+      "pace_min_per_km": 4.94,
+      "avg_hr": 141.0,
+      "efficiency": 1.4357,
+      "gradient_m_per_km": 10.8
     }
   ],
   "months": [
+    {
+      "month": "2026-01",
+      "runs": 16,
+      "efficiency": 1.4041,
+      "pace_min_per_km": 4.96,
+      "avg_hr": 142.0,
+      "avg_temp_c": null
+    },
+    {
+      "month": "2026-02",
+      "runs": 20,
+      "efficiency": 1.4347,
+      "pace_min_per_km": 4.91,
+      "avg_hr": 141.5,
+      "avg_temp_c": null
+    },
+    {
+      "month": "2026-03",
+      "runs": 24,
+      "efficiency": 1.4488,
+      "pace_min_per_km": 4.92,
+      "avg_hr": 137.5,
+      "avg_temp_c": null
+    },
+    {
+      "month": "2026-04",
+      "runs": 22,
+      "efficiency": 1.4106,
+      "pace_min_per_km": 5.07,
+      "avg_hr": 137.0,
+      "avg_temp_c": null
+    },
+    {
+      "month": "2026-05",
+      "runs": 20,
+      "efficiency": 1.3925,
+      "pace_min_per_km": 5.07,
+      "avg_hr": 140.0,
+      "avg_temp_c": null
+    },
+    {
+      "month": "2026-06",
+      "runs": 24,
+      "efficiency": 1.4245,
+      "pace_min_per_km": 5.05,
+      "avg_hr": 138.5,
+      "avg_temp_c": null
+    },
     {
       "month": "2026-07",
       "runs": 14,
@@ -255,21 +1446,21 @@
     },
     {
       "month": "2026-08",
-      "runs": 13,
-      "efficiency": 1.4881,
-      "pace_min_per_km": 4.82,
-      "avg_hr": 139.0,
-      "avg_temp_c": 25.3
+      "runs": 14,
+      "efficiency": 1.4857,
+      "pace_min_per_km": 4.83,
+      "avg_hr": 139.5,
+      "avg_temp_c": 25.1
     }
   ],
   "summary": {
-    "from_month": "2026-07",
+    "from_month": "2026-01",
     "to_month": "2026-08",
-    "from_efficiency": 1.4449,
-    "to_efficiency": 1.4881,
-    "change_pct": 3.0,
-    "from_hr_at_pace": "138 bpm at 4.90 min/km",
-    "to_hr_at_pace": "139 bpm at 4.82 min/km",
+    "from_efficiency": 1.4041,
+    "to_efficiency": 1.4857,
+    "change_pct": 5.8,
+    "from_hr_at_pace": "142 bpm at 4.96 min/km",
+    "to_hr_at_pace": "140 bpm at 4.83 min/km",
     "warmer_now": false
   }
 }
