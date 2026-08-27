@@ -198,5 +198,13 @@
     "rpe": 7.0,
     "on_target": true,
     "session_notes": "Temp 30c\nHowever, all went really well\nTook a gel during warm up\nWas slightly ahead of the 3:44s. Was trying to hold back to hit the target but kept being slightly ahead, not too far ahead though"
+  },
+  {
+    "date": "2026-08-27",
+    "achilles_score": 0,
+    "session_type": "easy",
+    "rpe": 1.0,
+    "on_target": true,
+    "session_notes": "20c in the rain, it was lush"
   }
 ]
