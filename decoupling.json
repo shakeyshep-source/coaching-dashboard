@@ -3,6 +3,2093 @@
   "warmup_excluded_min": 10,
   "runs": [
     {
+      "date": "2026-01-01",
+      "activity_id": 21409924029,
+      "decoupling_pct": 0.86,
+      "within_threshold": true,
+      "analysed_min": 34.8,
+      "first_half": {
+        "pace": "5:22",
+        "avg_hr": 135.2,
+        "ef": 0.02294
+      },
+      "second_half": {
+        "pace": "5:25",
+        "avg_hr": 135.5,
+        "ef": 0.02274
+      },
+      "distance_km": 8.19,
+      "gradient_m_per_km": 6.3,
+      "pace_delta_pct": 0.6,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-01-10",
+      "activity_id": 21499650050,
+      "decoupling_pct": -12.2,
+      "within_threshold": true,
+      "analysed_min": 51.5,
+      "first_half": {
+        "pace": "4:48",
+        "avg_hr": 147.7,
+        "ef": 0.02348
+      },
+      "second_half": {
+        "pace": "4:32",
+        "avg_hr": 139.5,
+        "ef": 0.02634
+      },
+      "distance_km": 13.02,
+      "gradient_m_per_km": 6.9,
+      "pace_delta_pct": -5.6,
+      "unreliable_reasons": [
+        "not steady \u2014 second half 6% quicker"
+      ]
+    },
+    {
+      "date": "2026-01-15",
+      "activity_id": 21558640238,
+      "decoupling_pct": -4.99,
+      "within_threshold": true,
+      "analysed_min": 41.7,
+      "first_half": {
+        "pace": "5:03",
+        "avg_hr": 143.6,
+        "ef": 0.02297
+      },
+      "second_half": {
+        "pace": "4:43",
+        "avg_hr": 146.4,
+        "ef": 0.02412
+      },
+      "distance_km": 10.55,
+      "gradient_m_per_km": 5.5,
+      "pace_delta_pct": -6.6,
+      "unreliable_reasons": [
+        "not steady \u2014 second half 7% quicker"
+      ]
+    },
+    {
+      "date": "2026-01-16",
+      "activity_id": 21568226305,
+      "decoupling_pct": 2.66,
+      "within_threshold": true,
+      "analysed_min": 32.1,
+      "first_half": {
+        "pace": "5:14",
+        "avg_hr": 135.3,
+        "ef": 0.02355
+      },
+      "second_half": {
+        "pace": "5:07",
+        "avg_hr": 142.1,
+        "ef": 0.02292
+      },
+      "distance_km": 8.01,
+      "gradient_m_per_km": 6.5,
+      "pace_delta_pct": -2.2,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-01-17",
+      "activity_id": 21573812646,
+      "decoupling_pct": 2.39,
+      "within_threshold": true,
+      "analysed_min": 72.7,
+      "first_half": {
+        "pace": "4:37",
+        "avg_hr": 152.6,
+        "ef": 0.02365
+      },
+      "second_half": {
+        "pace": "5:03",
+        "avg_hr": 142.9,
+        "ef": 0.02308
+      },
+      "distance_km": 14.85,
+      "gradient_m_per_km": 3.7,
+      "pace_delta_pct": 9.4,
+      "unreliable_reasons": [
+        "not steady \u2014 second half 9% slower"
+      ]
+    },
+    {
+      "date": "2026-01-19",
+      "activity_id": 21600241942,
+      "decoupling_pct": 5.52,
+      "within_threshold": false,
+      "analysed_min": 31.8,
+      "first_half": {
+        "pace": "4:58",
+        "avg_hr": 143.6,
+        "ef": 0.02337
+      },
+      "second_half": {
+        "pace": "5:07",
+        "avg_hr": 147.4,
+        "ef": 0.02208
+      },
+      "distance_km": 8.17,
+      "gradient_m_per_km": 8.0,
+      "pace_delta_pct": 3.2,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-01-21",
+      "activity_id": 21622131395,
+      "decoupling_pct": 8.7,
+      "within_threshold": false,
+      "analysed_min": 35.1,
+      "first_half": {
+        "pace": "4:24",
+        "avg_hr": 154.1,
+        "ef": 0.02455
+      },
+      "second_half": {
+        "pace": "5:14",
+        "avg_hr": 142.2,
+        "ef": 0.02241
+      },
+      "distance_km": 9.37,
+      "gradient_m_per_km": 7.2,
+      "pace_delta_pct": 18.7,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 19% slower"
+      ]
+    },
+    {
+      "date": "2026-01-23",
+      "activity_id": 21642223627,
+      "decoupling_pct": -6.39,
+      "within_threshold": true,
+      "analysed_min": 32.7,
+      "first_half": {
+        "pace": "5:11",
+        "avg_hr": 143.7,
+        "ef": 0.0224
+      },
+      "second_half": {
+        "pace": "4:60",
+        "avg_hr": 140.0,
+        "ef": 0.02383
+      },
+      "distance_km": 8.27,
+      "gradient_m_per_km": 8.5,
+      "pace_delta_pct": -3.5,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-01-24",
+      "activity_id": 21647397032,
+      "decoupling_pct": 7.47,
+      "within_threshold": false,
+      "analysed_min": 55.1,
+      "first_half": {
+        "pace": "4:30",
+        "avg_hr": 145.9,
+        "ef": 0.02536
+      },
+      "second_half": {
+        "pace": "5:28",
+        "avg_hr": 129.7,
+        "ef": 0.02347
+      },
+      "distance_km": 12.01,
+      "gradient_m_per_km": 6.9,
+      "pace_delta_pct": 21.5,
+      "unreliable_reasons": [
+        "not steady \u2014 second half 22% slower"
+      ]
+    },
+    {
+      "date": "2026-01-25",
+      "activity_id": 21657335766,
+      "decoupling_pct": -4.13,
+      "within_threshold": true,
+      "analysed_min": 50.6,
+      "first_half": {
+        "pace": "5:29",
+        "avg_hr": 143.2,
+        "ef": 0.02124
+      },
+      "second_half": {
+        "pace": "5:20",
+        "avg_hr": 141.4,
+        "ef": 0.02211
+      },
+      "distance_km": 8.84,
+      "gradient_m_per_km": 4.8,
+      "pace_delta_pct": -2.8,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-01-27",
+      "activity_id": 21682837264,
+      "decoupling_pct": 3.34,
+      "within_threshold": true,
+      "analysed_min": 40.2,
+      "first_half": {
+        "pace": "4:41",
+        "avg_hr": 143.4,
+        "ef": 0.02478
+      },
+      "second_half": {
+        "pace": "4:43",
+        "avg_hr": 147.4,
+        "ef": 0.02396
+      },
+      "distance_km": 10.53,
+      "gradient_m_per_km": 7.4,
+      "pace_delta_pct": 0.6,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-01-28",
+      "activity_id": 21693387581,
+      "decoupling_pct": 13.46,
+      "within_threshold": false,
+      "analysed_min": 33.8,
+      "first_half": {
+        "pace": "4:31",
+        "avg_hr": 144.6,
+        "ef": 0.0255
+      },
+      "second_half": {
+        "pace": "5:11",
+        "avg_hr": 145.7,
+        "ef": 0.02207
+      },
+      "distance_km": 8.65,
+      "gradient_m_per_km": 3.1,
+      "pace_delta_pct": 14.7,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 15% slower"
+      ]
+    },
+    {
+      "date": "2026-01-31",
+      "activity_id": 21718571370,
+      "decoupling_pct": 14.02,
+      "within_threshold": false,
+      "analysed_min": 41.0,
+      "first_half": {
+        "pace": "4:33",
+        "avg_hr": 154.7,
+        "ef": 0.02369
+      },
+      "second_half": {
+        "pace": "5:48",
+        "avg_hr": 140.9,
+        "ef": 0.02037
+      },
+      "distance_km": 9.99,
+      "gradient_m_per_km": 4.3,
+      "pace_delta_pct": 27.6,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 28% slower"
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "activity_id": 21728084447,
+      "decoupling_pct": 4.3,
+      "within_threshold": true,
+      "analysed_min": 49.5,
+      "first_half": {
+        "pace": "4:51",
+        "avg_hr": 141.7,
+        "ef": 0.02423
+      },
+      "second_half": {
+        "pace": "4:55",
+        "avg_hr": 146.3,
+        "ef": 0.02318
+      },
+      "distance_km": 12.13,
+      "gradient_m_per_km": 5.8,
+      "pace_delta_pct": 1.2,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-02-04",
+      "activity_id": 21765048398,
+      "decoupling_pct": -0.52,
+      "within_threshold": true,
+      "analysed_min": 45.4,
+      "first_half": {
+        "pace": "4:38",
+        "avg_hr": 147.7,
+        "ef": 0.02431
+      },
+      "second_half": {
+        "pace": "4:27",
+        "avg_hr": 153.2,
+        "ef": 0.02444
+      },
+      "distance_km": 12.03,
+      "gradient_m_per_km": 3.7,
+      "pace_delta_pct": -4.1,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-02-05",
+      "activity_id": 21775279490,
+      "decoupling_pct": 1.83,
+      "within_threshold": true,
+      "analysed_min": 30.8,
+      "first_half": {
+        "pace": "5:02",
+        "avg_hr": 143.7,
+        "ef": 0.02301
+      },
+      "second_half": {
+        "pace": "4:58",
+        "avg_hr": 148.8,
+        "ef": 0.02259
+      },
+      "distance_km": 8.13,
+      "gradient_m_per_km": 6.6,
+      "pace_delta_pct": -1.6,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-02-07",
+      "activity_id": 21790180978,
+      "decoupling_pct": 6.36,
+      "within_threshold": false,
+      "analysed_min": 41.9,
+      "first_half": {
+        "pace": "4:43",
+        "avg_hr": 152.0,
+        "ef": 0.02323
+      },
+      "second_half": {
+        "pace": "4:43",
+        "avg_hr": 162.6,
+        "ef": 0.02175
+      },
+      "distance_km": 10.49,
+      "gradient_m_per_km": 3.3,
+      "pace_delta_pct": -0.2,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable"
+      ]
+    },
+    {
+      "date": "2026-02-08",
+      "activity_id": 21801969823,
+      "decoupling_pct": -6.57,
+      "within_threshold": true,
+      "analysed_min": 30.1,
+      "first_half": {
+        "pace": "5:03",
+        "avg_hr": 146.3,
+        "ef": 0.02258
+      },
+      "second_half": {
+        "pace": "4:47",
+        "avg_hr": 145.0,
+        "ef": 0.02406
+      },
+      "distance_km": 8.17,
+      "gradient_m_per_km": 6.4,
+      "pace_delta_pct": -5.3,
+      "unreliable_reasons": [
+        "not steady \u2014 second half 5% quicker"
+      ]
+    },
+    {
+      "date": "2026-02-09",
+      "activity_id": 21815237628,
+      "decoupling_pct": -0.24,
+      "within_threshold": true,
+      "analysed_min": 42.0,
+      "first_half": {
+        "pace": "4:45",
+        "avg_hr": 140.7,
+        "ef": 0.02496
+      },
+      "second_half": {
+        "pace": "4:44",
+        "avg_hr": 140.8,
+        "ef": 0.02502
+      },
+      "distance_km": 10.81,
+      "gradient_m_per_km": 10.1,
+      "pace_delta_pct": -0.3,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-02-10",
+      "activity_id": 21827166561,
+      "decoupling_pct": 3.03,
+      "within_threshold": true,
+      "analysed_min": 32.3,
+      "first_half": {
+        "pace": "4:50",
+        "avg_hr": 138.2,
+        "ef": 0.02491
+      },
+      "second_half": {
+        "pace": "4:54",
+        "avg_hr": 140.7,
+        "ef": 0.02416
+      },
+      "distance_km": 8.31,
+      "gradient_m_per_km": 9.1,
+      "pace_delta_pct": 1.3,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-02-12",
+      "activity_id": 21848438253,
+      "decoupling_pct": -3.08,
+      "within_threshold": true,
+      "analysed_min": 30.3,
+      "first_half": {
+        "pace": "5:07",
+        "avg_hr": 138.0,
+        "ef": 0.0236
+      },
+      "second_half": {
+        "pace": "4:54",
+        "avg_hr": 140.0,
+        "ef": 0.02432
+      },
+      "distance_km": 8.1,
+      "gradient_m_per_km": 5.8,
+      "pace_delta_pct": -4.3,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-02-14",
+      "activity_id": 21863578803,
+      "decoupling_pct": 11.51,
+      "within_threshold": false,
+      "analysed_min": 59.2,
+      "first_half": {
+        "pace": "4:38",
+        "avg_hr": 143.9,
+        "ef": 0.025
+      },
+      "second_half": {
+        "pace": "5:23",
+        "avg_hr": 140.1,
+        "ef": 0.02212
+      },
+      "distance_km": 11.72,
+      "gradient_m_per_km": 4.1,
+      "pace_delta_pct": 16.0,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 16% slower"
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "activity_id": 21873791325,
+      "decoupling_pct": 0.03,
+      "within_threshold": true,
+      "analysed_min": 40.7,
+      "first_half": {
+        "pace": "4:54",
+        "avg_hr": 144.3,
+        "ef": 0.02356
+      },
+      "second_half": {
+        "pace": "5:00",
+        "avg_hr": 141.5,
+        "ef": 0.02356
+      },
+      "distance_km": 10.35,
+      "gradient_m_per_km": 7.5,
+      "pace_delta_pct": 2.1,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-02-17",
+      "activity_id": 21900185288,
+      "decoupling_pct": 1.41,
+      "within_threshold": true,
+      "analysed_min": 42.2,
+      "first_half": {
+        "pace": "4:42",
+        "avg_hr": 142.9,
+        "ef": 0.0248
+      },
+      "second_half": {
+        "pace": "4:47",
+        "avg_hr": 142.4,
+        "ef": 0.02445
+      },
+      "distance_km": 11.03,
+      "gradient_m_per_km": 5.5,
+      "pace_delta_pct": 1.8,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-02-18",
+      "activity_id": 21910177444,
+      "decoupling_pct": 2.28,
+      "within_threshold": true,
+      "analysed_min": 55.2,
+      "first_half": {
+        "pace": "4:35",
+        "avg_hr": 147.9,
+        "ef": 0.02455
+      },
+      "second_half": {
+        "pace": "5:15",
+        "avg_hr": 132.4,
+        "ef": 0.02399
+      },
+      "distance_km": 12.8,
+      "gradient_m_per_km": 4.7,
+      "pace_delta_pct": 14.4,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 14% slower"
+      ]
+    },
+    {
+      "date": "2026-02-24",
+      "activity_id": 21972934297,
+      "decoupling_pct": 1.38,
+      "within_threshold": true,
+      "analysed_min": 42.9,
+      "first_half": {
+        "pace": "4:42",
+        "avg_hr": 155.1,
+        "ef": 0.02287
+      },
+      "second_half": {
+        "pace": "4:50",
+        "avg_hr": 152.9,
+        "ef": 0.02256
+      },
+      "distance_km": 11.08,
+      "gradient_m_per_km": 5.3,
+      "pace_delta_pct": 2.9,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-02-25",
+      "activity_id": 21984567952,
+      "decoupling_pct": 10.16,
+      "within_threshold": false,
+      "analysed_min": 36.8,
+      "first_half": {
+        "pace": "4:08",
+        "avg_hr": 158.0,
+        "ef": 0.02554
+      },
+      "second_half": {
+        "pace": "4:42",
+        "avg_hr": 154.7,
+        "ef": 0.02294
+      },
+      "distance_km": 10.14,
+      "gradient_m_per_km": 3.4,
+      "pace_delta_pct": 13.7,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 14% slower"
+      ]
+    },
+    {
+      "date": "2026-02-28",
+      "activity_id": 22011602150,
+      "decoupling_pct": 8.69,
+      "within_threshold": false,
+      "analysed_min": 60.4,
+      "first_half": {
+        "pace": "4:19",
+        "avg_hr": 154.0,
+        "ef": 0.02511
+      },
+      "second_half": {
+        "pace": "5:02",
+        "avg_hr": 144.5,
+        "ef": 0.02293
+      },
+      "distance_km": 14.02,
+      "gradient_m_per_km": 4.7,
+      "pace_delta_pct": 16.7,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 17% slower"
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "activity_id": 22022275818,
+      "decoupling_pct": 2.45,
+      "within_threshold": true,
+      "analysed_min": 66.2,
+      "first_half": {
+        "pace": "5:02",
+        "avg_hr": 139.4,
+        "ef": 0.02372
+      },
+      "second_half": {
+        "pace": "5:07",
+        "avg_hr": 140.9,
+        "ef": 0.02314
+      },
+      "distance_km": 15.02,
+      "gradient_m_per_km": 5.1,
+      "pace_delta_pct": 1.4,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-03-02",
+      "activity_id": 22038598628,
+      "decoupling_pct": -6.43,
+      "within_threshold": true,
+      "analysed_min": 35.5,
+      "first_half": {
+        "pace": "4:49",
+        "avg_hr": 144.2,
+        "ef": 0.02399
+      },
+      "second_half": {
+        "pace": "4:55",
+        "avg_hr": 132.9,
+        "ef": 0.02553
+      },
+      "distance_km": 9.31,
+      "gradient_m_per_km": 4.9,
+      "pace_delta_pct": 2.0,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-03-03",
+      "activity_id": 22050357294,
+      "decoupling_pct": 13.08,
+      "within_threshold": false,
+      "analysed_min": 41.9,
+      "first_half": {
+        "pace": "4:18",
+        "avg_hr": 150.9,
+        "ef": 0.02567
+      },
+      "second_half": {
+        "pace": "4:51",
+        "avg_hr": 153.8,
+        "ef": 0.02231
+      },
+      "distance_km": 10.63,
+      "gradient_m_per_km": 2.8,
+      "pace_delta_pct": 12.9,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 13% slower"
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "activity_id": 22073627347,
+      "decoupling_pct": 0.59,
+      "within_threshold": true,
+      "analysed_min": 46.1,
+      "first_half": {
+        "pace": "5:09",
+        "avg_hr": 138.6,
+        "ef": 0.02331
+      },
+      "second_half": {
+        "pace": "5:12",
+        "avg_hr": 138.1,
+        "ef": 0.02318
+      },
+      "distance_km": 10.86,
+      "gradient_m_per_km": 5.1,
+      "pace_delta_pct": 1.0,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-03-07",
+      "activity_id": 22089516965,
+      "decoupling_pct": 13.74,
+      "within_threshold": false,
+      "analysed_min": 56.0,
+      "first_half": {
+        "pace": "4:20",
+        "avg_hr": 149.8,
+        "ef": 0.02564
+      },
+      "second_half": {
+        "pace": "5:16",
+        "avg_hr": 143.3,
+        "ef": 0.02211
+      },
+      "distance_km": 13.13,
+      "gradient_m_per_km": 3.9,
+      "pace_delta_pct": 21.2,
+      "unreliable_reasons": [
+        "not steady \u2014 second half 21% slower"
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "activity_id": 22101397744,
+      "decoupling_pct": 0.15,
+      "within_threshold": true,
+      "analysed_min": 63.4,
+      "first_half": {
+        "pace": "4:54",
+        "avg_hr": 135.7,
+        "ef": 0.0251
+      },
+      "second_half": {
+        "pace": "4:50",
+        "avg_hr": 137.6,
+        "ef": 0.02506
+      },
+      "distance_km": 15.02,
+      "gradient_m_per_km": 5.1,
+      "pace_delta_pct": -1.3,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-03-10",
+      "activity_id": 22130310225,
+      "decoupling_pct": -1.73,
+      "within_threshold": true,
+      "analysed_min": 47.4,
+      "first_half": {
+        "pace": "5:33",
+        "avg_hr": 129.5,
+        "ef": 0.02317
+      },
+      "second_half": {
+        "pace": "5:13",
+        "avg_hr": 135.4,
+        "ef": 0.02357
+      },
+      "distance_km": 10.42,
+      "gradient_m_per_km": 8.9,
+      "pace_delta_pct": -6.0,
+      "unreliable_reasons": [
+        "not steady \u2014 second half 6% quicker"
+      ]
+    },
+    {
+      "date": "2026-03-11",
+      "activity_id": 22141637439,
+      "decoupling_pct": 9.09,
+      "within_threshold": false,
+      "analysed_min": 56.0,
+      "first_half": {
+        "pace": "4:24",
+        "avg_hr": 151.5,
+        "ef": 0.02497
+      },
+      "second_half": {
+        "pace": "4:48",
+        "avg_hr": 153.2,
+        "ef": 0.0227
+      },
+      "distance_km": 14.26,
+      "gradient_m_per_km": 3.3,
+      "pace_delta_pct": 8.8,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 9% slower"
+      ]
+    },
+    {
+      "date": "2026-03-13",
+      "activity_id": 22162978712,
+      "decoupling_pct": -0.52,
+      "within_threshold": true,
+      "analysed_min": 44.1,
+      "first_half": {
+        "pace": "5:08",
+        "avg_hr": 137.5,
+        "ef": 0.02359
+      },
+      "second_half": {
+        "pace": "5:11",
+        "avg_hr": 135.7,
+        "ef": 0.02372
+      },
+      "distance_km": 9.64,
+      "gradient_m_per_km": 4.7,
+      "pace_delta_pct": 0.8,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-03-14",
+      "activity_id": 22168901554,
+      "decoupling_pct": 13.68,
+      "within_threshold": false,
+      "analysed_min": 57.1,
+      "first_half": {
+        "pace": "4:18",
+        "avg_hr": 150.8,
+        "ef": 0.02571
+      },
+      "second_half": {
+        "pace": "5:21",
+        "avg_hr": 140.4,
+        "ef": 0.0222
+      },
+      "distance_km": 13.64,
+      "gradient_m_per_km": 3.5,
+      "pace_delta_pct": 24.4,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 24% slower"
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "activity_id": 22180413638,
+      "decoupling_pct": -3.64,
+      "within_threshold": true,
+      "analysed_min": 73.0,
+      "first_half": {
+        "pace": "4:54",
+        "avg_hr": 139.8,
+        "ef": 0.0243
+      },
+      "second_half": {
+        "pace": "4:53",
+        "avg_hr": 135.7,
+        "ef": 0.02519
+      },
+      "distance_km": 15.25,
+      "gradient_m_per_km": 7.9,
+      "pace_delta_pct": -0.5,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-03-16",
+      "activity_id": 22195176499,
+      "decoupling_pct": -2.6,
+      "within_threshold": true,
+      "analysed_min": 36.4,
+      "first_half": {
+        "pace": "5:07",
+        "avg_hr": 132.0,
+        "ef": 0.02463
+      },
+      "second_half": {
+        "pace": "4:59",
+        "avg_hr": 132.2,
+        "ef": 0.02527
+      },
+      "distance_km": 9.02,
+      "gradient_m_per_km": 9.0,
+      "pace_delta_pct": -2.7,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-03-17",
+      "activity_id": 22207253260,
+      "decoupling_pct": 2.19,
+      "within_threshold": true,
+      "analysed_min": 33.7,
+      "first_half": {
+        "pace": "4:42",
+        "avg_hr": 142.9,
+        "ef": 0.02481
+      },
+      "second_half": {
+        "pace": "4:49",
+        "avg_hr": 142.4,
+        "ef": 0.02427
+      },
+      "distance_km": 9.28,
+      "gradient_m_per_km": 6.2,
+      "pace_delta_pct": 2.6,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-03-18",
+      "activity_id": 22218118134,
+      "decoupling_pct": 8.54,
+      "within_threshold": false,
+      "analysed_min": 40.3,
+      "first_half": {
+        "pace": "4:12",
+        "avg_hr": 153.7,
+        "ef": 0.02578
+      },
+      "second_half": {
+        "pace": "4:42",
+        "avg_hr": 150.2,
+        "ef": 0.02358
+      },
+      "distance_km": 10.83,
+      "gradient_m_per_km": 2.9,
+      "pace_delta_pct": 11.9,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 12% slower"
+      ]
+    },
+    {
+      "date": "2026-03-21",
+      "activity_id": 22247647641,
+      "decoupling_pct": 11.67,
+      "within_threshold": false,
+      "analysed_min": 67.5,
+      "first_half": {
+        "pace": "4:16",
+        "avg_hr": 153.5,
+        "ef": 0.02541
+      },
+      "second_half": {
+        "pace": "5:28",
+        "avg_hr": 135.8,
+        "ef": 0.02244
+      },
+      "distance_km": 15.01,
+      "gradient_m_per_km": 3.4,
+      "pace_delta_pct": 28.0,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 28% slower"
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "activity_id": 22259274651,
+      "decoupling_pct": -3.62,
+      "within_threshold": true,
+      "analysed_min": 98.3,
+      "first_half": {
+        "pace": "6:25",
+        "avg_hr": 116.0,
+        "ef": 0.0224
+      },
+      "second_half": {
+        "pace": "5:32",
+        "avg_hr": 129.8,
+        "ef": 0.02321
+      },
+      "distance_km": 4.35,
+      "gradient_m_per_km": 9.9,
+      "pace_delta_pct": -13.7,
+      "unreliable_reasons": [
+        "not steady \u2014 second half 14% quicker"
+      ]
+    },
+    {
+      "date": "2026-03-24",
+      "activity_id": 22286726897,
+      "decoupling_pct": -1.89,
+      "within_threshold": true,
+      "analysed_min": 40.0,
+      "first_half": {
+        "pace": "5:01",
+        "avg_hr": 139.0,
+        "ef": 0.02392
+      },
+      "second_half": {
+        "pace": "4:59",
+        "avg_hr": 137.2,
+        "ef": 0.02437
+      },
+      "distance_km": 10.01,
+      "gradient_m_per_km": 11.5,
+      "pace_delta_pct": -0.5,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-03-25",
+      "activity_id": 22298059796,
+      "decoupling_pct": 9.46,
+      "within_threshold": false,
+      "analysed_min": 42.7,
+      "first_half": {
+        "pace": "4:21",
+        "avg_hr": 148.8,
+        "ef": 0.02576
+      },
+      "second_half": {
+        "pace": "4:51",
+        "avg_hr": 147.2,
+        "ef": 0.02332
+      },
+      "distance_km": 11.06,
+      "gradient_m_per_km": 3.8,
+      "pace_delta_pct": 11.7,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 12% slower"
+      ]
+    },
+    {
+      "date": "2026-03-27",
+      "activity_id": 22318700313,
+      "decoupling_pct": 10.87,
+      "within_threshold": false,
+      "analysed_min": 30.9,
+      "first_half": {
+        "pace": "5:06",
+        "avg_hr": 129.6,
+        "ef": 0.02521
+      },
+      "second_half": {
+        "pace": "5:18",
+        "avg_hr": 139.9,
+        "ef": 0.02247
+      },
+      "distance_km": 7.79,
+      "gradient_m_per_km": 6.4,
+      "pace_delta_pct": 4.0,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-03-28",
+      "activity_id": 22325751879,
+      "decoupling_pct": 15.74,
+      "within_threshold": false,
+      "analysed_min": 66.7,
+      "first_half": {
+        "pace": "4:19",
+        "avg_hr": 152.3,
+        "ef": 0.02539
+      },
+      "second_half": {
+        "pace": "5:35",
+        "avg_hr": 139.6,
+        "ef": 0.0214
+      },
+      "distance_km": 15.02,
+      "gradient_m_per_km": 5.1,
+      "pace_delta_pct": 29.5,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 30% slower"
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "activity_id": 22337146513,
+      "decoupling_pct": -16.92,
+      "within_threshold": true,
+      "analysed_min": 141.9,
+      "first_half": {
+        "pace": "5:27",
+        "avg_hr": 130.9,
+        "ef": 0.02336
+      },
+      "second_half": {
+        "pace": "5:22",
+        "avg_hr": 113.6,
+        "ef": 0.02731
+      },
+      "distance_km": 21.51,
+      "gradient_m_per_km": 6.8,
+      "pace_delta_pct": -1.4,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-04-01",
+      "activity_id": 22374664443,
+      "decoupling_pct": -4.71,
+      "within_threshold": true,
+      "analysed_min": 29.9,
+      "first_half": {
+        "pace": "5:10",
+        "avg_hr": 131.1,
+        "ef": 0.02463
+      },
+      "second_half": {
+        "pace": "4:51",
+        "avg_hr": 133.3,
+        "ef": 0.02579
+      },
+      "distance_km": 8.01,
+      "gradient_m_per_km": 8.0,
+      "pace_delta_pct": -6.1,
+      "unreliable_reasons": [
+        "not steady \u2014 second half 6% quicker"
+      ]
+    },
+    {
+      "date": "2026-04-02",
+      "activity_id": 22385764114,
+      "decoupling_pct": -2.28,
+      "within_threshold": true,
+      "analysed_min": 39.5,
+      "first_half": {
+        "pace": "4:54",
+        "avg_hr": 137.2,
+        "ef": 0.02483
+      },
+      "second_half": {
+        "pace": "4:60",
+        "avg_hr": 131.5,
+        "ef": 0.02539
+      },
+      "distance_km": 10.01,
+      "gradient_m_per_km": 7.7,
+      "pace_delta_pct": 2.0,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-04-04",
+      "activity_id": 22402636721,
+      "decoupling_pct": 22.54,
+      "within_threshold": false,
+      "analysed_min": 36.2,
+      "first_half": {
+        "pace": "4:28",
+        "avg_hr": 148.6,
+        "ef": 0.02514
+      },
+      "second_half": {
+        "pace": "6:45",
+        "avg_hr": 126.9,
+        "ef": 0.01947
+      },
+      "distance_km": 8.14,
+      "gradient_m_per_km": 4.4,
+      "pace_delta_pct": 51.2,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 51% slower"
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "activity_id": 22413607097,
+      "decoupling_pct": -2.31,
+      "within_threshold": true,
+      "analysed_min": 76.6,
+      "first_half": {
+        "pace": "4:55",
+        "avg_hr": 135.8,
+        "ef": 0.02495
+      },
+      "second_half": {
+        "pace": "5:02",
+        "avg_hr": 129.9,
+        "ef": 0.02553
+      },
+      "distance_km": 17.45,
+      "gradient_m_per_km": 8.8,
+      "pace_delta_pct": 2.2,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-04-07",
+      "activity_id": 22442779014,
+      "decoupling_pct": 5.86,
+      "within_threshold": false,
+      "analysed_min": 49.7,
+      "first_half": {
+        "pace": "4:28",
+        "avg_hr": 149.9,
+        "ef": 0.02492
+      },
+      "second_half": {
+        "pace": "5:00",
+        "avg_hr": 142.0,
+        "ef": 0.02346
+      },
+      "distance_km": 12.01,
+      "gradient_m_per_km": 3.7,
+      "pace_delta_pct": 12.2,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 12% slower"
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "activity_id": 22525942642,
+      "decoupling_pct": 8.45,
+      "within_threshold": false,
+      "analysed_min": 41.8,
+      "first_half": {
+        "pace": "4:25",
+        "avg_hr": 155.1,
+        "ef": 0.02434
+      },
+      "second_half": {
+        "pace": "5:00",
+        "avg_hr": 149.4,
+        "ef": 0.02229
+      },
+      "distance_km": 10.42,
+      "gradient_m_per_km": 4.1,
+      "pace_delta_pct": 13.4,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 13% slower"
+      ]
+    },
+    {
+      "date": "2026-04-16",
+      "activity_id": 22550218725,
+      "decoupling_pct": 0.75,
+      "within_threshold": true,
+      "analysed_min": 30.6,
+      "first_half": {
+        "pace": "6:05",
+        "avg_hr": 123.3,
+        "ef": 0.02221
+      },
+      "second_half": {
+        "pace": "5:60",
+        "avg_hr": 126.2,
+        "ef": 0.02204
+      },
+      "distance_km": 6.78,
+      "gradient_m_per_km": 6.4,
+      "pace_delta_pct": -1.6,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-04-18",
+      "activity_id": 22571844719,
+      "decoupling_pct": -3.17,
+      "within_threshold": true,
+      "analysed_min": 98.9,
+      "first_half": {
+        "pace": "5:28",
+        "avg_hr": 140.7,
+        "ef": 0.0217
+      },
+      "second_half": {
+        "pace": "5:28",
+        "avg_hr": 136.0,
+        "ef": 0.02238
+      },
+      "distance_km": 11.09,
+      "gradient_m_per_km": 3.2,
+      "pace_delta_pct": 0.2,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-04-19",
+      "activity_id": 22584645441,
+      "decoupling_pct": 2.16,
+      "within_threshold": true,
+      "analysed_min": 55.9,
+      "first_half": {
+        "pace": "4:59",
+        "avg_hr": 160.9,
+        "ef": 0.02081
+      },
+      "second_half": {
+        "pace": "5:13",
+        "avg_hr": 157.1,
+        "ef": 0.02036
+      },
+      "distance_km": 8.55,
+      "gradient_m_per_km": 3.7,
+      "pace_delta_pct": 4.7,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-04-21",
+      "activity_id": 22609112120,
+      "decoupling_pct": -9.97,
+      "within_threshold": true,
+      "analysed_min": 38.3,
+      "first_half": {
+        "pace": "5:41",
+        "avg_hr": 141.3,
+        "ef": 0.02078
+      },
+      "second_half": {
+        "pace": "5:25",
+        "avg_hr": 134.8,
+        "ef": 0.02285
+      },
+      "distance_km": 8.53,
+      "gradient_m_per_km": 8.1,
+      "pace_delta_pct": -4.7,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-04-22",
+      "activity_id": 22621453927,
+      "decoupling_pct": -8.99,
+      "within_threshold": true,
+      "analysed_min": 45.1,
+      "first_half": {
+        "pace": "6:17",
+        "avg_hr": 127.1,
+        "ef": 0.02087
+      },
+      "second_half": {
+        "pace": "5:08",
+        "avg_hr": 142.9,
+        "ef": 0.02274
+      },
+      "distance_km": 9.22,
+      "gradient_m_per_km": 6.6,
+      "pace_delta_pct": -18.4,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 18% quicker"
+      ]
+    },
+    {
+      "date": "2026-04-25",
+      "activity_id": 22651017054,
+      "decoupling_pct": 6.62,
+      "within_threshold": false,
+      "analysed_min": 64.3,
+      "first_half": {
+        "pace": "4:46",
+        "avg_hr": 150.4,
+        "ef": 0.02327
+      },
+      "second_half": {
+        "pace": "5:33",
+        "avg_hr": 138.3,
+        "ef": 0.02173
+      },
+      "distance_km": 13.02,
+      "gradient_m_per_km": 3.0,
+      "pace_delta_pct": 16.5,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 16% slower"
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "activity_id": 22662755333,
+      "decoupling_pct": -1.74,
+      "within_threshold": true,
+      "analysed_min": 94.5,
+      "first_half": {
+        "pace": "5:48",
+        "avg_hr": 145.4,
+        "ef": 0.01978
+      },
+      "second_half": {
+        "pace": "5:45",
+        "avg_hr": 144.2,
+        "ef": 0.02012
+      },
+      "distance_km": 16.88,
+      "gradient_m_per_km": 38.2,
+      "pace_delta_pct": -0.9,
+      "unreliable_reasons": [
+        "hilly (38 m/km climb)"
+      ]
+    },
+    {
+      "date": "2026-04-28",
+      "activity_id": 22692288154,
+      "decoupling_pct": 0.71,
+      "within_threshold": true,
+      "analysed_min": 31.2,
+      "first_half": {
+        "pace": "5:11",
+        "avg_hr": 135.3,
+        "ef": 0.02379
+      },
+      "second_half": {
+        "pace": "5:09",
+        "avg_hr": 137.1,
+        "ef": 0.02362
+      },
+      "distance_km": 8.01,
+      "gradient_m_per_km": 8.8,
+      "pace_delta_pct": -0.6,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-04-29",
+      "activity_id": 22705224115,
+      "decoupling_pct": 2.35,
+      "within_threshold": true,
+      "analysed_min": 48.9,
+      "first_half": {
+        "pace": "5:13",
+        "avg_hr": 138.9,
+        "ef": 0.02303
+      },
+      "second_half": {
+        "pace": "5:19",
+        "avg_hr": 139.6,
+        "ef": 0.02248
+      },
+      "distance_km": 7.16,
+      "gradient_m_per_km": 9.7,
+      "pace_delta_pct": 1.9,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable"
+      ]
+    },
+    {
+      "date": "2026-05-02",
+      "activity_id": 22735196979,
+      "decoupling_pct": -5.84,
+      "within_threshold": true,
+      "analysed_min": 36.8,
+      "first_half": {
+        "pace": "4:48",
+        "avg_hr": 147.5,
+        "ef": 0.02351
+      },
+      "second_half": {
+        "pace": "4:15",
+        "avg_hr": 157.4,
+        "ef": 0.02489
+      },
+      "distance_km": 10.13,
+      "gradient_m_per_km": 3.1,
+      "pace_delta_pct": -11.5,
+      "unreliable_reasons": [
+        "not steady \u2014 second half 12% quicker"
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "activity_id": 22746628132,
+      "decoupling_pct": -5.39,
+      "within_threshold": true,
+      "analysed_min": 54.6,
+      "first_half": {
+        "pace": "4:56",
+        "avg_hr": 147.2,
+        "ef": 0.02297
+      },
+      "second_half": {
+        "pace": "4:49",
+        "avg_hr": 143.2,
+        "ef": 0.0242
+      },
+      "distance_km": 13.2,
+      "gradient_m_per_km": 7.2,
+      "pace_delta_pct": -2.5,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-05-10",
+      "activity_id": 22828623458,
+      "decoupling_pct": 0.94,
+      "within_threshold": true,
+      "analysed_min": 40.3,
+      "first_half": {
+        "pace": "4:59",
+        "avg_hr": 141.7,
+        "ef": 0.02358
+      },
+      "second_half": {
+        "pace": "4:57",
+        "avg_hr": 144.3,
+        "ef": 0.02336
+      },
+      "distance_km": 10.1,
+      "gradient_m_per_km": 5.9,
+      "pace_delta_pct": -0.9,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-05-13",
+      "activity_id": 22869671257,
+      "decoupling_pct": 4.81,
+      "within_threshold": true,
+      "analysed_min": 45.9,
+      "first_half": {
+        "pace": "4:47",
+        "avg_hr": 147.8,
+        "ef": 0.02355
+      },
+      "second_half": {
+        "pace": "5:04",
+        "avg_hr": 146.6,
+        "ef": 0.02241
+      },
+      "distance_km": 10.95,
+      "gradient_m_per_km": 3.9,
+      "pace_delta_pct": 5.9,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 6% slower"
+      ]
+    },
+    {
+      "date": "2026-05-16",
+      "activity_id": 22900221161,
+      "decoupling_pct": 12.81,
+      "within_threshold": false,
+      "analysed_min": 47.4,
+      "first_half": {
+        "pace": "4:13",
+        "avg_hr": 152.2,
+        "ef": 0.02595
+      },
+      "second_half": {
+        "pace": "4:55",
+        "avg_hr": 150.0,
+        "ef": 0.02263
+      },
+      "distance_km": 10.7,
+      "gradient_m_per_km": 2.5,
+      "pace_delta_pct": 16.3,
+      "unreliable_reasons": [
+        "not steady \u2014 second half 16% slower"
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "activity_id": 22909939061,
+      "decoupling_pct": -9.1,
+      "within_threshold": true,
+      "analysed_min": 46.5,
+      "first_half": {
+        "pace": "4:56",
+        "avg_hr": 145.9,
+        "ef": 0.02313
+      },
+      "second_half": {
+        "pace": "4:27",
+        "avg_hr": 148.5,
+        "ef": 0.02523
+      },
+      "distance_km": 12.02,
+      "gradient_m_per_km": 7.4,
+      "pace_delta_pct": -10.0,
+      "unreliable_reasons": [
+        "not steady \u2014 second half 10% quicker"
+      ]
+    },
+    {
+      "date": "2026-05-22",
+      "activity_id": 22974386384,
+      "decoupling_pct": -6.92,
+      "within_threshold": true,
+      "analysed_min": 39.0,
+      "first_half": {
+        "pace": "5:58",
+        "avg_hr": 127.4,
+        "ef": 0.02194
+      },
+      "second_half": {
+        "pace": "5:10",
+        "avg_hr": 137.3,
+        "ef": 0.02346
+      },
+      "distance_km": 8.03,
+      "gradient_m_per_km": 14.0,
+      "pace_delta_pct": -13.2,
+      "unreliable_reasons": [
+        "hilly (14 m/km climb)",
+        "not steady \u2014 second half 13% quicker"
+      ]
+    },
+    {
+      "date": "2026-05-23",
+      "activity_id": 22980462533,
+      "decoupling_pct": 6.37,
+      "within_threshold": false,
+      "analysed_min": 67.8,
+      "first_half": {
+        "pace": "4:32",
+        "avg_hr": 154.4,
+        "ef": 0.02385
+      },
+      "second_half": {
+        "pace": "4:56",
+        "avg_hr": 151.1,
+        "ef": 0.02233
+      },
+      "distance_km": 13.5,
+      "gradient_m_per_km": 4.0,
+      "pace_delta_pct": 9.1,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 9% slower"
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "activity_id": 22992218568,
+      "decoupling_pct": -13.9,
+      "within_threshold": true,
+      "analysed_min": 59.4,
+      "first_half": {
+        "pace": "5:22",
+        "avg_hr": 142.6,
+        "ef": 0.02178
+      },
+      "second_half": {
+        "pace": "4:47",
+        "avg_hr": 140.5,
+        "ef": 0.02481
+      },
+      "distance_km": 13.7,
+      "gradient_m_per_km": 20.1,
+      "pace_delta_pct": -10.9,
+      "unreliable_reasons": [
+        "hilly (20 m/km climb)",
+        "not steady \u2014 second half 11% quicker"
+      ]
+    },
+    {
+      "date": "2026-05-25",
+      "activity_id": 23003232560,
+      "decoupling_pct": 0.53,
+      "within_threshold": true,
+      "analysed_min": 47.4,
+      "first_half": {
+        "pace": "5:38",
+        "avg_hr": 126.3,
+        "ef": 0.02341
+      },
+      "second_half": {
+        "pace": "5:23",
+        "avg_hr": 133.1,
+        "ef": 0.02328
+      },
+      "distance_km": 10.58,
+      "gradient_m_per_km": 5.0,
+      "pace_delta_pct": -4.6,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-05-27",
+      "activity_id": 23034955691,
+      "decoupling_pct": 5.95,
+      "within_threshold": false,
+      "analysed_min": 43.9,
+      "first_half": {
+        "pace": "4:27",
+        "avg_hr": 148.4,
+        "ef": 0.02523
+      },
+      "second_half": {
+        "pace": "4:59",
+        "avg_hr": 141.1,
+        "ef": 0.02373
+      },
+      "distance_km": 7.31,
+      "gradient_m_per_km": 6.3,
+      "pace_delta_pct": 11.8,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 12% slower"
+      ]
+    },
+    {
+      "date": "2026-05-28",
+      "activity_id": 23043276348,
+      "decoupling_pct": 0.74,
+      "within_threshold": true,
+      "analysed_min": 30.7,
+      "first_half": {
+        "pace": "4:53",
+        "avg_hr": 143.0,
+        "ef": 0.02385
+      },
+      "second_half": {
+        "pace": "4:60",
+        "avg_hr": 141.0,
+        "ef": 0.02368
+      },
+      "distance_km": 7.64,
+      "gradient_m_per_km": 6.7,
+      "pace_delta_pct": 2.2,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-05-30",
+      "activity_id": 23064688352,
+      "decoupling_pct": 8.44,
+      "within_threshold": false,
+      "analysed_min": 65.1,
+      "first_half": {
+        "pace": "4:49",
+        "avg_hr": 147.2,
+        "ef": 0.02354
+      },
+      "second_half": {
+        "pace": "5:19",
+        "avg_hr": 145.6,
+        "ef": 0.02156
+      },
+      "distance_km": 14.12,
+      "gradient_m_per_km": 4.6,
+      "pace_delta_pct": 10.4,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 10% slower"
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "activity_id": 23076276503,
+      "decoupling_pct": 7.18,
+      "within_threshold": false,
+      "analysed_min": 55.0,
+      "first_half": {
+        "pace": "4:52",
+        "avg_hr": 138.4,
+        "ef": 0.02474
+      },
+      "second_half": {
+        "pace": "5:13",
+        "avg_hr": 139.0,
+        "ef": 0.02297
+      },
+      "distance_km": 13.02,
+      "gradient_m_per_km": 8.0,
+      "pace_delta_pct": 7.3,
+      "unreliable_reasons": [
+        "not steady \u2014 second half 7% slower"
+      ]
+    },
+    {
+      "date": "2026-06-03",
+      "activity_id": 23118899402,
+      "decoupling_pct": 12.52,
+      "within_threshold": false,
+      "analysed_min": 41.1,
+      "first_half": {
+        "pace": "4:20",
+        "avg_hr": 149.3,
+        "ef": 0.02576
+      },
+      "second_half": {
+        "pace": "4:57",
+        "avg_hr": 149.7,
+        "ef": 0.02253
+      },
+      "distance_km": 9.87,
+      "gradient_m_per_km": 9.0,
+      "pace_delta_pct": 14.0,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 14% slower"
+      ]
+    },
+    {
+      "date": "2026-06-04",
+      "activity_id": 23127237404,
+      "decoupling_pct": 1.54,
+      "within_threshold": true,
+      "analysed_min": 31.6,
+      "first_half": {
+        "pace": "4:42",
+        "avg_hr": 145.1,
+        "ef": 0.02445
+      },
+      "second_half": {
+        "pace": "4:50",
+        "avg_hr": 143.3,
+        "ef": 0.02408
+      },
+      "distance_km": 8.69,
+      "gradient_m_per_km": 8.1,
+      "pace_delta_pct": 2.8,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-06-05",
+      "activity_id": 23142443025,
+      "decoupling_pct": 0.64,
+      "within_threshold": true,
+      "analysed_min": 43.3,
+      "first_half": {
+        "pace": "4:41",
+        "avg_hr": 144.2,
+        "ef": 0.02468
+      },
+      "second_half": {
+        "pace": "4:48",
+        "avg_hr": 141.5,
+        "ef": 0.02452
+      },
+      "distance_km": 10.02,
+      "gradient_m_per_km": 5.3,
+      "pace_delta_pct": 2.5,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-06-06",
+      "activity_id": 23149124368,
+      "decoupling_pct": -6.08,
+      "within_threshold": true,
+      "analysed_min": 115.8,
+      "first_half": {
+        "pace": "5:38",
+        "avg_hr": 135.7,
+        "ef": 0.02182
+      },
+      "second_half": {
+        "pace": "5:32",
+        "avg_hr": 130.2,
+        "ef": 0.02315
+      },
+      "distance_km": 15.01,
+      "gradient_m_per_km": 6.3,
+      "pace_delta_pct": -1.7,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-06-07",
+      "activity_id": 23160256450,
+      "decoupling_pct": -5.5,
+      "within_threshold": true,
+      "analysed_min": 39.0,
+      "first_half": {
+        "pace": "4:58",
+        "avg_hr": 140.1,
+        "ef": 0.02394
+      },
+      "second_half": {
+        "pace": "4:45",
+        "avg_hr": 139.0,
+        "ef": 0.02526
+      },
+      "distance_km": 10.02,
+      "gradient_m_per_km": 8.3,
+      "pace_delta_pct": -4.5,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-06-12",
+      "activity_id": 23220325479,
+      "decoupling_pct": -5.26,
+      "within_threshold": true,
+      "analysed_min": 29.9,
+      "first_half": {
+        "pace": "5:27",
+        "avg_hr": 134.8,
+        "ef": 0.02269
+      },
+      "second_half": {
+        "pace": "4:57",
+        "avg_hr": 140.9,
+        "ef": 0.02388
+      },
+      "distance_km": 7.74,
+      "gradient_m_per_km": 6.6,
+      "pace_delta_pct": -9.1,
+      "unreliable_reasons": [
+        "not steady \u2014 second half 9% quicker"
+      ]
+    },
+    {
+      "date": "2026-06-13",
+      "activity_id": 23232675302,
+      "decoupling_pct": 5.33,
+      "within_threshold": false,
+      "analysed_min": 81.0,
+      "first_half": {
+        "pace": "6:09",
+        "avg_hr": 130.9,
+        "ef": 0.02073
+      },
+      "second_half": {
+        "pace": "6:11",
+        "avg_hr": 137.4,
+        "ef": 0.01962
+      },
+      "distance_km": 12.3,
+      "gradient_m_per_km": 38.3,
+      "pace_delta_pct": 0.6,
+      "unreliable_reasons": [
+        "hilly (38 m/km climb)"
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "activity_id": 23245071153,
+      "decoupling_pct": 15.05,
+      "within_threshold": false,
+      "analysed_min": 78.8,
+      "first_half": {
+        "pace": "4:35",
+        "avg_hr": 143.0,
+        "ef": 0.02545
+      },
+      "second_half": {
+        "pace": "5:58",
+        "avg_hr": 129.3,
+        "ef": 0.02162
+      },
+      "distance_km": 15.54,
+      "gradient_m_per_km": 4.3,
+      "pace_delta_pct": 30.2,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 30% slower"
+      ]
+    },
+    {
+      "date": "2026-06-16",
+      "activity_id": 23272706515,
+      "decoupling_pct": -5.71,
+      "within_threshold": true,
+      "analysed_min": 38.5,
+      "first_half": {
+        "pace": "4:55",
+        "avg_hr": 140.1,
+        "ef": 0.02419
+      },
+      "second_half": {
+        "pace": "4:40",
+        "avg_hr": 139.8,
+        "ef": 0.02557
+      },
+      "distance_km": 10.01,
+      "gradient_m_per_km": 7.9,
+      "pace_delta_pct": -5.2,
+      "unreliable_reasons": [
+        "not steady \u2014 second half 5% quicker"
+      ]
+    },
+    {
+      "date": "2026-06-17",
+      "activity_id": 23285986072,
+      "decoupling_pct": 11.95,
+      "within_threshold": false,
+      "analysed_min": 62.3,
+      "first_half": {
+        "pace": "4:28",
+        "avg_hr": 145.7,
+        "ef": 0.02558
+      },
+      "second_half": {
+        "pace": "5:15",
+        "avg_hr": 141.2,
+        "ef": 0.02252
+      },
+      "distance_km": 12.8,
+      "gradient_m_per_km": 4.3,
+      "pace_delta_pct": 17.2,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 17% slower"
+      ]
+    },
+    {
+      "date": "2026-06-19",
+      "activity_id": 23308266794,
+      "decoupling_pct": -0.89,
+      "within_threshold": true,
+      "analysed_min": 39.1,
+      "first_half": {
+        "pace": "5:14",
+        "avg_hr": 137.3,
+        "ef": 0.02316
+      },
+      "second_half": {
+        "pace": "5:08",
+        "avg_hr": 139.0,
+        "ef": 0.02337
+      },
+      "distance_km": 9.01,
+      "gradient_m_per_km": 10.1,
+      "pace_delta_pct": -2.1,
+      "unreliable_reasons": []
+    },
+    {
+      "date": "2026-06-20",
+      "activity_id": 23315737574,
+      "decoupling_pct": -32.1,
+      "within_threshold": true,
+      "analysed_min": 113.1,
+      "first_half": {
+        "pace": "7:44",
+        "avg_hr": 122.8,
+        "ef": 0.01756
+      },
+      "second_half": {
+        "pace": "5:54",
+        "avg_hr": 121.9,
+        "ef": 0.0232
+      },
+      "distance_km": 15.43,
+      "gradient_m_per_km": 26.7,
+      "pace_delta_pct": -23.7,
+      "unreliable_reasons": [
+        "hilly (27 m/km climb)",
+        "not steady \u2014 second half 24% quicker"
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "activity_id": 23325872558,
+      "decoupling_pct": 8.21,
+      "within_threshold": false,
+      "analysed_min": 63.8,
+      "first_half": {
+        "pace": "4:49",
+        "avg_hr": 141.1,
+        "ef": 0.02448
+      },
+      "second_half": {
+        "pace": "5:24",
+        "avg_hr": 137.4,
+        "ef": 0.02247
+      },
+      "distance_km": 13.01,
+      "gradient_m_per_km": 5.1,
+      "pace_delta_pct": 11.9,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 12% slower"
+      ]
+    },
+    {
+      "date": "2026-06-23",
+      "activity_id": 23348763241,
+      "decoupling_pct": 1.68,
+      "within_threshold": true,
+      "analysed_min": 54.3,
+      "first_half": {
+        "pace": "5:29",
+        "avg_hr": 134.6,
+        "ef": 0.02257
+      },
+      "second_half": {
+        "pace": "5:10",
+        "avg_hr": 145.1,
+        "ef": 0.02219
+      },
+      "distance_km": 10.71,
+      "gradient_m_per_km": 6.6,
+      "pace_delta_pct": -5.7,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 6% quicker"
+      ]
+    },
+    {
+      "date": "2026-06-25",
+      "activity_id": 23372527022,
+      "decoupling_pct": -7.77,
+      "within_threshold": true,
+      "analysed_min": 36.6,
+      "first_half": {
+        "pace": "5:20",
+        "avg_hr": 138.1,
+        "ef": 0.02259
+      },
+      "second_half": {
+        "pace": "4:54",
+        "avg_hr": 139.8,
+        "ef": 0.02435
+      },
+      "distance_km": 7.53,
+      "gradient_m_per_km": 8.3,
+      "pace_delta_pct": -8.3,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 8% quicker"
+      ]
+    },
+    {
       "date": "2026-06-27",
       "activity_id": 23395617712,
       "decoupling_pct": 8.16,
@@ -18,10 +2105,11 @@
         "avg_hr": 125.3,
         "ef": 0.01901
       },
-      "distance_km": null,
-      "gradient_m_per_km": null,
+      "distance_km": 19.36,
+      "gradient_m_per_km": 24.0,
       "pace_delta_pct": 12.2,
       "unreliable_reasons": [
+        "hilly (24 m/km climb)",
         "not steady \u2014 second half 12% slower"
       ]
     },
@@ -41,8 +2129,8 @@
         "avg_hr": 139.8,
         "ef": 0.0249
       },
-      "distance_km": null,
-      "gradient_m_per_km": null,
+      "distance_km": 10.02,
+      "gradient_m_per_km": 7.9,
       "pace_delta_pct": 1.8,
       "unreliable_reasons": []
     },
@@ -62,8 +2150,8 @@
         "avg_hr": 144.8,
         "ef": 0.02421
       },
-      "distance_km": null,
-      "gradient_m_per_km": null,
+      "distance_km": 8.75,
+      "gradient_m_per_km": 5.7,
       "pace_delta_pct": 1.6,
       "unreliable_reasons": []
     },
@@ -83,8 +2171,8 @@
         "avg_hr": 146.7,
         "ef": 0.02279
       },
-      "distance_km": null,
-      "gradient_m_per_km": null,
+      "distance_km": 12.08,
+      "gradient_m_per_km": 8.9,
       "pace_delta_pct": -4.0,
       "unreliable_reasons": [
         "quality session \u2014 halves are not comparable"
@@ -682,9 +2770,9 @@
     }
   ],
   "trend": {
-    "comparable_runs": 11,
-    "recent_avg_pct": 0.64,
-    "prior_avg_pct": 1.05,
+    "comparable_runs": 53,
+    "recent_avg_pct": -0.69,
+    "prior_avg_pct": -0.22,
     "direction": "stable"
   }
 }
