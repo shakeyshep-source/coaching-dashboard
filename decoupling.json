@@ -83,8 +83,8 @@
         "avg_hr": 146.7,
         "ef": 0.02279
       },
-      "distance_km": 12.08,
-      "gradient_m_per_km": 8.9,
+      "distance_km": null,
+      "gradient_m_per_km": null,
       "pace_delta_pct": -4.0,
       "unreliable_reasons": [
         "quality session \u2014 halves are not comparable"
@@ -655,6 +655,30 @@
       "gradient_m_per_km": 9.6,
       "pace_delta_pct": 4.4,
       "unreliable_reasons": []
+    },
+    {
+      "date": "2026-08-26",
+      "activity_id": 24127150847,
+      "decoupling_pct": 0.01,
+      "within_threshold": true,
+      "analysed_min": 57.9,
+      "first_half": {
+        "pace": "4:56",
+        "avg_hr": 141.7,
+        "ef": 0.02383
+      },
+      "second_half": {
+        "pace": "4:39",
+        "avg_hr": 150.4,
+        "ef": 0.02383
+      },
+      "distance_km": 14.07,
+      "gradient_m_per_km": 11.7,
+      "pace_delta_pct": -5.8,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 6% quicker"
+      ]
     }
   ],
   "trend": {

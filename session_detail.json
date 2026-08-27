@@ -167,9 +167,9 @@
       "recovery_km": 0.83,
       "total_km": 12.07
     },
-    "avg_hr": 140.0,
-    "aerobic_te": 3.700000047683716,
-    "anaerobic_te": 3.200000047683716
+    "avg_hr": null,
+    "aerobic_te": null,
+    "anaerobic_te": null
   },
   {
     "date": "2026-07-02",
@@ -1424,5 +1424,88 @@
     "avg_hr": 139.0,
     "aerobic_te": 2.9000000953674316,
     "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-08-26",
+    "activity_id": 24127150847,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 20,
+    "reps": {
+      "count": 6,
+      "even_reps": true,
+      "distance_km_each": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pace_sec_per_km": [
+        220.6,
+        220.3,
+        218.3,
+        221.1,
+        221.5,
+        221.6
+      ],
+      "pace_fmt": [
+        "3:41",
+        "3:40",
+        "3:38",
+        "3:41",
+        "3:42",
+        "3:42"
+      ],
+      "duration_sec": [
+        220.6,
+        220.3,
+        218.3,
+        221.1,
+        221.5,
+        221.6
+      ],
+      "mean_pace_sec_per_km": 220.6,
+      "mean_pace_fmt": "3:41",
+      "fastest_pace_fmt": "3:38",
+      "slowest_pace_fmt": "3:42",
+      "spread_sec_per_km": 3.3,
+      "fastest_rep": 3,
+      "slowest_rep": 6,
+      "finished_fastest": false,
+      "drift_sec_per_km": 1.1,
+      "mean_hr": 159.7,
+      "max_hr": 169.0
+    },
+    "recoveries": {
+      "count": 5,
+      "duration_sec": [
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0
+      ],
+      "distance_km": [
+        0.264,
+        0.266,
+        0.272,
+        0.277,
+        0.276
+      ],
+      "mean_duration_sec": 90.0,
+      "mean_pace_fmt": "5:32"
+    },
+    "volume": {
+      "warmup_km": 3.41,
+      "cooldown_km": 3.3,
+      "work_km": 6.0,
+      "recovery_km": 1.35,
+      "total_km": 14.07
+    },
+    "avg_hr": 144.0,
+    "aerobic_te": 3.700000047683716,
+    "anaerobic_te": 1.899999976158142
   }
 ]
