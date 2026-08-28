@@ -104,23 +104,27 @@
       "interrupted_by_next_session": true,
       "temp_max_c": 21.0,
       "note": "Cooler, still sunny, 14c\nRun fine\nVery slight achillies on warm down but still below a 1/10"
-    }
-  ],
-  "pending": [
+    },
     {
       "date": "2026-08-26",
       "session_type": "intervals",
-      "days_since": 1,
-      "hrv_back": null,
-      "rhr_back": 1,
+      "confounders_in_window": [],
       "hrv_reference": 39.5,
-      "rhr_reference": 47.7
+      "hrv_recovery_days": 2,
+      "rhr_reference": 47.7,
+      "rhr_recovery_days": 1,
+      "recovery_days": 2,
+      "recovered": true,
+      "interrupted_by_next_session": false,
+      "temp_max_c": 26.1,
+      "note": "Temp 30c\nHowever, all went really well\nTook a gel during warm up\nWas slightly ahead of the 3:44s. Was trying to hold back to hit the target but kept being slightly ahead, not too far ahead though"
     }
   ],
+  "pending": [],
   "trend": {
     "recent_avg_days": 3,
-    "prior_avg_days": 3.7,
-    "direction": "shortening \u2014 bouncing back quicker than before",
-    "sessions_measured": 6
+    "prior_avg_days": 2.3,
+    "direction": "lengthening \u2014 recovery is taking longer than it was",
+    "sessions_measured": 7
   }
 }
