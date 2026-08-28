@@ -1353,6 +1353,11 @@ function drawRecoveryChart(rec) {
   const cap = rec.window_days || 7;
   const values = sessions.map(s => s.recovery_days === null ? cap : s.recovery_days);
   const capped = sessions.map(s => s.recovery_days === null);
+  // A drink or a short night inside the window explains a long recovery
+  // without training having caused it. Drawing those in the same red as
+  // a genuine non-recovery makes an explained week look like the worst
+  // in the block — 1 Aug, where the beers were on the Saturday night.
+  const confounded = sessions.map(s => (s.confounders_in_window || []).length > 0);
 
   // Rolling mean of the last three, so a single bad session doesn't read
   // as a trend. Capped sessions count as the ceiling — a floor on how bad
@@ -1372,7 +1377,8 @@ function drawRecoveryChart(rec) {
           type: 'bar',
           label: 'Days to recover',
           data: values,
-          backgroundColor: capped.map(c => c ? THEME.bad : THEME.blue),
+          backgroundColor: sessions.map((s, i) => confounded[i] ? 'rgba(127,127,127,0.35)'
+            : capped[i] ? THEME.bad : THEME.blue),
           borderRadius: 4,
         },
         {
@@ -1464,12 +1470,12 @@ async function buildPerformanceTab(data) {
             <span style="font-size:14px; font-weight:600; color:${colour}; white-space:nowrap;">${d === null ? 'not within 7d' : d + ' day' + (d === 1 ? '' : 's')}</span>
           </div>
           <p style="font-size:12px; color:var(--text-muted); margin:3px 0 0;">
-            HRV ${s.hrv_recovery_days ?? '—'}d · RHR ${s.rhr_recovery_days ?? '—'}d${s.temp_max_c != null ? ` · ${Math.round(s.temp_max_c)}°C` : ''}${s.interrupted_by_next_session ? ' · another hard session landed inside the window' : ''}
+            HRV ${s.hrv_recovery_days ?? '—'}d · RHR ${s.rhr_recovery_days ?? '—'}d${s.temp_max_c != null ? ` · ${Math.round(s.temp_max_c)}°C` : ''}${(s.confounders_in_window || []).length ? ` · ${s.confounders_in_window.join(', ')} in the window — not training load` : ''}${s.interrupted_by_next_session ? ' · another hard session landed inside the window' : ''}
           </p>
         </div>`;
       }).join('')}
       <p style="font-size:12px; color:var(--text-muted); margin:10px 0 0; border-top:1px solid var(--border); padding-top:10px;">
-        Shaded band is a 0-2 day turnaround. A red bar at the ceiling means recovery never came inside ${rec.window_days} days.
+        Shaded band is a 0-2 day turnaround. A red bar at the ceiling means recovery never came inside ${rec.window_days} days. Grey bars had a drink, a short night or similar inside the window — those are explained rather than earned, and are left out of the trend.
         Measured against the 7-day baseline as it stood <em>before</em> the session, not the rolling one — a rolling baseline drifts down to meet a tiring athlete and would call a suppressed week fully recovered.
       </p>
     </div>
