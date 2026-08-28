@@ -206,5 +206,13 @@
     "rpe": 1.0,
     "on_target": true,
     "session_notes": "20c in the rain, it was lush"
+  },
+  {
+    "date": "2026-08-28",
+    "achilles_score": 0,
+    "session_type": "easy",
+    "rpe": 2.0,
+    "on_target": true,
+    "session_notes": "Nice easy jog"
   }
 ]
