@@ -106,6 +106,17 @@
       "note": "Cooler, still sunny, 14c\nRun fine\nVery slight achillies on warm down but still below a 1/10"
     }
   ],
+  "pending": [
+    {
+      "date": "2026-08-26",
+      "session_type": "intervals",
+      "days_since": 1,
+      "hrv_back": null,
+      "rhr_back": 1,
+      "hrv_reference": 39.5,
+      "rhr_reference": 47.7
+    }
+  ],
   "trend": {
     "recent_avg_days": 3,
     "prior_avg_days": 3.7,

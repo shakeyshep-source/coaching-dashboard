@@ -1444,6 +1444,16 @@ async function buildPerformanceTab(data) {
         </p>
       `}
       <div class="chart-wrap" style="height:190px; margin-bottom:6px;"><canvas id="recoveryChart"></canvas></div>
+      ${((rec.pending || []).slice().reverse()).map(p => `
+        <div style="border-top:1px solid var(--border); padding:8px 0; opacity:0.75;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px;">
+            <span style="font-size:13px;">${fmtDayMonth(p.date)} <span style="text-transform:capitalize; color:var(--text-secondary);">${p.session_type}</span></span>
+            <span style="font-size:13px; color:var(--text-muted); white-space:nowrap;">still recovering</span>
+          </div>
+          <p style="font-size:12px; color:var(--text-muted); margin:3px 0 0;">
+            Day ${p.days_since}. HRV ${p.hrv_back != null ? 'back after ' + p.hrv_back + 'd' : 'not back yet'} · RHR ${p.rhr_back != null ? 'back after ' + p.rhr_back + 'd' : 'not back yet'} — no number until both have returned or the ${rec.window_days}-day window closes.
+          </p>
+        </div>`).join('')}
       ${rec.sessions.slice(-8).reverse().map(s => {
         const d = s.recovery_days;
         const colour = d === null ? 'var(--bad)' : d <= 2 ? 'var(--good)' : d <= 3 ? 'var(--text-secondary)' : 'var(--warn)';

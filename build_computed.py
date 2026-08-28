@@ -272,6 +272,7 @@ def recovery_after_sessions(history, plan_by_date, manual_by_date, weather_by_da
         return logged or (plan_by_date.get(d) or {}).get("session_type")
 
     sessions = []
+    pending = []
     for i, d in enumerate(dates):
         if day_type(d) not in QUALITY_TYPES:
             continue
@@ -297,7 +298,21 @@ def recovery_after_sessions(history, plan_by_date, manual_by_date, weather_by_da
         hrv_days, hrv_settled = days_back(hrv, hrv_ref, lambda v, r: v >= r)
         rhr_days, rhr_settled = days_back(rhr, rhr_ref, lambda v, r: v <= r)
         if not (hrv_settled and rhr_settled):
-            continue                           # too recent to judge
+            # Too recent to judge — the window has not run out yet, so a
+            # number now would be a guess. Recorded as pending rather
+            # than dropped: a session vanishing from the card for two or
+            # three days looks like a bug, and asking about it is
+            # reasonable.
+            pending.append({
+                "date": d,
+                "session_type": day_type(d),
+                "days_since": len(dates) - 1 - i,
+                "hrv_back": hrv_days,
+                "rhr_back": rhr_days,
+                "hrv_reference": hrv_ref,
+                "rhr_reference": rhr_ref,
+            })
+            continue
 
         found = [x for x in (hrv_days, rhr_days) if x is not None]
         # The slower metric governs — both have to be back to call it recovered.
@@ -352,7 +367,7 @@ def recovery_after_sessions(history, plan_by_date, manual_by_date, weather_by_da
 
     return {"generated": date.today().isoformat() if hasattr(date, "today") else None,
             "window_days": RECOVERY_WINDOW_DAYS,
-            "sessions": sessions, "trend": trend}
+            "sessions": sessions, "pending": pending, "trend": trend}
 
 
 def main():
