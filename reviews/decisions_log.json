@@ -139,5 +139,15 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": "Be interested in your thoughts on today's interval",
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-08-29T16:17:38",
+    "proposal_id": null,
+    "review_date": "2026-08-23",
+    "response_timestamp": "29/08/2026 17:17:20",
+    "decision": "approve",
+    "action_taken": "review_query_logged",
+    "athlete_thoughts": "Previous I would have been doing longer tempo sessions and sunday long runs around 15-16miles before a half marathon... How will the plan I'm doing now put me in a better position",
+    "changes_count": 0
   }
 ]
