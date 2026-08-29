@@ -1,5 +1,5 @@
 {
-  "generated_date": "2026-08-28",
+  "generated_date": "2026-08-29",
   "next_race": {
     "name": "CHELTENHAM HALF MARATHON",
     "date": "2026-09-20",
@@ -35,7 +35,7 @@
       "note": "Based on 4 clean race result(s). VO2max up 1.0 since earliest reading \u2014 nudged faster. CAVEAT: marathon projections from short-race data are unreliable \u2014 doesn't account for fuelling or sustained multi-hour effort. Rough ballpark only."
     }
   },
-  "vo2max_note": "VO2max is 59.0 (up 1.0 since earliest reading).",
+  "vo2max_note": "VO2max is 60.0 (up 1.0 since earliest reading).",
   "based_on_races": [
     "Bourton Mile",
     "Cardiff 5K (previous edition)",

@@ -120,7 +120,17 @@
       "note": "Temp 30c\nHowever, all went really well\nTook a gel during warm up\nWas slightly ahead of the 3:44s. Was trying to hold back to hit the target but kept being slightly ahead, not too far ahead though"
     }
   ],
-  "pending": [],
+  "pending": [
+    {
+      "date": "2026-08-29",
+      "session_type": "tempo",
+      "days_since": 0,
+      "hrv_back": null,
+      "rhr_back": null,
+      "hrv_reference": 37.7,
+      "rhr_reference": 46.9
+    }
+  ],
   "trend": {
     "recent_avg_days": 3,
     "prior_avg_days": 2.3,

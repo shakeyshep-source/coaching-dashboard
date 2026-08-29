@@ -6150,5 +6150,64 @@
     "avg_hr": 135.0,
     "aerobic_te": 2.5,
     "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-08-29",
+    "activity_id": 24157617968,
+    "name": "Tewkesbury Running",
+    "structured": true,
+    "lap_count": 22,
+    "reps": {
+      "count": 2,
+      "even_reps": true,
+      "distance_km_each": [
+        5.226,
+        5.155
+      ],
+      "pace_sec_per_km": [
+        229.6,
+        232.8
+      ],
+      "pace_fmt": [
+        "3:50",
+        "3:53"
+      ],
+      "duration_sec": [
+        1200.0,
+        1200.0
+      ],
+      "mean_pace_sec_per_km": 231.2,
+      "mean_pace_fmt": "3:51",
+      "fastest_pace_fmt": "3:50",
+      "slowest_pace_fmt": "3:53",
+      "spread_sec_per_km": 3.2,
+      "fastest_rep": 1,
+      "slowest_rep": 2,
+      "finished_fastest": false,
+      "drift_sec_per_km": 3.2,
+      "mean_hr": 158.2,
+      "max_hr": 166.0
+    },
+    "recoveries": {
+      "count": 1,
+      "duration_sec": [
+        180.0
+      ],
+      "distance_km": [
+        0.503
+      ],
+      "mean_duration_sec": 180.0,
+      "mean_pace_fmt": "5:58"
+    },
+    "volume": {
+      "warmup_km": 3.01,
+      "cooldown_km": 4.12,
+      "work_km": 10.38,
+      "recovery_km": 0.5,
+      "total_km": 18.02
+    },
+    "avg_hr": 146.0,
+    "aerobic_te": 4.199999809265137,
+    "anaerobic_te": 0.800000011920929
   }
 ]

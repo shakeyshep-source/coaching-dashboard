@@ -26765,5 +26765,255 @@
         "elevation_gain_m": 1.0
       }
     ]
+  },
+  {
+    "activity_id": 24157617968,
+    "date": "2026-08-29",
+    "name": "Tewkesbury Running",
+    "type": "running",
+    "laps": [
+      {
+        "index": 1,
+        "intensity_type": "WARMUP",
+        "distance_km": 1.0,
+        "duration_sec": 306.7,
+        "pace_min_per_km": 5.11,
+        "avg_hr": 132.0,
+        "max_hr": 138.0,
+        "cadence": 168.515625,
+        "elevation_gain_m": 0.0
+      },
+      {
+        "index": 2,
+        "intensity_type": "WARMUP",
+        "distance_km": 1.0,
+        "duration_sec": 293.8,
+        "pace_min_per_km": 4.9,
+        "avg_hr": 136.0,
+        "max_hr": 140.0,
+        "cadence": 168.34375,
+        "elevation_gain_m": 7.0
+      },
+      {
+        "index": 3,
+        "intensity_type": "WARMUP",
+        "distance_km": 1.0,
+        "duration_sec": 296.8,
+        "pace_min_per_km": 4.95,
+        "avg_hr": 138.0,
+        "max_hr": 143.0,
+        "cadence": 169.046875,
+        "elevation_gain_m": 5.0
+      },
+      {
+        "index": 4,
+        "intensity_type": "WARMUP",
+        "distance_km": 0.014,
+        "duration_sec": 10.8,
+        "pace_min_per_km": 12.57,
+        "avg_hr": 101.0,
+        "max_hr": 137.0,
+        "cadence": 122.8125,
+        "elevation_gain_m": 0.0
+      },
+      {
+        "index": 5,
+        "intensity_type": "ACTIVE",
+        "distance_km": 1.0,
+        "duration_sec": 233.5,
+        "pace_min_per_km": 3.89,
+        "avg_hr": 144.0,
+        "max_hr": 151.0,
+        "cadence": 180.53125,
+        "elevation_gain_m": 1.0
+      },
+      {
+        "index": 6,
+        "intensity_type": "ACTIVE",
+        "distance_km": 1.0,
+        "duration_sec": 229.0,
+        "pace_min_per_km": 3.82,
+        "avg_hr": 153.0,
+        "max_hr": 158.0,
+        "cadence": 184.234375,
+        "elevation_gain_m": 3.0
+      },
+      {
+        "index": 7,
+        "intensity_type": "ACTIVE",
+        "distance_km": 1.0,
+        "duration_sec": 227.4,
+        "pace_min_per_km": 3.79,
+        "avg_hr": 159.0,
+        "max_hr": 162.0,
+        "cadence": 184.78125,
+        "elevation_gain_m": 2.0
+      },
+      {
+        "index": 8,
+        "intensity_type": "ACTIVE",
+        "distance_km": 1.0,
+        "duration_sec": 231.2,
+        "pace_min_per_km": 3.85,
+        "avg_hr": 160.0,
+        "max_hr": 162.0,
+        "cadence": 182.421875,
+        "elevation_gain_m": 1.0
+      },
+      {
+        "index": 9,
+        "intensity_type": "ACTIVE",
+        "distance_km": 1.0,
+        "duration_sec": 226.7,
+        "pace_min_per_km": 3.78,
+        "avg_hr": 163.0,
+        "max_hr": 165.0,
+        "cadence": 183.921875,
+        "elevation_gain_m": 3.0
+      },
+      {
+        "index": 10,
+        "intensity_type": "ACTIVE",
+        "distance_km": 0.226,
+        "duration_sec": 52.2,
+        "pace_min_per_km": 3.85,
+        "avg_hr": 163.0,
+        "max_hr": 164.0,
+        "cadence": 182.640625,
+        "elevation_gain_m": 0.0
+      },
+      {
+        "index": 11,
+        "intensity_type": "REST",
+        "distance_km": 0.503,
+        "duration_sec": 180.0,
+        "pace_min_per_km": 5.97,
+        "avg_hr": 142.0,
+        "max_hr": 162.0,
+        "cadence": 158.375,
+        "elevation_gain_m": 2.0
+      },
+      {
+        "index": 12,
+        "intensity_type": "ACTIVE",
+        "distance_km": 1.0,
+        "duration_sec": 232.6,
+        "pace_min_per_km": 3.88,
+        "avg_hr": 156.0,
+        "max_hr": 159.0,
+        "cadence": 181.625,
+        "elevation_gain_m": 1.0
+      },
+      {
+        "index": 13,
+        "intensity_type": "ACTIVE",
+        "distance_km": 1.0,
+        "duration_sec": 234.4,
+        "pace_min_per_km": 3.91,
+        "avg_hr": 160.0,
+        "max_hr": 162.0,
+        "cadence": 183.375,
+        "elevation_gain_m": 2.0
+      },
+      {
+        "index": 14,
+        "intensity_type": "ACTIVE",
+        "distance_km": 1.0,
+        "duration_sec": 234.7,
+        "pace_min_per_km": 3.91,
+        "avg_hr": 160.0,
+        "max_hr": 163.0,
+        "cadence": 182.796875,
+        "elevation_gain_m": 3.0
+      },
+      {
+        "index": 15,
+        "intensity_type": "ACTIVE",
+        "distance_km": 1.0,
+        "duration_sec": 232.8,
+        "pace_min_per_km": 3.88,
+        "avg_hr": 161.0,
+        "max_hr": 164.0,
+        "cadence": 183.0,
+        "elevation_gain_m": 12.0
+      },
+      {
+        "index": 16,
+        "intensity_type": "ACTIVE",
+        "distance_km": 1.0,
+        "duration_sec": 230.2,
+        "pace_min_per_km": 3.84,
+        "avg_hr": 164.0,
+        "max_hr": 166.0,
+        "cadence": 184.34375,
+        "elevation_gain_m": 18.0
+      },
+      {
+        "index": 17,
+        "intensity_type": "ACTIVE",
+        "distance_km": 0.155,
+        "duration_sec": 35.3,
+        "pace_min_per_km": 3.8,
+        "avg_hr": 163.0,
+        "max_hr": 164.0,
+        "cadence": 183.765625,
+        "elevation_gain_m": 1.0
+      },
+      {
+        "index": 18,
+        "intensity_type": "COOLDOWN",
+        "distance_km": 0.25,
+        "duration_sec": 180.6,
+        "pace_min_per_km": 12.06,
+        "avg_hr": 121.0,
+        "max_hr": 164.0,
+        "cadence": 105.703125,
+        "elevation_gain_m": 17.0
+      },
+      {
+        "index": 19,
+        "intensity_type": "COOLDOWN",
+        "distance_km": 1.0,
+        "duration_sec": 334.6,
+        "pace_min_per_km": 5.58,
+        "avg_hr": 129.0,
+        "max_hr": 137.0,
+        "cadence": 166.765625,
+        "elevation_gain_m": 37.0
+      },
+      {
+        "index": 20,
+        "intensity_type": "COOLDOWN",
+        "distance_km": 1.0,
+        "duration_sec": 315.1,
+        "pace_min_per_km": 5.25,
+        "avg_hr": 134.0,
+        "max_hr": 138.0,
+        "cadence": 169.21875,
+        "elevation_gain_m": 29.0
+      },
+      {
+        "index": 21,
+        "intensity_type": "COOLDOWN",
+        "distance_km": 1.0,
+        "duration_sec": 303.9,
+        "pace_min_per_km": 5.07,
+        "avg_hr": 140.0,
+        "max_hr": 144.0,
+        "cadence": 170.921875,
+        "elevation_gain_m": 34.0
+      },
+      {
+        "index": 22,
+        "intensity_type": "COOLDOWN",
+        "distance_km": 0.869,
+        "duration_sec": 258.0,
+        "pace_min_per_km": 4.95,
+        "avg_hr": 141.0,
+        "max_hr": 145.0,
+        "cadence": 170.5,
+        "elevation_gain_m": 37.0
+      }
+    ]
   }
 ]
