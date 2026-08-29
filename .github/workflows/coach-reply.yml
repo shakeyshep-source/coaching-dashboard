@@ -101,6 +101,31 @@ jobs:
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash(python3:*)"
             --max-turns 30
 
+      # The action hides the SDK output "for security", so a failure
+      # inside Claude arrives as a bare `is_error: true` — no way to
+      # tell an expired token from a usage limit from an overloaded
+      # model, which is the difference between "retry" and "fix it".
+      # The execution log holds the actual message; print only that.
+      - name: Why the reply failed
+        if: failure()
+        run: |
+          python3 - <<'PY'
+          import json, os
+          path = os.path.join(os.environ["RUNNER_TEMP"], "claude-execution-output.json")
+          try:
+              with open(path) as f:
+                  entries = json.load(f)
+          except Exception as exc:
+              print(f"No execution log to read ({type(exc).__name__}: {exc})")
+              raise SystemExit
+          if isinstance(entries, dict):
+              entries = [entries]
+          for e in entries:
+              if isinstance(e, dict) and e.get("type") == "result":
+                  print(f"subtype={e.get('subtype')} is_error={e.get('is_error')}")
+                  print(e.get("result") or e.get("error") or "(no message on the result)")
+          PY
+
       - name: Commit and push the reply
         if: steps.query.outputs.reply == 'true'
         run: |
