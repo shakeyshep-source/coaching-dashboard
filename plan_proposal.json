@@ -1,29 +1,36 @@
 {
-  "id": "2026-08-21",
-  "created": "2026-08-21T16:10:00+01:00",
-  "status": "applied",
-  "rationale": "Shep asked for tomorrow's Saturday session to go straight to 20min threshold + 20min HM pace instead of the planned 20+10, worried the 10min block will feel too easy. The readiness evidence backs pushing further than planned: this is the best-recovered stretch of the block (HRV baseline 38.6->41.3 this week, RHR steady ~47.6-47.9, sleep scores 83-91), achilles has read 0 every day since mid-July bar two isolated 1s, no breathing complaints, and Wednesday's interval session was run comfortably (RPE 6, 'could have done more'). Moderate heat forecast for both Sat and Sun (20-22C) removes that as a constraint. But going straight to 20+20 does two things at once: it hands him, three weeks early and in one jump, the exact total quality volume (40min) currently scheduled as the 5 Sep key session, and it does it on the very first exposure to continuous HM-pace running this block - a stimulus his own achilles history says deserves gradual introduction, since intensity discipline (not mileage) was what caused the original injury. Compromise: move tomorrow to 20T+15H (what was already sitting on 29 Aug), and step 29 Aug up to 20T+20H. That gives him a real increase now, keeps the block progressing one step at a time toward the 5 Sep session (which removes the threshold buffer entirely and stays the qualitatively biggest step), and avoids stacking a first-time 20min goal-pace block onto an already-hard 20min threshold effort without a prior tolerance check.",
+  "id": "2026-08-30",
+  "created": "2026-08-30T17:20:00+01:00",
+  "status": "pending",
+  "rationale": "Two changes Shep raised on Sunday evening, both sound in principle, one needing a limit. (1) Bank holiday Monday frees him up, so he wants to run Monday and take Tuesday as the rest day. That is a straight swap and arguably an improvement: Wednesday's 5x1km then comes off a rest day rather than an easy day, so the last big interval session of the block starts fresher. The only condition is that Monday is genuinely easy - it is 24 hours after a 21km long run finished with 5km at HM goal pace, which was the hardest long run of the build. (2) He is running Sunday 6 Sep with Meg and Alice; Meg is on a peak week doing 30km at 5:10/km, possibly 5:05 or 5:00. His August median easy pace is 4:50/km, so 5:10 is slower than his own easy running - there is no intensity risk here at all, which matters given the history, and a social easy long run is a good thing three weeks out. The planned session was 18km at 4:36-4:59/km with no quality in it, so joining them costs nothing. The limit is distance, not pace. He floated going longer if the route works out that way, offset by taking Friday as rest. The Friday-for-distance trade is fine in kind but it does not buy what it looks like: 25km would be a new longest run of the block, four days before the taper starts, in the week the plan deliberately eases so that the 9 Sep intervals - the last quality session before Cheltenham - can be run sharp. A longer single effort costs more than the same kilometres spread across the week, and the cost lands on race freshness. So: run with them, cap it at 20-21km, and agree the turn-around before setting off rather than deciding at 18km with the group still going. Friday stays a 5km shakeout unless the run does end up past 21km, in which case take it as rest.",
   "changes": [
     {
-      "date": "2026-08-22",
-      "session_type": "tempo",
-      "target_distance_km": 16,
-      "target_pace": "3:50/km then 3:54/km",
-      "notes": "SATURDAY SESSION 1/2: 3km warm-up, 20min at threshold (3:50/km), 3min jog, then 15min at HM goal pace (3:54/km), 3km cool-down. ~16km all in. Bumped from the original 10min HM-pace block per your Fri 21 Aug request - moved up by 5min rather than the full 10, since this is the first continuous goal-pace running of the block."
+      "date": "2026-08-31",
+      "session_type": "easy",
+      "target_distance_km": 7,
+      "target_pace": "5:00-5:20/km",
+      "notes": "Easy 7km - bank holiday, so the rest day moves to Tuesday. Genuinely easy: this is 24h after a 21km long run that finished with 5km at goal pace. If the legs are heavy, cut it to 5km or shift the rest back to today. No strides."
     },
     {
-      "date": "2026-08-29",
-      "session_type": "tempo",
-      "target_distance_km": 17,
-      "target_pace": "3:50/km then 3:54/km",
-      "notes": "SATURDAY SESSION 1/2: 3km warm-up, 20min at threshold, 3min jog, 20min at HM goal pace, 3km cool-down. ~17km all in. Second step of the goal-pace progression - one full 20/20 block before 5 Sep removes the threshold buffer entirely."
+      "date": "2026-09-01",
+      "session_type": "rest",
+      "target_distance_km": null,
+      "target_pace": null,
+      "notes": "Rest - swapped from Monday for the bank holiday. Wednesday's session now comes off a rest day, which is the better order anyway."
+    },
+    {
+      "date": "2026-09-04",
+      "session_type": "easy",
+      "target_distance_km": 5,
+      "target_pace": null,
+      "notes": "Easy 5km shakeout before Saturday's tempo. Take this as rest instead if Sunday's group run is going to run past 21km - that trade is fine, but it is not a licence to add distance on Sunday, it is what covers it if the route leaves no choice."
+    },
+    {
+      "date": "2026-09-06",
+      "session_type": "long",
+      "target_distance_km": 20,
+      "target_pace": "5:00-5:10/km",
+      "notes": "Long run 20km with Meg and Alice, joining part of her 30km. Slower than the 4:36-4:59 band this was written at, and that is fine - there is no quality in this session and 5:10/km is easier than your own easy pace, so it is a free aerobic hour and a half. Two things: cap it at 20-21km and agree the turn-around before you set off, not at 18km with the group still running; and this is the last long run of consequence before the taper, so it should leave you fresher, not emptier. If it does go past 21km, Friday becomes rest."
     }
-  ],
-  "athlete_response": {
-    "timestamp": "21/08/2026 15:41:28",
-    "review_date": "2026-08-21",
-    "decision": "approve",
-    "thoughts": "thanks"
-  },
-  "applied_at": "2026-08-21T14:41:39"
+  ]
 }
