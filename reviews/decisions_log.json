@@ -149,5 +149,13 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": "Previous I would have been doing longer tempo sessions and sunday long runs around 15-16miles before a half marathon... How will the plan I'm doing now put me in a better position",
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-08-30T19:00:40",
+    "proposal_id": "2026-08-30",
+    "decision": "approve",
+    "action_taken": "plan_updated",
+    "athlete_thoughts": null,
+    "changes_count": 4
   }
 ]

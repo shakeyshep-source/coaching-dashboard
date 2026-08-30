@@ -352,19 +352,21 @@
   },
   {
     "date": "2026-08-31",
-    "session_type": "rest",
-    "target_distance_km": null,
-    "target_pace": null,
-    "notes": "Rest"
+    "session_type": "easy",
+    "target_distance_km": 7,
+    "target_pace": "5:00-5:20/km",
+    "notes": "Easy 7km - bank holiday, so the rest day moves to Tuesday. Genuinely easy: this is 24h after a 21km long run that finished with 5km at goal pace. If the legs are heavy, cut it to 5km or shift the rest back to today. No strides.",
+    "source": "coach",
+    "updated_at": "2026-08-30T19:00:40"
   },
   {
     "date": "2026-09-01",
-    "session_type": "easy",
-    "target_distance_km": 7,
+    "session_type": "rest",
+    "target_distance_km": null,
     "target_pace": null,
-    "notes": "Easy 7km",
+    "notes": "Rest - swapped from Monday for the bank holiday. Wednesday's session now comes off a rest day, which is the better order anyway.",
     "source": "coach",
-    "updated_at": "2026-08-09T20:48:16"
+    "updated_at": "2026-08-30T19:00:40"
   },
   {
     "date": "2026-09-02",
@@ -389,9 +391,9 @@
     "session_type": "easy",
     "target_distance_km": 5,
     "target_pace": null,
-    "notes": "Easy 5km",
+    "notes": "Easy 5km shakeout before Saturday's tempo. Take this as rest instead if Sunday's group run is going to run past 21km - that trade is fine, but it is not a licence to add distance on Sunday, it is what covers it if the route leaves no choice.",
     "source": "coach",
-    "updated_at": "2026-08-09T20:48:16"
+    "updated_at": "2026-08-30T19:00:40"
   },
   {
     "date": "2026-09-05",
@@ -405,11 +407,11 @@
   {
     "date": "2026-09-06",
     "session_type": "long",
-    "target_distance_km": 18,
-    "target_pace": "4:36-4:59/km",
-    "notes": "Long run 18km (~87min) - volume eases, quality holds",
+    "target_distance_km": 20,
+    "target_pace": "5:00-5:10/km",
+    "notes": "Long run 20km with Meg and Alice, joining part of her 30km. Slower than the 4:36-4:59 band this was written at, and that is fine - there is no quality in this session and 5:10/km is easier than your own easy pace, so it is a free aerobic hour and a half. Two things: cap it at 20-21km and agree the turn-around before you set off, not at 18km with the group still running; and this is the last long run of consequence before the taper, so it should leave you fresher, not emptier. If it does go past 21km, Friday becomes rest.",
     "source": "coach",
-    "updated_at": "2026-08-09T20:48:16"
+    "updated_at": "2026-08-30T19:00:40"
   },
   {
     "date": "2026-09-07",

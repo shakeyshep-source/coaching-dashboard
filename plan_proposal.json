@@ -1,7 +1,7 @@
 {
   "id": "2026-08-30",
   "created": "2026-08-30T17:20:00+01:00",
-  "status": "pending",
+  "status": "applied",
   "rationale": "Two changes Shep raised on Sunday evening, both sound in principle, one needing a limit. (1) Bank holiday Monday frees him up, so he wants to run Monday and take Tuesday as the rest day. That is a straight swap and arguably an improvement: Wednesday's 5x1km then comes off a rest day rather than an easy day, so the last big interval session of the block starts fresher. The only condition is that Monday is genuinely easy - it is 24 hours after a 21km long run finished with 5km at HM goal pace, which was the hardest long run of the build. (2) He is running Sunday 6 Sep with Meg and Alice; Meg is on a peak week doing 30km at 5:10/km, possibly 5:05 or 5:00. His August median easy pace is 4:50/km, so 5:10 is slower than his own easy running - there is no intensity risk here at all, which matters given the history, and a social easy long run is a good thing three weeks out. The planned session was 18km at 4:36-4:59/km with no quality in it, so joining them costs nothing. The limit is distance, not pace. He floated going longer if the route works out that way, offset by taking Friday as rest. The Friday-for-distance trade is fine in kind but it does not buy what it looks like: 25km would be a new longest run of the block, four days before the taper starts, in the week the plan deliberately eases so that the 9 Sep intervals - the last quality session before Cheltenham - can be run sharp. A longer single effort costs more than the same kilometres spread across the week, and the cost lands on race freshness. So: run with them, cap it at 20-21km, and agree the turn-around before setting off rather than deciding at 18km with the group still going. Friday stays a 5km shakeout unless the run does end up past 21km, in which case take it as rest.",
   "changes": [
     {
@@ -32,5 +32,12 @@
       "target_pace": "5:00-5:10/km",
       "notes": "Long run 20km with Meg and Alice, joining part of her 30km. Slower than the 4:36-4:59 band this was written at, and that is fine - there is no quality in this session and 5:10/km is easier than your own easy pace, so it is a free aerobic hour and a half. Two things: cap it at 20-21km and agree the turn-around before you set off, not at 18km with the group still running; and this is the last long run of consequence before the taper, so it should leave you fresher, not emptier. If it does go past 21km, Friday becomes rest."
     }
-  ]
+  ],
+  "athlete_response": {
+    "timestamp": "30/08/2026 20:00:26",
+    "review_date": "2026-08-30",
+    "decision": "approve",
+    "thoughts": null
+  },
+  "applied_at": "2026-08-30T19:00:40"
 }
