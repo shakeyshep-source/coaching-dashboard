@@ -694,12 +694,18 @@ async function buildCoachTab() {
           : `<p style="font-size:12px; color:var(--text-muted); margin:6px 0 0;">Coach is writing a reply — refresh in a minute.</p>`}
       </div>`).join('');
 
+    // "Respond /" is in the label because a proposal's button says
+    // "Respond (approve / amend / reject)" and that is the word Shep
+    // looks for. On a hold review he scanned past "Ask the coach" and
+    // reported the button missing (30 Aug) — it was there, just not
+    // called what he was hunting for.
+    //
     // Hidden only while a reply is being written, or when a pending
     // proposal puts the same form one card below under its own button.
     if (REVIEW_FORM_URL && !proposalLive) {
       respondBlock += `
         <div style="border-top:1px solid var(--border); margin-top:10px; padding-top:10px;">
-          <a href="${REVIEW_FORM_URL}" rel="noopener" style="display:inline-block; background:var(--blue); color:#fff; font-size:13px; padding:8px 14px; border-radius:6px; text-decoration:none;">${turns.length ? 'Ask a follow-up' : 'Ask the coach'}</a>
+          <a href="${REVIEW_FORM_URL}" rel="noopener" style="display:inline-block; background:var(--blue); color:#fff; font-size:13px; padding:8px 14px; border-radius:6px; text-decoration:none;">${turns.length ? 'Ask a follow-up' : 'Respond / ask the coach'}</a>
           <p style="font-size:12px; color:var(--text-muted); margin:6px 0 0;">${awaitingReply
             ? 'A reply to the question above is being written — but ask another any time.'
             : 'Any day, as often as you like — question, disagreement, or how a session felt. Reply lands here in about a minute.'}</p>
