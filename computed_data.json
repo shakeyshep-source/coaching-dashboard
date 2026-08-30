@@ -347,24 +347,26 @@
     "hrv_last_night": 38,
     "sleep_score": 85,
     "sleep_duration_hrs": 7.9,
-    "body_battery_high": 89,
+    "body_battery_high": 90,
     "achilles_score": null,
     "rpe": null,
     "session_type_logged": null,
     "session_notes": null,
-    "acwr": 0.8,
+    "acwr": 1.0,
     "acwr_status": "OPTIMAL",
     "vo2max": 60.0,
-    "vo2max_date": "2026-08-29",
+    "vo2max_date": "2026-08-30",
     "training_status_feedback": "PRODUCTIVE_3",
     "hrv_baseline_7d": 38.3,
     "hrv_delta_from_baseline": -0.3,
     "rhr_baseline_7d": 46.9,
     "rhr_delta_from_baseline": 1.1,
-    "heat_risk": "moderate",
+    "heat_risk": "high",
     "recovery_confounders": [],
-    "today_summary": "Recovery looks normal. Fine for planned training.",
-    "readiness_level": "good",
-    "plan_flag_reasons": []
+    "today_summary": "Recovery looks normal but heat risk is high today. Adjust effort accordingly.",
+    "readiness_level": "caution",
+    "plan_flag_reasons": [
+      "Heat risk is high and a hard session is planned."
+    ]
   }
 ]

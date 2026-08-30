@@ -868,17 +868,17 @@
       "week_start": "2026-08-24",
       "week_end": "2026-08-30",
       "in_progress": true,
-      "km": 52.7,
-      "runs": 5,
-      "time_min": 249.0,
-      "elevation_m": 563.0,
+      "km": 75.2,
+      "runs": 7,
+      "time_min": 352.0,
+      "elevation_m": 692.0,
       "planned_sessions": 6,
       "logged_sessions": 6,
       "hard_sessions_planned": 3,
       "quality_time_min": 148,
-      "easy_pct": 40,
-      "long_run_min": 81,
-      "long_run_km": 18.02,
+      "easy_pct": 58,
+      "long_run_min": 95,
+      "long_run_km": 21.02,
       "on_target_pct": 100,
       "avg_rpe": 3.0,
       "max_achilles": 0,
@@ -886,9 +886,9 @@
       "avg_rhr": 47.0,
       "avg_sleep_score": 85.8,
       "avg_sleep_hrs": 7.8,
-      "easy_pace_min_km": 4.9,
-      "easy_avg_hr": 138.3,
-      "efficiency": 1.475,
+      "easy_pace_min_km": 4.91,
+      "easy_avg_hr": 141.4,
+      "efficiency": 1.445,
       "session_log": [
         {
           "date": "2026-08-24",
@@ -979,6 +979,39 @@
           "avg_hr": 146,
           "segments": null,
           "fastest_segment": null
+        },
+        {
+          "date": "2026-08-30",
+          "temp_max_c": 20.3,
+          "heat_risk": "high",
+          "session_type": null,
+          "rpe": null,
+          "on_target": null,
+          "achilles_score": null,
+          "note": null,
+          "km": 22.5,
+          "pace": 4.57,
+          "avg_hr": 147,
+          "segments": [
+            {
+              "km": 21.02,
+              "min": 95.2,
+              "pace": 4.53,
+              "avg_hr": 147.0
+            },
+            {
+              "km": 1.45,
+              "min": 7.7,
+              "pace": 5.32,
+              "avg_hr": 145.0
+            }
+          ],
+          "fastest_segment": {
+            "km": 21.02,
+            "min": 95.2,
+            "pace": 4.53,
+            "avg_hr": 147.0
+          }
         }
       ]
     }

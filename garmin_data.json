@@ -227,14 +227,14 @@
     "hrv_status": "BALANCED",
     "sleep_score": 85,
     "sleep_duration_hrs": 7.9,
-    "body_battery_high": 89,
+    "body_battery_high": 90,
     "body_battery_low": 36,
-    "training_load_acute": 719,
-    "training_load_chronic": 870,
+    "training_load_acute": 996,
+    "training_load_chronic": 920,
     "vo2max": 60.0,
-    "vo2max_date": "2026-08-29",
+    "vo2max_date": "2026-08-30",
     "training_status_feedback": "PRODUCTIVE_3",
-    "acwr_garmin": 0.8,
+    "acwr_garmin": 1.0,
     "acwr_status": "OPTIMAL"
   }
 ]
