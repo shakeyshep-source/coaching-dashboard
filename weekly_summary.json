@@ -982,7 +982,7 @@
         },
         {
           "date": "2026-08-30",
-          "temp_max_c": 20.3,
+          "temp_max_c": 20.2,
           "heat_risk": "high",
           "session_type": "long",
           "rpe": 6.0,
