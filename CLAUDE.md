@@ -295,7 +295,9 @@ Schemas are LOCKED — add fields, never rename or remove.
 
 ## Weekly review procedure (scheduled coach session)
 
-Runs every Sunday evening. The session must:
+Runs every Sunday early afternoon (~13:40 UK, backstop ~16:40), after
+its own Garmin pull — so the Sunday long run is always in the week being
+reviewed. The session must:
 
 1. `git pull` latest `main`; read this brief, `weekly_summary.json`,
    `computed_data.json`, `manual_log.json` (notes!), `training_plan.json`,
