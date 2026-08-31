@@ -142,11 +142,33 @@ Adidas Boston rejected as too firm.
   and are easy to miss when scanning for hard efforts. `build_efficiency`
   excludes them by name and by outlier rule. If a month looks odd, check
   what else he was doing before blaming running load.
-- **Racing calendar:** nothing before Cheltenham (20 Sep). **10K in
-  Crete, very start of October** — explicitly a fun race with beers on
-  the way over, not a target; it falls in the HM recovery window, and
-  that is fine, but do not write a taper for it. Cross-country
-  Nov–Jan, which sits inside the Manchester build.
+- **Racing calendar:** nothing before Cheltenham (20 Sep). Then, in
+  order:
+  - **Crete 10K, Sun 4 Oct** — explicitly a fun race with beers on the
+    way over, not a target; it falls in the HM recovery window, and
+    that is fine, but do not write a taper for it.
+  - **XC Sun 18 Oct** (possible)
+  - **10K where he grew up, Sun 25 Oct** — the one he has asked about
+    racing properly. Not committed. A half goes off the same morning;
+    he is not tempted by it.
+  - **XC Sat 31 Oct** (possible) — six days after the 25 Oct 10K.
+  - **XC Sun 13 Dec** (possible)
+  - **XC Sat 27 Feb 2027** (possible) — this one sits ~6 weeks out
+    from Manchester, inside the marathon build.
+
+  **None of the XC dates are confirmed, and none will be run flat out —
+  he does not wear spikes for them, he runs them in trail shoes.** So
+  treat them as hard off-road efforts, not races: no taper, no
+  recovery week afterwards, and no adjustment to the surrounding block
+  unless he says he is actually racing one. Ask before assuming a
+  fixture is happening.
+
+  The thing worth watching on XC is not the pace, it is the surface.
+  Mud, cambers and repeated hard eccentric calf loading in a shoe he
+  otherwise does not run in is a genuine achilles stimulus even at
+  easy effort — and shoes have twice been the trigger. Same rule as
+  any new shoe: get the trail shoes onto an easy off-road run before
+  the first fixture rather than debuting them on a race day.
 - **Asthma:** heat is the main trigger. He used the daily preventer
   through the hot spell but is **not on it daily now**, and has raised
   starting again before Cheltenham himself. Inhaled steroid preventers
