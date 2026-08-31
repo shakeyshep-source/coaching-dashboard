@@ -1,19 +1,19 @@
 {
-  "generated": "2026-08-30",
+  "generated": "2026-08-31",
   "next_race": {
     "name": "CHELTENHAM HALF MARATHON",
     "date": "2026-09-20",
     "distance_km": 21.0975,
-    "days_away": 21
+    "days_away": 20
   },
   "race_readiness": {
     "race": {
       "name": "CHELTENHAM HALF MARATHON",
       "date": "2026-09-20",
       "distance_km": 21.0975,
-      "days_away": 21
+      "days_away": 20
     },
-    "weeks_to_race": 3.0,
+    "weeks_to_race": 2.9,
     "taper_start": "2026-09-10",
     "remaining_key_sessions": {
       "tempo": 1,
@@ -26,94 +26,6 @@
     "longest_run_recent_min": 97
   },
   "weeks": [
-    {
-      "week_start": "2026-07-06",
-      "week_end": "2026-07-12",
-      "in_progress": false,
-      "km": 39.3,
-      "runs": 4,
-      "time_min": 198.0,
-      "elevation_m": 290.0,
-      "planned_sessions": 0,
-      "logged_sessions": 1,
-      "hard_sessions_planned": 0,
-      "quality_time_min": 0,
-      "easy_pct": 100,
-      "long_run_min": 64,
-      "long_run_km": 12.19,
-      "on_target_pct": 100,
-      "avg_rpe": 3,
-      "max_achilles": 0,
-      "avg_hrv": null,
-      "avg_rhr": null,
-      "avg_sleep_score": null,
-      "avg_sleep_hrs": null,
-      "easy_pace_min_km": 5.01,
-      "easy_avg_hr": 141.0,
-      "efficiency": 1.418,
-      "session_log": [
-        {
-          "date": "2026-07-07",
-          "temp_max_c": null,
-          "heat_risk": null,
-          "session_type": null,
-          "rpe": null,
-          "on_target": null,
-          "achilles_score": null,
-          "note": null,
-          "km": 12.2,
-          "pace": 5.2,
-          "avg_hr": 143,
-          "segments": null,
-          "fastest_segment": null
-        },
-        {
-          "date": "2026-07-08",
-          "temp_max_c": null,
-          "heat_risk": null,
-          "session_type": null,
-          "rpe": null,
-          "on_target": null,
-          "achilles_score": null,
-          "note": null,
-          "km": 7.6,
-          "pace": 4.97,
-          "avg_hr": 139,
-          "segments": null,
-          "fastest_segment": null
-        },
-        {
-          "date": "2026-07-11",
-          "temp_max_c": null,
-          "heat_risk": null,
-          "session_type": null,
-          "rpe": null,
-          "on_target": null,
-          "achilles_score": null,
-          "note": null,
-          "km": 12.0,
-          "pace": 5.02,
-          "avg_hr": 142,
-          "segments": null,
-          "fastest_segment": null
-        },
-        {
-          "date": "2026-07-12",
-          "temp_max_c": null,
-          "heat_risk": null,
-          "session_type": "easy",
-          "rpe": 3,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "22c with a breeze. Stayed easy after yesterday plus a late night.",
-          "km": 7.5,
-          "pace": 4.81,
-          "avg_hr": 140,
-          "segments": null,
-          "fastest_segment": null
-        }
-      ]
-    },
     {
       "week_start": "2026-07-13",
       "week_end": "2026-07-19",
@@ -750,8 +662,8 @@
       "avg_rpe": 2.7,
       "max_achilles": 0,
       "avg_hrv": 40,
-      "avg_rhr": 47.3,
-      "avg_sleep_score": 86.9,
+      "avg_rhr": 47.2,
+      "avg_sleep_score": 86.8,
       "avg_sleep_hrs": 8.2,
       "easy_pace_min_km": 4.96,
       "easy_avg_hr": 136.8,
@@ -867,7 +779,7 @@
     {
       "week_start": "2026-08-24",
       "week_end": "2026-08-30",
-      "in_progress": true,
+      "in_progress": false,
       "km": 75.2,
       "runs": 7,
       "time_min": 352.0,
@@ -1014,6 +926,33 @@
           }
         }
       ]
+    },
+    {
+      "week_start": "2026-08-31",
+      "week_end": "2026-09-06",
+      "in_progress": true,
+      "km": 0,
+      "runs": 0,
+      "time_min": 0,
+      "elevation_m": 0,
+      "planned_sessions": 6,
+      "logged_sessions": 0,
+      "hard_sessions_planned": 3,
+      "quality_time_min": 0,
+      "easy_pct": null,
+      "long_run_min": null,
+      "long_run_km": null,
+      "on_target_pct": null,
+      "avg_rpe": null,
+      "max_achilles": null,
+      "avg_hrv": 45,
+      "avg_rhr": 48.0,
+      "avg_sleep_score": 93,
+      "avg_sleep_hrs": 9.2,
+      "easy_pace_min_km": null,
+      "easy_avg_hr": null,
+      "efficiency": null,
+      "session_log": []
     }
   ]
 }
