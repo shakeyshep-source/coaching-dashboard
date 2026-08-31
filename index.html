@@ -363,11 +363,25 @@ async function loadDashboard() {
   }
 
   data.sort((a, b) => a.date.localeCompare(b.date));
-  const today = data[data.length - 1];
+  const latest = data[data.length - 1];
+
+  // The header used to print the last data row's date and call it
+  // today. GitHub runs the scheduled pull hours late on this repo, so
+  // on a Monday morning the dashboard said "Sunday 30 August" and
+  // offered Sunday's long run as today's session (31 Aug). The day is
+  // the clock's business; how fresh the data is, is a separate fact —
+  // state both rather than letting one stand in for the other.
+  const todayStr = toDateStr(new Date());
+  const todayRow = data.find(r => r.date === todayStr) || null;
+  // Wellness still falls back to the most recent row we have: yesterday's
+  // HRV is worth showing, it just must not be labelled as today's.
+  const today = todayRow || latest;
+  const stale = latest.date !== todayStr;
 
   document.getElementById('dateLabel').textContent =
-    new Date(today.date + 'T00:00:00').toLocaleDateString('en-GB',
-      { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+    new Date(todayStr + 'T00:00:00').toLocaleDateString('en-GB',
+      { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
+    + (stale ? ` · data to ${fmtDayMonth(latest.date)}` : '');
 
   // Today's planned session for the hero briefing
   let todayPlan = null;
@@ -375,7 +389,9 @@ async function loadDashboard() {
     const planRes = await fetch('training_plan.json?v=' + Date.now());
     if (planRes.ok) {
       const plan = await planRes.json();
-      todayPlan = plan.find(s => s.date === today.date) || null;
+      // Keyed off the clock, not the data — the session you are meant
+      // to run today does not depend on whether Garmin has synced.
+      todayPlan = plan.find(s => s.date === todayStr) || null;
     }
   } catch (e) { /* hero renders without the session */ }
 
@@ -383,7 +399,11 @@ async function loadDashboard() {
   // carries, so its presence is the reliable "logged" signal. Nudge only
   // when it's missing — a silent dashboard is how two weeks of logging
   // quietly disappeared once already.
-  const loggedToday = today.achilles_score !== null && today.achilles_score !== undefined;
+  // Must read today's own row, not the latest one: with the fallback
+  // above, yesterday's log would otherwise tick today off and hide the
+  // button — the exact silence this nudge exists to prevent.
+  const loggedToday = !!todayRow
+    && todayRow.achilles_score !== null && todayRow.achilles_score !== undefined;
   const logStripHtml = loggedToday
     ? `<p style="font-size:12px; color:var(--good); margin:10px 0 0;">✓ Today's session logged</p>`
     : (DAILY_FORM_URL
@@ -406,6 +426,7 @@ async function loadDashboard() {
         <span>${today.today_summary || 'No readiness data yet.'}</span>
       </div>
       <div>
+        ${stale ? `<span class="chip warn">Readiness from ${fmtDayMonth(latest.date)}</span>` : ''}
         ${heatChip}
         ${today.achilles_score >= 3 ? `<span class="chip bad">Achilles ${today.achilles_score}/10</span>` : ''}
         ${(today.recovery_confounders || []).map(c =>
