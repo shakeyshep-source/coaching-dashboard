@@ -936,15 +936,15 @@
       "time_min": 0,
       "elevation_m": 0,
       "planned_sessions": 6,
-      "logged_sessions": 0,
+      "logged_sessions": 1,
       "hard_sessions_planned": 3,
       "quality_time_min": 0,
       "easy_pct": null,
       "long_run_min": null,
       "long_run_km": null,
-      "on_target_pct": null,
-      "avg_rpe": null,
-      "max_achilles": null,
+      "on_target_pct": 100,
+      "avg_rpe": 1.0,
+      "max_achilles": 0,
       "avg_hrv": 45,
       "avg_rhr": 48.0,
       "avg_sleep_score": 93,
@@ -952,7 +952,23 @@
       "easy_pace_min_km": null,
       "easy_avg_hr": null,
       "efficiency": null,
-      "session_log": []
+      "session_log": [
+        {
+          "date": "2026-08-31",
+          "temp_max_c": 20.5,
+          "heat_risk": "high",
+          "session_type": "easy",
+          "rpe": 1.0,
+          "on_target": true,
+          "achilles_score": 0,
+          "note": "Easy jog with Alice. Nice and cool, got lost, ended up longer than planned but this was a lovely recovery run",
+          "km": null,
+          "pace": null,
+          "avg_hr": null,
+          "segments": null,
+          "fastest_segment": null
+        }
+      ]
     }
   ]
 }
