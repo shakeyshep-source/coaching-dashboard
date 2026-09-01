@@ -576,5 +576,22 @@
     "training_status_feedback": "PRODUCTIVE_3",
     "acwr_garmin": 1.0,
     "acwr_status": "OPTIMAL"
+  },
+  {
+    "date": "2026-09-01",
+    "rhr": 47.0,
+    "hrv_last_night": 43,
+    "hrv_status": "BALANCED",
+    "sleep_score": 88,
+    "sleep_duration_hrs": 7.73,
+    "body_battery_high": 100,
+    "body_battery_low": 72,
+    "training_load_acute": 753,
+    "training_load_chronic": 876,
+    "vo2max": 60.0,
+    "vo2max_date": "2026-08-31",
+    "training_status_feedback": "PRODUCTIVE_3",
+    "acwr_garmin": 0.8,
+    "acwr_status": "OPTIMAL"
   }
 ]
