@@ -238,5 +238,13 @@
     "rpe": 1.0,
     "on_target": true,
     "session_notes": "Easy jog with Alice. Nice and cool, got lost, ended up longer than planned but this was a lovely recovery run"
+  },
+  {
+    "date": "2026-09-01",
+    "achilles_score": 0,
+    "session_type": "rest",
+    "rpe": 0.0,
+    "on_target": true,
+    "session_notes": "rest"
   }
 ]
