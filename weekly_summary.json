@@ -970,7 +970,7 @@
         },
         {
           "date": "2026-09-01",
-          "temp_max_c": 19.6,
+          "temp_max_c": 19.8,
           "heat_risk": "moderate",
           "session_type": "rest",
           "rpe": 0.0,
