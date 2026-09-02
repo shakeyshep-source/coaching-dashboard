@@ -246,5 +246,13 @@
     "rpe": 0.0,
     "on_target": true,
     "session_notes": "rest"
+  },
+  {
+    "date": "2026-09-02",
+    "achilles_score": 0,
+    "session_type": "intervals",
+    "rpe": 6.0,
+    "on_target": true,
+    "session_notes": "20c\nA bit windy\nFelt strong, ahead of pace target but was trying to hold back"
   }
 ]
