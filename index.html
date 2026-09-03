@@ -447,6 +447,8 @@ async function loadDashboard() {
         <p class="label">HRV</p>
         <p class="value">${today.hrv_last_night ?? '--'}<span style="font-size:13px; color:var(--text-muted);"> ms</span></p>
         ${deltaChip(today.hrv_delta_from_baseline, ' ms', true)}
+        ${today.hrv_weekly_avg != null
+          ? `<p class="delta flat" style="font-size:11px;">watch 7d avg ${today.hrv_weekly_avg}</p>` : ''}
         <div class="spark-wrap"><canvas id="sparkHrv"></canvas></div>
       </div>
       <div class="card">
@@ -464,12 +466,12 @@ async function loadDashboard() {
     </div>
 
     <div class="chart-card">
-      <p class="title">HRV — 14 days (dashed = 7-day baseline)</p>
+      <p class="title">HRV — 14 days (dashed = prior 7 days, excluding that night)</p>
       <div class="chart-wrap" style="height:160px;"><canvas id="hrvChart"></canvas></div>
     </div>
 
     <div class="chart-card">
-      <p class="title">RHR — 14 days (dashed = 7-day baseline)</p>
+      <p class="title">RHR — 14 days (dashed = prior 7 days, excluding that morning)</p>
       <div class="chart-wrap" style="height:160px;"><canvas id="rhrChart"></canvas></div>
     </div>
 
