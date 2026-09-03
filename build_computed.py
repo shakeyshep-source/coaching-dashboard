@@ -22,7 +22,10 @@ LOCKED SCHEMA:
       "achilles_score": int | null,
       "acwr": float | null,
       "readiness_score": int | null,
-      "hrv_baseline_7d": float | null,
+      "hrv_weekly_avg": float | null,     # Garmin's 7-day avg, INCLUDING
+                                          # last night — the watch's number
+      "hrv_baseline_7d": float | null,    # ours: the 7 days BEFORE today,
+                                          # excluding it (see rolling_baseline)
       "hrv_delta_from_baseline": float | null,
       "rhr_baseline_7d": float | null,
       "rhr_delta_from_baseline": float | null,
@@ -67,7 +70,18 @@ def index_by_date(rows):
 
 
 def rolling_baseline(values, i, window=7):
-    """Mean of up to `window` days before index i, ignoring Nones."""
+    """Mean of up to `window` days before index i, ignoring Nones.
+
+    Today is EXCLUDED deliberately. The baseline exists to answer "how
+    does today compare with the recent norm", and a value that is part
+    of its own reference pulls that reference toward itself — on a
+    sharp night the delta then under-reads the change.
+
+    This is why it does not match the 7-day average on the watch, which
+    includes last night. Both are correct; they answer different
+    questions. Garmin's figure is stored as hrv_weekly_avg so the
+    dashboard can show the number he is actually looking at.
+    """
     window_vals = [v for v in values[max(0, i - window):i] if v is not None]
     return round(mean(window_vals), 1) if window_vals else None
 
@@ -429,6 +443,7 @@ def main():
             "date": row["date"],
             "rhr": row.get("rhr"),
             "hrv_last_night": row.get("hrv_last_night"),
+            "hrv_weekly_avg": row.get("hrv_weekly_avg"),
             "sleep_score": row.get("sleep_score"),
             "sleep_duration_hrs": row.get("sleep_duration_hrs"),
             "body_battery_high": row.get("body_battery_high"),

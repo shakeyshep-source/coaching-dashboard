@@ -12,6 +12,7 @@ build_computed.py and every chart that reads computed_data.json.
       "rhr": float | null,
       "hrv_last_night": float | null,
       "hrv_status": str | null,
+      "hrv_weekly_avg": float | null,   # Garmin's own 7-day average
       "sleep_score": float | null,
       "sleep_duration_hrs": float | null,
       "body_battery_high": float | null,
@@ -73,6 +74,7 @@ def pull_day(client, date_str):
         "rhr": None,
         "hrv_last_night": None,
         "hrv_status": None,
+        "hrv_weekly_avg": None,
         "sleep_score": None,
         "sleep_duration_hrs": None,
         "body_battery_high": None,
@@ -101,6 +103,12 @@ def pull_day(client, date_str):
         summary = hrv_data.get("hrvSummary", {})
         row["hrv_last_night"] = summary.get("lastNightAvg")
         row["hrv_status"] = summary.get("status")
+        # Garmin's own 7-day average — the figure on the watch's HRV
+        # screen. Stored so the dashboard can show the number he is
+        # actually looking at, rather than only our rolling reference,
+        # which is deliberately computed a different way (see
+        # rolling_baseline in build_computed.py) and so never matches.
+        row["hrv_weekly_avg"] = summary.get("weeklyAvg")
 
     # --- Sleep (separate endpoint, nested under dailySleepDTO) ---
     sleep_data = safe_get(client.get_sleep_data, date_str)
