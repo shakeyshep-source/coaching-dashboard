@@ -1149,6 +1149,16 @@
       "avg_hr": 147.0,
       "efficiency": 1.5017,
       "gradient_m_per_km": 6.0
+    },
+    {
+      "date": "2026-09-03",
+      "activity_id": 24222502028,
+      "name": "Gloucester Running",
+      "distance_km": 5.04,
+      "pace_min_per_km": 5.08,
+      "avg_hr": 130.0,
+      "efficiency": 1.5142,
+      "gradient_m_per_km": 6.9
     }
   ],
   "excluded": [
