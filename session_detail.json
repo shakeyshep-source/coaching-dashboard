@@ -6266,5 +6266,82 @@
     "avg_hr": 127.0,
     "aerobic_te": 2.799999952316284,
     "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-09-02",
+    "activity_id": 24213631354,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 18,
+    "reps": {
+      "count": 5,
+      "even_reps": true,
+      "distance_km_each": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pace_sec_per_km": [
+        216.9,
+        218.2,
+        217.6,
+        219.2,
+        216.3
+      ],
+      "pace_fmt": [
+        "3:37",
+        "3:38",
+        "3:38",
+        "3:39",
+        "3:36"
+      ],
+      "duration_sec": [
+        216.9,
+        218.2,
+        217.6,
+        219.2,
+        216.3
+      ],
+      "mean_pace_sec_per_km": 217.6,
+      "mean_pace_fmt": "3:38",
+      "fastest_pace_fmt": "3:36",
+      "slowest_pace_fmt": "3:39",
+      "spread_sec_per_km": 2.9,
+      "fastest_rep": 5,
+      "slowest_rep": 4,
+      "finished_fastest": true,
+      "drift_sec_per_km": -0.6,
+      "mean_hr": 158.4,
+      "max_hr": 167.0
+    },
+    "recoveries": {
+      "count": 4,
+      "duration_sec": [
+        90.0,
+        90.0,
+        90.0,
+        90.0
+      ],
+      "distance_km": [
+        0.24,
+        0.246,
+        0.258,
+        0.271
+      ],
+      "mean_duration_sec": 90.0,
+      "mean_pace_fmt": "5:55"
+    },
+    "volume": {
+      "warmup_km": 3.58,
+      "cooldown_km": 2.76,
+      "work_km": 5.0,
+      "recovery_km": 1.02,
+      "total_km": 12.35
+    },
+    "avg_hr": 139.0,
+    "aerobic_te": 3.4000000953674316,
+    "anaerobic_te": 2.0999999046325684
   }
 ]
