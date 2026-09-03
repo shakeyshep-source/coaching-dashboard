@@ -185,6 +185,23 @@ terrain, fatigue and — above all — **session intent**. Judge it on
 execution against its purpose, not on pace alone. A tempo run 8 sec/km
 slower in 28 °C on tired legs may be a better execution than a quick one.
 
+**RPE is an observation, never a target.** No session in this plan
+prescribes an effort score, and none should. Sessions are prescribed as
+paces because the stimulus is defined by intensity relative to his
+thresholds; running harder to reach a number changes what the session
+is and what it costs to recover from. So a quality session run on pace
+at RPE 6 is **not** a session that was underdone — falling RPE at equal
+or harder prescribed work is the block working, and across Aug–Sep 2026
+his quality sessions went 7, 7, 7, 7, 6, 7 (30 °C), 6, 6. Never tell him
+to run faster to make a session feel harder; he asked exactly that on
+3 Sep after being told so elsewhere, and it is the precise habit that
+cost him four years.
+
+Where a persistently low RPE *is* information: it means the target
+paces are stale, and the answer is to update them off a race result —
+never to freelance mid-session. His current paces derive from 5K 17:48
+(Jul) and 10K 38:06 (Jun, untapered).
+
 **Judge quality sessions from `session_detail.json`, not the run average.**
 `garmin_activities.json` holds whole-run averages, and a rep session
 averaged over its warm-up, recoveries and cool-down is nearly
