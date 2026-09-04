@@ -1,0 +1,75 @@
+[
+  {
+    "date": "2026-09-20",
+    "name": "Cheltenham Half Marathon",
+    "distance_km": 21.0975,
+    "status": "confirmed",
+    "intent": "target",
+    "notes": "The A race. Target 1:21-1:23, model predicts 1:22:23."
+  },
+  {
+    "date": "2026-10-04",
+    "name": "Crete 10K",
+    "distance_km": 10.0,
+    "status": "confirmed",
+    "intent": "not raced",
+    "notes": "Fun race with beers on the way over. Falls in the HM recovery window, which is fine — no taper."
+  },
+  {
+    "date": "2026-10-18",
+    "name": "Cross country",
+    "distance_km": null,
+    "status": "possible",
+    "intent": "not raced",
+    "notes": "Trail shoes, no spikes. Hard off-road effort, not a race."
+  },
+  {
+    "date": "2026-10-25",
+    "name": "10K (home town)",
+    "distance_km": 10.0,
+    "status": "possible",
+    "intent": "undecided",
+    "notes": "The one he has asked about racing properly. A half goes off the same morning; not tempted by it."
+  },
+  {
+    "date": "2026-10-31",
+    "name": "Cross country",
+    "distance_km": null,
+    "status": "possible",
+    "intent": "not raced",
+    "notes": "Saturday, six days after the 25 Oct 10K and the day before Guy Fawkes 5."
+  },
+  {
+    "date": "2026-11-01",
+    "name": "Guy Fawkes 5",
+    "distance_km": 8.05,
+    "status": "confirmed",
+    "intent": "undecided",
+    "notes": "5 miles. Sunday, the day after the 31 Oct XC and seven days after the 25 Oct 10K."
+  },
+  {
+    "date": "2026-12-13",
+    "name": "Cross country",
+    "distance_km": null,
+    "status": "possible",
+    "intent": "not raced",
+    "notes": "Trail shoes. Sits in base / early marathon build — no conflict."
+  },
+  {
+    "date": "2027-02-27",
+    "name": "Cross country",
+    "distance_km": null,
+    "status": "possible",
+    "intent": "not raced",
+    "notes": "Roughly six weeks out from Manchester, inside the marathon build."
+  },
+  {
+    "date": null,
+    "date_note": "April 2027 — exact date TBC",
+    "name": "Manchester Marathon",
+    "distance_km": 42.195,
+    "status": "confirmed",
+    "intent": "target",
+    "notes": "Goal sub-3 (4:16/km). Volume, not fitness, is the binding constraint."
+  }
+]

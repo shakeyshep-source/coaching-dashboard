@@ -142,7 +142,12 @@ Adidas Boston rejected as too firm.
   and are easy to miss when scanning for hard efforts. `build_efficiency`
   excludes them by name and by outlier rule. If a month looks odd, check
   what else he was doing before blaming running load.
-- **Racing calendar:** nothing before Cheltenham (20 Sep). Then, in
+- **Racing calendar** — the dates live in `fixtures.json` (what is
+  ahead, no times, dates sometimes TBC) and render as "Coming up" on
+  the Races tab; `races.json` stays results-only. Keep the two in step:
+  when a fixture is run, its result goes to `races.json` via the form,
+  and the fixture drops off by date on its own. The coaching context
+  for each is here. Nothing before Cheltenham (20 Sep). Then, in
   order:
   - **Crete 10K, Sun 4 Oct** — explicitly a fun race with beers on the
     way over, not a target; it falls in the HM recovery window, and
@@ -152,6 +157,10 @@ Adidas Boston rejected as too firm.
     racing properly. Not committed. A half goes off the same morning;
     he is not tempted by it.
   - **XC Sat 31 Oct** (possible) — six days after the 25 Oct 10K.
+  - **Guy Fawkes 5, Sun 1 Nov** — 5 miles, and he has entered it. It
+    lands the day after the 31 Oct XC and seven days after the 25 Oct
+    10K, so those three cannot all be run hard; which one matters is
+    his call, but it is a call, not a detail.
   - **XC Sun 13 Dec** (possible)
   - **XC Sat 27 Feb 2027** (possible) — this one sits ~6 weeks out
     from Manchester, inside the marathon build.
@@ -321,8 +330,16 @@ DERIVED:  race_predictor.py       -> race_prediction.json
           build_computed.py       -> computed_data.json, flags_log.json,
                                      recovery_log.json (days back to
                                      pre-session normal, per session)
-DISPLAY:  index.html (GitHub Pages PWA) reads ONLY derived JSONs.
+DISPLAY:  index.html (GitHub Pages PWA) reads the derived JSONs, plus
+          training_plan.json, races.json and fixtures.json — sources
+          with nothing to derive, displayed as they stand.
 ```
+
+`fixtures.json` is hand-maintained (by a coach session, from what Shep
+says) — the one file here with no puller behind it. Future races only:
+`{date | null, date_note, name, distance_km, status, intent, notes}`.
+A null date is a fixture whose date he has not got yet; it sorts last
+and shows `date_note` instead.
 
 Orchestrated by `run_all.py`, run by `.github/workflows/daily-pull.yml`
 three times each morning (no laptop needed). `review-response.yml` runs

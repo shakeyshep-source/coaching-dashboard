@@ -1677,7 +1677,60 @@ async function buildRacesTab() {
 
   races.sort((a, b) => b.date.localeCompare(a.date));
 
-  panel.innerHTML = `
+  // races.json is results — what happened, with a time. Fixtures are
+  // what is still ahead, and they carry no time and often no confirmed
+  // date, so they are a separate file rather than rows with holes in
+  // them that race_predictor.py would have to learn to skip.
+  const fixtures = (await fetchJson('fixtures.json')) || [];
+  const todayStr = toDateStr(new Date());
+  const upcoming = fixtures
+    .filter(f => f.date == null || f.date >= todayStr)
+    .sort((a, b) => (a.date || '9999').localeCompare(b.date || '9999'));
+
+  const intentChip = f => {
+    const label = { target: 'Target', race: 'Raced', 'not raced': 'Not raced',
+                    undecided: 'Undecided' }[f.intent] || f.intent || '';
+    const cls = f.intent === 'target' ? 'bad' : f.intent === 'undecided' ? 'warn' : '';
+    return label ? `<span class="chip ${cls}">${esc(label)}</span>` : '';
+  };
+
+  const fixturesHtml = upcoming.length ? `
+    <div class="chart-card">
+      <p class="title">Coming up</p>
+      <table style="width:100%; border-collapse:collapse; font-size:13px;">
+        <thead>
+          <tr style="text-align:left; color:var(--text-muted);">
+            <th style="padding:6px 8px;">Date</th>
+            <th style="padding:6px 8px;">Race</th>
+            <th style="padding:6px 8px;">Distance</th>
+            <th style="padding:6px 8px;">Away</th>
+            <th style="padding:6px 8px;">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${upcoming.map(f => {
+            const days = f.date
+              ? Math.round((new Date(f.date + 'T00:00:00') - new Date(todayStr + 'T00:00:00')) / 86400000)
+              : null;
+            return `
+            <tr style="border-top:1px solid var(--border);">
+              <td style="padding:6px 8px; white-space:nowrap;">${f.date
+                ? new Date(f.date + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' })
+                : esc(f.date_note || 'TBC')}</td>
+              <td style="padding:6px 8px;">${esc(f.name)}</td>
+              <td style="padding:6px 8px;">${f.distance_km != null ? f.distance_km + ' km' : '--'}</td>
+              <td style="padding:6px 8px; white-space:nowrap;">${days == null ? '--'
+                : days === 0 ? 'today' : days === 1 ? 'tomorrow' : days + ' days'}</td>
+              <td style="padding:6px 8px;">${f.status === 'possible'
+                ? '<span class="chip">Possible</span> ' : ''}${intentChip(f)}</td>
+            </tr>
+            ${f.notes ? `<tr><td colspan="5" style="padding:0 8px 8px; font-size:12px; color:var(--text-secondary);">${esc(f.notes)}</td></tr>` : ''}
+          `; }).join('')}
+        </tbody>
+      </table>
+    </div>` : '';
+
+  panel.innerHTML = fixturesHtml + `
     <div class="chart-card">
       <p class="title">Race history</p>
       <table style="width:100%; border-collapse:collapse; font-size:13px;">
@@ -1713,7 +1766,9 @@ async function loadTrainingPlan() {
     const res = await fetch('training_plan.json?v=' + Date.now());
     if (!res.ok) return;
     const plan = await res.json();
-    const today = new Date().toISOString().slice(0, 10);
+    // Local components, never toISOString — on BST that converts to UTC
+    // and reports yesterday for the first hour of every day.
+    const today = toDateStr(new Date());
     const upcoming = plan.filter(s => s.date >= today).sort((a, b) => a.date.localeCompare(b.date));
     if (upcoming.length === 0) return;
 
