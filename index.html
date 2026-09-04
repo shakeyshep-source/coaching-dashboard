@@ -1688,7 +1688,7 @@ async function buildRacesTab() {
     .sort((a, b) => (a.date || '9999').localeCompare(b.date || '9999'));
 
   const intentChip = f => {
-    const label = { target: 'Target', race: 'Raced', 'not raced': 'Not raced',
+    const label = { target: 'Target', race: 'Racing it', 'not raced': 'Not raced',
                     undecided: 'Undecided' }[f.intent] || f.intent || '';
     const cls = f.intent === 'target' ? 'bad' : f.intent === 'undecided' ? 'warn' : '';
     return label ? `<span class="chip ${cls}">${esc(label)}</span>` : '';
