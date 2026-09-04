@@ -45,11 +45,10 @@
     "distance_km": null,
     "status": "confirmed",
     "intent": "not raced",
-    "notes": "Roughly six weeks out from Manchester, inside the marathon build. The third of the three XC fixtures needed to complete the league."
+    "notes": "Trail shoes. Seven weeks out from Manchester (18 Apr), inside the marathon build. The third of the three XC fixtures needed to complete the league."
   },
   {
-    "date": null,
-    "date_note": "April 2027 \u2014 exact date TBC",
+    "date": "2027-04-18",
     "name": "Manchester Marathon",
     "distance_km": 42.195,
     "status": "confirmed",

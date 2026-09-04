@@ -40,7 +40,7 @@ daily, weekly review, or ad-hoc — starts from this brief.
 - **Next target: Cheltenham Half Marathon, 2026-09-20.** He targets
   82–83 min; the model independently predicts 1:22:23. HM build started
   late July.
-- **Then: Manchester Marathon, April 2027. Goal sub-3** (4:16/km).
+- **Then: Manchester Marathon, Sun 18 April 2027. Goal sub-3** (4:16/km).
   Riegel from current fitness gives ~2:52, so the fitness is not the
   binding constraint — weekly volume is. Sub-3 off a 60–65 km norm is
   possible but thin; that conversation belongs in the autumn, not now.
@@ -157,7 +157,7 @@ Adidas Boston rejected as too firm.
     he will actually race after Cheltenham. It now has a clean run-in:
     nothing hard in the seven days before it.
   - **XC Sun 13 Dec**
-  - **XC Sat 27 Feb 2027** — sits ~6 weeks out from Manchester, inside
+  - **XC Sat 27 Feb 2027** — sits 7 weeks out from Manchester, inside
     the marathon build.
 
   **The XC league needs 3 of 4 fixtures to count, and he has spent the
