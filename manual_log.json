@@ -262,5 +262,13 @@
     "rpe": 1.0,
     "on_target": true,
     "session_notes": "Really easy, lowest I've seen average HR at that pace"
+  },
+  {
+    "date": "2026-09-04",
+    "achilles_score": 0,
+    "session_type": "rest",
+    "rpe": 0.0,
+    "on_target": true,
+    "session_notes": "rest"
   }
 ]
