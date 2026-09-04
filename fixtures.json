@@ -13,59 +13,43 @@
     "distance_km": 10.0,
     "status": "confirmed",
     "intent": "not raced",
-    "notes": "Fun race with beers on the way over. Falls in the HM recovery window, which is fine — no taper."
+    "notes": "Fun race with beers on the way over. Falls in the HM recovery window, which is fine \u2014 no taper."
   },
   {
     "date": "2026-10-18",
     "name": "Cross country",
     "distance_km": null,
-    "status": "possible",
+    "status": "confirmed",
     "intent": "not raced",
-    "notes": "Trail shoes, no spikes. Hard off-road effort, not a race."
-  },
-  {
-    "date": "2026-10-25",
-    "name": "10K (home town)",
-    "distance_km": 10.0,
-    "status": "possible",
-    "intent": "undecided",
-    "notes": "The one he has asked about racing properly. A half goes off the same morning; not tempted by it."
-  },
-  {
-    "date": "2026-10-31",
-    "name": "Cross country",
-    "distance_km": null,
-    "status": "possible",
-    "intent": "not raced",
-    "notes": "Saturday, six days after the 25 Oct 10K and the day before Guy Fawkes 5."
+    "notes": "Trail shoes, no spikes. Hard off-road effort, not a race. One of the three XC fixtures needed to complete the league."
   },
   {
     "date": "2026-11-01",
     "name": "Guy Fawkes 5",
     "distance_km": 8.05,
     "status": "confirmed",
-    "intent": "undecided",
-    "notes": "5 miles. Sunday, the day after the 31 Oct XC and seven days after the 25 Oct 10K."
+    "intent": "race",
+    "notes": "5 miles, and the first real race after Cheltenham. Clean run-in now the 31 Oct XC is off \u2014 nothing hard in the seven days before it."
   },
   {
     "date": "2026-12-13",
     "name": "Cross country",
     "distance_km": null,
-    "status": "possible",
+    "status": "confirmed",
     "intent": "not raced",
-    "notes": "Trail shoes. Sits in base / early marathon build — no conflict."
+    "notes": "Trail shoes. Sits in base / early marathon build \u2014 no conflict. One of the three XC fixtures needed to complete the league."
   },
   {
     "date": "2027-02-27",
     "name": "Cross country",
     "distance_km": null,
-    "status": "possible",
+    "status": "confirmed",
     "intent": "not raced",
-    "notes": "Roughly six weeks out from Manchester, inside the marathon build."
+    "notes": "Roughly six weeks out from Manchester, inside the marathon build. The third of the three XC fixtures needed to complete the league."
   },
   {
     "date": null,
-    "date_note": "April 2027 — exact date TBC",
+    "date_note": "April 2027 \u2014 exact date TBC",
     "name": "Manchester Marathon",
     "distance_km": 42.195,
     "status": "confirmed",

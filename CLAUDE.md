@@ -152,25 +152,29 @@ Adidas Boston rejected as too firm.
   - **Crete 10K, Sun 4 Oct** — explicitly a fun race with beers on the
     way over, not a target; it falls in the HM recovery window, and
     that is fine, but do not write a taper for it.
-  - **XC Sun 18 Oct** (possible)
-  - **10K where he grew up, Sun 25 Oct** — the one he has asked about
-    racing properly. Not committed. A half goes off the same morning;
-    he is not tempted by it.
-  - **XC Sat 31 Oct** (possible) — six days after the 25 Oct 10K.
-  - **Guy Fawkes 5, Sun 1 Nov** — 5 miles, and he has entered it. It
-    lands the day after the 31 Oct XC and seven days after the 25 Oct
-    10K, so those three cannot all be run hard; which one matters is
-    his call, but it is a call, not a detail.
-  - **XC Sun 13 Dec** (possible)
-  - **XC Sat 27 Feb 2027** (possible) — this one sits ~6 weeks out
-    from Manchester, inside the marathon build.
+  - **XC Sun 18 Oct**
+  - **Guy Fawkes 5, Sun 1 Nov** — 5 miles, entered, and the first race
+    he will actually race after Cheltenham. It now has a clean run-in:
+    nothing hard in the seven days before it.
+  - **XC Sun 13 Dec**
+  - **XC Sat 27 Feb 2027** — sits ~6 weeks out from Manchester, inside
+    the marathon build.
 
-  **None of the XC dates are confirmed, and none will be run flat out —
-  he does not wear spikes for them, he runs them in trail shoes.** So
-  treat them as hard off-road efforts, not races: no taper, no
-  recovery week afterwards, and no adjustment to the surrounding block
-  unless he says he is actually racing one. Ask before assuming a
-  fixture is happening.
+  **The XC league needs 3 of 4 fixtures to count, and he has spent the
+  spare one.** There was a fourth on Sat 31 Oct; he is skipping it
+  because Guy Fawkes 5 is the next morning, which is the right call —
+  a hard off-road Saturday takes the legs out of a 5-miler, and the
+  5-miler is the one that matters. The consequence is that 18 Oct,
+  13 Dec and 27 Feb are now all **required**: there is no longer a
+  fixture he can miss and still complete the league. Treat a clash or
+  a niggle around any of those three as a real scheduling problem, not
+  a shrug. (There is no race on 25 Oct — an earlier version of this
+  brief had one; it does not exist.)
+
+  **None will be run flat out — he does not wear spikes for them, he
+  runs them in trail shoes.** So treat them as hard off-road efforts,
+  not races: no taper, no recovery week afterwards, and no adjustment
+  to the surrounding block unless he says he is actually racing one.
 
   The thing worth watching on XC is not the pace, it is the surface.
   Mud, cambers and repeated hard eccentric calf loading in a shoe he
