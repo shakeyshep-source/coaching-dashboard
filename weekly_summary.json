@@ -931,15 +931,15 @@
       "week_start": "2026-08-31",
       "week_end": "2026-09-06",
       "in_progress": true,
-      "km": 47.6,
-      "runs": 6,
-      "time_min": 233.0,
-      "elevation_m": 321.0,
+      "km": 48.9,
+      "runs": 7,
+      "time_min": 242.0,
+      "elevation_m": 355.0,
       "planned_sessions": 6,
       "logged_sessions": 6,
       "hard_sessions_planned": 3,
-      "quality_time_min": 137,
-      "easy_pct": 41,
+      "quality_time_min": 146,
+      "easy_pct": 40,
       "long_run_min": 70,
       "long_run_km": 13.12,
       "on_target_pct": 100,
@@ -1030,16 +1030,16 @@
         },
         {
           "date": "2026-09-05",
-          "temp_max_c": 20.1,
+          "temp_max_c": 20.4,
           "heat_risk": "moderate",
           "session_type": "tempo",
           "rpe": 5.0,
           "on_target": true,
           "achilles_score": 0,
           "note": "Cruised it, kept edging faster but think kept it more or less on target.\nThe fast rs are great\nTook a gel just before the run and then during recovery...thought a stitch was coming in the first km of the second set but all was fine.",
-          "km": 17.1,
-          "pace": 4.44,
-          "avg_hr": 144,
+          "km": 18.4,
+          "pace": 4.63,
+          "avg_hr": 143,
           "segments": [
             {
               "km": 3.02,
@@ -1058,6 +1058,12 @@
               "min": 15.7,
               "pace": 5.22,
               "avg_hr": 134.0
+            },
+            {
+              "km": 1.31,
+              "min": 9.2,
+              "pace": 7.01,
+              "avg_hr": 132.0
             }
           ],
           "fastest_segment": {

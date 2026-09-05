@@ -28003,5 +28003,35 @@
         "elevation_gain_m": 0.0
       }
     ]
+  },
+  {
+    "activity_id": 24246659986,
+    "date": "2026-09-05",
+    "name": "Stroud Running",
+    "type": "running",
+    "laps": [
+      {
+        "index": 1,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 441.0,
+        "pace_min_per_km": 7.35,
+        "avg_hr": 125.0,
+        "max_hr": 161.0,
+        "cadence": 131.140625,
+        "elevation_gain_m": 17.0
+      },
+      {
+        "index": 2,
+        "intensity_type": "INTERVAL",
+        "distance_km": 0.305,
+        "duration_sec": 108.5,
+        "pace_min_per_km": 5.92,
+        "avg_hr": 162.0,
+        "max_hr": 164.0,
+        "cadence": 154.421875,
+        "elevation_gain_m": 17.0
+      }
+    ]
   }
 ]

@@ -6268,5 +6268,20 @@
     "cadence": 169.09375,
     "aerobic_te": 2.200000047683716,
     "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-09-05",
+    "activity_id": 24246659986,
+    "name": "Stroud Running",
+    "type": "running",
+    "distance_km": 1.31,
+    "duration_min": 9.2,
+    "avg_pace_min_per_km": 7.01,
+    "avg_hr": 132.0,
+    "max_hr": 164.0,
+    "elevation_gain_m": 34.0,
+    "cadence": 135.6875,
+    "aerobic_te": 1.600000023841858,
+    "anaerobic_te": 0.20000000298023224
   }
 ]

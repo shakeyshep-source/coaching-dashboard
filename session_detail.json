@@ -6459,5 +6459,24 @@
     "avg_hr": 134.0,
     "aerobic_te": 2.200000047683716,
     "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-09-05",
+    "activity_id": 24246659986,
+    "name": "Stroud Running",
+    "structured": true,
+    "lap_count": 2,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 1.3
+    },
+    "avg_hr": 132.0,
+    "aerobic_te": 1.600000023841858,
+    "anaerobic_te": 0.20000000298023224
   }
 ]
