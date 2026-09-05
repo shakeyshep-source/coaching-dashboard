@@ -6362,5 +6362,102 @@
     "avg_hr": 130.0,
     "aerobic_te": 2.4000000953674316,
     "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-09-05",
+    "activity_id": 24244560030,
+    "name": "Tewkesbury Running",
+    "structured": true,
+    "lap_count": 4,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": 3.02,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 3.02
+    },
+    "avg_hr": 136.0,
+    "aerobic_te": 2.200000047683716,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-09-05",
+    "activity_id": 24244561720,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 14,
+    "reps": {
+      "count": 2,
+      "even_reps": true,
+      "distance_km_each": [
+        5.166,
+        5.174
+      ],
+      "pace_sec_per_km": [
+        232.3,
+        232.0
+      ],
+      "pace_fmt": [
+        "3:52",
+        "3:52"
+      ],
+      "duration_sec": [
+        1200.0,
+        1200.1
+      ],
+      "mean_pace_sec_per_km": 232.1,
+      "mean_pace_fmt": "3:52",
+      "fastest_pace_fmt": "3:52",
+      "slowest_pace_fmt": "3:52",
+      "spread_sec_per_km": 0.3,
+      "fastest_rep": 2,
+      "slowest_rep": 1,
+      "finished_fastest": true,
+      "drift_sec_per_km": -0.3,
+      "mean_hr": 152.8,
+      "max_hr": 160.0
+    },
+    "recoveries": {
+      "count": 1,
+      "duration_sec": [
+        180.0
+      ],
+      "distance_km": [
+        0.539
+      ],
+      "mean_duration_sec": 180.0,
+      "mean_pace_fmt": "5:34"
+    },
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": 0.17,
+      "work_km": 10.34,
+      "recovery_km": 0.54,
+      "total_km": 11.05
+    },
+    "avg_hr": 151.0,
+    "aerobic_te": 3.5999999046325684,
+    "anaerobic_te": 0.10000000149011612
+  },
+  {
+    "date": "2026-09-05",
+    "activity_id": 24244562706,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 4,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 3.01
+    },
+    "avg_hr": 134.0,
+    "aerobic_te": 2.200000047683716,
+    "anaerobic_te": 0.0
   }
 ]

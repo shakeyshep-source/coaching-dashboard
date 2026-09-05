@@ -2859,6 +2859,30 @@
         "quality session \u2014 halves are not comparable",
         "not steady \u2014 second half 26% slower"
       ]
+    },
+    {
+      "date": "2026-09-05",
+      "activity_id": 24244561720,
+      "decoupling_pct": 6.46,
+      "within_threshold": false,
+      "analysed_min": 35.0,
+      "first_half": {
+        "pace": "4:05",
+        "avg_hr": 150.9,
+        "ef": 0.02706
+      },
+      "second_half": {
+        "pace": "4:23",
+        "avg_hr": 150.0,
+        "ef": 0.02531
+      },
+      "distance_km": 11.05,
+      "gradient_m_per_km": 4.9,
+      "pace_delta_pct": 7.5,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 8% slower"
+      ]
     }
   ],
   "trend": {
