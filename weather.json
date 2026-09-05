@@ -1,58 +1,58 @@
 [
   {
-    "date": "2026-09-04",
-    "temp_max_c": 20.2,
-    "temp_min_c": 15.4,
-    "humidity_pct": 71,
-    "wind_speed_kmh": 31.0,
-    "heat_risk": "high"
-  },
-  {
     "date": "2026-09-05",
-    "temp_max_c": 20.9,
-    "temp_min_c": 12.7,
-    "humidity_pct": 63,
-    "wind_speed_kmh": 18.0,
+    "temp_max_c": 20.0,
+    "temp_min_c": 13.3,
+    "humidity_pct": 65,
+    "wind_speed_kmh": 15.5,
     "heat_risk": "moderate"
   },
   {
     "date": "2026-09-06",
-    "temp_max_c": 24.0,
-    "temp_min_c": 14.4,
+    "temp_max_c": 25.3,
+    "temp_min_c": 14.0,
     "humidity_pct": 64,
-    "wind_speed_kmh": 19.2,
+    "wind_speed_kmh": 18.4,
     "heat_risk": "high"
   },
   {
     "date": "2026-09-07",
-    "temp_max_c": 18.7,
-    "temp_min_c": 15.1,
+    "temp_max_c": 19.5,
+    "temp_min_c": 16.5,
+    "humidity_pct": 70,
+    "wind_speed_kmh": 21.6,
+    "heat_risk": "moderate"
+  },
+  {
+    "date": "2026-09-08",
+    "temp_max_c": 18.1,
+    "temp_min_c": 12.6,
+    "humidity_pct": 71,
+    "wind_speed_kmh": 22.0,
+    "heat_risk": "moderate"
+  },
+  {
+    "date": "2026-09-09",
+    "temp_max_c": 17.3,
+    "temp_min_c": 10.1,
+    "humidity_pct": 69,
+    "wind_speed_kmh": 19.4,
+    "heat_risk": "low"
+  },
+  {
+    "date": "2026-09-10",
+    "temp_max_c": 19.0,
+    "temp_min_c": 12.8,
     "humidity_pct": 73,
     "wind_speed_kmh": 17.3,
     "heat_risk": "moderate"
   },
   {
-    "date": "2026-09-08",
-    "temp_max_c": 18.2,
-    "temp_min_c": 12.2,
-    "humidity_pct": 79,
-    "wind_speed_kmh": 23.4,
-    "heat_risk": "moderate"
-  },
-  {
-    "date": "2026-09-09",
-    "temp_max_c": 18.4,
-    "temp_min_c": 9.8,
-    "humidity_pct": 65,
-    "wind_speed_kmh": 14.4,
-    "heat_risk": "moderate"
-  },
-  {
-    "date": "2026-09-10",
-    "temp_max_c": 17.9,
-    "temp_min_c": 11.4,
-    "humidity_pct": 72,
-    "wind_speed_kmh": 11.9,
-    "heat_risk": "low"
+    "date": "2026-09-11",
+    "temp_max_c": 20.0,
+    "temp_min_c": 15.1,
+    "humidity_pct": 78,
+    "wind_speed_kmh": 18.0,
+    "heat_risk": "high"
   }
 ]

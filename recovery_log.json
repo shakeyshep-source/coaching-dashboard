@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-04",
+  "generated": "2026-09-05",
   "window_days": 7,
   "sessions": [
     {
@@ -138,11 +138,20 @@
     {
       "date": "2026-09-02",
       "session_type": "intervals",
-      "days_since": 2,
+      "days_since": 3,
       "hrv_back": null,
       "rhr_back": null,
       "hrv_reference": 40.3,
       "rhr_reference": 46.7
+    },
+    {
+      "date": "2026-09-05",
+      "session_type": "tempo",
+      "days_since": 0,
+      "hrv_back": null,
+      "rhr_back": null,
+      "hrv_reference": 39.9,
+      "rhr_reference": 47.4
     }
   ],
   "trend": {
