@@ -1075,7 +1075,7 @@
         },
         {
           "date": "2026-09-06",
-          "temp_max_c": 27.5,
+          "temp_max_c": 27.4,
           "heat_risk": "high",
           "session_type": "long",
           "rpe": 1.0,

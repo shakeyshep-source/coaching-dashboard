@@ -305,17 +305,17 @@
   },
   {
     "date": "2026-09-06",
-    "temp_max_c": 27.5,
+    "temp_max_c": 27.4,
     "temp_min_c": 14.8,
     "humidity_pct": 61,
-    "wind_speed_kmh": 20.5,
+    "wind_speed_kmh": 21.2,
     "heat_risk": "high"
   },
   {
     "date": "2026-09-07",
     "temp_max_c": 21.1,
     "temp_min_c": 16.7,
-    "humidity_pct": 67,
+    "humidity_pct": 68,
     "wind_speed_kmh": 20.5,
     "heat_risk": "moderate"
   },
