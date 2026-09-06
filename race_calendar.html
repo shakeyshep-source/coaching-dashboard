@@ -1,0 +1,1408 @@
+<title>Start List</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+<style>
+  /* ---------------------------------------------------------------
+     Start List — club race calendar.
+
+     Two colour encodings, kept strictly apart:
+       BLUE RAMP  = how many club members have said they are in.
+       AMBER HATCH = the date is not fixed yet; this is the window.
+     Nothing else is allowed to use either.
+     --------------------------------------------------------------- */
+  :root {
+    --paper:      #F6F5F1;
+    --surface:    #FFFFFF;
+    --surface-2:  #EFEDE7;
+    --line:       #DEDBD2;
+    --line-soft:  #E9E7E0;
+    --ink:        #171C22;
+    --ink-2:      #4B5560;
+    --ink-3:      #7B8590;
+    --blue:       #1E5C97;
+    --blue-deep:  #123E68;
+    --amber:      #A9740A;
+    --amber-mark: #C98A06;
+    --amber-soft: rgba(201, 138, 6, 0.13);
+    --focus:      #1E5C97;
+
+    --r0: #E4E1D9;  --r0f: #6E7680;
+    --r1: #C6DBEC;  --r1f: #123E68;
+    --r2: #93BBDC;  --r2f: #0F3557;
+    --r3: #4785BA;  --r3f: #FFFFFF;
+    --r4: #1B5188;  --r4f: #FFFFFF;
+
+    --shadow: 0 1px 2px rgba(23, 28, 34, .05);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:      #12151A;
+      --surface:    #1A1F26;
+      --surface-2:  #222831;
+      --line:       #2E353F;
+      --line-soft:  #262C35;
+      --ink:        #E8E9E7;
+      --ink-2:      #B3BAC2;
+      --ink-3:      #7F8791;
+      --blue:       #6BA6DD;
+      --blue-deep:  #A6CBEA;
+      --amber:      #E0B443;
+      --amber-mark: #E0B443;
+      --amber-soft: rgba(224, 180, 67, 0.15);
+      --focus:      #8FBEE6;
+
+      --r0: #2A313A;  --r0f: #8C949E;
+      --r1: #2E4A63;  --r1f: #D7E5F2;
+      --r2: #3D6B92;  --r2f: #EAF2F9;
+      --r3: #5B94C3;  --r3f: #0F1419;
+      --r4: #8FBEE6;  --r4f: #0F1419;
+
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:      #12151A;
+    --surface:    #1A1F26;
+    --surface-2:  #222831;
+    --line:       #2E353F;
+    --line-soft:  #262C35;
+    --ink:        #E8E9E7;
+    --ink-2:      #B3BAC2;
+    --ink-3:      #7F8791;
+    --blue:       #6BA6DD;
+    --blue-deep:  #A6CBEA;
+    --amber:      #E0B443;
+    --amber-mark: #E0B443;
+    --amber-soft: rgba(224, 180, 67, 0.15);
+    --focus:      #8FBEE6;
+
+    --r0: #2A313A;  --r0f: #8C949E;
+    --r1: #2E4A63;  --r1f: #D7E5F2;
+    --r2: #3D6B92;  --r2f: #EAF2F9;
+    --r3: #5B94C3;  --r3f: #0F1419;
+    --r4: #8FBEE6;  --r4f: #0F1419;
+
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 16px 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* ---- header ------------------------------------------------- */
+  .topbar {
+    height: 4px;
+    background: linear-gradient(90deg, var(--blue) 0 62%, var(--amber-mark) 62% 100%);
+  }
+  header.masthead {
+    padding-top: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px 24px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 16px;
+  }
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin: 0;
+  }
+  h1 {
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-weight: 700;
+    font-size: clamp(38px, 9vw, 56px);
+    line-height: .95;
+    letter-spacing: -0.005em;
+    margin: 4px 0 0;
+    text-wrap: balance;
+  }
+  .masthead .sub {
+    margin: 6px 0 0;
+    color: var(--ink-2);
+    font-size: 14px;
+    max-width: 46ch;
+  }
+  .counts {
+    display: flex;
+    gap: 22px;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+  .counts .n {
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+    display: block;
+    color: var(--blue);
+  }
+  .counts .l {
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  /* ---- notice bar --------------------------------------------- */
+  .notice {
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--amber-mark);
+    background: var(--amber-soft);
+    border-radius: 3px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    color: var(--ink-2);
+  }
+  .notice strong { color: var(--ink); }
+
+  /* ---- identity ----------------------------------------------- */
+  .whoami {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 12px 14px;
+    box-shadow: var(--shadow);
+  }
+  .whoami .label {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .whoami .name {
+    font-weight: 600;
+  }
+
+  input[type="text"], input[type="date"], input[type="number"], input[type="url"], textarea, select {
+    font: inherit;
+    font-size: 15px;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 8px 10px;
+    min-width: 0;
+    width: 100%;
+  }
+  textarea { resize: vertical; min-height: 62px; }
+  input::placeholder, textarea::placeholder { color: var(--ink-3); }
+
+  :where(button, input, select, textarea, a, [tabindex]):focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  button {
+    font: inherit;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink);
+    padding: 8px 14px;
+    transition: background .12s ease, border-color .12s ease;
+  }
+  button:hover { background: var(--surface-2); }
+  button.primary {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+    font-weight: 600;
+  }
+  :root[data-theme="dark"] button.primary,
+  html:not([data-theme="light"]) button.primary { }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) button.primary { color: #0F1419; }
+  }
+  :root[data-theme="dark"] button.primary { color: #0F1419; }
+  button.primary:hover { filter: brightness(1.08); }
+  button.quiet {
+    border-color: transparent;
+    background: transparent;
+    color: var(--ink-2);
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+  button.quiet:hover { background: var(--surface-2); color: var(--ink); }
+
+  /* ---- section furniture -------------------------------------- */
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: .01em;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .sec-note {
+    font-size: 13px;
+    color: var(--ink-3);
+    margin: 0;
+    max-width: 52ch;
+  }
+
+  /* ---- year strip / month grids ------------------------------- */
+  .months {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 14px;
+  }
+  .month {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 10px 10px 12px;
+  }
+  .month h3 {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    margin: 0 0 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .month h3 .yr { color: var(--ink-3); font-weight: 400; }
+  .dow, .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+  }
+  .dow span {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 9px;
+    text-align: center;
+    color: var(--ink-3);
+    padding-bottom: 3px;
+  }
+  .day {
+    position: relative;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10.5px;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-3);
+    border-radius: 2px;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    min-width: 0;
+  }
+  .day.blank { visibility: hidden; }
+  .day.win {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      var(--amber-soft) 0 3px,
+      transparent 3px 6px
+    );
+    box-shadow: inset 0 0 0 1px var(--amber-soft);
+    color: var(--amber);
+  }
+  .day.prior::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1px;
+    width: 9px;
+    height: 2px;
+    background: var(--amber-mark);
+    border-radius: 1px;
+  }
+  .day.today { box-shadow: inset 0 0 0 1.5px var(--ink-3); }
+  .day.race {
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .day.race.lv0 { background: var(--r0); color: var(--r0f); }
+  .day.race.lv1 { background: var(--r1); color: var(--r1f); }
+  .day.race.lv2 { background: var(--r2); color: var(--r2f); }
+  .day.race.lv3 { background: var(--r3); color: var(--r3f); }
+  .day.race.lv4 { background: var(--r4); color: var(--r4f); }
+  .day.race:hover { filter: brightness(.94); }
+  .day.race.target { box-shadow: inset 0 0 0 1.5px var(--ink); }
+
+  /* ---- legend -------------------------------------------------- */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    align-items: center;
+    font-size: 12.5px;
+    color: var(--ink-2);
+    padding-top: 4px;
+  }
+  .legend .grp { display: flex; align-items: center; gap: 7px; }
+  .ramp { display: flex; gap: 2px; }
+  .ramp i {
+    width: 17px; height: 13px; border-radius: 2px; display: block;
+  }
+  .swatch-win {
+    width: 17px; height: 13px; border-radius: 2px; display: inline-block;
+    background-image: repeating-linear-gradient(-45deg, var(--amber-mark) 0 2px, transparent 2px 5px);
+    box-shadow: inset 0 0 0 1px var(--amber-soft);
+  }
+  .legend .mono {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  /* ---- filters -------------------------------------------------- */
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .filters button[aria-pressed="true"] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
+    font-weight: 600;
+  }
+  .filters button { padding: 6px 12px; font-size: 13.5px; }
+  .spacer { flex: 1 1 auto; }
+
+  /* ---- race list ------------------------------------------------ */
+  .month-band {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0 6px;
+    margin-bottom: 10px;
+  }
+  .races { display: flex; flex-direction: column; gap: 10px; }
+
+  .race {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-template-columns: 62px 1fr;
+    overflow: hidden;
+    scroll-margin-top: 12px;
+  }
+  .race.flash { animation: flash 1.4s ease-out; }
+  @keyframes flash { from { border-color: var(--blue); } to { border-color: var(--line); } }
+  @media (prefers-reduced-motion: reduce) { .race.flash { animation: none; } }
+
+  .race .rail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    padding: 12px 4px;
+    border-right: 1px solid var(--line-soft);
+  }
+  .race .rail .dnum {
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: .9;
+  }
+  .race .rail .dmon, .race .rail .ddow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 9.5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .race .rail.lv0 { background: var(--r0); color: var(--r0f); }
+  .race .rail.lv1 { background: var(--r1); color: var(--r1f); }
+  .race .rail.lv2 { background: var(--r2); color: var(--r2f); }
+  .race .rail.lv3 { background: var(--r3); color: var(--r3f); }
+  .race .rail.lv4 { background: var(--r4); color: var(--r4f); }
+  .race .rail.tbc {
+    background-image: repeating-linear-gradient(-45deg, var(--amber-soft) 0 4px, transparent 4px 8px);
+    color: var(--amber);
+  }
+  .race .rail.tbc .dnum { font-size: 15px; letter-spacing: .06em; }
+
+  .race .body { padding: 11px 14px 12px; min-width: 0; }
+  .race .title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .race h4 {
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: .005em;
+  }
+  .race h4 a { color: inherit; text-decoration-color: var(--ink-3); text-underline-offset: 2px; }
+  .tag {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 9.5px;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 2px;
+    border: 1px solid var(--line);
+    color: var(--ink-3);
+    white-space: nowrap;
+  }
+  .tag.target { border-color: var(--ink); color: var(--ink); font-weight: 600; }
+  .tag.tbc { border-color: var(--amber-mark); color: var(--amber); }
+  .meta {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11.5px;
+    color: var(--ink-3);
+    margin: 5px 0 0;
+    font-variant-numeric: tabular-nums;
+  }
+  .whynot {
+    font-size: 13px;
+    color: var(--ink-2);
+    margin: 7px 0 0;
+    max-width: 62ch;
+  }
+  .window-note {
+    font-size: 13px;
+    color: var(--amber);
+    margin: 7px 0 0;
+  }
+  .attendees {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 9px;
+  }
+  .who {
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    color: var(--ink-2);
+    border: 1px solid transparent;
+    white-space: nowrap;
+  }
+  .who.in { background: var(--r1); color: var(--r1f); }
+  .who.maybe { border-color: var(--line); background: transparent; }
+  .who.me { border-color: var(--blue); font-weight: 600; }
+  .who.more {
+    background: transparent;
+    color: var(--ink-3);
+    border: 1px dashed var(--line);
+  }
+
+  .rsvp {
+    display: flex;
+    gap: 6px;
+    margin-top: 11px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .rsvp button { padding: 5px 12px; font-size: 13px; }
+  .rsvp button[aria-pressed="true"] {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+    font-weight: 600;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .rsvp button[aria-pressed="true"] { color: #0F1419; }
+  }
+  :root[data-theme="dark"] .rsvp button[aria-pressed="true"] { color: #0F1419; }
+  .rsvp .count {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11.5px;
+    color: var(--ink-3);
+    margin-left: 2px;
+  }
+
+  /* ---- add form -------------------------------------------------- */
+  form.add {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 16px;
+    display: grid;
+    gap: 12px;
+    box-shadow: var(--shadow);
+  }
+  form.add .row {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+  form.add label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10.5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  form.add label > input,
+  form.add label > textarea,
+  form.add label > select {
+    font-family: "Source Sans 3", sans-serif;
+    letter-spacing: normal;
+    text-transform: none;
+    color: var(--ink);
+  }
+  fieldset.mode {
+    border: 0; padding: 0; margin: 0;
+    display: flex; gap: 16px; flex-wrap: wrap;
+  }
+  fieldset.mode label {
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 14px;
+    letter-spacing: normal;
+    text-transform: none;
+    color: var(--ink);
+  }
+  .form-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .hint { font-size: 12.5px; color: var(--ink-3); margin: 0; }
+  .err { font-size: 13px; color: #B3261E; margin: 0; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .err { color: #F2A29B; }
+  }
+  :root[data-theme="dark"] .err { color: #F2A29B; }
+
+  .empty {
+    border: 1px dashed var(--line);
+    border-radius: 4px;
+    padding: 26px 18px;
+    text-align: center;
+    color: var(--ink-3);
+    font-size: 14px;
+  }
+
+  footer.foot {
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    font-size: 12.5px;
+    color: var(--ink-3);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  @media (max-width: 480px) {
+    .race { grid-template-columns: 54px 1fr; }
+    .months { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+  }
+</style>
+
+<div class="topbar"></div>
+<div class="wrap">
+
+  <header class="masthead">
+    <div>
+      <p class="eyebrow">Club race calendar</p>
+      <h1>Start List</h1>
+      <p class="sub">What the club is targeting, who is in, and the races whose dates
+        aren&rsquo;t out yet &mdash; so nobody books a weekend away over the one race everyone else entered.</p>
+    </div>
+    <div class="counts" id="counts"></div>
+  </header>
+
+  <div id="notice"></div>
+
+  <section class="whoami" id="whoami"></section>
+
+  <section id="calendar">
+    <div class="sec-head">
+      <h2>The season</h2>
+      <p class="sec-note">Solid squares are fixed dates &mdash; the deeper the blue, the more
+        of us are in. Hatched blocks are races with no date yet; the ticks are when
+        they landed in previous years.</p>
+    </div>
+    <div class="months" id="months"></div>
+    <div class="legend">
+      <span class="grp">
+        <span class="mono">Nobody in</span>
+        <span class="ramp"><i style="background:var(--r0)"></i><i style="background:var(--r1)"></i><i style="background:var(--r2)"></i><i style="background:var(--r3)"></i><i style="background:var(--r4)"></i></span>
+        <span class="mono">10+ in</span>
+      </span>
+      <span class="grp"><span class="swatch-win"></span><span>Date not confirmed &mdash; likely window</span></span>
+      <span class="grp"><span class="tag target">Club target</span></span>
+    </div>
+  </section>
+
+  <section id="listing">
+    <div class="sec-head">
+      <h2>Races</h2>
+      <div class="filters" id="filters">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="target" aria-pressed="false">Club targets</button>
+        <button type="button" data-filter="tbc" aria-pressed="false">Date TBC</button>
+        <button type="button" data-filter="mine" aria-pressed="false">I&rsquo;m in</button>
+        <span class="spacer"></span>
+        <button type="button" class="primary" id="addToggle">Add a race</button>
+      </div>
+    </div>
+
+    <form class="add" id="addForm" hidden>
+      <div class="row">
+        <label>Race name
+          <input type="text" name="name" required placeholder="e.g. Stroud Half Marathon">
+        </label>
+        <label>Distance (km)
+          <input type="number" name="distance" step="0.01" min="0" placeholder="21.1">
+        </label>
+      </div>
+      <div class="row">
+        <label>Where
+          <input type="text" name="location" placeholder="Stroud, Glos">
+        </label>
+        <label>Entry link
+          <input type="url" name="url" placeholder="https://">
+        </label>
+      </div>
+
+      <fieldset class="mode">
+        <label><input type="radio" name="mode" value="fixed" checked> Date confirmed</label>
+        <label><input type="radio" name="mode" value="window"> Date not out yet</label>
+        <label><input type="checkbox" name="target"> Club target race</label>
+      </fieldset>
+
+      <div class="row" id="fixedRow">
+        <label>Date
+          <input type="date" name="date">
+        </label>
+      </div>
+
+      <div id="windowRow" hidden>
+        <div class="row">
+          <label>Previous years&rsquo; dates
+            <input type="text" name="prior" placeholder="2024-03-24, 2025-03-30, 2026-03-29">
+          </label>
+          <label>Which year is this for?
+            <input type="number" name="year" min="2024" max="2100" step="1">
+          </label>
+        </div>
+        <div class="row" style="margin-top:12px">
+          <label>Window from
+            <input type="date" name="winFrom">
+          </label>
+          <label>Window to
+            <input type="date" name="winTo">
+          </label>
+        </div>
+        <div class="form-actions" style="margin-top:10px">
+          <button type="button" id="suggestWindow">Set window from previous years</button>
+          <p class="hint">Takes the earliest and latest of those dates, maps them onto the
+            target year and pads three days each side.</p>
+        </div>
+      </div>
+
+      <label>Anything worth knowing
+        <textarea name="note" placeholder="Hilly. Club champs counter. Coach reckons it suits a fast 10K."></textarea>
+      </label>
+
+      <p class="err" id="addErr" hidden></p>
+      <div class="form-actions">
+        <button type="submit" class="primary">Add to the calendar</button>
+        <button type="button" class="quiet" id="addCancel">Cancel</button>
+      </div>
+    </form>
+
+    <div id="races"></div>
+  </section>
+
+  <footer class="foot">
+    <span>Anyone in the club can add a race or change their own answer. Your name is
+      stored on this device only &mdash; tap it in the bar above to change it.</span>
+    <span id="syncNote"></span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  var MON3 = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var DOW = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+  var DOW1 = ["M","T","W","T","F","S","S"];
+
+  /* Local-date helpers. Never construct dates through UTC parsing —
+     "2026-09-20" via new Date(str) is midnight UTC, which is the
+     previous day for anyone west of Greenwich and a day-boundary bug
+     waiting to happen. */
+  function parseD(s) {
+    if (!s || typeof s !== "string") return null;
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s.trim());
+    if (!m) return null;
+    var d = new Date(+m[1], +m[2] - 1, +m[3]);
+    return isNaN(d.getTime()) ? null : d;
+  }
+  function fmtD(d) {
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  }
+  function monKey(d) { return d.getFullYear() * 12 + d.getMonth(); }
+  function addDays(d, n) { return new Date(d.getFullYear(), d.getMonth(), d.getDate() + n); }
+  function mondayIndex(d) { return (d.getDay() + 6) % 7; }
+  function today() { var n = new Date(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); }
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function distLabel(km) {
+    if (km == null || isNaN(km)) return null;
+    var n = Number(km);
+    if (Math.abs(n - 42.195) < 0.4) return "Marathon";
+    if (Math.abs(n - 21.0975) < 0.3) return "Half marathon";
+    if (Math.abs(n - 1.60934) < 0.05) return "Mile";
+    if (Math.abs(n - 8.0467) < 0.12) return "5 miles";
+    if (Math.abs(n - 16.09) < 0.2) return "10 miles";
+    if (Math.abs(n - Math.round(n)) < 0.06) return Math.round(n) + "K";
+    return n.toFixed(1) + " km";
+  }
+
+  /* ---------- state ---------- */
+  var state = {
+    races: [],
+    me: null,          /* {id, name} */
+    db: null,
+    connected: false,
+    resolved: false,   /* capability lookup has finished */
+    filter: "all",
+    error: null
+  };
+
+  var LS_KEY = "startlist.me.v1";
+  try {
+    var raw = localStorage.getItem(LS_KEY);
+    if (raw) {
+      var p = JSON.parse(raw);
+      if (p && p.id && p.name) state.me = { id: String(p.id), name: String(p.name) };
+    }
+  } catch (e) { /* private window, blocked storage — carry on nameless */ }
+
+  function saveMe() {
+    try { localStorage.setItem(LS_KEY, JSON.stringify(state.me)); } catch (e) {}
+  }
+  function newId() {
+    return Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 8);
+  }
+
+  /* Example rows, shown ONLY when the page cannot reach the shared
+     store. Clearly labelled in the notice bar so they are never taken
+     for the club's real entries. */
+  var EXAMPLES = [
+    { id: "x1", name: "Cheltenham Half Marathon", date: "2026-09-20", distance_km: 21.0975,
+      location: "Cheltenham", target: true, note: "Club target. Example entry.",
+      going: { a: { name: "Example runner", status: "in" }, b: { name: "Example runner", status: "in" }, c: { name: "Example runner", status: "maybe" } } },
+    { id: "x2", name: "Guy Fawkes 5", date: "2026-11-01", distance_km: 8.05, location: "Gloucestershire",
+      target: false, note: "Example entry.", going: {} },
+    { id: "x3", name: "Stroud Half Marathon", date: null, winFrom: "2026-10-18", winTo: "2026-10-28",
+      priorDates: ["2024-10-20", "2025-10-19"], distance_km: 21.0975, location: "Stroud",
+      target: false, note: "Example of a race whose date is not out yet.", going: {} }
+  ];
+
+  /* ---------- derived ---------- */
+  function goingCount(r, status) {
+    var g = r.going || {}, n = 0;
+    for (var k in g) if (Object.prototype.hasOwnProperty.call(g, k)) {
+      if (g[k] && g[k].status === status) n++;
+    }
+    return n;
+  }
+  function level(n) { return n === 0 ? 0 : n <= 2 ? 1 : n <= 5 ? 2 : n <= 9 ? 3 : 4; }
+  function anchorDate(r) { return parseD(r.date) || parseD(r.winFrom); }
+  function sortRaces(list) {
+    return list.slice().sort(function (a, b) {
+      var da = anchorDate(a), dbb = anchorDate(b);
+      if (!da && !dbb) return String(a.name).localeCompare(String(b.name));
+      if (!da) return 1;
+      if (!dbb) return -1;
+      return da - dbb || String(a.name).localeCompare(String(b.name));
+    });
+  }
+  function visible() {
+    var list = sortRaces(state.races);
+    if (state.filter === "target") return list.filter(function (r) { return !!r.target; });
+    if (state.filter === "tbc") return list.filter(function (r) { return !r.date; });
+    if (state.filter === "mine") {
+      if (!state.me) return [];
+      return list.filter(function (r) {
+        var g = (r.going || {})[state.me.id];
+        return g && (g.status === "in" || g.status === "maybe");
+      });
+    }
+    return list;
+  }
+
+  /* ---------- rendering ---------- */
+  function renderCounts() {
+    var el = document.getElementById("counts");
+    var races = state.races;
+    var upcoming = races.filter(function (r) {
+      var d = parseD(r.date) || parseD(r.winTo) || parseD(r.winFrom);
+      return d && d >= today();
+    }).length;
+    var tbc = races.filter(function (r) { return !r.date; }).length;
+    var mine = state.me ? races.filter(function (r) {
+      var g = (r.going || {})[state.me.id];
+      return g && g.status === "in";
+    }).length : 0;
+    el.innerHTML =
+      '<div><span class="n">' + upcoming + '</span><span class="l">Ahead</span></div>' +
+      '<div><span class="n">' + tbc + '</span><span class="l">Date TBC</span></div>' +
+      '<div><span class="n">' + mine + '</span><span class="l">You&rsquo;re in</span></div>';
+  }
+
+  function renderNotice() {
+    var el = document.getElementById("notice");
+    if (!state.resolved) { el.innerHTML = ""; return; }
+    if (state.error) {
+      el.innerHTML = '<div class="notice"><strong>Couldn&rsquo;t save that.</strong> ' + esc(state.error) + '</div>';
+      return;
+    }
+    if (!state.connected) {
+      el.innerHTML = '<div class="notice"><strong>Preview only &mdash; not connected to the club calendar.</strong> ' +
+        'The three entries below are examples so you can see how it works. Nothing you change here is saved or shared.</div>';
+      return;
+    }
+    el.innerHTML = "";
+  }
+
+  function renderWhoami() {
+    var el = document.getElementById("whoami");
+    if (!state.me) {
+      el.innerHTML =
+        '<span class="label">Your name</span>' +
+        '<input type="text" id="nameInput" placeholder="First name and surname" style="flex:1 1 200px;max-width:280px" autocomplete="name">' +
+        '<button type="button" class="primary" id="nameSave">Save</button>' +
+        '<span class="hint" style="flex:1 1 240px">Needed so the club knows who&rsquo;s in. You can read the calendar without it.</span>';
+      var save = function () {
+        var v = document.getElementById("nameInput").value.trim();
+        if (!v) return;
+        state.me = { id: newId(), name: v.slice(0, 40) };
+        saveMe();
+        render();
+      };
+      document.getElementById("nameSave").addEventListener("click", save);
+      document.getElementById("nameInput").addEventListener("keydown", function (e) {
+        if (e.key === "Enter") { e.preventDefault(); save(); }
+      });
+    } else {
+      el.innerHTML =
+        '<span class="label">You are</span>' +
+        '<span class="name">' + esc(state.me.name) + '</span>' +
+        '<button type="button" class="quiet" id="nameChange">Not you?</button>';
+      document.getElementById("nameChange").addEventListener("click", function () {
+        var n = state.me.name;
+        state.me = null;
+        render();
+        var inp = document.getElementById("nameInput");
+        if (inp) { inp.value = n; inp.focus(); }
+      });
+    }
+  }
+
+  /* Build a day-indexed map so each month cell knows what sits on it. */
+  function buildDayMap() {
+    var map = {};    /* "YYYY-MM-DD" -> {races:[], window:[], prior:[]} */
+    function slot(k) { return map[k] || (map[k] = { races: [], window: [], prior: [] }); }
+    state.races.forEach(function (r) {
+      var d = parseD(r.date);
+      if (d) { slot(fmtD(d)).races.push(r); return; }
+      var a = parseD(r.winFrom), b = parseD(r.winTo) || a;
+      if (a && b) {
+        for (var c = a; c <= b; c = addDays(c, 1)) slot(fmtD(c)).window.push(r);
+      }
+      (r.priorDates || []).forEach(function (p) {
+        var pd = parseD(p);
+        if (!pd || !a) return;
+        /* project last year's date onto this window's year so the tick
+           shows inside the band rather than a year away */
+        var proj = new Date(a.getFullYear(), pd.getMonth(), pd.getDate());
+        slot(fmtD(proj)).prior.push(r);
+      });
+    });
+    return map;
+  }
+
+  function renderMonths() {
+    var host = document.getElementById("months");
+    var races = state.races;
+    if (!races.length) { host.innerHTML = ""; return; }
+
+    var keys = [];
+    races.forEach(function (r) {
+      var a = parseD(r.date) || parseD(r.winFrom);
+      var b = parseD(r.date) || parseD(r.winTo) || a;
+      if (a) keys.push(monKey(a));
+      if (b) keys.push(monKey(b));
+    });
+    var t = today();
+    keys.push(monKey(t));
+    var lo = Math.min.apply(null, keys), hi = Math.max.apply(null, keys);
+    if (hi - lo > 35) hi = lo + 35;   /* keep the strip sane */
+
+    var map = buildDayMap();
+    var todayKey = fmtD(t);
+    var html = "";
+
+    for (var k = lo; k <= hi; k++) {
+      var y = Math.floor(k / 12), m = k % 12;
+      var first = new Date(y, m, 1);
+      var ndays = new Date(y, m + 1, 0).getDate();
+      var pad = mondayIndex(first);
+
+      html += '<div class="month"><h3><span>' + MON3[m] + '</span><span class="yr">' + y + '</span></h3>';
+      html += '<div class="dow">' + DOW1.map(function (d, i) {
+        return '<span aria-hidden="true">' + d + '</span>';
+      }).join("") + '</div><div class="days">';
+
+      for (var i = 0; i < pad; i++) html += '<span class="day blank"></span>';
+
+      for (var day = 1; day <= ndays; day++) {
+        var key = y + "-" + String(m + 1).padStart(2, "0") + "-" + String(day).padStart(2, "0");
+        var s = map[key];
+        var cls = ["day"], attrs = "", tag = "span", label = "";
+        if (key === todayKey) cls.push("today");
+        if (s && s.window.length) cls.push("win");
+        if (s && s.prior.length) cls.push("prior");
+        if (s && s.races.length) {
+          var top = s.races.reduce(function (best, r) {
+            return goingCount(r, "in") > goingCount(best, "in") ? r : best;
+          }, s.races[0]);
+          cls.push("race", "lv" + level(goingCount(top, "in")));
+          if (s.races.some(function (r) { return r.target; })) cls.push("target");
+          tag = "button";
+          label = s.races.map(function (r) {
+            return r.name + " — " + goingCount(r, "in") + " in";
+          }).join("; ");
+          attrs = ' type="button" data-jump="' + esc(s.races[0].id) + '" title="' + esc(label) + '"' +
+                  ' aria-label="' + esc(day + " " + MONTHS[m] + ": " + label) + '"';
+        } else if (s && s.window.length) {
+          label = s.window.map(function (r) { return r.name + " — date not confirmed"; }).join("; ");
+          tag = "button";
+          attrs = ' type="button" data-jump="' + esc(s.window[0].id) + '" title="' + esc(label) + '"' +
+                  ' aria-label="' + esc(day + " " + MONTHS[m] + ": " + label) + '"';
+        }
+        html += "<" + tag + ' class="' + cls.join(" ") + '"' + attrs + ">" + day + "</" + tag + ">";
+      }
+      html += "</div></div>";
+    }
+    host.innerHTML = html;
+
+    Array.prototype.forEach.call(host.querySelectorAll("[data-jump]"), function (b) {
+      b.addEventListener("click", function () {
+        var el = document.getElementById("race-" + b.getAttribute("data-jump"));
+        if (!el) return;
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+        el.classList.remove("flash");
+        void el.offsetWidth;
+        el.classList.add("flash");
+      });
+    });
+  }
+
+  function windowText(r) {
+    var a = parseD(r.winFrom), b = parseD(r.winTo);
+    if (!a) return "Date not confirmed";
+    var s = a.getDate() + " " + MON3[a.getMonth()];
+    if (b && fmtD(b) !== fmtD(a)) s += " – " + b.getDate() + " " + MON3[b.getMonth()];
+    return "Likely " + s + " " + (b || a).getFullYear();
+  }
+
+  function priorText(r) {
+    var ds = (r.priorDates || []).map(parseD).filter(Boolean).sort(function (x, y) { return x - y; });
+    if (!ds.length) return "";
+    return "Previous years: " + ds.map(function (d) {
+      return d.getDate() + " " + MON3[d.getMonth()] + " " + String(d.getFullYear()).slice(2);
+    }).join(", ") + ".";
+  }
+
+  function renderRaces() {
+    var host = document.getElementById("races");
+    var list = visible();
+
+    if (!list.length) {
+      host.innerHTML = '<div class="empty">' +
+        (state.filter === "mine"
+          ? "You haven&rsquo;t said you&rsquo;re in for anything yet."
+          : state.filter === "tbc"
+            ? "Every race on the calendar has a confirmed date."
+            : state.filter === "target"
+              ? "No club target races on the calendar yet."
+              : "Nothing on the calendar yet. Add the first race.") +
+        '</div>';
+      return;
+    }
+
+    var html = "", lastMon = null;
+    list.forEach(function (r) {
+      var d = anchorDate(r);
+      var mk = d ? MONTHS[d.getMonth()] + " " + d.getFullYear() : "Date unknown";
+      if (mk !== lastMon) { html += '<div class="month-band">' + esc(mk) + "</div>"; lastMon = mk; }
+
+      var inN = goingCount(r, "in"), maybeN = goingCount(r, "maybe");
+      var lv = level(inN);
+      var fixed = parseD(r.date);
+
+      var rail = fixed
+        ? '<div class="rail lv' + lv + '"><span class="ddow">' + DOW[mondayIndex(fixed)] + '</span>' +
+          '<span class="dnum">' + fixed.getDate() + '</span>' +
+          '<span class="dmon">' + MON3[fixed.getMonth()] + '</span></div>'
+        : '<div class="rail tbc"><span class="dnum">TBC</span></div>';
+
+      var bits = [];
+      var dl = distLabel(r.distance_km);
+      if (dl) bits.push(dl);
+      if (r.location) bits.push(r.location);
+      if (r.addedByName && !r.target) bits.push("added by " + r.addedByName);
+
+      var mine = state.me ? (r.going || {})[state.me.id] : null;
+      var myStatus = mine ? mine.status : null;
+
+      var people = [];
+      var g = r.going || {};
+      Object.keys(g).forEach(function (k) {
+        var e = g[k];
+        if (!e || (e.status !== "in" && e.status !== "maybe")) return;
+        people.push({ k: k, name: e.name || "Someone", status: e.status });
+      });
+      people.sort(function (a, b) {
+        if (a.status !== b.status) return a.status === "in" ? -1 : 1;
+        return String(a.name).localeCompare(String(b.name));
+      });
+      var shown = people.slice(0, 12);
+      var extra = people.length - shown.length;
+
+      html += '<article class="race" id="race-' + esc(r.id) + '">' + rail +
+        '<div class="body">' +
+          '<div class="title-row">' +
+            "<h4>" + (r.url
+              ? '<a href="' + esc(r.url) + '" target="_blank" rel="noopener noreferrer">' + esc(r.name) + "</a>"
+              : esc(r.name)) + "</h4>" +
+            (r.target ? '<span class="tag target">Club target</span>' : "") +
+            (!fixed ? '<span class="tag tbc">Date TBC</span>' : "") +
+          "</div>" +
+          (bits.length ? '<p class="meta">' + esc(bits.join("  ·  ")) + "</p>" : "") +
+          (!fixed ? '<p class="window-note">' + esc(windowText(r)) +
+              (priorText(r) ? " · " + esc(priorText(r)) : "") + "</p>" : "") +
+          (r.note ? '<p class="whynot">' + esc(r.note) + "</p>" : "") +
+          (shown.length
+            ? '<div class="attendees">' + shown.map(function (p) {
+                return '<span class="who ' + p.status + (state.me && p.k === state.me.id ? " me" : "") + '">' +
+                  esc(p.name) + (p.status === "maybe" ? " ?" : "") + "</span>";
+              }).join("") + (extra > 0 ? '<span class="who more">+' + extra + " more</span>" : "") + "</div>"
+            : '<div class="attendees"><span class="who more">Nobody in yet</span></div>') +
+          '<div class="rsvp">' +
+            '<button type="button" data-rsvp="in" data-race="' + esc(r.id) + '" aria-pressed="' + (myStatus === "in") + '">I&rsquo;m in</button>' +
+            '<button type="button" data-rsvp="maybe" data-race="' + esc(r.id) + '" aria-pressed="' + (myStatus === "maybe") + '">Maybe</button>' +
+            '<button type="button" data-rsvp="out" data-race="' + esc(r.id) + '" aria-pressed="' + (myStatus === "out") + '">Not this one</button>' +
+            '<span class="count">' + inN + " in" + (maybeN ? " · " + maybeN + " maybe" : "") + "</span>" +
+            (state.me && r.addedById === state.me.id
+              ? '<button type="button" class="quiet" data-del="' + esc(r.id) + '">Remove race</button>' : "") +
+          "</div>" +
+        "</div></article>";
+    });
+
+    host.innerHTML = html;
+
+    Array.prototype.forEach.call(host.querySelectorAll("[data-rsvp]"), function (b) {
+      b.addEventListener("click", function () {
+        setRsvp(b.getAttribute("data-race"), b.getAttribute("data-rsvp"));
+      });
+    });
+    Array.prototype.forEach.call(host.querySelectorAll("[data-del]"), function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-del");
+        var r = state.races.filter(function (x) { return x.id === id; })[0];
+        if (!r) return;
+        if (!window.confirm('Remove "' + r.name + '" from the calendar for everyone?')) return;
+        removeRace(id);
+      });
+    });
+  }
+
+  function render() {
+    renderNotice();
+    renderWhoami();
+    renderCounts();
+    renderMonths();
+    renderRaces();
+  }
+
+  /* ---------- writes ---------- */
+  function fail(msg) {
+    state.error = msg;
+    renderNotice();
+    setTimeout(function () { state.error = null; renderNotice(); }, 6000);
+  }
+
+  function setRsvp(raceId, status) {
+    if (!state.me) {
+      var inp = document.getElementById("nameInput");
+      if (inp) { inp.focus(); inp.scrollIntoView({ behavior: "smooth", block: "center" }); }
+      return;
+    }
+    var r = state.races.filter(function (x) { return x.id === raceId; })[0];
+    if (!r) return;
+    var cur = (r.going || {})[state.me.id];
+    var next = (cur && cur.status === status) ? null : status;
+
+    /* optimistic — the snapshot will overwrite with the server's truth */
+    r.going = r.going || {};
+    if (next) r.going[state.me.id] = { name: state.me.name, status: next, at: new Date().toISOString() };
+    else delete r.going[state.me.id];
+    render();
+
+    if (!state.db) return;
+    var patch = {};
+    patch[state.me.id] = next
+      ? { name: state.me.name, status: next, at: new Date().toISOString() }
+      : { name: state.me.name, status: "none", at: new Date().toISOString() };
+    state.db.doc("races/" + raceId).update({ going: patch })["catch"](function (e) {
+      fail(e && e.code === "revoked"
+        ? "Your access to the calendar changed. Reload the page."
+        : "Try that again in a moment.");
+    });
+  }
+
+  function removeRace(id) {
+    state.races = state.races.filter(function (r) { return r.id !== id; });
+    render();
+    if (!state.db) return;
+    state.db.doc("races/" + id)["delete"]()["catch"](function () {
+      fail("The race couldn't be removed. Try again in a moment.");
+    });
+  }
+
+  /* ---------- add form ---------- */
+  var form = document.getElementById("addForm");
+  var addToggle = document.getElementById("addToggle");
+
+  addToggle.addEventListener("click", function () {
+    form.hidden = !form.hidden;
+    addToggle.textContent = form.hidden ? "Add a race" : "Close";
+    if (!form.hidden) {
+      form.querySelector('[name="name"]').focus();
+      fld("year").value = new Date().getFullYear() + 1;
+    }
+  });
+  document.getElementById("addCancel").addEventListener("click", function () {
+    form.hidden = true;
+    addToggle.textContent = "Add a race";
+  });
+
+  Array.prototype.forEach.call(form.querySelectorAll('[name="mode"]'), function (radio) {
+    radio.addEventListener("change", function () {
+      var win = form.querySelector('[name="mode"][value="window"]').checked;
+      document.getElementById("windowRow").hidden = !win;
+      document.getElementById("fixedRow").hidden = win;
+    });
+  });
+
+  document.getElementById("suggestWindow").addEventListener("click", function () {
+    var priors = String(fld("prior").value || "").split(/[,\s]+/).map(parseD).filter(Boolean);
+    var yr = parseInt(fld("year").value, 10);
+    if (!priors.length || !yr) {
+      showErr("Give at least one previous date (YYYY-MM-DD) and the year you want the window for.");
+      return;
+    }
+    var mapped = priors.map(function (d) { return new Date(yr, d.getMonth(), d.getDate()); })
+                       .sort(function (a, b) { return a - b; });
+    fld("winFrom").value = fmtD(addDays(mapped[0], -3));
+    fld("winTo").value = fmtD(addDays(mapped[mapped.length - 1], 3));
+    showErr(null);
+  });
+
+  function fld(n) { return form.querySelector('[name="' + n + '"]'); }
+
+  function showErr(msg) {
+    var el = document.getElementById("addErr");
+    if (!msg) { el.hidden = true; el.textContent = ""; return; }
+    el.hidden = false;
+    el.textContent = msg;
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!state.me) { showErr("Add your name at the top first, so the club knows who put this up."); return; }
+
+    var name = String(fld("name").value || "").trim();
+    if (!name) { showErr("The race needs a name."); return; }
+
+    var win = form.querySelector('[name="mode"][value="window"]').checked;
+    var rec = {
+      name: name.slice(0, 90),
+      distance_km: fld("distance").value ? Number(fld("distance").value) : null,
+      location: String(fld("location").value || "").trim().slice(0, 60) || null,
+      url: String(fld("url").value || "").trim().slice(0, 300) || null,
+      note: String(fld("note").value || "").trim().slice(0, 400) || null,
+      target: !!fld("target").checked,
+      date: null, winFrom: null, winTo: null, priorDates: [],
+      addedById: state.me.id,
+      addedByName: state.me.name,
+      addedAt: new Date().toISOString(),
+      going: {}
+    };
+    rec.going[state.me.id] = { name: state.me.name, status: "in", at: rec.addedAt };
+
+    if (win) {
+      var a = parseD(fld("winFrom").value), b = parseD(fld("winTo").value);
+      if (!a) { showErr("Give the window a start date — or set one from the previous years' dates."); return; }
+      rec.winFrom = fmtD(a);
+      rec.winTo = fmtD(b && b >= a ? b : a);
+      rec.priorDates = String(fld("prior").value || "").split(/[,\s]+/).map(parseD).filter(Boolean).map(fmtD);
+    } else {
+      var d = parseD(fld("date").value);
+      if (!d) { showErr("Pick a date — or switch to “Date not out yet” and give a window."); return; }
+      rec.date = fmtD(d);
+    }
+
+    showErr(null);
+    var id = newId();
+    rec.id = id;
+    state.races.push(rec);
+    form.reset();
+    document.getElementById("windowRow").hidden = true;
+    document.getElementById("fixedRow").hidden = false;
+    form.hidden = true;
+    addToggle.textContent = "Add a race";
+    state.filter = "all";
+    syncFilterButtons();
+    render();
+    var el = document.getElementById("race-" + id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+
+    if (!state.db) return;
+    var body = {};
+    for (var k in rec) if (k !== "id") body[k] = rec[k];
+    state.db.doc("races/" + id).set(body)["catch"](function () {
+      fail("That race didn't save to the club calendar. Add it again in a moment.");
+    });
+  });
+
+  /* ---------- filters ---------- */
+  function syncFilterButtons() {
+    Array.prototype.forEach.call(document.querySelectorAll("#filters [data-filter]"), function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-filter") === state.filter));
+    });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll("#filters [data-filter]"), function (b) {
+    b.addEventListener("click", function () {
+      state.filter = b.getAttribute("data-filter");
+      syncFilterButtons();
+      renderRaces();
+    });
+  });
+
+  /* ---------- boot ---------- */
+  render();
+
+  var syncNote = document.getElementById("syncNote");
+  syncNote.textContent = "Connecting to the club calendar…";
+
+  if (window.claude && typeof window.claude.use === "function") {
+    window.claude.use("db").then(function (db) {
+      state.resolved = true;
+      if (!db) {
+        state.connected = false;
+        state.races = EXAMPLES.map(function (r) { return JSON.parse(JSON.stringify(r)); });
+        syncNote.textContent = "Not connected — showing examples.";
+        render();
+        return;
+      }
+      state.db = db;
+      state.connected = true;
+      syncNote.textContent = "Live — everyone sees changes as they happen.";
+      db.collection("races").onSnapshot(function (snap) {
+        state.races = snap.docs.map(function (d) {
+          var body = d.data() || {};
+          var r = { id: d.id };
+          for (var k in body) r[k] = body[k];
+          /* "none" is how a cleared answer is stored — updates merge,
+             they can't delete a key */
+          if (r.going) {
+            var clean = {};
+            for (var p in r.going) {
+              if (r.going[p] && r.going[p].status !== "none") clean[p] = r.going[p];
+            }
+            r.going = clean;
+          }
+          return r;
+        });
+        render();
+      }, function (err) {
+        state.connected = false;
+        syncNote.textContent = "Sync stopped (" + (err && err.code ? err.code : "unknown") + "). Reload the page.";
+        render();
+      });
+    })["catch"](function () {
+      state.resolved = true;
+      state.connected = false;
+      state.races = EXAMPLES.map(function (r) { return JSON.parse(JSON.stringify(r)); });
+      syncNote.textContent = "Not connected — showing examples.";
+      render();
+    });
+  } else {
+    state.resolved = true;
+    state.connected = false;
+    state.races = EXAMPLES.map(function (r) { return JSON.parse(JSON.stringify(r)); });
+    syncNote.textContent = "Not connected — showing examples.";
+    render();
+  }
+})();
+</script>
