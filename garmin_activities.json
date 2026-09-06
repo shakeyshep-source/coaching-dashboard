@@ -6283,5 +6283,20 @@
     "cadence": 135.6875,
     "aerobic_te": 1.600000023841858,
     "anaerobic_te": 0.20000000298023224
+  },
+  {
+    "date": "2026-09-05",
+    "activity_id": 24247740718,
+    "name": "Stroud Cycling",
+    "type": "cycling",
+    "distance_km": 9.0,
+    "duration_min": 31.3,
+    "avg_pace_min_per_km": 3.48,
+    "avg_hr": null,
+    "max_hr": null,
+    "elevation_gain_m": 170.0,
+    "cadence": null,
+    "aerobic_te": 0.4000000059604645,
+    "anaerobic_te": 0.0
   }
 ]
