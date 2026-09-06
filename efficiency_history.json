@@ -1159,6 +1159,16 @@
       "avg_hr": 130.0,
       "efficiency": 1.5142,
       "gradient_m_per_km": 6.9
+    },
+    {
+      "date": "2026-09-06",
+      "activity_id": 24258163561,
+      "name": "Tewkesbury Running",
+      "distance_km": 20.31,
+      "pace_min_per_km": 5.38,
+      "avg_hr": 130.0,
+      "efficiency": 1.4298,
+      "gradient_m_per_km": 4.3
     }
   ],
   "excluded": [
