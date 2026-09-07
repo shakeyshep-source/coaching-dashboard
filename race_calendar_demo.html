@@ -1,4 +1,4 @@
-<title>Start List</title>
+<title>Start List Demo</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap">
 <style>
@@ -777,9 +777,9 @@
   </section>
 
   <footer class="foot">
-    <span>Anyone in the club can add a race or change their own answer. Your name is
-      stored on this device only &mdash; tap it in the bar above to change it.</span>
-    <span id="syncNote"></span>
+    <span>In the real thing, anyone in the club adds a race or changes their own answer,
+      and everyone sees it straight away. This demo keeps your changes in this browser tab only.</span>
+    <span><button type="button" class="quiet" id="resetDemo" style="padding-left:0">Reset the demo</button></span>
   </footer>
 </div>
 
@@ -857,18 +857,421 @@
     return Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 8);
   }
 
-  /* Example rows, shown ONLY when the page cannot reach the shared
-     store. Clearly labelled in the notice bar so they are never taken
-     for the club's real entries. */
-  var EXAMPLES = [
-    { id: "x1", name: "Cheltenham Half Marathon", date: "2026-09-20", distance_km: 21.0975,
-      location: "Cheltenham", target: true, note: "Club target. Example entry.",
-      going: { a: { name: "Example runner", status: "in" }, b: { name: "Example runner", status: "in" }, c: { name: "Example runner", status: "maybe" } } },
-    { id: "x2", name: "Guy Fawkes 5", date: "2026-11-01", distance_km: 8.05, location: "Gloucestershire",
-      target: false, note: "Example entry.", going: {} },
-    { id: "x3", name: "Stroud Half Marathon", date: null, winFrom: "2026-10-18", winTo: "2026-10-28",
-      priorDates: ["2024-10-20", "2025-10-19"], distance_km: 21.0975, location: "Stroud",
-      target: false, note: "Example of a race whose date is not out yet.", going: {} }
+  /* Demo data. Every race here is a real club fixture; every NAME is
+     invented, and the page says so at the top. Nothing is saved or
+     shared — this build declares no database, which is what lets it be
+     opened by anyone with the link. */
+  var DEMO = [
+    {
+      "id": "cheltenham-half-2026",
+      "name": "Cheltenham Half Marathon",
+      "date": "2026-09-20",
+      "winFrom": null,
+      "winTo": null,
+      "priorDates": [],
+      "distance_km": 21.0975,
+      "location": "Cheltenham",
+      "url": null,
+      "target": true,
+      "note": "The autumn target. Most of the club is on this one.",
+      "addedById": "club-fixtures",
+      "addedByName": "Club fixtures",
+      "addedAt": "2026-08-20T09:00:00Z",
+      "going": {
+        "demo00": {
+          "name": "Jo W.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo01": {
+          "name": "Ali R.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo02": {
+          "name": "Sam C.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo03": {
+          "name": "Tom B.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo04": {
+          "name": "Priya M.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo05": {
+          "name": "Dan H.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo06": {
+          "name": "Bex T.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo07": {
+          "name": "Marcus S.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo08": {
+          "name": "Niamh L.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo09": {
+          "name": "Ollie P.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo10": {
+          "name": "Ruth K.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo11": {
+          "name": "Gav D.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo12": {
+          "name": "Hana N.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo13": {
+          "name": "Ed G.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo14": {
+          "name": "Lena A.",
+          "status": "maybe",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo15": {
+          "name": "Rory F.",
+          "status": "maybe",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo16": {
+          "name": "Sian V.",
+          "status": "maybe",
+          "at": "2026-09-01T09:00:00Z"
+        }
+      }
+    },
+    {
+      "id": "crete-10k-2026",
+      "name": "Crete 10K",
+      "date": "2026-10-04",
+      "winFrom": null,
+      "winTo": null,
+      "priorDates": [],
+      "distance_km": 10,
+      "location": "Crete",
+      "url": null,
+      "target": false,
+      "note": "Two weeks after Cheltenham. A fun one — beers on the way over.",
+      "addedById": "club-fixtures",
+      "addedByName": "Club fixtures",
+      "addedAt": "2026-08-20T09:00:00Z",
+      "going": {
+        "demo05": {
+          "name": "Dan H.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo06": {
+          "name": "Bex T.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo07": {
+          "name": "Marcus S.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo08": {
+          "name": "Niamh L.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo09": {
+          "name": "Ollie P.",
+          "status": "maybe",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo10": {
+          "name": "Ruth K.",
+          "status": "maybe",
+          "at": "2026-09-01T09:00:00Z"
+        }
+      }
+    },
+    {
+      "id": "xc-league-2026-10-18",
+      "name": "XC League — fixture 2",
+      "date": "2026-10-18",
+      "winFrom": null,
+      "winTo": null,
+      "priorDates": [],
+      "distance_km": null,
+      "location": "Cross country",
+      "url": null,
+      "target": true,
+      "note": "League needs 3 of 4 fixtures to count. With 31 Oct being skipped, this one, 13 Dec and 27 Feb are all required.",
+      "addedById": "club-fixtures",
+      "addedByName": "Club fixtures",
+      "addedAt": "2026-08-20T09:00:00Z",
+      "going": {
+        "demo11": {
+          "name": "Gav D.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo12": {
+          "name": "Hana N.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo13": {
+          "name": "Ed G.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo14": {
+          "name": "Lena A.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo15": {
+          "name": "Rory F.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo16": {
+          "name": "Sian V.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo17": {
+          "name": "Baz J.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo18": {
+          "name": "Immy E.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo19": {
+          "name": "Kit O.",
+          "status": "maybe",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo20": {
+          "name": "Fenn Y.",
+          "status": "maybe",
+          "at": "2026-09-01T09:00:00Z"
+        }
+      }
+    },
+    {
+      "id": "guy-fawkes-5-2026",
+      "name": "Guy Fawkes 5",
+      "date": "2026-11-01",
+      "winFrom": null,
+      "winTo": null,
+      "priorDates": [],
+      "distance_km": 8.05,
+      "location": "Gloucestershire",
+      "url": null,
+      "target": false,
+      "note": "5 miles. Morning after the 31 Oct XC fixture, so plenty are picking one or the other.",
+      "addedById": "club-fixtures",
+      "addedByName": "Club fixtures",
+      "addedAt": "2026-08-20T09:00:00Z",
+      "going": {
+        "demo03": {
+          "name": "Tom B.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo04": {
+          "name": "Priya M.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo05": {
+          "name": "Dan H.",
+          "status": "maybe",
+          "at": "2026-09-01T09:00:00Z"
+        }
+      }
+    },
+    {
+      "id": "xc-league-2026-12-13",
+      "name": "XC League — fixture 3",
+      "date": "2026-12-13",
+      "winFrom": null,
+      "winTo": null,
+      "priorDates": [],
+      "distance_km": null,
+      "location": "Cross country",
+      "url": null,
+      "target": true,
+      "note": "Required fixture for the league.",
+      "addedById": "club-fixtures",
+      "addedByName": "Club fixtures",
+      "addedAt": "2026-08-20T09:00:00Z",
+      "going": {}
+    },
+    {
+      "id": "xc-league-2027-02-27",
+      "name": "XC League — fixture 4",
+      "date": "2027-02-27",
+      "winFrom": null,
+      "winTo": null,
+      "priorDates": [],
+      "distance_km": null,
+      "location": "Cross country",
+      "url": null,
+      "target": true,
+      "note": "Required fixture, and a Saturday — worth knowing if you are seven weeks out from a spring marathon.",
+      "addedById": "club-fixtures",
+      "addedByName": "Club fixtures",
+      "addedAt": "2026-08-20T09:00:00Z",
+      "going": {
+        "demo09": {
+          "name": "Ollie P.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo10": {
+          "name": "Ruth K.",
+          "status": "maybe",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo11": {
+          "name": "Gav D.",
+          "status": "maybe",
+          "at": "2026-09-01T09:00:00Z"
+        }
+      }
+    },
+    {
+      "id": "manchester-marathon-2027",
+      "name": "Manchester Marathon",
+      "date": "2027-04-18",
+      "winFrom": null,
+      "winTo": null,
+      "priorDates": [],
+      "distance_km": 42.195,
+      "location": "Manchester",
+      "url": null,
+      "target": true,
+      "note": "Entries already open. Say if you are in and the long runs can be shared out.",
+      "addedById": "club-fixtures",
+      "addedByName": "Club fixtures",
+      "addedAt": "2026-08-20T09:00:00Z",
+      "going": {
+        "demo14": {
+          "name": "Lena A.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo15": {
+          "name": "Rory F.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo16": {
+          "name": "Sian V.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo17": {
+          "name": "Baz J.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo18": {
+          "name": "Immy E.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo19": {
+          "name": "Kit O.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo20": {
+          "name": "Fenn Y.",
+          "status": "maybe",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo21": {
+          "name": "Mo Q.",
+          "status": "maybe",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo22": {
+          "name": "Cass Z.",
+          "status": "maybe",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo23": {
+          "name": "Wren U.",
+          "status": "maybe",
+          "at": "2026-09-01T09:00:00Z"
+        }
+      }
+    },
+    {
+      "id": "cheltenham-half-2027",
+      "name": "Cheltenham Half Marathon 2027",
+      "date": null,
+      "winFrom": "2027-09-13",
+      "winTo": "2027-09-27",
+      "priorDates": [
+        "2026-09-20"
+      ],
+      "distance_km": 21.0975,
+      "location": "Cheltenham",
+      "url": null,
+      "target": false,
+      "note": "Date not announced yet. The 2026 edition was Sunday 20 September, so the window is that give or take a week. Add the earlier years' dates and the window tightens.",
+      "addedById": "demo00",
+      "addedByName": "Jo W.",
+      "addedAt": "2026-08-20T09:00:00Z",
+      "going": {
+        "demo18": {
+          "name": "Immy E.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo19": {
+          "name": "Kit O.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo20": {
+          "name": "Fenn Y.",
+          "status": "in",
+          "at": "2026-09-01T09:00:00Z"
+        },
+        "demo21": {
+          "name": "Mo Q.",
+          "status": "maybe",
+          "at": "2026-09-01T09:00:00Z"
+        }
+      }
+    }
   ];
 
   /* ---------- derived ---------- */
@@ -930,12 +1333,9 @@
       el.innerHTML = '<div class="notice"><strong>Couldn&rsquo;t save that.</strong> ' + esc(state.error) + '</div>';
       return;
     }
-    if (!state.connected) {
-      el.innerHTML = '<div class="notice"><strong>Preview only &mdash; not connected to the club calendar.</strong> ' +
-        'The three entries below are examples so you can see how it works. Nothing you change here is saved or shared.</div>';
-      return;
-    }
-    el.innerHTML = "";
+    el.innerHTML = '<div class="notice"><strong>Demo.</strong> The races are the club\u2019s real fixtures. ' +
+      'The people are invented, so you can see how the colours work. Tap <em>I&rsquo;m in</em> on anything and ' +
+      'watch a square deepen &mdash; nothing here is saved, and reloading puts it all back.</div>';
   }
 
   function renderWhoami() {
@@ -1395,57 +1795,20 @@
   /* ---------- boot ---------- */
   render();
 
-  var syncNote = document.getElementById("syncNote");
-  syncNote.textContent = "Connecting to the club calendar…";
-
-  if (window.claude && typeof window.claude.use === "function") {
-    window.claude.use("db").then(function (db) {
-      state.resolved = true;
-      if (!db) {
-        state.connected = false;
-        state.races = EXAMPLES.map(function (r) { return JSON.parse(JSON.stringify(r)); });
-        syncNote.textContent = "Not connected — showing examples.";
-        render();
-        return;
-      }
-      state.db = db;
-      state.connected = true;
-      syncNote.textContent = "Live — everyone sees changes as they happen.";
-      db.collection("races").onSnapshot(function (snap) {
-        state.races = snap.docs.map(function (d) {
-          var body = d.data() || {};
-          var r = { id: d.id };
-          for (var k in body) r[k] = body[k];
-          /* "none" is how a cleared answer is stored — updates merge,
-             they can't delete a key */
-          if (r.going) {
-            var clean = {};
-            for (var p in r.going) {
-              if (r.going[p] && r.going[p].status !== "none") clean[p] = r.going[p];
-            }
-            r.going = clean;
-          }
-          return r;
-        });
-        render();
-      }, function (err) {
-        state.connected = false;
-        syncNote.textContent = "Sync stopped (" + (err && err.code ? err.code : "unknown") + "). Reload the page.";
-        render();
-      });
-    })["catch"](function () {
-      state.resolved = true;
-      state.connected = false;
-      state.races = EXAMPLES.map(function (r) { return JSON.parse(JSON.stringify(r)); });
-      syncNote.textContent = "Not connected — showing examples.";
-      render();
-    });
-  } else {
+  function loadDemo() {
     state.resolved = true;
     state.connected = false;
-    state.races = EXAMPLES.map(function (r) { return JSON.parse(JSON.stringify(r)); });
-    syncNote.textContent = "Not connected — showing examples.";
+    state.races = DEMO.map(function (r) { return JSON.parse(JSON.stringify(r)); });
     render();
   }
+
+  document.getElementById("resetDemo").addEventListener("click", function () {
+    state.filter = "all";
+    syncFilterButtons();
+    loadDemo();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  loadDemo();
 })();
 </script>
