@@ -294,5 +294,13 @@
     "rpe": 0.0,
     "on_target": true,
     "session_notes": "Rest"
+  },
+  {
+    "date": "2026-09-08",
+    "achilles_score": 0,
+    "session_type": "easy",
+    "rpe": 1.0,
+    "on_target": true,
+    "session_notes": null
   }
 ]
