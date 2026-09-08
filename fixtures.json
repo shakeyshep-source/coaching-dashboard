@@ -40,6 +40,14 @@
     "notes": "Trail shoes. Sits in base / early marathon build \u2014 no conflict. One of the three XC fixtures needed to complete the league."
   },
   {
+    "date": "2027-01-31",
+    "name": "Boddington 10",
+    "distance_km": 16.09,
+    "status": "confirmed",
+    "intent": "target",
+    "notes": "Club record up for grabs at 1:01:00. Riegel from current fitness (Jun/Jul 2026 races) puts a flat, well-paced 10 miles at roughly 61:10-62:00 — right on the current fitness line, not banked. Falls mid-way through the Manchester base-build, so needs a short taper built into that block rather than being run off unbroken loading. Course profile not yet known — confirm before planning around it."
+  },
+  {
     "date": "2027-02-27",
     "name": "Cross country",
     "distance_km": null,
