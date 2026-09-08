@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-07",
+  "generated": "2026-09-08",
   "window_days": 7,
   "sessions": [
     {
@@ -132,32 +132,41 @@
       "interrupted_by_next_session": true,
       "temp_max_c": 21.2,
       "note": "16c\nDrenched! Rather wet!\nAll felt good\nOnly problem was I decided to take a gel after my warm up.. Had half before hand slipped, jolt the gel and it squirted the rest in my eye\u00f0\u009f\u0098\u0082"
-    }
-  ],
-  "pending": [
+    },
     {
       "date": "2026-09-02",
       "session_type": "intervals",
-      "days_since": 5,
-      "hrv_back": 5,
-      "rhr_back": null,
+      "confounders_in_window": [],
       "hrv_reference": 40.3,
-      "rhr_reference": 46.7
+      "hrv_recovery_days": 5,
+      "rhr_reference": 46.7,
+      "rhr_recovery_days": 5,
+      "recovery_days": 5,
+      "recovered": true,
+      "interrupted_by_next_session": true,
+      "temp_max_c": 19.6,
+      "note": "20c\nA bit windy\nFelt strong, ahead of pace target but was trying to hold back"
     },
     {
       "date": "2026-09-05",
       "session_type": "tempo",
-      "days_since": 2,
-      "hrv_back": 2,
-      "rhr_back": null,
+      "confounders_in_window": [],
       "hrv_reference": 39.9,
-      "rhr_reference": 47.4
+      "hrv_recovery_days": 2,
+      "rhr_reference": 47.4,
+      "rhr_recovery_days": 2,
+      "recovery_days": 2,
+      "recovered": true,
+      "interrupted_by_next_session": false,
+      "temp_max_c": 20.4,
+      "note": "Cruised it, kept edging faster but think kept it more or less on target.\nThe fast rs are great\nTook a gel just before the run and then during recovery...thought a stitch was coming in the first km of the second set but all was fine."
     }
   ],
+  "pending": [],
   "trend": {
-    "recent_avg_days": 3.3,
-    "prior_avg_days": 2.7,
+    "recent_avg_days": 3.7,
+    "prior_avg_days": 3,
     "direction": "lengthening \u2014 recovery is taking longer than it was",
-    "sessions_measured": 8
+    "sessions_measured": 10
   }
 }
