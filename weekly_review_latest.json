@@ -7,12 +7,19 @@
   "proposal_id": null,
   "proposal_status": null,
   "athlete_response": {
-    "timestamp": "06/09/2026 18:06:24",
-    "review_date": "2026-09-06",
+    "timestamp": "08/09/2026 11:15:41",
+    "review_date": "2026-09-08",
     "decision": "approve",
-    "thoughts": "achillies fine - hrv thinking just noise, no issues to report on, let go with the plan and then next sunday time for race plan"
+    "thoughts": "Boddington 10 on 31st Jan.  Club record up for grabs at 1hr and 1min. Feasible?"
   },
-  "athlete_response_status": "answered",
-  "coach_reply": "Shep — good, that's the answer I was hoping for on both counts. No achilles stiffness or standing-desk ache since the last two big weeks is a genuinely clean signal at exactly the point where a returning prodrome would show up if the load had been too much, and it means the HRV read from Saturday night stays filed as noise rather than a watch item — it didn't show up in execution (Sunday's long run was still RPE 1, flat decoupling) and now it isn't self-reported as anything either. Nothing to revise; the plan holds exactly as written.\n\nSo: Wednesday 9 Sep runs as the last full interval session, taper starts Thursday 10th, and this week's read — lowest RPE of the whole build, tightest-judged quality sessions, recovery flat to improved — stands as the strongest week of the block to close on.\n\nOn race plan — agreed, next Sunday (13 Sep) is the right moment for it. By then Wednesday's intervals will be done, the taper will be a few days in, and Cheltenham's weather forecast will be close enough to be worth reading properly. That review will cover pacing strategy off the course profile, conditions, the 1:22:23 prediction against your 1:22–83 target, shoes (Fast-R Nitro 3), and the Symbicort/salbutamol race protocol — plus it's the point to actually settle the asthma-nurse preventer conversation, since the cumulative-weeks mechanism means this week is close to the last one where starting it would do anything before the gun. No plan changes needed before then.",
-  "coach_reply_at": "2026-09-06T18:30:00Z"
+  "athlete_response_status": "logged",
+  "conversation": [
+    {
+      "athlete_timestamp": "06/09/2026 18:06:24",
+      "athlete_decision": "approve",
+      "athlete_thoughts": "achillies fine - hrv thinking just noise, no issues to report on, let go with the plan and then next sunday time for race plan",
+      "coach_reply": "Shep \u2014 good, that's the answer I was hoping for on both counts. No achilles stiffness or standing-desk ache since the last two big weeks is a genuinely clean signal at exactly the point where a returning prodrome would show up if the load had been too much, and it means the HRV read from Saturday night stays filed as noise rather than a watch item \u2014 it didn't show up in execution (Sunday's long run was still RPE 1, flat decoupling) and now it isn't self-reported as anything either. Nothing to revise; the plan holds exactly as written.\n\nSo: Wednesday 9 Sep runs as the last full interval session, taper starts Thursday 10th, and this week's read \u2014 lowest RPE of the whole build, tightest-judged quality sessions, recovery flat to improved \u2014 stands as the strongest week of the block to close on.\n\nOn race plan \u2014 agreed, next Sunday (13 Sep) is the right moment for it. By then Wednesday's intervals will be done, the taper will be a few days in, and Cheltenham's weather forecast will be close enough to be worth reading properly. That review will cover pacing strategy off the course profile, conditions, the 1:22:23 prediction against your 1:22\u201383 target, shoes (Fast-R Nitro 3), and the Symbicort/salbutamol race protocol \u2014 plus it's the point to actually settle the asthma-nurse preventer conversation, since the cumulative-weeks mechanism means this week is close to the last one where starting it would do anything before the gun. No plan changes needed before then.",
+      "coach_reply_at": "2026-09-06T18:30:00Z"
+    }
+  ]
 }
