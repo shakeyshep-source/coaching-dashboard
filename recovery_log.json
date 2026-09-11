@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-10",
+  "generated": "2026-09-11",
   "window_days": 7,
   "sessions": [
     {
@@ -160,23 +160,27 @@
       "interrupted_by_next_session": false,
       "temp_max_c": 20.4,
       "note": "Cruised it, kept edging faster but think kept it more or less on target.\nThe fast rs are great\nTook a gel just before the run and then during recovery...thought a stitch was coming in the first km of the second set but all was fine."
-    }
-  ],
-  "pending": [
+    },
     {
       "date": "2026-09-09",
       "session_type": "intervals",
-      "days_since": 1,
-      "hrv_back": null,
-      "rhr_back": 1,
+      "confounders_in_window": [],
       "hrv_reference": 38.4,
-      "rhr_reference": 47.0
+      "hrv_recovery_days": 2,
+      "rhr_reference": 47.0,
+      "rhr_recovery_days": 1,
+      "recovery_days": 2,
+      "recovered": true,
+      "interrupted_by_next_session": false,
+      "temp_max_c": 18.9,
+      "note": "Hit the paces and it's cooler today but just felt flat.  Maybe I didn't eat enough today?? Not sure, no real issue as it's taper time."
     }
   ],
+  "pending": [],
   "trend": {
-    "recent_avg_days": 3.7,
-    "prior_avg_days": 3,
-    "direction": "lengthening \u2014 recovery is taking longer than it was",
-    "sessions_measured": 10
+    "recent_avg_days": 3,
+    "prior_avg_days": 3.3,
+    "direction": "stable",
+    "sessions_measured": 11
   }
 }
