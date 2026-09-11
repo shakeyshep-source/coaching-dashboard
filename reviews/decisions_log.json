@@ -217,5 +217,15 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": "Just for your thoughts on the run, 3:41, 43, 40, 45.  Got it done and it's in target but just didn't have any energy... Maybe thats down to food, I'm not sure",
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-09-11T21:52:57",
+    "proposal_id": null,
+    "review_date": "2026-09-06",
+    "response_timestamp": "11/09/2026 22:52:37",
+    "decision": "approve",
+    "action_taken": "review_query_logged",
+    "athlete_thoughts": "So thinking of scrapping the XC, I've a free place for a 10k at home town on 25/10, guy Fawkes 5 is week later but I'm not quite at the pace for getting the record.. Another 5miler is in Jan. So this can be like a hard training run just to get an idea although will like have some 10k in my legs from week before",
+    "changes_count": 0
   }
 ]
