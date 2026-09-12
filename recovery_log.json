@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-11",
+  "generated": "2026-09-12",
   "window_days": 7,
   "sessions": [
     {
@@ -176,7 +176,17 @@
       "note": "Hit the paces and it's cooler today but just felt flat.  Maybe I didn't eat enough today?? Not sure, no real issue as it's taper time."
     }
   ],
-  "pending": [],
+  "pending": [
+    {
+      "date": "2026-09-12",
+      "session_type": "tempo",
+      "days_since": 0,
+      "hrv_back": null,
+      "rhr_back": null,
+      "hrv_reference": 40,
+      "rhr_reference": 46.7
+    }
+  ],
   "trend": {
     "recent_avg_days": 3,
     "prior_avg_days": 3.3,
