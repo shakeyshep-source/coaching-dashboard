@@ -326,5 +326,13 @@
     "rpe": 1.0,
     "on_target": true,
     "session_notes": null
+  },
+  {
+    "date": "2026-09-12",
+    "achilles_score": 0,
+    "session_type": "tempo",
+    "rpe": 6.0,
+    "on_target": true,
+    "session_notes": "Windy.... Was on a 1.7k loop one way was head wind, other was tail wind"
   }
 ]
