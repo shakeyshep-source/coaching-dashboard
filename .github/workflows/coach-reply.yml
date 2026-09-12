@@ -58,6 +58,19 @@ jobs:
           if [ -z "$OAUTH_CLEAN" ] && [ -z "$APIKEY_CLEAN" ]; then
             echo "::warning::No Claude credential set - the review query stays logged for Sunday's session."
           fi
+          # An API key wins when both are present. The subscription token
+          # is the cheaper path and stays the default, but it dies the
+          # moment the subscription is paused - on 11 Sep that failed
+          # every reply for two days with "Your organization has disabled
+          # Claude subscription access for Claude Code". Setting
+          # ANTHROPIC_API_KEY is then the whole fix: no secret to delete
+          # first, and removing it again restores the subscription path.
+          if [ -n "$APIKEY_CLEAN" ]; then
+            if [ -n "$OAUTH_CLEAN" ]; then
+              echo "::notice::Both credentials set - using ANTHROPIC_API_KEY."
+            fi
+            OAUTH_CLEAN=""
+          fi
           {
             echo "OAUTH_CLEAN=$OAUTH_CLEAN"
             echo "APIKEY_CLEAN=$APIKEY_CLEAN"
