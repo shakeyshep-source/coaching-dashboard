@@ -69,6 +69,35 @@ Copy the token it prints into a new repository secret named
 (Alternative: create an Anthropic API key instead and store it as
 `ANTHROPIC_API_KEY` — the workflow accepts either.)
 
+### If the subscription lapses or is paused
+
+`CLAUDE_CODE_OAUTH_TOKEN` is only valid while the Claude subscription is
+active. Pause the subscription and every coach run fails the moment it
+starts, with:
+
+> Your organization has disabled Claude subscription access for Claude
+> Code · Use an Anthropic API key instead
+
+This happened on 11 Sep 2026 and cost two days of replies. Two things
+to know:
+
+- **The data pipeline is unaffected.** Garmin, weather, forms and every
+  derived layer are plain Python — the dashboard keeps updating. Only
+  the weekly review and the mid-week replies stop.
+- **The fix is one secret.** Add `ANTHROPIC_API_KEY` from
+  [platform.claude.com](https://platform.claude.com) — a Console
+  account, which is separate from a claude.ai subscription and is
+  billed per token. Both workflows prefer it over the OAuth token when
+  both are set, so there is nothing to delete first, and removing it
+  again restores the subscription path if the subscription comes back.
+
+Set a workspace spend limit in the Console if you go that route. As a
+rough guide at one weekly review plus four or five mid-week replies,
+expect single-figure to low-double-figure dollars a month — the flat
+subscription is usually the better deal if you also run Claude Code
+interactively, since a single building session can cost more than a
+week of automated coach runs.
+
 To test: **Actions tab → Weekly coach review → Run workflow** — a
 review + (if warranted) a proposal should appear on the Coach tab a few
 minutes later.
