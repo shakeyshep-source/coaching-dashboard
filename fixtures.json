@@ -5,7 +5,7 @@
     "distance_km": 21.0975,
     "status": "confirmed",
     "intent": "target",
-    "notes": "The A race. Target 1:21-1:23, model predicts 1:22:23."
+    "notes": "The A race. Target 1:21-1:23, model predicts 1:22:23. COURSE (from a clubmate's 2025 file \u2014 her run, not his \u2014 who ran 1:21:02, so her splits map the course at almost exactly his goal pace): 101m gain over 21.09km, ~4.8m/km, rolling rather than flat, net slightly downhill start to finish. Her watch had no barometric altimeter, so treat the metres as approximate and the shape as the signal. Km 1 is downhill and her fastest of the day (3:38) \u2014 the start is a trap. Highest ground is the first 8km, which roll continuously. Flattest running is roughly 14-18km. The sting is km 19-20: a climb of about 11m that produced her slowest split of the race (4:11, seven seconds off anything else), immediately followed by a 6m drop to the line where she ran 3:54. Expect the 20km split to look bad and the last km to be free. HER PACING IS THE WARNING: first 10km 37:08 (3:43/km), second 10km 39:33 (3:57/km) \u2014 2:25 lost in the back half after going out 7 sec/km faster than her own average. 3:43/km is Shep's current 10K race pace, so running with that early group means racing a half at 10K pace."
   },
   {
     "date": "2026-10-04",
@@ -45,7 +45,7 @@
     "distance_km": 16.09,
     "status": "confirmed",
     "intent": "target",
-    "notes": "Club record up for grabs at 1:01:00. Course confirmed flat, so the Riegel assumption holds without a downward adjustment: current fitness (Jun/Jul 2026 races) puts a flat, well-paced 10 miles at roughly 61:10-62:00 — right on the current fitness line, not banked. Falls mid-way through the Manchester base-build, so needs a short taper built into that block rather than being run off unbroken loading."
+    "notes": "Club record up for grabs at 1:01:00. Course confirmed flat, so the Riegel assumption holds without a downward adjustment: current fitness (Jun/Jul 2026 races) puts a flat, well-paced 10 miles at roughly 61:10-62:00 \u2014 right on the current fitness line, not banked. Falls mid-way through the Manchester base-build, so needs a short taper built into that block rather than being run off unbroken loading."
   },
   {
     "date": "2027-02-27",
