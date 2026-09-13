@@ -12,7 +12,9 @@
     "decision": "approve",
     "thoughts": "OK let's go!!!!"
   },
-  "athlete_response_status": "logged",
+  "athlete_response_status": "answered",
+  "coach_reply": "Shep — approved and logged, though there's nothing here for the gate to actually apply: the review's recommendation was hold, so there's no proposal sitting behind this approval. It just confirms you're happy with the second taper week running as written, which it will.\n\nThat's the right call on the evidence, not just the mood. Recovery trend flipped from lengthening to stable this week, achilles read 0 every day with no stiffness on direct question, the sharpener came in 3 sec/km quicker than target, and both clean decoupling readings since last review sat well inside the 5% threshold. Nothing in that picture asks for a change, and race week plans — rest, easy 6 + strides, easy 8 with 6×400m at rhythm, easy 5, rest, easy 4 + strides, race — stay exactly as written.\n\nOne thing's already moved since this morning's review: the elevation update you mentioned has made it into `training_plan.json` — Saturday's entry now carries gradient-adjusted splits (downhill start capped at 3:56, effort-not-pace through the two climbs at 6km and 12km, hold through the climb at 20km, empty it on the downhill last km). That closes the one open gap the review flagged, so the race-day plan is complete, not just a pace band.\n\nNothing left to decide before Saturday. Go run it.",
+  "coach_reply_at": "2026-09-13T16:12:00Z",
   "conversation": [
     {
       "athlete_timestamp": "13/09/2026 15:41:34",
