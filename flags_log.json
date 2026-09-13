@@ -95,7 +95,8 @@
     "date": "2026-09-13",
     "planned_session": "long",
     "reasons": [
-      "Heat risk is high and a hard session is planned."
+      "Heat risk is high and a hard session is planned.",
+      "2 quality sessions in the last 28 days came in 4.7 sec/km inside target at RPE 6 or below. The paces look stale \u2014 consider tightening the 10K target by 3 sec/km, then holding the new pace for 3 sessions before revisiting. Not applied: update the target yourself if you agree."
     ]
   }
 ]

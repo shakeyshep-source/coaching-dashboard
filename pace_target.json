@@ -1,0 +1,151 @@
+{
+  "as_of": "2026-09-13",
+  "window_days": 28,
+  "beat_margin_sec_per_km": 3.0,
+  "sessions": [
+    {
+      "date": "2026-07-15",
+      "qualifying": false,
+      "skipped": "no pace target on the plan entry"
+    },
+    {
+      "date": "2026-08-01",
+      "qualifying": false,
+      "skipped": "no pace target on the plan entry"
+    },
+    {
+      "date": "2026-08-05",
+      "qualifying": false,
+      "skipped": "no pace target on the plan entry"
+    },
+    {
+      "date": "2026-08-08",
+      "qualifying": false,
+      "skipped": "no pace target on the plan entry"
+    },
+    {
+      "date": "2026-08-12",
+      "qualifying": false,
+      "skipped": null,
+      "session_type": "intervals",
+      "target_sec_per_km": 224,
+      "actual_sec_per_km": 220.0,
+      "beat_by_sec_per_km": 4.0,
+      "rpe": 7.0,
+      "expected_rpe": 6.0,
+      "reps": 6
+    },
+    {
+      "date": "2026-08-15",
+      "qualifying": false,
+      "skipped": null,
+      "session_type": "tempo",
+      "target_sec_per_km": 230,
+      "actual_sec_per_km": 228.9,
+      "beat_by_sec_per_km": 1.1,
+      "rpe": 7.0,
+      "expected_rpe": 6.0,
+      "reps": 2
+    },
+    {
+      "date": "2026-08-19",
+      "qualifying": false,
+      "skipped": null,
+      "session_type": "intervals",
+      "target_sec_per_km": 224,
+      "actual_sec_per_km": 221.1,
+      "beat_by_sec_per_km": 2.9,
+      "rpe": 6.0,
+      "expected_rpe": 6.0,
+      "reps": 5
+    },
+    {
+      "date": "2026-08-22",
+      "qualifying": false,
+      "skipped": null,
+      "session_type": "tempo",
+      "target_sec_per_km": 232,
+      "actual_sec_per_km": 232.6,
+      "beat_by_sec_per_km": -0.6,
+      "rpe": 6.0,
+      "expected_rpe": 6.0,
+      "reps": 2
+    },
+    {
+      "date": "2026-08-26",
+      "qualifying": false,
+      "skipped": null,
+      "session_type": "intervals",
+      "target_sec_per_km": 224,
+      "actual_sec_per_km": 220.6,
+      "beat_by_sec_per_km": 3.4,
+      "rpe": 7.0,
+      "expected_rpe": 6.0,
+      "reps": 6
+    },
+    {
+      "date": "2026-08-29",
+      "qualifying": false,
+      "skipped": null,
+      "session_type": "tempo",
+      "target_sec_per_km": 232,
+      "actual_sec_per_km": 231.2,
+      "beat_by_sec_per_km": 0.8,
+      "rpe": 6.0,
+      "expected_rpe": 6.0,
+      "reps": 2
+    },
+    {
+      "date": "2026-09-02",
+      "qualifying": true,
+      "skipped": null,
+      "session_type": "intervals",
+      "target_sec_per_km": 224,
+      "actual_sec_per_km": 217.6,
+      "beat_by_sec_per_km": 6.4,
+      "rpe": 6.0,
+      "expected_rpe": 6.0,
+      "reps": 5
+    },
+    {
+      "date": "2026-09-05",
+      "qualifying": false,
+      "skipped": "no rep detail \u2014 laps not pulled, or no identifiable reps"
+    },
+    {
+      "date": "2026-09-09",
+      "qualifying": false,
+      "skipped": null,
+      "session_type": "intervals",
+      "target_sec_per_km": 224,
+      "actual_sec_per_km": 222.3,
+      "beat_by_sec_per_km": 1.7,
+      "rpe": 7.0,
+      "expected_rpe": 6.0,
+      "reps": 4
+    },
+    {
+      "date": "2026-09-12",
+      "qualifying": true,
+      "skipped": null,
+      "session_type": "tempo",
+      "target_sec_per_km": 234,
+      "actual_sec_per_km": 231.0,
+      "beat_by_sec_per_km": 3.0,
+      "rpe": 6.0,
+      "expected_rpe": 6.0,
+      "reps": 1
+    }
+  ],
+  "qualifying_in_window": [
+    "2026-09-02",
+    "2026-09-12"
+  ],
+  "flag": null,
+  "cooldown_remaining": 3,
+  "last_flagged": "2026-09-13",
+  "last_flagged_sessions": [
+    "2026-09-02",
+    "2026-09-12"
+  ]
+}

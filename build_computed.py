@@ -38,6 +38,8 @@ import re
 from datetime import date, datetime
 from statistics import mean
 
+import pace_target_check
+
 GARMIN_FILE = "garmin_data.json"
 HISTORY_FILE = "garmin_history.json"
 MANUAL_FILE = "manual_log.json"
@@ -49,6 +51,8 @@ WEATHER_LOG_FILE = "weather_log.json"
 PLAN_FILE = "training_plan.json"
 FLAGS_LOG_FILE = "flags_log.json"
 RECOVERY_FILE = "recovery_log.json"
+SESSION_DETAIL_FILE = "session_detail.json"
+PACE_TARGET_FILE = "pace_target.json"
 OUTPUT_FILE = "computed_data.json"
 
 HARD_SESSION_TYPES = {"intervals", "tempo", "long", "race"}
@@ -116,6 +120,31 @@ def check_flags(planned_session, achilles_score, rhr_delta, hrv_delta, heat_risk
         reasons.append("Heat risk is high and a hard session is planned.")
 
     return reasons
+
+
+def merge_flag_reasons(date_str, session_name, reasons, existing_log):
+    """Add reasons to the entry for a date, creating it if needed.
+
+    update_flags_log() below skips a date it has already logged, which is
+    right for the daily readiness flags — they are all decided in one
+    pass. The pace-target flag is decided separately and can land on a
+    date that already carries a heat flag, so it merges instead of being
+    dropped.
+    """
+    if not reasons:
+        return existing_log
+    for entry in existing_log:
+        if entry["date"] == date_str:
+            for reason in reasons:
+                if reason not in entry["reasons"]:
+                    entry["reasons"].append(reason)
+            return existing_log
+    existing_log.append({
+        "date": date_str,
+        "planned_session": session_name,
+        "reasons": list(reasons),
+    })
+    return existing_log
 
 
 def update_flags_log(date_str, session_name, reasons, existing_log):
@@ -467,6 +496,33 @@ def main():
             "plan_flag_reasons": flag_reasons,
         })
 
+    # --- Have the pace targets gone stale? ---
+    # Runs after the forms sync so today's RPE is in, and reads rep paces
+    # from session_detail.json rather than run averages. It only ever
+    # raises a flag — the target itself is changed by hand, like every
+    # other plan change in this repo.
+    previous = load(PACE_TARGET_FILE) or {}
+    pace_result = pace_target_check.evaluate(
+        plan_by_date, manual_by_date,
+        {r["date"]: r for r in (load(SESSION_DETAIL_FILE) or []) if r.get("date")},
+        as_of=computed[-1]["date"] if computed else date.today().isoformat(),
+        previous_flag_date=previous.get("last_flagged"),
+    )
+    # Log the flag once per event, not once per pipeline run: the same
+    # set of qualifying sessions must not re-append every morning.
+    fired_for = previous.get("last_flagged_sessions")
+    if pace_result["flag"] and pace_result["flag"]["sessions"] != fired_for:
+        pace_result["last_flagged"] = pace_result["as_of"]
+        pace_result["last_flagged_sessions"] = pace_result["flag"]["sessions"]
+        flags_log = merge_flag_reasons(
+            pace_result["as_of"], "pace targets",
+            [pace_result["flag"]["reason"]], flags_log)
+    else:
+        pace_result["last_flagged"] = previous.get("last_flagged")
+        pace_result["last_flagged_sessions"] = fired_for
+    with open(PACE_TARGET_FILE, "w") as f:
+        json.dump(pace_result, f, indent=2)
+
     # Recovery works off accumulated history, not the 14-day window, so
     # the trend can eventually span months rather than a fortnight.
     history = load(HISTORY_FILE) or garmin_rows
@@ -485,6 +541,18 @@ def main():
     print(f"Recovery: {len(meas)} measurable session(s) -> {RECOVERY_FILE}"
           + (f"; recent avg {recovery['trend']['recent_avg_days']}d, "
              f"{recovery['trend']['direction']}" if recovery.get("trend") else ""))
+    if pace_result["flag"]:
+        f = pace_result["flag"]
+        print(f"Pace targets: FLAG — {f['count']} session(s) "
+              f"{f['mean_beat_sec_per_km']} sec/km inside target at low RPE "
+              f"({', '.join(f['sessions'])}) -> {PACE_TARGET_FILE}")
+    else:
+        qual = pace_result["qualifying_in_window"]
+        cool = pace_result["cooldown_remaining"]
+        state = (f"cooling down, {cool} session(s) to go" if cool
+                 else f"{len(qual)} qualifying in {pace_target_check.BEAT_WINDOW_DAYS}d "
+                      f"(needs {pace_target_check.MIN_QUALIFYING})")
+        print(f"Pace targets: no flag — {state} -> {PACE_TARGET_FILE}")
     if flags_log:
         print(f"Flags log has {len(flags_log)} total entries")
 
