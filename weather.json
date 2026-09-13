@@ -1,10 +1,10 @@
 [
   {
     "date": "2026-09-13",
-    "temp_max_c": 20.8,
+    "temp_max_c": 20.7,
     "temp_min_c": 17.9,
     "humidity_pct": 92,
-    "wind_speed_kmh": 16.2,
+    "wind_speed_kmh": 16.6,
     "heat_risk": "high"
   },
   {
