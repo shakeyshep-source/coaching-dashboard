@@ -7,12 +7,19 @@
   "proposal_id": null,
   "proposal_status": null,
   "athlete_response": {
-    "timestamp": "13/09/2026 15:41:34",
+    "timestamp": "13/09/2026 16:07:04",
     "review_date": "2026-09-13",
     "decision": "approve",
-    "thoughts": "No issues with achillies at any point... Something to bear in mind after Cheltenham.\nYes I've run in the fast rs when the plan said too.  I will also get a route elevation update for you"
+    "thoughts": "OK let's go!!!!"
   },
-  "athlete_response_status": "answered",
-  "coach_reply": "Shep — good, that closes out both open questions cleanly. Achilles at 0 all week lines up with `computed_data.json`, and the Fast-R 3 confirmation means the dress rehearsal happened even though it didn't make it into the note — both boxes ticked, nothing to act on.\n\n\"Something to bear in mind after Cheltenham\" is the right instinct, and it's worth saying why rather than just nodding at it. There's no plan written past race day yet, and the next real decision on the calendar is how fast volume climbs toward Manchester — sub-3 off your current ~60–65 km norm is possible but thin, and that conversation belongs in the autumn, which is where we are. Four years of achilles history says the constraint on that ramp isn't fitness, it's how quickly load rises and how well it's run — exactly the two things a clean taper into a well-run half won't tell you anything about on their own. So it's not a flag on anything happening now; it's the right thing to be tracking as the first input into how the post-Cheltenham build gets shaped, and it'll be there when that conversation starts.\n\nRoute elevation — yes please, and it'll go straight into the race plan once it lands. Right now the pacing note says effort should govern any hills since I can't see the profile; with the elevation data I can actually tell you where to expect that rather than leaving it to feel on the day.\n\nNo change to the plan. Still hold — second taper week runs as written.",
-  "coach_reply_at": "2026-09-13T14:42:42Z"
+  "athlete_response_status": "logged",
+  "conversation": [
+    {
+      "athlete_timestamp": "13/09/2026 15:41:34",
+      "athlete_decision": "approve",
+      "athlete_thoughts": "No issues with achillies at any point... Something to bear in mind after Cheltenham.\nYes I've run in the fast rs when the plan said too.  I will also get a route elevation update for you",
+      "coach_reply": "Shep \u2014 good, that closes out both open questions cleanly. Achilles at 0 all week lines up with `computed_data.json`, and the Fast-R 3 confirmation means the dress rehearsal happened even though it didn't make it into the note \u2014 both boxes ticked, nothing to act on.\n\n\"Something to bear in mind after Cheltenham\" is the right instinct, and it's worth saying why rather than just nodding at it. There's no plan written past race day yet, and the next real decision on the calendar is how fast volume climbs toward Manchester \u2014 sub-3 off your current ~60\u201365 km norm is possible but thin, and that conversation belongs in the autumn, which is where we are. Four years of achilles history says the constraint on that ramp isn't fitness, it's how quickly load rises and how well it's run \u2014 exactly the two things a clean taper into a well-run half won't tell you anything about on their own. So it's not a flag on anything happening now; it's the right thing to be tracking as the first input into how the post-Cheltenham build gets shaped, and it'll be there when that conversation starts.\n\nRoute elevation \u2014 yes please, and it'll go straight into the race plan once it lands. Right now the pacing note says effort should govern any hills since I can't see the profile; with the elevation data I can actually tell you where to expect that rather than leaving it to feel on the day.\n\nNo change to the plan. Still hold \u2014 second taper week runs as written.",
+      "coach_reply_at": "2026-09-13T14:42:42Z"
+    }
+  ]
 }
