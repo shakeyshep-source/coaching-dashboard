@@ -334,5 +334,13 @@
     "rpe": 6.0,
     "on_target": true,
     "session_notes": "Windy.... Was on a 1.7k loop one way was head wind, other was tail wind"
+  },
+  {
+    "date": "2026-09-13",
+    "achilles_score": 0,
+    "session_type": "long",
+    "rpe": 5.0,
+    "on_target": true,
+    "session_notes": "Really muggy, felt like you had to chew the air, but at the end, it started to rain and cleared the muggy feel"
   }
 ]
