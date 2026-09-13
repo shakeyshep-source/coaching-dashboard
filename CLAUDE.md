@@ -215,6 +215,29 @@ paces are stale, and the answer is to update them off a race result —
 never to freelance mid-session. His current paces derive from 5K 17:48
 (Jul) and 10K 38:06 (Jun, untapered).
 
+**`pace_target.json` watches for exactly that**, so the correction no
+longer has to wait for a race. It flags when **two or more** quality
+sessions inside 28 days came in **3+ sec/km inside target at RPE 6 or
+below** — both halves required, because quick-but-it-hurt is a good
+session and on-pace-but-easy is a taper. One qualifying session is
+recorded and deliberately does not flag; it is a good day, not a trend.
+After a flag it goes quiet for three sessions so a tightened target gets
+tested before it is tightened again.
+
+Two things about how to use it. The suggested action is to tighten the
+**prescribed pace between sessions** — it is never a reason to tell him
+to push harder inside one, which is the distinction this whole section
+exists to protect. And the flag is a prompt for a proposal, not a
+change: `training_plan.json` still only moves through `apply_review.py`
+after he approves.
+
+The file also records sessions it *could not* assess, with the reason.
+A missing RPE is skipped rather than substituted with heart rate —
+deliberately, because deep fatigue suppresses HR, so a low HR reads
+identically to an easy session, and "your targets are soft, run
+quicker" off a suppressed HR would push a tired athlete to train
+harder. That is the injury mechanism, not a metric.
+
 **Judge quality sessions from `session_detail.json`, not the run average.**
 `garmin_activities.json` holds whole-run averages, and a rep session
 averaged over its warm-up, recoveries and cool-down is nearly
@@ -333,7 +356,11 @@ DERIVED:  race_predictor.py       -> race_prediction.json
                                      from garmin_streams.json)
           build_computed.py       -> computed_data.json, flags_log.json,
                                      recovery_log.json (days back to
-                                     pre-session normal, per session)
+                                     pre-session normal, per session),
+                                     pace_target.json (are the prescribed
+                                     paces stale? — logic lives in
+                                     pace_target_check.py, unit tests in
+                                     test_pace_target_check.py)
 DISPLAY:  index.html (GitHub Pages PWA) reads the derived JSONs, plus
           training_plan.json, races.json and fixtures.json — sources
           with nothing to derive, displayed as they stand.

@@ -1099,11 +1099,50 @@ async function buildPlanTab(computedData) {
     const res = await fetch('flags_log.json?v=' + Date.now());
     if (res.ok) flagsLog = await res.json();
   } catch (e) { /* no flags yet */ }
+  const paceTarget = (await fetchJson('pace_target.json')) || {};
 
   const planByDate = {};
   plan.forEach(s => { planByDate[s.date] = s; });
 
   let html = '';
+
+  // Pace targets have gone stale. Its own card rather than a line in
+  // "Worth reviewing today" because it is not about today — it is a
+  // pattern across weeks, and it carries a suggested action.
+  if (paceTarget.flag) {
+    const f = paceTarget.flag;
+    const secs = s => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, '0')}`;
+    html += `
+      <div style="background:var(--warn-bg); border:1px solid var(--warn); border-radius:8px; padding:12px 16px; margin-bottom:1.5rem;">
+        <p style="font-size:13px; font-weight:600; color:var(--warn); margin:0 0 6px;">Pace targets may be stale</p>
+        <p style="font-size:13px; color:var(--text-secondary); margin:0 0 8px;">
+          ${f.count} quality sessions in the last ${esc(String(paceTarget.window_days))} days came in
+          <strong>${f.mean_beat_sec_per_km} sec/km inside target</strong> at low effort.</p>
+        <table style="width:100%; border-collapse:collapse; font-size:12px; margin-bottom:8px;">
+          <tbody>
+            ${(paceTarget.sessions || []).filter(s => f.sessions.includes(s.date)).map(s => `
+              <tr style="border-top:1px solid var(--border);">
+                <td style="padding:4px 8px 4px 0;">${fmtDayMonth(s.date)}</td>
+                <td style="padding:4px 8px; text-transform:capitalize;">${esc(s.session_type || '')}</td>
+                <td style="padding:4px 8px;">target ${secs(s.target_sec_per_km)}</td>
+                <td style="padding:4px 8px;"><strong>ran ${secs(s.actual_sec_per_km)}</strong></td>
+                <td style="padding:4px 0 4px 8px; color:var(--text-muted);">RPE ${s.rpe}</td>
+              </tr>`).join('')}
+          </tbody>
+        </table>
+        <p style="font-size:13px; color:var(--text-secondary); margin:0;">
+          Suggested: tighten the 10K target by <strong>${f.suggested_tighten_sec_per_km} sec/km</strong>,
+          then hold the new pace for 3 sessions before revisiting.
+          <em>Not applied — change the target yourself if you agree.</em></p>
+      </div>
+    `;
+  } else if (paceTarget.cooldown_remaining) {
+    html += `
+      <p style="font-size:12px; color:var(--text-muted); margin:0 0 1.5rem;">
+        Pace-target check paused — ${paceTarget.cooldown_remaining} more quality
+        session(s) at the current target before it can flag again.</p>
+    `;
+  }
 
   if (today.plan_flag_reasons && today.plan_flag_reasons.length) {
     html += `
