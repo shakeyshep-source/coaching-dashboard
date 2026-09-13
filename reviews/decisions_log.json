@@ -237,5 +237,13 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": "No issues with achillies at any point... Something to bear in mind after Cheltenham.\nYes I've run in the fast rs when the plan said too.  I will also get a route elevation update for you",
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-09-13T15:07:03",
+    "proposal_id": "2026-09-13",
+    "decision": "approve",
+    "action_taken": "plan_updated",
+    "athlete_thoughts": "Happy with plan... Temps for next sun are 13c in the morning with about a 12mph wind from the west",
+    "changes_count": 1
   }
 ]
