@@ -12,7 +12,9 @@
     "decision": "approve",
     "thoughts": "as i mention its not every run but i do use sauna and hydro quite a bit.probably more in the winter than sumer.  i stopped the cold plunge along time ago probably after chatting with you. and yes i do hydrate if doing run and sauna"
   },
-  "athlete_response_status": "logged",
+  "athlete_response_status": "answered",
+  "coach_reply": "Shep — that settles both caveats from the last reply cleanly. Not a cold plunge — you dropped that a while back, which tracks with what we discussed then — so the hydro pool is warm hydrotherapy, not the cold-immersion scenario that would've been worth a second thought this close to a race. And you're hydrating for the combination, not just the run. Both boxes ticked, nothing to act on.\n\nThe winter-more-than-summer pattern is worth noting for what it implies, not for anything to change: it means the extra fluid loss this combination adds is highest exactly when heat risk is already lowest, and lowest when heat risk is highest — so the two broadly offset rather than stack. Today's numbers back up that the rest-day sauna isn't costing you anything either way: HRV 42 (right on the 41.1 baseline), RHR 47, sleep score 94, all normal for a taper rest day.\n\nNo change to the plan — today stays rest, second taper week runs exactly as written.",
+  "coach_reply_at": "2026-09-14T13:15:00Z",
   "conversation": [
     {
       "athlete_timestamp": "13/09/2026 15:41:34",
