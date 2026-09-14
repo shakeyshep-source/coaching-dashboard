@@ -255,5 +255,15 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": "OK let's go!!!!",
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-09-14T11:40:39",
+    "proposal_id": null,
+    "review_date": "2026-09-13",
+    "response_timestamp": "14/09/2026 12:40:13",
+    "decision": "approve",
+    "action_taken": "review_query_logged",
+    "athlete_thoughts": "today is a rest day - but can i just sauna?",
+    "changes_count": 0
   }
 ]
