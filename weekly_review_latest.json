@@ -12,7 +12,9 @@
     "decision": "approve",
     "thoughts": "yeah just wasnt sure if rest meant nothing at all or would a sauna be fine.  it is so i may do so.  of note is that i will generally have a sauna after a run and then time in a hydro pool too.  not all the time but if ive run from david lloyd its highly likely"
   },
-  "athlete_response_status": "logged",
+  "athlete_response_status": "answered",
+  "coach_reply": "Shep — that context actually settles it rather than raising anything new. Sauna-then-hydro-pool after a David Lloyd run being your normal pattern, not something you're introducing this week, is the important bit: the caution about heat exposure in race week is about *novel* stimulus — a new shoe, a new recovery habit, anything the body hasn't already absorbed — and this isn't that. Doing what you always do after a David Lloyd run, this week included, is the \"nothing new\" option. Stopping it because it's race week would be the actual change.\n\nTwo caveats, both about degree, not principle. First — is the hydro pool warm or cold? Most gym hydro pools (David Lloyd's included, generally) are warm hydrotherapy, in which case this is straightforward recovery with no downside for endurance training. If it's a cold plunge, that's a different question — cold water immersion has decent evidence for blunting adaptation when used right after a hard session, though that evidence is stronger for strength work than for running, and it's a smaller concern this close to a race than it would be mid-block anyway. Second — run plus sauna plus pool is three sources of fluid loss stacked together, so rehydrate and replace electrolytes for that total, not just the run, particularly after Wednesday's rhythm session and however you time it in the two days before Saturday.\n\nNo change to the plan — this doesn't touch `training_plan.json`, and the second taper week runs exactly as written.",
+  "coach_reply_at": "2026-09-14T13:05:00Z",
   "conversation": [
     {
       "athlete_timestamp": "13/09/2026 15:41:34",
