@@ -7,14 +7,12 @@
   "proposal_id": null,
   "proposal_status": null,
   "athlete_response": {
-    "timestamp": "14/09/2026 12:50:29",
+    "timestamp": "14/09/2026 13:03:47",
     "review_date": "2026-09-14",
     "decision": "approve",
-    "thoughts": "yeah just wasnt sure if rest meant nothing at all or would a sauna be fine.  it is so i may do so.  of note is that i will generally have a sauna after a run and then time in a hydro pool too.  not all the time but if ive run from david lloyd its highly likely"
+    "thoughts": "as i mention its not every run but i do use sauna and hydro quite a bit.probably more in the winter than sumer.  i stopped the cold plunge along time ago probably after chatting with you. and yes i do hydrate if doing run and sauna"
   },
-  "athlete_response_status": "answered",
-  "coach_reply": "Shep — that context actually settles it rather than raising anything new. Sauna-then-hydro-pool after a David Lloyd run being your normal pattern, not something you're introducing this week, is the important bit: the caution about heat exposure in race week is about *novel* stimulus — a new shoe, a new recovery habit, anything the body hasn't already absorbed — and this isn't that. Doing what you always do after a David Lloyd run, this week included, is the \"nothing new\" option. Stopping it because it's race week would be the actual change.\n\nTwo caveats, both about degree, not principle. First — is the hydro pool warm or cold? Most gym hydro pools (David Lloyd's included, generally) are warm hydrotherapy, in which case this is straightforward recovery with no downside for endurance training. If it's a cold plunge, that's a different question — cold water immersion has decent evidence for blunting adaptation when used right after a hard session, though that evidence is stronger for strength work than for running, and it's a smaller concern this close to a race than it would be mid-block anyway. Second — run plus sauna plus pool is three sources of fluid loss stacked together, so rehydrate and replace electrolytes for that total, not just the run, particularly after Wednesday's rhythm session and however you time it in the two days before Saturday.\n\nNo change to the plan — this doesn't touch `training_plan.json`, and the second taper week runs exactly as written.",
-  "coach_reply_at": "2026-09-14T13:05:00Z",
+  "athlete_response_status": "logged",
   "conversation": [
     {
       "athlete_timestamp": "13/09/2026 15:41:34",
@@ -36,6 +34,13 @@
       "athlete_thoughts": "today is a rest day - but can i just sauna?",
       "coach_reply": "Shep \u2014 yes, go ahead. Today's rest, no session behind it, so there's nothing to compound: none of the load-management logic in the plan is about deliberately layering extra stress onto a day that's already designed to have none.\n\nOn the asthma point specifically: the Cotswold Way episode was heat *combined with* hard exercise \u2014 it's the ventilation demand of running hard in the heat that drives exercise-induced bronchoconstriction. Sitting in a sauna doesn't carry that ventilation load, so it isn't really a repeat of that trigger, and today's recovery numbers back up that there's no reason to treat it as anything but a low-stress day either way \u2014 HRV 42 (right on the 41.1 baseline), RHR 47, sleep score 94.\n\nOne thing to be straight about, so you don't overrate it: a single sauna session 6 days out won't do anything for heat acclimation \u2014 that needs repeated post-exercise exposures over 1\u20132 weeks, which isn't the window you've got left before Saturday. So treat it as what it is today \u2014 recovery, not race prep \u2014 keep it moderate rather than pushing duration or heat, and rehydrate properly afterwards; the sweat loss is real even without running. I'd also leave it at today rather than making it a daily fixture through race week \u2014 no benefit to repeating it this close in, and it's one more variable on your fluid and electrolyte status heading into Saturday that you don't need.\n\nNo change to the plan \u2014 this isn't a training question, it's a recovery-day one, and the answer's yes with the caveats above.",
       "coach_reply_at": "2026-09-14T11:42:00Z"
+    },
+    {
+      "athlete_timestamp": "14/09/2026 12:50:29",
+      "athlete_decision": "approve",
+      "athlete_thoughts": "yeah just wasnt sure if rest meant nothing at all or would a sauna be fine.  it is so i may do so.  of note is that i will generally have a sauna after a run and then time in a hydro pool too.  not all the time but if ive run from david lloyd its highly likely",
+      "coach_reply": "Shep \u2014 that context actually settles it rather than raising anything new. Sauna-then-hydro-pool after a David Lloyd run being your normal pattern, not something you're introducing this week, is the important bit: the caution about heat exposure in race week is about *novel* stimulus \u2014 a new shoe, a new recovery habit, anything the body hasn't already absorbed \u2014 and this isn't that. Doing what you always do after a David Lloyd run, this week included, is the \"nothing new\" option. Stopping it because it's race week would be the actual change.\n\nTwo caveats, both about degree, not principle. First \u2014 is the hydro pool warm or cold? Most gym hydro pools (David Lloyd's included, generally) are warm hydrotherapy, in which case this is straightforward recovery with no downside for endurance training. If it's a cold plunge, that's a different question \u2014 cold water immersion has decent evidence for blunting adaptation when used right after a hard session, though that evidence is stronger for strength work than for running, and it's a smaller concern this close to a race than it would be mid-block anyway. Second \u2014 run plus sauna plus pool is three sources of fluid loss stacked together, so rehydrate and replace electrolytes for that total, not just the run, particularly after Wednesday's rhythm session and however you time it in the two days before Saturday.\n\nNo change to the plan \u2014 this doesn't touch `training_plan.json`, and the second taper week runs exactly as written.",
+      "coach_reply_at": "2026-09-14T13:05:00Z"
     }
   ]
 }
