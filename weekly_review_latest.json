@@ -7,14 +7,12 @@
   "proposal_id": null,
   "proposal_status": null,
   "athlete_response": {
-    "timestamp": "14/09/2026 12:40:13",
+    "timestamp": "14/09/2026 12:50:29",
     "review_date": "2026-09-14",
     "decision": "approve",
-    "thoughts": "today is a rest day - but can i just sauna?"
+    "thoughts": "yeah just wasnt sure if rest meant nothing at all or would a sauna be fine.  it is so i may do so.  of note is that i will generally have a sauna after a run and then time in a hydro pool too.  not all the time but if ive run from david lloyd its highly likely"
   },
-  "athlete_response_status": "answered",
-  "coach_reply": "Shep — yes, go ahead. Today's rest, no session behind it, so there's nothing to compound: none of the load-management logic in the plan is about deliberately layering extra stress onto a day that's already designed to have none.\n\nOn the asthma point specifically: the Cotswold Way episode was heat *combined with* hard exercise — it's the ventilation demand of running hard in the heat that drives exercise-induced bronchoconstriction. Sitting in a sauna doesn't carry that ventilation load, so it isn't really a repeat of that trigger, and today's recovery numbers back up that there's no reason to treat it as anything but a low-stress day either way — HRV 42 (right on the 41.1 baseline), RHR 47, sleep score 94.\n\nOne thing to be straight about, so you don't overrate it: a single sauna session 6 days out won't do anything for heat acclimation — that needs repeated post-exercise exposures over 1–2 weeks, which isn't the window you've got left before Saturday. So treat it as what it is today — recovery, not race prep — keep it moderate rather than pushing duration or heat, and rehydrate properly afterwards; the sweat loss is real even without running. I'd also leave it at today rather than making it a daily fixture through race week — no benefit to repeating it this close in, and it's one more variable on your fluid and electrolyte status heading into Saturday that you don't need.\n\nNo change to the plan — this isn't a training question, it's a recovery-day one, and the answer's yes with the caveats above.",
-  "coach_reply_at": "2026-09-14T11:42:00Z",
+  "athlete_response_status": "logged",
   "conversation": [
     {
       "athlete_timestamp": "13/09/2026 15:41:34",
@@ -29,6 +27,13 @@
       "athlete_thoughts": "OK let's go!!!!",
       "coach_reply": "Shep \u2014 approved and logged, though there's nothing here for the gate to actually apply: the review's recommendation was hold, so there's no proposal sitting behind this approval. It just confirms you're happy with the second taper week running as written, which it will.\n\nThat's the right call on the evidence, not just the mood. Recovery trend flipped from lengthening to stable this week, achilles read 0 every day with no stiffness on direct question, the sharpener came in 3 sec/km quicker than target, and both clean decoupling readings since last review sat well inside the 5% threshold. Nothing in that picture asks for a change, and race week plans \u2014 rest, easy 6 + strides, easy 8 with 6\u00d7400m at rhythm, easy 5, rest, easy 4 + strides, race \u2014 stay exactly as written.\n\nOne thing's already moved since this morning's review: the elevation update you mentioned has made it into `training_plan.json` \u2014 Saturday's entry now carries gradient-adjusted splits (downhill start capped at 3:56, effort-not-pace through the two climbs at 6km and 12km, hold through the climb at 20km, empty it on the downhill last km). That closes the one open gap the review flagged, so the race-day plan is complete, not just a pace band.\n\nNothing left to decide before Saturday. Go run it.",
       "coach_reply_at": "2026-09-13T16:12:00Z"
+    },
+    {
+      "athlete_timestamp": "14/09/2026 12:40:13",
+      "athlete_decision": "approve",
+      "athlete_thoughts": "today is a rest day - but can i just sauna?",
+      "coach_reply": "Shep \u2014 yes, go ahead. Today's rest, no session behind it, so there's nothing to compound: none of the load-management logic in the plan is about deliberately layering extra stress onto a day that's already designed to have none.\n\nOn the asthma point specifically: the Cotswold Way episode was heat *combined with* hard exercise \u2014 it's the ventilation demand of running hard in the heat that drives exercise-induced bronchoconstriction. Sitting in a sauna doesn't carry that ventilation load, so it isn't really a repeat of that trigger, and today's recovery numbers back up that there's no reason to treat it as anything but a low-stress day either way \u2014 HRV 42 (right on the 41.1 baseline), RHR 47, sleep score 94.\n\nOne thing to be straight about, so you don't overrate it: a single sauna session 6 days out won't do anything for heat acclimation \u2014 that needs repeated post-exercise exposures over 1\u20132 weeks, which isn't the window you've got left before Saturday. So treat it as what it is today \u2014 recovery, not race prep \u2014 keep it moderate rather than pushing duration or heat, and rehydrate properly afterwards; the sweat loss is real even without running. I'd also leave it at today rather than making it a daily fixture through race week \u2014 no benefit to repeating it this close in, and it's one more variable on your fluid and electrolyte status heading into Saturday that you don't need.\n\nNo change to the plan \u2014 this isn't a training question, it's a recovery-day one, and the answer's yes with the caveats above.",
+      "coach_reply_at": "2026-09-14T11:42:00Z"
     }
   ]
 }
