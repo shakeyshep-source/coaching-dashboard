@@ -342,5 +342,13 @@
     "rpe": 5.0,
     "on_target": true,
     "session_notes": "Really muggy, felt like you had to chew the air, but at the end, it started to rain and cleared the muggy feel"
+  },
+  {
+    "date": "2026-09-14",
+    "achilles_score": 0,
+    "session_type": "rest",
+    "rpe": 0.0,
+    "on_target": true,
+    "session_notes": "Just a sauna and hydropool"
   }
 ]
