@@ -12,7 +12,9 @@
     "decision": "approve",
     "thoughts": "today is a rest day - but can i just sauna?"
   },
-  "athlete_response_status": "logged",
+  "athlete_response_status": "answered",
+  "coach_reply": "Shep — yes, go ahead. Today's rest, no session behind it, so there's nothing to compound: none of the load-management logic in the plan is about deliberately layering extra stress onto a day that's already designed to have none.\n\nOn the asthma point specifically: the Cotswold Way episode was heat *combined with* hard exercise — it's the ventilation demand of running hard in the heat that drives exercise-induced bronchoconstriction. Sitting in a sauna doesn't carry that ventilation load, so it isn't really a repeat of that trigger, and today's recovery numbers back up that there's no reason to treat it as anything but a low-stress day either way — HRV 42 (right on the 41.1 baseline), RHR 47, sleep score 94.\n\nOne thing to be straight about, so you don't overrate it: a single sauna session 6 days out won't do anything for heat acclimation — that needs repeated post-exercise exposures over 1–2 weeks, which isn't the window you've got left before Saturday. So treat it as what it is today — recovery, not race prep — keep it moderate rather than pushing duration or heat, and rehydrate properly afterwards; the sweat loss is real even without running. I'd also leave it at today rather than making it a daily fixture through race week — no benefit to repeating it this close in, and it's one more variable on your fluid and electrolyte status heading into Saturday that you don't need.\n\nNo change to the plan — this isn't a training question, it's a recovery-day one, and the answer's yes with the caveats above.",
+  "coach_reply_at": "2026-09-14T11:42:00Z",
   "conversation": [
     {
       "athlete_timestamp": "13/09/2026 15:41:34",
