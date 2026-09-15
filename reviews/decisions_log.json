@@ -285,5 +285,15 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": "as i mention its not every run but i do use sauna and hydro quite a bit.probably more in the winter than sumer.  i stopped the cold plunge along time ago probably after chatting with you. and yes i do hydrate if doing run and sauna",
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-09-15T07:07:09",
+    "proposal_id": null,
+    "review_date": "2026-09-13",
+    "response_timestamp": "15/09/2026 08:06:47",
+    "decision": "approve",
+    "action_taken": "review_query_logged",
+    "athlete_thoughts": "I'm sure I read somewhere, don't have a hot bath the day before a race. You want your tendons to be fired up, whereas a hot bath will do the opposite. If so should I avoid the sauna and hydropool Saturday",
+    "changes_count": 0
   }
 ]
