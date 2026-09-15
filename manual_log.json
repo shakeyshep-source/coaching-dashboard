@@ -350,5 +350,13 @@
     "rpe": 0.0,
     "on_target": true,
     "session_notes": "Just a sauna and hydropool"
+  },
+  {
+    "date": "2026-09-15",
+    "achilles_score": 0,
+    "session_type": "easy",
+    "rpe": 2.0,
+    "on_target": true,
+    "session_notes": "Easy, with an impromptu catch up half way. Ended with strides but may have done them a bit quick, just felt like a natural pace, not pushing it"
   }
 ]
