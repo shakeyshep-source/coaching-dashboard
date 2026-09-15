@@ -174,23 +174,27 @@
       "interrupted_by_next_session": false,
       "temp_max_c": 18.9,
       "note": "Hit the paces and it's cooler today but just felt flat.  Maybe I didn't eat enough today?? Not sure, no real issue as it's taper time."
-    }
-  ],
-  "pending": [
+    },
     {
       "date": "2026-09-12",
       "session_type": "tempo",
-      "days_since": 2,
-      "hrv_back": 2,
-      "rhr_back": null,
+      "confounders_in_window": [],
       "hrv_reference": 40,
-      "rhr_reference": 46.7
+      "hrv_recovery_days": 2,
+      "rhr_reference": 46.7,
+      "rhr_recovery_days": 3,
+      "recovery_days": 3,
+      "recovered": true,
+      "interrupted_by_next_session": false,
+      "temp_max_c": 20.8,
+      "note": "Windy.... Was on a 1.7k loop one way was head wind, other was tail wind"
     }
   ],
+  "pending": [],
   "trend": {
-    "recent_avg_days": 3,
-    "prior_avg_days": 3.3,
-    "direction": "stable",
-    "sessions_measured": 11
+    "recent_avg_days": 2.3,
+    "prior_avg_days": 3.7,
+    "direction": "shortening \u2014 bouncing back quicker than before",
+    "sessions_measured": 12
   }
 }
