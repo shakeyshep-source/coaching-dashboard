@@ -305,5 +305,15 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": "what speed are the 400s? HMP pace?",
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-09-16T17:48:09",
+    "proposal_id": null,
+    "review_date": "2026-09-13",
+    "response_timestamp": "16/09/2026 18:47:53",
+    "decision": "approve",
+    "action_taken": "review_query_logged",
+    "athlete_thoughts": "Really easy session. The hard part going slow over the 400s. Interesting that the Garmin watch lowered my HR on my lactate threshold to 165 but kept the pace the same",
+    "changes_count": 0
   }
 ]

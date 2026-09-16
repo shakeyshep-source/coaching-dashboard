@@ -7,14 +7,12 @@
   "proposal_id": null,
   "proposal_status": null,
   "athlete_response": {
-    "timestamp": "16/09/2026 16:45:15",
+    "timestamp": "16/09/2026 18:47:53",
     "review_date": "2026-09-16",
     "decision": "approve",
-    "thoughts": "what speed are the 400s? HMP pace?"
+    "thoughts": "Really easy session. The hard part going slow over the 400s. Interesting that the Garmin watch lowered my HR on my lactate threshold to 165 but kept the pace the same"
   },
-  "athlete_response_status": "answered",
-  "coach_reply": "Shep — yes, HM rhythm. Same number as Saturday's race and the sharpener: **3:54/km** (your 3:52–3:56/km band), not Wednesday's 3:44/km 10K-pace reps. Over 400m that's ~93–94 sec, so **1:33–1:34 per rep**.\n\nThat's deliberately not a repeat of last Wednesday's quality — it's a taper leg-speed opener, four days out: short reps at exactly the pace you'll hold on Saturday, with plenty of jog recovery, to groove the rhythm rather than add another hard session this late. The plan note says \"effort light\" for a reason — if hitting 1:33 takes work rather than floating there, ease off half a second a rep. This is the last chance to rehearse race pace before the start line, not a session to find out if you're fit.\n\nNo change to the plan — Wednesday runs exactly as written.",
-  "coach_reply_at": "2026-09-16T15:46:38Z",
+  "athlete_response_status": "logged",
   "conversation": [
     {
       "athlete_timestamp": "13/09/2026 15:41:34",
@@ -57,6 +55,13 @@
       "athlete_thoughts": "I'm sure I read somewhere, don't have a hot bath the day before a race. You want your tendons to be fired up, whereas a hot bath will do the opposite. If so should I avoid the sauna and hydropool Saturday",
       "coach_reply": "Shep \u2014 the mechanism you're describing is real, but the timing doesn't work the way the folk version says it does. Heat does increase collagen extensibility \u2014 it's literally why a warm-up works and why heated stretching is more effective than cold stretching. But that effect is local and short-lived: tendon and muscle temperature return to baseline within roughly an hour or two of the heat source being removed, not overnight. Saturday's sauna and hydropool, however long you're in for, will have zero measurable effect on achilles or any other tendon stiffness by Sunday morning \u2014 that's 12\u201315+ hours later, several tissue-cooling half-lives beyond where any compliance change persists. If sauna-the-day-before genuinely blunted race-day tendon spring, distance runners who train at facilities with saunas attached would have found that out a long time ago.\n\nSo I'm not going to tell you to skip it on that basis \u2014 there's no evidence behind the specific claim, and achilles has read 0 every day this taper with nothing in any note, so there's no vulnerability here that heat exposure would be interacting with anyway.\n\nThe part of this worth actually managing isn't tendon mechanics, it's fluid balance \u2014 the same point from Sunday's exchange about hydrating for the run-plus-sauna-plus-pool combination, just closer to the start line now. Saturday is the one day this week you most want to toe the line fully topped up rather than still catching up on fluid and electrolytes lost the evening before, and Saturday's session is easy 4km + strides, not a rest day, so any sauna/hydro after it stacks on top of that. That's not a reason to cut it \u2014 it's your normal post-run pattern, not something novel, and novel is what the taper actually needs to avoid \u2014 just keep it to your usual length rather than lingering, and rehydrate properly afterwards so you're not making up the deficit on race morning instead.\n\nNo change to the plan. This is a logistics call, not a training one \u2014 second taper week runs exactly as written, race day plan unchanged.",
       "coach_reply_at": "2026-09-15T09:20:00Z"
+    },
+    {
+      "athlete_timestamp": "16/09/2026 16:45:15",
+      "athlete_decision": "approve",
+      "athlete_thoughts": "what speed are the 400s? HMP pace?",
+      "coach_reply": "Shep \u2014 yes, HM rhythm. Same number as Saturday's race and the sharpener: **3:54/km** (your 3:52\u20133:56/km band), not Wednesday's 3:44/km 10K-pace reps. Over 400m that's ~93\u201394 sec, so **1:33\u20131:34 per rep**.\n\nThat's deliberately not a repeat of last Wednesday's quality \u2014 it's a taper leg-speed opener, four days out: short reps at exactly the pace you'll hold on Saturday, with plenty of jog recovery, to groove the rhythm rather than add another hard session this late. The plan note says \"effort light\" for a reason \u2014 if hitting 1:33 takes work rather than floating there, ease off half a second a rep. This is the last chance to rehearse race pace before the start line, not a session to find out if you're fit.\n\nNo change to the plan \u2014 Wednesday runs exactly as written.",
+      "coach_reply_at": "2026-09-16T15:46:38Z"
     }
   ]
 }
