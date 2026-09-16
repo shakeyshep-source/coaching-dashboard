@@ -190,7 +190,17 @@
       "note": "Windy.... Was on a 1.7k loop one way was head wind, other was tail wind"
     }
   ],
-  "pending": [],
+  "pending": [
+    {
+      "date": "2026-09-16",
+      "session_type": "intervals",
+      "days_since": 0,
+      "hrv_back": null,
+      "rhr_back": null,
+      "hrv_reference": 41.3,
+      "rhr_reference": 46.7
+    }
+  ],
   "trend": {
     "recent_avg_days": 2.3,
     "prior_avg_days": 3.7,
