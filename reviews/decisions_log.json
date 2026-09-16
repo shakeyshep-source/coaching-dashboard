@@ -295,5 +295,15 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": "I'm sure I read somewhere, don't have a hot bath the day before a race. You want your tendons to be fired up, whereas a hot bath will do the opposite. If so should I avoid the sauna and hydropool Saturday",
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-09-16T15:45:33",
+    "proposal_id": null,
+    "review_date": "2026-09-13",
+    "response_timestamp": "16/09/2026 16:45:15",
+    "decision": "approve",
+    "action_taken": "review_query_logged",
+    "athlete_thoughts": "what speed are the 400s? HMP pace?",
+    "changes_count": 0
   }
 ]
