@@ -12,7 +12,9 @@
     "decision": "approve",
     "thoughts": "what speed are the 400s? HMP pace?"
   },
-  "athlete_response_status": "logged",
+  "athlete_response_status": "answered",
+  "coach_reply": "Shep — yes, HM rhythm. Same number as Saturday's race and the sharpener: **3:54/km** (your 3:52–3:56/km band), not Wednesday's 3:44/km 10K-pace reps. Over 400m that's ~93–94 sec, so **1:33–1:34 per rep**.\n\nThat's deliberately not a repeat of last Wednesday's quality — it's a taper leg-speed opener, four days out: short reps at exactly the pace you'll hold on Saturday, with plenty of jog recovery, to groove the rhythm rather than add another hard session this late. The plan note says \"effort light\" for a reason — if hitting 1:33 takes work rather than floating there, ease off half a second a rep. This is the last chance to rehearse race pace before the start line, not a session to find out if you're fit.\n\nNo change to the plan — Wednesday runs exactly as written.",
+  "coach_reply_at": "2026-09-16T15:46:38Z",
   "conversation": [
     {
       "athlete_timestamp": "13/09/2026 15:41:34",
