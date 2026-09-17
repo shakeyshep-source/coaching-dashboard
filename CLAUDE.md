@@ -76,6 +76,13 @@ before it was ready → flare again. No rehab at all in those years.
 What changed it: about a year of gym work (started when he could not
 run), a physio, and structured training. It has read 0 for months.
 
+**He still sees that physio, and she is running a video gait analysis
+the week after Cheltenham (Sep 2026)** — he raised the shoe history with
+her himself. That closes the one gap this system genuinely cannot cover:
+nobody here can watch him run. Ask what it found, and treat her findings
+as outranking anything inferred from the data on form, loading or
+footwear.
+
 Two things follow, and they matter more than the daily score:
 
 1. **The historical cause was intensity discipline, not mileage as
@@ -125,16 +132,60 @@ Adidas Boston rejected as too firm.
   system. Cooks from scratch, bulk-cooks Sunday for Mon–Wed; higher
   protein, higher fibre; pizza Friday, something quick Saturday. Day-to-
   day nutrition is a solved problem — do not lecture him on it.
-- **Race and long-run fuelling:** already gut-training — one SiS gel
-  halfway through easy long runs, deliberately to build tolerance.
-  Pre-long-run breakfast is Rice Krispies, or a bagel with honey. The
-  gap is intensity, not habit: gels have only been tested on easy
-  running, where gastric emptying is far more forgiving than at threshold
-  or race pace. Carbs/hour and caffeine are still unquantified.
+- **Race and long-run fuelling.** He is not a beginner at this: he has
+  fuelled races up to half marathon, and 24-hour six-person relays where
+  he ate and drank around rotating legs for a day. What is untested is
+  **carbohydrate at marathon pace, in marathon quantity**. Pre-long-run
+  breakfast is Rice Krispies, or a bagel with honey.
+
+  Current practice is one SiS Go Isotonic gel (22 g carbohydrate)
+  halfway through an easy long run — roughly **15 g/h**. A sub-3
+  marathon is about 2 h 55 of running and wants **60–90 g/h**, so the
+  gap is four- to five-fold. It closes by training the gut, not by
+  deciding to try harder on the day: intestinal transporter
+  upregulation is a genuine adaptation that takes repeated exposure
+  over roughly 4–8 weeks, so it gets programmed like any other
+  progression.
+
+  **Carbohydrate by run duration — put these in the long-run notes:**
+
+  | run | carbohydrate |
+  |---|---|
+  | under 75 min | none needed |
+  | 75–100 min | one gel, for practice rather than need |
+  | 100–150 min | 30–60 g/h |
+  | over 150 min, or any long run carrying MP work | 60–90 g/h |
+
+  **Timing:** first gel at about 20 minutes, then every 20–30 min.
+  Little and often beats a big dose, and starting before he needs it
+  matters more than the total. At 22 g a gel, every 20 min is ~66 g/h;
+  reaching 80–90 g/h means 40 g gels, or gels plus a carbohydrate
+  drink. The product choice is his — the g/h target is the coaching
+  instruction, so write g/h into sessions, not brands.
+
+  **Two rules that outrank the numbers.** Practise at marathon pace,
+  not easy pace — gastric emptying slows as intensity rises, and
+  everything tested so far was around 5:00/km against a 4:16/km race.
+  And nothing new inside the last three weeks, race day included.
+
+  Still unquantified, and to be settled in the winter long runs:
+  caffeine, sodium (300–600 mg/h is the usual band; Manchester in April
+  is likely cool, so fluid needs are modest), and his own tolerance
+  ceiling. Ask what he actually took after any long run over 100 min —
+  the form does not capture it.
 - **Training history:** ~60–70 miles/week historically, but unstructured
   and run too quick throughout, alongside the achilles trouble. Treat
   that number as evidence of durability *and* of what broke him — never
   as a target to get back to.
+- **He has never run a marathon.** Longest run ever is about 18 miles
+  (~29 km), and longest race is a half. `garmin_activities.json` only
+  reaches back to spring 2026, where the longest is 21.5 km — do not
+  quote that as his ceiling, it is the data's ceiling. So Manchester
+  2027 is a **first marathon at a sub-3 target**, which changes what
+  needs coaching: the training gap to 32–35 km long runs is one step
+  from 29 km, not two, but the untested ground is everything past
+  30 km, fuelling in marathon quantity, and pacing a distance he has
+  no felt sense of.
 - **Not only a runner.** He races Hyrox — doubles in Malaga, 19 Apr 2026,
   59:59, age-group win — alongside the gym work. Garmin files these as
   *running* activities (that one: 8.55 km at 7:47/km, HR 152, because the
