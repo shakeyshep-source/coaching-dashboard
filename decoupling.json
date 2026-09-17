@@ -2951,6 +2951,29 @@
       "unreliable_reasons": [
         "hilly (32 m/km climb)"
       ]
+    },
+    {
+      "date": "2026-09-16",
+      "activity_id": 24386581086,
+      "decoupling_pct": -0.22,
+      "within_threshold": true,
+      "analysed_min": 32.8,
+      "first_half": {
+        "pace": "4:44",
+        "avg_hr": 140.3,
+        "ef": 0.02509
+      },
+      "second_half": {
+        "pace": "4:41",
+        "avg_hr": 141.7,
+        "ef": 0.02515
+      },
+      "distance_km": 8.18,
+      "gradient_m_per_km": 5.3,
+      "pace_delta_pct": -1.2,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable"
+      ]
     }
   ],
   "trend": {
