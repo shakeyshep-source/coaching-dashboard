@@ -377,7 +377,7 @@
     "hrv_delta_from_baseline": 6.6,
     "rhr_baseline_7d": 47.0,
     "rhr_delta_from_baseline": 0.0,
-    "heat_risk": "moderate",
+    "heat_risk": "low",
     "recovery_confounders": [],
     "today_summary": "Recovery looks normal. Fine for planned training.",
     "readiness_level": "good",
