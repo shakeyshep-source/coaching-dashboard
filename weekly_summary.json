@@ -1,19 +1,19 @@
 {
-  "generated": "2026-09-17",
+  "generated": "2026-09-18",
   "next_race": {
     "name": "CHELTENHAM HALF MARATHON",
     "date": "2026-09-20",
     "distance_km": 21.0975,
-    "days_away": 3
+    "days_away": 2
   },
   "race_readiness": {
     "race": {
       "name": "CHELTENHAM HALF MARATHON",
       "date": "2026-09-20",
       "distance_km": 21.0975,
-      "days_away": 3
+      "days_away": 2
     },
-    "weeks_to_race": 0.4,
+    "weeks_to_race": 0.3,
     "taper_start": "2026-09-10",
     "remaining_key_sessions": {
       "tempo": 0,
@@ -721,10 +721,10 @@
       "on_target_pct": 100,
       "avg_rpe": 2.0,
       "max_achilles": 0,
-      "avg_hrv": 34.7,
-      "avg_rhr": 47.7,
-      "avg_sleep_score": 87.7,
-      "avg_sleep_hrs": 8.0,
+      "avg_hrv": 33.5,
+      "avg_rhr": 48.0,
+      "avg_sleep_score": 86.5,
+      "avg_sleep_hrs": 8.1,
       "easy_pace_min_km": 5.27,
       "easy_avg_hr": 129.0,
       "efficiency": 1.473,
@@ -1017,9 +1017,9 @@
       "on_target_pct": 100,
       "avg_rpe": 1.8,
       "max_achilles": 0,
-      "avg_hrv": 40.2,
+      "avg_hrv": 41.6,
       "avg_rhr": 47.0,
-      "avg_sleep_score": 90.8,
+      "avg_sleep_score": 90.4,
       "avg_sleep_hrs": 8.1,
       "easy_pace_min_km": 4.94,
       "easy_avg_hr": 144.0,
