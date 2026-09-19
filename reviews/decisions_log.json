@@ -325,5 +325,15 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": "Race start is 9am. Plan for breakfast. Usually have bowl of rice crispies, bagel with honey, coffee and then sipping sis isotonic drink on way to race",
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-09-19T18:38:54",
+    "proposal_id": null,
+    "review_date": "2026-09-13",
+    "response_timestamp": "19/09/2026 19:38:41",
+    "decision": "approve",
+    "action_taken": "review_query_logged",
+    "athlete_thoughts": "Gels.. Thinking one before start, one at 30mins, one at 60",
+    "changes_count": 0
   }
 ]

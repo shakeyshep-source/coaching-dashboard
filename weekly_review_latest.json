@@ -7,14 +7,12 @@
   "proposal_id": null,
   "proposal_status": null,
   "athlete_response": {
-    "timestamp": "19/09/2026 19:18:59",
+    "timestamp": "19/09/2026 19:38:41",
     "review_date": "2026-09-19",
     "decision": "approve",
-    "thoughts": "Race start is 9am. Plan for breakfast. Usually have bowl of rice crispies, bagel with honey, coffee and then sipping sis isotonic drink on way to race"
+    "thoughts": "Gels.. Thinking one before start, one at 30mins, one at 60"
   },
-  "athlete_response_status": "answered",
-  "coach_reply": "Shep — that plan is right, and it's right for the reason that matters most this close in: it's what you already do, not something new for the start line. Rice krispies, bagel with honey and coffee is literally the brief's own pre-long-run breakfast, and a familiar coffee before a race you've raced this distance before isn't a novel stimulus — so there's nothing here to caution against.\n\nOn timing: with a 9am gun, eat the solid breakfast around 2.5–3h out — roughly 6:00–6:30am — so it's properly digested rather than sitting heavy at the start line. Sipping the SiS isotonic on the way in closer to the gun tops you up without adding volume this late, which is exactly the right shape.\n\nWorth knowing, not changing: at today's 1:22:25 prediction this race sits in the 75–100 minute bracket, where the brief's carbohydrate table treats a gel or carb drink during the run itself as \"for practice rather than need\" — a race this length runs fine off a solid breakfast and pre-race carb alone. So the isotonic sipping is generous rather than essential, and that's not a problem, just context for why you won't feel like you're under-fuelled even though it's a light amount for the distance. Nothing to add or strip out.\n\nNo change to the plan. Achilles read 0 again today, the 4km + strides went exactly to plan, and the breakfast routine you've described is proven, not experimental — you're set for tomorrow.",
-  "coach_reply_at": "2026-09-19T20:15:00Z",
+  "athlete_response_status": "logged",
   "conversation": [
     {
       "athlete_timestamp": "13/09/2026 15:41:34",
@@ -71,6 +69,13 @@
       "athlete_thoughts": "Really easy session. The hard part going slow over the 400s. Interesting that the Garmin watch lowered my HR on my lactate threshold to 165 but kept the pace the same",
       "coach_reply": "Shep \u2014 both halves of that are worth taking separately, because one confirms the plan and the other isn't telling you what it looks like it's telling you.\n\n\"Really easy, the hard part was going slow\" is exactly the session working as designed, not a sign the targets are stale. This morning's reply on the 400m pace said it plainly: this is a leg-speed opener at HM rhythm four days out, with plenty of jog recovery, meant to groove the rhythm rather than test fitness \u2014 \"if hitting 1:33 takes work rather than floating there, ease off.\" Floating there and finding the discipline the hard part is the intended outcome, not underdone work. And for the record, `pace_target.json` isn't live on this one regardless: it flagged on 12 Sep, went into its three-session cooldown, and doesn't track 400m rhythm reps as a scored session type anyway \u2014 only the Wednesday interval and Saturday tempo sessions feed it. So there's no stale-target read to make here even in principle.\n\nOn the watch dropping its lactate-threshold HR estimate to 165 while holding the pace: that's Garmin's own auto-detected algorithm, not a lab test, and it isn't a number this repo pulls or tracks anywhere \u2014 `garmin_data.json` carries RHR, HRV, VO2max, training load and ACWR, nothing calling itself LTHR. Same category as running power in the brief: a vendor model, useful as corroboration, never as a primary signal to act on. And what it's corroborating here is exactly what the rest of today's numbers already say \u2014 ACWR down to 0.7 (\"LOW\"), VO2max steady at 60, training status \"PRODUCTIVE_3\": you're fresh, so the same pace now costs a lower estimated HR than it did mid-block. That's the taper doing its job, not new fitness to bank or a reason to tighten Saturday's pace band \u2014 your race splits derive from the 5K/10K results, not from a watch's rolling threshold guess, and that stays true right through the start line.\n\nNo change to the plan. Thursday's easy 5 and the rest of race week run exactly as written.",
       "coach_reply_at": "2026-09-16T18:05:00Z"
+    },
+    {
+      "athlete_timestamp": "19/09/2026 19:18:59",
+      "athlete_decision": "approve",
+      "athlete_thoughts": "Race start is 9am. Plan for breakfast. Usually have bowl of rice crispies, bagel with honey, coffee and then sipping sis isotonic drink on way to race",
+      "coach_reply": "Shep \u2014 that plan is right, and it's right for the reason that matters most this close in: it's what you already do, not something new for the start line. Rice krispies, bagel with honey and coffee is literally the brief's own pre-long-run breakfast, and a familiar coffee before a race you've raced this distance before isn't a novel stimulus \u2014 so there's nothing here to caution against.\n\nOn timing: with a 9am gun, eat the solid breakfast around 2.5\u20133h out \u2014 roughly 6:00\u20136:30am \u2014 so it's properly digested rather than sitting heavy at the start line. Sipping the SiS isotonic on the way in closer to the gun tops you up without adding volume this late, which is exactly the right shape.\n\nWorth knowing, not changing: at today's 1:22:25 prediction this race sits in the 75\u2013100 minute bracket, where the brief's carbohydrate table treats a gel or carb drink during the run itself as \"for practice rather than need\" \u2014 a race this length runs fine off a solid breakfast and pre-race carb alone. So the isotonic sipping is generous rather than essential, and that's not a problem, just context for why you won't feel like you're under-fuelled even though it's a light amount for the distance. Nothing to add or strip out.\n\nNo change to the plan. Achilles read 0 again today, the 4km + strides went exactly to plan, and the breakfast routine you've described is proven, not experimental \u2014 you're set for tomorrow.",
+      "coach_reply_at": "2026-09-19T20:15:00Z"
     }
   ]
 }
