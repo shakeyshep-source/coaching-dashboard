@@ -194,7 +194,7 @@
     {
       "date": "2026-09-16",
       "session_type": "intervals",
-      "days_since": 2,
+      "days_since": 3,
       "hrv_back": 2,
       "rhr_back": null,
       "hrv_reference": 41.3,
