@@ -12,7 +12,9 @@
     "decision": "approve",
     "thoughts": "Race start is 9am. Plan for breakfast. Usually have bowl of rice crispies, bagel with honey, coffee and then sipping sis isotonic drink on way to race"
   },
-  "athlete_response_status": "logged",
+  "athlete_response_status": "answered",
+  "coach_reply": "Shep — that plan is right, and it's right for the reason that matters most this close in: it's what you already do, not something new for the start line. Rice krispies, bagel with honey and coffee is literally the brief's own pre-long-run breakfast, and a familiar coffee before a race you've raced this distance before isn't a novel stimulus — so there's nothing here to caution against.\n\nOn timing: with a 9am gun, eat the solid breakfast around 2.5–3h out — roughly 6:00–6:30am — so it's properly digested rather than sitting heavy at the start line. Sipping the SiS isotonic on the way in closer to the gun tops you up without adding volume this late, which is exactly the right shape.\n\nWorth knowing, not changing: at today's 1:22:25 prediction this race sits in the 75–100 minute bracket, where the brief's carbohydrate table treats a gel or carb drink during the run itself as \"for practice rather than need\" — a race this length runs fine off a solid breakfast and pre-race carb alone. So the isotonic sipping is generous rather than essential, and that's not a problem, just context for why you won't feel like you're under-fuelled even though it's a light amount for the distance. Nothing to add or strip out.\n\nNo change to the plan. Achilles read 0 again today, the 4km + strides went exactly to plan, and the breakfast routine you've described is proven, not experimental — you're set for tomorrow.",
+  "coach_reply_at": "2026-09-19T20:15:00Z",
   "conversation": [
     {
       "athlete_timestamp": "13/09/2026 15:41:34",
