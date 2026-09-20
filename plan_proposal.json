@@ -1,22 +1,57 @@
 {
-  "id": "2026-09-13",
-  "created": "2026-09-13T15:57:00+01:00",
-  "status": "applied",
-  "rationale": "Shep asked for race-day splits off the course profile in a clubmate's 2025 Cheltenham file (she ran 1:21:02, so her per-km elevation deltas map the course at close to his goal pace). This proposes no change to any session \u2014 only to the race entry's notes, so the plan carries the checkpoint times on the day rather than only the pace band. The target stays 1:22:00 rather than 1:21, for three reasons: the model predicts 1:22:23; 1:21 needs 3:51/km from the gun, which is a decision made at the start and not recoverable if it is wrong; and a well-run 1:22 that finishes strongly lands 1:21:34, so the faster time is available as an outcome without being gambled on as a plan. Splits are gradient-adjusted from the course profile rather than flat, so effort stays even: slightly slower on the climbs at km 6, 12 and especially 20 (+11m, the clubmate's slowest split of the day by seven seconds), slightly quicker on the drops. The one hard rule is km 1: it falls about 5m and was her fastest split of the race at 3:38, which is his current 10K pace. Capping it at 3:56 costs three seconds against even pacing and removes the single biggest risk on the day \u2014 she went out 7 sec/km quicker than her own average and lost 2:25 in the back half. Nothing here changes the taper or any session before Sunday.",
+  "id": "2026-09-20",
+  "created": "2026-09-20T18:00:00+01:00",
+  "status": "pending",
+  "rationale": "training_plan.json has nothing written past race day, and a maximal hilly half marathon (RPE 8, HR to 174 with a sprint finish) asks more recovery than a training run over the same distance. The achilles history means an unplanned week defaults to 'whatever feels right today', which is the exact pattern that used to go wrong, so this proposes a genuine recovery week rather than leaving the gap. ~46km, easy only, no quality: Tuesday-Saturday build gently from short and very easy back to a normal easy day, Sunday's long run returns at 14km with no pace target. Monday stays the normal rest day. This is the first Saturday since May without a tempo or interval session - deliberate, not an oversight. The Saturday/Wednesday quality structure resumes once achilles and recovery markers confirm clean through this week, not on a fixed date. This bridges toward Crete 10K (4 Oct, still a fun run needing no taper) and leaves the four weeks after that to be written as the Guy Fawkes sharpening block the fixtures note now calls for - that gets shaped next Sunday once we see how this week's recovery actually goes.",
   "changes": [
     {
-      "date": "2026-09-20",
-      "session_type": "race",
-      "target_distance_km": 21.0975,
-      "target_pace": "3:52-3:56/km",
-      "notes": "CHELTENHAM HALF MARATHON. Target 1:22:00 (band 1:21-1:23). Symbicort 20 min before gun, salbutamol 15 min before. WU: 2km easy + 4 strides.\nCHECKPOINTS: 5km 19:31 | 10km 38:58 | 15km 58:24 | 20km 1:17:55.\nSPLITS (gradient-adjusted): 1) 3:56 CAP - downhill start, do NOT go faster. 2) 3:54 3) 3:53 4) 3:55 5) 3:53 | 6) 3:56 climb 7) 3:52 8) 3:53 9) 3:54 10) 3:52 | 11) 3:52 12) 3:56 climb 13) 3:52 14) 3:53 15) 3:53 | 16) 3:53 17) 3:52 18) 3:54 19) 3:53 20) 3:59 THE CLIMB - let it come, hold effort not pace | 21) 3:48 downhill, empty it.\nThe race is decided 14-18km, the flattest section, where the field fades. If 15km comes up at 58:24 feeling controlled, a 3:48/km last 6km gives 1:21:34."
+      "date": "2026-09-21",
+      "session_type": "rest",
+      "target_distance_km": null,
+      "target_pace": null,
+      "notes": "Rest - the normal Monday, and doubly right after yesterday's effort."
+    },
+    {
+      "date": "2026-09-22",
+      "session_type": "easy",
+      "target_distance_km": 5,
+      "target_pace": null,
+      "notes": "RECOVERY WEEK BEGINS. Easy, short, entirely by feel - roughly 20-30 min, walk if anything feels off. No strides, no pace target. Yesterday was RPE 8 with a full sprint to the line; the legs get nothing asked of them today regardless of how good they feel."
+    },
+    {
+      "date": "2026-09-23",
+      "session_type": "easy",
+      "target_distance_km": 6,
+      "target_pace": null,
+      "notes": "Easy 30-35 min, still entirely by feel, no pace target, no strides. If yesterday felt heavy rather than just tired, take today as a second rest day instead - better to lose a day here than force it."
+    },
+    {
+      "date": "2026-09-24",
+      "session_type": "easy",
+      "target_distance_km": 6,
+      "target_pace": null,
+      "notes": "Easy 6km - building duration gently, still conversational throughout. First day back on anything like a normal easy run, but the target is time on feet, not a number."
+    },
+    {
+      "date": "2026-09-25",
+      "session_type": "easy",
+      "target_distance_km": 7,
+      "target_pace": null,
+      "notes": "Easy 7km."
+    },
+    {
+      "date": "2026-09-26",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "Easy 8km. No strides, no tempo - first Saturday since May without a quality session, and that is deliberate, not a gap to fill."
+    },
+    {
+      "date": "2026-09-27",
+      "session_type": "long",
+      "target_distance_km": 14,
+      "target_pace": null,
+      "notes": "First long run back: 14km, genuinely easy throughout, no pace target. This is aerobic volume, not a rehearsal for anything - under 75 minutes at an easy pace, so no fuelling need."
     }
-  ],
-  "athlete_response": {
-    "timestamp": "13/09/2026 16:06:08",
-    "review_date": "2026-09-13",
-    "decision": "approve",
-    "thoughts": "Happy with plan... Temps for next sun are 13c in the morning with about a 12mph wind from the west"
-  },
-  "applied_at": "2026-09-13T15:07:03"
+  ]
 }
