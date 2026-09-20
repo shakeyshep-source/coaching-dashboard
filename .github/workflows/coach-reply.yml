@@ -1,10 +1,20 @@
-# Coach reply — answers a query against a review that proposed nothing.
+# Coach reply — responds to a form submission within about a minute.
 #
-# A "hold" review has no proposal to approve, so a response to it can't
-# go through the approve/amend/reject gate. apply_review.py logs it to
-# weekly_review_latest.json with athlete_response_status="logged"; this
-# workflow replies to it and flips the flag to "answered", so it runs
-# once per query rather than on every pipeline run.
+# Two things can be waiting, and coach_reply_gate.py decides which:
+#
+#   QUERY  a review that proposed nothing has no gate to reach, so the
+#          response lands on weekly_review_latest.json as
+#          athlete_response with status "logged". Answer it, flip the
+#          flag to "answered".
+#   AMEND  a review that DID propose gets the response attached to
+#          plan_proposal.json, and "amend" sets it to amend_requested.
+#          Revise the proposal, set it back to "pending".
+#
+# Only QUERY used to fire. On 20 Sep 2026 Shep amended a proposal at
+# 18:13 saying he could not run the coming Sunday, and nothing happened
+# - the revision would have waited six days to change a week starting
+# the next morning. Either flag now runs this, and both self-clear, so
+# it runs once per submission rather than on every pipeline run.
 #
 # Called by both pipelines (review-response.yml on form submit,
 # daily-pull.yml on the morning schedule) rather than duplicated in
@@ -30,19 +40,10 @@ jobs:
         with:
           ref: main
 
-      - name: Is a review query waiting for a reply?
+      - name: Is a coach session waiting?
         id: query
         run: |
-          python3 - <<'PY' >> "$GITHUB_OUTPUT"
-          import json
-          try:
-              latest = json.load(open("weekly_review_latest.json"))
-          except Exception:
-              latest = {}
-          waiting = bool(latest.get("athlete_response")) and \
-              latest.get("athlete_response_status") == "logged"
-          print(f"reply={'true' if waiting else 'false'}")
-          PY
+          python3 coach_reply_gate.py >> "$GITHUB_OUTPUT"
           cat "$GITHUB_OUTPUT"
 
       - name: Normalise the Claude credential
@@ -56,7 +57,7 @@ jobs:
           if [ -n "$OAUTH_CLEAN" ]; then echo "::add-mask::$OAUTH_CLEAN"; fi
           if [ -n "$APIKEY_CLEAN" ]; then echo "::add-mask::$APIKEY_CLEAN"; fi
           if [ -z "$OAUTH_CLEAN" ] && [ -z "$APIKEY_CLEAN" ]; then
-            echo "::warning::No Claude credential set - the review query stays logged for Sunday's session."
+            echo "::warning::No Claude credential set - the question or amend waits for Sunday's session."
           fi
           # An API key wins when both are present. The subscription token
           # is the cheaper path and stays the default, but it dies the
@@ -76,39 +77,65 @@ jobs:
             echo "APIKEY_CLEAN=$APIKEY_CLEAN"
           } >> "$GITHUB_ENV"
 
-      - name: Reply to the review query
+      - name: Respond to Shep
         if: steps.query.outputs.reply == 'true' && (env.OAUTH_CLEAN != '' || env.APIKEY_CLEAN != '')
         uses: anthropics/claude-code-action@v1
+        env:
+          COACH_MODES: ${{ steps.query.outputs.modes }}
         with:
           claude_code_oauth_token: ${{ env.OAUTH_CLEAN }}
           anthropic_api_key: ${{ env.APIKEY_CLEAN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           prompt: |
-            Shep has asked the coach a question. Follow the "Answering a
-            review query" section of CLAUDE.md exactly.
-            Read the brief, weekly_review_latest.json (his question is in
-            athlete_response; any earlier exchanges this week are in
-            conversation - read them, this is one continuing thread and
-            he should never have to repeat himself), the review it refers
-            to in reviews/, plus
-            weekly_summary.json, computed_data.json, manual_log.json
-            (every session note), training_plan.json and
+            Shep has submitted the form. Read CLAUDE.md first, then work
+            out WHICH of the two things is waiting - both may be:
+
+            (A) A QUESTION. weekly_review_latest.json has an
+                athlete_response with athlete_response_status "logged".
+            (B) AN AMEND REQUEST. plan_proposal.json has status
+                "amend_requested" - his response is on the proposal
+                itself, in its athlete_response.
+
+            Read the brief, weekly_review_latest.json (earlier exchanges
+            this week are in conversation - read them, this is one
+            continuing thread and he should never have to repeat
+            himself), plan_proposal.json, the review it refers to in
+            reviews/, plus weekly_summary.json, computed_data.json,
+            manual_log.json (every session note), training_plan.json and
             race_prediction.json.
 
-            Answer him directly and honestly: what he said, whether the
-            evidence supports it, and what you are doing about it. If it
-            changes nothing, say so and say why - agreeing to keep him
-            happy is a failure, not a courtesy. Whenever you push back,
-            give the evidence you are pushing back with. If it does
-            change the read, write plan_proposal.json (status "pending",
-            id = today's date) so it still goes through his approval.
+            FOR (A), follow "Answering him" in CLAUDE.md. Answer
+            directly and honestly: what he said, whether the evidence
+            supports it, and what happens as a result. If it changes
+            nothing, say so and say why - agreeing to keep him happy is
+            a failure, not a courtesy. Whenever you push back, give the
+            evidence you are pushing back with. If it does change the
+            read, write plan_proposal.json (status "pending", id =
+            today's date). Then write the reply into
+            weekly_review_latest.json as "coach_reply" (markdown, a few
+            short paragraphs) with "coach_reply_at" (ISO timestamp) and
+            set "athlete_response_status" to "answered".
 
-            Write the reply into weekly_review_latest.json as
-            "coach_reply" (markdown, a few short paragraphs) with
-            "coach_reply_at" (ISO timestamp) and set
-            "athlete_response_status" to "answered".
+            FOR (B), follow step 2 of the weekly review procedure: read
+            his thoughts in the proposal's athlete_response, revise the
+            changes accordingly, keep the SAME id, and set status back
+            to "pending" so it returns to him for approval. Rewrite the
+            rationale to open by saying what you changed and why - that
+            text is what he reads on the dashboard, so it is his
+            acknowledgement that the amend landed. If part of what he
+            said does not change the plan, say that plainly there too,
+            with the evidence. Also set "proposal_status" to "pending"
+            in weekly_review_latest.json. Do NOT set
+            athlete_response_status for an amend - that field belongs to
+            the question thread.
 
-            Do NOT edit training_plan.json. Do NOT commit or push - the
+            Note his amends often carry a scheduling constraint for the
+            days immediately ahead ("I can't run Sunday"). Act on it
+            now; that is the whole reason this runs on submit rather
+            than waiting for Sunday.
+
+            Do NOT edit training_plan.json - only apply_review.py may,
+            and only after he approves. Do NOT commit or push, the
             workflow commits afterwards.
           claude_args: |
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash(python3:*)"
@@ -148,7 +175,12 @@ jobs:
           if git diff --cached --quiet; then
             echo "No reply written."
           else
-            git commit -m "Coach reply to review query $(TZ=Europe/London date +%F)"
+            MSG="Coach reply to review query"
+            case "${{ steps.query.outputs.modes }}" in
+              *amend*query*|*query*amend*) MSG="Coach reply and revised proposal" ;;
+              *amend*) MSG="Revised proposal after amend request" ;;
+            esac
+            git commit -m "$MSG $(TZ=Europe/London date +%F)"
             git pull --rebase origin main
             git push origin main
           fi

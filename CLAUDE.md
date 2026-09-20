@@ -411,6 +411,10 @@ DERIVED:  race_predictor.py       -> race_prediction.json
                                      execution from garmin_laps.json)
           build_decoupling.py     -> decoupling.json (aerobic durability
                                      from garmin_streams.json)
+          coach_reply_gate.py     -> (no file) decides whether a coach
+                                     session is waiting: a logged
+                                     question, or an amend_requested
+                                     proposal. Read by three workflows.
           build_computed.py       -> computed_data.json, flags_log.json,
                                      recovery_log.json (days back to
                                      pre-session normal, per session),
@@ -521,8 +525,31 @@ week: each new submission opens another turn, and `conversation` on
 And a question needn't be about the review at all — answer what he
 actually asked.
 
-Trigger: `weekly_review_latest.json` has an `athlete_response` and
-`athlete_response_status: "logged"`. The session must:
+**Trigger — two things can be waiting**, and `coach_reply_gate.py`
+decides which (unit tests in `test_coach_reply_gate.py`):
+
+- **A question.** `weekly_review_latest.json` has an `athlete_response`
+  with `athlete_response_status: "logged"` — a review that proposed
+  nothing has no gate to reach, so his response lands here.
+- **An amend request.** `plan_proposal.json` has status
+  `amend_requested` — a review that *did* propose gets his response
+  attached to the proposal instead. Handle it exactly as step 2 of the
+  weekly review procedure: revise the changes, same `id`, status back
+  to `pending`, and **rewrite the rationale to open with what you
+  changed and why**, because that text is what he reads on the
+  dashboard and it is his only acknowledgement that the amend landed.
+  Do not touch `athlete_response_status` — that belongs to the question
+  thread.
+
+Only the question used to fire this. On 20 Sep 2026 he amended a
+proposal at 18:13 saying he could not run the coming Sunday, and
+nothing happened: the revision would have waited six days to change a
+week starting the next morning, and he had to ask whether his comments
+had arrived at all. **His amends routinely carry a constraint for the
+days immediately ahead — act on it now, that is the entire point of
+running on submit.**
+
+For a question, the session must:
 
 1. Read this brief, `weekly_review_latest.json` — his question is in
    `athlete_response`, and any earlier exchanges this week are in
