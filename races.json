@@ -78,13 +78,13 @@
   },
   {
     "date": "2026-09-20",
-    "name": "Cheltenham Half Marathon",
+    "name": "Cheltenham Half",
     "distance_km": 21.0975,
-    "time_seconds": 4864,
-    "time_fmt": "1:21:04",
+    "time_seconds": 4863,
+    "time_fmt": "81:03.00",
     "tapered": true,
     "conditions_normal": true,
     "include_in_prediction": true,
-    "notes": "Target 1:22:00, band 1:21-1:23. 13C, ~12mph westerly, cloudy. Executed to the written splits: 5km 19:09, 10km 38:34, 15km 57:53, 20km 1:17:33, ahead of plan at every checkpoint and never gave it back. First 10km 38:34, second 10km 38:58 - a 24 second positive split. Km 20 (the climb) 4:10.9; km 21 3:38.3, the fastest of the race. Avg HR 164, max 174, RPE 8, achilles 0. 17 seconds off his lifetime half PB of 1:20:47, at 50. ADDED BY HAND: the race-log form sheet is empty, so this never reached sheets_pull - see AUTOMATION_SETUP.md. A later form submission for this date will overwrite this entry, which is fine."
+    "notes": "Ran as planned, gel at about 30mins, from about 14k upped the pace as feeling good"
   }
 ]
