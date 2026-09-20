@@ -28,8 +28,8 @@
     "name": "Guy Fawkes 5",
     "distance_km": 8.05,
     "status": "confirmed",
-    "intent": "race",
-    "notes": "5 miles, and the first real race after Cheltenham. Clean run-in now the 31 Oct XC is off \u2014 nothing hard in the seven days before it. Club record is 29:12; current fitness (Riegel off both the 5K and 10K, which agree almost exactly) projects ~29:40 \u2014 about 28s/1.6% short, not banked. Worth revisiting once Cheltenham gives a fresher fitness read, but the Oct block between the two (Crete 10K fun run, 18 Oct XC as a hard off-road effort) isn't currently built as a sharpening block for this."
+    "intent": "target",
+    "notes": "5 miles, and the first race he actually races after Cheltenham. Clean run-in: nothing hard in the seven days before it. Club record 29:12. UPDATED after Cheltenham (1:21:04, 20 Sep 2026): Riegel off that race projects 29:11 for 5 miles \u2014 one second inside the record, where the pre-race projection off Jun/Jul data said 29:40. So it has moved from 28 seconds away to level, which means it is genuinely on the line rather than banked: Riegel's error bars are wider than one second, and the October block between (Crete 10K as a fun run, 18 Oct XC as a hard off-road effort) is not built as a sharpening block for it. If he wants the record, the fortnight before needs to be written for it. Recompute from race_prediction.json once the Cheltenham result is logged."
   },
   {
     "date": "2026-12-13",
@@ -45,7 +45,7 @@
     "distance_km": 16.09,
     "status": "confirmed",
     "intent": "target",
-    "notes": "Club record up for grabs at 1:01:00. Course confirmed flat, so the Riegel assumption holds without a downward adjustment: current fitness (Jun/Jul 2026 races) puts a flat, well-paced 10 miles at roughly 61:10-62:00 \u2014 right on the current fitness line, not banked. Falls mid-way through the Manchester base-build, so needs a short taper built into that block rather than being run off unbroken loading."
+    "notes": "Club record up for grabs at 1:01:00. Course confirmed flat, so Riegel holds without a downward adjustment. UPDATED after Cheltenham (1:21:04, 20 Sep 2026): projects 1:00:50 for 10 miles \u2014 about 10 seconds inside the record, against 61:10-62:00 from the pre-race data. Still not banked, but it is now the right side of the line rather than the wrong one. Falls mid-way through the Manchester base-build, so it needs a short taper written into that block rather than being run off unbroken loading. Recompute from race_prediction.json once the Cheltenham result is logged."
   },
   {
     "date": "2027-02-27",
@@ -61,6 +61,6 @@
     "distance_km": 42.195,
     "status": "confirmed",
     "intent": "target",
-    "notes": "Goal sub-3 (4:16/km). Volume, not fitness, is the binding constraint."
+    "notes": "Goal sub-3 (4:16/km). Volume, not fitness, is the binding constraint \u2014 and Cheltenham widened that gap rather than closing it: 1:21:04 projects a 2:49 marathon, against 2:52 before. The fitness is comfortably there on paper; what is missing is that he has never run one, his longest run ever is ~29 km, and carbohydrate at marathon pace in marathon quantity is untested."
   }
 ]
