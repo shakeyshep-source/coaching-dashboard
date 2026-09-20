@@ -132,7 +132,7 @@ So if a result is missing, check in this order:
    starts a new one, and the export keeps reading the empty original.
    Pin `RACE_LOG_GID` if that happens.
 
-Note the time is entered as **minutes and seconds, not hours** — 1:21:04
+Note the time is entered as **minutes and seconds, not hours** — 1:21:03
 is 81 and 4.
 
 ## 4. Merge this branch to `main`
