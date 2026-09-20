@@ -16,28 +16,20 @@
     "notes": "Fun race with beers on the way over. Falls in the HM recovery window, which is fine \u2014 no taper."
   },
   {
-    "date": "2026-10-18",
-    "name": "Cross country",
-    "distance_km": null,
-    "status": "confirmed",
-    "intent": "not raced",
-    "notes": "Trail shoes, no spikes. Hard off-road effort, not a race. One of the three XC fixtures needed to complete the league."
-  },
-  {
     "date": "2026-11-01",
     "name": "Guy Fawkes 5",
     "distance_km": 8.05,
     "status": "confirmed",
     "intent": "target",
-    "notes": "5 miles, and the first race he actually races after Cheltenham. Clean run-in: nothing hard in the seven days before it. Club record 29:12. UPDATED after Cheltenham (1:21:04, 20 Sep 2026): Riegel off that race projects 29:11 for 5 miles \u2014 one second inside the record, where the pre-race projection off Jun/Jul data said 29:40. So it has moved from 28 seconds away to level, which means it is genuinely on the line rather than banked: Riegel's error bars are wider than one second, and the October block between (Crete 10K as a fun run, 18 Oct XC as a hard off-road effort) is not built as a sharpening block for it. If he wants the record, the fortnight before needs to be written for it. Recompute from race_prediction.json once the Cheltenham result is logged."
+    "notes": "5 miles, and the first race he actually races after Cheltenham. Club record 29:12. Riegel off Cheltenham (1:21:04, 20 Sep 2026) projects 29:11 \u2014 one second inside, where the pre-race projection off Jun/Jul data said 29:40. Level, not banked: Riegel's error bars are wider than a second. THE RUN-IN IS NOW CLEAR AND DELIBERATE: he cancelled the 18 Oct XC on 20 Sep to make it so, having already dropped 31 Oct. Nothing hard sits in the four weeks before this except Crete on 4 Oct, which is a fun run with beers and no taper. That leaves ~4 weeks after HM recovery to write as an actual sharpening block \u2014 short, fast work at 5-mile pace rather than half-marathon volume \u2014 which is what the record needs and what was missing when it read 29:40. He has paid the XC league for this; do not let the block drift back into general aerobic work. Recompute from race_prediction.json once Cheltenham is logged."
   },
   {
     "date": "2026-12-13",
     "name": "Cross country",
     "distance_km": null,
-    "status": "confirmed",
+    "status": "possible",
     "intent": "not raced",
-    "notes": "Trail shoes. Sits in base / early marathon build \u2014 no conflict. One of the three XC fixtures needed to complete the league."
+    "notes": "Trail shoes, no spikes. Sits in base / early marathon build \u2014 no conflict. OPTIONAL again: the XC league needed 3 of 4 and he has now dropped both 31 Oct and 18 Oct, so the league cannot be completed and this fixture is no longer load-bearing. Run it if he fancies a hard off-road effort; skip it without cost."
   },
   {
     "date": "2027-01-31",
@@ -51,9 +43,9 @@
     "date": "2027-02-27",
     "name": "Cross country",
     "distance_km": null,
-    "status": "confirmed",
+    "status": "possible",
     "intent": "not raced",
-    "notes": "Trail shoes. Seven weeks out from Manchester (18 Apr), inside the marathon build. The third of the three XC fixtures needed to complete the league."
+    "notes": "Trail shoes. Seven weeks out from Manchester (18 Apr), inside the marathon build. OPTIONAL again now the league is out of reach \u2014 which removes the one scheduling problem flagged for the winter: this no longer has to happen in the middle of marathon-specific work. Default to skipping it unless he says otherwise."
   },
   {
     "date": "2027-04-18",

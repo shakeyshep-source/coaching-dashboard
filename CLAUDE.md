@@ -203,7 +203,6 @@ Adidas Boston rejected as too firm.
   - **Crete 10K, Sun 4 Oct** — explicitly a fun race with beers on the
     way over, not a target; it falls in the HM recovery window, and
     that is fine, but do not write a taper for it.
-  - **XC Sun 18 Oct**
   - **Guy Fawkes 5, Sun 1 Nov** — 5 miles, entered, and the first race
     he will actually race after Cheltenham. It now has a clean run-in:
     nothing hard in the seven days before it.
@@ -211,16 +210,20 @@ Adidas Boston rejected as too firm.
   - **XC Sat 27 Feb 2027** — sits 7 weeks out from Manchester, inside
     the marathon build.
 
-  **The XC league needs 3 of 4 fixtures to count, and he has spent the
-  spare one.** There was a fourth on Sat 31 Oct; he is skipping it
-  because Guy Fawkes 5 is the next morning, which is the right call —
-  a hard off-road Saturday takes the legs out of a 5-miler, and the
-  5-miler is the one that matters. The consequence is that 18 Oct,
-  13 Dec and 27 Feb are now all **required**: there is no longer a
-  fixture he can miss and still complete the league. Treat a clash or
-  a niggle around any of those three as a real scheduling problem, not
-  a shrug. (There is no race on 25 Oct — an earlier version of this
-  brief had one; it does not exist.)
+  **The XC league is out of reach, deliberately.** It needed 3 of 4
+  fixtures. He dropped Sat 31 Oct first (Guy Fawkes 5 was the next
+  morning), then cancelled Sun 18 Oct on 20 Sep to clear a proper
+  two-week sharpening run-in for Guy Fawkes, where Cheltenham had just
+  put the club 5-mile record on the line. Two of four is not a
+  completion, and he knows it.
+
+  So **13 Dec and 27 Feb are optional again, not required** — do not
+  treat either as a fixture that has to happen. That is a gain, not a
+  loss: 27 Feb sat seven weeks out from Manchester, inside
+  marathon-specific work, and was the one scheduling problem flagged
+  for the winter. Default to skipping it unless he says otherwise.
+  (There is no race on 25 Oct — an earlier version of this brief had
+  one; it does not exist.)
 
   **None will be run flat out — he does not wear spikes for them, he
   runs them in trail shoes.** So treat them as hard off-road efforts,
