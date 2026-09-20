@@ -1,8 +1,8 @@
 {
   "id": "2026-09-20",
   "created": "2026-09-20T18:00:00+01:00",
-  "status": "amend_requested",
-  "rationale": "training_plan.json has nothing written past race day, and a maximal hilly half marathon (RPE 8, HR to 174 with a sprint finish) asks more recovery than a training run over the same distance. The achilles history means an unplanned week defaults to 'whatever feels right today', which is the exact pattern that used to go wrong, so this proposes a genuine recovery week rather than leaving the gap. ~46km, easy only, no quality: Tuesday-Saturday build gently from short and very easy back to a normal easy day, Sunday's long run returns at 14km with no pace target. Monday stays the normal rest day. This is the first Saturday since May without a tempo or interval session - deliberate, not an oversight. The Saturday/Wednesday quality structure resumes once achilles and recovery markers confirm clean through this week, not on a fixed date. This bridges toward Crete 10K (4 Oct, still a fun run needing no taper) and leaves the four weeks after that to be written as the Guy Fawkes sharpening block the fixtures note now calls for - that gets shaped next Sunday once we see how this week's recovery actually goes.",
+  "status": "pending",
+  "rationale": "REVISED 20 Sep after his amend. Two things in it.\n\n(1) He cannot run Sunday 27th. The long run moves to Saturday 26th and Sunday becomes rest, with Tue-Fri stepped up a kilometre each to keep the week's progression intact: 5, 6, 7, 8, then 14 on Saturday. That is ~40km against the ~46km originally proposed. The shortfall is deliberate rather than reluctant \u2014 it is a recovery week after a maximal half, and less is the safer error.\n\n(2) He pushed back on the review's reading of the opening 5km, and he is right. The review called it 'a hard opening 5km that the finish and decoupling forgave rather than validated'. His account \u2014 going slightly quicker but holding back, a net downhill opening, and tucking in out of a slight headwind \u2014 is better supported by the data than the review's hedge was. His HR over km 1-6 ran 152, 159, 163, 161, 165, 163 against a race average of 164: he was settling INTO race effort by km 3, not exceeding it. Alice's elevation deltas put km 1-5 at 14m net downhill. And the two facts that settle it are that his last kilometre (3:38.3) was the fastest of the race and the second 10km was only 24 seconds slower than the first \u2014 neither happens off an opening that was genuinely too hard. The review under-weighted the drafting and the gradient. Validated, not forgiven.\n\nEverything else stands: easy only, no quality, no strides, the first Saturday since May without a session, and the Saturday/Wednesday structure resuming on evidence rather than a date. The Guy Fawkes sharpening block still gets shaped next Sunday, once this week's recovery is visible.\n\nASSUMPTION worth confirming: that Sunday alone is unavailable. If he is away for several days, this needs rewriting again, not nudging.",
   "changes": [
     {
       "date": "2026-09-21",
@@ -28,30 +28,30 @@
     {
       "date": "2026-09-24",
       "session_type": "easy",
-      "target_distance_km": 6,
+      "target_distance_km": 7,
       "target_pace": null,
-      "notes": "Easy 6km - building duration gently, still conversational throughout. First day back on anything like a normal easy run, but the target is time on feet, not a number."
+      "notes": "Easy 7km - building duration gently, still conversational throughout. First day back on anything like a normal easy run."
     },
     {
       "date": "2026-09-25",
       "session_type": "easy",
-      "target_distance_km": 7,
+      "target_distance_km": 8,
       "target_pace": null,
-      "notes": "Easy 7km."
+      "notes": "Easy 8km, conversational."
     },
     {
       "date": "2026-09-26",
-      "session_type": "easy",
-      "target_distance_km": 8,
-      "target_pace": null,
-      "notes": "Easy 8km. No strides, no tempo - first Saturday since May without a quality session, and that is deliberate, not a gap to fill."
-    },
-    {
-      "date": "2026-09-27",
       "session_type": "long",
       "target_distance_km": 14,
       "target_pace": null,
-      "notes": "First long run back: 14km, genuinely easy throughout, no pace target. This is aerobic volume, not a rehearsal for anything - under 75 minutes at an easy pace, so no fuelling need."
+      "notes": "First long run back, MOVED from Sunday because he cannot run the 27th. 14km genuinely easy throughout, no pace target. Aerobic volume, not a rehearsal for anything. Still the first Saturday since May without a quality session - deliberate, not a gap to fill."
+    },
+    {
+      "date": "2026-09-27",
+      "session_type": "rest",
+      "target_distance_km": null,
+      "target_pace": null,
+      "notes": "Rest - he cannot run today, and after a recovery week ending in the long run on Saturday that is the right shape anyway."
     }
   ],
   "athlete_response": {
@@ -59,5 +59,6 @@
     "review_date": "2026-09-20",
     "decision": "amend",
     "thoughts": "So, I did go out slightly quicker but I was holding back and the general course elevation seemed slightly down.. Also tucked in when there was a slight headwind.\nThe up hill at 19/20 was lots of up down and turns, so I just went on effort rather than worry about pace.. I caught so many on the run in from 14k, super happy with how it went and only 17sec off an all time pb which I only just realised an hour ago.\nRe next week I can't run Sunday"
-  }
+  },
+  "revised": "2026-09-20T19:00:00+01:00"
 }
