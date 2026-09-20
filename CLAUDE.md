@@ -31,9 +31,12 @@ daily, weekly review, or ad-hoc — starts from this brief.
 
 - 50, male. Competitive club runner, strong aerobic background,
   based Gloucester, UK.
-- **Lifetime PBs:** 5K 16:33, 10K 35:58, Mile 5:08. Historical context
-  for what he has been capable of — NOT current form, and deliberately
-  not fed to the predictor.
+- **Lifetime PBs:** 5K 16:33, 10K 35:58, Half marathon 1:20:47, Mile 5:08.
+  Historical context for what he has been capable of — NOT current form,
+  and deliberately not fed to the predictor. Note the half: Cheltenham
+  2026 (1:21:04, at 50) came **17 seconds** off it, which he only
+  realised afterwards. So unlike the 5K and 10K marks, his half PB is
+  not a distant younger-man number — it is live, and one good day away.
 - **Current form (2026 races):** 5K 17:48 (Cardiff, Jul, tapered),
   10K 38:06 (Gloucester, Jun, untapered), Mile 5:13. These are what
   `race_predictor.py` projects from.
