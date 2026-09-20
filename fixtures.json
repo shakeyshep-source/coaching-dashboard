@@ -21,7 +21,7 @@
     "distance_km": 8.05,
     "status": "confirmed",
     "intent": "target",
-    "notes": "5 miles, and the first race he actually races after Cheltenham. Club record 29:12. Riegel off Cheltenham (1:21:04, 20 Sep 2026) projects 29:11 \u2014 one second inside, where the pre-race projection off Jun/Jul data said 29:40. Level, not banked: Riegel's error bars are wider than a second. THE RUN-IN IS NOW CLEAR AND DELIBERATE: he cancelled the 18 Oct XC on 20 Sep to make it so, having already dropped 31 Oct. Nothing hard sits in the four weeks before this except Crete on 4 Oct, which is a fun run with beers and no taper. That leaves ~4 weeks after HM recovery to write as an actual sharpening block \u2014 short, fast work at 5-mile pace rather than half-marathon volume \u2014 which is what the record needs and what was missing when it read 29:40. He has paid the XC league for this; do not let the block drift back into general aerobic work. Recompute from race_prediction.json once Cheltenham is logged."
+    "notes": "5 miles, and the first race he actually races after Cheltenham. Club record 29:12. TWO PROJECTIONS, AND THE GAP BETWEEN THEM IS THE POINT: Riegel off Cheltenham alone (1:21:04) gives 29:11, level with the record. race_prediction.json, which blends four clean races including an untapered June 10K and a July 5K in 24-25C heat, gives 29:34 \u2014 22 seconds SHORT. The blended figure is the more honest planning number; the single-race figure is what he is capable of on his best current day. Treat the record as reachable but genuinely requiring the block, not as something current fitness hands him. THE RUN-IN IS CLEAR AND DELIBERATE: he cancelled the 18 Oct XC on 20 Sep to make it so, having already dropped 31 Oct, which costs him the XC league. Nothing hard sits in the four weeks before this except Crete on 4 Oct, a fun run with beers and no taper. Those ~4 weeks after HM recovery are to be written as an actual sharpening block \u2014 short, fast work at 5-mile pace, not half-marathon volume. Do not let it drift into general aerobic work; he has paid the league for it."
   },
   {
     "date": "2026-12-13",
@@ -37,7 +37,7 @@
     "distance_km": 16.09,
     "status": "confirmed",
     "intent": "target",
-    "notes": "Club record up for grabs at 1:01:00. Course confirmed flat, so Riegel holds without a downward adjustment. UPDATED after Cheltenham (1:21:04, 20 Sep 2026): projects 1:00:50 for 10 miles \u2014 about 10 seconds inside the record, against 61:10-62:00 from the pre-race data. Still not banked, but it is now the right side of the line rather than the wrong one. Falls mid-way through the Manchester base-build, so it needs a short taper written into that block rather than being run off unbroken loading. Recompute from race_prediction.json once the Cheltenham result is logged."
+    "notes": "Club record up for grabs at 1:01:00. Course confirmed flat, so Riegel holds without a downward adjustment. TWO PROJECTIONS: off Cheltenham alone (1:21:04) 1:00:50, ten seconds inside; off race_prediction.json's four-race blend 1:01:38, 38 seconds short. The blend is the planning number. Either way this is closer than it was in September, and it has four months of marathon base-building in front of it \u2014 the aerobic work for Manchester is exactly the work that moves a 10-mile time. Falls mid-way through that build, so it needs a short taper written into the block rather than being run off unbroken loading."
   },
   {
     "date": "2027-02-27",
@@ -53,6 +53,6 @@
     "distance_km": 42.195,
     "status": "confirmed",
     "intent": "target",
-    "notes": "Goal sub-3 (4:16/km). Volume, not fitness, is the binding constraint \u2014 and Cheltenham widened that gap rather than closing it: 1:21:04 projects a 2:49 marathon, against 2:52 before. The fitness is comfortably there on paper; what is missing is that he has never run one, his longest run ever is ~29 km, and carbohydrate at marathon pace in marathon quantity is untested."
+    "notes": "Goal sub-3 (4:16/km). Volume, not fitness, is the binding constraint, and Cheltenham widened the margin rather than closing a gap: race_prediction.json now projects 2:51:16 off four blended races (2:49 off Cheltenham alone), against 2:52 before the race. The fitness is comfortably there on paper. What is missing is that he has never run one, his longest run ever is ~29 km, and carbohydrate at marathon pace in marathon quantity is untested."
   }
 ]
