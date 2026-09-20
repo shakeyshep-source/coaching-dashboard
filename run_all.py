@@ -37,6 +37,11 @@ STEPS = [
 FORMS_ONLY_STEPS = [
     ("sheets_pull.py", "Google Forms sync"),
     ("apply_review.py", "Weekly review decision gate"),
+    # Logging a race is the one form submission whose whole point is to
+    # move the predictions, and leaving this out meant they stayed stale
+    # until the next morning's full pull. It is pure arithmetic over
+    # races.json - no network, no cost.
+    ("race_predictor.py", "Race prediction"),
     ("build_weekly_summary.py", "Weekly summary build"),
     ("build_computed.py", "Computed layer build"),
 ]

@@ -206,9 +206,14 @@ def pull_races():
         time_fmt = None
         if minutes is not None and seconds is not None:
             total_seconds = int(minutes * 60 + seconds)
-            m = int(total_seconds // 60)
-            s = total_seconds - m * 60
-            time_fmt = f"{m}:{s:05.2f}"
+            # Write it the way a runner writes it. The old form produced
+            # "81:03.00" for a half marathon - not wrong, but it does not
+            # match the hand-entered history ("1:07:04", "38:06") and it
+            # renders straight onto the Races tab.
+            hours, rem = divmod(total_seconds, 3600)
+            mins, secs = divmod(rem, 60)
+            time_fmt = (f"{hours}:{mins:02d}:{secs:02d}" if hours
+                        else f"{mins}:{secs:02d}")
         entries.append({
             "date": date,
             "name": row.get("Race name", "").strip(),

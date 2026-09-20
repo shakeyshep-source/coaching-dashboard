@@ -7,31 +7,31 @@
   },
   "predictions": {
     "5K": {
-      "predicted_time_fmt": "17:51.43",
+      "predicted_time_fmt": "17:51.39",
       "predicted_time_seconds": 1071.4,
-      "low_estimate_fmt": "17:22.38",
-      "high_estimate_fmt": "18:20.49",
+      "low_estimate_fmt": "17:22.34",
+      "high_estimate_fmt": "18:20.44",
       "note": "Based on 5 clean race result(s)."
     },
     "10K": {
-      "predicted_time_fmt": "37:13.87",
-      "predicted_time_seconds": 2233.9,
-      "low_estimate_fmt": "36:13.29",
-      "high_estimate_fmt": "38:14.44",
+      "predicted_time_fmt": "37:13.77",
+      "predicted_time_seconds": 2233.8,
+      "low_estimate_fmt": "36:13.20",
+      "high_estimate_fmt": "38:14.35",
       "note": "Based on 5 clean race result(s)."
     },
     "Half Marathon": {
-      "predicted_time_fmt": "1:22:08.81",
-      "predicted_time_seconds": 4928.8,
-      "low_estimate_fmt": "1:19:55.15",
-      "high_estimate_fmt": "1:24:22.46",
+      "predicted_time_fmt": "1:22:08.61",
+      "predicted_time_seconds": 4928.6,
+      "low_estimate_fmt": "1:19:54.95",
+      "high_estimate_fmt": "1:24:22.26",
       "note": "Based on 5 clean race result(s). Reasonably grounded if based on a 10K+ result; more of a stretch if only projected from 5K."
     },
     "Marathon": {
-      "predicted_time_fmt": "2:51:16.23",
-      "predicted_time_seconds": 10276.2,
-      "low_estimate_fmt": "2:46:37.57",
-      "high_estimate_fmt": "2:55:54.88",
+      "predicted_time_fmt": "2:51:15.81",
+      "predicted_time_seconds": 10275.8,
+      "low_estimate_fmt": "2:46:37.15",
+      "high_estimate_fmt": "2:55:54.47",
       "note": "Based on 5 clean race result(s). CAVEAT: marathon projections from short-race data are unreliable \u2014 doesn't account for fuelling or sustained multi-hour effort. Rough ballpark only."
     }
   },
@@ -41,7 +41,7 @@
     "Cardiff 5K (previous edition)",
     "Gloucester 10K",
     "Cardiff 5K",
-    "Cheltenham Half Marathon"
+    "Cheltenham Half"
   ],
   "excluded_races": [
     {

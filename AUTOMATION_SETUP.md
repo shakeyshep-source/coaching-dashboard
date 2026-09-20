@@ -102,30 +102,38 @@ To test: **Actions tab → Weekly coach review → Run workflow** — a
 review + (if warranted) a proposal should appear on the Coach tab a few
 minutes later.
 
-### The race-log form has never worked — check it before the next race
+### The race log is a separate form — remember it exists
 
-`sheets_pull.py` reads the race log from spreadsheet
-`14vCnLI1wYWep2FAyTotvdp2-wgsWawE_B19aE-oPNAI`, and on 20 Sep 2026 that
-sheet was completely empty — no rows and no header, which is what a
-Google Form response sheet looks like when it has **never received a
-submission**:
+On 20 Sep 2026 the Cheltenham result did not appear, and the pull said:
 
 ```
 Pulling race log...
   race log: first tab - 0 row(s), 0 with a usable date
-  0 sheet entries -> 7 total in races.json
 ```
 
-Nobody noticed because Cheltenham was the first race since the system
-was built; the seven historical results in `races.json` were put there
-by other means. The Cheltenham result was added by hand for the same
-reason, so `race_predictor.py` had it — a later form submission for
-that date overwrites the hand entry harmlessly.
+Nothing was broken. The sheet was linked correctly and had its headers;
+there had simply never been a submission, because the race log is its
+own form and it was the first race since the system was built. What had
+been submitted that evening was the *weekly review* form. Four forms is
+easy to lose track of.
 
-To fix: open the race-result Google Form, **Responses → link to
-Sheets**, and confirm the destination is that spreadsheet ID (or update
-`RACE_LOG_SHEET_ID` to whatever it actually is). Then submit a test
-entry and check it appears in the pull log as a row count above zero.
+So if a result is missing, check in this order:
+
+1. **Was the race form actually submitted?** Open the sheet — headers
+   but no rows means no submission, not a fault.
+2. **Did a sync run since?** The race sheet has no Apps Script trigger,
+   so a submission waits for the hourly backstop rather than firing the
+   pipeline within a minute. Adding the trigger (step 6) fixes that.
+3. **Column titles.** The parser reads by name: `Date`, `Race name`,
+   `Distance`, `Time minutes`, `Time seconds`, `Tapered for this race`,
+   `Conditions normal`, `Standalone max effort race`, `Notes`. A
+   mismatch fails silently — the row is skipped, not reported.
+4. **Tabs.** If a form is ever relinked, Google freezes the old tab and
+   starts a new one, and the export keeps reading the empty original.
+   Pin `RACE_LOG_GID` if that happens.
+
+Note the time is entered as **minutes and seconds, not hours** — 1:21:04
+is 81 and 4.
 
 ## 4. Merge this branch to `main`
 
