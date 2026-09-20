@@ -7,32 +7,32 @@
   },
   "predictions": {
     "5K": {
-      "predicted_time_fmt": "17:54.96",
-      "predicted_time_seconds": 1075.0,
-      "low_estimate_fmt": "17:25.90",
-      "high_estimate_fmt": "18:24.01",
-      "note": "Based on 4 clean race result(s)."
+      "predicted_time_fmt": "17:51.43",
+      "predicted_time_seconds": 1071.4,
+      "low_estimate_fmt": "17:22.38",
+      "high_estimate_fmt": "18:20.49",
+      "note": "Based on 5 clean race result(s)."
     },
     "10K": {
-      "predicted_time_fmt": "37:21.21",
-      "predicted_time_seconds": 2241.2,
-      "low_estimate_fmt": "36:20.63",
-      "high_estimate_fmt": "38:21.78",
-      "note": "Based on 4 clean race result(s)."
+      "predicted_time_fmt": "37:13.87",
+      "predicted_time_seconds": 2233.9,
+      "low_estimate_fmt": "36:13.29",
+      "high_estimate_fmt": "38:14.44",
+      "note": "Based on 5 clean race result(s)."
     },
     "Half Marathon": {
-      "predicted_time_fmt": "1:22:25.01",
-      "predicted_time_seconds": 4945.0,
-      "low_estimate_fmt": "1:20:11.36",
-      "high_estimate_fmt": "1:24:38.66",
-      "note": "Based on 4 clean race result(s). Reasonably grounded if based on a 10K+ result; more of a stretch if only projected from 5K."
+      "predicted_time_fmt": "1:22:08.81",
+      "predicted_time_seconds": 4928.8,
+      "low_estimate_fmt": "1:19:55.15",
+      "high_estimate_fmt": "1:24:22.46",
+      "note": "Based on 5 clean race result(s). Reasonably grounded if based on a 10K+ result; more of a stretch if only projected from 5K."
     },
     "Marathon": {
-      "predicted_time_fmt": "2:51:50.01",
-      "predicted_time_seconds": 10310.0,
-      "low_estimate_fmt": "2:47:11.35",
-      "high_estimate_fmt": "2:56:28.66",
-      "note": "Based on 4 clean race result(s). CAVEAT: marathon projections from short-race data are unreliable \u2014 doesn't account for fuelling or sustained multi-hour effort. Rough ballpark only."
+      "predicted_time_fmt": "2:51:16.23",
+      "predicted_time_seconds": 10276.2,
+      "low_estimate_fmt": "2:46:37.57",
+      "high_estimate_fmt": "2:55:54.88",
+      "note": "Based on 5 clean race result(s). CAVEAT: marathon projections from short-race data are unreliable \u2014 doesn't account for fuelling or sustained multi-hour effort. Rough ballpark only."
     }
   },
   "vo2max_note": "VO2max is 60.0 (up 0.0 since earliest reading).",
@@ -40,7 +40,8 @@
     "Bourton Mile",
     "Cardiff 5K (previous edition)",
     "Gloucester 10K",
-    "Cardiff 5K"
+    "Cardiff 5K",
+    "Cheltenham Half Marathon"
   ],
   "excluded_races": [
     {
@@ -60,12 +61,12 @@
     "zones": [
       {
         "name": "Easy / recovery",
-        "pace": "4:48/km - 5:11/km",
+        "pace": "4:47/km - 5:10/km",
         "purpose": "Most of the week. Conversational - if in doubt, slower."
       },
       {
         "name": "Long run",
-        "pace": "4:36/km - 4:59/km",
+        "pace": "4:35/km - 4:58/km",
         "purpose": "Sunday. Steady, not easy-plus - the last few km may drift quicker."
       },
       {
@@ -75,31 +76,31 @@
       },
       {
         "name": "Threshold / tempo",
-        "pace": "3:50/km",
+        "pace": "3:49/km",
         "purpose": "Comfortably hard, ~1hr race pace. The Saturday session."
       },
       {
         "name": "10K pace",
-        "pace": "3:44/km",
+        "pace": "3:43/km",
         "purpose": "The '10K effort' in interval sessions - 1km reps sit here."
       },
       {
         "name": "5K pace",
-        "pace": "3:35/km",
+        "pace": "3:34/km",
         "purpose": "Short, sharp reps of 3-5 minutes."
       },
       {
         "name": "Interval / VO2max",
-        "pace": "3:29/km",
+        "pace": "3:28/km",
         "purpose": "3K race pace. Hard 800m-1km reps with full recovery."
       },
       {
         "name": "Reps / strides",
-        "pace": "3:20/km",
+        "pace": "3:19/km",
         "purpose": "1500m pace. 200-400m reps and strides - speed, not stamina."
       }
     ],
-    "basis": "Derived from 4 clean race result(s) via the same Riegel projection as the time predictions, so these update themselves whenever a new race is logged.",
+    "basis": "Derived from 5 clean race result(s) via the same Riegel projection as the time predictions, so these update themselves whenever a new race is logged.",
     "caveat": "Guides, not gospel. Heat, hills, wind and fatigue all justify running slower than the table on any given day - effort beats pace. Super shoes flatter pace by roughly 5-8 sec/km, so a session in racers is not directly comparable."
   },
   "recent_key_sessions": [
