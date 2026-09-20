@@ -31,15 +31,21 @@ daily, weekly review, or ad-hoc — starts from this brief.
 
 - 50, male. Competitive club runner, strong aerobic background,
   based Gloucester, UK.
-- **Lifetime PBs:** 5K 16:33, 10K 35:58, Mile 5:08. Historical context
-  for what he has been capable of — NOT current form, and deliberately
-  not fed to the predictor.
-- **Half marathon PB: ~1:20:46, DERIVED — he has never stated it.** It
-  comes from his remark that Cheltenham (1:21:03, 20 Sep 2026, at 50)
-  was "only 17sec off an all time pb". Treat it as approximate and ask
-  him for the real figure before quoting it as a record. What is solid
-  regardless: unlike the 5K and 10K marks, his half PB is not a distant
-  younger-man number — it is live, and one good day away.
+- **Lifetime PBs:** 5K 16:33, 10K 35:58, **Half marathon 1:20:46**,
+  Mile 5:08. His own figures. Historical context for what he has been
+  capable of — NOT current form, and deliberately not fed to the
+  predictor.
+- **The half PB is the exception: it is live.** Cheltenham on 20 Sep
+  2026 went 1:21:03 — **17 seconds** short of it, at 50, on a rolling
+  course, off a build aimed at discipline rather than volume. Unlike
+  the 5K and 10K marks this is not a distant younger-man number, and
+  it is the one lifetime best currently in reach.
+  **But nothing in `fixtures.json` is a half marathon.** Manchester is
+  the marathon; there is no half between now and April 2027 where he
+  could take it. If he wants that PB it needs putting in the calendar —
+  and a tune-up half in Feb/March 2027 is standard marathon-build
+  practice anyway, so the two wants coincide rather than compete.
+  Raise it when the winter block is written, not before.
 - **Current form (2026 races):** 5K 17:48 (Cardiff, Jul, tapered),
   10K 38:06 (Gloucester, Jun, untapered), Mile 5:13. These are what
   `race_predictor.py` projects from.
