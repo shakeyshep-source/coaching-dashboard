@@ -12,7 +12,9 @@
     "decision": "approve",
     "thoughts": "Usual warm up?"
   },
-  "athlete_response_status": "logged",
+  "athlete_response_status": "answered",
+  "coach_reply": "Shep — yes, exactly as written: **2km easy + 4 strides**, then straight into the inhaler protocol. That's not a new idea for today, it's the same shape you've already run this taper — 12 Sep's sharpener warmed up over 2.01km, and you've had strides in twice since (15 Sep, 19 Sep). Race day isn't the place to trial anything different, and it doesn't need to be — this has already worked.\n\nOn sequencing, since the two inhaler timings sit inside the warm-up window: jog the 2km first, run the 4 strides, then Symbicort at gun-minus-20 and salbutamol at gun-minus-15, finishing with a couple of minutes in hand to get to the line. If the strides run long, take Symbicort as soon as you're through them rather than pushing it later — the 20-minute figure is there to let it start working before the gun, not to be cut fine.\n\nNo change to the plan — this was already in Saturday's entry, today's question just confirms it. Achilles 0 through the whole taper, recovery trend stable, sharpener 3 sec/km quick, conditions cooling all week. Everything that was in your control going into this one is done. Go run it.",
+  "coach_reply_at": "2026-09-20T06:45:00Z",
   "conversation": [
     {
       "athlete_timestamp": "13/09/2026 15:41:34",
