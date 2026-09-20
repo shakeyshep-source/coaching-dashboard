@@ -81,7 +81,7 @@
     "name": "Cheltenham Half",
     "distance_km": 21.0975,
     "time_seconds": 4863,
-    "time_fmt": "81:03.00",
+    "time_fmt": "1:21:03",
     "tapered": true,
     "conditions_normal": true,
     "include_in_prediction": true,
