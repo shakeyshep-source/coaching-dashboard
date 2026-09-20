@@ -6568,5 +6568,35 @@
     "cadence": 159.578125,
     "aerobic_te": 2.4000000953674316,
     "anaerobic_te": 1.2999999523162842
+  },
+  {
+    "date": "2026-09-20",
+    "activity_id": 24429433166,
+    "name": "Cheltenham Running",
+    "type": "running",
+    "distance_km": 2.28,
+    "duration_min": 11.3,
+    "avg_pace_min_per_km": 4.98,
+    "avg_hr": 143.0,
+    "max_hr": 155.0,
+    "elevation_gain_m": 11.0,
+    "cadence": 171.8125,
+    "aerobic_te": 2.200000047683716,
+    "anaerobic_te": 0.30000001192092896
+  },
+  {
+    "date": "2026-09-20",
+    "activity_id": 24429437601,
+    "name": "Cheltenham Running",
+    "type": "running",
+    "distance_km": 20.99,
+    "duration_min": 81.2,
+    "avg_pace_min_per_km": 3.87,
+    "avg_hr": 164.0,
+    "max_hr": 174.0,
+    "elevation_gain_m": 577.0,
+    "cadence": 179.328125,
+    "aerobic_te": 5.0,
+    "anaerobic_te": 0.8999999761581421
   }
 ]

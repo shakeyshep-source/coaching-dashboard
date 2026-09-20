@@ -2974,6 +2974,29 @@
       "unreliable_reasons": [
         "quality session \u2014 halves are not comparable"
       ]
+    },
+    {
+      "date": "2026-09-20",
+      "activity_id": 24429437601,
+      "decoupling_pct": 2.92,
+      "within_threshold": true,
+      "analysed_min": 71.0,
+      "first_half": {
+        "pace": "3:52",
+        "avg_hr": 162.6,
+        "ef": 0.0265
+      },
+      "second_half": {
+        "pace": "3:53",
+        "avg_hr": 167.2,
+        "ef": 0.02573
+      },
+      "distance_km": 20.99,
+      "gradient_m_per_km": 28.5,
+      "pace_delta_pct": 0.2,
+      "unreliable_reasons": [
+        "hilly (28 m/km climb)"
+      ]
     }
   ],
   "trend": {
