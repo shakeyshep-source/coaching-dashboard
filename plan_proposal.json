@@ -1,7 +1,7 @@
 {
   "id": "2026-09-20",
   "created": "2026-09-20T18:00:00+01:00",
-  "status": "pending",
+  "status": "applied",
   "rationale": "REVISED 20 Sep after his amend. Two things in it.\n\n(1) He cannot run Sunday 27th. The long run moves to Saturday 26th and Sunday becomes rest, with Tue-Fri stepped up a kilometre each to keep the week's progression intact: 5, 6, 7, 8, then 14 on Saturday. That is ~40km against the ~46km originally proposed. The shortfall is deliberate rather than reluctant \u2014 it is a recovery week after a maximal half, and less is the safer error.\n\n(2) He pushed back on the review's reading of the opening 5km, and he is right. The review called it 'a hard opening 5km that the finish and decoupling forgave rather than validated'. His account \u2014 going slightly quicker but holding back, a net downhill opening, and tucking in out of a slight headwind \u2014 is better supported by the data than the review's hedge was. His HR over km 1-6 ran 152, 159, 163, 161, 165, 163 against a race average of 164: he was settling INTO race effort by km 3, not exceeding it. Alice's elevation deltas put km 1-5 at 14m net downhill. And the two facts that settle it are that his last kilometre (3:38.3) was the fastest of the race and the second 10km was only 24 seconds slower than the first \u2014 neither happens off an opening that was genuinely too hard. The review under-weighted the drafting and the gradient. Validated, not forgiven.\n\nEverything else stands: easy only, no quality, no strides, the first Saturday since May without a session, and the Saturday/Wednesday structure resuming on evidence rather than a date. The Guy Fawkes sharpening block still gets shaped next Sunday, once this week's recovery is visible.\n\nASSUMPTION worth confirming: that Sunday alone is unavailable. If he is away for several days, this needs rewriting again, not nudging.",
   "changes": [
     {
@@ -55,10 +55,11 @@
     }
   ],
   "athlete_response": {
-    "timestamp": "20/09/2026 18:13:54",
+    "timestamp": "20/09/2026 19:14:54",
     "review_date": "2026-09-20",
-    "decision": "amend",
-    "thoughts": "So, I did go out slightly quicker but I was holding back and the general course elevation seemed slightly down.. Also tucked in when there was a slight headwind.\nThe up hill at 19/20 was lots of up down and turns, so I just went on effort rather than worry about pace.. I caught so many on the run in from 14k, super happy with how it went and only 17sec off an all time pb which I only just realised an hour ago.\nRe next week I can't run Sunday"
+    "decision": "approve",
+    "thoughts": null
   },
-  "revised": "2026-09-20T19:00:00+01:00"
+  "revised": "2026-09-20T19:00:00+01:00",
+  "applied_at": "2026-09-20T18:15:10"
 }

@@ -518,5 +518,68 @@
     "notes": "CHELTENHAM HALF MARATHON. Target 1:22:00 (band 1:21-1:23). Symbicort 20 min before gun, salbutamol 15 min before. WU: 2km easy + 4 strides.\nCHECKPOINTS: 5km 19:31 | 10km 38:58 | 15km 58:24 | 20km 1:17:55.\nSPLITS (gradient-adjusted): 1) 3:56 CAP - downhill start, do NOT go faster. 2) 3:54 3) 3:53 4) 3:55 5) 3:53 | 6) 3:56 climb 7) 3:52 8) 3:53 9) 3:54 10) 3:52 | 11) 3:52 12) 3:56 climb 13) 3:52 14) 3:53 15) 3:53 | 16) 3:53 17) 3:52 18) 3:54 19) 3:53 20) 3:59 THE CLIMB - let it come, hold effort not pace | 21) 3:48 downhill, empty it.\nThe race is decided 14-18km, the flattest section, where the field fades. If 15km comes up at 58:24 feeling controlled, a 3:48/km last 6km gives 1:21:34.",
     "source": "coach",
     "updated_at": "2026-09-13T15:07:03"
+  },
+  {
+    "date": "2026-09-21",
+    "session_type": "rest",
+    "target_distance_km": null,
+    "target_pace": null,
+    "notes": "Rest - the normal Monday, and doubly right after yesterday's effort.",
+    "source": "coach",
+    "updated_at": "2026-09-20T18:15:10"
+  },
+  {
+    "date": "2026-09-22",
+    "session_type": "easy",
+    "target_distance_km": 5,
+    "target_pace": null,
+    "notes": "RECOVERY WEEK BEGINS. Easy, short, entirely by feel - roughly 20-30 min, walk if anything feels off. No strides, no pace target. Yesterday was RPE 8 with a full sprint to the line; the legs get nothing asked of them today regardless of how good they feel.",
+    "source": "coach",
+    "updated_at": "2026-09-20T18:15:10"
+  },
+  {
+    "date": "2026-09-23",
+    "session_type": "easy",
+    "target_distance_km": 6,
+    "target_pace": null,
+    "notes": "Easy 30-35 min, still entirely by feel, no pace target, no strides. If yesterday felt heavy rather than just tired, take today as a second rest day instead - better to lose a day here than force it.",
+    "source": "coach",
+    "updated_at": "2026-09-20T18:15:10"
+  },
+  {
+    "date": "2026-09-24",
+    "session_type": "easy",
+    "target_distance_km": 7,
+    "target_pace": null,
+    "notes": "Easy 7km - building duration gently, still conversational throughout. First day back on anything like a normal easy run.",
+    "source": "coach",
+    "updated_at": "2026-09-20T18:15:10"
+  },
+  {
+    "date": "2026-09-25",
+    "session_type": "easy",
+    "target_distance_km": 8,
+    "target_pace": null,
+    "notes": "Easy 8km, conversational.",
+    "source": "coach",
+    "updated_at": "2026-09-20T18:15:10"
+  },
+  {
+    "date": "2026-09-26",
+    "session_type": "long",
+    "target_distance_km": 14,
+    "target_pace": null,
+    "notes": "First long run back, MOVED from Sunday because he cannot run the 27th. 14km genuinely easy throughout, no pace target. Aerobic volume, not a rehearsal for anything. Still the first Saturday since May without a quality session - deliberate, not a gap to fill.",
+    "source": "coach",
+    "updated_at": "2026-09-20T18:15:10"
+  },
+  {
+    "date": "2026-09-27",
+    "session_type": "rest",
+    "target_distance_km": null,
+    "target_pace": null,
+    "notes": "Rest - he cannot run today, and after a recovery week ending in the long run on Saturday that is the right shape anyway.",
+    "source": "coach",
+    "updated_at": "2026-09-20T18:15:10"
   }
 ]
