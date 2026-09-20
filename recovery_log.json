@@ -194,11 +194,20 @@
     {
       "date": "2026-09-16",
       "session_type": "intervals",
-      "days_since": 3,
+      "days_since": 4,
       "hrv_back": 2,
       "rhr_back": null,
       "hrv_reference": 41.3,
       "rhr_reference": 46.7
+    },
+    {
+      "date": "2026-09-20",
+      "session_type": "race",
+      "days_since": 0,
+      "hrv_back": null,
+      "rhr_back": null,
+      "hrv_reference": 40.4,
+      "rhr_reference": 47.3
     }
   ],
   "trend": {
