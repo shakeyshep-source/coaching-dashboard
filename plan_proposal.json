@@ -1,7 +1,7 @@
 {
   "id": "2026-09-20",
   "created": "2026-09-20T18:00:00+01:00",
-  "status": "pending",
+  "status": "amend_requested",
   "rationale": "training_plan.json has nothing written past race day, and a maximal hilly half marathon (RPE 8, HR to 174 with a sprint finish) asks more recovery than a training run over the same distance. The achilles history means an unplanned week defaults to 'whatever feels right today', which is the exact pattern that used to go wrong, so this proposes a genuine recovery week rather than leaving the gap. ~46km, easy only, no quality: Tuesday-Saturday build gently from short and very easy back to a normal easy day, Sunday's long run returns at 14km with no pace target. Monday stays the normal rest day. This is the first Saturday since May without a tempo or interval session - deliberate, not an oversight. The Saturday/Wednesday quality structure resumes once achilles and recovery markers confirm clean through this week, not on a fixed date. This bridges toward Crete 10K (4 Oct, still a fun run needing no taper) and leaves the four weeks after that to be written as the Guy Fawkes sharpening block the fixtures note now calls for - that gets shaped next Sunday once we see how this week's recovery actually goes.",
   "changes": [
     {
@@ -53,5 +53,11 @@
       "target_pace": null,
       "notes": "First long run back: 14km, genuinely easy throughout, no pace target. This is aerobic volume, not a rehearsal for anything - under 75 minutes at an easy pace, so no fuelling need."
     }
-  ]
+  ],
+  "athlete_response": {
+    "timestamp": "20/09/2026 18:13:54",
+    "review_date": "2026-09-20",
+    "decision": "amend",
+    "thoughts": "So, I did go out slightly quicker but I was holding back and the general course elevation seemed slightly down.. Also tucked in when there was a slight headwind.\nThe up hill at 19/20 was lots of up down and turns, so I just went on effort rather than worry about pace.. I caught so many on the run in from 14k, super happy with how it went and only 17sec off an all time pb which I only just realised an hour ago.\nRe next week I can't run Sunday"
+  }
 }

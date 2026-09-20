@@ -349,9 +349,7 @@
     "rhr_baseline_7d": 47.1,
     "rhr_delta_from_baseline": 0.9,
     "heat_risk": "moderate",
-    "recovery_confounders": [
-      "alcohol"
-    ],
+    "recovery_confounders": [],
     "today_summary": "Recovery looks normal. Fine for planned training.",
     "readiness_level": "good",
     "plan_flag_reasons": []
