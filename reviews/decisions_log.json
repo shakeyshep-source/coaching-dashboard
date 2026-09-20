@@ -335,5 +335,15 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": "Gels.. Thinking one before start, one at 30mins, one at 60",
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-09-20T06:42:00",
+    "proposal_id": null,
+    "review_date": "2026-09-13",
+    "response_timestamp": "20/09/2026 07:41:47",
+    "decision": "approve",
+    "action_taken": "review_query_logged",
+    "athlete_thoughts": "Usual warm up?",
+    "changes_count": 0
   }
 ]

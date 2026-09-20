@@ -1,19 +1,19 @@
 {
-  "generated": "2026-09-19",
+  "generated": "2026-09-20",
   "next_race": {
     "name": "CHELTENHAM HALF MARATHON",
     "date": "2026-09-20",
     "distance_km": 21.0975,
-    "days_away": 1
+    "days_away": 0
   },
   "race_readiness": {
     "race": {
       "name": "CHELTENHAM HALF MARATHON",
       "date": "2026-09-20",
       "distance_km": 21.0975,
-      "days_away": 1
+      "days_away": 0
     },
-    "weeks_to_race": 0.1,
+    "weeks_to_race": 0.0,
     "taper_start": "2026-09-10",
     "remaining_key_sessions": {
       "tempo": 0,
