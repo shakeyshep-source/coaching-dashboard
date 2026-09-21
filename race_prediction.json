@@ -3,35 +3,35 @@
   "next_race": null,
   "predictions": {
     "5K": {
-      "predicted_time_fmt": "17:51.39",
-      "predicted_time_seconds": 1071.4,
-      "low_estimate_fmt": "17:22.34",
-      "high_estimate_fmt": "18:20.44",
-      "note": "Based on 5 clean race result(s)."
+      "predicted_time_fmt": "17:47.59",
+      "predicted_time_seconds": 1067.6,
+      "low_estimate_fmt": "17:18.54",
+      "high_estimate_fmt": "18:16.64",
+      "note": "Based on 5 clean race result(s). VO2max up 1.9 over the last 6 weeks \u2014 nudged faster."
     },
     "10K": {
-      "predicted_time_fmt": "37:13.77",
-      "predicted_time_seconds": 2233.8,
-      "low_estimate_fmt": "36:13.20",
-      "high_estimate_fmt": "38:14.35",
-      "note": "Based on 5 clean race result(s)."
+      "predicted_time_fmt": "37:09.97",
+      "predicted_time_seconds": 2230.0,
+      "low_estimate_fmt": "36:09.40",
+      "high_estimate_fmt": "38:10.55",
+      "note": "Based on 5 clean race result(s). VO2max up 1.9 over the last 6 weeks \u2014 nudged faster."
     },
     "Half Marathon": {
-      "predicted_time_fmt": "1:22:08.61",
-      "predicted_time_seconds": 4928.6,
-      "low_estimate_fmt": "1:19:54.95",
-      "high_estimate_fmt": "1:24:22.26",
-      "note": "Based on 5 clean race result(s). Reasonably grounded if based on a 10K+ result; more of a stretch if only projected from 5K."
+      "predicted_time_fmt": "1:22:04.81",
+      "predicted_time_seconds": 4924.8,
+      "low_estimate_fmt": "1:19:51.15",
+      "high_estimate_fmt": "1:24:18.46",
+      "note": "Based on 5 clean race result(s). VO2max up 1.9 over the last 6 weeks \u2014 nudged faster. Reasonably grounded if based on a 10K+ result; more of a stretch if only projected from 5K."
     },
     "Marathon": {
-      "predicted_time_fmt": "2:51:15.81",
-      "predicted_time_seconds": 10275.8,
-      "low_estimate_fmt": "2:46:37.15",
-      "high_estimate_fmt": "2:55:54.47",
-      "note": "Based on 5 clean race result(s). CAVEAT: marathon projections from short-race data are unreliable \u2014 doesn't account for fuelling or sustained multi-hour effort. Rough ballpark only."
+      "predicted_time_fmt": "2:51:12.01",
+      "predicted_time_seconds": 10272.0,
+      "low_estimate_fmt": "2:46:33.35",
+      "high_estimate_fmt": "2:55:50.67",
+      "note": "Based on 5 clean race result(s). VO2max up 1.9 over the last 6 weeks \u2014 nudged faster. CAVEAT: marathon projections from short-race data are unreliable \u2014 doesn't account for fuelling or sustained multi-hour effort. Rough ballpark only."
     }
   },
-  "vo2max_note": "VO2max is 60.0 (up 0.0 since earliest reading).",
+  "vo2max_note": "VO2max is 59.9 \u2014 up 1.9 over the last 6 weeks.",
   "based_on_races": [
     "Bourton Mile",
     "Cardiff 5K (previous edition)",
@@ -67,7 +67,7 @@
       },
       {
         "name": "Half marathon (goal)",
-        "pace": "3:54/km",
+        "pace": "3:53/km",
         "purpose": "Cheltenham race pace. Race-specific blocks late in the build."
       },
       {
