@@ -375,9 +375,9 @@
     "hrv_delta_from_baseline": -7.1,
     "rhr_baseline_7d": 47.3,
     "rhr_delta_from_baseline": 3.7,
-    "heat_risk": "high",
+    "heat_risk": "moderate",
     "recovery_confounders": [],
-    "today_summary": "Recovery below baseline on both HRV and RHR. Keep today easy. Heat risk is high today too \u2014 watch for respiratory symptoms.",
+    "today_summary": "Recovery below baseline on both HRV and RHR. Keep today easy.",
     "readiness_level": "flag",
     "plan_flag_reasons": []
   }
