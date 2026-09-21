@@ -1,10 +1,6 @@
 {
-  "generated_date": "2026-09-20",
-  "next_race": {
-    "name": "CHELTENHAM HALF MARATHON",
-    "date": "2026-09-20",
-    "distance_km": 21.0975
-  },
+  "generated_date": "2026-09-21",
+  "next_race": null,
   "predictions": {
     "5K": {
       "predicted_time_fmt": "17:51.39",

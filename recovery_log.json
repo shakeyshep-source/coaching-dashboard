@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-20",
+  "generated": "2026-09-21",
   "window_days": 7,
   "sessions": [
     {
@@ -194,7 +194,7 @@
     {
       "date": "2026-09-16",
       "session_type": "intervals",
-      "days_since": 4,
+      "days_since": 5,
       "hrv_back": 2,
       "rhr_back": null,
       "hrv_reference": 41.3,
@@ -203,7 +203,7 @@
     {
       "date": "2026-09-20",
       "session_type": "race",
-      "days_since": 0,
+      "days_since": 1,
       "hrv_back": null,
       "rhr_back": null,
       "hrv_reference": 40.4,
