@@ -35,6 +35,13 @@
     --bad:  #A83232;      --bad-bg:  #F9ECEC;
     --grid: #E5E5E3;
     --tick: #6B7280;
+    /* Redraw additions: a second surface for de-carded rows, a stronger
+       rule for table heads, and the two club tints used as fills. */
+    --surface-2: #F2F4F7;
+    --border-strong: #C0CBD7;
+    --blue-tint: #E9F0F8;
+    --yellow-tint: #FBF1CC;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
     /* legacy aliases used by older markup */
     --yellow: var(--club-yellow-bright);
     --yellow-text: #A88400;
@@ -57,6 +64,10 @@
       --grid: #2C2C29;
       --tick: #8B8B86;
       --yellow-text: #C9A93B;
+      --surface-2: #272724;
+      --border-strong: #454540;
+      --blue-tint: #1B2A38;
+      --yellow-tint: #2E2817;
     }
   }
   * { box-sizing: border-box; }
@@ -186,20 +197,222 @@
     background: var(--bg);
     z-index: 5;
   }
+  /* Five tabs have to fit one row on a phone — a wrapped tab bar
+     reads as an overflow bug, not a menu. */
   .tab-btn {
     background: none;
     border: none;
     color: var(--text-muted);
-    font-size: 14px;
-    padding: 8px 14px;
+    font-size: 13px;
+    flex: 1;
+    min-width: 0;
+    padding: 9px 2px;
     cursor: pointer;
     border-bottom: 2px solid transparent;
+    font-family: inherit;
   }
   .tab-btn.active {
     color: var(--text-primary);
     border-bottom-color: var(--blue);
   }
   .tab-panel { display: none; }
+
+  /* ==========================================================
+     REDRAW — verdict first, then the week, with the detail
+     tabs de-carded into results-board rows.
+
+     Three rules hold this together:
+       1. Yellow means one of two things and nothing else: the
+          primary action, or "look here" (a flagged row, the
+          current week, a section rule).
+       2. Green / amber / red stay reserved for status, exactly
+          as before — the verdict stripe is the loudest use.
+       3. Figures are set in mono with tabular figures so
+          columns line up; prose stays in the system face.
+     ========================================================== */
+
+  /* Fixture rail — the countdown, demoted to one permanent line.
+     A 200-day hero is wallpaper; a rail is cheap and always true. */
+  .rail {
+    display: flex; overflow-x: auto;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; margin-bottom: 1.25rem;
+    font-family: var(--mono); font-size: 11px;
+  }
+  .rail span {
+    flex: 1; min-width: 0; padding: 8px 6px; text-align: center;
+    color: var(--text-muted); border-right: 1px solid var(--border);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .rail span:last-child { border-right: 0; }
+  .rail b { color: var(--text-primary); font-weight: 600; }
+
+  /* The verdict. Severity is carried by the left stripe AND the
+     glyph, so colour is never the only signal. Green is
+     deliberately quieter than amber — a good day should not
+     shout in the same shape a bad one does. */
+  .verdict {
+    border-radius: 12px; padding: 14px 16px; margin-bottom: 12px;
+    border: 1px solid var(--border); border-left: 5px solid var(--text-muted);
+    background: var(--surface);
+  }
+  .verdict.good   { border-left-color: var(--good); }
+  .verdict.caution{ border-left-color: var(--warn); background: var(--warn-bg); border-color: transparent; }
+  .verdict.flag   { border-left-color: var(--bad);  background: var(--bad-bg);  border-color: transparent; }
+  .verdict .tag {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; font-weight: 600; margin: 0 0 7px;
+  }
+  .verdict.good .tag { color: var(--good); }
+  .verdict.caution .tag { color: var(--warn); }
+  .verdict.flag .tag { color: var(--bad); }
+  .verdict h2 { font-size: 17px; line-height: 1.3; margin: 0 0 6px; font-weight: 600; }
+  .verdict p { font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+
+  /* Today's session, second. */
+  .session-card {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 14px; background: var(--blue-tint); border-radius: 12px;
+    padding: 14px 16px; margin-bottom: 12px;
+  }
+  .session-card .lab {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--club-blue); font-weight: 600;
+  }
+  .session-card .big {
+    font-size: 26px; font-weight: 600; margin: 2px 0 0; line-height: 1.15;
+    text-transform: capitalize;
+  }
+  .session-card .sub { font-size: 12.5px; color: var(--text-secondary); margin: 3px 0 0; }
+  .session-card .aside { text-align: right; font-family: var(--mono); flex-shrink: 0; }
+  .session-card .aside em {
+    display: block; font-style: normal; font-size: 9.5px;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted);
+  }
+  .session-card .aside i { font-style: normal; font-size: 21px; font-weight: 600; }
+
+  .cta {
+    display: block; width: 100%; text-align: center; border: 0;
+    border-radius: 10px; padding: 13px; background: var(--club-yellow-bright);
+    color: #231E06; font-size: 15px; font-weight: 600; text-decoration: none;
+    cursor: pointer; font-family: inherit;
+  }
+
+  /* Section heading with the yellow rule under it. */
+  .sect { margin: 1.5rem 0 0; }
+  .sect-h {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 10px; padding-bottom: 8px; border-bottom: 2px solid var(--club-yellow);
+    margin-bottom: 10px;
+  }
+  .sect-h b {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--text-secondary); font-weight: 600;
+  }
+  .sect-h span { font-family: var(--mono); font-size: 11px; color: var(--text-muted); }
+
+  /* Plain-English explainer. Always visible, never behind a tap —
+     a metric you have to remember the meaning of is a metric you
+     will not use. */
+  .plain {
+    font-size: 12.5px; line-height: 1.5; color: var(--text-secondary);
+    padding-left: 11px; border-left: 3px solid var(--blue-tint);
+    margin: 0 0 12px;
+  }
+  .plain b { color: var(--text-primary); font-weight: 600; }
+
+  /* The week, as a lane. Today is lifted out of the row rather
+     than merely tinted, so it reads at a glance. */
+  .lane { display: flex; gap: 4px; }
+  .lane button {
+    flex: 1; min-width: 0; border: 1px solid var(--border);
+    background: var(--surface-2); border-radius: 8px;
+    padding: 7px 1px 8px; text-align: center; cursor: pointer;
+    color: inherit; font-family: inherit;
+  }
+  .lane button em {
+    display: block; font-style: normal; font-size: 9px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-muted); font-family: var(--mono);
+  }
+  .lane button b {
+    display: block; font-size: 16px; font-weight: 600; margin-top: 2px;
+    font-family: var(--mono);
+  }
+  .lane button s {
+    display: block; text-decoration: none; font-size: 8px; letter-spacing: 0.05em;
+    text-transform: uppercase; color: var(--text-muted);
+  }
+  .lane button.is-today {
+    background: var(--club-blue); border-color: var(--club-blue); color: #fff;
+    transform: translateY(-4px);
+  }
+  .lane button.is-today em, .lane button.is-today s { color: rgba(255,255,255,0.8); }
+  .lane button[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--club-yellow); }
+  .daynote {
+    margin-top: 9px; border: 1px solid var(--border); border-radius: 10px;
+    background: var(--surface-2); padding: 10px 12px; font-size: 12.5px;
+    color: var(--text-secondary); line-height: 1.45;
+  }
+  .daynote b { color: var(--text-primary); font-weight: 600; }
+
+  /* Weekly volume. The number lives in the bar, which frees the
+     row underneath for dates — month named only when it changes. */
+  .bars { display: flex; gap: 5px; }
+  .bars .col { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+  .bars .track { height: 74px; display: flex; align-items: flex-end; }
+  .bars i {
+    width: 100%; background: var(--blue-tint); border-top: 2px solid var(--club-blue);
+    border-radius: 3px 3px 0 0; display: flex; justify-content: center;
+    align-items: flex-start; padding-top: 4px; min-height: 14px;
+    font-style: normal;
+  }
+  .bars i b {
+    font-family: var(--mono); font-size: 10.5px; font-weight: 600;
+    color: var(--club-blue); line-height: 1;
+  }
+  .bars i.now { background: var(--yellow-tint); border-top-color: var(--club-yellow); }
+  .bars i.now b { color: var(--yellow-text); }
+  .bars .col > span {
+    font-family: var(--mono); font-size: 9px; color: var(--text-muted);
+    text-align: center; padding-top: 5px; border-top: 1px solid var(--border);
+    white-space: nowrap; overflow: hidden;
+  }
+  .bars .col.cur > span { color: var(--yellow-text); }
+
+  /* Results board — no cards, hairline rules, deltas beside the
+     figure rather than implied. Roughly twice the content per
+     screen, which is what these pages are actually for. */
+  .board .row {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 10px; padding: 9px 12px; border-bottom: 1px solid var(--border);
+    font-family: var(--mono);
+  }
+  .board .row .k {
+    font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+  .board .row .r { white-space: nowrap; }
+  .board .row .v { font-size: 17px; font-weight: 600; }
+  .board .row .d { font-size: 11px; margin-left: 9px; }
+  .board .row.is-flag { background: var(--yellow-tint); box-shadow: inset 3px 0 0 var(--club-yellow); }
+  .d-good { color: var(--good); } .d-warn { color: var(--warn); }
+  .d-bad { color: var(--bad); } .d-mute { color: var(--text-muted); }
+
+  .tbl { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 12px; }
+  .tbl th {
+    text-align: right; font-weight: 500; font-size: 9.5px; letter-spacing: 0.09em;
+    text-transform: uppercase; color: var(--text-muted); padding: 0 0 7px;
+    border-bottom: 1px solid var(--border-strong);
+  }
+  .tbl th:first-child, .tbl td:first-child { text-align: left; }
+  .tbl td { text-align: right; padding: 7px 0; border-bottom: 1px solid var(--border); }
+  .tbl tr.cur td { background: var(--yellow-tint); font-weight: 600; }
+  .tbl tr.cur td:first-child { box-shadow: inset 3px 0 0 var(--club-yellow); padding-left: 7px; }
+  .tbl tr.ex td { color: var(--text-muted); }
+  .tbl td.l, .tbl th.l { text-align: left; padding-right: 8px; }
+  .tblwrap { overflow-x: auto; }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 </head>
 <body>
@@ -212,26 +425,42 @@
 
   <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:1.25rem;" id="formLinks"></div>
 
+  <div class="rail" id="fixtureRail" hidden></div>
+
+  <!-- Five tabs, not seven. Overview and Plan are one screen now
+       (the verdict and the shape of the week belong together);
+       Performance and ACWR are both "how is it trending"; and the
+       Predictor's projections only mean anything next to the
+       fixtures they are projecting for, so they live in Races.
+       Nothing was dropped — the panels below still host each
+       original builder's output by its original id. -->
   <div class="tabs" style="flex-wrap:wrap;">
-    <button class="tab-btn active" data-tab="overview">Overview</button>
-    <button class="tab-btn" data-tab="coach">Coach</button>
-    <button class="tab-btn" data-tab="acwr">ACWR</button>
-    <button class="tab-btn" data-tab="plan">Plan</button>
-    <button class="tab-btn" data-tab="performance">Performance</button>
-    <button class="tab-btn" data-tab="predictor">Predictor</button>
+    <button class="tab-btn active" data-tab="today">Today</button>
+    <button class="tab-btn" data-tab="recovery">Recovery</button>
+    <button class="tab-btn" data-tab="trends">Trends</button>
     <button class="tab-btn" data-tab="races">Races</button>
+    <button class="tab-btn" data-tab="coach">Coach</button>
   </div>
 
   <div id="content">
     <p class="error" style="display:none;" id="errorBox"></p>
+    <div id="todayTop"></div>
+    <div id="tab-plan"></div>
+  </div>
+
+  <div id="panel-recovery" class="tab-panel" style="display:none;"></div>
+
+  <div id="panel-trends" class="tab-panel" style="display:none;">
+    <div id="tab-performance"></div>
+    <div id="tab-acwr"></div>
+  </div>
+
+  <div id="panel-races" class="tab-panel" style="display:none;">
+    <div id="tab-races"></div>
+    <div id="tab-predictor"></div>
   </div>
 
   <div id="tab-coach" class="tab-panel" style="display:none;"></div>
-  <div id="tab-acwr" class="tab-panel" style="display:none;"></div>
-  <div id="tab-plan" class="tab-panel" style="display:none;"></div>
-  <div id="tab-performance" class="tab-panel" style="display:none;"></div>
-  <div id="tab-predictor" class="tab-panel" style="display:none;"></div>
-  <div id="tab-races" class="tab-panel" style="display:none;"></div>
 
 <script>
 // If the Chart.js CDN is unreachable (offline PWA, network blip), stub
@@ -384,16 +613,25 @@ async function loadDashboard() {
     + (stale ? ` · data to ${fmtDayMonth(latest.date)}` : '');
 
   // Today's planned session for the hero briefing
+  let planAll = [];
   let todayPlan = null;
   try {
     const planRes = await fetch('training_plan.json?v=' + Date.now());
     if (planRes.ok) {
-      const plan = await planRes.json();
+      planAll = await planRes.json();
       // Keyed off the clock, not the data — the session you are meant
       // to run today does not depend on whether Garmin has synced.
-      todayPlan = plan.find(s => s.date === todayStr) || null;
+      todayPlan = planAll.find(s => s.date === todayStr) || null;
     }
   } catch (e) { /* hero renders without the session */ }
+
+  const weekly = await fetchJson('weekly_summary.json');
+  // VO2max to one decimal. computed_data carries Garmin's rounded
+  // integer; vo2max_history.json keeps the precision, and at this
+  // level a tenth is the difference between drifting and climbing.
+  const vo2Hist = await fetchJson('vo2max_history.json');
+  const vo2Latest = (vo2Hist && vo2Hist.length) ? vo2Hist[vo2Hist.length - 1] : null;
+  renderFixtureRail(todayStr);
 
   // Has today been logged? achilles_score is the field the form always
   // carries, so its presence is the reliable "logged" signal. Nudge only
@@ -404,68 +642,121 @@ async function loadDashboard() {
   // button — the exact silence this nudge exists to prevent.
   const loggedToday = !!todayRow
     && todayRow.achilles_score !== null && todayRow.achilles_score !== undefined;
+  // Yellow is the primary action. It is the one button on the screen,
+  // so it gets the club colour and nothing else competes for it.
   const logStripHtml = loggedToday
-    ? `<p style="font-size:12px; color:var(--good); margin:10px 0 0;">✓ Today's session logged</p>`
+    ? `<p style="font-size:12px; color:var(--good); margin:0;">✓ Today's session logged</p>`
     : (DAILY_FORM_URL
-        ? `<a href="${DAILY_FORM_URL}" rel="noopener" style="display:inline-block; margin-top:12px; background:var(--club-blue); color:#fff; font-size:13px; font-weight:500; padding:9px 16px; border-radius:8px; text-decoration:none;">Log today's session</a>`
-        : `<p style="font-size:12px; color:var(--text-muted); margin:10px 0 0;">Not logged today — set DAILY_FORM_URL in index.html for a one-tap button here.</p>`);
+        ? `<a class="cta" href="${DAILY_FORM_URL}" rel="noopener">Log today's session</a>`
+        : `<p style="font-size:12px; color:var(--text-muted); margin:0;">Not logged today — set DAILY_FORM_URL in index.html for a one-tap button here.</p>`);
 
   const level = today.readiness_level || 'good';
+  const levelTag = { good: 'All clear', caution: 'Worth noting', flag: 'Readiness flag' }[level] || 'All clear';
   const levelIcon = { good: '✓', caution: '△', flag: '✕' }[level] || '✓';
   const heatChip = today.heat_risk === 'high'
     ? '<span class="chip bad">Heat risk high</span>'
     : today.heat_risk === 'moderate' ? '<span class="chip warn">Heat moderate</span>' : '';
 
-  content.innerHTML = `
-    <div class="hero">
-      <p class="label" style="font-size:13px; color:var(--text-muted); margin:0;">Today's session</p>
-      <p class="session"><span class="stype">${todayPlan ? todayPlan.session_type : 'Nothing planned'}</span>${todayPlan && todayPlan.target_distance_km ? ` — ${todayPlan.target_distance_km} km` : ''}</p>
-      ${todayPlan && todayPlan.notes ? `<p class="session-notes">${todayPlan.notes}</p>` : ''}
-      <div class="readiness ${level}">
-        <span class="icon">${levelIcon}</span>
-        <span>${today.today_summary || 'No readiness data yet.'}</span>
-      </div>
+  // The supporting line under the verdict: the figures that produced
+  // it, stated rather than implied. A verdict you cannot check is a
+  // verdict you stop trusting.
+  const evidence = [];
+  if (today.hrv_last_night != null) {
+    evidence.push(`HRV ${today.hrv_last_night}` +
+      (today.hrv_baseline_7d != null ? ` against a ${today.hrv_baseline_7d} baseline` : ''));
+  }
+  if (today.rhr != null) {
+    evidence.push(`RHR ${today.rhr}` +
+      (today.rhr_baseline_7d != null ? ` against ${today.rhr_baseline_7d}` : ''));
+  }
+  if (today.sleep_score != null) evidence.push(`sleep ${today.sleep_score}`);
+  if (today.achilles_score != null) evidence.push(`achilles ${today.achilles_score}`);
+  const confounders = today.recovery_confounders || [];
+  const evidenceLine = evidence.length
+    ? evidence.join(', ') + '.' + (confounders.length
+        ? ` ${confounders.join(' and ')} logged — an explained dip, not a trend.`
+        : '')
+    : '';
+
+  document.getElementById('todayTop').innerHTML = `
+    <div class="verdict ${level}">
+      <p class="tag">${levelIcon} ${levelTag}</p>
+      <h2>${esc(today.today_summary || 'No readiness data yet.')}</h2>
+      ${evidenceLine ? `<p>${esc(evidenceLine)}</p>` : ''}
+    </div>
+
+    <div class="session-card">
       <div>
-        ${stale ? `<span class="chip warn">Readiness from ${fmtDayMonth(latest.date)}</span>` : ''}
-        ${heatChip}
-        ${today.achilles_score >= 3 ? `<span class="chip bad">Achilles ${today.achilles_score}/10</span>` : ''}
-        ${(today.recovery_confounders || []).map(c =>
-          `<span class="chip">${c} noted</span>`).join('')}
-        ${today.acwr ? `<span class="chip">ACWR ${today.acwr}${today.acwr_status ? ' · ' + today.acwr_status.toLowerCase() : ''}</span>` : ''}
+        <p class="lab">Today${stale ? '' : ''}</p>
+        <p class="big">${todayPlan ? esc(todayPlan.session_type) : 'Nothing planned'}${todayPlan && todayPlan.target_distance_km ? ` · ${todayPlan.target_distance_km} km` : ''}</p>
+        ${todayPlan && todayPlan.target_pace ? `<p class="sub">${esc(todayPlan.target_pace)}</p>` : ''}
+        ${nextSessionLine(planAll, todayStr)}
       </div>
-      ${logStripHtml}
+      ${today.achilles_score != null ? `
+        <div class="aside">
+          <em>Achilles</em>
+          <i style="color:${today.achilles_score >= 3 ? 'var(--bad)' : 'var(--good)'};">${today.achilles_score}</i>
+        </div>` : ''}
     </div>
 
-    <div class="card-grid">
-      <div class="card">
-        <p class="label">RHR</p>
-        <p class="value">${today.rhr ?? '--'}<span style="font-size:13px; color:var(--text-muted);"> bpm</span></p>
-        ${deltaChip(today.rhr_delta_from_baseline, ' bpm', false)}
-        <div class="spark-wrap"><canvas id="sparkRhr"></canvas></div>
-      </div>
-      <div class="card">
-        <p class="label">HRV</p>
-        <p class="value">${today.hrv_last_night ?? '--'}<span style="font-size:13px; color:var(--text-muted);"> ms</span></p>
-        ${deltaChip(today.hrv_delta_from_baseline, ' ms', true)}
-        ${today.hrv_weekly_avg != null
-          ? `<p class="delta flat" style="font-size:11px;">watch 7d avg ${today.hrv_weekly_avg}</p>` : ''}
-        <div class="spark-wrap"><canvas id="sparkHrv"></canvas></div>
-      </div>
-      <div class="card">
-        <p class="label">Sleep score</p>
-        <p class="value">${today.sleep_score ?? '--'}</p>
-        <p class="delta flat">${today.sleep_duration_hrs ? today.sleep_duration_hrs + ' hrs' : ''}</p>
-        <div class="spark-wrap"><canvas id="sparkSleep"></canvas></div>
-      </div>
-      <div class="card">
-        <p class="label">Body battery</p>
-        <p class="value">${today.body_battery_high ?? '--'}</p>
-        <p class="delta flat">peak</p>
-        <div class="spark-wrap"><canvas id="sparkBb"></canvas></div>
-      </div>
+    <div style="margin-bottom:4px;">
+      ${stale ? `<span class="chip warn">Readiness from ${fmtDayMonth(latest.date)}</span>` : ''}
+      ${heatChip}
+      ${today.achilles_score >= 3 ? `<span class="chip bad">Achilles ${today.achilles_score}/10</span>` : ''}
+      ${confounders.map(c => `<span class="chip">${esc(c)} noted</span>`).join('')}
+      ${today.acwr ? `<span class="chip">ACWR ${today.acwr}${today.acwr_status ? ' · ' + today.acwr_status.toLowerCase() : ''}</span>` : ''}
     </div>
 
-    <div class="chart-card">
+    <div style="margin-top:12px;">${logStripHtml}</div>
+
+    ${weekLaneHtml(planAll, todayStr)}
+    ${volumeBarsHtml(weekly, planAll, todayStr)}
+  `;
+  wireLane();
+
+  // Recovery: the same figures the verdict used, de-carded. Rules and
+  // mono figures instead of boxes — roughly twice the content per
+  // screen, with every delta stated next to its number.
+  document.getElementById('panel-recovery').innerHTML = `
+    <div class="board">
+      ${boardRow('HRV last night', today.hrv_last_night, today.hrv_delta_from_baseline,
+                 today.hrv_baseline_7d, true)}
+      ${today.hrv_weekly_avg != null ? `
+        <div class="row"><span class="k">HRV 7-day avg</span>
+          <span class="r"><span class="v">${today.hrv_weekly_avg}</span>
+          <span class="d d-mute">watch figure</span></span></div>` : ''}
+      ${boardRow('Resting HR', today.rhr, today.rhr_delta_from_baseline,
+                 today.rhr_baseline_7d, false)}
+      <div class="row"><span class="k">Sleep</span>
+        <span class="r"><span class="v">${today.sleep_duration_hrs != null ? hrsMins(today.sleep_duration_hrs) : '--'}</span>
+        <span class="d ${today.sleep_score >= 80 ? 'd-good' : 'd-mute'}">score ${today.sleep_score ?? '--'}</span></span></div>
+      <div class="row"><span class="k">Body battery</span>
+        <span class="r"><span class="v">${today.body_battery_high ?? '--'}</span>
+        <span class="d d-mute">at wake</span></span></div>
+      <div class="row${today.achilles_score >= 3 ? ' is-flag' : ''}"><span class="k">Achilles</span>
+        <span class="r"><span class="v">${today.achilles_score ?? '--'}</span>
+        <span class="d ${today.achilles_score >= 3 ? 'd-bad' : 'd-good'}">${today.achilles_score >= 3 ? 'flagged' : 'clear'}</span></span></div>
+      ${today.acwr != null ? `
+        <div class="row"><span class="k">ACWR</span>
+          <span class="r"><span class="v">${today.acwr}</span>
+          <span class="d ${today.acwr_status === 'OPTIMAL' ? 'd-good' : 'd-warn'}">${esc((today.acwr_status || '').toLowerCase())}</span></span></div>` : ''}
+      ${vo2Latest ? `
+        <div class="row"><span class="k">VO₂max</span>
+          <span class="r"><span class="v">${vo2Latest.vo2max.toFixed(1)}</span>
+          <span class="d d-mute">${fmtDayMonth(vo2Latest.vo2max_date || vo2Latest.date)}</span></span></div>` : ''}
+      ${today.heat_risk ? `
+        <div class="row${today.heat_risk === 'high' ? ' is-flag' : ''}"><span class="k">Heat risk</span>
+          <span class="r"><span class="v" style="font-size:14px;">${esc(today.heat_risk)}</span>
+          <span class="d d-mute">asthma watch</span></span></div>` : ''}
+    </div>
+
+    ${today.session_notes ? `
+      <div class="sect">
+        <div class="sect-h"><b>Your note</b><span>${fmtDayMonth(today.date)}</span></div>
+        <p class="daynote">${esc(today.session_notes)}</p>
+      </div>` : ''}
+
+    <div class="chart-card" style="margin-top:1.5rem;">
       <p class="title">HRV — 14 days (dashed = prior 7 days, excluding that night)</p>
       <div class="chart-wrap" style="height:160px;"><canvas id="hrvChart"></canvas></div>
     </div>
@@ -484,27 +775,9 @@ async function loadDashboard() {
       <p class="title">Achilles score (0 = no issue, 10 = severe)</p>
       <div class="chart-wrap" style="height:160px;"><canvas id="achillesChart"></canvas></div>
     </div>
-
-    <div class="chart-card" id="planCard" style="display:none;">
-      <p class="title">Upcoming sessions</p>
-      <table style="width:100%; border-collapse:collapse; font-size:13px;">
-        <thead>
-          <tr style="text-align:left; color:var(--text-muted);">
-            <th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Type</th>
-            <th style="padding:6px 8px;">Distance</th><th style="padding:6px 8px;">Pace</th>
-          </tr>
-        </thead>
-        <tbody id="planRows"></tbody>
-      </table>
-    </div>
   `;
 
   const labels = data.map(r => fmtDayMonth(r.date));
-
-  sparkline('sparkRhr', data.map(r => r.rhr), THEME.blue);
-  sparkline('sparkHrv', data.map(r => r.hrv_last_night), THEME.blue);
-  sparkline('sparkSleep', data.map(r => r.sleep_score), THEME.blue);
-  sparkline('sparkBb', data.map(r => r.body_battery_high), THEME.blue);
 
   // One metric per chart, own scale, with its 7-day baseline dashed —
   // never two scales on one plot.
@@ -575,6 +848,189 @@ async function loadDashboard() {
   return data;
 }
 
+// ============================================================
+// Today panel helpers
+// ============================================================
+
+function hrsMins(hrs) {
+  if (hrs == null) return '--';
+  const h = Math.floor(hrs);
+  const m = Math.round((hrs - h) * 60);
+  return `${h}:${String(m).padStart(2, '0')}`;
+}
+
+// One results-board row. upIsGood decides whether a rise is read as
+// good or as worth noting — direction alone is never the signal, the
+// metric decides (HRV up is good, RHR up is not).
+function boardRow(label, value, delta, baseline, upIsGood) {
+  if (value == null) return '';
+  let cls = 'd-mute', txt = 'no baseline yet';
+  if (delta != null && baseline != null) {
+    const meaningful = Math.abs(delta) > 0.5;
+    const isGood = (delta > 0) === upIsGood;
+    cls = !meaningful ? 'd-mute' : isGood ? 'd-good' : 'd-bad';
+    txt = `${delta > 0 ? '+' : ''}${delta} vs ${baseline}`;
+  }
+  const flagged = delta != null && Math.abs(delta) > 0.5 && (delta > 0) !== upIsGood;
+  return `<div class="row${flagged ? ' is-flag' : ''}"><span class="k">${label}</span>
+    <span class="r"><span class="v">${value}</span><span class="d ${cls}">${txt}</span></span></div>`;
+}
+
+// The next thing on the plan after today — so the session card answers
+// "and then what" without a tab change.
+function nextSessionLine(plan, todayStr) {
+  const next = (plan || [])
+    .filter(s => s.date > todayStr)
+    .sort((a, b) => a.date.localeCompare(b.date))[0];
+  if (!next) return '';
+  const day = new Date(next.date + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short' });
+  const dist = next.target_distance_km ? ` ${next.target_distance_km} km` : '';
+  return `<p class="sub">Next: ${esc(next.session_type)}${dist}, ${day}</p>`;
+}
+
+// The countdown, as a rail. Nearest three fixtures with a date.
+async function renderFixtureRail(todayStr) {
+  const fixtures = (await fetchJson('fixtures.json')) || [];
+  const next = fixtures
+    .filter(f => f.date && f.date >= todayStr)
+    .sort((a, b) => a.date.localeCompare(b.date))
+    .slice(0, 3);
+  if (!next.length) return;
+  const rail = document.getElementById('fixtureRail');
+  rail.innerHTML = next.map(f => {
+    const days = Math.round(
+      (new Date(f.date + 'T00:00:00') - new Date(todayStr + 'T00:00:00')) / 86400000);
+    // The rail is three cells on a phone, so names have to be short
+    // enough to read whole — "Cheltenham Half Marathon" becomes
+    // "Cheltenham", "Cross country" becomes "XC".
+    const trimmed = f.name.replace(/\s+(Half\s+)?Marathon$/i, '').replace(/\s+\d+K?$/i, '');
+    const short = /cross country/i.test(f.name) ? 'XC'
+      : trimmed.length <= 12 ? trimmed : trimmed.split(' ')[0];
+    return `<span>${esc(short)} <b>${days === 0 ? 'today' : days + 'd'}</b></span>`;
+  }).join('');
+  rail.hidden = false;
+}
+
+// This week as a lane: seven days, today lifted out of the row rather
+// than merely tinted. Tapping a day shows its note — session detail is
+// a tap away rather than seven paragraphs deep.
+const LANE_NOTES = [];
+function weekLaneHtml(plan, todayStr) {
+  const weekStart = getWeekStart(todayStr);
+  const planByDate = {};
+  (plan || []).forEach(s => { planByDate[s.date] = s; });
+
+  LANE_NOTES.length = 0;
+  let plannedKm = 0;
+  const cells = [];
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(weekStart + 'T00:00:00');
+    d.setDate(d.getDate() + i);
+    const ds = toDateStr(d);
+    const s = planByDate[ds];
+    const isToday = ds === todayStr;
+    if (s && s.target_distance_km) plannedKm += s.target_distance_km;
+    const letter = d.toLocaleDateString('en-GB', { weekday: 'narrow' });
+    const value = s && s.target_distance_km ? s.target_distance_km : '—';
+    const type = s ? s.session_type : '';
+    LANE_NOTES.push({
+      head: `${d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' })}` +
+            (s ? ` · ${s.session_type}${s.target_distance_km ? ' ' + s.target_distance_km + ' km' : ''}` : ' · nothing planned'),
+      body: s && s.notes ? s.notes : (s && s.target_pace ? s.target_pace : 'No note on this one.'),
+    });
+    cells.push(`<button type="button" class="${isToday ? 'is-today' : ''}"
+        aria-pressed="${isToday ? 'true' : 'false'}" data-i="${i}">
+      <em>${letter}</em><b>${value}</b><s>${esc(type || '—')}</s></button>`);
+  }
+
+  return `
+    <div class="sect">
+      <div class="sect-h"><b>This week</b><span>${plannedKm ? plannedKm.toFixed(0) + ' km planned' : ''}</span></div>
+      <div class="lane" id="lane">${cells.join('')}</div>
+      <div class="daynote" id="daynote" aria-live="polite"></div>
+    </div>`;
+}
+
+function wireLane() {
+  const lane = document.getElementById('lane');
+  const out = document.getElementById('daynote');
+  if (!lane || !out) return;
+  const show = i => {
+    const n = LANE_NOTES[i];
+    if (!n) return;
+    out.innerHTML = `<b>${esc(n.head)}</b> — ${esc(n.body)}`;
+    lane.querySelectorAll('button').forEach((b, j) =>
+      b.setAttribute('aria-pressed', j === i ? 'true' : 'false'));
+  };
+  lane.addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (b) show(parseInt(b.dataset.i, 10));
+  });
+  const todayIdx = Array.from(lane.querySelectorAll('button'))
+    .findIndex(b => b.classList.contains('is-today'));
+  show(todayIdx >= 0 ? todayIdx : 0);
+}
+
+// Weekly volume. The number lives inside its bar, which frees the row
+// underneath for dates. The current week is shown as PLANNED, in
+// yellow, because it hasn't happened yet — weekly_summary carries it
+// as an in-progress row reading 0, which would draw a false collapse.
+function volumeBarsHtml(weekly, plan, todayStr) {
+  const weeks = ((weekly && weekly.weeks) || []).filter(w => !w.in_progress);
+  if (weeks.length < 2) return '';
+  const recent = weeks.slice(-7);
+
+  const weekStart = getWeekStart(todayStr);
+  let plannedKm = 0;
+  (plan || []).forEach(s => {
+    if (s.date >= weekStart && s.target_distance_km) {
+      const d = new Date(weekStart + 'T00:00:00');
+      d.setDate(d.getDate() + 6);
+      if (s.date <= toDateStr(d)) plannedKm += s.target_distance_km;
+    }
+  });
+
+  const series = recent.map(w => ({ start: w.week_start, km: w.km, planned: false }));
+  if (plannedKm) series.push({ start: weekStart, km: plannedKm, planned: true });
+
+  const max = Math.max(...series.map(s => s.km)) || 1;
+  let lastMonth = null;
+  const cols = series.map(s => {
+    const d = new Date(s.start + 'T00:00:00');
+    const month = d.toLocaleDateString('en-GB', { month: 'short' });
+    const label = month === lastMonth
+      ? String(d.getDate())
+      : `${d.getDate()} ${month}`;
+    lastMonth = month;
+    const h = Math.max(14, Math.round(s.km / max * 74));
+    return `<div class="col${s.planned ? ' cur' : ''}">
+        <div class="track"><i class="${s.planned ? 'now' : ''}" style="height:${h}px;">
+          <b>${Math.round(s.km)}</b></i></div>
+        <span>${label}</span>
+      </div>`;
+  }).join('');
+
+  return `
+    <div class="sect">
+      <div class="sect-h"><b>Volume · km per week</b><span>peak ${Math.round(max)}</span></div>
+      <div class="bars">${cols}</div>
+      ${plannedKm ? `<p class="plain" style="margin-top:10px;">Yellow is this week, and
+        <b>planned rather than run</b> — it fills in as sessions are logged.</p>` : ''}
+    </div>`;
+}
+
+// Tab name -> the element that holds it. "today" is the original
+// #content div; the merged tabs are wrappers that each contain the
+// original builders' target divs untouched, so no builder had to
+// learn where it now lives.
+const TAB_PANELS = {
+  today: 'content',
+  recovery: 'panel-recovery',
+  trends: 'panel-trends',
+  races: 'panel-races',
+  coach: 'tab-coach',
+};
+
 function setupTabs(data) {
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -583,12 +1039,9 @@ function setupTabs(data) {
       document.getElementById('content').style.display = 'none';
 
       btn.classList.add('active');
-      const tab = btn.dataset.tab;
-      if (tab === 'overview') {
-        document.getElementById('content').style.display = 'block';
-      } else {
-        document.getElementById('tab-' + tab).style.display = 'block';
-      }
+      const target = TAB_PANELS[btn.dataset.tab];
+      if (target) document.getElementById(target).style.display = 'block';
+      window.scrollTo(0, 0);
     });
   });
 
@@ -1115,6 +1568,12 @@ async function buildPlanTab(computedData) {
     html += `
       <div style="background:var(--warn-bg); border:1px solid var(--warn); border-radius:8px; padding:12px 16px; margin-bottom:1.5rem;">
         <p style="font-size:13px; font-weight:600; color:var(--warn); margin:0 0 6px;">Pace targets may be stale</p>
+        <p class="plain"><b>What this watches.</b> Whether the paces on your plan have gone soft.
+          It flags when two quality sessions inside ${esc(String(paceTarget.window_days))} days come in
+          3+ sec/km inside target <em>and</em> you rated them RPE 6 or easier — both halves are
+          needed, because quick-but-it-hurt is a good session and on-pace-but-easy is a taper.
+          The fix is a tighter number on the next plan, <b>never running harder inside a
+          session</b>.</p>
         <p style="font-size:13px; color:var(--text-secondary); margin:0 0 8px;">
           ${f.count} quality sessions in the last ${esc(String(paceTarget.window_days))} days came in
           <strong>${f.mean_beat_sec_per_km} sec/km inside target</strong> at low effort.</p>
@@ -1137,10 +1596,17 @@ async function buildPlanTab(computedData) {
       </div>
     `;
   } else if (paceTarget.cooldown_remaining) {
+    // The state he'll see most of the time, so it explains itself
+    // rather than being a bare line of jargon.
     html += `
-      <p style="font-size:12px; color:var(--text-muted); margin:0 0 1.5rem;">
-        Pace-target check paused — ${paceTarget.cooldown_remaining} more quality
-        session(s) at the current target before it can flag again.</p>
+      <div class="sect" style="margin-top:0;">
+        <div class="sect-h"><b>Prescribed paces</b><span>cooldown ${paceTarget.cooldown_remaining}</span></div>
+        <p class="plain"><b>Nothing to change.</b> This watches whether your target paces have
+          gone soft — two quality sessions inside ${esc(String(paceTarget.window_days))} days coming in 3+
+          sec/km inside target <em>and</em> rated RPE 6 or easier. It flagged recently, so it is
+          quiet for ${paceTarget.cooldown_remaining} more quality session${paceTarget.cooldown_remaining === 1 ? '' : 's'}
+          while the tightened target gets tested.</p>
+      </div>
     `;
   }
 
@@ -1153,10 +1619,13 @@ async function buildPlanTab(computedData) {
     `;
   }
 
-  // Build full 7-day weeks: this week + next 2 weeks, showing every day
-  // (with or without a planned session), not just days that have entries.
+  // The weeks AFTER this one. This week is already on screen above as
+  // the lane, and a five-column table repeating it was both duplication
+  // and unreadable on a phone — session notes are prose, and prose does
+  // not belong in a 90px table column. Stacked rows instead: the line
+  // you scan, then the note at full width underneath.
   const todayWeekStart = getWeekStart(today.date);
-  const weekStarts = [0, 1, 2].map(offset => {
+  const weekStarts = [1, 2].map(offset => {
     const d = new Date(todayWeekStart + 'T00:00:00');
     d.setDate(d.getDate() + offset * 7);
     return toDateStr(d);
@@ -1169,35 +1638,47 @@ async function buildPlanTab(computedData) {
       d.setDate(d.getDate() + i);
       days.push(toDateStr(d));
     }
+    const weekKm = days.reduce((sum, ds) => {
+      const s = planByDate[ds];
+      return sum + ((s && s.target_distance_km) || 0);
+    }, 0);
+
+    // A week with nothing in it is one line, not seven empty rows. The
+    // plan only runs as far as the last approved proposal, so future
+    // weeks are routinely blank and should say so once.
+    if (!days.some(ds => planByDate[ds])) {
+      html += `
+        <div class="sect">
+          <div class="sect-h">
+            <b>${esc(fmtWeekLabel(weekStart).replace('Week of ', ''))}</b><span>—</span>
+          </div>
+          <p style="font-size:13px; color:var(--text-muted); margin:0;">
+            Nothing planned yet — written after the next weekly review.</p>
+        </div>`;
+      return;
+    }
 
     html += `
-      <div class="chart-card">
-        <p class="title">${fmtWeekLabel(weekStart)}</p>
-        <table style="width:100%; border-collapse:collapse; font-size:13px;">
-          <thead>
-            <tr style="text-align:left; color:var(--text-muted);">
-              <th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Type</th>
-              <th style="padding:6px 8px;">Distance</th><th style="padding:6px 8px;">Pace</th>
-              <th style="padding:6px 8px;">Notes</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${days.map(dateStr => {
-              const s = planByDate[dateStr];
-              const isToday = dateStr === today.date;
-              const dayName = new Date(dateStr + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short' });
-              return `
-                <tr style="border-top:1px solid var(--border); ${isToday ? 'background:color-mix(in srgb, var(--club-yellow) 10%, transparent);' : ''}">
-                  <td style="padding:6px 8px;">${dayName} ${fmtDayMonth(dateStr)}${isToday ? ' (today)' : ''}</td>
-                  <td style="padding:6px 8px; text-transform:capitalize; ${!s ? 'color:var(--text-muted);' : ''}">${s ? s.session_type : 'Nothing planned'}</td>
-                  <td style="padding:6px 8px;">${s && s.target_distance_km ? s.target_distance_km + ' km' : '--'}</td>
-                  <td style="padding:6px 8px;">${s && s.target_pace ? s.target_pace : '--'}</td>
-                  <td style="padding:6px 8px; color:var(--text-secondary);">${s && s.notes ? s.notes : ''}</td>
-                </tr>
-              `;
-            }).join('')}
-          </tbody>
-        </table>
+      <div class="sect">
+        <div class="sect-h">
+          <b>${esc(fmtWeekLabel(weekStart).replace('Week of ', ''))}</b>
+          <span>${weekKm ? weekKm.toFixed(0) + ' km' : ''}</span>
+        </div>
+        ${days.map(dateStr => {
+          const s = planByDate[dateStr];
+          const d = new Date(dateStr + 'T00:00:00');
+          const dayName = d.toLocaleDateString('en-GB', { weekday: 'short' });
+          return `
+            <div style="border-bottom:1px solid var(--border); padding:8px 0;">
+              <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px;">
+                <span style="font-family:var(--mono); font-size:11px; color:var(--text-muted); min-width:66px;">${dayName} ${d.getDate()}</span>
+                <span style="flex:1; font-size:14px; ${s ? 'text-transform:capitalize;' : 'color:var(--text-muted);'}">${s ? esc(s.session_type) : 'Nothing planned'}</span>
+                <span style="font-family:var(--mono); font-size:14px; font-weight:600; white-space:nowrap;">${s && s.target_distance_km ? s.target_distance_km + ' km' : ''}</span>
+              </div>
+              ${s && s.target_pace ? `<p style="margin:4px 0 0 66px; font-family:var(--mono); font-size:11px; color:var(--club-blue);">${esc(s.target_pace)}</p>` : ''}
+              ${s && s.notes ? `<p style="margin:5px 0 0 66px; font-size:12.5px; color:var(--text-secondary); line-height:1.45;">${esc(s.notes)}</p>` : ''}
+            </div>`;
+        }).join('')}
       </div>
     `;
   });
@@ -1206,24 +1687,16 @@ async function buildPlanTab(computedData) {
   if (flagsLog.length) {
     const sorted = [...flagsLog].sort((a, b) => b.date.localeCompare(a.date));
     html += `
-      <div class="chart-card">
-        <p class="title">Flag history</p>
-        <table style="width:100%; border-collapse:collapse; font-size:13px;">
-          <thead>
-            <tr style="text-align:left; color:var(--text-muted);">
-              <th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Planned</th><th style="padding:6px 8px;">Reasons</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${sorted.map(f => `
-              <tr style="border-top:1px solid var(--border);">
-                <td style="padding:6px 8px;">${fmtDate(f.date)}</td>
-                <td style="padding:6px 8px; text-transform:capitalize;">${f.planned_session ?? '--'}</td>
-                <td style="padding:6px 8px; color:var(--text-secondary);">${f.reasons.join(' ')}</td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
+      <div class="sect">
+        <div class="sect-h"><b>Flag history</b><span>${sorted.length}</span></div>
+        ${sorted.map(f => `
+          <div style="border-bottom:1px solid var(--border); padding:8px 0;">
+            <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px;">
+              <span style="font-family:var(--mono); font-size:11px; color:var(--text-muted);">${fmtDayMonth(f.date)}</span>
+              <span style="flex:1; font-size:13px; text-transform:capitalize;">${esc(f.planned_session ?? '--')}</span>
+            </div>
+            <p style="margin:4px 0 0; font-size:12.5px; color:var(--text-secondary); line-height:1.45;">${esc(f.reasons.join(' '))}</p>
+          </div>`).join('')}
       </div>
     `;
   }
@@ -1555,6 +2028,11 @@ async function buildPerformanceTab(data) {
   const decHtml = !decRuns.length ? '' : `
     <div class="chart-card">
       <p class="title">Aerobic decoupling — does pace still cost the same late in a run?</p>
+      <p class="plain"><b>What it means.</b> It compares the second half of a steady run with the
+        first: how much more heart rate the same speed cost you. <b>Under ${dec.threshold_pct}% means
+        the aerobic system held</b> — the last hour costs no more beats than the first. That is
+        durability, and it is the question a marathon asks loudest. A negative number almost
+        always means you sped up, not a miracle. It moves over months, so never read one run.</p>
       ${decLatest ? `
         <p style="font-size:14px; margin:0 0 4px;">
           Last steady run <strong style="color:${decLatest.within_threshold ? 'var(--good)' : 'var(--warn)'};">${decLatest.decoupling_pct > 0 ? '+' : ''}${decLatest.decoupling_pct}%</strong>
@@ -1650,7 +2128,7 @@ async function buildPerformanceTab(data) {
       <div class="card">
         <p class="label">VO2max</p>
         <p class="value">${latestVo2 ? latestVo2.vo2max : '--'}</p>
-        <p class="delta flat">${latestVo2 ? 'as of ' + fmtDate(latestVo2.vo2max_date) : 'no data yet'}</p>
+        <p class="delta flat">${latestVo2 ? 'as of ' + fmtDate(latestVo2.vo2max_date || latestVo2.date) : 'no data yet'}</p>
       </div>
       <div class="card">
         <p class="label">Training status</p>
@@ -1733,74 +2211,76 @@ async function buildRacesTab() {
     return label ? `<span class="chip ${cls}">${esc(label)}</span>` : '';
   };
 
+  // Stacked rows, not a five-column table. The coaching notes on a
+  // fixture are a paragraph each — they were being squeezed into a
+  // column roughly 90px wide on a phone.
   const fixturesHtml = upcoming.length ? `
-    <div class="chart-card">
-      <p class="title">Coming up</p>
-      <table style="width:100%; border-collapse:collapse; font-size:13px;">
-        <thead>
-          <tr style="text-align:left; color:var(--text-muted);">
-            <th style="padding:6px 8px;">Date</th>
-            <th style="padding:6px 8px;">Race</th>
-            <th style="padding:6px 8px;">Distance</th>
-            <th style="padding:6px 8px;">Away</th>
-            <th style="padding:6px 8px;">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${upcoming.map(f => {
-            const days = f.date
-              ? Math.round((new Date(f.date + 'T00:00:00') - new Date(todayStr + 'T00:00:00')) / 86400000)
-              : null;
-            return `
-            <tr style="border-top:1px solid var(--border);">
-              <td style="padding:6px 8px; white-space:nowrap;">${f.date
-                ? new Date(f.date + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' })
-                : esc(f.date_note || 'TBC')}</td>
-              <td style="padding:6px 8px;">${esc(f.name)}</td>
-              <td style="padding:6px 8px;">${f.distance_km != null ? f.distance_km + ' km' : '--'}</td>
-              <td style="padding:6px 8px; white-space:nowrap;">${days == null ? '--'
-                : days === 0 ? 'today' : days === 1 ? 'tomorrow' : days + ' days'}</td>
-              <td style="padding:6px 8px;">${f.status === 'possible'
-                ? '<span class="chip">Possible</span> ' : ''}${intentChip(f)}</td>
-            </tr>
-            ${f.notes ? `<tr><td colspan="5" style="padding:0 8px 8px; font-size:12px; color:var(--text-secondary);">${esc(f.notes)}</td></tr>` : ''}
-          `; }).join('')}
-        </tbody>
-      </table>
+    <div class="sect" style="margin-top:0;">
+      <div class="sect-h"><b>Coming up</b><span>${upcoming.length}</span></div>
+      ${upcoming.map(f => {
+        const days = f.date
+          ? Math.round((new Date(f.date + 'T00:00:00') - new Date(todayStr + 'T00:00:00')) / 86400000)
+          : null;
+        const isTarget = f.intent === 'target';
+        return `
+        <div style="border-bottom:1px solid var(--border); padding:10px 0 10px ${isTarget ? '10px' : '0'};
+                    ${isTarget ? 'box-shadow:inset 3px 0 0 var(--club-blue);' : ''}">
+          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px;">
+            <span style="font-size:14.5px; font-weight:600;">${esc(f.name)}</span>
+            <span style="font-family:var(--mono); font-size:14px; font-weight:600; white-space:nowrap;">${
+              days == null ? '--' : days === 0 ? 'today' : days === 1 ? 'tomorrow' : days + 'd'}</span>
+          </div>
+          <div style="font-family:var(--mono); font-size:11px; color:var(--text-muted); margin-top:3px;">
+            ${f.date
+              ? new Date(f.date + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })
+              : esc(f.date_note || 'date TBC')}${f.distance_km != null ? ' · ' + f.distance_km + ' km' : ''}
+          </div>
+          <div>${f.status === 'possible' ? '<span class="chip">Possible</span>' : ''}${intentChip(f)}</div>
+          ${f.notes ? `<p style="margin:7px 0 0; font-size:12.5px; color:var(--text-secondary); line-height:1.45;">${esc(f.notes)}</p>` : ''}
+        </div>`;
+      }).join('')}
     </div>` : '';
 
+  // Results as a board rather than a card: every race this year in one
+  // place, newest first, with the ones the predictor ignores greyed
+  // instead of silently identical to the ones it uses.
+  const excluded = races.filter(r => r.include_in_prediction === false).length;
   panel.innerHTML = fixturesHtml + `
-    <div class="chart-card">
-      <p class="title">Race history</p>
-      <table style="width:100%; border-collapse:collapse; font-size:13px;">
-        <thead>
-          <tr style="text-align:left; color:var(--text-muted);">
-            <th style="padding:6px 8px;">Date</th>
-            <th style="padding:6px 8px;">Race</th>
-            <th style="padding:6px 8px;">Distance</th>
-            <th style="padding:6px 8px;">Time</th>
-            <th style="padding:6px 8px;">Tapered</th>
-            <th style="padding:6px 8px;">Notes</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${races.map(r => `
-            <tr style="border-top:1px solid var(--border);">
-              <td style="padding:6px 8px;">${fmtDate(r.date)}</td>
-              <td style="padding:6px 8px;">${r.name}</td>
-              <td style="padding:6px 8px;">${r.distance_km ?? '--'} km</td>
-              <td style="padding:6px 8px;">${r.time_fmt ?? '--'}</td>
-              <td style="padding:6px 8px;">${r.tapered ? 'Yes' : 'No'}</td>
-              <td style="padding:6px 8px; color:var(--text-secondary);">${r.notes ?? ''}</td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
+    <div class="sect">
+      <div class="sect-h"><b>Results</b><span>${races.length} race${races.length === 1 ? '' : 's'}</span></div>
+      <div class="tblwrap">
+        <table class="tbl">
+          <thead>
+            <tr><th>Date</th><th class="l">Race</th><th>Dist</th><th>Time</th></tr>
+          </thead>
+          <tbody>
+            ${races.map(r => `
+              <tr class="${r.include_in_prediction === false ? 'ex' : ''}">
+                <td style="white-space:nowrap;">${fmtDayMonth(r.date)}</td>
+                <td class="l">${esc(r.name)}${r.tapered ? '<span class="chip" style="margin:0 0 0 6px; font-size:9px; padding:1px 5px;">tapered</span>' : ''}</td>
+                <td>${r.distance_km != null ? r.distance_km.toFixed(1) : '--'}</td>
+                <td><strong>${esc(r.time_fmt ?? '--')}</strong></td>
+              </tr>
+              ${r.notes ? `<tr class="${r.include_in_prediction === false ? 'ex' : ''}"><td colspan="4" class="l" style="padding:0 0 8px; font-size:11px; color:var(--text-muted); border-bottom:1px solid var(--border);">${esc(r.notes)}</td></tr>` : ''}
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+      ${excluded ? `<p class="plain" style="margin-top:12px;">Greyed rows are <b>excluded from
+        the projections</b> — a leg of a relay, a race run in conditions that were not normal, or
+        one that predates the current block. The rest are what the predicted times are built
+        from.</p>` : ''}
     </div>
   `;
 }
 
+// The old "Upcoming sessions" card on the overview. The week lane and
+// the three-week plan tables on Today replaced it, so the card is gone
+// — this keeps working if it is ever put back, and does nothing if not.
 async function loadTrainingPlan() {
+  const card = document.getElementById('planCard');
+  const rows = document.getElementById('planRows');
+  if (!card || !rows) return;
   try {
     const res = await fetch('training_plan.json?v=' + Date.now());
     if (!res.ok) return;
@@ -1811,8 +2291,8 @@ async function loadTrainingPlan() {
     const upcoming = plan.filter(s => s.date >= today).sort((a, b) => a.date.localeCompare(b.date));
     if (upcoming.length === 0) return;
 
-    document.getElementById('planCard').style.display = 'block';
-    document.getElementById('planRows').innerHTML = upcoming.map(s => `
+    card.style.display = 'block';
+    rows.innerHTML = upcoming.map(s => `
       <tr style="border-top:1px solid var(--border);">
         <td style="padding:6px 8px;">${fmtDate(s.date)}</td>
         <td style="padding:6px 8px; text-transform:capitalize;">${s.session_type}</td>
