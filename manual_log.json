@@ -398,5 +398,13 @@
     "rpe": 0.0,
     "on_target": true,
     "session_notes": "Rest, no injuries from the race"
+  },
+  {
+    "date": "2026-09-22",
+    "achilles_score": 0,
+    "session_type": "rest",
+    "rpe": 0.0,
+    "on_target": true,
+    "session_notes": "Had physio booked. So no run, better option as physio said calfs, quads and back tight"
   }
 ]
