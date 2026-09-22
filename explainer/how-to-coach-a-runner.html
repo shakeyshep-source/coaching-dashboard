@@ -1,0 +1,572 @@
+<title>How to Coach a Runner</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#0D1214; --bg2:#121A1C; --panel:#182124; --panel2:#1E282B; --line:#263236;
+  --ink:#EAF1EF; --ink2:#AFC0BD; --mut:#7A8C8A;
+  --sage:#6FB39C; --ochre:#D6AB44; --burnt:#D4713C; --red:#C34A55; --violet:#9076C4;
+  --accent:var(--sage);
+  --disp:"Oswald","Haettenschweiler","Arial Narrow",sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.5;margin:0}
+.wrap{max-width:1140px;margin:0 auto;padding-inline:16px;padding-block:28px 64px}
+
+/* ---------- masthead ---------- */
+.mast{display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px 24px;margin-bottom:18px}
+.mast h1{font-family:var(--disp);font-weight:600;letter-spacing:.005em;text-transform:uppercase;
+  font-size:clamp(28px,5.2vw,52px);line-height:.98;margin:0;text-wrap:balance}
+.mast .sub{color:var(--ink2);font-size:clamp(13px,1.5vw,15px);max-width:46ch;margin:0}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+
+/* ---------- stage ---------- */
+.player{border:1px solid var(--line);border-radius:4px;background:var(--bg2);overflow:hidden}
+.stage{position:relative;aspect-ratio:16/9;min-height:430px;background:
+   radial-gradient(120% 90% at 12% 0%, #162024 0%, var(--bg2) 62%);}
+.scene{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,42fr) minmax(0,58fr);
+  gap:clamp(16px,2.6vw,34px);padding:clamp(18px,2.8vw,34px);opacity:0;pointer-events:none;transition:opacity .45s ease}
+.scene.live{opacity:1;pointer-events:auto}
+.sleft{display:flex;flex-direction:column;min-width:0}
+.chap{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.chap b{color:var(--accent);font-weight:500}
+.stitle{font-family:var(--disp);font-weight:500;text-transform:uppercase;letter-spacing:.01em;
+  font-size:clamp(20px,2.9vw,34px);line-height:1.02;margin:10px 0 0;text-wrap:balance}
+.cap{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);
+  font-size:clamp(14px,1.55vw,17.5px);line-height:1.52;color:var(--ink);min-height:7.2em}
+.cap em{color:var(--accent);font-style:normal}
+.sright{min-width:0;overflow:auto;padding-right:2px;scroll-behavior:smooth}
+.sright::-webkit-scrollbar{width:6px}
+.sright::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+
+/* reveal states */
+.it{opacity:.22;transition:opacity .4s ease,border-color .4s ease,background .4s ease}
+.it.on{opacity:1}
+.it.act{}
+
+/* ---------- visual primitives ---------- */
+.vlist{display:flex;flex-direction:column;gap:clamp(5px,.75vw,9px)}
+.vlist .it{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start;
+  padding:clamp(6px,.85vw,10px) clamp(8px,1.1vw,13px);background:var(--panel);border-left:2px solid var(--line);border-radius:2px}
+.vlist .it.act{background:var(--panel2);border-left-color:var(--tone,var(--accent))}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--tone,var(--accent));margin-top:.42em}
+.num{font-family:var(--mono);font-size:11px;color:var(--tone,var(--accent));margin-top:.2em;min-width:1.6em}
+.lb{font-weight:600;font-size:clamp(12.5px,1.35vw,15px);letter-spacing:.005em}
+.dt{color:var(--ink2);font-size:clamp(11.5px,1.2vw,13.5px);line-height:1.42;margin-top:2px}
+
+.vtab{width:100%;border-collapse:collapse;font-size:clamp(11px,1.15vw,13px)}
+.vtab th{font-family:var(--mono);font-weight:400;font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--mut);text-align:left;padding:0 10px 7px 0;border-bottom:1px solid var(--line)}
+.vtab td{padding:clamp(4px,.6vw,7px) 10px clamp(4px,.6vw,7px) 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink2)}
+.vtab td:first-child{color:var(--ink);font-weight:600;white-space:nowrap;border-left:2px solid transparent;padding-left:9px}
+.vtab tr.act td:first-child{border-left-color:var(--tone,var(--accent))}
+.vtab tr.act td{color:var(--ink)}
+.tscroll{overflow-x:auto}
+
+.vcols{display:grid;gap:clamp(8px,1.1vw,12px);grid-template-columns:repeat(var(--n,3),minmax(0,1fr))}
+.vcols.quad{grid-template-columns:repeat(2,minmax(0,1fr))}
+.col{background:var(--panel);border-top:2px solid var(--tone,var(--line));border-radius:2px;padding:clamp(8px,1.1vw,13px);display:flex;flex-direction:column;gap:7px}
+.col.act{background:var(--panel2)}
+.col h4{font-family:var(--disp);text-transform:uppercase;letter-spacing:.02em;font-weight:500;
+  font-size:clamp(12px,1.35vw,15px);margin:0;color:var(--tone,var(--ink))}
+.col .kick{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.col p{margin:0;font-size:clamp(11px,1.15vw,13px);color:var(--ink2);line-height:1.42}
+.stack{display:flex;height:9px;border-radius:2px;overflow:hidden;background:var(--line)}
+.stack span{display:block}
+
+.vtl{display:grid;gap:8px}
+.ph{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;position:relative;
+  padding:clamp(6px,.9vw,10px) clamp(8px,1.1vw,12px);background:var(--panel);border-radius:2px;border-left:2px solid var(--line)}
+.ph.act{border-left-color:var(--tone,var(--accent));background:var(--panel2)}
+.ph .wk{font-family:var(--mono);font-size:10.5px;color:var(--tone,var(--mut));white-space:nowrap;margin-top:.25em}
+
+.vbars{display:flex;flex-direction:column;gap:clamp(5px,.7vw,8px)}
+.bar{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;
+  padding:clamp(5px,.7vw,8px) clamp(8px,1.1vw,12px);background:var(--panel);border-radius:2px;border-left:2px solid var(--line)}
+.bar.act{border-left-color:var(--tone,var(--accent));background:var(--panel2)}
+.bar .wk{font-family:var(--mono);font-size:10.5px;color:var(--mut);white-space:nowrap}
+.track{height:8px;background:var(--line);border-radius:2px;position:relative}
+.track i{position:absolute;inset:0 auto 0 0;background:var(--tone,var(--accent));border-radius:2px;display:block}
+.bar .val{font-family:var(--mono);font-size:11px;color:var(--ink2);font-variant-numeric:tabular-nums}
+.axis{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-top:4px}
+
+.vsvg{width:100%;height:auto;display:block}
+.note{font-size:clamp(10.5px,1.1vw,12px);color:var(--mut);margin-top:8px;font-style:italic}
+
+/* ---------- transport ---------- */
+.bar-prog{height:3px;background:var(--line);position:relative}
+.bar-prog i{position:absolute;inset:0 auto 0 0;background:var(--accent);display:block;width:0}
+.transport{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 12px;background:var(--panel);border-top:1px solid var(--line)}
+button{font:inherit;color:var(--ink);background:var(--panel2);border:1px solid var(--line);border-radius:2px;
+  padding:7px 11px;cursor:pointer;font-size:12.5px;line-height:1;transition:background .15s,border-color .15s}
+button:hover{background:#243033;border-color:#31403f}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button.prim{background:var(--accent);color:#08110E;border-color:var(--accent);font-weight:600;min-width:74px}
+button.prim:hover{background:#7fc2ab}
+button.off{color:var(--mut)}
+.tc{font-family:var(--mono);font-size:11.5px;color:var(--ink2);font-variant-numeric:tabular-nums;margin-left:auto}
+.chips{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;background:var(--bg2);border-top:1px solid var(--line);scrollbar-width:thin}
+.chip{white-space:nowrap;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--mut);background:transparent;border:1px solid var(--line);padding:6px 9px}
+.chip.on{color:#08110E;background:var(--accent);border-color:var(--accent)}
+
+/* ---------- script ---------- */
+.script{margin-top:44px}
+.script h2{font-family:var(--disp);text-transform:uppercase;letter-spacing:.03em;font-weight:500;font-size:22px;margin:0 0 4px}
+.script .lead{color:var(--mut);font-size:13px;margin:0 0 22px}
+.sec{border-top:1px solid var(--line);padding:18px 0;display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:8px 28px}
+.sec h3{font-family:var(--disp);text-transform:uppercase;letter-spacing:.02em;font-weight:500;font-size:15px;margin:0;color:var(--ink)}
+.sec .idx{font-family:var(--mono);font-size:10.5px;color:var(--accent);letter-spacing:.12em;display:block;margin-bottom:4px}
+.sec p{margin:0 0 9px;color:var(--ink2);font-size:14px;max-width:66ch}
+.sec p:last-child{margin-bottom:0}
+.jump{background:none;border:0;color:var(--mut);padding:6px 0 0;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;text-align:left}
+.jump:hover{color:var(--accent);background:none}
+.foot{border-top:1px solid var(--line);margin-top:34px;padding-top:16px;color:var(--mut);font-size:12px;max-width:70ch}
+
+@media (max-width:880px){
+  .stage{aspect-ratio:auto;min-height:0}
+  .scene{position:relative;inset:auto;grid-template-columns:minmax(0,1fr);display:none}
+  .scene.live{display:grid}
+  .cap{min-height:0;margin-top:14px}
+  .sright{overflow:visible;order:3}
+  .vcols{grid-template-columns:minmax(0,1fr)}
+  .sec{grid-template-columns:minmax(0,1fr);gap:6px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.sright{scroll-behavior:auto}}
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div>
+      <p class="eyebrow">Explainer &middot; Endurance coaching</p>
+      <h1>How to Coach<br>a Runner</h1>
+    </div>
+    <p class="sub">Building a training plan from nothing: the intake, the anchors, the decision order behind every session &mdash; and why the same prescription means four different things to four different athletes.</p>
+  </header>
+
+  <div class="player">
+    <div class="stage" id="stage"></div>
+    <div class="bar-prog"><i id="prog"></i></div>
+    <div class="transport">
+      <button class="prim" id="play">Play</button>
+      <button id="prev" title="Previous point">&#8592; Back</button>
+      <button id="next" title="Next point">Next &#8594;</button>
+      <button id="narr" title="Toggle spoken narration">&#9835; Narration: on</button>
+      <button id="rate" title="Playback speed">1&times;</button>
+      <span class="tc" id="tc">00:00 / 00:00</span>
+    </div>
+    <div class="chips" id="chips"></div>
+  </div>
+
+  <section class="script" id="script">
+    <h2>Full script</h2>
+    <p class="lead">Every word of the narration, chapter by chapter. Click a chapter to jump the player to it.</p>
+    <div id="secs"></div>
+    <p class="foot">Narration uses your device&rsquo;s built-in speech voice, so the accent and quality depend on your browser. Turn it off and the scenes advance on a timer instead, with captions on screen.</p>
+  </section>
+</div>
+<script>
+(function(){
+"use strict";
+var SAGE="var(--sage)",OCH="var(--ochre)",BUR="var(--burnt)",RED="var(--red)",VIO="var(--violet)";
+
+function svgRamp(){return '<svg class="vsvg" viewBox="0 0 540 300" role="img" aria-label="Share of a typical training week by intensity zone">'+
+ '<line x1="40" y1="250" x2="530" y2="250" stroke="var(--line)" stroke-width="1"/>'+
+ '<text x="40" y="24" fill="var(--mut)" font-size="11" font-family="IBM Plex Mono,monospace" letter-spacing="1.4">SHARE OF A TYPICAL WEEK’S VOLUME</text>'+
+ [["Easy",80,SAGE],["Steady / MP",8,OCH],["Threshold",7,BUR],["VO₂max",3,RED],["Speed",2,VIO]].map(function(d,i){
+   var x=52+i*97,h=d[1]*2.4,y=250-h;
+   return '<rect x="'+x+'" y="'+y+'" width="66" height="'+h+'" fill="'+d[2]+'" rx="1"/>'+
+     '<text x="'+(x+33)+'" y="'+(y-8)+'" fill="var(--ink2)" font-size="12" font-family="IBM Plex Mono,monospace" text-anchor="middle">'+d[1]+'%</text>'+
+     '<text x="'+(x+33)+'" y="270" fill="var(--mut)" font-size="11" text-anchor="middle" font-family="IBM Plex Sans,sans-serif">'+d[0]+'</text>';
+ }).join('')+
+ '<text x="40" y="292" fill="var(--mut)" font-size="10.5" font-family="IBM Plex Sans,sans-serif" font-style="italic">Typical of trained distance runners across most successful training models.</text></svg>';}
+
+function svgRPE(){var pts=[[1,7.5],[2,7.5],[3,7.2],[4,7.0],[5,6.6],[6,7.1],[7,6.5],[8,6.2]];
+ function X(w){return 52+(w-1)*62} function Y(v){return 240-(v-5.5)*76}
+ var path=pts.map(function(p,i){return (i?"L":"M")+X(p[0])+" "+Y(p[1])}).join(" ");
+ return '<svg class="vsvg" viewBox="0 0 540 300" role="img" aria-label="Perceived effort at a fixed prescribed pace falling over eight weeks">'+
+ [8,7,6].map(function(v){return '<line x1="52" y1="'+Y(v)+'" x2="510" y2="'+Y(v)+'" stroke="var(--line)" stroke-width="1"/>'+
+   '<text x="44" y="'+(Y(v)+4)+'" fill="var(--mut)" font-size="10.5" text-anchor="end" font-family="IBM Plex Mono,monospace">'+v+'</text>'}).join('')+
+ '<path d="'+path+'" fill="none" stroke="'+SAGE+'" stroke-width="2.5" stroke-linejoin="round"/>'+
+ pts.map(function(p,i){return '<circle cx="'+X(p[0])+'" cy="'+Y(p[1])+'" r="'+(i===5?5:3.5)+'" fill="'+(i===5?BUR:SAGE)+'"/>'}).join('')+
+ '<text x="'+X(6)+'" y="'+(Y(7.1)-14)+'" fill="'+BUR+'" font-size="10.5" text-anchor="middle" font-family="IBM Plex Sans,sans-serif">28°C</text>'+
+ '<text x="52" y="24" fill="var(--mut)" font-size="11" font-family="IBM Plex Mono,monospace" letter-spacing="1.4">PERCEIVED EFFORT (1–10) AT ONE FIXED PRESCRIBED PACE</text>'+
+ '<text x="52" y="268" fill="var(--mut)" font-size="10.5" font-family="IBM Plex Sans,sans-serif">Week 1</text>'+
+ '<text x="510" y="268" fill="var(--mut)" font-size="10.5" text-anchor="end" font-family="IBM Plex Sans,sans-serif">Week 8</text>'+
+ '<text x="52" y="290" fill="var(--mut)" font-size="10.5" font-style="italic" font-family="IBM Plex Sans,sans-serif">Illustrative shape, not a real athlete: the trend is the signal, the hot week is noise.</text></svg>';}
+
+function svgTaper(){var d=[["Peak week",100],["3 weeks out",80],["2 weeks out",60],["Race week",42]];
+ function Y(v){return 240-v*1.85}
+ return '<svg class="vsvg" viewBox="0 0 540 300" role="img" aria-label="Taper: volume falls while intensity is held">'+
+ '<line x1="52" y1="240" x2="510" y2="240" stroke="var(--line)"/>'+
+ [100,50].map(function(v){return '<line x1="52" y1="'+Y(v)+'" x2="510" y2="'+Y(v)+'" stroke="var(--line)" stroke-dasharray="2 4"/>'+
+   '<text x="44" y="'+(Y(v)+4)+'" fill="var(--mut)" font-size="10.5" text-anchor="end" font-family="IBM Plex Mono,monospace">'+v+'%</text>'}).join('')+
+ d.map(function(p,i){var x=70+i*112,h=240-Y(p[1]);
+  return '<rect x="'+x+'" y="'+Y(p[1])+'" width="74" height="'+h+'" fill="'+SAGE+'" opacity="'+(0.95-i*0.13)+'" rx="1"/>'+
+   '<text x="'+(x+37)+'" y="258" fill="var(--mut)" font-size="10.5" text-anchor="middle" font-family="IBM Plex Sans,sans-serif">'+p[0]+'</text>'+
+   '<text x="'+(x+37)+'" y="'+(Y(p[1])-8)+'" fill="var(--ink2)" font-size="11" text-anchor="middle" font-family="IBM Plex Mono,monospace">'+p[1]+'%</text>'}).join('')+
+ '<line x1="60" y1="'+Y(100)+'" x2="502" y2="'+Y(100)+'" stroke="'+BUR+'" stroke-width="2.5"/>'+
+ '<text x="502" y="'+(Y(100)-9)+'" fill="'+BUR+'" font-size="11" text-anchor="end" font-family="IBM Plex Sans,sans-serif">Session intensity held at 100%</text>'+
+ '<text x="52" y="24" fill="var(--mut)" font-size="11" font-family="IBM Plex Mono,monospace" letter-spacing="1.4">WEEKLY VOLUME AS A SHARE OF PEAK</text>'+
+ '<text x="52" y="288" fill="var(--mut)" font-size="10.5" font-style="italic" font-family="IBM Plex Sans,sans-serif">A three-week marathon taper. Shorter events compress the same shape into two.</text></svg>';}
+
+var SCENES=[
+{ch:"Opening",t:"The job, stated plainly",vis:{type:"svg",html:svgRamp},beats:[
+ {say:"Coaching a runner is not writing hard sessions. Anyone can write a hard session. The job is deciding, week after week, what this particular athlete can absorb, and what they most need next."},
+ {say:"That decision is made from evidence you have to go and collect: their history, their injuries, their life, their numbers, and above all what they tell you."},
+ {say:"Here is the whole picture of a well-coached week, before we go anywhere near a session. Around eighty per cent of the volume is genuinely easy. That single fact survives across almost every successful training model ever studied, and it is the part athletes get wrong most often."}]},
+
+{ch:"Principles",t:"A plan is a hypothesis",vis:{type:"list",items:[
+ {lb:"Training doesn’t make you fitter",dt:"Recovering from training makes you fitter. The session is a bill; the adaptation is what you can afford to pay. A stimulus you cannot recover from buys nothing.",tone:SAGE},
+ {lb:"The best session is the repeatable one",dt:"Consistency compounds. Single sessions don’t. The fourth-best workout done fifty times beats the best one done eight.",tone:OCH},
+ {lb:"The plan is wrong from week two",dt:"It is a hypothesis about one person, written before the evidence arrived. The coach’s real work is the correction, not the document.",tone:BUR}]},beats:[
+ {say:"Three things underpin everything that follows, and if you only take three things, take these.",hi:-1},
+ {say:"First: training does not make you fitter. Recovering from training makes you fitter. The session is only a bill. The adaptation is what you can afford to pay, and a stimulus you cannot recover from buys you nothing at all.",hi:0},
+ {say:"Second: the best session is the one the athlete can repeat next week. Consistency compounds; individual sessions do not. The fourth-best workout done fifty times beats the perfect one done eight.",hi:1},
+ {say:"Third: a training plan is a hypothesis about one person, written before most of the evidence arrived. It is wrong from about week two onwards. The coaching is in the correction, not in the document.",hi:2}]},
+
+{ch:"Intake 1",t:"What you ask before writing anything",vis:{type:"list",items:[
+ {lb:"Training age, not age",dt:"Years of continuous running. A thirty-year-old in year one and the same runner in year ten need completely different plans.",tone:SAGE},
+ {lb:"Peak volume — and how it was run",dt:"Seventy miles a week run flat out is a different history from seventy run easy. The number alone tells you almost nothing.",tone:SAGE},
+ {lb:"Longest unbroken block",dt:"The single best predictor of what they can take now. Ten consistent weeks is a different athlete from ten stop-start ones.",tone:OCH},
+ {lb:"Recent races, and the taper behind them",dt:"A race is the most reliable field test there is — but only if you know whether they were rested, and what the day was like.",tone:OCH},
+ {lb:"Sessions they have actually done",dt:"Never prescribe a format the athlete has no template for. They will run it wrong, and you will misread the result.",tone:BUR},
+ {lb:"Everything that isn’t running",dt:"Gym work, cycling, a job on their feet, small children, a long commute. All of it is load, and none of it appears in a training log.",tone:BUR}]},beats:[
+ {say:"So, the intake. Before a single session is written, you are gathering the information that decides all of them.",hi:-1},
+ {say:"Start with training age, not chronological age. Years of continuous running is what determines tolerance. A thirty-year-old in their first year and the same runner in their tenth are not the same athlete and cannot take the same plan.",hi:0},
+ {say:"Then peak sustained volume, and critically, how it was run. Seventy miles a week run hard is a completely different history from seventy run easy. The number on its own tells you almost nothing about what broke them or what they can handle.",hi:1},
+ {say:"Ask for the longest unbroken block of training in the last two years. This is the single best predictor of what an athlete can absorb now. Ten consistent weeks describes a very different runner from ten interrupted ones, even at identical mileage.",hi:2},
+ {say:"Recent races, and how tapered they were. A race is the most reliable field test you will ever get for free. But you need to know whether they were rested, what the weather did, and what the course was like, or the number misleads you.",hi:3},
+ {say:"Ask which sessions they have actually done before. Never prescribe a format an athlete has no template for. They will run it wrong — usually too hard — and then you will misread the result and correct the wrong thing.",hi:4},
+ {say:"And ask about everything that is not running. Gym work, cycling, a job on their feet, two small children, a ninety-minute commute. All of it is load. None of it shows up in a training log, and it is routinely why a reasonable-looking plan fails.",hi:5}]},
+
+{ch:"Intake 2",t:"Injury history: mechanism, not label",vis:{type:"list",items:[
+ {lb:"What were they doing six weeks before it broke?",dt:"The diagnosis names the tissue. The mechanism tells you what to change. Only one of those is useful for writing a plan.",tone:RED},
+ {lb:"Look for the three classic triggers",dt:"A volume jump, a surface or shoe change, and intensity creep. The honest answer is usually all three at once.",tone:RED},
+ {lb:"Find the prodrome",dt:"The early warning that arrives before pain — first steps out of bed, stiffness standing up after sitting. Knowing it turns a six-week layoff into a three-day adjustment.",tone:OCH},
+ {lb:"Ask what they did last time",dt:"“Stop, wait, do nothing, come back, break again” is a loop you have to break on purpose. It does not resolve itself.",tone:OCH},
+ {lb:"Set one standing watch item",dt:"A single number scored daily, read as a weekly trend. Simple enough to actually get logged, specific enough to act on.",tone:SAGE}]},beats:[
+ {say:"Injury history deserves its own conversation, and you have to ask about it the right way.",hi:-1},
+ {say:"Do not ask what it was called. Ask what they were doing in the six weeks before it broke. The diagnosis names the tissue; the mechanism tells you what to change. Only one of those helps you write next week.",hi:0},
+ {say:"You are looking for three classic triggers: a jump in volume, a change of surface or shoe, and intensity creep — easy days drifting quicker. In practice the honest answer is usually all three arriving at once, which is exactly why no single one gets blamed at the time.",hi:1},
+ {say:"Find the prodrome. Almost every recurrent injury has an early warning that shows up before pain: stiffness in the first steps out of bed, aching when standing up after sitting. An athlete who knows their own prodrome converts a six-week layoff into a three-day adjustment.",hi:2},
+ {say:"Ask what they did last time it happened. Stop, wait, do nothing, come back, break again is an extremely common loop, and it does not resolve on its own. If that is the pattern, breaking it is part of the plan, not a footnote to it.",hi:3},
+ {say:"Then set one standing watch item. A single number, scored daily, read as a weekly trend. Simple enough that it actually gets logged, specific enough that you can act on it. One number the athlete will record beats five they won’t.",hi:4}]},
+
+{ch:"Anchors",t:"Getting paces without a lab",vis:{type:"table",head:["Anchor","How you get it","What it should feel like"],
+ rows:[["Easy ceiling","Roughly 60–90 s/km slower than threshold","Full sentences, nasal-comfortable, forgettable"],
+       ["Marathon / steady","~88–92% of threshold pace","Controlled, dull, sustainable for hours"],
+       ["Threshold","30-minute solo time trial, or a recent race","Hard but composed — ‘comfortably hard’ for an hour"],
+       ["VO₂max / interval","3k–5k race effort","Breathing dominates by rep three; unsustainable"]],
+ tones:[SAGE,OCH,BUR,RED]},beats:[
+ {say:"Next you need anchors. Four paces, and everything else in the plan is derived from them: an easy ceiling, a steady or marathon pace, a threshold, and an interval pace.",hi:-1},
+ {say:"A recent race is the best input you will get. Convert between distances with Riegel’s formula — time two equals time one times the distance ratio to the power of about one point zero six — or a VDOT-style table. Trust it less the further you extrapolate: from five kilometres to a marathon it is a guess dressed as arithmetic.",hi:-1},
+ {say:"With no recent race, a thirty-minute time trial run alone approximates threshold closely enough to programme from. Alone matters: with company it becomes a race, and you have measured something else.",hi:2},
+ {say:"Easy pace is defined by physiology, not by a number. Full sentences, nasal breathing comfortable, the run forgettable afterwards. For most trained runners that lands sixty to ninety seconds per kilometre slower than threshold, which almost always feels insultingly slow at first.",hi:0},
+ {say:"Lab testing — lactate profiling, a VO2max test — refines these numbers. It rarely changes the plan. Field data you collect every week beats lab data you collect twice a year, and it costs nothing.",hi:-1},
+ {say:"One rule about anchors, and it matters more than the precision: re-anchor from results, between sessions. Stale paces are a programming error to be fixed at the desk. Fixing them by running harder inside a rep is how athletes get hurt.",hi:-1}]},
+
+{ch:"The constraint",t:"Find what actually limits them",vis:{type:"list",items:[
+ {lb:"Aerobic ceiling",dt:"Can they take in and use oxygen? Usually the limiter in younger or low-volume runners. Answers to VO₂max work.",tone:RED},
+ {lb:"Durability",dt:"Can the tissue take the load? Often the limiter in returning runners, heavier runners, and anyone with a long injury history. Answers to volume and frequency, not intensity.",tone:BUR},
+ {lb:"Fatigue resistance",dt:"Do they hold pace at ninety minutes? The limiter for most marathoners — and completely invisible in a 5k result.",tone:OCH},
+ {lb:"Speed and economy",dt:"Are they running an hour at 95% of a top speed they never touch? The limiter for high-volume runners who only ever run steady.",tone:VIO},
+ {lb:"Fuel",dt:"Can they absorb 60–90 g of carbohydrate an hour at race intensity? Highly trainable, routinely decides marathons, almost never trained.",tone:SAGE},
+ {lb:"Time and life",dt:"The real constraint in most plans. Eight hours a week and four hours a week are different sports with the same name.",tone:SAGE}]},beats:[
+ {say:"Now the question that does most of the work. Every runner is limited by one or two things, not by everything at once. Find the binding constraint and the session choice largely writes itself.",hi:-1},
+ {say:"Aerobic ceiling: can they take in and use oxygen? This is usually the limiter in younger athletes and in anyone with low training volume, and it responds to work at VO2max.",hi:0},
+ {say:"Durability: can the tissue take the load? This is often the limiter in returning runners, heavier runners, and anyone with a long injury history. It responds to volume and frequency, and it responds badly to intensity.",hi:1},
+ {say:"Fatigue resistance: do they still hold pace at ninety minutes? This is the limiter for most marathon runners, and it is completely invisible in a five-kilometre result. An athlete can have a strong 5k and no durability whatsoever.",hi:2},
+ {say:"Speed and economy: are they trying to race an hour at ninety-five per cent of a top speed they never actually touch? This is the classic limiter in high-volume runners who only ever run steady, and the cheapest one to fix.",hi:3},
+ {say:"Fuel: can they absorb sixty to ninety grams of carbohydrate an hour at race intensity? Gut absorption is a genuine trainable adaptation taking four to eight weeks of repeated exposure. It routinely decides marathons, and it is almost never trained.",hi:4},
+ {say:"And time and life, which is the real constraint in most plans. Eight hours a week and four hours a week are different sports that happen to share a name. Coach the athlete you have, not the one with an open diary.",hi:5},
+ {say:"Write your sessions at the constraint. Everything else in the week is maintenance, and should be treated as such.",hi:-1}]},
+
+{ch:"Distribution",t:"How much hard, and what kind",vis:{type:"cols",n:3,cols:[
+ {h:"Pyramidal",kick:"Most common in practice",tone:OCH,stack:[{w:80,c:SAGE},{w:15,c:BUR},{w:5,c:RED}],lines:["~80% easy, ~15% threshold, ~5% above.","Broad base, a solid block of threshold, a little top end. Suits marathon and half-marathon work and most club runners."]},
+ {h:"Polarised",kick:"Hard days properly hard",tone:RED,stack:[{w:80,c:SAGE},{w:5,c:BUR},{w:15,c:RED}],lines:["~80% easy, little in the middle, ~15–20% at VO₂max and above.","Needs high volume to work and real recovery discipline. Strong for 5k–10k athletes."]},
+ {h:"Threshold-dense",kick:"The Norwegian model",tone:BUR,stack:[{w:75,c:SAGE},{w:22,c:BUR},{w:3,c:RED}],lines:["High-frequency, tightly controlled sub-threshold work, often twice a day.","Enormous aerobic stimulus at low cost — but only if intensity is policed to the beat."]}]},beats:[
+ {say:"Intensity distribution. Almost every successful endurance athlete studied runs the large majority of their volume easy — roughly eighty per cent of sessions below the first lactate turnpoint. That observation is about as replicated as anything in our sport.",hi:-1},
+ {say:"What is genuinely contested is the other twenty per cent, and there are three main answers.",hi:-1},
+ {say:"Pyramidal puts most of the hard work at threshold with a little above it. Broad base, solid threshold block, a small sharp top. It suits marathon and half-marathon athletes and it is what most well-run club training actually looks like.",hi:0},
+ {say:"Polarised hollows out the middle: easy stays easy, and the hard work goes to VO2max and above. It needs enough volume to support it and real discipline about recovery, and it is strong for five and ten kilometre runners.",hi:1},
+ {say:"Threshold-dense models — the Norwegian approach — put almost all the quality just under threshold, at high frequency, often twice a day with lactate measured. It produces an enormous aerobic stimulus at a low recovery cost, but only if the intensity is policed precisely. Run it by feel and it becomes the grey zone.",hi:2},
+ {say:"The honest reading of the evidence is that it does not crown a winner. It says the easy majority matters more than the shape of the hard minority. So choose by context: low volume favours threshold density, high volume tolerates polarisation, short events need more top end than long ones.",hi:-1},
+ {say:"And note where plans actually fail. It is rarely the choice of model. It is easy days run at eighty per cent effort and hard days run at eighty-five — the grey zone, which costs full recovery and buys almost no adaptation.",hi:-1}]},
+
+{ch:"Periodisation",t:"What order to build things in",vis:{type:"tl",items:[
+ {wk:"16–10 wks",lb:"Base",dt:"Volume, frequency, easy running, strides, hills, strength. Long, unglamorous, and it sets the ceiling on everything after it.",tone:SAGE},
+ {wk:"10–6 wks",lb:"Support",dt:"Threshold and extensive intervals. Where most of the measurable fitness actually arrives — and the phase amateurs skip.",tone:OCH},
+ {wk:"6–2 wks",lb:"Specific",dt:"Sessions converge on race pace from both sides until they meet at the event. Faster work gets shorter with fuller recovery; slower work gets longer and closer to race pace.",tone:BUR},
+ {wk:"Final 2–3 wks",lb:"Taper",dt:"Volume down, intensity held, frequency held.",tone:RED}]},beats:[
+ {say:"Periodisation is not a magic sequence. It is simply a decision about what order to build things in, given a date.",hi:-1},
+ {say:"The governing principle: build the capacity that takes longest, first. Aerobic enzyme and capillary adaptations, and especially tendon and bone, change over months. Race-specific sharpening arrives in weeks. So the slow things go early, while there is still time for them.",hi:-1},
+ {say:"Base is volume, frequency, easy running, strides, hills and strength work. It is long and unglamorous and no one posts about it, and it sets the ceiling on everything that comes after.",hi:0},
+ {say:"Support is threshold and extensive intervals. This is where most of the measurable fitness actually arrives, and it is the phase amateurs skip — they go straight from easy running to race-pace panic in the last month.",hi:1},
+ {say:"Then specific work, and here Canova’s principle is the clearest way to think about it: sessions converge on race pace from both sides. The faster-than-race work gets shorter reps with fuller recovery; the slower-than-race work gets longer and creeps closer to race pace. They meet at the event itself.",hi:2},
+ {say:"And the taper. Volume down, intensity held, frequency held — we will come back to the numbers.",hi:3},
+ {say:"One warning. Specific means specific to the event, not merely hard. Four-hundred-metre reps three weeks out from a marathon are unquestionably hard, and almost entirely irrelevant.",hi:-1}]},
+
+{ch:"The menu",t:"Every session, and what it costs",vis:{type:"table",head:["Stimulus","What it trains","Typical dose","Recovery cost"],
+ rows:[["Easy / recovery","Mitochondria, capillaries, tendon and bone conditioning, fat oxidation","30–90 min, conversational","Under a day"],
+  ["Long run","Glycogen storage, fat oxidation, musculoskeletal durability, time on feet","90 min–2:30; cap near 25–30% of the week","1–2 days"],
+  ["Steady / MP","Sustained aerobic output, pace discipline, fuelling rehearsal","40–90 min, often inside a long run","1–2 days"],
+  ["Threshold","Lactate clearance — the pace you could hold for an hour","20–40 min of work, continuous or cruise intervals","~1 day"],
+  ["VO₂max","Maximal oxygen uptake, cardiac output, buffering","3–5 min reps, 12–25 min total at 3k–5k effort","2 days"],
+  ["Reps / speed","Running economy, neuromuscular recruitment, mechanics","100–400 m fast, full recovery, low total volume","Low, if volume is controlled"],
+  ["Hills","Strength-endurance and stride power at lower impact per unit effort","30 s–3 min efforts, or long hilly steady runs","As the equivalent flat session"],
+  ["Strides","Mechanics and turnover maintenance — the cheapest thing in the sport","4–8 × 15–20 s, twice a week","Effectively none"]],
+ tones:[SAGE,OCH,OCH,BUR,RED,VIO,BUR,SAGE]},beats:[
+ {say:"Here is the whole menu. Not a list of workouts — a list of stimuli, with what each one buys and what each one costs. You choose the stimulus first and the format afterwards.",hi:-1},
+ {say:"Easy running builds mitochondria and capillaries, conditions tendon and bone, and improves fat oxidation, at almost no recovery cost. It is the bulk of the plan. Run it genuinely easy and it is nearly free; run it at eighty per cent and you have bought a hard session you did not want.",hi:0},
+ {say:"The long run trains glycogen storage, fat oxidation, musculoskeletal durability and the psychology of time on feet. Keep it near a quarter to thirty per cent of weekly volume — beyond that it starts eating the rest of the week.",hi:1},
+ {say:"Steady and marathon-pace work trains sustained aerobic output and pace discipline, and it is the only sensible place to rehearse fuelling, because gastric emptying slows as intensity rises. Carbohydrate practised at easy pace tells you very little about race pace.",hi:2},
+ {say:"Threshold trains lactate clearance — roughly the pace you could hold for an hour. Twenty to forty minutes of work, continuous or as cruise intervals with short recoveries, and you are recovered the next day. It has the best stimulus-to-cost ratio in distance running, which is why it dominates good training.",hi:3},
+ {say:"VO2max work — three to five minute reps at three to five kilometre effort, twelve to twenty-five minutes of total work — is powerful and expensive. Two days of recovery, and returns flatten after roughly six to ten good doses in a block. Treat it as a limited resource, not a weekly habit.",hi:4},
+ {say:"Reps and speed — short, fast, full recovery — train economy, recruitment and mechanics. Kept low in volume, the cost is small. Most endurance runners under-use this and lose access to their own top end.",hi:5},
+ {say:"Hills give strength-endurance and stride power at lower impact per unit of effort, which makes them the safest way to apply intensity to a fragile athlete. Watch the descents, though — eccentric loading is where the damage is.",hi:6},
+ {say:"And strides: four to eight of fifteen to twenty seconds, twice a week. Almost free, keeps mechanics and turnover alive year-round, and it is always the first thing to get dropped.",hi:7}]},
+
+{ch:"Choosing",t:"The order of questions",vis:{type:"list",num:true,items:[
+ {lb:"What is the binding constraint, right now?",dt:"This sets the stimulus. Not what you enjoy writing — what they are actually limited by this month.",tone:SAGE},
+ {lb:"How far out is the goal race?",dt:"This sets how specific the stimulus must be. Sixteen weeks out, general work is fine. Four weeks out it has to look like the event.",tone:OCH},
+ {lb:"What did the last 7–10 days cost?",dt:"Accumulated load and how the last hard session was absorbed — not what the plan says today.",tone:BUR},
+ {lb:"What state are they in today?",dt:"Sleep, soreness, resting HR trend, HRV direction, niggle score — and above all what they say. Subjective report outranks the watch.",tone:RED},
+ {lb:"What are today’s constraints?",dt:"Heat, wind, terrain, time available, shoes, and whether they are running with someone faster than them.",tone:VIO},
+ {lb:"Only now: choose the format",dt:"Reps, continuous, progression, hills, fartlek. Format is the last decision, and starting there is the most common coaching error there is.",tone:SAGE}]},beats:[
+ {say:"So: how do you actually choose a session? In this order, and the order is the whole point.",hi:-1},
+ {say:"One. What is this athlete’s binding constraint right now? That sets the stimulus. Not what you enjoy writing, not what is in fashion — what they are genuinely limited by this month.",hi:0},
+ {say:"Two. How far out is the goal race? That decides how specific the stimulus has to be. Sixteen weeks out, general work is fine and probably better. Four weeks out, the session should look recognisably like the event.",hi:1},
+ {say:"Three. What did the last seven to ten days cost? Look at accumulated load and at how the last hard session was absorbed — not at what the plan happens to say for today. The plan was written before this week happened.",hi:2},
+ {say:"Four. What state are they in today? Sleep, soreness, resting heart rate trend, HRV direction, the niggle score — and above all, what they tell you. Subjective report outranks the watch, every time. An athlete saying their legs feel flat is data.",hi:3},
+ {say:"Five. What are today’s constraints? Heat, wind, terrain, time available, what is on their feet, and whether they are running with someone faster than them — which quietly ruins more easy days than any other single factor.",hi:4},
+ {say:"And only now do you choose the format: reps, continuous, progression, hills, fartlek. Format is the last decision. Starting there — opening with ‘let’s do four times one kilometre’ — is the most common coaching error there is, because it picks the shape before knowing the purpose.",hi:5},
+ {say:"There is a sixth question that overrides all five. Does this session leave the athlete able to do the next one? If not, it is the wrong session, however good it looks on paper.",hi:-1}]},
+
+{ch:"Worked example",t:"One slot, three different days",vis:{type:"cols",n:3,cols:[
+ {h:"Green",kick:"Slept well · legs fine · cool · no niggle",tone:SAGE,lines:["Run it as written. If reps four and five are comfortably on pace, add a sixth.","Progression comes from days like this — never from forcing it on the other two."]},
+ {h:"Amber",kick:"Two poor nights · heavy legs · niggle 2/10",tone:OCH,lines:["Keep the stimulus, cut the cost. 4 × 1 km at the same pace, or 25 min continuous at the easy end of threshold.","Same adaptation signal, roughly half the recovery bill."]},
+ {h:"Red",kick:"Sore throat · RHR +8 · niggle 4/10 and rising",tone:RED,lines:["Easy 40 minutes, or nothing. The session is gone; the block is not.","This is the decision that separates athletes who train for ten years from athletes who train for two."]}]},beats:[
+ {say:"Let us make that concrete. It is Thursday. The plan says five times one kilometre at threshold. Here is what actually gets run.",hi:-1},
+ {say:"Green day: slept well, legs fine, cool conditions, no niggles. Run it exactly as written — and if reps four and five are comfortably on pace, add a sixth. This is where progression comes from. Not from forcing it on the other two days.",hi:0},
+ {say:"Amber day: two poor nights, legs heavy, a niggle sitting at two out of ten. Keep the stimulus, cut the cost. Four times one kilometre at the same pace, or twenty-five minutes continuous at the easier end of threshold. You get most of the adaptation signal for roughly half the recovery bill.",hi:1},
+ {say:"Red day: sore throat, resting heart rate up eight beats, or that niggle now at four and climbing. Easy forty minutes, or nothing at all. The session is gone; the block is not. This one decision, repeated, is what separates athletes who train for ten years from athletes who train for two.",hi:2},
+ {say:"Now notice what did not happen on any of those three days. Nobody changed the target pace because the athlete felt strong. That is how you quietly convert a threshold session into a race you did not enter, and it is the single most reliable way to hurt a motivated runner.",hi:-1}]},
+
+{ch:"Progression",t:"Move one variable at a time",vis:{type:"bars",axis:"Minutes of work at threshold",max:36,items:[
+ {wk:"Wk 1",lb:"4 × 6 min / 90 s float",val:24,tone:SAGE},
+ {wk:"Wk 2",lb:"4 × 7 min / 90 s",val:28,tone:SAGE},
+ {wk:"Wk 3",lb:"5 × 6 min / 75 s",val:30,tone:OCH},
+ {wk:"Wk 4",lb:"3 × 6 min — down week",val:18,tone:BUR},
+ {wk:"Wk 5",lb:"4 × 8 min / 60 s",val:32,tone:OCH},
+ {wk:"Wk 6",lb:"3 × 12 min / 60 s",val:36,tone:RED}]},beats:[
+ {say:"Progression. Move one variable at a time: total volume of work, intensity, density — meaning shorter recoveries — or the length of the individual reps. Change two at once and you cannot tell what worked, or what broke.",hi:-1},
+ {say:"Here is one threshold session progressed across six weeks. Week one, four times six minutes with ninety-second floats. Week two, the reps get a minute longer. Week three adds a rep and shortens the float.",hi:2},
+ {say:"Week four is a down week. Roughly three weeks up, one week easier, is a reasonable heuristic — but it is a heuristic, not a law. Some athletes need two-to-one. You only find out by watching how they recover, which means you have to be watching.",hi:3},
+ {say:"Then weeks five and six push rep length out towards continuous work, with the recoveries now short. Note that the pace has not changed once in six weeks. The session got harder entirely through structure.",hi:5},
+ {say:"Weekly volume rises the same way — small, frequent increases rather than step jumps. The ten per cent rule has weak evidence behind it as a specific number, but the principle it encodes, change one thing slowly, has plenty.",hi:-1},
+ {say:"And progression is not compulsory. If the same session produces the same result at a lower perceived cost, the athlete is improving. Falling effort at equal pace is the block working, and it is not an invitation to run faster.",hi:-1}]},
+
+{ch:"Individualising",t:"Same session, four runners",vis:{type:"cols",n:4,cols:[
+ {h:"Runner A",kick:"24 · 3 yrs training · 5k · 90 km/wk",tone:RED,lines:["Threshold is maintenance for them. The constraint is top-end speed.","This is a Tuesday filler; Saturday’s VO₂ set is the real work. Can take three quality days."]},
+ {h:"Runner B",kick:"38 · ex-cyclist · first marathon",tone:OCH,lines:["Huge aerobic engine, no running durability. Threshold tolerance far exceeds tissue tolerance.","Run it on grass or a gentle hill, not the track. Growth goes into frequency: six easy runs beat four long ones."]},
+ {h:"Runner C",kick:"20 yrs running · recurrent calf / Achilles",tone:BUR,lines:["All of it accumulated while running easy days too hard.","The intervention is not the session — it is the 80% around it. Prescribe the recoveries as strictly as the reps."]},
+ {h:"Runner D",kick:"4 hrs a week · two small children · fast 10k",tone:SAGE,lines:["Nothing can be wasted. Every run needs a job.","Long run is 75 minutes, not 2:30. Threshold density is where the fitness has to come from."]}]},beats:[
+ {say:"This is where plans genuinely diverge. Take one prescription — four times one kilometre at threshold — and give it to four different runners. It means four different things.",hi:-1},
+ {say:"Runner A is twenty-four, three years of training, five-kilometre focus, ninety kilometres a week, no injury history. For them threshold is maintenance. Their constraint is top-end speed, so this is a Tuesday filler and the real work is Saturday’s VO2 set. They can take three quality days a week.",hi:0},
+ {say:"Runner B is thirty-eight, an ex-cyclist, training for a first marathon. Enormous aerobic engine, no running durability at all. Their threshold tolerance is far ahead of their tissue tolerance, which is a genuinely dangerous combination. Run it on grass or a gentle hill, not the track, and put the growth into frequency — six easy runs will beat four longer ones.",hi:1},
+ {say:"Runner C has twenty years of running and a history of calf and Achilles trouble, all of it accumulated while running the easy days too hard. For them the intervention is not the session at all — it is the eighty per cent around it. You prescribe the recovery runs as strictly as the reps, and you check they are obeyed.",hi:2},
+ {say:"Runner D has four hours a week and two small children, and wants a fast ten kilometres. Nothing can be wasted. Every run needs a job, the long run is seventy-five minutes rather than two and a half hours, and threshold density is where the fitness has to come from.",hi:3},
+ {say:"Identical prescription on paper. Four different intentions, four different surfaces, four different consequences. That gap is the coaching.",hi:-1}]},
+
+{ch:"Monitoring",t:"What to watch, what to ignore",vis:{type:"svg",html:svgRPE},beats:[
+ {say:"Monitoring. Trends, never single days. A seven-day baseline for HRV and resting heart rate, weekly blocks for load, durability and efficiency only across months.",hi:-1},
+ {say:"The most useful metric is also the cheapest: perceived effort at a fixed prescribed pace, tracked over weeks. That is what this chart is. Falling effort at the same pace is fitness arriving. Rising effort at the same pace is fatigue or illness, and it shows up before any watch metric does.",hi:-1},
+ {say:"Note the bump at week six — twenty-eight degrees. In context that is not a bad session, it is a hot one, and reading it as a decline would be a mistake. Never analyse a session in isolation.",hi:-1},
+ {say:"Judge quality sessions on execution, not on the run average. How evenly the reps were run tells you about judgement. How much the second half drifted from the first tells you about fatigue resistance. A whole-run average tells you almost nothing, because it is mostly warm-up.",hi:-1},
+ {say:"Aerobic decoupling — pace per heartbeat in the first half of a steady run against the second — is the durability metric. Under five per cent means the aerobic system held. It moves over months, and it is only readable on evenly-paced runs, which excludes most of them.",hi:-1},
+ {say:"Now, two warnings. Beware suppressed signals: deep fatigue lowers heart rate, so a badly tired athlete can produce data that looks exactly like an easy day. This is precisely why you never prescribe harder off heart rate alone.",hi:-1},
+ {say:"And discount dips you can already explain. Alcohol, a short night, a stressful week, a cold — all move the same numbers with no training stress behind them. A confounder excuses a flat morning; it does not excuse a trend. If the baseline slides for a week, it is real whatever the notes say.",hi:-1}]},
+
+{ch:"Adjusting",t:"When to change the plan",vis:{type:"cols",n:2,cols:[
+ {h:"Hold",kick:"Leave it alone",tone:SAGE,lines:["A bad session with an explanation you already knew about — heat, a late night, a hard week at work.","A dip that resolves inside two or three days.","The athlete is anxious but every trend is intact. Anxiety is not evidence.","Nothing has changed except your urge to intervene."]},
+ {h:"Change",kick:"Act now",tone:RED,lines:["The baseline slides for a week or more, or the dip outlasts its explanation.","The same session gets harder two weeks running.","A niggle rises across consecutive days — the trend, not the number.","The athlete’s own report and the data agree that something is wrong.","The evidence says it is too easy — then re-anchor the paces between sessions, never push inside one."]}]},beats:[
+ {say:"When do you change the plan? This is where most coaching judgement actually lives, and the default should be stronger than most coaches make it.",hi:-1},
+ {say:"Hold when a bad session has an explanation you already knew about — the heat, a late night, a brutal week at work. Hold when a dip resolves inside two or three days. Hold when the athlete is anxious but every trend is intact; anxiety is not evidence. And hold when nothing has changed except your own urge to intervene.",hi:0},
+ {say:"Change when the baseline slides for a week or more, or when the dip outlasts its explanation. Change when the same session gets harder two weeks running. Change when a niggle rises across consecutive days — and it is the trend that matters there, not the number on any one day.",hi:1},
+ {say:"Change too when the evidence says the plan has become too easy. But fix that between sessions by re-anchoring the paces off a race or a test. Never by telling an athlete to push harder inside a session. Those two things feel similar and they are completely different: one is programming, the other is how people get injured.",hi:1},
+ {say:"Some things stop everything, and they are not negotiable: pain that alters gait, pain that worsens during a run instead of warming up, chest symptoms, and an elevated resting heart rate alongside any illness. None of those are coached through.",hi:-1},
+ {say:"And when it is genuinely fifty-fifty between pushing and holding — hold. Almost everyone races better slightly undertrained than slightly injured, and the downside is asymmetric. A missed session costs a week. An injury costs a season.",hi:-1}]},
+
+{ch:"Taper",t:"Cut volume, keep sharpness",vis:{type:"svg",html:svgTaper},beats:[
+ {say:"The taper. This is one of the few areas where the evidence is unusually consistent, so there is little excuse for improvising it.",hi:-1},
+ {say:"Reduce volume by roughly forty to sixty per cent across two to three weeks. Done properly that is worth something like two to three per cent in performance — which over a half marathon is well over a minute, for free.",hi:-1},
+ {say:"Keep the intensity. Keep the frequency. Cut only the duration. Removing the hard work in race week is the classic mistake and it leaves athletes flat rather than fresh — they arrive detrained at the speeds they are about to run.",hi:-1},
+ {say:"Longer taper for the marathon, shorter for five kilometres. Two weeks is enough for most club runners; three suits higher-volume athletes carrying more accumulated fatigue.",hi:-1},
+ {say:"Nothing new inside the last three weeks. No new shoes, no new fuelling product, no novel or heavy lower-body strength work inside the final seventy-two hours. Race day is for rehearsed things only.",hi:-1},
+ {say:"And warn them it will feel bad. Restlessness, phantom niggles, heavy legs in the middle of a taper are normal and not diagnostic. Athletes who are not told this talk themselves out of a good race.",hi:-1}]},
+
+{ch:"The person",t:"Why plans actually fail",vis:{type:"list",items:[
+ {lb:"Most failures aren’t physiological",dt:"The athlete runs easy days with faster friends, races every parkrun, or cannot tolerate feeling slow. No amount of periodisation fixes that.",tone:RED},
+ {lb:"Explain why, every time",dt:"An athlete who understands a session’s purpose executes it. One who is handed numbers negotiates with them.",tone:OCH},
+ {lb:"Hand over the decision rules",dt:"Not just the decisions. They are the one standing at the start of the rep, in the weather, with the legs they actually have.",tone:OCH},
+ {lb:"Adherence is a training variable",dt:"Ask what they enjoy. A slightly worse plan they will follow beats a better one they resent.",tone:SAGE},
+ {lb:"Keep a running picture",dt:"Judge nothing in isolation. Whether today felt easier than the comparable session three months ago is worth more than any single day’s numbers.",tone:SAGE}]},beats:[
+ {say:"Last part, and it is the part that decides most outcomes. Most training plans fail for reasons that are not physiological at all.",hi:-1},
+ {say:"The athlete runs their easy days with faster friends. They race every parkrun. They cannot tolerate feeling slow, so the easy pace never happens. No amount of clever periodisation survives any of that.",hi:0},
+ {say:"So explain why, every single time. An athlete who understands the purpose of a session executes the session. An athlete handed a set of numbers negotiates with them, usually upwards, usually on the days they should not.",hi:1},
+ {say:"Hand over the decision rules, not just the decisions. They are the one standing at the start of the rep, in the weather, with the legs they actually have that morning. Give them the framework to make the amber-day call themselves.",hi:2},
+ {say:"Ask what they actually enjoy. Adherence is a training variable like any other, and a slightly worse plan they will follow beats a better one they resent.",hi:3},
+ {say:"And keep a running picture of them. Judge nothing in isolation. Whether this session felt easier than the comparable one three months ago is worth more than every number on today’s watch screen.",hi:4},
+ {say:"Because the job was never to produce the perfect week. It is to still be coaching the same athlete — uninjured, consistent, and still improving — three years from now.",hi:-1}]}
+];
+
+/* ---------- renderers ---------- */
+function esc(s){return String(s)}
+function render(v){
+  if(v.type==="svg") return v.html();
+  if(v.type==="list") return '<div class="vlist">'+v.items.map(function(it,i){
+    var mark=v.num?'<span class="num">'+String(i+1).padStart(2,"0")+'</span>':'<span class="dot"></span>';
+    return '<div class="it" data-i="'+i+'" style="--tone:'+(it.tone||"var(--accent)")+'">'+mark+
+      '<div><div class="lb">'+esc(it.lb)+'</div><div class="dt">'+esc(it.dt)+'</div></div></div>';}).join('')+'</div>';
+  if(v.type==="table") return '<div class="tscroll"><table class="vtab"><thead><tr>'+
+    v.head.map(function(h){return '<th>'+esc(h)+'</th>'}).join('')+'</tr></thead><tbody>'+
+    v.rows.map(function(r,i){return '<tr class="it" data-i="'+i+'" style="--tone:'+((v.tones||[])[i]||"var(--accent)")+'">'+
+      r.map(function(c){return '<td>'+esc(c)+'</td>'}).join('')+'</tr>'}).join('')+'</tbody></table></div>';
+  if(v.type==="cols") return '<div class="vcols'+(v.n>3?" quad":"")+'" style="--n:'+v.n+'">'+v.cols.map(function(c,i){
+    var st=c.stack?'<div class="stack">'+c.stack.map(function(s){return '<span style="width:'+s.w+'%;background:'+s.c+'"></span>'}).join('')+'</div>':'';
+    return '<div class="col it" data-i="'+i+'" style="--tone:'+(c.tone||"var(--accent)")+'"><div class="kick">'+esc(c.kick)+'</div><h4>'+esc(c.h)+'</h4>'+st+
+      c.lines.map(function(l){return '<p>'+esc(l)+'</p>'}).join('')+'</div>';}).join('')+'</div>';
+  if(v.type==="tl") return '<div class="vtl">'+v.items.map(function(it,i){
+    return '<div class="ph it" data-i="'+i+'" style="--tone:'+it.tone+'"><span class="wk">'+esc(it.wk)+'</span>'+
+      '<div><div class="lb">'+esc(it.lb)+'</div><div class="dt">'+esc(it.dt)+'</div></div></div>';}).join('')+'</div>';
+  if(v.type==="bars") return '<div class="vbars">'+v.items.map(function(it,i){
+    return '<div class="bar it" data-i="'+i+'" style="--tone:'+it.tone+'"><span class="wk">'+esc(it.wk)+'</span>'+
+      '<div><div class="lb" style="font-size:12.5px;margin-bottom:4px">'+esc(it.lb)+'</div>'+
+      '<div class="track"><i style="width:'+(it.val/v.max*100)+'%"></i></div></div>'+
+      '<span class="val">'+it.val+'′</span></div>';}).join('')+
+    '</div><div class="axis">'+esc(v.axis)+'</div>';
+  return "";
+}
+
+/* ---------- build ---------- */
+var stage=document.getElementById("stage"),chips=document.getElementById("chips"),secs=document.getElementById("secs");
+var BEATS=[];
+SCENES.forEach(function(s,si){
+  var el=document.createElement("div");
+  el.className="scene";
+  el.innerHTML='<div class="sleft"><div class="chap"><b>'+String(si+1).padStart(2,"0")+'</b> &middot; '+esc(s.ch)+
+    '</div><h3 class="stitle">'+esc(s.t)+'</h3><p class="cap"></p></div><div class="sright">'+render(s.vis)+'</div>';
+  stage.appendChild(el); s.el=el; s.cap=el.querySelector(".cap"); s.items=el.querySelectorAll("[data-i]");
+  s.beats.forEach(function(b,bi){
+    var w=b.say.split(/\s+/).length;
+    BEATS.push({say:b.say,hi:(typeof b.hi==="number"?b.hi:-1),si:si,bi:bi,dur:Math.max(3.6,w*0.345+1.2)});
+  });
+  var c=document.createElement("button");
+  c.className="chip"; c.textContent=(si+1)+". "+s.ch; c.dataset.si=si;
+  c.onclick=function(){seekScene(si)}; chips.appendChild(c); s.chip=c;
+
+  var sec=document.createElement("div");
+  sec.className="sec";
+  sec.innerHTML='<div><span class="idx">CHAPTER '+String(si+1).padStart(2,"0")+'</span><h3>'+esc(s.t)+'</h3>'+
+    '<button class="jump">&#9654; Play from here</button></div><div>'+
+    s.beats.map(function(b){return '<p>'+esc(b.say)+'</p>'}).join('')+'</div>';
+  sec.querySelector(".jump").onclick=function(){seekScene(si);stage.scrollIntoView({behavior:"smooth",block:"start"})};
+  secs.appendChild(sec);
+});
+var TOTAL=BEATS.reduce(function(a,b){return a+b.dur},0);
+var OFF=[],acc=0; BEATS.forEach(function(b){OFF.push(acc);acc+=b.dur});
+
+/* ---------- state ---------- */
+var idx=-1, playing=false, rate=1, narrate=true, t0=0, raf=null, timer=null, speaking=null, keepAlive=null;
+var $play=document.getElementById("play"),$prog=document.getElementById("prog"),$tc=document.getElementById("tc"),
+    $narr=document.getElementById("narr"),$rate=document.getElementById("rate");
+var canSpeak=typeof window.speechSynthesis!=="undefined";
+if(!canSpeak){narrate=false;$narr.textContent="♫ Narration: unavailable";$narr.disabled=true;$narr.classList.add("off");}
+
+function mmss(s){s=Math.max(0,Math.round(s));return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0")}
+function paint(i){
+  var b=BEATS[i],s=SCENES[b.si];
+  SCENES.forEach(function(x){x.el.classList.toggle("live",x===s);x.chip.classList.toggle("on",x===s)});
+  s.cap.innerHTML=esc(b.say);
+  var lvl=-1; for(var k=0;k<=b.bi;k++){if(s.beats[k].hi>lvl&&typeof s.beats[k].hi==="number")lvl=s.beats[k].hi}
+  Array.prototype.forEach.call(s.items,function(el){
+    var n=+el.dataset.i;
+    el.classList.toggle("on",n<=lvl);
+    el.classList.toggle("act",n===b.hi);
+  });
+  var box=s.el.querySelector(".sright"), act=s.el.querySelector("[data-i].act");
+  if(box){ if(b.bi===0){box.scrollTop=0}
+    else if(act&&box.scrollHeight>box.clientHeight+4){
+      var cb=box.getBoundingClientRect(), ab=act.getBoundingClientRect();
+      if(ab.bottom>cb.bottom-6){box.scrollTop+=(ab.bottom-cb.bottom)+18}
+      else if(ab.top<cb.top+6){box.scrollTop-=(cb.top-ab.top)+18}
+    } }
+  if(s.chip&&s.chip.scrollIntoView)s.chip.scrollIntoView({block:"nearest",inline:"nearest"});
+}
+function tick(){
+  if(!playing){return}
+  var el=(performance.now()-t0)/1000*rate;
+  var p=(OFF[idx]+Math.min(el,BEATS[idx].dur))/TOTAL;
+  $prog.style.width=(p*100).toFixed(2)+"%";
+  $tc.textContent=mmss(p*TOTAL/rate)+" / "+mmss(TOTAL/rate);
+  if(!narrate&&el>=BEATS[idx].dur){go(idx+1);return}
+  raf=requestAnimationFrame(tick);
+}
+function stopSpeech(){
+  if(speaking){speaking.onend=null;speaking.onerror=null;speaking=null}
+  if(canSpeak){try{window.speechSynthesis.cancel()}catch(e){}}
+  if(timer){clearTimeout(timer);timer=null}
+  if(keepAlive){clearInterval(keepAlive);keepAlive=null}
+}
+function speak(i){
+  stopSpeech();
+  var u=new SpeechSynthesisUtterance(BEATS[i].say.replace(/’/g,"'"));
+  u.rate=0.98*rate; u.pitch=1;
+  var done=false;
+  function nxt(){if(done)return;done=true;if(playing&&idx===i)go(i+1)}
+  u.onend=nxt; u.onerror=nxt;
+  speaking=u;
+  timer=setTimeout(nxt,(BEATS[i].dur/rate)*1000+9000);
+  keepAlive=setInterval(function(){try{if(window.speechSynthesis.speaking){window.speechSynthesis.pause();window.speechSynthesis.resume()}}catch(e){}},9000);
+  try{window.speechSynthesis.speak(u)}catch(e){nxt()}
+}
+function go(i){
+  if(raf)cancelAnimationFrame(raf);
+  stopSpeech();
+  if(i>=BEATS.length){idx=BEATS.length-1;paint(idx);pause();$prog.style.width="100%";$play.textContent="Replay";$play.dataset.end="1";return}
+  if(i<0)i=0;
+  idx=i; t0=performance.now(); paint(idx);
+  if(playing){ if(narrate)speak(idx); raf=requestAnimationFrame(tick); }
+  else{ var p=(OFF[idx])/TOTAL; $prog.style.width=(p*100).toFixed(2)+"%";
+        $tc.textContent=mmss(p*TOTAL/rate)+" / "+mmss(TOTAL/rate); }
+}
+function play(){ if($play.dataset.end){$play.dataset.end="";idx=-1} playing=true; $play.textContent="Pause"; go(idx<0?0:idx); }
+function pause(){ playing=false; $play.textContent="Play"; stopSpeech(); if(raf)cancelAnimationFrame(raf); }
+function seekScene(si){ var i=BEATS.findIndex(function(b){return b.si===si}); var was=playing; pause(); idx=i; paint(i);
+  $prog.style.width=(OFF[i]/TOTAL*100).toFixed(2)+"%"; $tc.textContent=mmss(OFF[i]/rate)+" / "+mmss(TOTAL/rate);
+  if(was){play()} }
+
+$play.onclick=function(){playing?pause():play()};
+document.getElementById("next").onclick=function(){go(idx+1)};
+document.getElementById("prev").onclick=function(){go(idx-1)};
+$narr.onclick=function(){ narrate=!narrate; $narr.textContent="♫ Narration: "+(narrate?"on":"off");
+  $narr.classList.toggle("off",!narrate);
+  if(!narrate){stopSpeech(); if(playing){t0=performance.now(); if(raf)cancelAnimationFrame(raf); raf=requestAnimationFrame(tick);}}
+  else if(playing){speak(idx)} };
+$rate.onclick=function(){ var r=[1,1.25,1.5,0.85]; rate=r[(r.indexOf(rate)+1)%r.length]; $rate.textContent=rate+"×";
+  if(playing){var i=idx;pause();play();} else {$tc.textContent=mmss(OFF[Math.max(idx,0)]/rate)+" / "+mmss(TOTAL/rate)} };
+document.addEventListener("keydown",function(e){
+  if(/^(INPUT|TEXTAREA)$/.test(e.target.tagName))return;
+  if(e.key===" "){e.preventDefault();playing?pause():play()}
+  if(e.key==="ArrowRight"){e.preventDefault();go(idx+1)}
+  if(e.key==="ArrowLeft"){e.preventDefault();go(idx-1)}
+});
+window.addEventListener("beforeunload",stopSpeech);
+document.addEventListener("visibilitychange",function(){if(document.hidden&&playing)pause()});
+
+idx=0; paint(0); $tc.textContent="00:00 / "+mmss(TOTAL);
+})();
+</script>
