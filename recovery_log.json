@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-22",
+  "generated": "2026-09-23",
   "window_days": 7,
   "sessions": [
     {
@@ -188,32 +188,41 @@
       "interrupted_by_next_session": false,
       "temp_max_c": 20.8,
       "note": "Windy.... Was on a 1.7k loop one way was head wind, other was tail wind"
-    }
-  ],
-  "pending": [
+    },
     {
       "date": "2026-09-16",
       "session_type": "intervals",
-      "days_since": 6,
-      "hrv_back": 2,
-      "rhr_back": null,
+      "confounders_in_window": [],
       "hrv_reference": 41.3,
-      "rhr_reference": 46.7
+      "hrv_recovery_days": 2,
+      "rhr_reference": 46.7,
+      "rhr_recovery_days": null,
+      "recovery_days": null,
+      "recovered": false,
+      "interrupted_by_next_session": true,
+      "temp_max_c": 18.4,
+      "note": "Ran them all too quick... Was trying to run slow and literally walking the last bit but it just felt really easy"
     },
     {
       "date": "2026-09-20",
       "session_type": "race",
-      "days_since": 2,
-      "hrv_back": 2,
-      "rhr_back": null,
+      "confounders_in_window": [],
       "hrv_reference": 40.4,
-      "rhr_reference": 47.3
+      "hrv_recovery_days": 2,
+      "rhr_reference": 47.3,
+      "rhr_recovery_days": 3,
+      "recovery_days": 3,
+      "recovered": true,
+      "interrupted_by_next_session": false,
+      "temp_max_c": 20.1,
+      "note": "Yeah done as to plan, picked up the pace/effort around the 14/15k mark, caught and passed so many, on that last bit. The hilly part is brutal I'd say more than just a km, as it mixes in climbs with decent... Happy with run and a time of 1:21:04"
     }
   ],
+  "pending": [],
   "trend": {
-    "recent_avg_days": 2.3,
+    "recent_avg_days": 2.7,
     "prior_avg_days": 3.7,
     "direction": "shortening \u2014 bouncing back quicker than before",
-    "sessions_measured": 12
+    "sessions_measured": 13
   }
 }
