@@ -414,5 +414,13 @@
     "rpe": 2.0,
     "on_target": true,
     "session_notes": "Physio defo helped, quads still a little tight, but legs felt OK otherwise"
+  },
+  {
+    "date": "2026-09-24",
+    "achilles_score": 0,
+    "session_type": "easy",
+    "rpe": 2.0,
+    "on_target": true,
+    "session_notes": "Easy, legs feeling better no stiffness, yesterday there was a little stiffness :)"
   }
 ]
