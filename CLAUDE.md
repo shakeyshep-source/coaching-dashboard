@@ -88,12 +88,37 @@ before it was ready → flare again. No rehab at all in those years.
 What changed it: about a year of gym work (started when he could not
 run), a physio, and structured training. It has read 0 for months.
 
-**He still sees that physio, and she is running a video gait analysis
-the week after Cheltenham (Sep 2026)** — he raised the shoe history with
-her himself. That closes the one gap this system genuinely cannot cover:
-nobody here can watch him run. Ask what it found, and treat her findings
-as outranking anything inferred from the data on form, loading or
-footwear.
+**He still sees that physio, and a video gait analysis was planned for
+the week after Cheltenham** — he raised the shoe history with her
+himself. **It has been postponed on cost (24 Sep 2026). Do not keep
+asking what it found.**
+
+That leaves the one gap this system genuinely cannot cover: nobody here
+can watch him run. When it does happen, treat her findings as
+outranking anything inferred from the data on form, loading or footwear.
+
+**Deferring it is defensible, and the timing argument favours later
+anyway.** The achilles has read 0 for months, the prodrome is absent,
+and he has just raced a half without issue — so a gait analysis now
+would be a baseline of a man with nothing wrong. It earns its money
+either when something is brewing, or when volume is genuinely high,
+and the marathon build supplies the second of those around Dec–Jan.
+The honest counter, which he should hear once and not repeatedly: a
+healthy baseline is the thing you wish you had for comparison if it
+flares later.
+
+**So book it on a trigger, not a date.** Any of these and the cost
+argument stops applying:
+
+- achilles score reaches 3, or climbs across a week from 0;
+- the prodrome returns — first-step stiffness out of bed, or aching on
+  standing up from the desk chair;
+- a new shoe coincides with any of the above.
+
+Until then the free substitutes are already in place and are doing most
+of the work: the daily achilles score, his own early-warning signs, the
+shoe rotation discipline, and the two protected leg sessions. Say that
+rather than treating the postponement as a hole in the plan.
 
 Two things follow, and they matter more than the daily score:
 
@@ -196,11 +221,11 @@ endurance profile — total 3.8, HDL 1.7, LDL 1.9, trigs 0.6, ratio 2.3.
    but sitting in the lower third and the second-lowest-placed marker
    after ferritin. Nothing to act on. Re-check alongside ferritin.
 
-3. **Vitamin D was not tested, and it is the gap.** 50 years old,
-   training hard, Gloucester, heading into winter, four years of
-   tendinopathy history. UK guidance is to supplement through autumn and
-   winter regardless of testing. Raised with him 24 Sep 2026 — ask what
-   he did about it.
+3. **Vitamin D was not tested. Handled — he has supplements and is
+   taking them (confirmed 24 Sep 2026).** UK guidance is to supplement
+   through autumn and winter regardless of testing, so the absent test
+   no longer matters much; it goes on the January panel to confirm the
+   dose is doing its job. Do not raise it again as an open item.
 
 **ACTION — re-test in January 2027, and it belongs here rather than in
 `training_plan.json`.** A blood test is not a training session and has
