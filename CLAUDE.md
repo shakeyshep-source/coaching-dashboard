@@ -134,6 +134,99 @@ plan. Rotation, confirmed by him — easy: Nike Vomero Plus;
 speed sessions: Saucony Endorphin Speed 5; racing: Puma Fast-R Nitro 3.
 Adidas Boston rejected as too firm.
 
+## Bloods (GP panel, 21 Sep 2026 — baseline, and one action)
+
+Routine GP panel, reported **Satisfactory / No Further Action**. Nothing
+here is a clinical problem and nothing in it changes training. It is
+recorded because it is the only baseline we have, and because the
+marathon build will move one of these numbers.
+
+**Read the timing before the numbers.** Blood was drawn on 21 Sep, the
+**morning after a maximal half marathon**. That shifts four markers in
+predictable directions and none of them should be treated as his resting
+normal:
+
+- **Ferritin 79 µg/L** [24–340] — ferritin is an acute phase reactant
+  (the lab said so on the report), so a hard race lifts it. True rested
+  value is probably somewhat under 79.
+- **Eosinophils 0.04** [0.1–0.4], the only flagged result — low, with
+  basophils at the floor and lymphocytes low-normal. That pattern is the
+  ordinary cortisol response to a hard race, not a finding.
+- **Creatinine 93 µmol/L** [59–104] and **eGFR 82** — creatinine is a
+  muscle metabolite, rises after prolonged hard running, and eGFR
+  equations assume non-athletic muscle mass, so they understate kidney
+  function in him.
+- **Hb 157 g/L** [130–180], **haematocrit 0.456** — no anaemia, no
+  dilutional pseudo-anaemia, possibly mildly concentrated.
+
+Unremarkable and not worth re-listing: TSH 1.3, HbA1c 33, sodium 141,
+potassium 4.2, calcium 2.42 (adjusted 2.43), ALP 41, albumin 39, total
+protein 68, WBC 5.2, platelets 231, folate 12.8. Lipids are a good
+endurance profile — total 3.8, HDL 1.7, LDL 1.9, trigs 0.6, ratio 2.3.
+
+**The three things that actually matter:**
+
+1. **Ferritin 79 is adequate, and that is the whole point — he does not
+   need to raise it.** The evidence for a performance gain from pushing
+   ferritin higher when it is already adequate is weak; iron clearly
+   helps when someone is deficient (under ~30–40) or anaemic, and he is
+   neither. **Do not suggest iron supplementation at this level.** The
+   job is defending the number through the marathon build, not chasing
+   it, because volume drains iron via footstrike haemolysis, sweat and
+   gut losses.
+
+   What actually moves absorption, in order of usefulness to him:
+   **hepcidin timing** (the hormone that blocks gut absorption spikes
+   3–6 h after hard or long running and is lowest in the morning, so
+   iron at breakfast is absorbed and iron eaten mid-afternoon after a
+   Saturday session largely is not); **tea and coffee** (tannins bind
+   iron — keep about an hour clear of iron-containing meals, and he has
+   a desk job with a kettle); **vitamin C at the same meal**; and
+   **haem iron from red meat**, absorbed several times better than
+   plant iron and not blocked by tea or calcium. Also worth saying
+   once: **routine ibuprofen around long runs causes small gut bleeds
+   and is a real iron drain** — avoid it as a habit.
+
+   Keep iron-focused breakfasts off long-run and quality mornings. His
+   pre-long-run breakfast is deliberately low-residue (Rice Krispies, or
+   a bagel with honey) and that should not be replaced with bran and
+   seeds for the sake of iron.
+
+2. **B12 280 ng/L** [145–914] — in range, lab says deficiency unlikely,
+   but sitting in the lower third and the second-lowest-placed marker
+   after ferritin. Nothing to act on. Re-check alongside ferritin.
+
+3. **Vitamin D was not tested, and it is the gap.** 50 years old,
+   training hard, Gloucester, heading into winter, four years of
+   tendinopathy history. UK guidance is to supplement through autumn and
+   winter regardless of testing. Raised with him 24 Sep 2026 — ask what
+   he did about it.
+
+**ACTION — re-test in January 2027, and it belongs here rather than in
+`training_plan.json`.** A blood test is not a training session and has
+no `session_type`, so it is not a plan row; the winter block gets
+written from this brief, so this is where it gets picked up.
+
+- **When:** January 2027, once marathon volume has been up for a few
+  weeks and before the sharp end of the build. Boddington 10 is 31 Jan,
+  so early-to-mid January sits clear of that taper.
+- **Conditions or it is worthless:** rested — at least **three days**
+  after anything hard — and in the morning. A sample taken the day after
+  a long run repeats exactly the distortion in this panel.
+- **What to ask for:** ferritin, B12, vitamin D, full blood count.
+- **What the result means:** under ~40 is when supplementing becomes
+  worth doing, and then **alternate-day dosing beats daily**, because a
+  dose raises hepcidin for about 24 h and blunts the next one. Above
+  that, leave it alone.
+
+**One caveat to carry, for the asthma preventer decision.** A blood
+eosinophil count is sometimes used to guide asthma treatment. **This
+one must not be used for that** — taken the morning after a maximal
+race with Symbicort on board, it reads low for reasons that have
+nothing to do with airway inflammation. If that number is going to
+inform the decision, it needs drawing on an ordinary day. As ever, the
+preventer itself is a prescribing decision for his GP or asthma nurse.
+
 ## Life, fuelling, calendar (his account, Aug 2026)
 
 - **Work/life:** desk job, 9–5 at a computer, deliberately gets up and
