@@ -422,5 +422,13 @@
     "rpe": 2.0,
     "on_target": true,
     "session_notes": "Easy, legs feeling better no stiffness, yesterday there was a little stiffness :)"
+  },
+  {
+    "date": "2026-09-25",
+    "achilles_score": 0,
+    "session_type": "easy",
+    "rpe": 2.0,
+    "on_target": true,
+    "session_notes": null
   }
 ]
