@@ -430,5 +430,13 @@
     "rpe": 2.0,
     "on_target": true,
     "session_notes": null
+  },
+  {
+    "date": "2026-09-26",
+    "achilles_score": 0,
+    "session_type": "rest",
+    "rpe": 0.0,
+    "on_target": true,
+    "session_notes": "Swapped, running tomorrow"
   }
 ]
