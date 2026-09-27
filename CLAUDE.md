@@ -323,6 +323,32 @@ preventer itself is a prescribing decision for his GP or asthma nurse.
   and are easy to miss when scanning for hard efforts. `build_efficiency`
   excludes them by name and by outlier rule. If a month looks odd, check
   what else he was doing before blaming running load.
+- **Spa — "SPA retreat" / "Tewkesbury SPA retreat" in Garmin is not
+  training.** Type `other`, ~2–3 visits a week all year (110 from Jan to
+  late Sep 2026), median 44 min, average HR ~90. 96 of 110 fall on run
+  days. The room (Finnish sauna, salt room, "Skyview") is only in the
+  Strava title he gives it, and Strava is not pulled — so we know
+  *that* he went and for how long, never which room. Not worth asking
+  him to log it differently.
+
+  **It is not a meaningful recovery confounder — do not add it to
+  `CONFOUNDER_PATTERNS`, and never use a spa visit to explain a dip.**
+  Checked 27 Sep 2026 against 61 days of `garmin_history.json`: after
+  run days with a spa visit, next-morning HRV averaged about 0.7–0.8 ms
+  lower and RHR about 0.5 bpm higher than after run days without one.
+  Same direction on both metrics, but tiny against day-to-day spread
+  (SD ~4.5 ms and ~1.3 bpm) and on n = 9–26. So: a small nudge inside
+  the noise. A flagged dip is several times that size — the 21 Sep flag
+  was HRV −7.1 — and letting "he went to the spa" excuse it would hide
+  real fatigue, which is the exact failure principle 3 guards against.
+  Worth re-running once the history is longer; by winter it will have
+  three times the data.
+
+  If anything it is modestly useful: post-exercise sauna is the heat
+  protocol with the best evidence (plasma volume expansion, partial
+  heat acclimation), and he is already doing it without calling it
+  that. Do not oversell it — the studies are small — and do not
+  prescribe it; it is his, and it is already happening.
 - **Racing calendar** — the dates live in `fixtures.json` (what is
   ahead, no times, dates sometimes TBC) and render as "Coming up" on
   the Races tab; `races.json` stays results-only. Keep the two in step:
