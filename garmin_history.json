@@ -1055,5 +1055,23 @@
     "training_status_feedback": "MAINTAINING_2",
     "acwr_garmin": 0.7,
     "acwr_status": "LOW"
+  },
+  {
+    "date": "2026-09-27",
+    "rhr": 48.0,
+    "hrv_last_night": 42,
+    "hrv_status": "BALANCED",
+    "hrv_weekly_avg": 37,
+    "sleep_score": 85,
+    "sleep_duration_hrs": 8.13,
+    "body_battery_high": 96,
+    "body_battery_low": 57,
+    "training_load_acute": 537,
+    "training_load_chronic": 651,
+    "vo2max": 60.0,
+    "vo2max_date": "2026-09-27",
+    "training_status_feedback": "MAINTAINING_2",
+    "acwr_garmin": 0.8,
+    "acwr_status": "OPTIMAL"
   }
 ]
