@@ -11,9 +11,18 @@
     "date": "2026-10-04",
     "name": "Crete 10K",
     "distance_km": 10.0,
-    "status": "confirmed",
+    "status": "possible",
     "intent": "not raced",
-    "notes": "Fun race with beers on the way over. Falls in the HM recovery window, which is fine \u2014 no taper."
+    "notes": "IN DOUBT as of 27 Sep \u2014 he says it could be off and expects to know on the 28th. Treat 4 Oct as open until confirmed. Losing it costs nothing in training terms: it was always a fun race with beers on the way over, no taper, sitting inside the HM recovery window. If it is off, see the possible 4-mile race below, which he raised as the replacement and which is a completely different proposition \u2014 a record attempt, not a jog."
+  },
+  {
+    "date": null,
+    "date_note": "October, date TBC — confirming 28 Sep",
+    "name": "Club 4-mile (possible)",
+    "distance_km": 6.437,
+    "status": "possible",
+    "intent": "undecided",
+    "notes": "Raised 27 Sep as the replacement if Crete falls through. A home race, run for sharpness — but he flagged the club record at 23:30 (HIS FIGURE, PREFIXED 'I think' — VERIFY IT BEFORE ANY OF THIS IS USED). THE NUMBERS SAY THIS IS THE BETTER RECORD TARGET OF THE TWO, AND IT IS NOT CLOSE. Projections to 4 miles: 23:17 via the blended 5K, 23:19 via the blended 10K, 23:20 via the blended half, and 23:02 off Cheltenham alone. Three independent blended routes agreeing inside 2.5 seconds is unusually well-conditioned, and every one of them is INSIDE 23:30 — by 11 to 28 seconds. Compare Guy Fawkes: blended 29:32 against a 29:12 record, 20 seconds SHORT, with only the optimistic single-race figure (29:10) level with it. So he is inside the 4-mile record on every projection and outside the 5-mile record on all but the most generous. THE DATE DECIDES WHETHER THIS IS A GOOD IDEA. If it lands on 4 Oct as a straight swap for Crete, it is two weeks after a maximal half with NO quality work since the 12 Sep tempo — the aerobic fitness would be there and the sharpness would not, and 3:39/km off three weeks of easy running is not a record attempt, it is a disappointment. Mid-to-late October is the version that works: it then sits inside the Guy Fawkes sharpening block as both a tune-up and a record attempt, and a hard 4-mile two to three weeks out is textbook preparation for a 5-mile race rather than a conflict with it. It is also not the thing the 18 Oct XC cancellation was protecting against — that was about mud, cambers and trail shoes on an achilles, and a road 4-mile carries none of it. Ask on confirmation: the date, the surface, and whether 23:30 is right."
   },
   {
     "date": "2026-11-01",
