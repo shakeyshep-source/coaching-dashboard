@@ -1,65 +1,57 @@
 {
-  "id": "2026-09-20",
-  "created": "2026-09-20T18:00:00+01:00",
-  "status": "applied",
-  "rationale": "REVISED 20 Sep after his amend. Two things in it.\n\n(1) He cannot run Sunday 27th. The long run moves to Saturday 26th and Sunday becomes rest, with Tue-Fri stepped up a kilometre each to keep the week's progression intact: 5, 6, 7, 8, then 14 on Saturday. That is ~40km against the ~46km originally proposed. The shortfall is deliberate rather than reluctant \u2014 it is a recovery week after a maximal half, and less is the safer error.\n\n(2) He pushed back on the review's reading of the opening 5km, and he is right. The review called it 'a hard opening 5km that the finish and decoupling forgave rather than validated'. His account \u2014 going slightly quicker but holding back, a net downhill opening, and tucking in out of a slight headwind \u2014 is better supported by the data than the review's hedge was. His HR over km 1-6 ran 152, 159, 163, 161, 165, 163 against a race average of 164: he was settling INTO race effort by km 3, not exceeding it. Alice's elevation deltas put km 1-5 at 14m net downhill. And the two facts that settle it are that his last kilometre (3:38.3) was the fastest of the race and the second 10km was only 24 seconds slower than the first \u2014 neither happens off an opening that was genuinely too hard. The review under-weighted the drafting and the gradient. Validated, not forgiven.\n\nEverything else stands: easy only, no quality, no strides, the first Saturday since May without a session, and the Saturday/Wednesday structure resuming on evidence rather than a date. The Guy Fawkes sharpening block still gets shaped next Sunday, once this week's recovery is visible.\n\nASSUMPTION worth confirming: that Sunday alone is unavailable. If he is away for several days, this needs rewriting again, not nudging.",
+  "id": "2026-09-27",
+  "created": "2026-09-27T13:45:00+01:00",
+  "status": "pending",
+  "rationale": "Recovery week came through clean: achilles 0 every day, the physio-flagged calf/quad/back tightness resolved by Thursday and was never an achilles signal, HRV/RHR back to normal range by the weekend, ACWR stayed OPTIMAL/LOW throughout. That's the trigger the last review named for resuming something sharper than pure easy running — not the full Saturday/Wednesday spine, because Sunday brings a race (Crete 10K, or the club 4-mile if Crete falls through, still unconfirmed as of today), and neither race gets a hard session the day before it.\n\nSo this week is a bridge, not the sharpening block itself: rebuild volume, one light neuromuscular touch midweek (6x200m at ~4-mile effort, full recovery between reps) per the plan `fixtures.json` already wrote for exactly this scenario, strides Friday, and an easy shakeout Saturday regardless of which race Sunday turns out to be. The actual four-week Guy Fawkes sharpening block gets written next Sunday once this race is known and done, not guessed at today.\n\nSunday itself (4 Oct) is left without a fixed session_type/distance because the race is still unresolved — he expects to know by tomorrow (28th). The notes cover both scenarios; whichever it is, a same-day form entry will let the mid-week pipeline confirm the detail rather than this proposal guessing wrong.",
   "changes": [
     {
-      "date": "2026-09-21",
+      "date": "2026-09-28",
       "session_type": "rest",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Rest - the normal Monday, and doubly right after yesterday's effort."
+      "notes": "Rest - normal week rhythm resuming. Recovery week complete: achilles 0 every day, the physio-flagged tightness resolved, HRV and RHR back to normal range. Clean to build back up."
     },
     {
-      "date": "2026-09-22",
-      "session_type": "easy",
-      "target_distance_km": 5,
-      "target_pace": null,
-      "notes": "RECOVERY WEEK BEGINS. Easy, short, entirely by feel - roughly 20-30 min, walk if anything feels off. No strides, no pace target. Yesterday was RPE 8 with a full sprint to the line; the legs get nothing asked of them today regardless of how good they feel."
-    },
-    {
-      "date": "2026-09-23",
-      "session_type": "easy",
-      "target_distance_km": 6,
-      "target_pace": null,
-      "notes": "Easy 30-35 min, still entirely by feel, no pace target, no strides. If yesterday felt heavy rather than just tired, take today as a second rest day instead - better to lose a day here than force it."
-    },
-    {
-      "date": "2026-09-24",
-      "session_type": "easy",
-      "target_distance_km": 7,
-      "target_pace": null,
-      "notes": "Easy 7km - building duration gently, still conversational throughout. First day back on anything like a normal easy run."
-    },
-    {
-      "date": "2026-09-25",
+      "date": "2026-09-29",
       "session_type": "easy",
       "target_distance_km": 8,
       "target_pace": null,
-      "notes": "Easy 8km, conversational."
+      "notes": "Easy 8km, conversational - continuing the rebuild toward norm volume."
     },
     {
-      "date": "2026-09-26",
-      "session_type": "long",
-      "target_distance_km": 14,
+      "date": "2026-09-30",
+      "session_type": "intervals",
+      "target_distance_km": 9.5,
+      "target_pace": "3:38-3:40/km for the reps",
+      "notes": "First bit of speed since Cheltenham, deliberately light: 3km warm-up, 6x200m at ~4-mile effort (3:38-3:40/km) with FULL recovery between reps - jog/walk until actually recovered, not a fixed short rest, so every rep is fresh rather than accumulating fatigue - 3km cool-down. ~9-10km all in. This is a neuromuscular touch, not a return to the Saturday/Wednesday quality spine - that waits for the actual sharpening block once Sunday's race outcome is known."
+    },
+    {
+      "date": "2026-10-01",
+      "session_type": "easy",
+      "target_distance_km": 6,
       "target_pace": null,
-      "notes": "First long run back, MOVED from Sunday because he cannot run the 27th. 14km genuinely easy throughout, no pace target. Aerobic volume, not a rehearsal for anything. Still the first Saturday since May without a quality session - deliberate, not a gap to fill."
+      "notes": "Easy 6km. If a leg gym session is due this week, this is the point to have already had it - keep any heavy lower-body work at least 72h clear of Sunday, whichever race it turns out to be."
     },
     {
-      "date": "2026-09-27",
-      "session_type": "rest",
+      "date": "2026-10-02",
+      "session_type": "easy",
+      "target_distance_km": 5,
+      "target_pace": null,
+      "notes": "Easy 5km + 4-6 strides. Legs sharp for Sunday, not tired - strides stay controlled, not a speed session."
+    },
+    {
+      "date": "2026-10-03",
+      "session_type": "easy",
+      "target_distance_km": 5,
+      "target_pace": null,
+      "notes": "Easy 30-35 min shakeout, conversational throughout, no strides. The day before a race - whichever one it turns out to be - stays easy regardless."
+    },
+    {
+      "date": "2026-10-04",
+      "session_type": "race",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Rest - he cannot run today, and after a recovery week ending in the long run on Saturday that is the right shape anyway."
+      "notes": "CRETE 10K OR CLUB 4-MILE - still unconfirmed as this was written; he expects to know by 28 Sep. If Crete: still just a fun race with beers on the way over, sits inside the HM recovery window - run it on feel, no taper, no pressure on the number. If the club 4-mile instead: a genuine shot at the club record (23:30-23:39) - projections sit at 23:17-23:20 blended, 23:02 off Cheltenham alone, so realistically inside 23:39 and a coin flip against 23:30 given two weeks removed from quality work. Full race protocol either way: Symbicort 20 min / salbutamol 15 min before gun. If it's the 4-mile: Puma Fast-R Nitro 3, proper 3km warm-up, target ~3:38-3:40/km, let the habit of starting controlled and finishing quicker do its thing. Confirm which race on the form when known and the plan will update same-day."
     }
-  ],
-  "athlete_response": {
-    "timestamp": "20/09/2026 19:14:54",
-    "review_date": "2026-09-20",
-    "decision": "approve",
-    "thoughts": null
-  },
-  "revised": "2026-09-20T19:00:00+01:00",
-  "applied_at": "2026-09-20T18:15:10"
+  ]
 }
