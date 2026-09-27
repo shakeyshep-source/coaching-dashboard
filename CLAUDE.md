@@ -326,10 +326,13 @@ preventer itself is a prescribing decision for his GP or asthma nurse.
 - **Spa — "SPA retreat" / "Tewkesbury SPA retreat" in Garmin is not
   training.** Type `other`, ~2–3 visits a week all year (110 from Jan to
   late Sep 2026), median 44 min, average HR ~90. 96 of 110 fall on run
-  days. The room (Finnish sauna, salt room, "Skyview") is only in the
-  Strava title he gives it, and Strava is not pulled — so we know
-  *that* he went and for how long, never which room. Not worth asking
-  him to log it differently.
+  days. **That 44 min is the whole visit, not sauna time** — a visit is
+  generally sauna then hydropool, logged as one activity. All three
+  rooms are saunas (Finnish, salt, and "Skyview", a sauna with a view
+  out through patio doors), so every visit carries some heat; the
+  sauna portion and which room are only in the Strava title he gives
+  it, and Strava is not pulled. Not worth asking him to log it
+  differently — the room makes no difference to the read.
 
   **It is not a meaningful recovery confounder — do not add it to
   `CONFOUNDER_PATTERNS`, and never use a spa visit to explain a dip.**
@@ -347,8 +350,10 @@ preventer itself is a prescribing decision for his GP or asthma nurse.
   If anything it is modestly useful: post-exercise sauna is the heat
   protocol with the best evidence (plasma volume expansion, partial
   heat acclimation), and he is already doing it without calling it
-  that. Do not oversell it — the studies are small — and do not
-  prescribe it; it is his, and it is already happening.
+  that. But the studies used around 30 minutes in the sauna, and his
+  sauna share of a 44-minute visit is less than that, so treat it as a
+  partial dose. Do not oversell it — the studies are small — and do
+  not prescribe it; it is his, and it is already happening.
 - **Racing calendar** — the dates live in `fixtures.json` (what is
   ahead, no times, dates sometimes TBC) and render as "Coming up" on
   the Races tab; `races.json` stays results-only. Keep the two in step:
