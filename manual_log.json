@@ -438,5 +438,13 @@
     "rpe": 0.0,
     "on_target": true,
     "session_notes": "Swapped, running tomorrow"
+  },
+  {
+    "date": "2026-09-27",
+    "achilles_score": 0,
+    "session_type": "long",
+    "rpe": 2.0,
+    "on_target": true,
+    "session_notes": "Saturday session done today, ran with mate who's slower from 3k"
   }
 ]
