@@ -18,6 +18,24 @@
 const GH_REPO = 'shakeyshep-source/coaching-dashboard';
 
 function onFormSubmitNudgeGitHub() {
+  dispatchToGitHub('form-response');
+}
+
+/**
+ * Fires the Sunday coach review. Wire it to a TIME-DRIVEN trigger
+ * (Week timer, Sunday, 1pm-2pm) - AUTOMATION_SETUP.md step 7.
+ *
+ * GitHub's own schedule on this repo runs 3-4 hours late, so the review
+ * meant for 13:40 kept arriving in the evening. Google's timers fire
+ * within about 15 minutes of the slot. GitHub's crons stay as a
+ * backstop, and the workflow skips itself if the review already exists,
+ * so a late cron after this one costs nothing.
+ */
+function sundayReviewNudge() {
+  dispatchToGitHub('weekly-review');
+}
+
+function dispatchToGitHub(eventType) {
   const token = PropertiesService.getScriptProperties().getProperty('GH_TOKEN');
   if (!token) {
     console.error('No GH_TOKEN script property set — see AUTOMATION_SETUP.md step 6.');
@@ -33,17 +51,17 @@ function onFormSubmitNudgeGitHub() {
         Authorization: `Bearer ${token}`,
         Accept: 'application/vnd.github+json',
       },
-      payload: JSON.stringify({ event_type: 'form-response' }),
+      payload: JSON.stringify({ event_type: eventType }),
       muteHttpExceptions: true,
     }
   );
 
   // 204 No Content is success for this endpoint. Anything else is
   // logged rather than thrown: a failed nudge must never stop the form
-  // response itself being saved, and the hourly backstop schedule will
-  // pick the entry up regardless.
+  // response itself being saved, and the scheduled backstops will pick
+  // the work up regardless.
   const code = response.getResponseCode();
   if (code !== 204) {
-    console.error(`GitHub dispatch failed: ${code} ${response.getContentText()}`);
+    console.error(`GitHub dispatch (${eventType}) failed: ${code} ${response.getContentText()}`);
   }
 }

@@ -228,6 +228,30 @@ If the trigger ever breaks, nothing is lost: the same workflow also
 runs hourly through the day as a backstop, and the morning pull catches
 anything the hourly missed.
 
+## 7. Make the Sunday review arrive on time (3 min)
+
+GitHub's own schedule on this repo runs 3–4 hours late: the review meant
+for 13:40 on 20 Sep started at 17:26, and on 27 Sep neither Sunday slot
+had fired by 17:24. The data was never the hold-up — the long run is in
+by lunchtime. Google's timers are reliable to about 15 minutes, and the
+script already holds the token, so Google fires it instead.
+
+In the **weekly review response** spreadsheet's Apps Script editor (the
+one from step 6):
+
+1. Re-paste `form_submit_trigger.gs` from this repo — it now has a
+   `sundayReviewNudge` function alongside the form one. Save. The
+   existing form trigger keeps working; its function name is unchanged.
+2. **Triggers (clock icon) → Add trigger**
+   - Function: `sundayReviewNudge`
+   - Event source: **Time-driven**
+   - Type: **Week timer** → **Every Sunday** → **1pm to 2pm**
+3. Save. No new token, no new permission — same script property.
+
+GitHub's two Sunday slots stay as backstops. The review checks whether
+today's already exists before doing anything, so whichever arrives
+second does nothing.
+
 ## 5. Retire the laptop cron
 
 Once the first cloud run has committed successfully (check the Actions
@@ -248,7 +272,7 @@ writers is pointless noise.
 | Hourly, 06:00–22:00 | Backstop for the above, in case the Apps Script trigger fails |
 | ~06:15 daily | Full data pull (Garmin + weather) → dashboard fresh before 8am |
 | ~11:30 daily | Catch-up pull (late watch sync, morning form entries) |
-| Sunday ~18:40 | Scheduled Claude coach session (GitHub Action): weekly review + plan proposal |
+| Sunday ~13:40 | Claude coach session: weekly review + plan proposal. Fired by the Apps Script timer (step 7); GitHub's own slots are late backstops |
 
 Approving a proposal applies it on the next run — which, with step 6 in
 place, is roughly a minute after you submit the form, not the next
