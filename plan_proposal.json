@@ -1,7 +1,7 @@
 {
   "id": "2026-09-27",
   "created": "2026-09-27T13:45:00+01:00",
-  "status": "pending",
+  "status": "amend_requested",
   "rationale": "Changed: Sunday is now fixed. Crete's cancelled and confirmed \u2014 4 Oct is the club 4-mile (Shep calls it the Sharpness 4), so the two-scenario placeholder collapses to one. Three edits to that one entry: distance is now set at 6.437 km rather than left null, the pacing guidance is rewritten because he describes the course as lumpy \u2014 a flat 3:38-3:40/km target across an undulating four miles isn't right, same principle as the Cheltenham pacing note (course profile decides the shape, not forced even splits) \u2014 and the notes drop the Crete branch entirely. The team-prize angle he mentioned doesn't change the individual prescription: he was already racing this as a genuine effort, not a jog, so there's nothing to adjust there beyond noting it.\n\nEverything else stands exactly as proposed on the 27th, because nothing else in his message touches it: the recovery week came through clean (achilles 0 every day, physio-flagged tightness resolved by Thursday, HRV/RHR back to normal, ACWR OPTIMAL/LOW throughout) \u2014 the trigger the last review named for resuming something sharper than pure easy running, short of the full Saturday/Wednesday spine because a hard session the day before a race is never right. Rebuild volume, one light neuromuscular touch Tuesday (6x200m at ~4-mile effort, full recovery between reps), strides Friday, easy shakeout Saturday. The four-week Guy Fawkes sharpening block still gets written next Sunday once this race is done, not guessed at today.",
   "changes": [
     {
@@ -55,9 +55,9 @@
     }
   ],
   "athlete_response": {
-    "timestamp": "28/09/2026 11:43:29",
+    "timestamp": "28/09/2026 12:16:35",
     "review_date": "2026-09-28",
     "decision": "amend",
-    "thoughts": "crete is cancelled and i will be doing the sharpness 4 miler. bit of a lumpy course but will be fun and can help to try and get a team prize"
+    "thoughts": "course elevation provided from Als run last year"
   }
 }
