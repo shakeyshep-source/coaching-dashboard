@@ -581,5 +581,68 @@
     "notes": "Rest - he cannot run today, and after a recovery week ending in the long run on Saturday that is the right shape anyway.",
     "source": "coach",
     "updated_at": "2026-09-20T18:15:10"
+  },
+  {
+    "date": "2026-09-28",
+    "session_type": "rest",
+    "target_distance_km": null,
+    "target_pace": null,
+    "notes": "Rest - normal week rhythm resuming. Recovery week complete: achilles 0 every day, the physio-flagged tightness resolved, HRV and RHR back to normal range. Clean to build back up.",
+    "source": "coach",
+    "updated_at": "2026-09-28T11:28:57"
+  },
+  {
+    "date": "2026-09-29",
+    "session_type": "easy",
+    "target_distance_km": 8,
+    "target_pace": null,
+    "notes": "Easy 8km, conversational - continuing the rebuild toward norm volume.",
+    "source": "coach",
+    "updated_at": "2026-09-28T11:28:57"
+  },
+  {
+    "date": "2026-09-30",
+    "session_type": "intervals",
+    "target_distance_km": 9.5,
+    "target_pace": "3:38-3:40/km for the reps",
+    "notes": "First bit of speed since Cheltenham, deliberately light: 3km warm-up, 6x200m at ~4-mile effort (3:38-3:40/km) with FULL recovery between reps - jog/walk until actually recovered, not a fixed short rest, so every rep is fresh rather than accumulating fatigue - 3km cool-down. ~9-10km all in. This is a neuromuscular touch, not a return to the Saturday/Wednesday quality spine - that waits for the actual sharpening block once Sunday's race outcome is known.",
+    "source": "coach",
+    "updated_at": "2026-09-28T11:28:57"
+  },
+  {
+    "date": "2026-10-01",
+    "session_type": "easy",
+    "target_distance_km": 6,
+    "target_pace": null,
+    "notes": "Easy 6km. If a leg gym session is due this week, this is the point to have already had it - keep any heavy lower-body work at least 72h clear of Sunday, whichever race it turns out to be.",
+    "source": "coach",
+    "updated_at": "2026-09-28T11:28:57"
+  },
+  {
+    "date": "2026-10-02",
+    "session_type": "easy",
+    "target_distance_km": 5,
+    "target_pace": null,
+    "notes": "Easy 5km + 4-6 strides. Legs sharp for Sunday, not tired - strides stay controlled, not a speed session.",
+    "source": "coach",
+    "updated_at": "2026-09-28T11:28:57"
+  },
+  {
+    "date": "2026-10-03",
+    "session_type": "easy",
+    "target_distance_km": 5,
+    "target_pace": null,
+    "notes": "Easy 30-35 min shakeout, conversational throughout, no strides. The day before a race - whichever one it turns out to be - stays easy regardless.",
+    "source": "coach",
+    "updated_at": "2026-09-28T11:28:57"
+  },
+  {
+    "date": "2026-10-04",
+    "session_type": "race",
+    "target_distance_km": 6.437,
+    "target_pace": null,
+    "notes": "CONFIRMED: club 4-mile road race (the Sharpness 4), Crete is off. Club record reads '23:3' on the list, so 23:30-23:39 (3:39/km average for 23:30, 3:40/km for 23:39). COURSE (elevation from a clubmate's file - the same clubmate whose 1:21:02 Cheltenham run mapped that course): rolling, ~51m of climbing on her watch, no barometric altimeter so treat the metres as approximate and the shape as the signal. Km 1 is downhill then flat - her fastest full km of the race (3:32) - the same trap as Cheltenham's km 1, do not copy it, go out closer to 3:38. First climb to ~2km (+13m). Km 3 drops then starts rising. A long drag from 3km to ~4.3km. Km 5 dips. The crux is km 6: two short steep ramps around 5.1-5.7km, her slowest split by ten seconds - expect that to be the slowest km of the race and do not chase it back. Downhill last ~0.4km to the line. Run it on effort, not pace: let the climbs cost a few seconds, take the descents, use the downhill finish. HER TIME (~23:40) IS THE REAL CALIBRATION, not the flat Riegel numbers: she ran 1:21:02 at Cheltenham against his 1:21:03 - near-identical half-marathon form - and went ~38 sec slower on this course than a flat Riegel off that time predicts. Stacked against him too: two weeks without quality since a maximal half. Honest read: roughly 23:35-23:55 - the record is possible on a good day, more likely just outside, and a coin flip at best against the top of that range, not the confident 'inside 23:39' read from before this course data came in. Caveat: when she ran it and at what fitness isn't known, so treat her time as calibration, not gospel. There's a team prize on the line too, which he'd like to help with - doesn't change the individual prescription, he's already racing this flat out rather than treating it as a jog. Full protocol: Symbicort 20 min / salbutamol 15 min before gun, Puma Fast-R Nitro 3, proper 3km warm-up. Afterwards: 2-3 easy days into the Guy Fawkes block, no recovery week needed for a 4-mile.",
+    "source": "coach",
+    "updated_at": "2026-09-28T11:28:57"
   }
 ]

@@ -1,7 +1,30 @@
 {
   "generated": "2026-09-28",
-  "next_race": null,
-  "race_readiness": null,
+  "next_race": {
+    "name": "CONFIRMED: club 4-mile road race (the Sharpness 4), Crete is off",
+    "date": "2026-10-04",
+    "distance_km": 6.437,
+    "days_away": 6
+  },
+  "race_readiness": {
+    "race": {
+      "name": "CONFIRMED: club 4-mile road race (the Sharpness 4), Crete is off",
+      "date": "2026-10-04",
+      "distance_km": 6.437,
+      "days_away": 6
+    },
+    "weeks_to_race": 0.9,
+    "taper_start": "2026-09-24",
+    "remaining_key_sessions": {
+      "tempo": 0,
+      "intervals": 0,
+      "long": 0
+    },
+    "goal_time": null,
+    "goal_pace": null,
+    "long_run_target_min": 95,
+    "longest_run_recent_min": 109
+  },
   "weeks": [
     {
       "week_start": "2026-08-10",
@@ -978,9 +1001,9 @@
       "runs": 0,
       "time_min": 0,
       "elevation_m": 0,
-      "planned_sessions": 0,
+      "planned_sessions": 6,
       "logged_sessions": 0,
-      "hard_sessions_planned": 0,
+      "hard_sessions_planned": 2,
       "quality_time_min": 0,
       "easy_pct": null,
       "long_run_min": null,

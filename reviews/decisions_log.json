@@ -377,5 +377,13 @@
     "action_taken": "amendment_requested",
     "athlete_thoughts": "course elevation provided from Als run last year",
     "changes_count": 7
+  },
+  {
+    "logged_at": "2026-09-28T11:28:57",
+    "proposal_id": "2026-09-27",
+    "decision": "approve",
+    "action_taken": "plan_updated",
+    "athlete_thoughts": null,
+    "changes_count": 7
   }
 ]
