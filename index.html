@@ -688,7 +688,7 @@ async function loadDashboard() {
     <div class="session-card">
       <div>
         <p class="lab">Today${stale ? '' : ''}</p>
-        <p class="big">${todayPlan ? esc(todayPlan.session_type) : 'Nothing planned'}${todayPlan && todayPlan.target_distance_km ? ` · ${todayPlan.target_distance_km} km` : ''}</p>
+        <p class="big">${todayPlan ? esc(todayPlan.session_type) : 'Nothing planned'}${todayPlan && todayPlan.target_distance_km ? ` · ${fmtKm(todayPlan.target_distance_km)} km` : ''}</p>
         ${todayPlan && todayPlan.target_pace ? `<p class="sub">${esc(todayPlan.target_pace)}</p>` : ''}
         ${nextSessionLine(planAll, todayStr)}
       </div>
@@ -852,6 +852,14 @@ async function loadDashboard() {
 // Today panel helpers
 // ============================================================
 
+// Plan distances as a runner reads them: 8, 9.5, 6.4 - not 6.437, which
+// is what a 4-mile race looks like stored in kilometres.
+function fmtKm(km) {
+  if (km == null || km === '') return '';
+  const n = Number(km);
+  return Number.isInteger(n) ? String(n) : n.toFixed(1);
+}
+
 function hrsMins(hrs) {
   if (hrs == null) return '--';
   const h = Math.floor(hrs);
@@ -884,7 +892,7 @@ function nextSessionLine(plan, todayStr) {
     .sort((a, b) => a.date.localeCompare(b.date))[0];
   if (!next) return '';
   const day = new Date(next.date + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short' });
-  const dist = next.target_distance_km ? ` ${next.target_distance_km} km` : '';
+  const dist = next.target_distance_km ? ` ${fmtKm(next.target_distance_km)} km` : '';
   return `<p class="sub">Next: ${esc(next.session_type)}${dist}, ${day}</p>`;
 }
 
@@ -931,16 +939,16 @@ function weekLaneHtml(plan, todayStr) {
     const isToday = ds === todayStr;
     if (s && s.target_distance_km) plannedKm += s.target_distance_km;
     const letter = d.toLocaleDateString('en-GB', { weekday: 'narrow' });
-    const value = s && s.target_distance_km ? s.target_distance_km : '—';
+    const value = s && s.target_distance_km ? fmtKm(s.target_distance_km) : '—';
     const type = s ? s.session_type : '';
     LANE_NOTES.push({
       head: `${d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' })}` +
-            (s ? ` · ${s.session_type}${s.target_distance_km ? ' ' + s.target_distance_km + ' km' : ''}` : ' · nothing planned'),
+            (s ? ` · ${s.session_type}${s.target_distance_km ? ' ' + fmtKm(s.target_distance_km) + ' km' : ''}` : ' · nothing planned'),
       body: s && s.notes ? s.notes : (s && s.target_pace ? s.target_pace : 'No note on this one.'),
     });
     cells.push(`<button type="button" class="${isToday ? 'is-today' : ''}"
         aria-pressed="${isToday ? 'true' : 'false'}" data-i="${i}">
-      <em>${letter}</em><b>${value}</b><s>${esc(type || '—')}</s></button>`);
+      <em>${letter} ${d.getDate()}</em><b>${value}</b><s>${esc(type || '—')}</s></button>`);
   }
 
   return `
@@ -1619,13 +1627,16 @@ async function buildPlanTab(computedData) {
     `;
   }
 
-  // The weeks AFTER this one. This week is already on screen above as
-  // the lane, and a five-column table repeating it was both duplication
-  // and unreadable on a phone — session notes are prose, and prose does
-  // not belong in a 90px table column. Stacked rows instead: the line
-  // you scan, then the note at full width underneath.
-  const todayWeekStart = getWeekStart(today.date);
-  const weekStarts = [1, 2].map(offset => {
+  // This week and the two after, as dated rows. This week was dropped
+  // once on the grounds that the lane above covered it — but the lane
+  // shows a letter and a distance, not a dated list with paces and
+  // notes, and "we seem to have lost the section with all the planned
+  // training dates" (28 Sep) was the result. Stacked rows rather than
+  // the old five-column table: session notes are prose, and prose does
+  // not belong in a 90px column on a phone.
+  const todayStr = toDateStr(new Date());
+  const todayWeekStart = getWeekStart(todayStr);
+  const weekStarts = [0, 1, 2].map(offset => {
     const d = new Date(todayWeekStart + 'T00:00:00');
     d.setDate(d.getDate() + offset * 7);
     return toDateStr(d);
@@ -1668,12 +1679,16 @@ async function buildPlanTab(computedData) {
           const s = planByDate[dateStr];
           const d = new Date(dateStr + 'T00:00:00');
           const dayName = d.toLocaleDateString('en-GB', { weekday: 'short' });
+          const isToday = dateStr === todayStr;
+          const isPast = dateStr < todayStr;
           return `
-            <div style="border-bottom:1px solid var(--border); padding:8px 0;">
+            <div style="border-bottom:1px solid var(--border); padding:8px ${isToday ? '8px' : '0'};
+                        ${isToday ? 'background:var(--yellow-tint); box-shadow:inset 3px 0 0 var(--club-yellow);' : ''}
+                        ${isPast ? 'opacity:0.55;' : ''}">
               <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px;">
-                <span style="font-family:var(--mono); font-size:11px; color:var(--text-muted); min-width:66px;">${dayName} ${d.getDate()}</span>
+                <span style="font-family:var(--mono); font-size:11px; color:var(--text-muted); min-width:66px;">${dayName} ${d.getDate()}${isToday ? ' ·today' : ''}</span>
                 <span style="flex:1; font-size:14px; ${s ? 'text-transform:capitalize;' : 'color:var(--text-muted);'}">${s ? esc(s.session_type) : 'Nothing planned'}</span>
-                <span style="font-family:var(--mono); font-size:14px; font-weight:600; white-space:nowrap;">${s && s.target_distance_km ? s.target_distance_km + ' km' : ''}</span>
+                <span style="font-family:var(--mono); font-size:14px; font-weight:600; white-space:nowrap;">${s && s.target_distance_km ? fmtKm(s.target_distance_km) + ' km' : ''}</span>
               </div>
               ${s && s.target_pace ? `<p style="margin:4px 0 0 66px; font-family:var(--mono); font-size:11px; color:var(--club-blue);">${esc(s.target_pace)}</p>` : ''}
               ${s && s.notes ? `<p style="margin:5px 0 0 66px; font-size:12.5px; color:var(--text-secondary); line-height:1.45;">${esc(s.notes)}</p>` : ''}
