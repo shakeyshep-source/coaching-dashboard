@@ -148,29 +148,6 @@ is what permits the running volume, so treat those two leg sessions as
 load-bearing structure: if running volume rises they are protected, and
 if something has to give in a hard week, it is not them. Prefer them on
 or after quality days so hard days stay hard and easy days stay easy.
-
-**His days, from 28 Sep 2026: legs on Monday and Thursday.** Both are
-the day after a hard session (Sunday long run, Wednesday intervals), so
-they fit the rule above, and 72–96 h between them suits tendon
-remodelling. The cost is that each sits 48 h before a quality session,
-so the two are not equal:
-- **Monday is the heavier one** — RDLs, heavy single-leg, heavy slow
-  calf/soleus. It has Tuesday's easy run as a buffer before Wednesday.
-- **Thursday is the lighter one** — isometric calf/soleus and moderate
-  single-leg, no heavy RDLs. It sits 48 h before the Saturday tempo,
-  which is session 1 of 2, and hamstring soreness into a tempo matters
-  more for him than most (occasional hamstring issues).
-- Monday stops being a full rest day for his legs. That is a fair
-  trade for consistency, but it makes the Tuesday easy run genuinely
-  easy — never put quality work on a Tuesday.
-- **Race weeks:** a Sunday race puts Thursday exactly ~72 h out, so
-  Thursday is isometrics only that week.
-- **Revisit when long runs pass ~30 km** in the marathon build: a heavy
-  Monday after a 32–35 km run may be one load too many, and the heavy
-  session may need to move to Thursday, with Saturday's tempo taking
-  the cost instead.
-- The upper-body session is his to place; it barely touches running.
-
 Through the taper keep them going but drop heavy lower-body loading in
 the final week — no novel or heavy leg session inside ~72 h of a race.
 
