@@ -1143,7 +1143,14 @@ async function buildCoachTab() {
   // --- Latest weekly review ---
   if (review) {
     const recColor = review.recommendation === 'hold' ? 'var(--good)' : 'var(--warn)';
-    const recLabel = review.recommendation === 'hold' ? 'Hold the plan' : 'Change proposed';
+    // The review keeps the plan three weeks deep, so a "hold" week still
+    // usually carries a proposal - the new third week. Say that, or
+    // "Hold the plan" sits next to sessions waiting for approval.
+    const extending = review.recommendation === 'hold' && proposal
+      && ['pending', 'amend_requested'].includes(proposal.status);
+    const recLabel = review.recommendation === 'hold'
+      ? (extending ? 'Plan holds · next weeks added' : 'Hold the plan')
+      : 'Change proposed';
 
     // The ask-the-coach thread. It began as a one-shot "query this
     // review" button, which meant one question per week: once a reply
