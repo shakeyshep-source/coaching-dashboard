@@ -3,7 +3,7 @@
 #
 # Every Sunday evening it reads the week's data + the athlete's notes,
 # writes the review (reviews/YYYY-MM-DD.md + weekly_review_latest.json)
-# and, if changes are warranted, a plan_proposal.json. It NEVER edits
+# and a plan_proposal.json keeping the plan three weeks deep. It NEVER edits
 # training_plan.json — apply_review.py does that, and only after an
 # explicit "approve" via the weekly review form.
 #
@@ -202,7 +202,9 @@ jobs:
               at the top of this week's review, per step 2b of the brief;
             - otherwise write this week's review to reviews/<today>.md,
               update weekly_review_latest.json, and write
-              plan_proposal.json only if you are recommending changes.
+              plan_proposal.json covering the next three weeks - week 1
+              firm, weeks 2-3 provisional - per step 5 of the brief,
+              even when the recommendation is hold.
             Do NOT edit training_plan.json. Do NOT commit or push — the
             workflow commits your files afterwards.
           claude_args: |

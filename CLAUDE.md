@@ -647,7 +647,28 @@ reviewed. The session must:
    `conversation` across, or the dashboard will show old exchanges
    against a new review. Read the whole of last week's `conversation`
    first, though: what he asked mid-week is part of how the week went.
-5. If (and only if) recommending changes, write `plan_proposal.json`:
+5. **Keep the plan three weeks deep.** He wants to see the current week
+   and the two after it (asked 28 Sep 2026), and the dashboard shows
+   exactly that — but a review that only ever writes the coming week
+   leaves the other two reading "nothing planned yet". So every Sunday,
+   the proposal covers the **next three Monday–Sunday weeks**:
+   - **Week 1 is firm** — written exactly as sessions always have been.
+   - **Weeks 2 and 3 are provisional.** Start each of their `notes` with
+     "Provisional —". They show the shape of the block, and next Sunday
+     re-proposes them with a week more evidence: firmed up, changed, or
+     left as they were. Never treat a provisional session as a promise.
+   - Carry forward what is already in `training_plan.json` rather than
+     rewriting it for the sake of it; change a session only when the
+     week gave a reason to.
+   - Weeks further out stay blank. Three weeks is the horizon he asked
+     for; writing further is guessing, and guesses get approved.
+
+   This means most Sundays write a proposal even when the recommendation
+   is **hold** — "hold" is about whether anything already planned should
+   change; extending the horizon by a week is not a change of course.
+   Say which it is in the rationale's first line.
+
+   Write `plan_proposal.json`:
    ```json
    {
      "id": "YYYY-MM-DD",            // same as review_date
