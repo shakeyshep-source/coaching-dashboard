@@ -361,5 +361,13 @@
     "action_taken": "plan_updated",
     "athlete_thoughts": null,
     "changes_count": 7
+  },
+  {
+    "logged_at": "2026-09-28T10:43:45",
+    "proposal_id": "2026-09-27",
+    "decision": "amend",
+    "action_taken": "amendment_requested",
+    "athlete_thoughts": "crete is cancelled and i will be doing the sharpness 4 miler. bit of a lumpy course but will be fun and can help to try and get a team prize",
+    "changes_count": 7
   }
 ]
