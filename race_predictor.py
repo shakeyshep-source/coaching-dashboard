@@ -36,6 +36,8 @@ VO2_HISTORY_FILE = "vo2max_history.json"
 # read over six weeks — long enough to be real, short enough to be
 # "recent form" rather than the whole year's progress.
 VO2_TREND_WINDOW_DAYS = 42
+# Manchester 2027 goal: sub-3, i.e. 2:59:59 - 4:16/km.
+MARATHON_GOAL_SECONDS = 2 * 3600 + 59 * 60 + 59
 RACES_FILE = "races.json"
 PLAN_FILE = "training_plan.json"
 OUTPUT_FILE = "race_prediction.json"
@@ -241,8 +243,20 @@ def build_training_paces(clean_races, predictions):
          "purpose": "Most of the week. Conversational - if in doubt, slower."},
         {"name": "Long run", "pace": band(1.20, 1.30),
          "purpose": "Sunday. Steady, not easy-plus - the last few km may drift quicker."},
-        {"name": "Half marathon (goal)", "pace": fmt_pace(race_pace("Half Marathon", 21.0975)),
-         "purpose": "Cheltenham race pace. Race-specific blocks late in the build."},
+        # Goal pace, not projected pace. The marathon is the one distance
+        # where the projection is not the training number: it is Riegel
+        # stretched from races a quarter the length, the note above calls
+        # it a rough ballpark, and it says ~4:03/km against a 4:16/km
+        # goal. Practising at the projection would mean rehearsing - and
+        # fuelling at - a pace he has never run for three hours and is not
+        # racing at. The goal is a decision, so it is a constant.
+        {"name": "Marathon pace (sub-3 goal)", "pace": fmt_pace(MARATHON_GOAL_SECONDS / 42.195),
+         "purpose": ("Manchester goal pace - long-run MP blocks, and where marathon fuelling gets "
+                     "practised. " + (f"The projection says {fmt_pace(race_pace('Marathon', 42.195))}; "
+                     "that is optimism off short races, not a training pace."
+                     if race_pace("Marathon", 42.195) else ""))},
+        {"name": "Half marathon", "pace": fmt_pace(race_pace("Half Marathon", 21.0975)),
+         "purpose": "Half-marathon race pace. Race-specific blocks late in a half build."},
         {"name": "Threshold / tempo", "pace": fmt_pace(t),
          "purpose": "Comfortably hard, ~1hr race pace. The Saturday session."},
         {"name": "10K pace", "pace": fmt_pace(race_pace("10K", 10.0)),

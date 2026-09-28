@@ -70,9 +70,14 @@
         "purpose": "Sunday. Steady, not easy-plus - the last few km may drift quicker."
       },
       {
-        "name": "Half marathon (goal)",
+        "name": "Marathon pace (sub-3 goal)",
+        "pace": "4:16/km",
+        "purpose": "Manchester goal pace - long-run MP blocks, and where marathon fuelling gets practised. The projection says 4:03/km; that is optimism off short races, not a training pace."
+      },
+      {
+        "name": "Half marathon",
         "pace": "3:53/km",
-        "purpose": "Cheltenham race pace. Race-specific blocks late in the build."
+        "purpose": "Half-marathon race pace. Race-specific blocks late in a half build."
       },
       {
         "name": "Threshold / tempo",
