@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-29",
+  "generated": "2026-09-30",
   "window_days": 7,
   "sessions": [
     {
@@ -218,7 +218,17 @@
       "note": "Yeah done as to plan, picked up the pace/effort around the 14/15k mark, caught and passed so many, on that last bit. The hilly part is brutal I'd say more than just a km, as it mixes in climbs with decent... Happy with run and a time of 1:21:04"
     }
   ],
-  "pending": [],
+  "pending": [
+    {
+      "date": "2026-09-30",
+      "session_type": "intervals",
+      "days_since": 0,
+      "hrv_back": null,
+      "rhr_back": null,
+      "hrv_reference": 37.4,
+      "rhr_reference": 48.0
+    }
+  ],
   "trend": {
     "recent_avg_days": 2.7,
     "prior_avg_days": 3.7,
