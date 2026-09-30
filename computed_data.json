@@ -371,10 +371,12 @@
     "hrv_delta_from_baseline": -2.4,
     "rhr_baseline_7d": 48.0,
     "rhr_delta_from_baseline": 0.0,
-    "heat_risk": "moderate",
+    "heat_risk": "high",
     "recovery_confounders": [],
-    "today_summary": "Recovery slightly below baseline. Fine to train but stay conservative.",
+    "today_summary": "Recovery slightly below baseline. Fine to train but stay conservative. Heat risk is high today too \u2014 watch for respiratory symptoms.",
     "readiness_level": "caution",
-    "plan_flag_reasons": []
+    "plan_flag_reasons": [
+      "Heat risk is high and a hard session is planned."
+    ]
   }
 ]
