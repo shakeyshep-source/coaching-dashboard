@@ -1,19 +1,19 @@
 {
-  "generated": "2026-10-02",
+  "generated": "2026-10-03",
   "next_race": {
     "name": "CONFIRMED: club 4-mile road race (the Sharpness 4), Crete is off",
     "date": "2026-10-04",
     "distance_km": 6.437,
-    "days_away": 2
+    "days_away": 1
   },
   "race_readiness": {
     "race": {
       "name": "CONFIRMED: club 4-mile road race (the Sharpness 4), Crete is off",
       "date": "2026-10-04",
       "distance_km": 6.437,
-      "days_away": 2
+      "days_away": 1
     },
-    "weeks_to_race": 0.3,
+    "weeks_to_race": 0.1,
     "taper_start": "2026-09-24",
     "remaining_key_sessions": {
       "tempo": 0,
@@ -742,9 +742,9 @@
       "on_target_pct": 100,
       "avg_rpe": 2.7,
       "max_achilles": 0,
-      "avg_hrv": 36.5,
+      "avg_hrv": 34,
       "avg_rhr": 48.0,
-      "avg_sleep_score": 89,
+      "avg_sleep_score": 87,
       "avg_sleep_hrs": 8.2,
       "easy_pace_min_km": 5.08,
       "easy_avg_hr": 139.3,
@@ -997,27 +997,27 @@
       "week_start": "2026-09-28",
       "week_end": "2026-10-04",
       "in_progress": true,
-      "km": 22.1,
-      "runs": 3,
-      "time_min": 110.0,
-      "elevation_m": 147.0,
+      "km": 28.1,
+      "runs": 4,
+      "time_min": 142.0,
+      "elevation_m": 252.0,
       "planned_sessions": 6,
       "logged_sessions": 5,
       "hard_sessions_planned": 2,
       "quality_time_min": 41,
-      "easy_pct": 63,
+      "easy_pct": 71,
       "long_run_min": 41,
       "long_run_km": 7.66,
       "on_target_pct": 100,
       "avg_rpe": 1.6,
       "max_achilles": 0,
-      "avg_hrv": 36.2,
-      "avg_rhr": 47.6,
-      "avg_sleep_score": 87.4,
-      "avg_sleep_hrs": 8.3,
-      "easy_pace_min_km": 4.79,
-      "easy_avg_hr": 143.0,
-      "efficiency": 1.462,
+      "avg_hrv": 35.5,
+      "avg_rhr": 47.8,
+      "avg_sleep_score": 86.3,
+      "avg_sleep_hrs": 8.4,
+      "easy_pace_min_km": 4.99,
+      "easy_avg_hr": 139.7,
+      "efficiency": 1.439,
       "session_log": [
         {
           "date": "2026-09-28",
@@ -1088,9 +1088,9 @@
           "on_target": true,
           "achilles_score": 0,
           "note": "Easy",
-          "km": null,
-          "pace": null,
-          "avg_hr": null,
+          "km": 6.0,
+          "pace": 5.4,
+          "avg_hr": 133,
           "segments": null,
           "fastest_segment": null
         }
