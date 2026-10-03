@@ -30951,5 +30951,79 @@
         "elevation_gain_m": 4.0
       }
     ]
+  },
+  {
+    "activity_id": 24588543785,
+    "date": "2026-10-03",
+    "name": "Tewkesbury Running",
+    "type": "running",
+    "laps": [
+      {
+        "index": 1,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 300.4,
+        "pace_min_per_km": 5.01,
+        "avg_hr": 135.0,
+        "max_hr": 146.0,
+        "cadence": 166.640625,
+        "elevation_gain_m": 0.0
+      },
+      {
+        "index": 2,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 305.1,
+        "pace_min_per_km": 5.08,
+        "avg_hr": 146.0,
+        "max_hr": 151.0,
+        "cadence": 165.828125,
+        "elevation_gain_m": 7.0
+      },
+      {
+        "index": 3,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 295.8,
+        "pace_min_per_km": 4.93,
+        "avg_hr": 141.0,
+        "max_hr": 144.0,
+        "cadence": 167.1875,
+        "elevation_gain_m": 0.0
+      },
+      {
+        "index": 4,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 293.1,
+        "pace_min_per_km": 4.89,
+        "avg_hr": 144.0,
+        "max_hr": 153.0,
+        "cadence": 167.515625,
+        "elevation_gain_m": 4.0
+      },
+      {
+        "index": 5,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 292.4,
+        "pace_min_per_km": 4.87,
+        "avg_hr": 143.0,
+        "max_hr": 147.0,
+        "cadence": 166.765625,
+        "elevation_gain_m": 3.0
+      },
+      {
+        "index": 6,
+        "intensity_type": "INTERVAL",
+        "distance_km": 0.858,
+        "duration_sec": 253.6,
+        "pace_min_per_km": 4.93,
+        "avg_hr": 143.0,
+        "max_hr": 145.0,
+        "cadence": 167.265625,
+        "elevation_gain_m": 1.0
+      }
+    ]
   }
 ]
