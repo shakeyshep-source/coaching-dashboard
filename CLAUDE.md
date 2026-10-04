@@ -361,12 +361,24 @@ preventer itself is a prescribing decision for his GP or asthma nurse.
   and the fixture drops off by date on its own. The coaching context
   for each is here. Nothing before Cheltenham (20 Sep). Then, in
   order:
-  - **Crete 10K, Sun 4 Oct** — explicitly a fun race with beers on the
-    way over, not a target; it falls in the HM recovery window, and
-    that is fine, but do not write a taper for it.
-  - **Guy Fawkes 5, Sun 1 Nov** — 5 miles, entered, and the first race
-    he will actually race after Cheltenham. It now has a clean run-in:
-    nothing hard in the seven days before it.
+  - **Sharpness 4, Sun 4 Oct — RUN: 23:22 (chip).** Replaced Crete 10K,
+    which fell through. Run as a challenge, two weeks after Cheltenham,
+    off a bridge week with no real sharpening and HRV sliding (32 the
+    day before). Club record read "23:3" on the list, so 23:30–23:39 —
+    beaten by 8–17 s; the exact standing figure is for the club to
+    confirm. Lumpy course. Near-textbook execution: 3:36 first km when
+    the downhill offered 3:32, gave a few seconds on the climbs, 3:41
+    over the high ground where the clubmate ran 3:56, 3:11/km finish;
+    HR built steadily 156→176 rather than hitting a ceiling early.
+    Worth ~17:53 5K / 37:16 10K / 1:22:10 half — in line with the
+    blended model on a lumpy course, so at or slightly ahead of it.
+    **Lesson for the next projection:** the flat projection (23:17–
+    23:20) was close; the 10–30 s I added for lost sharpness and hills
+    were too cautious — he lost about five. Same direction as
+    Cheltenham. Apply smaller penalties next time.
+  - **Guy Fawkes 5, Sun 1 Nov** — 5 miles, entered, and the first
+    *target* race after Cheltenham. It has a clean run-in: nothing hard
+    in the seven days before it.
   - **XC Sun 13 Dec**
   - **XC Sat 27 Feb 2027** — sits 7 weeks out from Manchester, inside
     the marathon build.
