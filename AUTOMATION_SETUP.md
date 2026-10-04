@@ -133,7 +133,12 @@ So if a result is missing, check in this order:
    Pin `RACE_LOG_GID` if that happens.
 
 Note the time is entered as **minutes and seconds, not hours** — 1:21:03
-is 81 and 4.
+is 81 and 3.
+
+**Distance** can be typed naturally — `4 miles`, `5m`, `10k`, `21.0975`,
+`half marathon`. A bare number is read as kilometres. If it can't be
+read, the sync now prints a warning rather than quietly dropping the
+race from the predictor, which is what happened to Sharpness 4.
 
 ## 4. Merge this branch to `main`
 

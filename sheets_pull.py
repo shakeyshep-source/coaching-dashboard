@@ -13,6 +13,7 @@ shared as "Anyone with the link can view" for this to work.
 SHEET IDs — update these if sheets are ever recreated:
 """
 
+import re
 import csv
 import io
 import json
@@ -123,6 +124,61 @@ def parse_float(raw):
         return None
 
 
+MILE_KM = 1.609344
+NAMED_DISTANCES_KM = {
+    "marathon": 42.195,
+    "half marathon": 21.0975,
+    "half": 21.0975,
+    "mile": MILE_KM,
+}
+
+
+def parse_distance_km(raw):
+    """Race distance as he would type it, to kilometres.
+
+    The form's Distance box is free text, and the parser used to accept
+    only a bare number - so Sharpness 4 (4 Oct 2026), entered in miles,
+    landed in races.json as distance None, and race_predictor.py
+    silently dropped the race. Club racing here is mostly in miles
+    (Guy Fawkes 5, Boddington 10), so this reads what he writes:
+
+      "21.0975", "10", "10k", "10 km"     -> kilometres (a bare number
+                                              stays km, as it always has)
+      "4 miles", "4 mile", "4mi", "5m"    -> miles
+      "1500m", "3000 metres"              -> metres
+      "half marathon", "marathon", "mile" -> the standard distance
+
+    A number followed by a bare "m" is miles below 100 and metres from
+    100 up - "5m" is a 5-mile road race in British usage, "1500m" is a
+    track race, and nothing is raced over 100 miles or under 100 metres
+    on this form. Returns None when nothing recognisable is there.
+    """
+    if raw is None:
+        return None
+    s = str(raw).strip().lower()
+    if not s:
+        return None
+    if s in NAMED_DISTANCES_KM:
+        return NAMED_DISTANCES_KM[s]
+    m = re.search(
+        r"(\d+(?:\.\d+)?)\s*(km|k|kilomet(?:er|re)s?|miles?|mi|metres?|meters?|m)?\b", s)
+    if not m:
+        for name, km in NAMED_DISTANCES_KM.items():
+            if name in s:
+                return km
+        return None
+    value = float(m.group(1))
+    unit = m.group(2) or "km"
+    if unit in ("km", "k") or unit.startswith("kilomet"):
+        return value
+    if unit.startswith("mile") or unit == "mi":
+        return round(value * MILE_KM, 3)
+    if unit.startswith("met"):
+        return round(value / 1000, 4)
+    # bare "m"
+    return round(value * MILE_KM, 3) if value < 100 else round(value / 1000, 4)
+
+
 def pull_daily_log():
     rows = fetch_form_responses(DAILY_LOG_SHEET_ID, "Date", "daily log", DAILY_LOG_GID)
     entries = []
@@ -214,10 +270,16 @@ def pull_races():
             mins, secs = divmod(rem, 60)
             time_fmt = (f"{hours}:{mins:02d}:{secs:02d}" if hours
                         else f"{mins}:{secs:02d}")
+        distance_km = parse_distance_km(row.get("Distance", ""))
+        if distance_km is None:
+            # Said out loud, because the cost of this failing quietly is
+            # a race the predictor never sees.
+            print(f"  WARNING race log {date}: could not read Distance "
+                  f"{row.get('Distance', '')!r} - the predictor will skip this race.")
         entries.append({
             "date": date,
             "name": row.get("Race name", "").strip(),
-            "distance_km": parse_float(row.get("Distance", "")),
+            "distance_km": distance_km,
             "time_seconds": total_seconds,
             "time_fmt": time_fmt,
             "tapered": parse_bool(row.get("Tapered for this race", ""), default=False),
