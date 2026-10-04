@@ -27,6 +27,7 @@ number here as a sanity-check, not a guarantee.
 """
 
 import json
+import math
 from datetime import date, timedelta
 
 GARMIN_FILE = "garmin_data.json"
@@ -43,6 +44,30 @@ PLAN_FILE = "training_plan.json"
 OUTPUT_FILE = "race_prediction.json"
 
 RIEGEL_EXPONENT = 1.06
+
+# How much each race counts towards a prediction. Until 4 Oct 2026 every
+# clean race counted equally for every distance, so the half-marathon
+# prediction gave a May mile the same say as the half he had actually
+# run a fortnight earlier, and printed 1:22:09 against a 1:21:03 he had
+# just run. He spotted it. Each projection is now weighted by how far it
+# can be trusted, which is two things:
+#
+#   - Distance gap. A projection is only as good as the exponent behind
+#     it, and an exponent error compounds with the size of the jump: off
+#     by 0.02, a projection from the same distance is unchanged, but one
+#     from a 5K to a half is ~3% out. So uncertainty is a race-day term
+#     (no race is run exactly to form) plus an exponent term that grows
+#     with |ln(D_race / D_target)|, and the weight is its inverse.
+#   - Age. Old races carry old fitness. Weight halves every 90 days.
+#
+# The exponent itself stays at the standard 1.06. Fitted to his own six
+# races it comes out at 1.06-1.07; an apparently gentler 1.048 came from
+# one pair of races (Sharpness and Cheltenham) and was not borne out by
+# the rest.
+RACE_DAY_SD = 0.015          # ~1.5%: the spread of a race against form
+EXPONENT_SD = 0.02           # plausible error in the exponent itself
+RECENCY_HALF_LIFE_DAYS = 90
+THRESHOLD_REFERENCE_KM = 16.0  # roughly his one-hour race distance
 
 TARGET_DISTANCES = {
     "5K": 5.0,
@@ -61,6 +86,24 @@ KEY_SESSIONS = [
 
 def riegel_predict(known_time_s, known_distance_km, target_distance_km):
     return known_time_s * (target_distance_km / known_distance_km) ** RIEGEL_EXPONENT
+
+
+def race_weight(race, target_km, today=None):
+    """Trust in one race's projection to target_km: inverse variance of
+    the projection, scaled down by the race's age. See the constants."""
+    today = today or date.today()
+    gap = math.log(race["distance_km"] / target_km)
+    variance = RACE_DAY_SD ** 2 + (EXPONENT_SD * gap) ** 2
+    try:
+        age = max(0, (today - date.fromisoformat(race["date"])).days)
+    except (KeyError, ValueError, TypeError):
+        age = 0
+    return (0.5 ** (age / RECENCY_HALF_LIFE_DAYS)) / variance
+
+
+def weighted_mean(values, weights):
+    total = sum(weights)
+    return sum(v * w for v, w in zip(values, weights)) / total if total else None
 
 
 def fmt_time(seconds):
@@ -135,11 +178,13 @@ def find_next_race(plan_rows):
     return upcoming_races[0]
 
 
-def predict_for_distance(clean_races, target_km, latest_vo2, vo2_change):
+def predict_for_distance(clean_races, target_km, latest_vo2, vo2_change, today=None):
     predictions = []
+    weights = []
     for race in clean_races:
         predicted_s = riegel_predict(race["time_seconds"], race["distance_km"], target_km)
         predictions.append(predicted_s)
+        weights.append(race_weight(race, target_km, today))
 
     if not predictions:
         return {
@@ -149,11 +194,15 @@ def predict_for_distance(clean_races, target_km, latest_vo2, vo2_change):
             "note": "No clean (unaffected) races available for a Riegel-based estimate.",
         }
 
-    central = sum(predictions) / len(predictions)
+    central = weighted_mean(predictions, weights)
     spread = max(predictions) - min(predictions)
     band = max(15, spread / 2)
 
-    note = f"Based on {len(clean_races)} clean race result(s)."
+    lead = max(range(len(clean_races)), key=lambda i: weights[i])
+    lead_share = round(100 * weights[lead] / sum(weights))
+    note = (f"Based on {len(clean_races)} clean race result(s), weighted towards recent "
+            f"races and those nearest this distance - {clean_races[lead].get('name', 'one race')} "
+            f"carries {lead_share}% of the weight.")
     if latest_vo2 is not None and vo2_change is not None:
         if vo2_change > 0:
             adjustment = min(vo2_change * 2, target_km * 2)
@@ -192,12 +241,14 @@ def fmt_pace(sec_per_km):
 
 
 def riegel_pace(clean_races, target_km):
-    """Average Riegel-projected race pace at target_km, seconds per km."""
+    """Riegel-projected race pace at target_km, seconds per km, weighted
+    the same way as the predictions."""
     if not clean_races:
         return None
     preds = [riegel_predict(r["time_seconds"], r["distance_km"], target_km)
              for r in clean_races]
-    return (sum(preds) / len(preds)) / target_km
+    weights = [race_weight(r, target_km) for r in clean_races]
+    return weighted_mean(preds, weights) / target_km
 
 
 def threshold_pace(clean_races):
@@ -214,7 +265,10 @@ def threshold_pace(clean_races):
         3600 / (r["distance_km"] * (3600 / r["time_seconds"]) ** (1 / RIEGEL_EXPONENT))
         for r in clean_races
     ]
-    return sum(paces) / len(paces)
+    # Weighted towards races near his one-hour distance, and recent ones,
+    # for the same reasons as the predictions.
+    weights = [race_weight(r, THRESHOLD_REFERENCE_KM) for r in clean_races]
+    return weighted_mean(paces, weights)
 
 
 def build_training_paces(clean_races, predictions):
