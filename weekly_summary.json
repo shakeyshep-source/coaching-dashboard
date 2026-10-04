@@ -1,19 +1,19 @@
 {
-  "generated": "2026-10-03",
+  "generated": "2026-10-04",
   "next_race": {
     "name": "CONFIRMED: club 4-mile road race (the Sharpness 4), Crete is off",
     "date": "2026-10-04",
     "distance_km": 6.437,
-    "days_away": 1
+    "days_away": 0
   },
   "race_readiness": {
     "race": {
       "name": "CONFIRMED: club 4-mile road race (the Sharpness 4), Crete is off",
       "date": "2026-10-04",
       "distance_km": 6.437,
-      "days_away": 1
+      "days_away": 0
     },
-    "weeks_to_race": 0.1,
+    "weeks_to_race": 0.0,
     "taper_start": "2026-09-24",
     "remaining_key_sessions": {
       "tempo": 0,
@@ -742,10 +742,10 @@
       "on_target_pct": 100,
       "avg_rpe": 2.7,
       "max_achilles": 0,
-      "avg_hrv": 34,
-      "avg_rhr": 48.0,
-      "avg_sleep_score": 87,
-      "avg_sleep_hrs": 8.2,
+      "avg_hrv": null,
+      "avg_rhr": null,
+      "avg_sleep_score": null,
+      "avg_sleep_hrs": null,
       "easy_pace_min_km": 5.08,
       "easy_avg_hr": 139.3,
       "efficiency": 1.417,
@@ -1011,10 +1011,10 @@
       "on_target_pct": 100,
       "avg_rpe": 1.7,
       "max_achilles": 0,
-      "avg_hrv": 35.5,
-      "avg_rhr": 47.8,
-      "avg_sleep_score": 86.3,
-      "avg_sleep_hrs": 8.4,
+      "avg_hrv": 35.3,
+      "avg_rhr": 47.7,
+      "avg_sleep_score": 86.6,
+      "avg_sleep_hrs": 8.5,
       "easy_pace_min_km": 4.98,
       "easy_avg_hr": 140.2,
       "efficiency": 1.435,

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-03",
+  "generated": "2026-10-04",
   "window_days": 7,
   "sessions": [
     {
@@ -222,11 +222,20 @@
     {
       "date": "2026-09-30",
       "session_type": "intervals",
-      "days_since": 3,
+      "days_since": 4,
       "hrv_back": null,
       "rhr_back": 1,
       "hrv_reference": 37.4,
       "rhr_reference": 48.0
+    },
+    {
+      "date": "2026-10-04",
+      "session_type": "race",
+      "days_since": 0,
+      "hrv_back": null,
+      "rhr_back": null,
+      "hrv_reference": 36.4,
+      "rhr_reference": 47.9
     }
   ],
   "trend": {
