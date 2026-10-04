@@ -385,9 +385,20 @@ preventer itself is a prescribing decision for his GP or asthma nurse.
     23:20) was close; the 10–30 s I added for lost sharpness and hills
     were too cautious — he lost about five. Same direction as
     Cheltenham. Apply smaller penalties next time.
-  - **Guy Fawkes 5, Sun 1 Nov** — 5 miles, entered, and the first
-    *target* race after Cheltenham. It has a clean run-in: nothing hard
-    in the seven days before it.
+  - **Stroud 10K, Sun 25 Oct — the October target.** A free place in
+    his home town, added 4 Oct; he is racing it. It outranks Guy Fawkes
+    because a fresh 10K is the best evidence the predictor can get for
+    Manchester (his only 2026 10K is June's untapered 38:06). Course
+    profile unknown and Stroud is hilly — get it before writing race
+    pacing. Race week is in the fixture notes: no hard session inside
+    ~3 days, 21 Oct 6×600 as the last sharpener, nothing heavy in the
+    gym after Wed 21 Oct.
+  - **Guy Fawkes 5, Sun 1 Nov — an experiment, his word.** Seven days
+    after Stroud. Record 29:12 against a ~29:40 projection, so it was a
+    stretch fresh; the week between is genuinely easy, and it is raced
+    on feel rather than as a record attempt.
+  - **Linda Frank 5, January 2027 (date TBC)** — the next shot at the
+    5-mile record. Date and entry to confirm.
   - **XC Sun 13 Dec**
   - **XC Sat 27 Feb 2027** — sits 7 weeks out from Manchester, inside
     the marathon build.
