@@ -86,5 +86,16 @@
     "conditions_normal": true,
     "include_in_prediction": true,
     "notes": "Ran as planned, gel at about 30mins, from about 14k upped the pace as feeling good"
+  },
+  {
+    "date": "2026-10-04",
+    "name": "Sharpness 4",
+    "distance_km": null,
+    "time_seconds": 1343,
+    "time_fmt": "22:23",
+    "tapered": true,
+    "conditions_normal": true,
+    "include_in_prediction": true,
+    "notes": "First 4 miler, so a PB. Club record too. Unleashed what was left at the end and hit lactate in the legs\ud83d\ude02"
   }
 ]
