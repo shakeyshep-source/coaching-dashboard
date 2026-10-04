@@ -40,6 +40,15 @@ daily, weekly review, or ad-hoc — starts from this brief.
   course, off a build aimed at discipline rather than volume. Unlike
   the 5K and 10K marks this is not a distant younger-man number, and
   it is the one lifetime best currently in reach.
+  **His Cheltenham pacing was even and controlled from the gun — never
+  describe the opening as too fast or undisciplined.** He has had to
+  correct that twice (20 Sep, and again 4 Oct when a review repeated
+  it), because the first correction lived only in an old proposal's
+  rationale and the next session never saw it. HR over km 1–6 ran
+  152–165 against a 164 race average, the opening 5 km was net
+  downhill with drafting out of a headwind, the second 10 km was only
+  24 s slower than the first, and the last km was the fastest of the
+  race. Settled; do not re-open it.
   **But nothing in `fixtures.json` is a half marathon.** Manchester is
   the marathon; there is no half between now and April 2027 where he
   could take it. If he wants that PB it needs putting in the calendar —
