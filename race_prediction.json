@@ -7,32 +7,32 @@
   },
   "predictions": {
     "5K": {
-      "predicted_time_fmt": "17:51.60",
-      "predicted_time_seconds": 1071.6,
-      "low_estimate_fmt": "17:22.54",
-      "high_estimate_fmt": "18:20.65",
-      "note": "Based on 6 clean race result(s). VO2max down 0.1 over the last 6 weeks \u2014 no adjustment applied, treat as optimistic."
+      "predicted_time_fmt": "17:54.09",
+      "predicted_time_seconds": 1074.1,
+      "low_estimate_fmt": "17:25.04",
+      "high_estimate_fmt": "18:23.14",
+      "note": "Based on 6 clean race result(s), weighted towards recent races and those nearest this distance - Sharpness 4 carries 39% of the weight. VO2max down 0.1 over the last 6 weeks \u2014 no adjustment applied, treat as optimistic."
     },
     "10K": {
-      "predicted_time_fmt": "37:14.21",
-      "predicted_time_seconds": 2234.2,
-      "low_estimate_fmt": "36:13.63",
-      "high_estimate_fmt": "38:14.78",
-      "note": "Based on 6 clean race result(s). VO2max down 0.1 over the last 6 weeks \u2014 no adjustment applied, treat as optimistic."
+      "predicted_time_fmt": "37:19.99",
+      "predicted_time_seconds": 2240.0,
+      "low_estimate_fmt": "36:19.42",
+      "high_estimate_fmt": "38:20.57",
+      "note": "Based on 6 clean race result(s), weighted towards recent races and those nearest this distance - Sharpness 4 carries 34% of the weight. VO2max down 0.1 over the last 6 weeks \u2014 no adjustment applied, treat as optimistic."
     },
     "Half Marathon": {
-      "predicted_time_fmt": "1:22:09.56",
-      "predicted_time_seconds": 4929.6,
-      "low_estimate_fmt": "1:19:55.91",
-      "high_estimate_fmt": "1:24:23.21",
-      "note": "Based on 6 clean race result(s). VO2max down 0.1 over the last 6 weeks \u2014 no adjustment applied, treat as optimistic. Reasonably grounded if based on a 10K+ result; more of a stretch if only projected from 5K."
+      "predicted_time_fmt": "1:21:49.24",
+      "predicted_time_seconds": 4909.2,
+      "low_estimate_fmt": "1:19:35.58",
+      "high_estimate_fmt": "1:24:02.89",
+      "note": "Based on 6 clean race result(s), weighted towards recent races and those nearest this distance - Cheltenham Half carries 56% of the weight. VO2max down 0.1 over the last 6 weeks \u2014 no adjustment applied, treat as optimistic. Reasonably grounded if based on a 10K+ result; more of a stretch if only projected from 5K."
     },
     "Marathon": {
-      "predicted_time_fmt": "2:51:17.80",
-      "predicted_time_seconds": 10277.8,
-      "low_estimate_fmt": "2:46:39.14",
-      "high_estimate_fmt": "2:55:56.46",
-      "note": "Based on 6 clean race result(s). VO2max down 0.1 over the last 6 weeks \u2014 no adjustment applied, treat as optimistic. CAVEAT: marathon projections from short-race data are unreliable \u2014 doesn't account for fuelling or sustained multi-hour effort. Rough ballpark only."
+      "predicted_time_fmt": "2:50:24.87",
+      "predicted_time_seconds": 10224.9,
+      "low_estimate_fmt": "2:45:46.22",
+      "high_estimate_fmt": "2:55:03.53",
+      "note": "Based on 6 clean race result(s), weighted towards recent races and those nearest this distance - Cheltenham Half carries 58% of the weight. VO2max down 0.1 over the last 6 weeks \u2014 no adjustment applied, treat as optimistic. CAVEAT: marathon projections from short-race data are unreliable \u2014 doesn't account for fuelling or sustained multi-hour effort. Rough ballpark only."
     }
   },
   "vo2max_note": "VO2max is 59.3 \u2014 down 0.1 over the last 6 weeks.",
@@ -62,7 +62,7 @@
     "zones": [
       {
         "name": "Easy / recovery",
-        "pace": "4:47/km - 5:10/km",
+        "pace": "4:46/km - 5:09/km",
         "purpose": "Most of the week. Conversational - if in doubt, slower."
       },
       {
@@ -73,26 +73,26 @@
       {
         "name": "Marathon pace (sub-3 goal)",
         "pace": "4:16/km",
-        "purpose": "Manchester goal pace - long-run MP blocks, and where marathon fuelling gets practised. The projection says 4:04/km; that is optimism off short races, not a training pace."
+        "purpose": "Manchester goal pace - long-run MP blocks, and where marathon fuelling gets practised. The projection says 4:02/km; that is optimism off short races, not a training pace."
       },
       {
         "name": "Half marathon",
-        "pace": "3:54/km",
+        "pace": "3:53/km",
         "purpose": "Half-marathon race pace. Race-specific blocks late in a half build."
       },
       {
         "name": "Threshold / tempo",
-        "pace": "3:50/km",
+        "pace": "3:49/km",
         "purpose": "Comfortably hard, ~1hr race pace. The Saturday session."
       },
       {
         "name": "10K pace",
-        "pace": "3:43/km",
+        "pace": "3:44/km",
         "purpose": "The '10K effort' in interval sessions - 1km reps sit here."
       },
       {
         "name": "5K pace",
-        "pace": "3:34/km",
+        "pace": "3:35/km",
         "purpose": "Short, sharp reps of 3-5 minutes."
       },
       {
@@ -102,7 +102,7 @@
       },
       {
         "name": "Reps / strides",
-        "pace": "3:19/km",
+        "pace": "3:18/km",
         "purpose": "1500m pace. 200-400m reps and strides - speed, not stamina."
       }
     ],
