@@ -2,7 +2,7 @@
   "id": "2026-10-04",
   "created": "2026-10-04T16:59:16+00:00",
   "status": "pending",
-  "rationale": "Amend: one change, the Saturday 10 Oct gate. Previously an unexplained low HRV/RHR on Friday turned Saturday's tempo into easy running; now it shortens it to 2x8 min at the same pace, because you feel fine and a flat morning alone should not cost the whole session. Everything else stands, and here is why. Wednesday stays easy: HRV 32-35 for a week against a ~40 baseline, RHR 48-49 against 46-47, in a light week with no note to explain it, then a 9/10 race on top. Feeling fine is not the evidence that matters, because the achilles history was four years of feeling fine until it wasn't. The cost of waiting is three days on a session 4 weeks before Guy Fawkes. Easy running is untouched. Weeks 2-3 are unchanged and provisional. Your corrections on the record: the half prediction is 1:22:09, not a minute slower (1:22:23 before Cheltenham, 1:22:06 on 27 Sep); your lactate finish was a deliberate sprint to beat a bottleneck and I withdraw that criticism; and your Cheltenham pacing was even, which I had understated.",
+  "rationale": "Amended 4 Oct at his call: Wednesday 7 Oct goes back to intervals - 4x1km at 5-mile pace, the lighter end, turning easy if he feels rough on the day - and 14 Oct now builds on it to 5 reps. He is overruling the HRV caution for Wednesday, which the brief now lets him do (principle 3b); the risk, stated once, is that if the HRV slide is illness arriving, intervals are what would tip it. The Saturday gate stays in, at his choice, and he will read it on Friday.\n\nAmend: one change, the Saturday 10 Oct gate. Previously an unexplained low HRV/RHR on Friday turned Saturday's tempo into easy running; now it shortens it to 2x8 min at the same pace, because you feel fine and a flat morning alone should not cost the whole session. Everything else stands, and here is why. Wednesday stays easy: HRV 32-35 for a week against a ~40 baseline, RHR 48-49 against 46-47, in a light week with no note to explain it, then a 9/10 race on top. Feeling fine is not the evidence that matters, because the achilles history was four years of feeling fine until it wasn't. The cost of waiting is three days on a session 4 weeks before Guy Fawkes. Easy running is untouched. Weeks 2-3 are unchanged and provisional. Your corrections on the record: the half prediction is 1:22:09, not a minute slower (1:22:23 before Cheltenham, 1:22:06 on 27 Sep); your lactate finish was a deliberate sprint to beat a bottleneck and I withdraw that criticism; and your Cheltenham pacing was even, which I had understated.",
   "changes": [
     {
       "date": "2026-10-05",
@@ -20,10 +20,10 @@
     },
     {
       "date": "2026-10-07",
-      "session_type": "easy",
-      "target_distance_km": 8,
-      "target_pace": null,
-      "notes": "Easy 8km + 4-6 relaxed strides at the end. Deliberately NOT the Wednesday intervals: the first sharpening session goes on Saturday, once HRV has shown it is coming back. The spine restarts on a recovered athlete, not on the calendar."
+      "session_type": "intervals",
+      "target_distance_km": 11,
+      "target_pace": "3:38-3:40/km for the reps",
+      "notes": "Restored at his call (overruling the HRV caution, 4 Oct): 3km warm-up, 4x1km at 3:38-3:40/km with 90s jog recovery, 3km cool-down, ~11km all in. Purpose: first sharpening session for Guy Fawkes - race-specific economy at 5-mile pace (the record is 3:38/km). Energy system: VO2/lactate-tolerance edge, short of a full VO2 session. Expected feel: controlled, comfortably hard, RPE an observation not a target. Recovery cost ~2 days, which still leaves Saturday clear. Deliberately 4 reps not 5: three days after a 9/10 race and with HRV sliding, this is the lighter end; 14 Oct builds to 5. HIS CONDITION: if he feels rough on the day - or fails the neck check (chest, temperature, aches) - it becomes easy 8km + strides instead, no discussion needed."
     },
     {
       "date": "2026-10-08",
@@ -72,7 +72,7 @@
       "session_type": "intervals",
       "target_distance_km": 12.5,
       "target_pace": "3:38-3:40/km for the reps",
-      "notes": "Provisional — 5-mile pace work: 3km warm-up, 5x1km at 3:38-3:40/km with 90s jog recovery, 3km cool-down, ~12.5km all in. Purpose: race-specific VO2/economy at Guy Fawkes pace (the record is 3:38/km). Feel: hard but controlled. Recovery cost ~2 days. Progression: first true interval session since 16 Sep. Only goes ahead if HRV has recovered by then."
+      "notes": "Provisional — 5-mile pace work: 3km warm-up, 5x1km at 3:38-3:40/km with 90s jog recovery, 3km cool-down, ~12.5km all in. Purpose: race-specific VO2/economy at Guy Fawkes pace (the record is 3:38/km). Feel: hard but controlled. Recovery cost ~2 days. Progression: one rep more than 4x1km on 7 Oct, same pace. HRV and how 7 Oct went decide whether it stays at 5."
     },
     {
       "date": "2026-10-15",
