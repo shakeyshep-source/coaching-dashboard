@@ -403,5 +403,13 @@
     "action_taken": "amendment_requested",
     "athlete_thoughts": "Your predictor has my half one min slower than it was. \nHrv has dropped but I don't feel any issues from it. You are too cautious, let's keep going until I say ohhh now I'm feeling ill or similar.\nMy lactate comment is due to sprinting early to avoid a bottle neck and it worked, hitting lactate in the legs with about 200m is fine.\nI also had perfect pacing for Cheltenham at the start, your comment is wrong,",
     "changes_count": 21
+  },
+  {
+    "logged_at": "2026-10-04T17:55:36",
+    "proposal_id": "2026-10-04",
+    "decision": "approve",
+    "action_taken": "plan_updated",
+    "athlete_thoughts": null,
+    "changes_count": 21
   }
 ]

@@ -644,5 +644,194 @@
     "notes": "CONFIRMED: club 4-mile road race (the Sharpness 4), Crete is off. Club record reads '23:3' on the list, so 23:30-23:39 (3:39/km average for 23:30, 3:40/km for 23:39). COURSE (elevation from a clubmate's file - the same clubmate whose 1:21:02 Cheltenham run mapped that course): rolling, ~51m of climbing on her watch, no barometric altimeter so treat the metres as approximate and the shape as the signal. Km 1 is downhill then flat - her fastest full km of the race (3:32) - the same trap as Cheltenham's km 1, do not copy it, go out closer to 3:38. First climb to ~2km (+13m). Km 3 drops then starts rising. A long drag from 3km to ~4.3km. Km 5 dips. The crux is km 6: two short steep ramps around 5.1-5.7km, her slowest split by ten seconds - expect that to be the slowest km of the race and do not chase it back. Downhill last ~0.4km to the line. Run it on effort, not pace: let the climbs cost a few seconds, take the descents, use the downhill finish. HER TIME (~23:40) IS THE REAL CALIBRATION, not the flat Riegel numbers: she ran 1:21:02 at Cheltenham against his 1:21:03 - near-identical half-marathon form - and went ~38 sec slower on this course than a flat Riegel off that time predicts. Stacked against him too: two weeks without quality since a maximal half. Honest read: roughly 23:35-23:55 - the record is possible on a good day, more likely just outside, and a coin flip at best against the top of that range, not the confident 'inside 23:39' read from before this course data came in. Caveat: when she ran it and at what fitness isn't known, so treat her time as calibration, not gospel. There's a team prize on the line too, which he'd like to help with - doesn't change the individual prescription, he's already racing this flat out rather than treating it as a jog. Full protocol: Symbicort 20 min / salbutamol 15 min before gun, Puma Fast-R Nitro 3, proper 3km warm-up. Afterwards: 2-3 easy days into the Guy Fawkes block, no recovery week needed for a 4-mile.",
     "source": "coach",
     "updated_at": "2026-09-28T11:28:57"
+  },
+  {
+    "date": "2026-10-05",
+    "session_type": "rest",
+    "target_distance_km": null,
+    "target_pace": null,
+    "notes": "Rest - the normal Monday, and the day after a 9/10 effort.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
+  },
+  {
+    "date": "2026-10-06",
+    "session_type": "easy",
+    "target_distance_km": 7,
+    "target_pace": null,
+    "notes": "Easy 7km, conversational, no strides. HRV has slid from ~40 to 32-35 over the last 10 days and the race has just added to it, so this is a recovery day in all but name. If a leg gym session is due, this is the day for it - after the race rather than before.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
+  },
+  {
+    "date": "2026-10-07",
+    "session_type": "intervals",
+    "target_distance_km": 11,
+    "target_pace": "3:38-3:40/km for the reps",
+    "notes": "Restored at his call (overruling the HRV caution, 4 Oct): 3km warm-up, 4x1km at 3:38-3:40/km with 90s jog recovery, 3km cool-down, ~11km all in. Purpose: first sharpening session for Guy Fawkes - race-specific economy at 5-mile pace (the record is 3:38/km). Energy system: VO2/lactate-tolerance edge, short of a full VO2 session. Expected feel: controlled, comfortably hard, RPE an observation not a target. Recovery cost ~2 days, which still leaves Saturday clear. Deliberately 4 reps not 5: three days after a 9/10 race and with HRV sliding, this is the lighter end; 14 Oct builds to 5. HIS CONDITION: if he feels rough on the day - or fails the neck check (chest, temperature, aches) - it becomes easy 8km + strides instead, no discussion needed.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
+  },
+  {
+    "date": "2026-10-08",
+    "session_type": "easy",
+    "target_distance_km": 7,
+    "target_pace": null,
+    "notes": "Easy 7km, Nike Vomero Plus.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
+  },
+  {
+    "date": "2026-10-09",
+    "session_type": "easy",
+    "target_distance_km": 5,
+    "target_pace": null,
+    "notes": "Easy 5km, short. Gate for Saturday, read on Friday morning: if HRV is still at or below ~34 or RHR 49+ with no explanation in your notes, Saturday runs as a reduced tempo (2x8 min, ~10 km all in) rather than the full 3x8. Feeling fine counts for something, so it is a reduction and not a cancellation. Ill, achilles above 0, or first-step stiffness: Saturday becomes easy running.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
+  },
+  {
+    "date": "2026-10-10",
+    "session_type": "tempo",
+    "target_distance_km": 12,
+    "target_pace": "3:52-3:55/km for the reps",
+    "notes": "Re-opening the spine, gently. 3km warm-up, 3x8min at threshold (3:52-3:55/km) with 2 min jog between, 3km cool-down, ~12km all in. Purpose: lactate-threshold work, aerobic-dominant, the foundation under the 5-mile pace work that follows. Expected feel: comfortably hard; RPE is an observation, not a target - on pace is the right session. Recovery cost modest. Progression: first quality since Cheltenham beyond the race and the 200s. Endorphin Speed 5. Run it on pace, not under it. If the Friday gate trips: 2x8 min at the same pace, ~10 km all in, same session just less of it.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
+  },
+  {
+    "date": "2026-10-11",
+    "session_type": "long",
+    "target_distance_km": 15,
+    "target_pace": null,
+    "notes": "Long run 15km genuinely easy (~5:00/km or slower), aerobic volume, ~75 min. One gel halfway (22g) for practice, not need. No pace work. The 30km+ ground belongs to the winter block.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
+  },
+  {
+    "date": "2026-10-12",
+    "session_type": "rest",
+    "target_distance_km": null,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Rest. Normal Monday.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
+  },
+  {
+    "date": "2026-10-13",
+    "session_type": "easy",
+    "target_distance_km": 8,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 8km, conversational.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
+  },
+  {
+    "date": "2026-10-14",
+    "session_type": "intervals",
+    "target_distance_km": 12.5,
+    "target_pace": "3:38-3:40/km for the reps",
+    "notes": "Provisional \u2014 5-mile pace work: 3km warm-up, 5x1km at 3:38-3:40/km with 90s jog recovery, 3km cool-down, ~12.5km all in. Purpose: race-specific VO2/economy at Guy Fawkes pace (the record is 3:38/km). Feel: hard but controlled. Recovery cost ~2 days. Progression: one rep more than 4x1km on 7 Oct, same pace. HRV and how 7 Oct went decide whether it stays at 5.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
+  },
+  {
+    "date": "2026-10-15",
+    "session_type": "easy",
+    "target_distance_km": 7,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 7km. Leg gym fits here.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
+  },
+  {
+    "date": "2026-10-16",
+    "session_type": "easy",
+    "target_distance_km": 6,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 6km.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
+  },
+  {
+    "date": "2026-10-17",
+    "session_type": "tempo",
+    "target_distance_km": 13,
+    "target_pace": "3:52-3:55/km for the reps",
+    "notes": "Provisional \u2014 3km warm-up, 2x15min at threshold (3:52-3:55/km) with 3 min jog, 3km cool-down, ~13km all in. Progression from 3x8min: same pace, longer reps.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
+  },
+  {
+    "date": "2026-10-18",
+    "session_type": "long",
+    "target_distance_km": 16,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Long run 16km easy (~5:00/km). One gel at ~40 min for practice. No pace work.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
+  },
+  {
+    "date": "2026-10-19",
+    "session_type": "rest",
+    "target_distance_km": null,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Rest.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
+  },
+  {
+    "date": "2026-10-20",
+    "session_type": "easy",
+    "target_distance_km": 8,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 8km.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
+  },
+  {
+    "date": "2026-10-21",
+    "session_type": "intervals",
+    "target_distance_km": 11.5,
+    "target_pace": "3:32-3:36/km for the reps",
+    "notes": "Provisional \u2014 Last interval session: 3km warm-up, 6x600m at 3:32-3:36/km with 2 min jog, 3km cool-down, ~11.5km all in. Purpose: speed just above race pace so 3:38 feels controlled on the day. Short reps keep the cost low. If pace_target.json has flagged by then, the paces tighten.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
+  },
+  {
+    "date": "2026-10-22",
+    "session_type": "easy",
+    "target_distance_km": 7,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 7km. Last heavy leg session of the block belongs this week or early next - nothing heavy after Wed 28 Oct.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
+  },
+  {
+    "date": "2026-10-23",
+    "session_type": "easy",
+    "target_distance_km": 6,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 6km + 4-6 strides.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
+  },
+  {
+    "date": "2026-10-24",
+    "session_type": "tempo",
+    "target_distance_km": 14,
+    "target_pace": "3:40/km for the reps",
+    "notes": "Provisional \u2014 Last hard session, 8 days out. 3km warm-up, 2x2 miles at 5-mile race pace (3:40/km) with 3 min jog, 3km cool-down, ~14km all in. Rehearsal of Guy Fawkes pace, on pace not under it. Nothing hard follows until the race.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
+  },
+  {
+    "date": "2026-10-25",
+    "session_type": "long",
+    "target_distance_km": 12,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 12km, no gel needed. Seven days clear of the race, so genuinely easy and short. Race week gets written next Sunday.",
+    "source": "coach",
+    "updated_at": "2026-10-04T17:55:36"
   }
 ]

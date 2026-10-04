@@ -1,7 +1,7 @@
 {
   "id": "2026-10-04",
   "created": "2026-10-04T16:59:16+00:00",
-  "status": "pending",
+  "status": "applied",
   "rationale": "Amended 4 Oct at his call: Wednesday 7 Oct goes back to intervals - 4x1km at 5-mile pace, the lighter end, turning easy if he feels rough on the day - and 14 Oct now builds on it to 5 reps. He is overruling the HRV caution for Wednesday, which the brief now lets him do (principle 3b); the risk, stated once, is that if the HRV slide is illness arriving, intervals are what would tip it. The Saturday gate stays in, at his choice, and he will read it on Friday.\n\nAmend: one change, the Saturday 10 Oct gate. Previously an unexplained low HRV/RHR on Friday turned Saturday's tempo into easy running; now it shortens it to 2x8 min at the same pace, because you feel fine and a flat morning alone should not cost the whole session. Everything else stands, and here is why. Wednesday stays easy: HRV 32-35 for a week against a ~40 baseline, RHR 48-49 against 46-47, in a light week with no note to explain it, then a 9/10 race on top. Feeling fine is not the evidence that matters, because the achilles history was four years of feeling fine until it wasn't. The cost of waiting is three days on a session 4 weeks before Guy Fawkes. Easy running is untouched. Weeks 2-3 are unchanged and provisional. Your corrections on the record: the half prediction is 1:22:09, not a minute slower (1:22:23 before Cheltenham, 1:22:06 on 27 Sep); your lactate finish was a deliberate sprint to beat a bottleneck and I withdraw that criticism; and your Cheltenham pacing was even, which I had understated.",
   "changes": [
     {
@@ -58,104 +58,105 @@
       "session_type": "rest",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Provisional — Rest. Normal Monday."
+      "notes": "Provisional \u2014 Rest. Normal Monday."
     },
     {
       "date": "2026-10-13",
       "session_type": "easy",
       "target_distance_km": 8,
       "target_pace": null,
-      "notes": "Provisional — Easy 8km, conversational."
+      "notes": "Provisional \u2014 Easy 8km, conversational."
     },
     {
       "date": "2026-10-14",
       "session_type": "intervals",
       "target_distance_km": 12.5,
       "target_pace": "3:38-3:40/km for the reps",
-      "notes": "Provisional — 5-mile pace work: 3km warm-up, 5x1km at 3:38-3:40/km with 90s jog recovery, 3km cool-down, ~12.5km all in. Purpose: race-specific VO2/economy at Guy Fawkes pace (the record is 3:38/km). Feel: hard but controlled. Recovery cost ~2 days. Progression: one rep more than 4x1km on 7 Oct, same pace. HRV and how 7 Oct went decide whether it stays at 5."
+      "notes": "Provisional \u2014 5-mile pace work: 3km warm-up, 5x1km at 3:38-3:40/km with 90s jog recovery, 3km cool-down, ~12.5km all in. Purpose: race-specific VO2/economy at Guy Fawkes pace (the record is 3:38/km). Feel: hard but controlled. Recovery cost ~2 days. Progression: one rep more than 4x1km on 7 Oct, same pace. HRV and how 7 Oct went decide whether it stays at 5."
     },
     {
       "date": "2026-10-15",
       "session_type": "easy",
       "target_distance_km": 7,
       "target_pace": null,
-      "notes": "Provisional — Easy 7km. Leg gym fits here."
+      "notes": "Provisional \u2014 Easy 7km. Leg gym fits here."
     },
     {
       "date": "2026-10-16",
       "session_type": "easy",
       "target_distance_km": 6,
       "target_pace": null,
-      "notes": "Provisional — Easy 6km."
+      "notes": "Provisional \u2014 Easy 6km."
     },
     {
       "date": "2026-10-17",
       "session_type": "tempo",
       "target_distance_km": 13,
       "target_pace": "3:52-3:55/km for the reps",
-      "notes": "Provisional — 3km warm-up, 2x15min at threshold (3:52-3:55/km) with 3 min jog, 3km cool-down, ~13km all in. Progression from 3x8min: same pace, longer reps."
+      "notes": "Provisional \u2014 3km warm-up, 2x15min at threshold (3:52-3:55/km) with 3 min jog, 3km cool-down, ~13km all in. Progression from 3x8min: same pace, longer reps."
     },
     {
       "date": "2026-10-18",
       "session_type": "long",
       "target_distance_km": 16,
       "target_pace": null,
-      "notes": "Provisional — Long run 16km easy (~5:00/km). One gel at ~40 min for practice. No pace work."
+      "notes": "Provisional \u2014 Long run 16km easy (~5:00/km). One gel at ~40 min for practice. No pace work."
     },
     {
       "date": "2026-10-19",
       "session_type": "rest",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Provisional — Rest."
+      "notes": "Provisional \u2014 Rest."
     },
     {
       "date": "2026-10-20",
       "session_type": "easy",
       "target_distance_km": 8,
       "target_pace": null,
-      "notes": "Provisional — Easy 8km."
+      "notes": "Provisional \u2014 Easy 8km."
     },
     {
       "date": "2026-10-21",
       "session_type": "intervals",
       "target_distance_km": 11.5,
       "target_pace": "3:32-3:36/km for the reps",
-      "notes": "Provisional — Last interval session: 3km warm-up, 6x600m at 3:32-3:36/km with 2 min jog, 3km cool-down, ~11.5km all in. Purpose: speed just above race pace so 3:38 feels controlled on the day. Short reps keep the cost low. If pace_target.json has flagged by then, the paces tighten."
+      "notes": "Provisional \u2014 Last interval session: 3km warm-up, 6x600m at 3:32-3:36/km with 2 min jog, 3km cool-down, ~11.5km all in. Purpose: speed just above race pace so 3:38 feels controlled on the day. Short reps keep the cost low. If pace_target.json has flagged by then, the paces tighten."
     },
     {
       "date": "2026-10-22",
       "session_type": "easy",
       "target_distance_km": 7,
       "target_pace": null,
-      "notes": "Provisional — Easy 7km. Last heavy leg session of the block belongs this week or early next - nothing heavy after Wed 28 Oct."
+      "notes": "Provisional \u2014 Easy 7km. Last heavy leg session of the block belongs this week or early next - nothing heavy after Wed 28 Oct."
     },
     {
       "date": "2026-10-23",
       "session_type": "easy",
       "target_distance_km": 6,
       "target_pace": null,
-      "notes": "Provisional — Easy 6km + 4-6 strides."
+      "notes": "Provisional \u2014 Easy 6km + 4-6 strides."
     },
     {
       "date": "2026-10-24",
       "session_type": "tempo",
       "target_distance_km": 14,
       "target_pace": "3:40/km for the reps",
-      "notes": "Provisional — Last hard session, 8 days out. 3km warm-up, 2x2 miles at 5-mile race pace (3:40/km) with 3 min jog, 3km cool-down, ~14km all in. Rehearsal of Guy Fawkes pace, on pace not under it. Nothing hard follows until the race."
+      "notes": "Provisional \u2014 Last hard session, 8 days out. 3km warm-up, 2x2 miles at 5-mile race pace (3:40/km) with 3 min jog, 3km cool-down, ~14km all in. Rehearsal of Guy Fawkes pace, on pace not under it. Nothing hard follows until the race."
     },
     {
       "date": "2026-10-25",
       "session_type": "long",
       "target_distance_km": 12,
       "target_pace": null,
-      "notes": "Provisional — Easy 12km, no gel needed. Seven days clear of the race, so genuinely easy and short. Race week gets written next Sunday."
+      "notes": "Provisional \u2014 Easy 12km, no gel needed. Seven days clear of the race, so genuinely easy and short. Race week gets written next Sunday."
     }
   ],
   "athlete_response": {
-    "timestamp": "04/10/2026 18:26:27",
+    "timestamp": "04/10/2026 18:55:22",
     "review_date": "2026-10-04",
-    "decision": "amend",
-    "thoughts": "Your predictor has my half one min slower than it was. \nHrv has dropped but I don't feel any issues from it. You are too cautious, let's keep going until I say ohhh now I'm feeling ill or similar.\nMy lactate comment is due to sprinting early to avoid a bottle neck and it worked, hitting lactate in the legs with about 200m is fine.\nI also had perfect pacing for Cheltenham at the start, your comment is wrong,"
-  }
+    "decision": "approve",
+    "thoughts": null
+  },
+  "applied_at": "2026-10-04T17:55:36"
 }
