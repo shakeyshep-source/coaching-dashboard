@@ -554,6 +554,22 @@ why it suits *his* racing.
    The limit: a confounder excuses a flat morning, not a trend. If the
    baseline slides for a week, or the dip outlasts the explanation, that
    is real fatigue whatever the notes say, and it gets treated as such.
+3b. **He can overrule an HRV/RHR call, and the system makes that easy
+   rather than arguing him out of it** (his instruction, 4 Oct 2026:
+   "the HRV works but I should be able to overrule it if the
+   circumstances allow"). The caution stays the **default** — a gate, a
+   shortened session — because the evidence behind it is real: an HRV
+   slide with no training load behind it is what illness looks like
+   before it is felt. But when he overrules it through an amend or a
+   note, because he feels fine, has no symptoms, or knows something the
+   numbers don't, **honour it**: restore the session, state the risk
+   once in a sentence, and do not re-argue. It covers that call, not
+   every future one — the next dip gets the same default. Two limits
+   still stand regardless: the neck check (chest symptoms, a
+   temperature or muscle aches mean no hard session), and the achilles
+   triggers. And never argue an HRV point from the achilles history —
+   that history was about intensity discipline, not recovery markers.
+   A 4 Oct review did exactly that, and it was the wrong argument.
 4. Trends over snapshots: 7-day baselines for HRV/RHR, weekly blocks
    for load, efficiency only across weeks.
 5. Protect the two quality sessions; volume is negotiable, the Saturday
