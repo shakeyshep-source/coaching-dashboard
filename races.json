@@ -90,7 +90,7 @@
   {
     "date": "2026-10-04",
     "name": "Sharpness 4",
-    "distance_km": null,
+    "distance_km": 6.437,
     "time_seconds": 1402,
     "time_fmt": "23:22",
     "tapered": true,
