@@ -1,7 +1,7 @@
 {
   "id": "2026-10-04",
   "created": "2026-10-04T16:59:16+00:00",
-  "status": "pending",
+  "status": "amend_requested",
   "rationale": "Hold, with the horizon extended: nothing already planned changes, and the Sharpness 4 (23:22, level with or ahead of the model) did not alter the block - the Guy Fawkes sharpening block now gets written, as promised. One real change of tone: HRV has slid across a week (42, 38, 39, 35, 34, 35, 32 vs a ~40 baseline, RHR 48-49) with no explanation in your notes and in a light training week. That is a trend, not a flat morning, so week 1 is volume-light and the first quality session waits until Saturday behind a gate. Weeks 2-3 are provisional: threshold then 5-mile-pace work, with the last hard session on 24 Oct so the final seven days before 1 Nov are clear. Race week (26 Oct-1 Nov) is written next Sunday.",
   "changes": [
     {
@@ -151,5 +151,11 @@
       "target_pace": null,
       "notes": "Provisional \u2014 Easy 12km, no gel needed. Seven days clear of the race, so genuinely easy and short. Race week gets written next Sunday."
     }
-  ]
+  ],
+  "athlete_response": {
+    "timestamp": "04/10/2026 18:26:27",
+    "review_date": "2026-10-04",
+    "decision": "amend",
+    "thoughts": "Your predictor has my half one min slower than it was. \nHrv has dropped but I don't feel any issues from it. You are too cautious, let's keep going until I say ohhh now I'm feeling ill or similar.\nMy lactate comment is due to sprinting early to avoid a bottle neck and it worked, hitting lactate in the legs with about 200m is fine.\nI also had perfect pacing for Cheltenham at the start, your comment is wrong,"
+  }
 }
