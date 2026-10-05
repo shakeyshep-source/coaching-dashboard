@@ -502,5 +502,13 @@
     "rpe": 9.0,
     "on_target": true,
     "session_notes": "Controlled race, went all out on the finish and hit lactate in the legs\u00f0\u009f\u0098\u0082 lumpy course!! But still a club record and pb as never raced that distance before"
+  },
+  {
+    "date": "2026-10-05",
+    "achilles_score": 0,
+    "session_type": "rest",
+    "rpe": 0.0,
+    "on_target": true,
+    "session_notes": "rest"
   }
 ]
