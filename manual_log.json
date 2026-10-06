@@ -510,5 +510,13 @@
     "rpe": 0.0,
     "on_target": true,
     "session_notes": "rest"
+  },
+  {
+    "date": "2026-10-06",
+    "achilles_score": 0,
+    "session_type": "easy",
+    "rpe": 2.0,
+    "on_target": true,
+    "session_notes": "Easy plod"
   }
 ]
