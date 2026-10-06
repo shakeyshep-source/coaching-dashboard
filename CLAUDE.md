@@ -65,6 +65,24 @@ daily, weekly review, or ad-hoc — starts from this brief.
   Riegel from current fitness gives ~2:52, so the fitness is not the
   binding constraint — weekly volume is. Sub-3 off a 60–65 km norm is
   possible but thin; that conversation belongs in the autumn, not now.
+  **Winter volume — agreed 6 Oct 2026** (he asked if the original
+  85–90 km peak was weak; it was cautious, so the build now starts
+  earlier and peaks higher, at the same slope of <2 km/week on
+  average). Weekly km by month: Oct 45–60 (racing) · Nov 55→70 ·
+  Dec 70→80 · Jan 80→85 · Feb 85→90 (holds while MP work arrives) ·
+  Mar 90→95–100 peak · Apr taper 75→60→race. Long run: Nov 18→22,
+  Dec 22→26, Jan 26→29, Feb 29→32, Mar 32→35 (biggest ~21 Mar).
+  The extra km go into a longer Tuesday medium-long (18–20 km) and
+  slightly longer easy runs — no doubles, no early mornings. Peak week
+  shape: Mon rest + legs, Tue 19 easy, Wed 16 threshold, Thu 12 easy +
+  legs, Fri 8, Sat 10 + strides, Sun 32 with 2×8 km @ 4:16 (~97 km).
+  **Rules that come with it:** volume rises in Nov–Jan while the running
+  is almost all easy, and does not rise in the same weeks as intensity —
+  his history is volume, speed and hills rising together. Each new level
+  is held ~2 weeks and earned: achilles 0 with no prodrome, HRV/RHR
+  steady, both leg sessions intact. If any slips, hold; the old plan
+  (peak 85–90) is the floor, not the target. Down week every 3–4 weeks.
+  His shareable version of this lives in a "Road to Manchester" page.
 - **Primary objective is long-term improvement, not any single race.**
   When a call is close, this decides it.
 - **Norm training load:** ~60–65 km/week. Structure: Saturday tempo
