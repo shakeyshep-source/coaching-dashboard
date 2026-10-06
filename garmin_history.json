@@ -1217,5 +1217,23 @@
     "training_status_feedback": "STRAINED_4",
     "acwr_garmin": 1.1,
     "acwr_status": "OPTIMAL"
+  },
+  {
+    "date": "2026-10-06",
+    "rhr": 48.0,
+    "hrv_last_night": 45,
+    "hrv_status": "UNBALANCED",
+    "hrv_weekly_avg": 35,
+    "sleep_score": 94,
+    "sleep_duration_hrs": 7.65,
+    "body_battery_high": 100,
+    "body_battery_low": 58,
+    "training_load_acute": 637,
+    "training_load_chronic": 616,
+    "vo2max": 59.0,
+    "vo2max_date": "2026-10-04",
+    "training_status_feedback": "MAINTAINING_2",
+    "acwr_garmin": 1.0,
+    "acwr_status": "OPTIMAL"
   }
 ]

@@ -216,32 +216,37 @@
       "interrupted_by_next_session": false,
       "temp_max_c": 20.1,
       "note": "Yeah done as to plan, picked up the pace/effort around the 14/15k mark, caught and passed so many, on that last bit. The hilly part is brutal I'd say more than just a km, as it mixes in climbs with decent... Happy with run and a time of 1:21:04"
+    },
+    {
+      "date": "2026-09-30",
+      "session_type": "intervals",
+      "confounders_in_window": [],
+      "hrv_reference": 37.4,
+      "hrv_recovery_days": 6,
+      "rhr_reference": 48.0,
+      "rhr_recovery_days": 1,
+      "recovery_days": 6,
+      "recovered": true,
+      "interrupted_by_next_session": true,
+      "temp_max_c": 21.9,
+      "note": "Too easy but I understand why"
     }
   ],
   "pending": [
     {
-      "date": "2026-09-30",
-      "session_type": "intervals",
-      "days_since": 5,
-      "hrv_back": null,
-      "rhr_back": 1,
-      "hrv_reference": 37.4,
-      "rhr_reference": 48.0
-    },
-    {
       "date": "2026-10-04",
       "session_type": "race",
-      "days_since": 1,
-      "hrv_back": null,
+      "days_since": 2,
+      "hrv_back": 2,
       "rhr_back": null,
       "hrv_reference": 36.4,
       "rhr_reference": 47.9
     }
   ],
   "trend": {
-    "recent_avg_days": 2.7,
-    "prior_avg_days": 3.7,
-    "direction": "shortening \u2014 bouncing back quicker than before",
-    "sessions_measured": 13
+    "recent_avg_days": 4,
+    "prior_avg_days": 3,
+    "direction": "lengthening \u2014 recovery is taking longer than it was",
+    "sessions_measured": 14
   }
 }
