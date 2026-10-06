@@ -1,6 +1,10 @@
 {
   "generated_date": "2026-10-06",
-  "next_race": null,
+  "next_race": {
+    "name": "Provisional \u2014 STROUD 10K - the October target",
+    "date": "2026-10-25",
+    "distance_km": 16
+  },
   "predictions": {
     "5K": {
       "predicted_time_fmt": "17:54.09",

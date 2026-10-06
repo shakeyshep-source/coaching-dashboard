@@ -1,7 +1,30 @@
 {
   "generated": "2026-10-06",
-  "next_race": null,
-  "race_readiness": null,
+  "next_race": {
+    "name": "Provisional \u2014 STROUD 10K - the October target",
+    "date": "2026-10-25",
+    "distance_km": 16,
+    "days_away": 19
+  },
+  "race_readiness": {
+    "race": {
+      "name": "Provisional \u2014 STROUD 10K - the October target",
+      "date": "2026-10-25",
+      "distance_km": 16,
+      "days_away": 19
+    },
+    "weeks_to_race": 2.7,
+    "taper_start": "2026-10-15",
+    "remaining_key_sessions": {
+      "tempo": 1,
+      "intervals": 2,
+      "long": 1
+    },
+    "goal_time": null,
+    "goal_pace": null,
+    "long_run_target_min": 95,
+    "longest_run_recent_min": 81
+  },
   "weeks": [
     {
       "week_start": "2026-08-17",

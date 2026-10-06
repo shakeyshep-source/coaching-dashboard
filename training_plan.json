@@ -776,62 +776,62 @@
     "session_type": "rest",
     "target_distance_km": null,
     "target_pace": null,
-    "notes": "Provisional \u2014 Rest.",
+    "notes": "Provisional \u2014 Rest. Race week opens with the normal Monday.",
     "source": "coach",
-    "updated_at": "2026-10-04T17:55:36"
+    "updated_at": "2026-10-06T19:43:41"
   },
   {
     "date": "2026-10-20",
     "session_type": "easy",
     "target_distance_km": 8,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 8km.",
+    "notes": "Provisional \u2014 Easy 8km, conversational.",
     "source": "coach",
-    "updated_at": "2026-10-04T17:55:36"
+    "updated_at": "2026-10-06T19:43:41"
   },
   {
     "date": "2026-10-21",
     "session_type": "intervals",
     "target_distance_km": 11.5,
     "target_pace": "3:32-3:36/km for the reps",
-    "notes": "Provisional \u2014 Last interval session: 3km warm-up, 6x600m at 3:32-3:36/km with 2 min jog, 3km cool-down, ~11.5km all in. Purpose: speed just above race pace so 3:38 feels controlled on the day. Short reps keep the cost low. If pace_target.json has flagged by then, the paces tighten.",
+    "notes": "Provisional \u2014 Last sharpener, 4 days before Stroud: 3km warm-up, 6x600m at 3:32-3:36/km with 2 min jog, 3km cool-down, ~11.5km all in. Purpose: speed just above 10K pace (~3:44/km projected on a flat course) so race effort feels controlled. Energy system: VO2/neuromuscular, short reps keep the cost low. Recovery cost ~1.5 days. Run on pace, not under. Last heavy leg session of the block is this week - nothing heavy in the gym after Wed 21 Oct. If HRV is still sliding by now, shorten to 4 reps rather than skip.",
     "source": "coach",
-    "updated_at": "2026-10-04T17:55:36"
+    "updated_at": "2026-10-06T19:43:41"
   },
   {
     "date": "2026-10-22",
     "session_type": "easy",
     "target_distance_km": 7,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 7km. Last heavy leg session of the block belongs this week or early next - nothing heavy after Wed 28 Oct.",
+    "notes": "Provisional \u2014 Easy 7km. No heavy leg work from today.",
     "source": "coach",
-    "updated_at": "2026-10-04T17:55:36"
+    "updated_at": "2026-10-06T19:43:41"
   },
   {
     "date": "2026-10-23",
     "session_type": "easy",
     "target_distance_km": 6,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 6km + 4-6 strides.",
+    "notes": "Provisional \u2014 Easy 6km + 4 strides.",
     "source": "coach",
-    "updated_at": "2026-10-04T17:55:36"
+    "updated_at": "2026-10-06T19:43:41"
   },
   {
     "date": "2026-10-24",
-    "session_type": "tempo",
-    "target_distance_km": 14,
-    "target_pace": "3:40/km for the reps",
-    "notes": "Provisional \u2014 Last hard session, 8 days out. 3km warm-up, 2x2 miles at 5-mile race pace (3:40/km) with 3 min jog, 3km cool-down, ~14km all in. Rehearsal of Guy Fawkes pace, on pace not under it. Nothing hard follows until the race.",
+    "session_type": "easy",
+    "target_distance_km": 5,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Shakeout 30-35 min, easy, no strides. The 2x2 miles that sat here is removed: nothing hard inside ~3 days of the race. Check Puma Fast-R Nitro 3 and kit; Symbicort/salbutamol timings ready for the morning.",
     "source": "coach",
-    "updated_at": "2026-10-04T17:55:36"
+    "updated_at": "2026-10-06T19:43:41"
   },
   {
     "date": "2026-10-25",
-    "session_type": "long",
-    "target_distance_km": 12,
+    "session_type": "race",
+    "target_distance_km": 16,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 12km, no gel needed. Seven days clear of the race, so genuinely easy and short. Race week gets written next Sunday.",
+    "notes": "Provisional \u2014 STROUD 10K - the October target. ~16km all in: 3km warm-up with strides, 10K, 3km cool-down. Projection 37:20 flat (3:44/km, band 36:19-38:20), but Stroud is hilly and the course profile is NOT yet known: get the route and elevation (clubmate's file) before the pacing is written in race week. Run by effort over the climbs, not forced even splits; on Sharpness 4 the lesson was to go out a few seconds slower than the downhill offers. Symbicort 20 min, salbutamol 15 min before gun. Puma Fast-R Nitro 3. Nothing new on the day.",
     "source": "coach",
-    "updated_at": "2026-10-04T17:55:36"
+    "updated_at": "2026-10-06T19:43:41"
   }
 ]

@@ -421,5 +421,13 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": "I'm in for stroud 10k on the 25/10 :)",
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-10-06T19:43:41",
+    "proposal_id": "2026-10-06",
+    "decision": "approve",
+    "action_taken": "plan_updated",
+    "athlete_thoughts": null,
+    "changes_count": 7
   }
 ]

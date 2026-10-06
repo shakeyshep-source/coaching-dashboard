@@ -1,7 +1,7 @@
 {
   "id": "2026-10-06",
   "created": "2026-10-06T15:52:59+00:00",
-  "status": "pending",
+  "status": "applied",
   "rationale": "Stroud 10K confirmed (25 Oct), so race week goes in now. Changes: the provisional 24 Oct 2x2-mile session is removed and becomes a shakeout; 25 Oct becomes the 10K race (~16km all in); 21 Oct keeps 6x600m as the last sharpener, with the heavy-leg cut-off moved to that day. Why: nothing hard inside ~3 days of a race, and a fresh 10K is the best evidence the predictor gets for Manchester. Weeks 1-2 (to 18 Oct) are untouched - the Guy Fawkes-shaped threshold and 5-mile-pace work (2x15 on 17 Oct, 5x1km on 14 Oct) also suit a 10K, so nothing there needs to change. All of this is provisional until next Sunday, when the course profile should be known and the pacing written.",
   "changes": [
     {
@@ -53,5 +53,12 @@
       "target_pace": null,
       "notes": "Provisional \u2014 STROUD 10K - the October target. ~16km all in: 3km warm-up with strides, 10K, 3km cool-down. Projection 37:20 flat (3:44/km, band 36:19-38:20), but Stroud is hilly and the course profile is NOT yet known: get the route and elevation (clubmate's file) before the pacing is written in race week. Run by effort over the climbs, not forced even splits; on Sharpness 4 the lesson was to go out a few seconds slower than the downhill offers. Symbicort 20 min, salbutamol 15 min before gun. Puma Fast-R Nitro 3. Nothing new on the day."
     }
-  ]
+  ],
+  "athlete_response": {
+    "timestamp": "06/10/2026 20:43:25",
+    "review_date": "2026-10-06",
+    "decision": "approve",
+    "thoughts": null
+  },
+  "applied_at": "2026-10-06T19:43:41"
 }
