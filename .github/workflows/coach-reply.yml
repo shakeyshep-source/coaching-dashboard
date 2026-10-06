@@ -32,7 +32,7 @@ permissions:
 
 jobs:
   reply:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       # main, not the calling run's SHA — the caller has usually just
       # pushed the logged response we are about to answer.
