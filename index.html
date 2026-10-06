@@ -2228,7 +2228,7 @@ async function buildRacesTab() {
 
   const intentChip = f => {
     const label = { target: 'Target', race: 'Racing it', 'not raced': 'Not raced',
-                    undecided: 'Undecided' }[f.intent] || f.intent || '';
+                    rehearsal: 'Rehearsal', undecided: 'Undecided' }[f.intent] || f.intent || '';
     const cls = f.intent === 'target' ? 'bad' : f.intent === 'undecided' ? 'warn' : '';
     return label ? `<span class="chip ${cls}">${esc(label)}</span>` : '';
   };
