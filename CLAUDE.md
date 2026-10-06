@@ -407,8 +407,10 @@ preventer itself is a prescribing decision for his GP or asthma nurse.
     his home town, added 4 Oct; he is racing it. It outranks Guy Fawkes
     because a fresh 10K is the best evidence the predictor can get for
     Manchester (his only 2026 10K is June's untapered 38:06). Course
-    profile unknown and Stroud is hilly — get it before writing race
-    pacing. Race week is in the fixture notes: no hard session inside
+    profile in hand (6 Oct): 60 m gain but net uphill ~+15 m, climbing
+    loaded into km 7–8 and an uphill finish — no free last km. Worth
+    ~15–25 s against flat, so ~37:35–37:45; sub-38 the realistic
+    target. Km-by-km pacing in the fixture notes. Race week is in the fixture notes: no hard session inside
     ~3 days, 21 Oct 6×600 as the last sharpener, nothing heavy in the
     gym after Wed 21 Oct.
   - **Guy Fawkes 5, Sun 1 Nov — an experiment, his word.** Seven days
