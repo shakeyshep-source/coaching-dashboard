@@ -12,5 +12,7 @@
     "decision": "amend",
     "thoughts": "I'm in for stroud 10k on the 25/10 :)"
   },
-  "athlete_response_status": "logged"
+  "athlete_response_status": "answered",
+  "coach_reply": "Shep \u2014 Stroud 10K on 25 Oct is logged and it was already in the plan as the October target (fixtures.json, added 4 Oct), so this changes the plan in one way only: the race week the 4 Oct proposal wrote around Guy Fawkes was never rewritten for it.\n\nI have proposed that now: the provisional 24 Oct 2x2 miles goes (nothing hard inside ~3 days of the race), 24 Oct becomes a 30\u201335 min shakeout, 25 Oct is the race (~16 km with warm-up and cool-down), and Wed 21 Oct 6x600m stays as the last sharpener. Nothing heavy in the gym after that Wednesday. Weeks to 18 Oct are untouched \u2014 the threshold and 5-mile-pace work serves a 10K just as well.\n\nTwo things to carry. The projection is 37:20 (3:44/km, band 36:19\u201338:20) on a flat course, and Stroud is hilly, so it is a guess until we have the profile. A clubmate's file or the route would let me write real pacing next Sunday. And the HRV slide is still the gate on everything: it has to be back near baseline by race week, and Friday's reading (9 Oct) is the first checkpoint. Guy Fawkes a week later is the experiment; I'd judge it on how the legs are after Stroud, not on the record.\n\nApprove it on the form when you're happy; it won't apply until you do.",
+  "coach_reply_at": "2026-10-06T15:52:59+00:00"
 }
