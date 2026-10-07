@@ -518,5 +518,13 @@
     "rpe": 2.0,
     "on_target": true,
     "session_notes": "Easy plod"
+  },
+  {
+    "date": "2026-10-07",
+    "achilles_score": 0,
+    "session_type": "intervals",
+    "rpe": 7.0,
+    "on_target": true,
+    "session_notes": "Tough\nEfforts were mainly into the wind and still felt like they were tired from sunday"
   }
 ]
