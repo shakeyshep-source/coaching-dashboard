@@ -7159,5 +7159,24 @@
     "avg_hr": 142.0,
     "aerobic_te": 2.5,
     "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-10-06",
+    "activity_id": 24629731210,
+    "name": "Tewkesbury Running",
+    "structured": true,
+    "lap_count": 8,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 7.19
+    },
+    "avg_hr": 142.0,
+    "aerobic_te": 3.0999999046325684,
+    "anaerobic_te": 0.0
   }
 ]
