@@ -35,7 +35,7 @@
       "note": "Based on 6 clean race result(s), weighted towards recent races and those nearest this distance - Cheltenham Half carries 58% of the weight. VO2max down 0.1 over the last 6 weeks \u2014 no adjustment applied, treat as optimistic. CAVEAT: marathon projections from short-race data are unreliable \u2014 doesn't account for fuelling or sustained multi-hour effort. Rough ballpark only."
     }
   },
-  "vo2max_note": "VO2max is 59.3 \u2014 down 0.1 over the last 6 weeks.",
+  "vo2max_note": "VO2max is 59.2 \u2014 down 0.1 over the last 6 weeks.",
   "based_on_races": [
     "Bourton Mile",
     "Cardiff 5K (previous edition)",
