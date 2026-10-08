@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-07",
+  "as_of": "2026-10-08",
   "window_days": 28,
   "beat_margin_sec_per_km": 3.0,
   "sessions": [
@@ -151,7 +151,14 @@
     {
       "date": "2026-10-07",
       "qualifying": false,
-      "skipped": "no rep detail \u2014 laps not pulled, or no identifiable reps"
+      "skipped": null,
+      "session_type": "intervals",
+      "target_sec_per_km": 218,
+      "actual_sec_per_km": 216.0,
+      "beat_by_sec_per_km": 2.0,
+      "rpe": 7.0,
+      "expected_rpe": 6.0,
+      "reps": 4
     }
   ],
   "qualifying_in_window": [
@@ -159,7 +166,7 @@
     "2026-09-30"
   ],
   "flag": null,
-  "cooldown_remaining": 2,
+  "cooldown_remaining": 1,
   "last_flagged": "2026-09-13",
   "last_flagged_sessions": [
     "2026-09-02",
