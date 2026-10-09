@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-08",
+  "generated": "2026-10-09",
   "window_days": 7,
   "sessions": [
     {
@@ -230,32 +230,37 @@
       "interrupted_by_next_session": true,
       "temp_max_c": 21.9,
       "note": "Too easy but I understand why"
+    },
+    {
+      "date": "2026-10-07",
+      "session_type": "intervals",
+      "confounders_in_window": [],
+      "hrv_reference": 35.6,
+      "hrv_recovery_days": 2,
+      "rhr_reference": 48.3,
+      "rhr_recovery_days": 2,
+      "recovery_days": 2,
+      "recovered": true,
+      "interrupted_by_next_session": false,
+      "temp_max_c": 15.7,
+      "note": "Tough\nEfforts were mainly into the wind and still felt like they were tired from sunday"
     }
   ],
   "pending": [
     {
       "date": "2026-10-04",
       "session_type": "race",
-      "days_since": 4,
+      "days_since": 5,
       "hrv_back": 2,
       "rhr_back": null,
       "hrv_reference": 36.4,
       "rhr_reference": 47.9
-    },
-    {
-      "date": "2026-10-07",
-      "session_type": "intervals",
-      "days_since": 1,
-      "hrv_back": null,
-      "rhr_back": null,
-      "hrv_reference": 35.6,
-      "rhr_reference": 48.3
     }
   ],
   "trend": {
-    "recent_avg_days": 4,
-    "prior_avg_days": 3,
+    "recent_avg_days": 3.7,
+    "prior_avg_days": 2.3,
     "direction": "lengthening \u2014 recovery is taking longer than it was",
-    "sessions_measured": 14
+    "sessions_measured": 15
   }
 }
