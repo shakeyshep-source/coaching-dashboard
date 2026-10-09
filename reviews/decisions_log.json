@@ -439,5 +439,15 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": null,
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-10-09T21:38:01",
+    "proposal_id": null,
+    "review_date": "2026-10-04",
+    "response_timestamp": "09/10/2026 22:37:46",
+    "decision": "amend",
+    "action_taken": "review_query_logged",
+    "athlete_thoughts": "Worth trying out the alphafly 2s tomorrow? Or stick to speeds",
+    "changes_count": 0
   }
 ]

@@ -160,5 +160,11 @@
     "review_date": "2026-10-06",
     "decision": "approve",
     "thoughts": null
+  },
+  {
+    "timestamp": "09/10/2026 22:37:46",
+    "review_date": "2026-10-09",
+    "decision": "amend",
+    "thoughts": "Worth trying out the alphafly 2s tomorrow? Or stick to speeds"
   }
 ]
