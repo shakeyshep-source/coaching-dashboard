@@ -11,31 +11,31 @@
       "predicted_time_seconds": 1074.1,
       "low_estimate_fmt": "17:25.04",
       "high_estimate_fmt": "18:23.14",
-      "note": "Based on 6 clean race result(s), weighted towards recent races and those nearest this distance - Sharpness 4 carries 39% of the weight. VO2max down 0.4 over the last 6 weeks \u2014 no adjustment applied, treat as optimistic."
+      "note": "Based on 6 clean race result(s), weighted towards recent races and those nearest this distance - Sharpness 4 carries 39% of the weight. VO2max down 0.6 over the last 6 weeks \u2014 no adjustment applied, treat as optimistic."
     },
     "10K": {
       "predicted_time_fmt": "37:19.99",
       "predicted_time_seconds": 2240.0,
       "low_estimate_fmt": "36:19.42",
       "high_estimate_fmt": "38:20.57",
-      "note": "Based on 6 clean race result(s), weighted towards recent races and those nearest this distance - Sharpness 4 carries 34% of the weight. VO2max down 0.4 over the last 6 weeks \u2014 no adjustment applied, treat as optimistic."
+      "note": "Based on 6 clean race result(s), weighted towards recent races and those nearest this distance - Sharpness 4 carries 34% of the weight. VO2max down 0.6 over the last 6 weeks \u2014 no adjustment applied, treat as optimistic."
     },
     "Half Marathon": {
       "predicted_time_fmt": "1:21:49.24",
       "predicted_time_seconds": 4909.2,
       "low_estimate_fmt": "1:19:35.58",
       "high_estimate_fmt": "1:24:02.89",
-      "note": "Based on 6 clean race result(s), weighted towards recent races and those nearest this distance - Cheltenham Half carries 56% of the weight. VO2max down 0.4 over the last 6 weeks \u2014 no adjustment applied, treat as optimistic. Reasonably grounded if based on a 10K+ result; more of a stretch if only projected from 5K."
+      "note": "Based on 6 clean race result(s), weighted towards recent races and those nearest this distance - Cheltenham Half carries 56% of the weight. VO2max down 0.6 over the last 6 weeks \u2014 no adjustment applied, treat as optimistic. Reasonably grounded if based on a 10K+ result; more of a stretch if only projected from 5K."
     },
     "Marathon": {
       "predicted_time_fmt": "2:50:24.87",
       "predicted_time_seconds": 10224.9,
       "low_estimate_fmt": "2:45:46.22",
       "high_estimate_fmt": "2:55:03.53",
-      "note": "Based on 6 clean race result(s), weighted towards recent races and those nearest this distance - Cheltenham Half carries 58% of the weight. VO2max down 0.4 over the last 6 weeks \u2014 no adjustment applied, treat as optimistic. CAVEAT: marathon projections from short-race data are unreliable \u2014 doesn't account for fuelling or sustained multi-hour effort. Rough ballpark only."
+      "note": "Based on 6 clean race result(s), weighted towards recent races and those nearest this distance - Cheltenham Half carries 58% of the weight. VO2max down 0.6 over the last 6 weeks \u2014 no adjustment applied, treat as optimistic. CAVEAT: marathon projections from short-race data are unreliable \u2014 doesn't account for fuelling or sustained multi-hour effort. Rough ballpark only."
     }
   },
-  "vo2max_note": "VO2max is 59.1 \u2014 down 0.4 over the last 6 weeks.",
+  "vo2max_note": "VO2max is 59.1 \u2014 down 0.6 over the last 6 weeks.",
   "based_on_races": [
     "Bourton Mile",
     "Cardiff 5K (previous edition)",
