@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-09",
+  "generated": "2026-10-10",
   "window_days": 7,
   "sessions": [
     {
@@ -232,6 +232,20 @@
       "note": "Too easy but I understand why"
     },
     {
+      "date": "2026-10-04",
+      "session_type": "race",
+      "confounders_in_window": [],
+      "hrv_reference": 36.4,
+      "hrv_recovery_days": 2,
+      "rhr_reference": 47.9,
+      "rhr_recovery_days": 6,
+      "recovery_days": 6,
+      "recovered": true,
+      "interrupted_by_next_session": true,
+      "temp_max_c": 19.3,
+      "note": "Controlled race, went all out on the finish and hit lactate in the legs\u00f0\u009f\u0098\u0082 lumpy course!! But still a club record and pb as never raced that distance before"
+    },
+    {
       "date": "2026-10-07",
       "session_type": "intervals",
       "confounders_in_window": [],
@@ -248,19 +262,19 @@
   ],
   "pending": [
     {
-      "date": "2026-10-04",
-      "session_type": "race",
-      "days_since": 5,
-      "hrv_back": 2,
+      "date": "2026-10-10",
+      "session_type": "tempo",
+      "days_since": 0,
+      "hrv_back": null,
       "rhr_back": null,
-      "hrv_reference": 36.4,
-      "rhr_reference": 47.9
+      "hrv_reference": 35.6,
+      "rhr_reference": 48.7
     }
   ],
   "trend": {
-    "recent_avg_days": 3.7,
-    "prior_avg_days": 2.3,
+    "recent_avg_days": 4.7,
+    "prior_avg_days": 2.7,
     "direction": "lengthening \u2014 recovery is taking longer than it was",
-    "sessions_measured": 15
+    "sessions_measured": 16
   }
 }

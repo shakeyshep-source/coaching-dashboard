@@ -7018,5 +7018,35 @@
     "cadence": 165.34375,
     "aerobic_te": 2.700000047683716,
     "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-10-10",
+    "activity_id": 24670505759,
+    "name": "Tewkesbury Running",
+    "type": "running",
+    "distance_km": 0.28,
+    "duration_min": 1.5,
+    "avg_pace_min_per_km": 5.41,
+    "avg_hr": 125.0,
+    "max_hr": 135.0,
+    "elevation_gain_m": 0.0,
+    "cadence": 165.78125,
+    "aerobic_te": 0.20000000298023224,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-10-10",
+    "activity_id": 24671549145,
+    "name": "Tewkesbury Running",
+    "type": "running",
+    "distance_km": 10.81,
+    "duration_min": 52.5,
+    "avg_pace_min_per_km": 4.85,
+    "avg_hr": 146.0,
+    "max_hr": 169.0,
+    "elevation_gain_m": 24.0,
+    "cadence": 162.90625,
+    "aerobic_te": 4.0,
+    "anaerobic_te": 0.8999999761581421
   }
 ]

@@ -1,22 +1,22 @@
 {
-  "generated": "2026-10-09",
+  "generated": "2026-10-10",
   "next_race": {
     "name": "Provisional \u2014 STROUD 10K - the October target",
     "date": "2026-10-25",
     "distance_km": 16,
-    "days_away": 16
+    "days_away": 15
   },
   "race_readiness": {
     "race": {
       "name": "Provisional \u2014 STROUD 10K - the October target",
       "date": "2026-10-25",
       "distance_km": 16,
-      "days_away": 16
+      "days_away": 15
     },
-    "weeks_to_race": 2.3,
+    "weeks_to_race": 2.1,
     "taper_start": "2026-10-15",
     "remaining_key_sessions": {
-      "tempo": 1,
+      "tempo": 0,
       "intervals": 1,
       "long": 1
     },
@@ -760,9 +760,9 @@
       "on_target_pct": 100,
       "avg_rpe": 1.1,
       "max_achilles": 0,
-      "avg_hrv": 39,
-      "avg_rhr": 48.5,
-      "avg_sleep_score": 86.5,
+      "avg_hrv": 42,
+      "avg_rhr": 48.0,
+      "avg_sleep_score": 85,
       "avg_sleep_hrs": 8.1,
       "easy_pace_min_km": 4.9,
       "easy_avg_hr": 137.2,
@@ -1036,24 +1036,24 @@
       "week_start": "2026-10-05",
       "week_end": "2026-10-11",
       "in_progress": true,
-      "km": 34.1,
-      "runs": 5,
-      "time_min": 175.0,
-      "elevation_m": 146.0,
+      "km": 45.1,
+      "runs": 7,
+      "time_min": 229.0,
+      "elevation_m": 170.0,
       "planned_sessions": 6,
       "logged_sessions": 5,
       "hard_sessions_planned": 3,
-      "quality_time_min": 85,
-      "easy_pct": 51,
+      "quality_time_min": 139,
+      "easy_pct": 39,
       "long_run_min": 85,
       "long_run_km": 15.81,
       "on_target_pct": 100,
       "avg_rpe": 2.4,
       "max_achilles": 0,
-      "avg_hrv": 36.6,
-      "avg_rhr": 49.0,
-      "avg_sleep_score": 86.6,
-      "avg_sleep_hrs": 8.0,
+      "avg_hrv": 36.8,
+      "avg_rhr": 48.7,
+      "avg_sleep_score": 86.8,
+      "avg_sleep_hrs": 8.1,
       "easy_pace_min_km": 4.99,
       "easy_avg_hr": 135.0,
       "efficiency": 1.486,
@@ -1150,6 +1150,39 @@
           "avg_hr": 134,
           "segments": null,
           "fastest_segment": null
+        },
+        {
+          "date": "2026-10-10",
+          "temp_max_c": 14.2,
+          "heat_risk": "low",
+          "session_type": null,
+          "rpe": null,
+          "on_target": null,
+          "achilles_score": null,
+          "note": null,
+          "km": 11.1,
+          "pace": 4.86,
+          "avg_hr": 145,
+          "segments": [
+            {
+              "km": 0.28,
+              "min": 1.5,
+              "pace": 5.41,
+              "avg_hr": 125.0
+            },
+            {
+              "km": 10.81,
+              "min": 52.5,
+              "pace": 4.85,
+              "avg_hr": 146.0
+            }
+          ],
+          "fastest_segment": {
+            "km": 10.81,
+            "min": 52.5,
+            "pace": 4.85,
+            "avg_hr": 146.0
+          }
         }
       ]
     }
