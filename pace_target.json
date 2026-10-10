@@ -162,18 +162,39 @@
     },
     {
       "date": "2026-10-10",
-      "qualifying": false,
-      "skipped": "no RPE logged \u2014 not assessable (HR is not a safe substitute)"
+      "qualifying": true,
+      "skipped": null,
+      "session_type": "tempo",
+      "target_sec_per_km": 232,
+      "actual_sec_per_km": 227.5,
+      "beat_by_sec_per_km": 4.5,
+      "rpe": 6.0,
+      "expected_rpe": 6.0,
+      "reps": 3
     }
   ],
   "qualifying_in_window": [
-    "2026-09-30"
+    "2026-09-30",
+    "2026-10-10"
   ],
-  "flag": null,
-  "cooldown_remaining": 1,
-  "last_flagged": "2026-09-13",
+  "flag": {
+    "sessions": [
+      "2026-09-30",
+      "2026-10-10"
+    ],
+    "count": 2,
+    "mean_beat_sec_per_km": 6.5,
+    "suggested_tighten_sec_per_km": 3,
+    "current_targets_sec_per_km": [
+      218,
+      232
+    ],
+    "reason": "2 quality sessions in the last 28 days came in 6.5 sec/km inside target at RPE 6 or below. The paces look stale \u2014 consider tightening the 10K target by 3 sec/km, then holding the new pace for 3 sessions before revisiting. Not applied: update the target yourself if you agree."
+  },
+  "cooldown_remaining": 0,
+  "last_flagged": "2026-10-10",
   "last_flagged_sessions": [
-    "2026-09-02",
-    "2026-09-12"
+    "2026-09-30",
+    "2026-10-10"
   ]
 }

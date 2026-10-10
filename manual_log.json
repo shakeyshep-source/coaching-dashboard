@@ -542,5 +542,13 @@
     "rpe": 2.0,
     "on_target": true,
     "session_notes": "Easy, fine although hammy a little tight"
+  },
+  {
+    "date": "2026-10-10",
+    "achilles_score": 0,
+    "session_type": "tempo",
+    "rpe": 6.0,
+    "on_target": true,
+    "session_notes": "Felt fine. Couldnt remember the exact paces so aimed for around 3:50s."
   }
 ]
