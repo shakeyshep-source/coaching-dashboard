@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="ClubRun">
+  <title>ClubRun</title>
+  <g transform="translate(80 80)">
+    <circle r="70" fill="#0E2A47"/>
+    <path d="M 31 -38 A 49 49 0 1 0 31 38" fill="none" stroke="#FF5A1F" stroke-width="11" stroke-linecap="round"/>
+    <path d="M 18 -22 A 29 29 0 1 0 18 22" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+    <path d="M 14 0 L 52 0 M 38 -13 L 54 0 L 38 13" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
