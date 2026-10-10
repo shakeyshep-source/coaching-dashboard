@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 150" role="img" aria-label="ClubRun"><title>ClubRun</title>
+<g stroke-linecap="round" stroke-width="7" fill="none"><path d="M10 40 H70" stroke="#FF5A1F"/><path d="M0 62 H60" stroke="#FF5A1F" opacity=".6"/><path d="M10 84 H70" stroke="#FF5A1F" opacity=".3"/></g>
+<text x="80" y="92" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="68" font-weight="300" font-style="italic" letter-spacing="-1" fill="#0E2A47">club<tspan font-weight="900">run</tspan></text>
+<text x="84" y="128" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="7" fill="#FF5A1F">TRAIN · RACE · REPEAT</text>
+</svg>

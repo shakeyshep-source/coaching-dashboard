@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 190" role="img" aria-label="ClubRun"><title>ClubRun</title>
+<path d="M80 8 L148 30 V92 C148 140 116 170 80 182 C44 170 12 140 12 92 V30 Z" fill="#0E2A47"/>
+<path d="M80 20 L136 38 V92 C136 132 110 158 80 169 C50 158 24 132 24 92 V38 Z" fill="none" stroke="#FF5A1F" stroke-width="4"/>
+<text x="80" y="60" text-anchor="middle" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="800" letter-spacing="3" fill="#FFFFFF">CLUB</text>
+<g fill="none" stroke="#FF5A1F" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"><path d="M50 76 L70 94 L50 112"/><path d="M76 76 L96 94 L76 112"/><path d="M102 76 L122 94 L102 112" stroke="#FFFFFF"/></g>
+<text x="80" y="136" text-anchor="middle" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="800" letter-spacing="3" fill="#FFFFFF">RUN</text>
+</svg>

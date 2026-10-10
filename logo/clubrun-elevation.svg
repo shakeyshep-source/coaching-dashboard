@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="ClubRun"><title>ClubRun</title>
+<defs><clipPath id="c"><circle cx="80" cy="80" r="70"/></clipPath></defs>
+<circle cx="80" cy="80" r="70" fill="#F3EFE6"/>
+<g clip-path="url(#c)"><path d="M0 120 L30 96 L48 104 L74 64 L92 82 L112 52 L136 78 L160 70 V160 H0 Z" fill="#0E2A47"/>
+<path d="M0 120 L30 96 L48 104 L74 64 L92 82 L112 52 L136 78 L160 70" fill="none" stroke="#FF5A1F" stroke-width="6" stroke-linejoin="round"/></g>
+<circle cx="112" cy="52" r="8" fill="#FF5A1F" stroke="#F3EFE6" stroke-width="3"/>
+<circle cx="80" cy="80" r="70" fill="none" stroke="#0E2A47" stroke-width="6"/>
+<text x="80" y="128" text-anchor="middle" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="800" letter-spacing="2" fill="#FFFFFF">CLUBRUN</text>
+</svg>
