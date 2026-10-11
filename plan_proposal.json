@@ -1,7 +1,7 @@
 {
   "id": "2026-10-11",
   "created": "2026-10-11T14:00:00+01:00",
-  "status": "pending",
+  "status": "applied",
   "rationale": "Hold, with the horizon extended a week: nothing planned changes in substance. Week 1 (12-18 Oct) is firm; weeks 2-3 are provisional, and 26 Oct-1 Nov is new (a post-Stroud easy week into Guy Fawkes). One small change: the 17 Oct 2x15 threshold target moves from 3:52-3:55 to 3:50-3:53, because 10 Oct ran 3:47-3:49 at RPE 6 against 3:52-3:55. That was the only clean qualifier: the 30 Sep one was a 200m session at RPE 2, so the pace_target flag rests on thin evidence. The 14 Oct reps stay at 3:38-3:40. HRV is back to 41 BALANCED, so the gate that shaped last week has cleared.",
   "changes": [
     {
@@ -151,5 +151,12 @@
       "target_pace": null,
       "notes": "Provisional \u2014 GUY FAWKES 5 (8.05km): the experiment, raced on feel a week after Stroud. ~14km all in: 3km warm-up with strides, race, 3km cool-down. Record 29:12 (3:38/km) only if the legs say so; go out controlled. Pre-race meds as Stroud. Fission 20 entries open about now and sell out every year: enter if you want the March rehearsal."
     }
-  ]
+  ],
+  "athlete_response": {
+    "timestamp": "11/10/2026 17:40:29",
+    "review_date": "2026-10-11",
+    "decision": "approve",
+    "thoughts": "All fine, the only note is I did a slow 3k Warm down on sat, 5:30-5:40 pace but forgot to start the watch,"
+  },
+  "applied_at": "2026-10-11T16:40:45"
 }

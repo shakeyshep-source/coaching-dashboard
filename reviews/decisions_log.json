@@ -449,5 +449,13 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": "Worth trying out the alphafly 2s tomorrow? Or stick to speeds",
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-10-11T16:40:45",
+    "proposal_id": "2026-10-11",
+    "decision": "approve",
+    "action_taken": "plan_updated",
+    "athlete_thoughts": "All fine, the only note is I did a slow 3k Warm down on sat, 5:30-5:40 pace but forgot to start the watch,",
+    "changes_count": 21
   }
 ]
