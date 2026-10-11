@@ -588,22 +588,22 @@
     "temp_max_c": 15.2,
     "temp_min_c": 9.7,
     "humidity_pct": 71,
-    "wind_speed_kmh": 11.5,
+    "wind_speed_kmh": 11.9,
     "heat_risk": "low"
   },
   {
     "date": "2026-10-12",
-    "temp_max_c": 19.7,
-    "temp_min_c": 13.9,
-    "humidity_pct": 88,
-    "wind_speed_kmh": 16.9,
+    "temp_max_c": 19.6,
+    "temp_min_c": 13.8,
+    "humidity_pct": 89,
+    "wind_speed_kmh": 14.8,
     "heat_risk": "moderate"
   },
   {
     "date": "2026-10-13",
-    "temp_max_c": 18.8,
+    "temp_max_c": 18.7,
     "temp_min_c": 12.6,
-    "humidity_pct": 75,
+    "humidity_pct": 74,
     "wind_speed_kmh": 24.5,
     "heat_risk": "moderate"
   },
