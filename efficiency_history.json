@@ -1299,6 +1299,16 @@
       "avg_hr": 134.0,
       "efficiency": 1.4955,
       "gradient_m_per_km": 8.5
+    },
+    {
+      "date": "2026-10-11",
+      "activity_id": 24682712362,
+      "name": "Tewkesbury Running",
+      "distance_km": 15.01,
+      "pace_min_per_km": 5.22,
+      "avg_hr": 131.0,
+      "efficiency": 1.4624,
+      "gradient_m_per_km": 6.5
     }
   ],
   "excluded": [
@@ -1455,21 +1465,21 @@
     },
     {
       "month": "2026-10",
-      "runs": 4,
-      "efficiency": 1.4751,
-      "pace_min_per_km": 4.89,
+      "runs": 5,
+      "efficiency": 1.4624,
+      "pace_min_per_km": 4.95,
       "avg_hr": 142.0,
-      "avg_temp_c": 19.4
+      "avg_temp_c": 18.6
     }
   ],
   "summary": {
     "from_month": "2026-01",
     "to_month": "2026-10",
     "from_efficiency": 1.4041,
-    "to_efficiency": 1.4751,
-    "change_pct": 5.1,
+    "to_efficiency": 1.4624,
+    "change_pct": 4.2,
     "from_hr_at_pace": "142 bpm at 4.96 min/km",
-    "to_hr_at_pace": "142 bpm at 4.89 min/km",
+    "to_hr_at_pace": "142 bpm at 4.95 min/km",
     "warmer_now": false
   }
 }
