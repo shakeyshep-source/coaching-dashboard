@@ -1096,7 +1096,7 @@
       "session_log": [
         {
           "date": "2026-10-12",
-          "temp_max_c": 18.6,
+          "temp_max_c": 19.2,
           "heat_risk": "moderate",
           "session_type": "rest",
           "rpe": 0.0,
