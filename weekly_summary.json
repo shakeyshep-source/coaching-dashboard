@@ -1,19 +1,19 @@
 {
-  "generated": "2026-10-11",
+  "generated": "2026-10-12",
   "next_race": {
     "name": "Provisional \u2014 STROUD 10K",
     "date": "2026-10-25",
     "distance_km": 16,
-    "days_away": 14
+    "days_away": 13
   },
   "race_readiness": {
     "race": {
       "name": "Provisional \u2014 STROUD 10K",
       "date": "2026-10-25",
       "distance_km": 16,
-      "days_away": 14
+      "days_away": 13
     },
-    "weeks_to_race": 2.0,
+    "weeks_to_race": 1.9,
     "taper_start": "2026-10-15",
     "remaining_key_sessions": {
       "tempo": 0,
@@ -23,142 +23,9 @@
     "goal_time": null,
     "goal_pace": null,
     "long_run_target_min": 95,
-    "longest_run_recent_min": 81
+    "longest_run_recent_min": 85
   },
   "weeks": [
-    {
-      "week_start": "2026-08-17",
-      "week_end": "2026-08-23",
-      "in_progress": false,
-      "km": 72.8,
-      "runs": 6,
-      "time_min": 345.0,
-      "elevation_m": 427.0,
-      "planned_sessions": 6,
-      "logged_sessions": 7,
-      "hard_sessions_planned": 3,
-      "quality_time_min": 142,
-      "easy_pct": 59,
-      "long_run_min": 97,
-      "long_run_km": 21.03,
-      "on_target_pct": 100,
-      "avg_rpe": 2.7,
-      "max_achilles": 0,
-      "avg_hrv": null,
-      "avg_rhr": null,
-      "avg_sleep_score": null,
-      "avg_sleep_hrs": null,
-      "easy_pace_min_km": 4.96,
-      "easy_avg_hr": 136.8,
-      "efficiency": 1.478,
-      "session_log": [
-        {
-          "date": "2026-08-17",
-          "temp_max_c": 25.8,
-          "heat_risk": "high",
-          "session_type": "rest",
-          "rpe": 0.0,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "Rest",
-          "km": null,
-          "pace": null,
-          "avg_hr": null,
-          "segments": null,
-          "fastest_segment": null
-        },
-        {
-          "date": "2026-08-18",
-          "temp_max_c": 24.1,
-          "heat_risk": "high",
-          "session_type": "easy",
-          "rpe": 1.0,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "A bit sluggish to start but then fine, finished with 4*20sec, about 21c",
-          "km": 8.6,
-          "pace": 5.16,
-          "avg_hr": 134,
-          "segments": null,
-          "fastest_segment": null
-        },
-        {
-          "date": "2026-08-19",
-          "temp_max_c": 22.1,
-          "heat_risk": "moderate",
-          "session_type": "intervals",
-          "rpe": 6.0,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "21c, 12mph winds\nFelt strong, probably went off a bit quick each time into the wind but eased off so I was at target pace. Could have done more.",
-          "km": 14.0,
-          "pace": 4.65,
-          "avg_hr": 142,
-          "segments": null,
-          "fastest_segment": null
-        },
-        {
-          "date": "2026-08-20",
-          "temp_max_c": 20.3,
-          "heat_risk": "high",
-          "session_type": "easy",
-          "rpe": 1.0,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "easy plod on the trials to keep the pace down",
-          "km": 7.2,
-          "pace": 5.21,
-          "avg_hr": 131,
-          "segments": null,
-          "fastest_segment": null
-        },
-        {
-          "date": "2026-08-21",
-          "temp_max_c": 19.9,
-          "heat_risk": "moderate",
-          "session_type": "easy",
-          "rpe": 1.0,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "easy plod at lunch",
-          "km": 5.0,
-          "pace": 4.84,
-          "avg_hr": 139,
-          "segments": null,
-          "fastest_segment": null
-        },
-        {
-          "date": "2026-08-22",
-          "temp_max_c": 21.0,
-          "heat_risk": "moderate",
-          "session_type": "tempo",
-          "rpe": 6.0,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "Cooler, still sunny, 14c\nRun fine\nVery slight achillies on warm down but still below a 1/10",
-          "km": 17.0,
-          "pace": 4.52,
-          "avg_hr": 145,
-          "segments": null,
-          "fastest_segment": null
-        },
-        {
-          "date": "2026-08-23",
-          "temp_max_c": 23.3,
-          "heat_risk": "moderate",
-          "session_type": "long",
-          "rpe": 4.0,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "12c\nChatty run\nDidn't look at watch till end\nEasy day, speed only fluctuated in rises and downhills",
-          "km": 21.0,
-          "pace": 4.62,
-          "avg_hr": 143,
-          "segments": null,
-          "fastest_segment": null
-        }
-      ]
-    },
     {
       "week_start": "2026-08-24",
       "week_end": "2026-08-30",
@@ -893,10 +760,10 @@
       "on_target_pct": 100,
       "avg_rpe": 2.7,
       "max_achilles": 0,
-      "avg_hrv": 35.3,
+      "avg_hrv": 34.8,
       "avg_rhr": 47.7,
-      "avg_sleep_score": 86.6,
-      "avg_sleep_hrs": 8.5,
+      "avg_sleep_score": 85.8,
+      "avg_sleep_hrs": 8.4,
       "easy_pace_min_km": 4.98,
       "easy_avg_hr": 140.2,
       "efficiency": 1.435,
@@ -1035,7 +902,7 @@
     {
       "week_start": "2026-10-05",
       "week_end": "2026-10-11",
-      "in_progress": true,
+      "in_progress": false,
       "km": 60.1,
       "runs": 8,
       "time_min": 307.0,
@@ -1200,6 +1067,33 @@
           "fastest_segment": null
         }
       ]
+    },
+    {
+      "week_start": "2026-10-12",
+      "week_end": "2026-10-18",
+      "in_progress": true,
+      "km": 0,
+      "runs": 0,
+      "time_min": 0,
+      "elevation_m": 0,
+      "planned_sessions": 6,
+      "logged_sessions": 0,
+      "hard_sessions_planned": 3,
+      "quality_time_min": 0,
+      "easy_pct": null,
+      "long_run_min": null,
+      "long_run_km": null,
+      "on_target_pct": null,
+      "avg_rpe": null,
+      "max_achilles": null,
+      "avg_hrv": 39,
+      "avg_rhr": 47.0,
+      "avg_sleep_score": 85,
+      "avg_sleep_hrs": 8.5,
+      "easy_pace_min_km": null,
+      "easy_avg_hr": null,
+      "efficiency": null,
+      "session_log": []
     }
   ]
 }
