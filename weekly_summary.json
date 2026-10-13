@@ -1,19 +1,19 @@
 {
-  "generated": "2026-10-12",
+  "generated": "2026-10-13",
   "next_race": {
     "name": "Provisional \u2014 STROUD 10K",
     "date": "2026-10-25",
     "distance_km": 16,
-    "days_away": 13
+    "days_away": 12
   },
   "race_readiness": {
     "race": {
       "name": "Provisional \u2014 STROUD 10K",
       "date": "2026-10-25",
       "distance_km": 16,
-      "days_away": 13
+      "days_away": 12
     },
-    "weeks_to_race": 1.9,
+    "weeks_to_race": 1.7,
     "taper_start": "2026-10-15",
     "remaining_key_sessions": {
       "tempo": 0,
@@ -760,9 +760,9 @@
       "on_target_pct": 100,
       "avg_rpe": 2.7,
       "max_achilles": 0,
-      "avg_hrv": 34.8,
-      "avg_rhr": 47.7,
-      "avg_sleep_score": 85.8,
+      "avg_hrv": 34,
+      "avg_rhr": 48.0,
+      "avg_sleep_score": 84.4,
       "avg_sleep_hrs": 8.4,
       "easy_pace_min_km": 4.98,
       "easy_avg_hr": 140.2,
@@ -1086,10 +1086,10 @@
       "on_target_pct": 100,
       "avg_rpe": 0.0,
       "max_achilles": 0,
-      "avg_hrv": 39,
-      "avg_rhr": 47.0,
-      "avg_sleep_score": 85,
-      "avg_sleep_hrs": 8.5,
+      "avg_hrv": 40,
+      "avg_rhr": 47.5,
+      "avg_sleep_score": 84.5,
+      "avg_sleep_hrs": 8.2,
       "easy_pace_min_km": null,
       "easy_avg_hr": null,
       "efficiency": null,
