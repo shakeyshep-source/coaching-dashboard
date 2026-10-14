@@ -574,5 +574,13 @@
     "rpe": 2.0,
     "on_target": true,
     "session_notes": "Tested the alphaflys, no issues, other than socks too thin, if wearing for longer need to wear thicker socks"
+  },
+  {
+    "date": "2026-10-14",
+    "achilles_score": 0,
+    "session_type": "intervals",
+    "rpe": 8.0,
+    "on_target": true,
+    "session_notes": "Bang on tonight although felt harder than last week, maybe the wind, maybe just one of those days"
   }
 ]
