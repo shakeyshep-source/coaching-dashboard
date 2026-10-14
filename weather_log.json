@@ -610,17 +610,17 @@
   {
     "date": "2026-10-14",
     "temp_max_c": 17.6,
-    "temp_min_c": 11.1,
-    "humidity_pct": 77,
-    "wind_speed_kmh": 23.0,
+    "temp_min_c": 11.0,
+    "humidity_pct": 78,
+    "wind_speed_kmh": 20.5,
     "heat_risk": "low"
   },
   {
     "date": "2026-10-15",
-    "temp_max_c": 20.3,
-    "temp_min_c": 12.7,
+    "temp_max_c": 20.2,
+    "temp_min_c": 12.8,
     "humidity_pct": 79,
-    "wind_speed_kmh": 29.2,
+    "wind_speed_kmh": 29.9,
     "heat_risk": "high"
   },
   {
