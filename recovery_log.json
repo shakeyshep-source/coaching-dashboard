@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-13",
+  "generated": "2026-10-14",
   "window_days": 7,
   "sessions": [
     {
@@ -274,7 +274,17 @@
       "note": "Felt fine. Couldnt remember the exact paces so aimed for around 3:50s."
     }
   ],
-  "pending": [],
+  "pending": [
+    {
+      "date": "2026-10-14",
+      "session_type": "intervals",
+      "days_since": 0,
+      "hrv_back": null,
+      "rhr_back": null,
+      "hrv_reference": 37.6,
+      "rhr_reference": 48.1
+    }
+  ],
   "trend": {
     "recent_avg_days": 3,
     "prior_avg_days": 4,

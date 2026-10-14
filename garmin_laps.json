@@ -32092,5 +32092,112 @@
         "elevation_gain_m": 0.0
       }
     ]
+  },
+  {
+    "activity_id": 24712264758,
+    "date": "2026-10-13",
+    "name": "Tewkesbury Running",
+    "type": "running",
+    "laps": [
+      {
+        "index": 1,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 279.4,
+        "pace_min_per_km": 4.66,
+        "avg_hr": 129.0,
+        "max_hr": 140.0,
+        "cadence": 172.359375,
+        "elevation_gain_m": 1.0
+      },
+      {
+        "index": 2,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 273.9,
+        "pace_min_per_km": 4.56,
+        "avg_hr": 139.0,
+        "max_hr": 143.0,
+        "cadence": 173.71875,
+        "elevation_gain_m": 2.0
+      },
+      {
+        "index": 3,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 277.1,
+        "pace_min_per_km": 4.62,
+        "avg_hr": 143.0,
+        "max_hr": 148.0,
+        "cadence": 168.78125,
+        "elevation_gain_m": 7.0
+      },
+      {
+        "index": 4,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 272.2,
+        "pace_min_per_km": 4.54,
+        "avg_hr": 144.0,
+        "max_hr": 147.0,
+        "cadence": 173.0625,
+        "elevation_gain_m": 5.0
+      },
+      {
+        "index": 5,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 267.6,
+        "pace_min_per_km": 4.46,
+        "avg_hr": 140.0,
+        "max_hr": 146.0,
+        "cadence": 172.09375,
+        "elevation_gain_m": 0.0
+      },
+      {
+        "index": 6,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 272.3,
+        "pace_min_per_km": 4.54,
+        "avg_hr": 145.0,
+        "max_hr": 148.0,
+        "cadence": 171.9375,
+        "elevation_gain_m": 5.0
+      },
+      {
+        "index": 7,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 276.8,
+        "pace_min_per_km": 4.61,
+        "avg_hr": 145.0,
+        "max_hr": 147.0,
+        "cadence": 172.078125,
+        "elevation_gain_m": 8.0
+      },
+      {
+        "index": 8,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 275.6,
+        "pace_min_per_km": 4.59,
+        "avg_hr": 147.0,
+        "max_hr": 154.0,
+        "cadence": 173.453125,
+        "elevation_gain_m": 6.0
+      },
+      {
+        "index": 9,
+        "intensity_type": "INTERVAL",
+        "distance_km": 0.148,
+        "duration_sec": 40.7,
+        "pace_min_per_km": 4.57,
+        "avg_hr": 149.0,
+        "max_hr": 152.0,
+        "cadence": 172.0,
+        "elevation_gain_m": 0.0
+      }
+    ]
   }
 ]
