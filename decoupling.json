@@ -3110,6 +3110,30 @@
       "gradient_m_per_km": 7.5,
       "pace_delta_pct": 0.8,
       "unreliable_reasons": []
+    },
+    {
+      "date": "2026-10-14",
+      "activity_id": 24724860668,
+      "decoupling_pct": 11.21,
+      "within_threshold": false,
+      "analysed_min": 61.2,
+      "first_half": {
+        "pace": "4:29",
+        "avg_hr": 148.5,
+        "ef": 0.02502
+      },
+      "second_half": {
+        "pace": "5:31",
+        "avg_hr": 135.8,
+        "ef": 0.02221
+      },
+      "distance_km": 12.89,
+      "gradient_m_per_km": 4.1,
+      "pace_delta_pct": 23.1,
+      "unreliable_reasons": [
+        "quality session \u2014 halves are not comparable",
+        "not steady \u2014 second half 23% slower"
+      ]
     }
   ],
   "trend": {
