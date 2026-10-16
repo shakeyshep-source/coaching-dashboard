@@ -626,25 +626,25 @@
   {
     "date": "2026-10-16",
     "temp_max_c": 16.3,
-    "temp_min_c": 9.1,
-    "humidity_pct": 73,
+    "temp_min_c": 9.0,
+    "humidity_pct": 72,
     "wind_speed_kmh": 17.6,
     "heat_risk": "low"
   },
   {
     "date": "2026-10-17",
-    "temp_max_c": 13.5,
-    "temp_min_c": 6.4,
-    "humidity_pct": 67,
-    "wind_speed_kmh": 15.8,
+    "temp_max_c": 13.6,
+    "temp_min_c": 6.5,
+    "humidity_pct": 68,
+    "wind_speed_kmh": 16.6,
     "heat_risk": "low"
   },
   {
     "date": "2026-10-18",
-    "temp_max_c": 12.2,
-    "temp_min_c": 5.2,
-    "humidity_pct": 72,
-    "wind_speed_kmh": 16.6,
+    "temp_max_c": 12.4,
+    "temp_min_c": 4.8,
+    "humidity_pct": 73,
+    "wind_speed_kmh": 15.7,
     "heat_risk": "low"
   },
   {
