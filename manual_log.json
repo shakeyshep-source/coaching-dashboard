@@ -590,5 +590,13 @@
     "rpe": 2.0,
     "on_target": true,
     "session_notes": "Easy, actually warm! Wasn't expecting that"
+  },
+  {
+    "date": "2026-10-16",
+    "achilles_score": 0,
+    "session_type": "easy",
+    "rpe": 2.0,
+    "on_target": true,
+    "session_notes": "Easy"
   }
 ]
