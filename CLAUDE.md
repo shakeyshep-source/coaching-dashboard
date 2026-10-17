@@ -466,6 +466,21 @@ preventer itself is a prescribing decision for his GP or asthma nurse.
   settle from this brief. Give him the evidence and the timing, tell him
   to confirm it with them, and never suggest starting anything new in
   race week.
+  **Cold is now a trigger too (17 Oct 2026).** 2×15 min threshold at
+  6–7 °C: chest tighter over the last ~3 min, which is what lifted that
+  session's RPE to 8. Cold, dry air is a classic exercise-induced
+  bronchoconstriction trigger, and the winter build puts most of his
+  hard running in it, so this is not a one-off to forget. What is
+  coaching rather than prescribing: a longer warm-up with a few short
+  pickups before hard work (it can blunt the reaction for a while
+  afterwards), a buff or snood over the mouth until the session starts,
+  and logging chest symptoms in the notes. Whether to take the reliever
+  before cold-weather sessions, and the preventer question for the
+  winter, are for his GP or asthma nurse — raise it with them after
+  Stroud, not before. Distinguish it from the neck check: tightness that
+  comes at the hard end of a cold session and settles within minutes is
+  the airways; tightness that lingers, or comes with a cough,
+  temperature or aches, is illness, and means no hard session.
 
 ## Analysis and session design
 
