@@ -598,5 +598,13 @@
     "rpe": 2.0,
     "on_target": true,
     "session_notes": "Easy"
+  },
+  {
+    "date": "2026-10-17",
+    "achilles_score": 0,
+    "session_type": "tempo",
+    "rpe": 8.0,
+    "on_target": true,
+    "session_notes": "Not HRV lower this morning, prob after last night's cider. \n6-7c\nProb last 3mins of the session felt tough, chest tight."
   }
 ]

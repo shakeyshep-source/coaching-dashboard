@@ -187,7 +187,14 @@
     {
       "date": "2026-10-17",
       "qualifying": false,
-      "skipped": "no RPE logged \u2014 not assessable (HR is not a safe substitute)"
+      "skipped": null,
+      "session_type": "tempo",
+      "target_sec_per_km": 230,
+      "actual_sec_per_km": 229.5,
+      "beat_by_sec_per_km": 0.5,
+      "rpe": 8.0,
+      "expected_rpe": 6.0,
+      "reps": 2
     }
   ],
   "qualifying_in_window": [
@@ -195,7 +202,7 @@
     "2026-10-10"
   ],
   "flag": null,
-  "cooldown_remaining": 2,
+  "cooldown_remaining": 1,
   "last_flagged": "2026-10-10",
   "last_flagged_sessions": [
     "2026-09-30",
