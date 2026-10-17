@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-16",
+  "as_of": "2026-10-17",
   "window_days": 28,
   "beat_margin_sec_per_km": 3.0,
   "sessions": [
@@ -183,6 +183,11 @@
       "rpe": 8.0,
       "expected_rpe": 6.0,
       "reps": 5
+    },
+    {
+      "date": "2026-10-17",
+      "qualifying": false,
+      "skipped": "no rep detail \u2014 laps not pulled, or no identifiable reps"
     }
   ],
   "qualifying_in_window": [

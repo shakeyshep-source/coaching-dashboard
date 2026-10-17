@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-16",
+  "generated": "2026-10-17",
   "window_days": 7,
   "sessions": [
     {
@@ -288,7 +288,17 @@
       "note": "Bang on tonight although felt harder than last week, maybe the wind, maybe just one of those days"
     }
   ],
-  "pending": [],
+  "pending": [
+    {
+      "date": "2026-10-17",
+      "session_type": "tempo",
+      "days_since": 0,
+      "hrv_back": null,
+      "rhr_back": null,
+      "hrv_reference": 39.7,
+      "rhr_reference": 47.6
+    }
+  ],
   "trend": {
     "recent_avg_days": 1.3,
     "prior_avg_days": 5,

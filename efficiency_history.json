@@ -1329,6 +1329,16 @@
       "avg_hr": 143.0,
       "efficiency": 1.4448,
       "gradient_m_per_km": 9.6
+    },
+    {
+      "date": "2026-10-16",
+      "activity_id": 24747291175,
+      "name": "Gloucester Running",
+      "distance_km": 6.01,
+      "pace_min_per_km": 4.85,
+      "avg_hr": 141.0,
+      "efficiency": 1.4623,
+      "gradient_m_per_km": 3.7
     }
   ],
   "excluded": [
@@ -1396,7 +1406,7 @@
       "avg_hr": 111.0,
       "efficiency": 0.572,
       "gradient_m_per_km": 4.3,
-      "excluded": "40% of median \u2014 not steady running"
+      "excluded": "39% of median \u2014 not steady running"
     },
     {
       "date": "2026-06-28",
@@ -1485,19 +1495,19 @@
     },
     {
       "month": "2026-10",
-      "runs": 7,
-      "efficiency": 1.4624,
+      "runs": 8,
+      "efficiency": 1.4623,
       "pace_min_per_km": 4.84,
-      "avg_hr": 142.0,
-      "avg_temp_c": 18.8
+      "avg_hr": 141.5,
+      "avg_temp_c": 18.5
     }
   ],
   "summary": {
     "from_month": "2026-01",
     "to_month": "2026-10",
     "from_efficiency": 1.4041,
-    "to_efficiency": 1.4624,
-    "change_pct": 4.2,
+    "to_efficiency": 1.4623,
+    "change_pct": 4.1,
     "from_hr_at_pace": "142 bpm at 4.96 min/km",
     "to_hr_at_pace": "142 bpm at 4.84 min/km",
     "warmer_now": false
