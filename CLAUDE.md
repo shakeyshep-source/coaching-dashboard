@@ -468,7 +468,13 @@ preventer itself is a prescribing decision for his GP or asthma nurse.
   race week.
   **Cold is now a trigger too (17 Oct 2026).** 2×15 min threshold at
   6–7 °C: chest tighter over the last ~3 min, which is what lifted that
-  session's RPE to 8. Cold, dry air is a classic exercise-induced
+  session's RPE to 8. Both inhalers taken beforehand; it settled the
+  moment he stopped, no cough, and he did not feel cold (sunny, in a
+  t-shirt) — so mild, one episode, and possibly just a hard finish.
+  Note that skin warmth says nothing about the air reaching the
+  airways at threshold breathing rates. If it recurs in cold sessions
+  despite pre-medication, that pattern (temperature, session, when it
+  came) is what his GP or asthma nurse need. Cold, dry air is a classic exercise-induced
   bronchoconstriction trigger, and the winter build puts most of his
   hard running in it, so this is not a one-off to forget. What is
   coaching rather than prescribing: a longer warm-up with a few short
