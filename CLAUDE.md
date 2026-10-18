@@ -58,13 +58,14 @@ daily, weekly review, or ad-hoc — starts from this brief.
 - **Current form (2026 races):** 5K 17:48 (Cardiff, Jul, tapered),
   10K 38:06 (Gloucester, Jun, untapered), Mile 5:13. These are what
   `race_predictor.py` projects from.
-- **Next target: Cheltenham Half Marathon, 2026-09-20.** He targets
-  82–83 min; the model independently predicts 1:22:23. HM build started
-  late July.
-- **Then: Manchester Marathon, Sun 18 April 2027. Goal sub-3** (4:16/km).
+- **Cheltenham Half Marathon (2026-09-20) is done: 1:21:03** (see
+  above). The October block is short-race sharpening; the next race and
+  the full calendar live in `fixtures.json`. Read it rather than trusting
+  a date written here.
+- **A race: Manchester Marathon, Sun 18 April 2027. Goal sub-3** (4:16/km).
   Riegel from current fitness gives ~2:52, so the fitness is not the
   binding constraint — weekly volume is. Sub-3 off a 60–65 km norm is
-  possible but thin; that conversation belongs in the autumn, not now.
+  possible but thin, which is why the winter volume below was agreed.
   **Winter volume — agreed 6 Oct 2026** (he asked if the original
   85–90 km peak was weak; it was cautious, so the build now starts
   earlier and peaks higher, at the same slope of <2 km/week on
