@@ -1,7 +1,7 @@
 {
   "id": "2026-10-18",
   "created": "2026-10-18T14:00:00+01:00",
-  "status": "pending",
+  "status": "applied",
   "rationale": "Hold, with the horizon extended a week: nothing already planned changes in substance. Week 1 (19-25 Oct, race week for Stroud) is firm; the only edits are warm-up and chest guidance on the 21 Oct reps and the shakeout, after the 17 Oct cold-air tightness, plus a clearer 4-rep gate. 26 Oct-1 Nov stays as already provisional. New: 2-8 Nov, the first November build week: ~62 km, a 12 km Tuesday, first 18 km long run, no quality session, since volume and intensity should not rise together. Both quality sessions this week were exactly on pace but at RPE 8, and last week came to ~65 km, over October's range, so no extra volume before Stroud.",
   "changes": [
     {
@@ -102,5 +102,12 @@
       "target_pace": null,
       "notes": "Provisional \u2014 Long run 18km, easy (~5:00/km or slower), the start of the Nov 18-22km progression. Gel at ~20 min and again at ~60 min (first gut-training step; log what you took). No pace work. Only if achilles 0 with no prodrome and HRV/RHR steady."
     }
-  ]
+  ],
+  "athlete_response": {
+    "timestamp": "18/10/2026 14:06:06",
+    "review_date": "2026-10-18",
+    "decision": "approve",
+    "thoughts": null
+  },
+  "applied_at": "2026-10-18T13:06:19"
 }
