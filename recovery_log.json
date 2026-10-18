@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-17",
+  "generated": "2026-10-18",
   "window_days": 7,
   "sessions": [
     {
@@ -292,7 +292,7 @@
     {
       "date": "2026-10-17",
       "session_type": "tempo",
-      "days_since": 0,
+      "days_since": 1,
       "hrv_back": null,
       "rhr_back": null,
       "hrv_reference": 39.7,
