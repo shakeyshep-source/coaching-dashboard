@@ -3,5 +3,18 @@
     "allow": [
       "WebFetch(domain:raw.githubusercontent.com)"
     ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/guard_training_plan.py\""
+          }
+        ]
+      }
+    ]
   }
 }
