@@ -698,95 +698,55 @@ minute of any form submission, fired by an Apps Script
 schedule as backstop. Data commits go to `main`.
 Schemas are LOCKED — add fields, never rename or remove.
 
-## Weekly review procedure (scheduled coach session)
+## Weekly review (Sunday, scheduled)
 
-Runs every Sunday early afternoon (~13:40 UK, backstop ~16:40), after
-its own Garmin pull — so the Sunday long run is always in the week being
-reviewed. The session must:
+The Sunday procedure — what to read, the review file, the
+`weekly_review_latest.json` schema, answering last week's query — lives
+in the `weekly-review` skill (`.claude/skills/weekly-review/SKILL.md`).
+The rules below are shared with the mid-week reply, so they stay here.
 
-1. `git pull` latest `main`; read this brief, `weekly_summary.json`,
-   `computed_data.json`, `manual_log.json` (notes!), `training_plan.json`,
-   `plan_proposal.json`, `review_responses.json`, `race_prediction.json`,
-   `weekly_review_latest.json` (last week's review and any response to it).
-2. If the current proposal is `amend_requested`: read Shep's thoughts in
-   `athlete_response`, revise the proposal accordingly (same `id`,
-   status back to `pending`), and skip to step 5.
-2b. **Answer any query on the last review.** A "hold" review proposes
-   nothing, so a response to it can't reach the proposal gate — instead
-   `apply_review.py` attaches it to `weekly_review_latest.json` as
-   `athlete_response` with `athlete_response_status: "logged"`. If last
-   week's review carries one and this session hasn't answered it yet,
-   open the new review by addressing it directly: what he said, whether
-   it changes the read, and if it does, propose the change (step 5).
-   Disagreeing with a hold is a legitimate input, not noise — but it
-   doesn't override the evidence on its own. Say plainly which it is.
-   If `athlete_response_status` is already `"answered"`, the mid-week
-   reply (see "Answering a review query") dealt with it — read that
-   reply, carry its conclusion forward and say how the week since bore
-   it out. Do not re-argue it from scratch.
-3. Write the weekly review to `reviews/YYYY-MM-DD.md` (that day's date):
-   how the week actually went vs plan, how he's coping (data + his own
-   words), recovery trends, achilles, efficiency trend, race countdown,
-   and a clear recommendation: **hold the plan** or **change it** (and
-   exactly what/why).
-4. Write `weekly_review_latest.json`:
-   ```json
-   {
-     "review_date": "YYYY-MM-DD",
-     "week_start": "YYYY-MM-DD",
-     "headline": "one-sentence verdict",
-     "recommendation": "hold" | "adjust",
-     "review_md": "<full review markdown>",
-     "proposal_id": "YYYY-MM-DD" | null,
-     "proposal_status": "pending" | null
-   }
-   ```
-   Write it fresh each week — do **not** carry last week's
-   `athlete_response`, `athlete_response_status`, `coach_reply` or
-   `conversation` across, or the dashboard will show old exchanges
-   against a new review. Read the whole of last week's `conversation`
-   first, though: what he asked mid-week is part of how the week went.
-5. **Keep the plan three weeks deep.** He wants to see the current week
-   and the two after it (asked 28 Sep 2026), and the dashboard shows
-   exactly that — but a review that only ever writes the coming week
-   leaves the other two reading "nothing planned yet". So every Sunday,
-   the proposal covers the **next three Monday–Sunday weeks**:
-   - **Week 1 is firm** — written exactly as sessions always have been.
-   - **Weeks 2 and 3 are provisional.** Start each of their `notes` with
-     "Provisional —". They show the shape of the block, and next Sunday
-     re-proposes them with a week more evidence: firmed up, changed, or
-     left as they were. Never treat a provisional session as a promise.
-   - Carry forward what is already in `training_plan.json` rather than
-     rewriting it for the sake of it; change a session only when the
-     week gave a reason to.
-   - Weeks further out stay blank. Three weeks is the horizon he asked
-     for; writing further is guessing, and guesses get approved.
+## Plan proposals (shared by the weekly review and mid-week replies)
 
-   This means most Sundays write a proposal even when the recommendation
-   is **hold** — "hold" is about whether anything already planned should
-   change; extending the horizon by a week is not a change of course.
-   Say which it is in the rationale's first line.
+**Keep the plan three weeks deep.** He wants to see the current week
+and the two after it (asked 28 Sep 2026), and the dashboard shows
+exactly that — but a proposal that only ever writes the coming week
+leaves the other two reading "nothing planned yet". So a proposal
+covers the **next three Monday–Sunday weeks**:
 
-   Write `plan_proposal.json`:
-   ```json
-   {
-     "id": "YYYY-MM-DD",            // same as review_date
-     "created": "ISO timestamp",
-     "status": "pending",
-     "rationale": "why, in plain language",
-     "changes": [ { "date": "...", "session_type": "...",
-                    "target_distance_km": ..., "target_pace": ...,
-                    "notes": "..." } ]
-   }
-   ```
-   A change with `"session_type": "remove"` deletes that date.
-   **Never edit `training_plan.json` yourself.**
-6. Commit everything and push to `main` (commit message:
-   `Weekly coach review YYYY-MM-DD`) — unless running inside the
-   weekly-review GitHub Action, whose final step commits for you.
+- **Week 1 is firm** — written exactly as sessions always have been.
+- **Weeks 2 and 3 are provisional.** Start each of their `notes` with
+  "Provisional —". They show the shape of the block, and next Sunday
+  re-proposes them with a week more evidence: firmed up, changed, or
+  left as they were. Never treat a provisional session as a promise.
+- Carry forward what is already in `training_plan.json` rather than
+  rewriting it for the sake of it; change a session only when the
+  week gave a reason to.
+- Weeks further out stay blank. Three weeks is the horizon he asked
+  for; writing further is guessing, and guesses get approved.
 
-Shep responds via the weekly review Google Form (approve / amend /
-reject + thoughts); the next morning's pipeline applies his decision.
+Write `plan_proposal.json`:
+```json
+{
+  "id": "YYYY-MM-DD",            // the date the proposal is written
+  "created": "ISO timestamp",
+  "status": "pending",
+  "rationale": "why, in plain language",
+  "changes": [ { "date": "...", "session_type": "...",
+                 "target_distance_km": ..., "target_pace": ...,
+                 "notes": "..." } ]
+}
+```
+A change with `"session_type": "remove"` deletes that date.
+**Never edit `training_plan.json` yourself** — only `apply_review.py`
+does, after he approves.
+
+**Amend requests.** When `plan_proposal.json` has status
+`amend_requested`, his thoughts are in its `athlete_response`. Revise
+the changes accordingly, keep the **same `id`**, set status back to
+`pending`, and **rewrite the rationale to open with what you changed
+and why** — that text is what he reads on the dashboard and it is his
+only acknowledgement that the amend landed. If part of what he said
+does not change the plan, say so there too, with the evidence.
 
 ## Answering him (any day, runs on form submit)
 
@@ -811,12 +771,8 @@ decides which (unit tests in `test_coach_reply_gate.py`):
   nothing has no gate to reach, so his response lands here.
 - **An amend request.** `plan_proposal.json` has status
   `amend_requested` — a review that *did* propose gets his response
-  attached to the proposal instead. Handle it exactly as step 2 of the
-  weekly review procedure: revise the changes, same `id`, status back
-  to `pending`, and **rewrite the rationale to open with what you
-  changed and why**, because that text is what he reads on the
-  dashboard and it is his only acknowledgement that the amend landed.
-  Do not touch `athlete_response_status` — that belongs to the question
+  attached to the proposal instead. Handle it per "Amend requests"
+  under Plan proposals above. Do not touch `athlete_response_status` — that belongs to the question
   thread.
 
 Only the question used to fire this. On 20 Sep 2026 he amended a
@@ -848,7 +804,7 @@ For a question, the session must:
    the review genuinely missed — a note not accounted for, a session
    that felt different from how it read — say that plainly too.
 3. If it changes the plan, write `plan_proposal.json` with
-   `status: "pending"` and `id` = today's date, exactly as in step 5
+   `status: "pending"` and `id` = today's date, per Plan proposals
    above. The approval gate does not move: a mid-week reply can propose,
    it can never apply.
 4. Write the reply into `weekly_review_latest.json` as `coach_reply`

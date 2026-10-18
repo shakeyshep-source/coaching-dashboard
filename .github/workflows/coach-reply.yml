@@ -116,9 +116,9 @@ jobs:
             short paragraphs) with "coach_reply_at" (ISO timestamp) and
             set "athlete_response_status" to "answered".
 
-            FOR (B), follow step 2 of the weekly review procedure: read
-            his thoughts in the proposal's athlete_response, revise the
-            changes accordingly, keep the SAME id, and set status back
+            FOR (B), follow "Amend requests" under Plan proposals in
+            CLAUDE.md: read his thoughts in the proposal's
+            athlete_response, revise the changes accordingly, keep the SAME id, and set status back
             to "pending" so it returns to him for approval. Rewrite the
             rationale to open by saying what you changed and why - that
             text is what he reads on the dashboard, so it is his
