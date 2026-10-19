@@ -1,19 +1,19 @@
 {
-  "generated": "2026-10-18",
+  "generated": "2026-10-19",
   "next_race": {
     "name": "STROUD 10K",
     "date": "2026-10-25",
     "distance_km": 16,
-    "days_away": 7
+    "days_away": 6
   },
   "race_readiness": {
     "race": {
       "name": "STROUD 10K",
       "date": "2026-10-25",
       "distance_km": 16,
-      "days_away": 7
+      "days_away": 6
     },
-    "weeks_to_race": 1.0,
+    "weeks_to_race": 0.9,
     "taper_start": "2026-10-15",
     "remaining_key_sessions": {
       "tempo": 0,
@@ -26,157 +26,6 @@
     "longest_run_recent_min": 85
   },
   "weeks": [
-    {
-      "week_start": "2026-08-24",
-      "week_end": "2026-08-30",
-      "in_progress": false,
-      "km": 75.2,
-      "runs": 7,
-      "time_min": 352.0,
-      "elevation_m": 692.0,
-      "planned_sessions": 6,
-      "logged_sessions": 7,
-      "hard_sessions_planned": 3,
-      "quality_time_min": 148,
-      "easy_pct": 58,
-      "long_run_min": 95,
-      "long_run_km": 21.02,
-      "on_target_pct": 100,
-      "avg_rpe": 3.4,
-      "max_achilles": 0,
-      "avg_hrv": null,
-      "avg_rhr": null,
-      "avg_sleep_score": null,
-      "avg_sleep_hrs": null,
-      "easy_pace_min_km": 4.91,
-      "easy_avg_hr": 141.4,
-      "efficiency": 1.445,
-      "session_log": [
-        {
-          "date": "2026-08-24",
-          "temp_max_c": 23.8,
-          "heat_risk": "moderate",
-          "session_type": "easy",
-          "rpe": 2.0,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "Switching rest days as likely unable to run tomorrow",
-          "km": 8.4,
-          "pace": 4.85,
-          "avg_hr": 139,
-          "segments": null,
-          "fastest_segment": null
-        },
-        {
-          "date": "2026-08-25",
-          "temp_max_c": 26.3,
-          "heat_risk": "high",
-          "session_type": "rest",
-          "rpe": 0.0,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "Rest day - switched with monday",
-          "km": null,
-          "pace": null,
-          "avg_hr": null,
-          "segments": null,
-          "fastest_segment": null
-        },
-        {
-          "date": "2026-08-26",
-          "temp_max_c": 26.1,
-          "heat_risk": "high",
-          "session_type": "intervals",
-          "rpe": 7.0,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "Temp 30c\nHowever, all went really well\nTook a gel during warm up\nWas slightly ahead of the 3:44s. Was trying to hold back to hit the target but kept being slightly ahead, not too far ahead though",
-          "km": 14.1,
-          "pace": 4.76,
-          "avg_hr": 144,
-          "segments": null,
-          "fastest_segment": null
-        },
-        {
-          "date": "2026-08-27",
-          "temp_max_c": 22.0,
-          "heat_risk": "high",
-          "session_type": "easy",
-          "rpe": 1.0,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "20c in the rain, it was lush",
-          "km": 7.2,
-          "pace": 4.9,
-          "avg_hr": 141,
-          "segments": null,
-          "fastest_segment": null
-        },
-        {
-          "date": "2026-08-28",
-          "temp_max_c": 20.1,
-          "heat_risk": "high",
-          "session_type": "easy",
-          "rpe": 2.0,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "Nice easy jog",
-          "km": 5.1,
-          "pace": 4.9,
-          "avg_hr": 135,
-          "segments": null,
-          "fastest_segment": null
-        },
-        {
-          "date": "2026-08-29",
-          "temp_max_c": 21.2,
-          "heat_risk": "high",
-          "session_type": "tempo",
-          "rpe": 6.0,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "16c\nDrenched! Rather wet!\nAll felt good\nOnly problem was I decided to take a gel after my warm up.. Had half before hand slipped, jolt the gel and it squirted the rest in my eye\u00f0\u009f\u0098\u0082",
-          "km": 18.0,
-          "pace": 4.52,
-          "avg_hr": 146,
-          "segments": null,
-          "fastest_segment": null
-        },
-        {
-          "date": "2026-08-30",
-          "temp_max_c": 20.2,
-          "heat_risk": "high",
-          "session_type": "long",
-          "rpe": 6.0,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "Bit of a day. On way to gym before run came across a girl that was going to jump off a motorway bridge! So emotions were high.\nRun itself was fine, however when I got to the last 5k at half pace, the first 2k was slightly uphill and partial headwind, the last 3k was into the headwind, and lumpy.  In easy day shoes, just can't seem to run quick in them and only hit 4min per km and not 3:54 as you wanted",
-          "km": 22.5,
-          "pace": 4.57,
-          "avg_hr": 147,
-          "segments": [
-            {
-              "km": 21.02,
-              "min": 95.2,
-              "pace": 4.53,
-              "avg_hr": 147.0
-            },
-            {
-              "km": 1.45,
-              "min": 7.7,
-              "pace": 5.32,
-              "avg_hr": 145.0
-            }
-          ],
-          "fastest_segment": {
-            "km": 21.02,
-            "min": 95.2,
-            "pace": 4.53,
-            "avg_hr": 147.0
-          }
-        }
-      ]
-    },
     {
       "week_start": "2026-08-31",
       "week_end": "2026-09-06",
@@ -917,9 +766,9 @@
       "on_target_pct": 100,
       "avg_rpe": 2.7,
       "max_achilles": 0,
-      "avg_hrv": 37.4,
-      "avg_rhr": 48.6,
-      "avg_sleep_score": 87,
+      "avg_hrv": 38,
+      "avg_rhr": 48.3,
+      "avg_sleep_score": 87.5,
       "avg_sleep_hrs": 8.0,
       "easy_pace_min_km": 5.04,
       "easy_avg_hr": 134.2,
@@ -1071,7 +920,7 @@
     {
       "week_start": "2026-10-12",
       "week_end": "2026-10-18",
-      "in_progress": true,
+      "in_progress": false,
       "km": 65.3,
       "runs": 6,
       "time_min": 322.0,
@@ -1200,6 +1049,33 @@
           "fastest_segment": null
         }
       ]
+    },
+    {
+      "week_start": "2026-10-19",
+      "week_end": "2026-10-25",
+      "in_progress": true,
+      "km": 0,
+      "runs": 0,
+      "time_min": 0,
+      "elevation_m": 0,
+      "planned_sessions": 6,
+      "logged_sessions": 0,
+      "hard_sessions_planned": 2,
+      "quality_time_min": 0,
+      "easy_pct": null,
+      "long_run_min": null,
+      "long_run_km": null,
+      "on_target_pct": null,
+      "avg_rpe": null,
+      "max_achilles": null,
+      "avg_hrv": 37,
+      "avg_rhr": 47.0,
+      "avg_sleep_score": 91,
+      "avg_sleep_hrs": 8.8,
+      "easy_pace_min_km": null,
+      "easy_avg_hr": null,
+      "efficiency": null,
+      "session_log": []
     }
   ]
 }
