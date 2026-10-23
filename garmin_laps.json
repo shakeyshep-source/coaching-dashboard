@@ -33407,5 +33407,90 @@
         "elevation_gain_m": 0.0
       }
     ]
+  },
+  {
+    "activity_id": 24824959135,
+    "date": "2026-10-23",
+    "name": "Gloucester Running",
+    "type": "running",
+    "laps": [
+      {
+        "index": 1,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 288.4,
+        "pace_min_per_km": 4.81,
+        "avg_hr": 134.0,
+        "max_hr": 147.0,
+        "cadence": 170.109375,
+        "elevation_gain_m": 4.0
+      },
+      {
+        "index": 2,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 273.4,
+        "pace_min_per_km": 4.56,
+        "avg_hr": 151.0,
+        "max_hr": 155.0,
+        "cadence": 174.828125,
+        "elevation_gain_m": 8.0
+      },
+      {
+        "index": 3,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 273.4,
+        "pace_min_per_km": 4.56,
+        "avg_hr": 154.0,
+        "max_hr": 159.0,
+        "cadence": 174.890625,
+        "elevation_gain_m": 6.0
+      },
+      {
+        "index": 4,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 275.2,
+        "pace_min_per_km": 4.59,
+        "avg_hr": 130.0,
+        "max_hr": 161.0,
+        "cadence": 174.609375,
+        "elevation_gain_m": 7.0
+      },
+      {
+        "index": 5,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 279.0,
+        "pace_min_per_km": 4.65,
+        "avg_hr": 139.0,
+        "max_hr": 152.0,
+        "cadence": 174.421875,
+        "elevation_gain_m": 10.0
+      },
+      {
+        "index": 6,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 273.2,
+        "pace_min_per_km": 4.55,
+        "avg_hr": 139.0,
+        "max_hr": 143.0,
+        "cadence": 174.09375,
+        "elevation_gain_m": 4.0
+      },
+      {
+        "index": 7,
+        "intensity_type": "INTERVAL",
+        "distance_km": 0.295,
+        "duration_sec": 88.0,
+        "pace_min_per_km": 4.97,
+        "avg_hr": 135.0,
+        "max_hr": 138.0,
+        "cadence": 162.078125,
+        "elevation_gain_m": 2.0
+      }
+    ]
   }
 ]
