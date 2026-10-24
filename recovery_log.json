@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-23",
+  "generated": "2026-10-24",
   "window_days": 7,
   "sessions": [
     {
@@ -286,22 +286,29 @@
       "interrupted_by_next_session": false,
       "temp_max_c": 18.5,
       "note": "Bang on tonight although felt harder than last week, maybe the wind, maybe just one of those days"
+    },
+    {
+      "date": "2026-10-17",
+      "session_type": "tempo",
+      "confounders_in_window": [
+        "alcohol"
+      ],
+      "hrv_reference": 39.7,
+      "hrv_recovery_days": null,
+      "rhr_reference": 47.6,
+      "rhr_recovery_days": 2,
+      "recovery_days": null,
+      "recovered": false,
+      "interrupted_by_next_session": true,
+      "temp_max_c": 13.6,
+      "note": "Not HRV lower this morning, prob after last night's cider. \n6-7c\nProb last 3mins of the session felt tough, chest tight."
     }
   ],
   "pending": [
     {
-      "date": "2026-10-17",
-      "session_type": "tempo",
-      "days_since": 6,
-      "hrv_back": null,
-      "rhr_back": 2,
-      "hrv_reference": 39.7,
-      "rhr_reference": 47.6
-    },
-    {
       "date": "2026-10-21",
       "session_type": "intervals",
-      "days_since": 2,
+      "days_since": 3,
       "hrv_back": 2,
       "rhr_back": null,
       "hrv_reference": 37.3,
