@@ -1,10 +1,10 @@
 [
   {
     "date": "2026-10-24",
-    "temp_max_c": 15.9,
+    "temp_max_c": 16.0,
     "temp_min_c": 8.1,
     "humidity_pct": 82,
-    "wind_speed_kmh": 33.5,
+    "wind_speed_kmh": 32.8,
     "heat_risk": "low"
   },
   {
