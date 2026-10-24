@@ -818,12 +818,12 @@
   },
   {
     "date": "2026-10-24",
-    "session_type": "easy",
-    "target_distance_km": 5,
+    "session_type": "rest",
+    "target_distance_km": null,
     "target_pace": null,
-    "notes": "Shakeout 30-35 min, easy, no strides. Check Puma Fast-R Nitro 3 and kit; Symbicort 20 min and salbutamol 15 min before the gun in the morning. Warm up properly with a few pickups, buff until the start.",
-    "source": "coach",
-    "updated_at": "2026-10-18T13:06:19"
+    "notes": "Busy day, so took a rest day",
+    "source": "form",
+    "updated_at": "2026-10-24T16:42:31"
   },
   {
     "date": "2026-10-25",
