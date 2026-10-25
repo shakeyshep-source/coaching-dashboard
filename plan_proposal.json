@@ -1,113 +1,106 @@
 {
-  "id": "2026-10-18",
-  "created": "2026-10-18T14:00:00+01:00",
-  "status": "applied",
-  "rationale": "Hold, with the horizon extended a week: nothing already planned changes in substance. Week 1 (19-25 Oct, race week for Stroud) is firm; the only edits are warm-up and chest guidance on the 21 Oct reps and the shakeout, after the 17 Oct cold-air tightness, plus a clearer 4-rep gate. 26 Oct-1 Nov stays as already provisional. New: 2-8 Nov, the first November build week: ~62 km, a 12 km Tuesday, first 18 km long run, no quality session, since volume and intensity should not rise together. Both quality sessions this week were exactly on pace but at RPE 8, and last week came to ~65 km, over October's range, so no extra volume before Stroud.",
+  "id": "2026-10-25",
+  "created": "2026-10-25T13:48:02",
+  "status": "pending",
+  "rationale": "Hold, with the horizon extended a week. Stroud went about 37:20 on the watch, ahead of target, so nothing already planned changes. 26 Oct-1 Nov is firmed (Guy Fawkes stays an experiment with a Friday HRV/RHR gate you can overrule). 2-8 Nov stays as already provisional (~62 km, no quality). New: 9-15 Nov brings an interval session and the Saturday tempo back with volume held around 64 km and the long run held at 18 km, so volume and intensity do not rise together while the HRV baseline is a little low.",
   "changes": [
     {
-      "date": "2026-10-19",
+      "date": "2026-10-26",
       "session_type": "rest",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Rest. Race week opens with the normal Monday."
+      "notes": "Rest. No running the day after Stroud."
     },
     {
-      "date": "2026-10-20",
+      "date": "2026-10-27",
       "session_type": "easy",
       "target_distance_km": 8,
       "target_pace": null,
-      "notes": "Easy 8km, conversational."
+      "notes": "Easy 8km, genuinely easy. Judge the legs on feel, not pace."
     },
     {
-      "date": "2026-10-21",
-      "session_type": "intervals",
-      "target_distance_km": 11.5,
-      "target_pace": "3:32-3:36/km for the reps",
-      "notes": "Last sharpener, 4 days before Stroud: 3km warm-up with 3-4 short pickups (cold air can trigger the chest, as on 17 Oct; a buff over the mouth until you start), 6x600m at 3:32-3:36/km with 2 min jog, 3km cool-down, ~11.5km all in. Purpose: speed just above 10K pace so race effort feels controlled. Run on pace, not under. Log any chest symptoms in the note. Nothing heavy in the gym after today. Gate: HRV still in the low 30s without a reason on the morning, or any chest tightness that lingers = 4 reps; a temperature or aches = easy run instead."
+      "date": "2026-10-28",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "Easy 8km. Light gym only; nothing heavy lower-body until the legs feel normal."
     },
     {
-      "date": "2026-10-22",
+      "date": "2026-10-29",
       "session_type": "easy",
       "target_distance_km": 7,
       "target_pace": null,
-      "notes": "Easy 7km. No heavy leg work from today."
+      "notes": "Easy 7km + 4 strides, relaxed."
     },
     {
-      "date": "2026-10-23",
+      "date": "2026-10-30",
       "session_type": "easy",
       "target_distance_km": 6,
       "target_pace": null,
-      "notes": "Easy 6km + 4 strides."
+      "notes": "Easy 6km. Gate for Sunday: HRV baseline still sliding or RHR 51+ with no reason makes Guy Fawkes a steady run; a temperature or aches means no race. You can overrule the numbers if you feel fine."
     },
     {
-      "date": "2026-10-24",
+      "date": "2026-10-31",
       "session_type": "easy",
-      "target_distance_km": 5,
+      "target_distance_km": 4,
       "target_pace": null,
-      "notes": "Shakeout 30-35 min, easy, no strides. Check Puma Fast-R Nitro 3 and kit; Symbicort 20 min and salbutamol 15 min before the gun in the morning. Warm up properly with a few pickups, buff until the start."
+      "notes": "Shakeout 25-30 min, easy, no strides."
     },
     {
-      "date": "2026-10-25",
+      "date": "2026-11-01",
       "session_type": "race",
-      "target_distance_km": 16,
+      "target_distance_km": 14,
       "target_pace": null,
-      "notes": "STROUD 10K. ~16km all in: 3km warm-up with strides, 10K, 3km cool-down. Projection 37:20 flat, course cost ~15-25 s, target ~37:30, sub-38 the floor. Pacing is in the fixture notes: short downhill first km, do not follow the faster runner, expect the back-half drag and uphill finish. Puma Fast-R Nitro 3, nothing new on the day."
+      "notes": "GUY FAWKES 5 (8.05km): the experiment, raced on feel a week after Stroud. ~14km all in: 3km warm-up with strides, race, 3km cool-down. Record 29:12 (3:38/km) only if the legs say so; go out controlled. Pre-race meds as Stroud. Fission 20 entries open about now and sell out every year: enter if you want the March rehearsal."
     },
     {
-      "date": "2026-11-02",
+      "date": "2026-11-09",
       "session_type": "rest",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Provisional \u2014 Rest. Day after Guy Fawkes."
+      "notes": "Provisional \u2014 Rest."
     },
     {
-      "date": "2026-11-03",
-      "session_type": "easy",
-      "target_distance_km": 12,
-      "target_pace": null,
-      "notes": "Provisional \u2014 Easy 12km, genuinely easy; the longer Tuesday medium-long starts here at the bottom of its 18-20km range. Judge it on how the legs feel after the race, not on pace."
-    },
-    {
-      "date": "2026-11-04",
-      "session_type": "easy",
-      "target_distance_km": 8,
-      "target_pace": null,
-      "notes": "Provisional \u2014 Easy 8km. Leg gym back in (calf, soleus, single-leg, RDL) if the legs feel normal."
-    },
-    {
-      "date": "2026-11-05",
-      "session_type": "easy",
-      "target_distance_km": 8,
-      "target_pace": null,
-      "notes": "Provisional \u2014 Easy 8km. Second leg session on or after today."
-    },
-    {
-      "date": "2026-11-06",
-      "session_type": "easy",
-      "target_distance_km": 6,
-      "target_pace": null,
-      "notes": "Provisional \u2014 Easy 6km."
-    },
-    {
-      "date": "2026-11-07",
+      "date": "2026-11-10",
       "session_type": "easy",
       "target_distance_km": 10,
       "target_pace": null,
-      "notes": "Provisional \u2014 Easy 10km + 4 strides. No tempo this week: volume rises, so intensity does not. Saturday tempo returns the week after."
+      "notes": "Provisional \u2014 Easy 10km. Quality returns this week, so volume holds."
     },
     {
-      "date": "2026-11-08",
+      "date": "2026-11-11",
+      "session_type": "intervals",
+      "target_distance_km": 11.5,
+      "target_pace": "3:38-3:40/km for the reps",
+      "notes": "Provisional \u2014 3km warm-up with pickups (cold air: buff over the mouth until you start), 4x1km at 3:38-3:40/km with 90 s jog, 3km cool-down, ~11.5km all in. Purpose: reopen speed work gently after the racing block. Run on pace, not under."
+    },
+    {
+      "date": "2026-11-12",
+      "session_type": "easy",
+      "target_distance_km": 7,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Easy 7km. Leg gym on or after today."
+    },
+    {
+      "date": "2026-11-13",
+      "session_type": "easy",
+      "target_distance_km": 5,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Easy 5km."
+    },
+    {
+      "date": "2026-11-14",
+      "session_type": "tempo",
+      "target_distance_km": 13,
+      "target_pace": "3:50-3:53/km",
+      "notes": "Provisional \u2014 3km warm-up, 2x12 min at 3:50-3:53/km with 2 min jog, 3km cool-down, ~13km all in."
+    },
+    {
+      "date": "2026-11-15",
       "session_type": "long",
       "target_distance_km": 18,
       "target_pace": null,
-      "notes": "Provisional \u2014 Long run 18km, easy (~5:00/km or slower), the start of the Nov 18-22km progression. Gel at ~20 min and again at ~60 min (first gut-training step; log what you took). No pace work. Only if achilles 0 with no prodrome and HRV/RHR steady."
+      "notes": "Provisional \u2014 Long run 18km easy (~5:00/km or slower), second week at this level; gels at ~20 and ~60 min, log what you took. Only if achilles 0 and HRV/RHR steady. Week ~64km: volume held, not raised, because intensity returned."
     }
-  ],
-  "athlete_response": {
-    "timestamp": "18/10/2026 14:06:06",
-    "review_date": "2026-10-18",
-    "decision": "approve",
-    "thoughts": null
-  },
-  "applied_at": "2026-10-18T13:06:19"
+  ]
 }
