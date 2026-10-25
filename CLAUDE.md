@@ -66,6 +66,15 @@ daily, weekly review, or ad-hoc — starts from this brief.
   Riegel from current fitness gives ~2:52, so the fitness is not the
   binding constraint — weekly volume is. Sub-3 off a 60–65 km norm is
   possible but thin, which is why the winter volume below was agreed.
+  **Club V50 marathon record: 2:54:16** (4:08/km), his figure, 25 Oct
+  2026. Stroud 37:24 Riegels to ~2:52, but first marathons usually
+  undershoot Riegel by several minutes, so the record sits inside his
+  range without a margin. Sub-3 stays the A goal; the record is a
+  stretch, decided in March off the MP long runs and Fission 20 — not
+  now, and not mid-race by feel. A record attempt means 4:08–4:10 even
+  from the gun; it cannot be rescued by a late negative split, and in
+  a first marathon going out at that pace is the main way the sub-3
+  gets lost too. Never let it reshape the winter volume or intensity.
   **Winter volume — agreed 6 Oct 2026** (he asked if the original
   85–90 km peak was weak; it was cautious, so the build now starts
   earlier and peaks higher, at the same slope of <2 km/week on
