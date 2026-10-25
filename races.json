@@ -97,5 +97,16 @@
     "conditions_normal": true,
     "include_in_prediction": true,
     "notes": "First 4 miler, so a PB. Club record too. Unleashed what was left at the end and hit lactate in the legs\ud83d\ude02"
+  },
+  {
+    "date": "2026-10-25",
+    "name": "Stroud 10k",
+    "distance_km": 10.0,
+    "time_seconds": 2244,
+    "time_fmt": "37:24",
+    "tapered": true,
+    "conditions_normal": false,
+    "include_in_prediction": true,
+    "notes": "A bit different as I was in the top 4 from the off.. Tried to keep to paces. Was slightly ahead of planned but the first two were bunched and I was running with the female winner.  Marshall disappeared at a u turn so me and Georgie ran slightly farther than should have.  Got the start of a stitch on 9k. Happy though as finished 3rd overall"
   }
 ]

@@ -1,7 +1,7 @@
 {
   "id": "2026-10-25",
   "created": "2026-10-25T13:48:02",
-  "status": "pending",
+  "status": "applied",
   "rationale": "Hold, with the horizon extended a week. Stroud went about 37:20 on the watch, ahead of target, so nothing already planned changes. 26 Oct-1 Nov is firmed (Guy Fawkes stays an experiment with a Friday HRV/RHR gate you can overrule). 2-8 Nov stays as already provisional (~62 km, no quality). New: 9-15 Nov brings an interval session and the Saturday tempo back with volume held around 64 km and the long run held at 18 km, so volume and intensity do not rise together while the HRV baseline is a little low.",
   "changes": [
     {
@@ -102,5 +102,12 @@
       "target_pace": null,
       "notes": "Provisional \u2014 Long run 18km easy (~5:00/km or slower), second week at this level; gels at ~20 and ~60 min, log what you took. Only if achilles 0 and HRV/RHR steady. Week ~64km: volume held, not raised, because intensity returned."
     }
-  ]
+  ],
+  "athlete_response": {
+    "timestamp": "25/10/2026 18:09:36",
+    "review_date": "2026-10-25",
+    "decision": "approve",
+    "thoughts": "Happy with plan.. Notes as per my notes on race log"
+  },
+  "applied_at": "2026-10-25T18:09:53"
 }

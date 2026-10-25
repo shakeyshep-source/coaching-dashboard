@@ -465,5 +465,13 @@
     "action_taken": "plan_updated",
     "athlete_thoughts": null,
     "changes_count": 14
+  },
+  {
+    "logged_at": "2026-10-25T18:09:53",
+    "proposal_id": "2026-10-25",
+    "decision": "approve",
+    "action_taken": "plan_updated",
+    "athlete_thoughts": "Happy with plan.. Notes as per my notes on race log",
+    "changes_count": 14
   }
 ]
