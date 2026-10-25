@@ -1054,15 +1054,15 @@
       "week_start": "2026-10-19",
       "week_end": "2026-10-25",
       "in_progress": true,
-      "km": 33.7,
-      "runs": 4,
-      "time_min": 162.0,
-      "elevation_m": 127.0,
+      "km": 46.8,
+      "runs": 7,
+      "time_min": 215.0,
+      "elevation_m": 222.0,
       "planned_sessions": 5,
       "logged_sessions": 4,
       "hard_sessions_planned": 2,
-      "quality_time_min": 60,
-      "easy_pct": 63,
+      "quality_time_min": 113,
+      "easy_pct": 47,
       "long_run_min": 60,
       "long_run_km": 12.41,
       "on_target_pct": 100,
@@ -1135,6 +1135,45 @@
           "avg_hr": 141,
           "segments": null,
           "fastest_segment": null
+        },
+        {
+          "date": "2026-10-25",
+          "temp_max_c": 13.0,
+          "heat_risk": "low",
+          "session_type": null,
+          "rpe": null,
+          "on_target": null,
+          "achilles_score": null,
+          "note": null,
+          "km": 13.0,
+          "pace": 4.11,
+          "avg_hr": 159,
+          "segments": [
+            {
+              "km": 1.47,
+              "min": 8.9,
+              "pace": 6.06,
+              "avg_hr": 135.0
+            },
+            {
+              "km": 1.54,
+              "min": 7.1,
+              "pace": 4.59,
+              "avg_hr": 149.0
+            },
+            {
+              "km": 10.03,
+              "min": 37.4,
+              "pace": 3.73,
+              "avg_hr": 167.0
+            }
+          ],
+          "fastest_segment": {
+            "km": 10.03,
+            "min": 37.4,
+            "pace": 3.73,
+            "avg_hr": 167.0
+          }
         }
       ]
     }

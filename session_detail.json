@@ -7742,5 +7742,62 @@
     "avg_hr": 141.0,
     "aerobic_te": 3.0,
     "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-10-25",
+    "activity_id": 24846200571,
+    "name": "Stroud Running",
+    "structured": true,
+    "lap_count": 2,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 1.47
+    },
+    "avg_hr": 135.0,
+    "aerobic_te": 1.600000023841858,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-10-25",
+    "activity_id": 24846201447,
+    "name": "Stroud Running",
+    "structured": true,
+    "lap_count": 2,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 1.54
+    },
+    "avg_hr": 149.0,
+    "aerobic_te": 2.0,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-10-25",
+    "activity_id": 24846203094,
+    "name": "Stroud Running",
+    "structured": true,
+    "lap_count": 11,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 10.03
+    },
+    "avg_hr": 167.0,
+    "aerobic_te": 4.599999904632568,
+    "anaerobic_te": 1.0
   }
 ]

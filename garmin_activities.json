@@ -7348,5 +7348,50 @@
     "cadence": 173.203125,
     "aerobic_te": 3.0,
     "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-10-25",
+    "activity_id": 24846200571,
+    "name": "Stroud Running",
+    "type": "running",
+    "distance_km": 1.47,
+    "duration_min": 8.9,
+    "avg_pace_min_per_km": 6.06,
+    "avg_hr": 135.0,
+    "max_hr": 154.0,
+    "elevation_gain_m": 11.0,
+    "cadence": 161.875,
+    "aerobic_te": 1.600000023841858,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-10-25",
+    "activity_id": 24846201447,
+    "name": "Stroud Running",
+    "type": "running",
+    "distance_km": 1.54,
+    "duration_min": 7.1,
+    "avg_pace_min_per_km": 4.59,
+    "avg_hr": 149.0,
+    "max_hr": 157.0,
+    "elevation_gain_m": 15.0,
+    "cadence": 172.203125,
+    "aerobic_te": 2.0,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-10-25",
+    "activity_id": 24846203094,
+    "name": "Stroud Running",
+    "type": "running",
+    "distance_km": 10.03,
+    "duration_min": 37.4,
+    "avg_pace_min_per_km": 3.73,
+    "avg_hr": 167.0,
+    "max_hr": 177.0,
+    "elevation_gain_m": 69.0,
+    "cadence": 179.140625,
+    "aerobic_te": 4.599999904632568,
+    "anaerobic_te": 1.0
   }
 ]
