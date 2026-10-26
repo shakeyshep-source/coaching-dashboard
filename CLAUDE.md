@@ -195,6 +195,17 @@ the achilles score rises ask what is on his feet before touching the
 plan. Rotation, confirmed by him — easy: Nike Vomero Plus;
 speed sessions: Saucony Endorphin Speed 5; racing: Puma Fast-R Nitro 3.
 Adidas Boston rejected as too firm.
+**Alphafly 2 — training shoe, in trial** (an old pair with ~40 km on
+them): easy runs 13 and 20 Oct, both uneventful. Its job is the quick
+training work. Build it by heart rate (~135 or under on easy runs —
+13 Oct went 4:35/km at HR 141 because carbon makes quick feel easy),
+a few km more per outing, achilles checked each next morning.
+**Puma Deviate Nitro Elite 4 — likely Manchester shoe** (20 Oct, his
+call, not yet decided): chosen as more forgiving than the Fast-R over
+a marathon; 8 mm drop, so not lower than anything in the rotation.
+Introduce from mid-November once the Alphafly is settled (one new shoe
+at a time), then MP blocks in February and Fission 20 as the dress
+rehearsal; proven before the last three weeks.
 
 ## Bloods (GP panel, 21 Sep 2026 — baseline, and one action)
 
