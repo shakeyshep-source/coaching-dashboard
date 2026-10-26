@@ -413,6 +413,35 @@
   .tblwrap { overflow-x: auto; }
 
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+  /* Desktop: the phone layout stretched to 1400px read as one long
+     strip with 200-character lines. Above ~1024px the page centres,
+     and Today splits in two: the at-a-glance column (verdict, today,
+     this week, volume) on the left, the three-week plan beside it.
+     Phones are untouched — everything here sits behind min-width. */
+  @media (min-width: 1024px) {
+    body { max-width: 1240px; margin-inline: auto; padding-inline: 2rem; }
+    #content {
+      display: grid;
+      grid-template-columns: minmax(380px, 440px) minmax(0, 1fr);
+      gap: 0 40px;
+      align-items: start;
+    }
+    #content > #errorBox { grid-column: 1 / -1; }
+    #todayTop { position: sticky; top: 16px; }
+    #tab-plan > .sect:first-child,
+    #tab-plan > div:first-child { margin-top: 0; }
+    #tab-coach, #panel-recovery { max-width: 860px; }
+  }
+  /* Sticky only helps if the column fits the screen; on a short
+     laptop it would trap the bottom of it out of reach. */
+  @media (min-width: 1024px) and (max-height: 999px) {
+    #todayTop { position: static; }
+  }
+  details.flaghist > summary { cursor: pointer; list-style: none; }
+  details.flaghist > summary::-webkit-details-marker { display: none; }
+  details.flaghist:not([open]) > summary { margin-bottom: 0; }
+
 </style>
 </head>
 <body>
@@ -1048,7 +1077,11 @@ function setupTabs(data) {
 
       btn.classList.add('active');
       const target = TAB_PANELS[btn.dataset.tab];
-      if (target) document.getElementById(target).style.display = 'block';
+      // Today gets '' rather than 'block': it hands display back to the
+      // stylesheet, which lays Today out as a grid on desktop. The other
+      // panels need 'block' — .tab-panel is display:none in the CSS.
+      if (target) document.getElementById(target).style.display =
+        target === 'content' ? '' : 'block';
       window.scrollTo(0, 0);
     });
   });
@@ -1705,12 +1738,14 @@ async function buildPlanTab(computedData) {
     `;
   });
 
-  // Flag history — only past events, most recent first
+  // Flag history — only past events, most recent first. Collapsed by
+  // default: he does not read it day to day (19 Oct), but it is the
+  // record of every flag, so it stays one tap away rather than going.
   if (flagsLog.length) {
     const sorted = [...flagsLog].sort((a, b) => b.date.localeCompare(a.date));
     html += `
-      <div class="sect">
-        <div class="sect-h"><b>Flag history</b><span>${sorted.length}</span></div>
+      <details class="sect flaghist">
+        <summary class="sect-h"><b>Flag history</b><span>${sorted.length} · tap to open</span></summary>
         ${sorted.map(f => `
           <div style="border-bottom:1px solid var(--border); padding:8px 0;">
             <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px;">
@@ -1719,7 +1754,7 @@ async function buildPlanTab(computedData) {
             </div>
             <p style="margin:4px 0 0; font-size:12.5px; color:var(--text-secondary); line-height:1.45;">${esc(f.reasons.join(' '))}</p>
           </div>`).join('')}
-      </div>
+      </details>
     `;
   }
 

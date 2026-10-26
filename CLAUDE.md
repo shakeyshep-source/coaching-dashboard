@@ -66,6 +66,15 @@ daily, weekly review, or ad-hoc — starts from this brief.
   Riegel from current fitness gives ~2:52, so the fitness is not the
   binding constraint — weekly volume is. Sub-3 off a 60–65 km norm is
   possible but thin, which is why the winter volume below was agreed.
+  **Club V50 marathon record: 2:54:16** (4:08/km), his figure, 25 Oct
+  2026. Stroud 37:24 Riegels to ~2:52, but first marathons usually
+  undershoot Riegel by several minutes, so the record sits inside his
+  range without a margin. Sub-3 stays the A goal; the record is a
+  stretch, decided in March off the MP long runs and Fission 20 — not
+  now, and not mid-race by feel. A record attempt means 4:08–4:10 even
+  from the gun; it cannot be rescued by a late negative split, and in
+  a first marathon going out at that pace is the main way the sub-3
+  gets lost too. Never let it reshape the winter volume or intensity.
   **Winter volume — agreed 6 Oct 2026** (he asked if the original
   85–90 km peak was weak; it was cautious, so the build now starts
   earlier and peaks higher, at the same slope of <2 km/week on
@@ -186,6 +195,17 @@ the achilles score rises ask what is on his feet before touching the
 plan. Rotation, confirmed by him — easy: Nike Vomero Plus;
 speed sessions: Saucony Endorphin Speed 5; racing: Puma Fast-R Nitro 3.
 Adidas Boston rejected as too firm.
+**Alphafly 2 — training shoe, in trial** (an old pair with ~40 km on
+them): easy runs 13 and 20 Oct, both uneventful. Its job is the quick
+training work. Build it by heart rate (~135 or under on easy runs —
+13 Oct went 4:35/km at HR 141 because carbon makes quick feel easy),
+a few km more per outing, achilles checked each next morning.
+**Puma Deviate Nitro Elite 4 — likely Manchester shoe** (20 Oct, his
+call, not yet decided): chosen as more forgiving than the Fast-R over
+a marathon; 8 mm drop, so not lower than anything in the rotation.
+Introduce from mid-November once the Alphafly is settled (one new shoe
+at a time), then MP blocks in February and Fission 20 as the dress
+rehearsal; proven before the last three weeks.
 
 ## Bloods (GP panel, 21 Sep 2026 — baseline, and one action)
 
