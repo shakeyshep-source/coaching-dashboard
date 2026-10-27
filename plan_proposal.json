@@ -1,113 +1,22 @@
 {
-  "id": "2026-10-25",
-  "created": "2026-10-25T13:48:02",
-  "status": "applied",
-  "rationale": "Hold, with the horizon extended a week. Stroud went about 37:20 on the watch, ahead of target, so nothing already planned changes. 26 Oct-1 Nov is firmed (Guy Fawkes stays an experiment with a Friday HRV/RHR gate you can overrule). 2-8 Nov stays as already provisional (~62 km, no quality). New: 9-15 Nov brings an interval session and the Saturday tempo back with volume held around 64 km and the long run held at 18 km, so volume and intensity do not rise together while the HRV baseline is a little low.",
+  "id": "2026-10-27",
+  "created": "2026-10-27T14:56:33",
+  "status": "pending",
+  "rationale": "Your 200s for tomorrow replace the easy 8 km: 3 km warm-up with pickups, 6–8 × 200 m at 3:30–3:35/km (42–43 s), full recovery, 2–3 km cool-down, ~8 km all in. Why it works: 200s are neuromuscular, not a hard session. About 25 s of work per rep, little lactate, little recovery cost, and they keep leg speed ticking over in a week with no other sharpening before Guy Fawkes. Wednesday is 3 days after Stroud, and the gate numbers (RHR 47, HRV 34 vs 35 baseline, achilles 0) do not stop it. Thursday's 4 strides come out, so you are not adding speed twice in 48 h. The Friday gate for 1 Nov is unchanged. Nothing else moves.",
   "changes": [
     {
-      "date": "2026-10-26",
-      "session_type": "rest",
-      "target_distance_km": null,
-      "target_pace": null,
-      "notes": "Rest. No running the day after Stroud."
-    },
-    {
-      "date": "2026-10-27",
-      "session_type": "easy",
-      "target_distance_km": 8,
-      "target_pace": null,
-      "notes": "Easy 8km, genuinely easy. Judge the legs on feel, not pace."
-    },
-    {
       "date": "2026-10-28",
-      "session_type": "easy",
+      "session_type": "intervals",
       "target_distance_km": 8,
-      "target_pace": null,
-      "notes": "Easy 8km. Light gym only; nothing heavy lower-body until the legs feel normal."
+      "target_pace": "3:30-3:35/km for the reps (42-43 s per 200 m)",
+      "notes": "3 km easy warm-up finishing with 3-4 pickups (buff over the mouth if cold). 6-8 x 200 m at 3:30-3:35/km, on pace and not under; the first and last should look the same. Recovery 200 m slow jog (~90 s-2 min) so every rep feels as easy as the first. 2-3 km easy cool-down. ~8 km all in. Speed 5 for the reps, not the Alphafly. Stop at 6 if the legs feel heavy. Light gym only; nothing heavy lower-body. Chest tightness, a temperature or aches: drop back to easy."
     },
     {
       "date": "2026-10-29",
       "session_type": "easy",
       "target_distance_km": 7,
       "target_pace": null,
-      "notes": "Easy 7km + 4 strides, relaxed."
-    },
-    {
-      "date": "2026-10-30",
-      "session_type": "easy",
-      "target_distance_km": 6,
-      "target_pace": null,
-      "notes": "Easy 6km. Gate for Sunday: HRV baseline still sliding or RHR 51+ with no reason makes Guy Fawkes a steady run; a temperature or aches means no race. You can overrule the numbers if you feel fine."
-    },
-    {
-      "date": "2026-10-31",
-      "session_type": "easy",
-      "target_distance_km": 4,
-      "target_pace": null,
-      "notes": "Shakeout 25-30 min, easy, no strides."
-    },
-    {
-      "date": "2026-11-01",
-      "session_type": "race",
-      "target_distance_km": 14,
-      "target_pace": null,
-      "notes": "GUY FAWKES 5 (8.05km): the experiment, raced on feel a week after Stroud. ~14km all in: 3km warm-up with strides, race, 3km cool-down. Record 29:12 (3:38/km) only if the legs say so; go out controlled. Pre-race meds as Stroud. Fission 20 entries open about now and sell out every year: enter if you want the March rehearsal."
-    },
-    {
-      "date": "2026-11-09",
-      "session_type": "rest",
-      "target_distance_km": null,
-      "target_pace": null,
-      "notes": "Provisional \u2014 Rest."
-    },
-    {
-      "date": "2026-11-10",
-      "session_type": "easy",
-      "target_distance_km": 10,
-      "target_pace": null,
-      "notes": "Provisional \u2014 Easy 10km. Quality returns this week, so volume holds."
-    },
-    {
-      "date": "2026-11-11",
-      "session_type": "intervals",
-      "target_distance_km": 11.5,
-      "target_pace": "3:38-3:40/km for the reps",
-      "notes": "Provisional \u2014 3km warm-up with pickups (cold air: buff over the mouth until you start), 4x1km at 3:38-3:40/km with 90 s jog, 3km cool-down, ~11.5km all in. Purpose: reopen speed work gently after the racing block. Run on pace, not under."
-    },
-    {
-      "date": "2026-11-12",
-      "session_type": "easy",
-      "target_distance_km": 7,
-      "target_pace": null,
-      "notes": "Provisional \u2014 Easy 7km. Leg gym on or after today."
-    },
-    {
-      "date": "2026-11-13",
-      "session_type": "easy",
-      "target_distance_km": 5,
-      "target_pace": null,
-      "notes": "Provisional \u2014 Easy 5km."
-    },
-    {
-      "date": "2026-11-14",
-      "session_type": "tempo",
-      "target_distance_km": 13,
-      "target_pace": "3:50-3:53/km",
-      "notes": "Provisional \u2014 3km warm-up, 2x12 min at 3:50-3:53/km with 2 min jog, 3km cool-down, ~13km all in."
-    },
-    {
-      "date": "2026-11-15",
-      "session_type": "long",
-      "target_distance_km": 18,
-      "target_pace": null,
-      "notes": "Provisional \u2014 Long run 18km easy (~5:00/km or slower), second week at this level; gels at ~20 and ~60 min, log what you took. Only if achilles 0 and HRV/RHR steady. Week ~64km: volume held, not raised, because intensity returned."
+      "notes": "Easy 7 km, no strides (the 200s were yesterday). Relaxed."
     }
-  ],
-  "athlete_response": {
-    "timestamp": "25/10/2026 18:09:36",
-    "review_date": "2026-10-25",
-    "decision": "approve",
-    "thoughts": "Happy with plan.. Notes as per my notes on race log"
-  },
-  "applied_at": "2026-10-25T18:09:53"
+  ]
 }
