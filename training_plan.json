@@ -854,21 +854,21 @@
   },
   {
     "date": "2026-10-28",
-    "session_type": "easy",
+    "session_type": "intervals",
     "target_distance_km": 8,
-    "target_pace": null,
-    "notes": "Easy 8km. Light gym only; nothing heavy lower-body until the legs feel normal.",
+    "target_pace": "3:30-3:35/km for the reps (42-43 s per 200 m)",
+    "notes": "3 km easy warm-up finishing with 3-4 pickups (buff over the mouth if cold). 6-8 x 200 m at 3:30-3:35/km, on pace and not under; the first and last should look the same. Recovery 200 m slow jog (~90 s-2 min) so every rep feels as easy as the first. 2-3 km easy cool-down. ~8 km all in. Speed 5 for the reps, not the Alphafly. Stop at 6 if the legs feel heavy. Light gym only; nothing heavy lower-body. Chest tightness, a temperature or aches: drop back to easy.",
     "source": "coach",
-    "updated_at": "2026-10-25T18:09:53"
+    "updated_at": "2026-10-27T22:58:17"
   },
   {
     "date": "2026-10-29",
     "session_type": "easy",
     "target_distance_km": 7,
     "target_pace": null,
-    "notes": "Easy 7km + 4 strides, relaxed.",
+    "notes": "Easy 7 km, no strides (the 200s were yesterday). Relaxed.",
     "source": "coach",
-    "updated_at": "2026-10-25T18:09:53"
+    "updated_at": "2026-10-27T22:58:17"
   },
   {
     "date": "2026-10-30",

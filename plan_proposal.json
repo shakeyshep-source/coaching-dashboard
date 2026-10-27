@@ -1,8 +1,8 @@
 {
   "id": "2026-10-27",
   "created": "2026-10-27T14:56:33",
-  "status": "pending",
-  "rationale": "Your 200s for tomorrow replace the easy 8 km: 3 km warm-up with pickups, 6–8 × 200 m at 3:30–3:35/km (42–43 s), full recovery, 2–3 km cool-down, ~8 km all in. Why it works: 200s are neuromuscular, not a hard session. About 25 s of work per rep, little lactate, little recovery cost, and they keep leg speed ticking over in a week with no other sharpening before Guy Fawkes. Wednesday is 3 days after Stroud, and the gate numbers (RHR 47, HRV 34 vs 35 baseline, achilles 0) do not stop it. Thursday's 4 strides come out, so you are not adding speed twice in 48 h. The Friday gate for 1 Nov is unchanged. Nothing else moves.",
+  "status": "applied",
+  "rationale": "Your 200s for tomorrow replace the easy 8 km: 3 km warm-up with pickups, 6\u20138 \u00d7 200 m at 3:30\u20133:35/km (42\u201343 s), full recovery, 2\u20133 km cool-down, ~8 km all in. Why it works: 200s are neuromuscular, not a hard session. About 25 s of work per rep, little lactate, little recovery cost, and they keep leg speed ticking over in a week with no other sharpening before Guy Fawkes. Wednesday is 3 days after Stroud, and the gate numbers (RHR 47, HRV 34 vs 35 baseline, achilles 0) do not stop it. Thursday's 4 strides come out, so you are not adding speed twice in 48 h. The Friday gate for 1 Nov is unchanged. Nothing else moves.",
   "changes": [
     {
       "date": "2026-10-28",
@@ -18,5 +18,12 @@
       "target_pace": null,
       "notes": "Easy 7 km, no strides (the 200s were yesterday). Relaxed."
     }
-  ]
+  ],
+  "athlete_response": {
+    "timestamp": "27/10/2026 22:58:02",
+    "review_date": "2026-10-27",
+    "decision": "approve",
+    "thoughts": "Super"
+  },
+  "applied_at": "2026-10-27T22:58:17"
 }
