@@ -654,5 +654,13 @@
     "rpe": 9.0,
     "on_target": true,
     "session_notes": "Good race, with the race leaders, got the start of a stitch on 9k so lost Georgie who I ran the whole race with by 10sec but pushed to the end and watch logged it slightly lng so you can see my pace did still go up at the end"
+  },
+  {
+    "date": "2026-10-26",
+    "achilles_score": 0,
+    "session_type": "rest",
+    "rpe": 0.0,
+    "on_target": true,
+    "session_notes": null
   }
 ]
