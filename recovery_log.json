@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-26",
+  "generated": "2026-10-27",
   "window_days": 7,
   "sessions": [
     {
@@ -302,41 +302,55 @@
       "interrupted_by_next_session": true,
       "temp_max_c": 13.6,
       "note": "Not HRV lower this morning, prob after last night's cider. \n6-7c\nProb last 3mins of the session felt tough, chest tight."
-    }
-  ],
-  "pending": [
+    },
     {
       "date": "2026-10-21",
       "session_type": "intervals",
-      "days_since": 5,
-      "hrv_back": 2,
-      "rhr_back": null,
+      "confounders_in_window": [],
       "hrv_reference": 37.3,
-      "rhr_reference": 47.9
+      "hrv_recovery_days": 2,
+      "rhr_reference": 47.9,
+      "rhr_recovery_days": 5,
+      "recovery_days": 5,
+      "recovered": true,
+      "interrupted_by_next_session": true,
+      "temp_max_c": 11.7,
+      "note": "Felt good\nGot colder as the night went on but only 10c\nMessed up the first three but recalled the right paces for the last three"
     },
     {
       "date": "2026-10-24",
       "session_type": "race",
-      "days_since": 2,
-      "hrv_back": null,
-      "rhr_back": null,
+      "confounders_in_window": [],
       "hrv_reference": 35.7,
-      "rhr_reference": 48.1
+      "hrv_recovery_days": 3,
+      "rhr_reference": 48.1,
+      "rhr_recovery_days": 2,
+      "recovery_days": 3,
+      "recovered": true,
+      "interrupted_by_next_session": true,
+      "temp_max_c": 16.0,
+      "note": "Good race, with the race leaders, got the start of a stitch on 9k so lost Georgie who I ran the whole race with by 10sec but pushed to the end and watch logged it slightly lng so you can see my pace did still go up at the end"
     },
     {
       "date": "2026-10-25",
       "session_type": "race",
-      "days_since": 1,
-      "hrv_back": null,
-      "rhr_back": null,
+      "confounders_in_window": [],
       "hrv_reference": 35.6,
-      "rhr_reference": 48.4
+      "hrv_recovery_days": 2,
+      "rhr_reference": 48.4,
+      "rhr_recovery_days": 1,
+      "recovery_days": 2,
+      "recovered": true,
+      "interrupted_by_next_session": false,
+      "temp_max_c": 13.0,
+      "note": null
     }
   ],
+  "pending": [],
   "trend": {
-    "recent_avg_days": 1.3,
-    "prior_avg_days": 5,
-    "direction": "shortening \u2014 bouncing back quicker than before",
-    "sessions_measured": 18
+    "recent_avg_days": 3.3,
+    "prior_avg_days": 1.3,
+    "direction": "lengthening \u2014 recovery is taking longer than it was",
+    "sessions_measured": 21
   }
 }
