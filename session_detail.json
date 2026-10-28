@@ -7799,5 +7799,24 @@
     "avg_hr": 167.0,
     "aerobic_te": 4.599999904632568,
     "anaerobic_te": 1.0
+  },
+  {
+    "date": "2026-10-27",
+    "activity_id": 24872624908,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 9,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 8.02
+    },
+    "avg_hr": 143.0,
+    "aerobic_te": 3.200000047683716,
+    "anaerobic_te": 0.0
   }
 ]

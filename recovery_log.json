@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-27",
+  "generated": "2026-10-28",
   "window_days": 7,
   "sessions": [
     {
@@ -332,7 +332,17 @@
       "note": null
     }
   ],
-  "pending": [],
+  "pending": [
+    {
+      "date": "2026-10-28",
+      "session_type": "intervals",
+      "days_since": 0,
+      "hrv_back": null,
+      "rhr_back": null,
+      "hrv_reference": 35.9,
+      "rhr_reference": 48.4
+    }
+  ],
   "trend": {
     "recent_avg_days": 2.7,
     "prior_avg_days": 3,

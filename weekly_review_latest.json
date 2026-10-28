@@ -7,12 +7,19 @@
   "proposal_id": "2026-10-27",
   "proposal_status": "applied",
   "athlete_response": {
-    "timestamp": "27/10/2026 14:54:32",
-    "review_date": "2026-10-27",
-    "decision": "amend",
-    "thoughts": "Tomorrow's session, about 8 km all in (the same as the planned easy run):\nWarm-up: 3 km easy, with a buff if it's cold, finishing with 3\u20134 pickups.\nMain set: 6\u20138 \u00d7 200 m at 3:30\u20133:35/km, which is 42\u201343 s per rep.\nRecovery: 200 m slow jog, or about 90 s\u20132 min. Full recovery is the point: each rep should feel as easy as the first.\nCool-down: 2\u20133 km easy."
+    "timestamp": "25/10/2026 18:09:36",
+    "review_date": "2026-10-25",
+    "decision": "approve",
+    "thoughts": "Happy with plan.. Notes as per my notes on race log"
   },
-  "athlete_response_status": "answered",
-  "coach_reply": "Shep \u2014 yes, this holds up, and I've proposed it for your approval.\n\n**Why it's fine:** 6\u20138 \u00d7 200 m at 3:30\u20133:35 is about 25 s of work per rep with full recovery. That is neuromuscular speed work, not a hard session: little lactate, little recovery cost. Wednesday is three days after Stroud and the numbers don't argue against it: RHR 47 on Monday (down from 51 on the 24th), HRV 34 against a 35 baseline, achilles 0 throughout. It also gives you some leg speed before Guy Fawkes, which has no other sharpening this week.\n\n**Two adjustments:** I've dropped Thursday's 4 strides so you aren't adding speed twice in 48 hours. And keep the reps *on* 42\u201343 s, not under. Last week's 3:23 first rep was nine seconds inside target; the point here is that rep 1 and rep 8 look identical. Wear the Speed 5, not the Alphafly. Stop at 6 if the legs feel heavy, and log any chest tightness, since it will be cold.\n\n**What doesn't change:** the Friday gate for Sunday. If the baseline is still sliding or RHR is 51+ with no reason, Guy Fawkes becomes a steady run. Approve the proposal and it lands on the plan.",
-  "coach_reply_at": "2026-10-27T14:56:33"
+  "athlete_response_status": "logged",
+  "conversation": [
+    {
+      "athlete_timestamp": "27/10/2026 14:54:32",
+      "athlete_decision": "amend",
+      "athlete_thoughts": "Tomorrow's session, about 8 km all in (the same as the planned easy run):\nWarm-up: 3 km easy, with a buff if it's cold, finishing with 3\u20134 pickups.\nMain set: 6\u20138 \u00d7 200 m at 3:30\u20133:35/km, which is 42\u201343 s per rep.\nRecovery: 200 m slow jog, or about 90 s\u20132 min. Full recovery is the point: each rep should feel as easy as the first.\nCool-down: 2\u20133 km easy.",
+      "coach_reply": "Shep \u2014 yes, this holds up, and I've proposed it for your approval.\n\n**Why it's fine:** 6\u20138 \u00d7 200 m at 3:30\u20133:35 is about 25 s of work per rep with full recovery. That is neuromuscular speed work, not a hard session: little lactate, little recovery cost. Wednesday is three days after Stroud and the numbers don't argue against it: RHR 47 on Monday (down from 51 on the 24th), HRV 34 against a 35 baseline, achilles 0 throughout. It also gives you some leg speed before Guy Fawkes, which has no other sharpening this week.\n\n**Two adjustments:** I've dropped Thursday's 4 strides so you aren't adding speed twice in 48 hours. And keep the reps *on* 42\u201343 s, not under. Last week's 3:23 first rep was nine seconds inside target; the point here is that rep 1 and rep 8 look identical. Wear the Speed 5, not the Alphafly. Stop at 6 if the legs feel heavy, and log any chest tightness, since it will be cold.\n\n**What doesn't change:** the Friday gate for Sunday. If the baseline is still sliding or RHR is 51+ with no reason, Guy Fawkes becomes a steady run. Approve the proposal and it lands on the plan.",
+      "coach_reply_at": "2026-10-27T14:56:33"
+    }
+  ]
 }

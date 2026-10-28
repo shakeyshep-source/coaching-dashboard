@@ -491,5 +491,15 @@
     "action_taken": "plan_updated",
     "athlete_thoughts": "Super",
     "changes_count": 2
+  },
+  {
+    "logged_at": "2026-10-28T09:53:40",
+    "proposal_id": null,
+    "review_date": "2026-10-25",
+    "response_timestamp": "25/10/2026 18:09:36",
+    "decision": "approve",
+    "action_taken": "review_query_logged",
+    "athlete_thoughts": "Happy with plan.. Notes as per my notes on race log",
+    "changes_count": 0
   }
 ]
