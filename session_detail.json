@@ -7818,5 +7818,103 @@
     "avg_hr": 143.0,
     "aerobic_te": 3.200000047683716,
     "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-10-28",
+    "activity_id": 24885252555,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 15,
+    "reps": {
+      "count": 5,
+      "even_reps": true,
+      "distance_km_each": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "pace_sec_per_km": [
+        189.5,
+        175.5,
+        178.0,
+        164.0,
+        172.5
+      ],
+      "pace_fmt": [
+        "3:09",
+        "2:56",
+        "2:58",
+        "2:44",
+        "2:52"
+      ],
+      "duration_sec": [
+        37.9,
+        35.1,
+        35.6,
+        32.8,
+        34.5
+      ],
+      "mean_pace_sec_per_km": 175.9,
+      "mean_pace_fmt": "2:56",
+      "fastest_pace_fmt": "2:44",
+      "slowest_pace_fmt": "3:09",
+      "spread_sec_per_km": 25.5,
+      "fastest_rep": 4,
+      "slowest_rep": 1,
+      "finished_fastest": false,
+      "drift_sec_per_km": -17.0,
+      "mean_hr": 147.2,
+      "max_hr": 164.0
+    },
+    "recoveries": {
+      "count": 5,
+      "duration_sec": [
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0
+      ],
+      "distance_km": [
+        0.039,
+        0.046,
+        0.058,
+        0.081,
+        0.036
+      ],
+      "mean_duration_sec": 90.0,
+      "mean_pace_fmt": "31:25"
+    },
+    "volume": {
+      "warmup_km": 3.07,
+      "cooldown_km": null,
+      "work_km": 1.14,
+      "recovery_km": 0.26,
+      "total_km": 4.47
+    },
+    "avg_hr": 140.0,
+    "aerobic_te": 2.5999999046325684,
+    "anaerobic_te": 2.700000047683716
+  },
+  {
+    "date": "2026-10-28",
+    "activity_id": 24885254698,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 3,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 2.8
+    },
+    "avg_hr": 137.0,
+    "aerobic_te": 2.4000000953674316,
+    "anaerobic_te": 0.0
   }
 ]

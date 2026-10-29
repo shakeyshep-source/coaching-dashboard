@@ -7423,5 +7423,35 @@
     "cadence": 171.765625,
     "aerobic_te": 3.200000047683716,
     "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-10-28",
+    "activity_id": 24885252555,
+    "name": "Gloucester Running",
+    "type": "running",
+    "distance_km": 4.47,
+    "duration_min": 25.0,
+    "avg_pace_min_per_km": 5.59,
+    "avg_hr": 140.0,
+    "max_hr": 165.0,
+    "elevation_gain_m": 9.0,
+    "cadence": 156.25,
+    "aerobic_te": 2.5999999046325684,
+    "anaerobic_te": 2.700000047683716
+  },
+  {
+    "date": "2026-10-28",
+    "activity_id": 24885254698,
+    "name": "Gloucester Running",
+    "type": "running",
+    "distance_km": 2.8,
+    "duration_min": 16.3,
+    "avg_pace_min_per_km": 5.83,
+    "avg_hr": 137.0,
+    "max_hr": 154.0,
+    "elevation_gain_m": 23.0,
+    "cadence": 159.515625,
+    "aerobic_te": 2.4000000953674316,
+    "anaerobic_te": 0.0
   }
 ]
