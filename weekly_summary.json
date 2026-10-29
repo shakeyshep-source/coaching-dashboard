@@ -1,19 +1,19 @@
 {
-  "generated": "2026-10-28",
+  "generated": "2026-10-29",
   "next_race": {
     "name": "GUY FAWKES 5 (8",
     "date": "2026-11-01",
     "distance_km": 14,
-    "days_away": 4
+    "days_away": 3
   },
   "race_readiness": {
     "race": {
       "name": "GUY FAWKES 5 (8",
       "date": "2026-11-01",
       "distance_km": 14,
-      "days_away": 4
+      "days_away": 3
     },
-    "weeks_to_race": 0.6,
+    "weeks_to_race": 0.4,
     "taper_start": "2026-10-22",
     "remaining_key_sessions": {
       "tempo": 0,
@@ -1038,14 +1038,14 @@
       "time_min": 39.0,
       "elevation_m": 34.0,
       "planned_sessions": 6,
-      "logged_sessions": 3,
+      "logged_sessions": 4,
       "hard_sessions_planned": 2,
       "quality_time_min": 0,
       "easy_pct": 100,
       "long_run_min": 39,
       "long_run_km": 8.02,
       "on_target_pct": 100,
-      "avg_rpe": 2.0,
+      "avg_rpe": 1.5,
       "max_achilles": 0,
       "avg_hrv": 36,
       "avg_rhr": 48.0,
@@ -1094,6 +1094,21 @@
           "on_target": true,
           "achilles_score": 0,
           "note": "Felt strong, cruising along, but on the sixth the left calf in its middle felt tight, so stopped and then just cooled down 3k. So will see how it is Thurs, Fri, sat before making a decision in GF5",
+          "km": null,
+          "pace": null,
+          "avg_hr": null,
+          "segments": null,
+          "fastest_segment": null
+        },
+        {
+          "date": "2026-10-29",
+          "temp_max_c": 15.6,
+          "heat_risk": "low",
+          "session_type": "rest",
+          "rpe": 0.0,
+          "on_target": true,
+          "achilles_score": 0,
+          "note": "routine physio today.  calf feels ok this morning but good timing for the physio later to just check",
           "km": null,
           "pace": null,
           "avg_hr": null,
