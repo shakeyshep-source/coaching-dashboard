@@ -1120,7 +1120,7 @@
         },
         {
           "date": "2026-10-29",
-          "temp_max_c": 15.3,
+          "temp_max_c": 15.2,
           "heat_risk": "low",
           "session_type": "rest",
           "rpe": 0.0,
