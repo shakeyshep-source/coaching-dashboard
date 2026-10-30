@@ -76,11 +76,25 @@ def get_token(key):
     if r.status_code != 200:
         print(f"Token request failed: HTTP {r.status_code}. {r.text[:200]}")
         sys.exit(1)
-    body = r.json() if r.headers.get("content-type", "").startswith("application/json") else {}
-    for name in ("access_token", "accessToken", "token"):
-        if body.get(name):
-            return body[name], sorted(body.keys())
-    print(f"Token response had no recognised token field. Keys: {sorted(body.keys())}")
+    # The first run got HTTP 200 with a body that was not labelled JSON,
+    # so read the text whatever the content-type claims: a JSON object,
+    # a bare JSON string, or the token as plain text.
+    ctype = r.headers.get("content-type", "?")
+    text = r.text.strip()
+    try:
+        body = json.loads(text)
+    except ValueError:
+        body = text
+    if isinstance(body, dict):
+        for name in ("access_token", "accessToken", "token", "personalApiToken"):
+            if body.get(name):
+                return body[name], f"JSON object, keys {sorted(body.keys())}"
+        print(f"Token response ({ctype}) had no recognised token field. Keys: {sorted(body.keys())}")
+        sys.exit(1)
+    if isinstance(body, str) and body and " " not in body:
+        return body, f"plain token ({ctype}, {len(body)} chars)"
+    print(f"Token response ({ctype}, {len(text)} chars) was not a recognisable token. "
+          f"Response header names: {sorted(r.headers.keys())}")
     sys.exit(1)
 
 
@@ -126,7 +140,7 @@ def main():
         print("GARMIN_API_KEY secret is not set. Add it under Settings → Secrets and variables → Actions.")
         sys.exit(1)
 
-    token, token_keys = get_token(key)
+    token, token_shape = get_token(key)
     session = requests.Session()
     session.headers.update({"Authorization": f"Bearer {token}", "Accept": "application/json"})
 
@@ -174,7 +188,7 @@ def main():
         fit_note = probe_fit(session, activity_id)
 
     lines = ["# Garmin Personal API probe", "",
-             f"Token: OK (response keys: {', '.join(token_keys)}). Dates probed: {start} to {end}.", "",
+             f"Token: OK ({token_shape}). Dates probed: {start} to {end}.", "",
              "## Dashboard fields", "", "| field | covered by |", "|---|---|"]
     for field, names in DASHBOARD_FIELDS.items():
         hits = []
