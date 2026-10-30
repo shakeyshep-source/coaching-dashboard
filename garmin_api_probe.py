@@ -121,7 +121,9 @@ def probe(session, name, path, variants):
 
 
 def probe_fit(session, activity_id):
-    r = session.get(f"{BASE}/download-service/files/activity/{activity_id}", timeout=TIMEOUT)
+    # The session asks for JSON; a file download answers that with 406.
+    r = session.get(f"{BASE}/download-service/files/activity/{activity_id}",
+                    headers={"Accept": "*/*"}, timeout=TIMEOUT)
     note = f"HTTP {r.status_code}, {r.headers.get('content-type', '?')}, {len(r.content)} bytes"
     if r.status_code == 200 and r.content[:2] == b"PK":
         try:
