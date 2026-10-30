@@ -1,0 +1,30 @@
+# One-off check of Garmin's official Personal API against what the
+# dashboard needs. Manual only: Actions tab → "Garmin API probe" →
+# Run workflow. Reports key names and types, never values; writes
+# nothing to the repo. Needs the GARMIN_API_KEY repo secret.
+
+name: Garmin API probe
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Probe the Personal API
+        env:
+          GARMIN_API_KEY: ${{ secrets.GARMIN_API_KEY }}
+        run: python garmin_api_probe.py
