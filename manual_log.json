@@ -686,5 +686,13 @@
     "rpe": 0.0,
     "on_target": true,
     "session_notes": "routine physio today.  calf feels ok this morning but good timing for the physio later to just check"
+  },
+  {
+    "date": "2026-10-30",
+    "achilles_score": 0,
+    "session_type": "easy",
+    "rpe": 2.0,
+    "on_target": true,
+    "session_notes": "Calf better, can feel it slightly. Physio confirmed not a tear"
   }
 ]
