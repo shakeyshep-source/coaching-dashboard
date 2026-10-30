@@ -7453,5 +7453,20 @@
     "cadence": 159.515625,
     "aerobic_te": 2.4000000953674316,
     "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-10-29",
+    "activity_id": 24897310330,
+    "name": "SPA retreat",
+    "type": "other",
+    "distance_km": null,
+    "duration_min": 26.4,
+    "avg_pace_min_per_km": null,
+    "avg_hr": 92.0,
+    "max_hr": 152.0,
+    "elevation_gain_m": 0.0,
+    "cadence": 3.125,
+    "aerobic_te": 0.5,
+    "anaerobic_te": 0.6000000238418579
   }
 ]

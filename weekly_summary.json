@@ -1,19 +1,19 @@
 {
-  "generated": "2026-10-29",
+  "generated": "2026-10-30",
   "next_race": {
     "name": "GUY FAWKES 5 (8",
     "date": "2026-11-01",
     "distance_km": 14,
-    "days_away": 3
+    "days_away": 2
   },
   "race_readiness": {
     "race": {
       "name": "GUY FAWKES 5 (8",
       "date": "2026-11-01",
       "distance_km": 14,
-      "days_away": 3
+      "days_away": 2
     },
-    "weeks_to_race": 0.4,
+    "weeks_to_race": 0.3,
     "taper_start": "2026-10-22",
     "remaining_key_sessions": {
       "tempo": 0,
@@ -772,10 +772,10 @@
       "on_target_pct": 100,
       "avg_rpe": 3.4,
       "max_achilles": 0,
-      "avg_hrv": 36.7,
-      "avg_rhr": 48.3,
-      "avg_sleep_score": 84.7,
-      "avg_sleep_hrs": 8.6,
+      "avg_hrv": 34.5,
+      "avg_rhr": 49.0,
+      "avg_sleep_score": 83.5,
+      "avg_sleep_hrs": 8.3,
       "easy_pace_min_km": 4.79,
       "easy_avg_hr": 140.8,
       "efficiency": 1.484,
@@ -1047,10 +1047,10 @@
       "on_target_pct": 100,
       "avg_rpe": 1.5,
       "max_achilles": 0,
-      "avg_hrv": 35.8,
+      "avg_hrv": 36.4,
       "avg_rhr": 48.8,
       "avg_sleep_score": 83.8,
-      "avg_sleep_hrs": 7.6,
+      "avg_sleep_hrs": 7.7,
       "easy_pace_min_km": 4.81,
       "easy_avg_hr": 143.0,
       "efficiency": 1.454,

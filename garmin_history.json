@@ -1634,7 +1634,7 @@
   },
   {
     "date": "2026-10-29",
-    "rhr": 51.0,
+    "rhr": 50.0,
     "hrv_last_night": 35,
     "hrv_status": "UNBALANCED",
     "hrv_weekly_avg": 35,
@@ -1642,12 +1642,30 @@
     "sleep_duration_hrs": 8.19,
     "body_battery_high": 74,
     "body_battery_low": 32,
-    "training_load_acute": 725,
-    "training_load_chronic": 820,
+    "training_load_acute": 745,
+    "training_load_chronic": 824,
     "vo2max": 59.0,
     "vo2max_date": "2026-10-28",
     "training_status_feedback": "MAINTAINING_4",
-    "acwr_garmin": 0.8,
+    "acwr_garmin": 0.9,
     "acwr_status": "OPTIMAL"
+  },
+  {
+    "date": "2026-10-30",
+    "rhr": 50.0,
+    "hrv_last_night": 39,
+    "hrv_status": "UNBALANCED",
+    "hrv_weekly_avg": 35,
+    "sleep_score": 84,
+    "sleep_duration_hrs": 8.18,
+    "body_battery_high": 88,
+    "body_battery_low": 49,
+    "training_load_acute": 601,
+    "training_load_chronic": 799,
+    "vo2max": 59.0,
+    "vo2max_date": "2026-10-28",
+    "training_status_feedback": "MAINTAINING_3",
+    "acwr_garmin": 0.7,
+    "acwr_status": "LOW"
   }
 ]
