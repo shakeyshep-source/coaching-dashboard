@@ -694,5 +694,13 @@
     "rpe": 2.0,
     "on_target": true,
     "session_notes": "Calf better, can feel it slightly. Physio confirmed not a tear"
+  },
+  {
+    "date": "2026-10-31",
+    "achilles_score": 0,
+    "session_type": "easy",
+    "rpe": 2.0,
+    "on_target": true,
+    "session_notes": "Did easy and a couple of strides to check calf and seemed fine"
   }
 ]
