@@ -456,13 +456,16 @@ preventer itself is a prescribing decision for his GP or asthma nurse.
     on feel rather than as a record attempt.
   - **Linda Frank 5, January 2027 (date TBC)** — the next shot at the
     5-mile record. Date and entry to confirm.
-  - **Fission 20, mid-to-late March 2027 (date TBC) — possible, a
-    rehearsal.** Flat 20 miles at Berkeley, 4–5 weeks before
+  - **Fission 20, Sun 14 March 2027, 9:00 — possible, a
+    rehearsal.** Flat 20 miles at Berkeley, 5 weeks before
     Manchester: the 32 km long run with a race around it. Run as 10
     miles steady ~4:30/km then 10 at goal MP, fuelling 60–90 g/h —
     not raced. Club record 2:23:06; that pacing gives ~2:21, so the
     record is a by-product, and is dropped before the rehearsal is.
-    **Entries open ~1 Nov and sell out every year — remind him.**
+    **Entries open 1 Jan 2027 and sell out every year** (reminder set
+    for that morning). The winter plan's biggest long run (~21 Mar)
+    sits a week after it — let Fission be one of the two 32 km+ runs,
+    not an extra one.
     Its half option is not the PB attempt; that wants a separate half
     in late Feb. Details in `fixtures.json`.
   - **XC Sun 13 Dec**
