@@ -1,29 +1,113 @@
 {
-  "id": "2026-10-27",
-  "created": "2026-10-27T14:56:33",
-  "status": "applied",
-  "rationale": "Your 200s for tomorrow replace the easy 8 km: 3 km warm-up with pickups, 6\u20138 \u00d7 200 m at 3:30\u20133:35/km (42\u201343 s), full recovery, 2\u20133 km cool-down, ~8 km all in. Why it works: 200s are neuromuscular, not a hard session. About 25 s of work per rep, little lactate, little recovery cost, and they keep leg speed ticking over in a week with no other sharpening before Guy Fawkes. Wednesday is 3 days after Stroud, and the gate numbers (RHR 47, HRV 34 vs 35 baseline, achilles 0) do not stop it. Thursday's 4 strides come out, so you are not adding speed twice in 48 h. The Friday gate for 1 Nov is unchanged. Nothing else moves.",
+  "id": "2026-11-01",
+  "created": "2026-11-01T13:47:37",
+  "status": "pending",
+  "rationale": "Hold: nothing already planned changes of substance; this extends the horizon to 22 Nov and adds a calf condition. 2-8 Nov is the first November build week (~62 km, no quality, first 18 km long run with gels), firm, with a graded leg-gym return after the 28 Oct calf tightness. 9-15 and 16-22 Nov are provisional: quality returns on the 11th and 14th with volume held at ~64 km, then the third week adds only the long run (20 km) and a small step, quality unchanged, so volume and intensity never rise together. The first quality session back is conditional on the calf being silent.",
   "changes": [
     {
-      "date": "2026-10-28",
-      "session_type": "intervals",
-      "target_distance_km": 8,
-      "target_pace": "3:30-3:35/km for the reps (42-43 s per 200 m)",
-      "notes": "3 km easy warm-up finishing with 3-4 pickups (buff over the mouth if cold). 6-8 x 200 m at 3:30-3:35/km, on pace and not under; the first and last should look the same. Recovery 200 m slow jog (~90 s-2 min) so every rep feels as easy as the first. 2-3 km easy cool-down. ~8 km all in. Speed 5 for the reps, not the Alphafly. Stop at 6 if the legs feel heavy. Light gym only; nothing heavy lower-body. Chest tightness, a temperature or aches: drop back to easy."
+      "date": "2026-11-02",
+      "session_type": "rest",
+      "target_distance_km": null,
+      "target_pace": null,
+      "notes": "Rest. Day after Guy Fawkes. Log the race, the calf and what you took."
     },
     {
-      "date": "2026-10-29",
+      "date": "2026-11-03",
       "session_type": "easy",
-      "target_distance_km": 7,
+      "target_distance_km": 12,
       "target_pace": null,
-      "notes": "Easy 7 km, no strides (the 200s were yesterday). Relaxed."
+      "notes": "Easy 12 km, genuinely easy; the longer Tuesday run starts at the bottom of its 18-20 km range. If the left calf is tight from the race, cut to 8 and tell me. Judge it on feel, not pace."
+    },
+    {
+      "date": "2026-11-04",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "Easy 8 km. Leg gym back in (calf, soleus, single-leg, RDL), graded rather than heavy this first week given the calf on 28 Oct."
+    },
+    {
+      "date": "2026-11-07",
+      "session_type": "easy",
+      "target_distance_km": 10,
+      "target_pace": null,
+      "notes": "Easy 10 km + 4 strides. No tempo this week: volume rises, so intensity does not."
+    },
+    {
+      "date": "2026-11-08",
+      "session_type": "long",
+      "target_distance_km": 18,
+      "target_pace": null,
+      "notes": "Long run 18 km, easy (~5:00/km or slower), the start of the Nov 18-22 km progression. Gel at ~20 min and again at ~60 min, a first gut-training step; log what you took. No pace work. Only if achilles 0 with no prodrome, calf quiet, and HRV/RHR steady."
+    },
+    {
+      "date": "2026-11-11",
+      "session_type": "intervals",
+      "target_distance_km": 11.5,
+      "target_pace": "3:38-3:40/km for the reps",
+      "notes": "Provisional — 3 km warm-up with pickups (buff over the mouth until you start), 4x1 km at 3:38-3:40/km with 90 s jog, 3 km cool-down, ~11.5 km all in. Reopens speed gently after the racing block. Conditional on the left calf being silent through the week before; if not, easy 8 instead. Put the paces on the watch."
+    },
+    {
+      "date": "2026-11-14",
+      "session_type": "tempo",
+      "target_distance_km": 13,
+      "target_pace": "3:50-3:53/km",
+      "notes": "Provisional — 3 km warm-up, 2x12 min at 3:50-3:53/km with 2 min jog, 3 km cool-down, ~13 km all in. Cold air: longer warm-up with pickups, buff, log any chest symptoms."
+    },
+    {
+      "date": "2026-11-15",
+      "session_type": "long",
+      "target_distance_km": 18,
+      "target_pace": null,
+      "notes": "Provisional — Long run 18 km easy (~5:00/km or slower), second week at this level; gels at ~20 and ~60 min, log what you took. Only if achilles 0 and HRV/RHR steady. Week ~64 km: volume held, not raised, because intensity returned."
+    },
+    {
+      "date": "2026-11-16",
+      "session_type": "rest",
+      "target_distance_km": null,
+      "target_pace": null,
+      "notes": "Provisional — Rest."
+    },
+    {
+      "date": "2026-11-17",
+      "session_type": "easy",
+      "target_distance_km": 10,
+      "target_pace": null,
+      "notes": "Provisional — Easy 10 km."
+    },
+    {
+      "date": "2026-11-18",
+      "session_type": "intervals",
+      "target_distance_km": 12.5,
+      "target_pace": "3:38-3:40/km for the reps",
+      "notes": "Provisional — 3 km warm-up with pickups, 5x1 km at 3:38-3:40/km with 90 s jog, 3 km cool-down, ~12.5 km all in. One rep more than the 11th, same pace; goes ahead only if the 11th was clean and the calf silent."
+    },
+    {
+      "date": "2026-11-19",
+      "session_type": "easy",
+      "target_distance_km": 6,
+      "target_pace": null,
+      "notes": "Provisional — Easy 6 km. Leg gym on or after today."
+    },
+    {
+      "date": "2026-11-20",
+      "session_type": "easy",
+      "target_distance_km": 5,
+      "target_pace": null,
+      "notes": "Provisional — Easy 5 km."
+    },
+    {
+      "date": "2026-11-21",
+      "session_type": "tempo",
+      "target_distance_km": 13,
+      "target_pace": "3:50-3:53/km",
+      "notes": "Provisional — Same as 14 Nov: 3 km warm-up, 2x12 min at 3:50-3:53/km, 2 min jog, 3 km cool-down. Same quality as the week before; only the long run steps up."
+    },
+    {
+      "date": "2026-11-22",
+      "session_type": "long",
+      "target_distance_km": 20,
+      "target_pace": null,
+      "notes": "Provisional — Long run 20 km easy (~5:00/km or slower); gel from 20 min then every ~25 min, log what you took. Week ~66 km. Only if achilles 0, calf quiet, HRV/RHR steady; otherwise hold at 18."
     }
-  ],
-  "athlete_response": {
-    "timestamp": "27/10/2026 22:58:02",
-    "review_date": "2026-10-27",
-    "decision": "approve",
-    "thoughts": "Super"
-  },
-  "applied_at": "2026-10-27T22:58:17"
+  ]
 }
