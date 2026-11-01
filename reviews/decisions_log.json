@@ -501,5 +501,13 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": "Happy with plan.. Notes as per my notes on race log",
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-11-01T18:56:15",
+    "proposal_id": "2026-11-01",
+    "decision": "amend",
+    "action_taken": "amendment_requested",
+    "athlete_thoughts": "Race done\nDNF after 0.8k\nCalf was tight, ok in warm up but felt it in the strides so went off slow but\nIt started to get tighter as we went along so decided best idea was to stop.  Physio saw it Thurs and nothing torn but just tight.\nPlanning to sit on a static bike this week and do some. Light isometric calf work, approved by my physio",
+    "changes_count": 15
   }
 ]
