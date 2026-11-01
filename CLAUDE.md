@@ -49,12 +49,12 @@ daily, weekly review, or ad-hoc — starts from this brief.
   downhill with drafting out of a headwind, the second 10 km was only
   24 s slower than the first, and the last km was the fastest of the
   race. Settled; do not re-open it.
-  **But nothing in `fixtures.json` is a half marathon.** Manchester is
-  the marathon; there is no half between now and April 2027 where he
-  could take it. If he wants that PB it needs putting in the calendar —
-  and a tune-up half in Feb/March 2027 is standard marathon-build
-  practice anyway, so the two wants coincide rather than compete.
-  Raise it when the winter block is written, not before.
+  **The PB attempt is now in the calendar: Wokingham Half, Sun 21 Feb
+  2027** (added 1 Nov 2026, entry still to make — it sells out). Fast,
+  mostly flat, 8 weeks before Manchester and 3 weeks either side of
+  Boddington 10 and Fission 20, so it doubles as the standard
+  marathon-build tune-up half. It replaces that week's long run and
+  gets a 4–5 day mini-taper.
 - **Current form (2026 races):** 5K 17:48 (Cardiff, Jul, tapered),
   10K 38:06 (Gloucester, Jun, untapered), Mile 5:13. These are what
   `race_predictor.py` projects from.
