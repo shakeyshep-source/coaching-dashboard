@@ -297,8 +297,8 @@ no `session_type`, so it is not a plan row; the winter block gets
 written from this brief, so this is where it gets picked up.
 
 - **When:** January 2027, once marathon volume has been up for a few
-  weeks and before the sharp end of the build. Boddington 10 is 31 Jan,
-  so early-to-mid January sits clear of that taper.
+  weeks and before the sharp end of the build. Boddington 10 is 31 Jan and
+  Linda Franks 5 is 17 Jan, so aim for about 6–12 January, clear of both.
 - **Conditions or it is worthless:** rested — at least **three days**
   after anything hard — and in the morning. A sample taken the day after
   a long run repeats exactly the distortion in this panel.
@@ -454,8 +454,12 @@ preventer itself is a prescribing decision for his GP or asthma nurse.
     after Stroud. Record 29:12 against a ~29:40 projection, so it was a
     stretch fresh; the week between is genuinely easy, and it is raced
     on feel rather than as a record attempt.
-  - **Linda Frank 5, January 2027 (date TBC)** — the next shot at the
-    5-mile record. Date and entry to confirm.
+  - **Linda Franks 5, Sun 17 Jan 2027** — the next shot at the 5-mile
+    record (29:12). Entries open 12:00 Sun 8 Nov 2026 and sold out in
+    2 h 20 min last year (reminder set). Two weeks before Boddington
+    10, inside the January base: a short ease-off, not a full taper.
+    If he wants to try bicarb, trial it in a hard session in December
+    first, never new on race day.
   - **Fission 20, Sun 14 March 2027, 9:00 — possible, a
     rehearsal.** Flat 20 miles at Berkeley, 5 weeks before
     Manchester: the 32 km long run with a race around it. Run as 10
