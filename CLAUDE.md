@@ -473,8 +473,8 @@ preventer itself is a prescribing decision for his GP or asthma nurse.
     Its half option is not the PB attempt; that wants a separate half
     in late Feb. Details in `fixtures.json`.
   - **XC Sun 13 Dec**
-  - **XC Sat 27 Feb 2027** — sits 7 weeks out from Manchester, inside
-    the marathon build.
+  - ~~XC Sat 27 Feb 2027~~ — **cancelled by him, 1 Nov 2026.** Removed
+    from `fixtures.json`; the weekend belongs to Wokingham recovery.
 
   **The XC league is out of reach, deliberately.** It needed 3 of 4
   fixtures. He dropped Sat 31 Oct first (Guy Fawkes 5 was the next
@@ -483,8 +483,8 @@ preventer itself is a prescribing decision for his GP or asthma nurse.
   put the club 5-mile record on the line. Two of four is not a
   completion, and he knows it.
 
-  So **13 Dec and 27 Feb are optional again, not required** — do not
-  treat either as a fixture that has to happen. That is a gain, not a
+  So **13 Dec is optional, not required** (27 Feb is now cancelled) — do
+  not treat it as a fixture that has to happen. That is a gain, not a
   loss: 27 Feb sat seven weeks out from Manchester, inside
   marathon-specific work, and was the one scheduling problem flagged
   for the winter. Default to skipping it unless he says otherwise.
