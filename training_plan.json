@@ -902,63 +902,63 @@
     "session_type": "rest",
     "target_distance_km": null,
     "target_pace": null,
-    "notes": "Provisional \u2014 Rest. Day after Guy Fawkes.",
+    "notes": "Rest. Log the race, the calf and what you took. Light isometric calf work as your physio approved.",
     "source": "coach",
-    "updated_at": "2026-10-18T13:06:19"
+    "updated_at": "2026-11-01T20:08:35"
   },
   {
     "date": "2026-11-03",
     "session_type": "easy",
-    "target_distance_km": 12,
+    "target_distance_km": null,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 12km, genuinely easy; the longer Tuesday medium-long starts here at the bottom of its 18-20km range. Judge it on how the legs feel after the race, not on pace.",
+    "notes": "Bike, not a run. 30-40 min on the static bike, seated, normal cadence (no big low-cadence grinding), conversational effort. Light isometric calf work per physio. No running.",
     "source": "coach",
-    "updated_at": "2026-10-18T13:06:19"
+    "updated_at": "2026-11-01T20:08:35"
   },
   {
     "date": "2026-11-04",
     "session_type": "easy",
-    "target_distance_km": 8,
+    "target_distance_km": null,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 8km. Leg gym back in (calf, soleus, single-leg, RDL) if the legs feel normal.",
+    "notes": "Bike, not a run. 30-45 min easy on the bike. Leg gym: upper body and non-calf lower work only if pain-free; calf work stays the light isometrics your physio approved, no loaded plyometrics.",
     "source": "coach",
-    "updated_at": "2026-10-18T13:06:19"
+    "updated_at": "2026-11-01T20:08:35"
   },
   {
     "date": "2026-11-05",
     "session_type": "easy",
-    "target_distance_km": 8,
+    "target_distance_km": null,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 8km. Second leg session on or after today.",
+    "notes": "Bike, not a run. 30-45 min easy. Check at the end: 15-20 single-leg calf raises each side (straight and bent knee), then gentle hops. All pain-free is the gate for a first run; any tightness, stay on the bike.",
     "source": "coach",
-    "updated_at": "2026-10-18T13:06:19"
+    "updated_at": "2026-11-01T20:08:35"
   },
   {
     "date": "2026-11-06",
     "session_type": "easy",
-    "target_distance_km": 6,
+    "target_distance_km": null,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 6km.",
+    "notes": "Bike, not a run. 30-40 min easy, or a brisk walk. No running yet.",
     "source": "coach",
-    "updated_at": "2026-10-18T13:06:19"
+    "updated_at": "2026-11-01T20:08:35"
   },
   {
     "date": "2026-11-07",
     "session_type": "easy",
-    "target_distance_km": 10,
+    "target_distance_km": null,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 10km + 4 strides. No tempo this week: volume rises, so intensity does not. Saturday tempo returns the week after.",
+    "notes": "Return test. Only if the calf passed the raises and hops on Thu/Fri: 20-30 min easy run, flat, Vomeros, no strides, no pace. Stop at the first tightness and tell me. If not clean, bike 30-40 min instead and the return slides a day or two.",
     "source": "coach",
-    "updated_at": "2026-10-18T13:06:19"
+    "updated_at": "2026-11-01T20:08:35"
   },
   {
     "date": "2026-11-08",
-    "session_type": "long",
-    "target_distance_km": 18,
+    "session_type": "easy",
+    "target_distance_km": null,
     "target_pace": null,
-    "notes": "Provisional \u2014 Long run 18km, easy (~5:00/km or slower), the start of the Nov 18-22km progression. Gel at ~20 min and again at ~60 min (first gut-training step; log what you took). No pace work. Only if achilles 0 with no prodrome and HRV/RHR steady.",
+    "notes": "Bike 30-45 min easy. A second run only if Saturday felt like nothing at all, and then 25-35 min easy, flat, Vomeros.",
     "source": "coach",
-    "updated_at": "2026-10-18T13:06:19"
+    "updated_at": "2026-11-01T20:08:35"
   },
   {
     "date": "2026-11-09",
@@ -967,60 +967,123 @@
     "target_pace": null,
     "notes": "Provisional \u2014 Rest.",
     "source": "coach",
-    "updated_at": "2026-10-25T18:09:53"
+    "updated_at": "2026-11-01T20:08:35"
   },
   {
     "date": "2026-11-10",
     "session_type": "easy",
-    "target_distance_km": 10,
+    "target_distance_km": 6,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 10km. Quality returns this week, so volume holds.",
+    "notes": "Provisional \u2014 Easy 6 km, flat, Vomeros, only if the weekend run was clean. Otherwise bike.",
     "source": "coach",
-    "updated_at": "2026-10-25T18:09:53"
+    "updated_at": "2026-11-01T20:08:35"
   },
   {
     "date": "2026-11-11",
-    "session_type": "intervals",
-    "target_distance_km": 11.5,
-    "target_pace": "3:38-3:40/km for the reps",
-    "notes": "Provisional \u2014 3km warm-up with pickups (cold air: buff over the mouth until you start), 4x1km at 3:38-3:40/km with 90 s jog, 3km cool-down, ~11.5km all in. Purpose: reopen speed work gently after the racing block. Run on pace, not under.",
+    "session_type": "easy",
+    "target_distance_km": null,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Bike 30-40 min easy, or leg gym (graded calf/soleus/single-leg work). The 4x1 km intervals are withdrawn: no speed until a full week of normal running is calf-clear.",
     "source": "coach",
-    "updated_at": "2026-10-25T18:09:53"
+    "updated_at": "2026-11-01T20:08:35"
   },
   {
     "date": "2026-11-12",
     "session_type": "easy",
-    "target_distance_km": 7,
+    "target_distance_km": 8,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 7km. Leg gym on or after today.",
+    "notes": "Provisional \u2014 Easy 8 km, Vomeros, flat.",
     "source": "coach",
-    "updated_at": "2026-10-25T18:09:53"
+    "updated_at": "2026-11-01T20:08:35"
   },
   {
     "date": "2026-11-13",
-    "session_type": "easy",
-    "target_distance_km": 5,
+    "session_type": "rest",
+    "target_distance_km": null,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 5km.",
+    "notes": "Provisional \u2014 Rest or light bike.",
     "source": "coach",
-    "updated_at": "2026-10-25T18:09:53"
+    "updated_at": "2026-11-01T20:08:35"
   },
   {
     "date": "2026-11-14",
-    "session_type": "tempo",
-    "target_distance_km": 13,
-    "target_pace": "3:50-3:53/km",
-    "notes": "Provisional \u2014 3km warm-up, 2x12 min at 3:50-3:53/km with 2 min jog, 3km cool-down, ~13km all in.",
+    "session_type": "easy",
+    "target_distance_km": 10,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 10 km, no strides. No tempo: a week of normal running must pass first.",
     "source": "coach",
-    "updated_at": "2026-10-25T18:09:53"
+    "updated_at": "2026-11-01T20:08:35"
   },
   {
     "date": "2026-11-15",
     "session_type": "long",
-    "target_distance_km": 18,
+    "target_distance_km": 12,
     "target_pace": null,
-    "notes": "Provisional \u2014 Long run 18km easy (~5:00/km or slower), second week at this level; gels at ~20 and ~60 min, log what you took. Only if achilles 0 and HRV/RHR steady. Week ~64km: volume held, not raised, because intensity returned.",
+    "notes": "Provisional \u2014 Easy 12 km, ~5:00/km or slower, one gel at ~40 min for practice. Only if achilles 0, calf silent and HRV/RHR steady.",
     "source": "coach",
-    "updated_at": "2026-10-25T18:09:53"
+    "updated_at": "2026-11-01T20:08:35"
+  },
+  {
+    "date": "2026-11-16",
+    "session_type": "rest",
+    "target_distance_km": null,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Rest.",
+    "source": "coach",
+    "updated_at": "2026-11-01T20:08:35"
+  },
+  {
+    "date": "2026-11-17",
+    "session_type": "easy",
+    "target_distance_km": 10,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 10 km. Calf silent through the week, or hold at this level.",
+    "source": "coach",
+    "updated_at": "2026-11-01T20:08:35"
+  },
+  {
+    "date": "2026-11-18",
+    "session_type": "easy",
+    "target_distance_km": 8,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 8 km. Replaces the 5x1 km: speed returns only after a clear week of normal running, probably the week of 23 Nov, with strides first.",
+    "source": "coach",
+    "updated_at": "2026-11-01T20:08:35"
+  },
+  {
+    "date": "2026-11-19",
+    "session_type": "easy",
+    "target_distance_km": 8,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 8 km. Leg gym on or after today.",
+    "source": "coach",
+    "updated_at": "2026-11-01T20:08:35"
+  },
+  {
+    "date": "2026-11-20",
+    "session_type": "easy",
+    "target_distance_km": 6,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 6 km.",
+    "source": "coach",
+    "updated_at": "2026-11-01T20:08:35"
+  },
+  {
+    "date": "2026-11-21",
+    "session_type": "easy",
+    "target_distance_km": 10,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 10 km + 4 strides if the calf is silent. Tempo waits one more week.",
+    "source": "coach",
+    "updated_at": "2026-11-01T20:08:35"
+  },
+  {
+    "date": "2026-11-22",
+    "session_type": "long",
+    "target_distance_km": 16,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Long run 16 km easy (~5:00/km or slower); gel from 20 min then every ~25 min, log what you took. Week ~55 km. The 18-22 km progression restarts from here once the calf has been clear a week; the November volume step waits, as agreed.",
+    "source": "coach",
+    "updated_at": "2026-11-01T20:08:35"
   }
 ]

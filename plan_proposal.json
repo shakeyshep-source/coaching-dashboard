@@ -1,7 +1,7 @@
 {
   "id": "2026-11-01",
   "created": "2026-11-01T13:47:37",
-  "status": "pending",
+  "status": "applied",
   "rationale": "What I changed and why: your DNF at 0.8 km and your plan for this week (static bike, light isometric calf work, physio-approved) replace the build I wrote this morning, before the race result. 2-6 Nov is bike plus the isometrics, no running; the first run is a 20-30 min easy test on Sat 7 Nov, only if single-leg raises and gentle hops are pain-free. The 11 Nov intervals and 14 Nov tempo are withdrawn: fast reps loaded the calf on 28 Oct, so quality waits until a full week of normal running has been calf-clear, which pushes it to about the week of 23 Nov. The long-run progression and the November volume step slide back to match, as agreed on 1 Nov (the step waits for a clear week). Weeks 2 and 3 are provisional and rebuild by feel: 6-12 km runs, then ~55 km by 22 Nov. What does not change: your physio outranks this plan, the leg sessions stay (calf work kept to isometrics for now), and stopping at 0.8 km was the right call. A week or two of lost volume costs almost nothing against a strained calf; 'return before it was ready' is exactly the loop you described in the achilles years.",
   "changes": [
     {
@@ -153,9 +153,10 @@
     }
   ],
   "athlete_response": {
-    "timestamp": "01/11/2026 18:56:01",
+    "timestamp": "01/11/2026 20:08:21",
     "review_date": "2026-11-01",
-    "decision": "amend",
-    "thoughts": "Race done\nDNF after 0.8k\nCalf was tight, ok in warm up but felt it in the strides so went off slow but\nIt started to get tighter as we went along so decided best idea was to stop.  Physio saw it Thurs and nothing torn but just tight.\nPlanning to sit on a static bike this week and do some. Light isometric calf work, approved by my physio"
-  }
+    "decision": "approve",
+    "thoughts": "Ok"
+  },
+  "applied_at": "2026-11-01T20:08:35"
 }
