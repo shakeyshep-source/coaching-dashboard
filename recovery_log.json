@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-31",
+  "generated": "2026-11-01",
   "window_days": 7,
   "sessions": [
     {
@@ -346,7 +346,17 @@
       "note": "Felt strong, cruising along, but on the sixth the left calf in its middle felt tight, so stopped and then just cooled down 3k. So will see how it is Thurs, Fri, sat before making a decision in GF5"
     }
   ],
-  "pending": [],
+  "pending": [
+    {
+      "date": "2026-11-01",
+      "session_type": "race",
+      "days_since": 0,
+      "hrv_back": null,
+      "rhr_back": null,
+      "hrv_reference": 35.9,
+      "rhr_reference": 48.7
+    }
+  ],
   "trend": {
     "recent_avg_days": 3.3,
     "prior_avg_days": 1.3,
