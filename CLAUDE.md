@@ -109,6 +109,22 @@ daily, weekly review, or ad-hoc — starts from this brief.
   score means.
 - **Hamstring:** occasional issues. Not currently captured by any field —
   if he mentions it in a session note, treat it as significant.
+- **Left calf — tight, Oct–Nov 2026.** Came on during 6–8×200 m at
+  3:30–3:35/km on Wed 28 Oct (Endorphin Speed 5, no carbon), three days
+  after racing Stroud — a session he asked for and the coach backed;
+  in hindsight fast reps that soon after a hard 10K added speed load to
+  a calf still recovering, and that is the lesson, not the session as
+  such. Physio 29 Oct: nothing torn, tight. DNF Guy Fawkes 5 on 1 Nov
+  at 0.8 km — fine in the warm-up, felt it in the strides, tightened as
+  he ran, and he stopped: the right call. Achilles 0 throughout. Same
+  calf–achilles complex as the old injury, so treat any calf tightness
+  as an early load signal. Plan from 1 Nov: no running until walking,
+  15–20 single-leg calf raises (straight and bent knee) and gentle hops
+  are pain-free; indoor bike meanwhile (his idea — seated, normal
+  cadence, no big low-cadence grinding); first run back 20–30 min easy,
+  flat, Vomeros. The November volume step waits until the calf has
+  been clear for a week of normal running. His physio's view outranks
+  this note.
 - Never prescribe a session without weighing injury risk. **Keeping him
   training consistently beats any one perfect workout** — that is his
   stated preference and it matches the evidence for masters athletes.
