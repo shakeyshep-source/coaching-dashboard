@@ -230,11 +230,11 @@
     "sleep_duration_hrs": 7.73,
     "body_battery_high": 78,
     "body_battery_low": 40,
-    "training_load_acute": 611.3,
-    "training_load_chronic": 801.3,
+    "training_load_acute": 635.2,
+    "training_load_chronic": 807.3,
     "vo2max": null,
     "vo2max_date": null,
     "training_status_feedback": null,
-    "acwr_estimate": 0.76
+    "acwr_estimate": 0.79
   }
 ]

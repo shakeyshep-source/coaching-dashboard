@@ -46,41 +46,41 @@
   },
   "acwr": {
     "days": 14,
-    "mean_abs_difference": 0.094
+    "mean_abs_difference": 0.096
   },
   "activities": {
-    "in_main_since_shadow_start": 83,
-    "found_in_official": 83,
+    "in_main_since_shadow_start": 84,
+    "found_in_official": 84,
     "missing_from_official": 0,
     "fields": {
       "distance_km": {
-        "compared": 83,
-        "agree": 83,
+        "compared": 84,
+        "agree": 84,
         "official_missing": 0
       },
       "duration_min": {
-        "compared": 83,
-        "agree": 83,
+        "compared": 84,
+        "agree": 84,
         "official_missing": 0
       },
       "avg_hr": {
-        "compared": 83,
-        "agree": 83,
+        "compared": 84,
+        "agree": 84,
         "official_missing": 0
       },
       "max_hr": {
-        "compared": 83,
-        "agree": 83,
+        "compared": 84,
+        "agree": 84,
         "official_missing": 0
       },
       "elevation_gain_m": {
-        "compared": 83,
-        "agree": 83,
+        "compared": 84,
+        "agree": 84,
         "official_missing": 0
       },
       "cadence": {
-        "compared": 83,
-        "agree": 83,
+        "compared": 84,
+        "agree": 84,
         "official_missing": 0
       }
     }
