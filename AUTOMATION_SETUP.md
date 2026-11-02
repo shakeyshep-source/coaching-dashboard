@@ -257,6 +257,34 @@ GitHub's two Sunday slots stay as backstops. The review checks whether
 today's already exists before doing anything, so whichever arrives
 second does nothing.
 
+## 8. Make the morning pull arrive on time (3 min)
+
+GitHub's schedule has been starting the early pull hours late (31 Oct:
+the ~03:30 slot ran at 09:50), so the dashboard was stale first thing.
+Same fix as step 7.
+
+In the **weekly review response** spreadsheet's Apps Script editor:
+
+1. Re-paste `form_submit_trigger.gs` from this repo — it now has a
+   `dailyPullNudge` function as well. Save. Existing triggers keep
+   working.
+2. **Triggers (clock icon) → Add trigger**
+   - Function: `dailyPullNudge`
+   - Event source: **Time-driven**
+   - Type: **Day timer** → **6am to 7am**
+3. Save. Same token, same script property, nothing new to grant.
+
+GitHub's three daily slots stay as backstops. Runs share one queue, so
+a late cron arriving while a pull is running waits its turn.
+
+## 9. Garmin official Personal API key (done 30 Oct 2026)
+
+`GARMIN_API_KEY` (Actions secret) is the personal key from Garmin
+Connect → Settings → Personal API Key. **It expires 30 Oct 2027.**
+Before then: delete it there, generate a new one, and paste it over the
+secret (Garmin shows a key only once). It feeds `garmin_official.py`,
+running in shadow mode from Nov 2026 — see shadow/comparison.json.
+
 ## 5. Retire the laptop cron
 
 Once the first cloud run has committed successfully (check the Actions
@@ -275,7 +303,7 @@ writers is pointless noise.
 |---|---|
 | Within ~1 min of any form submission | Forms sync, decision applied, and any query on the review answered |
 | Hourly, 06:00–22:00 | Backstop for the above, in case the Apps Script trigger fails |
-| ~06:15 daily | Full data pull (Garmin + weather) → dashboard fresh before 8am |
+| ~06:15 daily | Full data pull (Garmin + weather) → dashboard fresh before 8am. Fired by the Apps Script day timer (step 8); GitHub's slots are backstops |
 | ~11:30 daily | Catch-up pull (late watch sync, morning form entries) |
 | Sunday ~13:40 | Claude coach session: weekly review + plan proposal. Fired by the Apps Script timer (step 7); GitHub's own slots are late backstops |
 

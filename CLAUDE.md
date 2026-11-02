@@ -699,6 +699,9 @@ RAW:      garmin_pull.py  -> garmin_data.json (wellness, 14d)
                           -> garmin_laps.json (per-lap splits, accumulated)
                           -> garmin_streams.json (within-run HR/speed
                              samples, ~300 per run, for decoupling)
+          garmin_official.py -> shadow/*.json (same files via Garmin's
+                             official Personal API, Nov 2026, compared
+                             by compare_official.py before any switch)
           weather_pull.py -> weather.json (7d forecast)
                           -> weather_log.json (accumulated history)
           sheets_pull.py  -> manual_log.json, training_plan.json,

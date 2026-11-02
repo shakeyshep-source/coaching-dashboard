@@ -24,6 +24,13 @@ on:
     - cron: '20 6 * * *'   # ~07:20 UK backstop if the first run lagged or watch hadn't synced
     - cron: '30 10 * * *'  # late-morning catch-up for form entries
   workflow_dispatch: {}     # manual "run now" button in the Actions tab
+  # Fired by the Apps Script day timer (AUTOMATION_SETUP.md step 8):
+  # GitHub's crons above have been running hours late (31 Oct: the
+  # ~03:30 slot started 09:50), Google's timers within ~15 minutes.
+  # The crons stay as backstops; the concurrency group below queues
+  # any overlap rather than running two pulls at once.
+  repository_dispatch:
+    types: [daily-pull]
 
 permissions:
   contents: write
@@ -78,6 +85,17 @@ jobs:
         run: |
           python backfill_vo2max.py "$(date -d '-21 days' +%F)" \
             || echo "::warning::VO2max top-up failed - trend may lag a few days"
+
+      # Shadow run of Garmin's official Personal API (Nov 2026): writes
+      # shadow/ only, same schemas, so it can be compared with the
+      # current route for a few days before the dashboard switches.
+      # Nothing reads shadow/, so a failure here changes nothing.
+      - name: Shadow pull (official Garmin API)
+        env:
+          GARMIN_API_KEY: ${{ secrets.GARMIN_API_KEY }}
+        run: |
+          python garmin_official.py && python compare_official.py \
+            || echo "::warning::Official-API shadow pull failed - dashboard unaffected"
 
       - name: Commit and push updated data
         run: |

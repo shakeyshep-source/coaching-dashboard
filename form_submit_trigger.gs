@@ -35,6 +35,19 @@ function sundayReviewNudge() {
   dispatchToGitHub('weekly-review');
 }
 
+/**
+ * Fires the morning data pull. Wire it to a TIME-DRIVEN trigger
+ * (Day timer, 6am-7am) - AUTOMATION_SETUP.md step 8.
+ *
+ * GitHub's schedule has been starting the 03:30 pull hours late (31 Oct:
+ * 09:50), so the dashboard was stale first thing. Google's timers fire
+ * within about 15 minutes of the slot. The crons stay as backstops and
+ * the workflow's concurrency group queues any overlap.
+ */
+function dailyPullNudge() {
+  dispatchToGitHub('daily-pull');
+}
+
 function dispatchToGitHub(eventType) {
   const token = PropertiesService.getScriptProperties().getProperty('GH_TOKEN');
   if (!token) {
