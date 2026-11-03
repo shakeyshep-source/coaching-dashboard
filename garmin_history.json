@@ -1732,7 +1732,7 @@
     "sleep_duration_hrs": 8.85,
     "body_battery_high": 100,
     "body_battery_low": 65,
-    "training_load_acute": 500,
+    "training_load_acute": 501,
     "training_load_chronic": 763,
     "vo2max": 58.0,
     "vo2max_date": "2026-11-01",
