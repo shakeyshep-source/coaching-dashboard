@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-02",
+  "generated": "2026-11-03",
   "window_days": 7,
   "sessions": [
     {
@@ -344,23 +344,27 @@
       "interrupted_by_next_session": false,
       "temp_max_c": 14.5,
       "note": "Felt strong, cruising along, but on the sixth the left calf in its middle felt tight, so stopped and then just cooled down 3k. So will see how it is Thurs, Fri, sat before making a decision in GF5"
-    }
-  ],
-  "pending": [
+    },
     {
       "date": "2026-11-01",
       "session_type": "race",
-      "days_since": 1,
-      "hrv_back": null,
-      "rhr_back": null,
+      "confounders_in_window": [],
       "hrv_reference": 35.9,
-      "rhr_reference": 48.7
+      "hrv_recovery_days": 2,
+      "rhr_reference": 48.7,
+      "rhr_recovery_days": 1,
+      "recovery_days": 2,
+      "recovered": true,
+      "interrupted_by_next_session": false,
+      "temp_max_c": 10.9,
+      "note": "Calf was tight in buold up but had eased since Wednesday.. Warm up was fine but could feel it more in the strides...opted for a slow start but realised at 0.8k it was getting tighter so pulled up, for a DNF"
     }
   ],
+  "pending": [],
   "trend": {
-    "recent_avg_days": 3.3,
-    "prior_avg_days": 1.3,
-    "direction": "lengthening \u2014 recovery is taking longer than it was",
-    "sessions_measured": 21
+    "recent_avg_days": 2.3,
+    "prior_avg_days": 2.3,
+    "direction": "stable",
+    "sessions_measured": 22
   }
 }

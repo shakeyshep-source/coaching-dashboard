@@ -222,7 +222,7 @@
   },
   {
     "date": "2026-11-02",
-    "rhr": 50,
+    "rhr": 48,
     "hrv_last_night": 33,
     "hrv_status": "BALANCED",
     "hrv_weekly_avg": 36,
@@ -236,5 +236,22 @@
     "vo2max_date": null,
     "training_status_feedback": null,
     "acwr_estimate": 0.79
+  },
+  {
+    "date": "2026-11-03",
+    "rhr": 47,
+    "hrv_last_night": 41,
+    "hrv_status": "UNBALANCED",
+    "hrv_weekly_avg": 36,
+    "sleep_score": 91,
+    "sleep_duration_hrs": 8.85,
+    "body_battery_high": 100,
+    "body_battery_low": 65,
+    "training_load_acute": 533.4,
+    "training_load_chronic": 774.9,
+    "vo2max": null,
+    "vo2max_date": null,
+    "training_status_feedback": null,
+    "acwr_estimate": 0.69
   }
 ]

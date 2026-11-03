@@ -1,51 +1,51 @@
 {
   "wellness": {
-    "days": 14,
+    "days": 15,
     "fields": {
       "rhr": {
-        "compared": 14,
-        "agree": 14,
+        "compared": 15,
+        "agree": 15,
         "official_missing": 0
       },
       "hrv_last_night": {
-        "compared": 14,
-        "agree": 14,
+        "compared": 15,
+        "agree": 15,
         "official_missing": 0
       },
       "hrv_status": {
-        "compared": 14,
-        "agree": 14,
+        "compared": 15,
+        "agree": 15,
         "official_missing": 0
       },
       "hrv_weekly_avg": {
-        "compared": 14,
-        "agree": 14,
+        "compared": 15,
+        "agree": 15,
         "official_missing": 0
       },
       "sleep_score": {
-        "compared": 14,
-        "agree": 14,
+        "compared": 15,
+        "agree": 15,
         "official_missing": 0
       },
       "sleep_duration_hrs": {
-        "compared": 14,
-        "agree": 14,
+        "compared": 15,
+        "agree": 15,
         "official_missing": 0
       },
       "body_battery_high": {
-        "compared": 14,
-        "agree": 14,
+        "compared": 15,
+        "agree": 15,
         "official_missing": 0
       },
       "body_battery_low": {
-        "compared": 14,
-        "agree": 14,
+        "compared": 15,
+        "agree": 15,
         "official_missing": 0
       }
     }
   },
   "acwr": {
-    "days": 14,
+    "days": 15,
     "mean_abs_difference": 0.096
   },
   "activities": {
