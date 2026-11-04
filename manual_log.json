@@ -726,5 +726,13 @@
     "rpe": 0.0,
     "on_target": true,
     "session_notes": "Easy bike, massage gun and 20mins Finnish sauna"
+  },
+  {
+    "date": "2026-11-04",
+    "achilles_score": 0,
+    "session_type": "rest",
+    "rpe": 0.0,
+    "on_target": true,
+    "session_notes": "Daughters graduation"
   }
 ]
