@@ -3,24 +3,24 @@
     "date": "2026-11-04",
     "temp_max_c": 10.9,
     "temp_min_c": 8.4,
-    "humidity_pct": 79,
-    "wind_speed_kmh": 19.4,
+    "humidity_pct": 78,
+    "wind_speed_kmh": 19.1,
     "heat_risk": "low"
   },
   {
     "date": "2026-11-05",
     "temp_max_c": 11.1,
-    "temp_min_c": 8.2,
-    "humidity_pct": 73,
-    "wind_speed_kmh": 14.8,
+    "temp_min_c": 8.1,
+    "humidity_pct": 74,
+    "wind_speed_kmh": 14.0,
     "heat_risk": "low"
   },
   {
     "date": "2026-11-06",
-    "temp_max_c": 10.0,
+    "temp_max_c": 11.0,
     "temp_min_c": 6.0,
-    "humidity_pct": 84,
-    "wind_speed_kmh": 10.4,
+    "humidity_pct": 83,
+    "wind_speed_kmh": 11.2,
     "heat_risk": "low"
   },
   {
