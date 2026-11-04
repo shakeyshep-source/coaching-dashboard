@@ -9,9 +9,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#2C6CB0">
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#131312">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0C1828">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap">
 <title>Coaching Dashboard</title>
 <link rel="manifest" href="manifest.json">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
@@ -20,84 +23,69 @@
      amber/red are RESERVED for status (readiness, achilles, heat, ACWR
      zone) and never used decoratively. Dark palette steps validated
      separately against the dark surface — not an automatic flip. */
+  /* Glass, dark-only (chose option B, 4 Nov 2026). Navy ground with two
+     soft club-colour glows behind translucent panels. Dark-only is a
+     deliberate trade: it reads better at 6am and in a screenshot, and a
+     touch worse in bright sun. Panels are translucent fills, not
+     backdrop-filter blur — the glows are already soft, so blur would
+     cost battery on every scroll and add nothing visible. Only the tab
+     bar blurs, because content scrolls under it. */
   :root {
-    --bg: #F7F7F5;
-    --surface: #FFFFFF;
-    --border: #E5E5E3;
-    --text-primary: #1A1A1A;
-    --text-secondary: #4A4A4A;
-    --text-muted: #6B7280;
-    --club-blue: #2C6CB0;
-    --club-yellow: #D4A800;
+    color-scheme: dark;
+    --bg: #0C1828;
+    --surface: rgba(255,255,255,0.07);
+    --border: rgba(255,255,255,0.14);
+    --text-primary: #F2F5FA;
+    --text-secondary: #C5D1E2;
+    --text-muted: #9FB2CC;
+    --club-blue: #5B9BE0;
+    --club-yellow: #F5C518;
     --club-yellow-bright: #F5C518;
-    --good: #2E7D32;      --good-bg: #EAF4EA;
-    --warn: #B45309;      --warn-bg: #FCF1E3;
-    --bad:  #A83232;      --bad-bg:  #F9ECEC;
-    --grid: #E5E5E3;
-    --tick: #6B7280;
-    /* Redraw additions: a second surface for de-carded rows, a stronger
-       rule for table heads, and the two club tints used as fills. */
-    --surface-2: #F2F4F7;
-    --border-strong: #C0CBD7;
-    --blue-tint: #E9F0F8;
-    --yellow-tint: #FBF1CC;
+    --on-blue: #0C1828;
+    --on-yellow: #14202F;
+    --good: #7ED38A;      --good-bg: rgba(126,211,138,0.14);
+    --warn: #F0A04B;      --warn-bg: rgba(240,160,75,0.15);
+    --bad:  #F28B82;      --bad-bg:  rgba(242,139,130,0.15);
+    --grid: rgba(255,255,255,0.08);
+    --tick: #9FB2CC;
+    --surface-2: rgba(255,255,255,0.05);
+    --border-strong: rgba(255,255,255,0.26);
+    --blue-tint: rgba(91,155,224,0.16);
+    --yellow-tint: rgba(245,197,24,0.13);
     --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
     /* legacy aliases used by older markup */
     --yellow: var(--club-yellow-bright);
-    --yellow-text: #A88400;
+    --yellow-text: #F5C518;
     --blue: var(--club-blue);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #131312;
-      --surface: #1E1E1C;
-      --border: #33332F;
-      --text-primary: #ECECEA;
-      --text-secondary: #C2C2BE;
-      --text-muted: #8B8B86;
-      --club-blue: #4A8CC8;
-      --club-yellow: #AE922C;
-      --club-yellow-bright: #C9A93B;
-      --good: #6CBB72;      --good-bg: #1E2C1F;
-      --warn: #D89A50;      --warn-bg: #302518;
-      --bad:  #D97070;      --bad-bg:  #321D1D;
-      --grid: #2C2C29;
-      --tick: #8B8B86;
-      --yellow-text: #C9A93B;
-      --surface-2: #272724;
-      --border-strong: #454540;
-      --blue-tint: #1B2A38;
-      --yellow-tint: #2E2817;
-    }
   }
   * { box-sizing: border-box; }
   body {
     margin: 0;
     background: var(--bg);
     color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    padding: 1.5rem;
-    padding-top: calc(1.5rem + 4px);
+    font-family: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    padding: 1.25rem 1rem;
+    padding-top: calc(1.25rem + env(safe-area-inset-top, 0px));
+    /* room for the floating tab bar */
+    padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px));
     font-variant-numeric: tabular-nums;
   }
-  /* Club identity: a thin blue->yellow bar across the very top */
+  /* The two glows. Fixed, so they stay put while panels slide over. */
   body::before {
     content: '';
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--club-blue) 0%, var(--club-blue) 55%, var(--club-yellow-bright) 55%, var(--club-yellow-bright) 100%);
-    z-index: 10;
+    position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      radial-gradient(340px 340px at 105% -4%, rgba(44,108,176,0.55), transparent 70%),
+      radial-gradient(300px 300px at -12% 58%, rgba(245,197,24,0.16), transparent 70%);
   }
 
   /* Hero briefing */
   .hero {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 20px;
     padding: 1rem;
     margin-bottom: 1rem;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
   }
   .hero .session { font-size: 20px; font-weight: 600; margin: 2px 0 2px; }
   .hero .session .stype { text-transform: capitalize; }
@@ -120,10 +108,25 @@
   .chip.bad  { background: var(--bad-bg);  border-color: transparent; color: var(--bad); }
 
   .spark-wrap { height: 34px; margin-top: 6px; position: relative; }
-  .header { margin-bottom: 1.25rem; }
-  .header .eyebrow { font-size: 13px; color: var(--text-muted); margin: 0; }
-  .header h1 { font-size: 22px; font-weight: 500; margin: 4px 0 0; }
-  .header .sub { font-size: 13px; color: var(--text-secondary); margin: 2px 0 0; }
+  .header {
+    margin-bottom: 1.1rem; display: flex; justify-content: space-between;
+    align-items: flex-end; gap: 12px;
+  }
+  .header .eyebrow {
+    font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--text-muted); font-weight: 700; margin: 0;
+  }
+  .header h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; margin: 2px 0 0; }
+  .header .sub { font-size: 12px; color: var(--text-muted); margin: 3px 0 0; }
+  .countdown { text-align: right; flex-shrink: 0; }
+  .countdown b {
+    display: block; font-size: 28px; font-weight: 800; line-height: 1;
+    color: var(--club-yellow);
+  }
+  .countdown span {
+    font-size: 10px; letter-spacing: 0.07em; text-transform: uppercase;
+    color: var(--text-muted); font-weight: 700;
+  }
 
   .summary-strip {
     background: var(--surface);
@@ -150,10 +153,9 @@
   }
   .card {
     background: var(--surface);
-    border-radius: 8px;
+    border-radius: 18px;
     padding: 1rem;
     border: 1px solid var(--border);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
   }
   .card .label { font-size: 13px; color: var(--text-muted); margin: 0 0 4px; }
   .card .value { font-size: 24px; font-weight: 500; margin: 0; }
@@ -169,11 +171,10 @@
 
   .chart-card {
     background: var(--surface);
-    border-radius: 12px;
+    border-radius: 20px;
     padding: 1rem;
     margin-bottom: 1rem;
     border: 1px solid var(--border);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
   }
   .chart-card .title { font-size: 13px; color: var(--text-muted); margin: 0 0 12px; }
   .chart-wrap { position: relative; height: 220px; }
@@ -187,34 +188,30 @@
     font-size: 14px;
   }
 
+  /* Floating tab bar, thumb height. The one panel that really blurs. */
   .tabs {
-    display: flex;
-    gap: 4px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 1.25rem;
-    position: sticky;
-    top: 4px;
-    background: var(--bg);
-    z-index: 5;
+    position: fixed; z-index: 20;
+    left: 12px; right: 12px; margin: 0 auto; max-width: 480px;
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
+    height: 64px; align-items: center;
+    background: rgba(20,34,54,0.74);
+    border: 1px solid rgba(255,255,255,0.16); border-radius: 26px;
+    -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.35);
   }
   /* Five tabs have to fit one row on a phone — a wrapped tab bar
      reads as an overflow bug, not a menu. */
   .tab-btn {
-    background: none;
-    border: none;
-    color: var(--text-muted);
-    font-size: 13px;
-    flex: 1;
-    min-width: 0;
-    padding: 9px 2px;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    font-family: inherit;
+    background: none; border: none; color: var(--text-muted);
+    font-size: 10.5px; font-weight: 700; min-width: 0; height: 100%;
+    padding: 0 2px; cursor: pointer; font-family: inherit;
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; gap: 3px;
   }
-  .tab-btn.active {
-    color: var(--text-primary);
-    border-bottom-color: var(--blue);
-  }
+  .tab-btn svg { width: 22px; height: 22px; }
+  .tab-btn.active { color: var(--club-yellow); font-weight: 800; }
+  .tab-btn:focus-visible { outline: 2px solid var(--club-yellow); outline-offset: -6px; border-radius: 18px; }
   .tab-panel { display: none; }
 
   /* ==========================================================
@@ -236,7 +233,7 @@
   .rail {
     display: flex; overflow-x: auto;
     background: var(--surface); border: 1px solid var(--border);
-    border-radius: 10px; margin-bottom: 1.25rem;
+    border-radius: 16px; margin-bottom: 1rem;
     font-family: var(--mono); font-size: 11px;
   }
   .rail span {
@@ -254,6 +251,7 @@
   .verdict {
     border-radius: 12px; padding: 14px 16px; margin-bottom: 12px;
     border: 1px solid var(--border); border-left: 5px solid var(--text-muted);
+    border-radius: 20px;
     background: var(--surface);
   }
   .verdict.good   { border-left-color: var(--good); }
@@ -269,32 +267,71 @@
   .verdict h2 { font-size: 17px; line-height: 1.3; margin: 0 0 6px; font-weight: 600; }
   .verdict p { font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.5; }
 
+  /* Readiness as a ring: last night's HRV as a share of its 7-day
+     baseline, coloured by the verdict. Verdict word in the middle, the
+     other inputs beside it, the sentence underneath — still checkable. */
+  .ringcard {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 26px; padding: 16px; margin-bottom: 12px;
+  }
+  .ringcard .top { display: flex; gap: 14px; align-items: center; }
+  .ring { position: relative; flex: none; }
+  .ring svg { display: block; }
+  .ring .mid {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+  }
+  .ring .mid b { font-size: 40px; font-weight: 800; line-height: 1; }
+  .ring .mid small { font-size: 11px; color: var(--text-muted); font-weight: 600; }
+  .pill {
+    margin-top: 6px; font-size: 11px; font-weight: 800; border-radius: 999px;
+    padding: 3px 9px; color: var(--on-blue);
+  }
+  .pill.good { background: var(--good); } .pill.caution { background: var(--warn); }
+  .pill.flag { background: var(--bad); }
+  .ringcard .stats { display: flex; flex-direction: column; gap: 10px; flex: 1; min-width: 0; }
+  .ringcard .stats div { display: flex; flex-direction: column; }
+  .ringcard .stats span { font-size: 11px; color: var(--text-muted); font-weight: 600; }
+  .ringcard .stats b { font-size: 20px; font-weight: 800; }
+  .ringcard .stats b i { font-style: normal; font-size: 11px; font-weight: 700; margin-left: 4px; }
+  .ringcard .say { margin: 12px 0 0; font-size: 13.5px; line-height: 1.45; font-weight: 600; }
+  .ringcard .why { margin: 4px 0 0; font-size: 12.5px; line-height: 1.45; color: var(--text-secondary); }
+  .minirings { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 12px; }
+  .miniring {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 22px;
+    padding: 12px; display: flex; gap: 10px; align-items: center; min-width: 0;
+  }
+  .miniring svg { flex: none; }
+  .miniring b { display: block; font-size: 18px; font-weight: 800; }
+  .miniring span { font-size: 11px; color: var(--text-muted); font-weight: 600; }
+
   /* Today's session, second. */
   .session-card {
     display: flex; align-items: center; justify-content: space-between;
-    gap: 14px; background: var(--blue-tint); border-radius: 12px;
-    padding: 14px 16px; margin-bottom: 12px;
+    gap: 14px; background: var(--club-yellow); color: var(--on-yellow);
+    border-radius: 24px; padding: 16px 18px; margin-bottom: 12px;
   }
   .session-card .lab {
-    font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--club-blue); font-weight: 600;
+    font-size: 11px; letter-spacing: 0.08em; margin: 0;
+    text-transform: uppercase; color: #5A4700; font-weight: 800;
   }
   .session-card .big {
-    font-size: 26px; font-weight: 600; margin: 2px 0 0; line-height: 1.15;
-    text-transform: capitalize;
+    font-size: 24px; font-weight: 800; letter-spacing: -0.02em;
+    margin: 2px 0 0; line-height: 1.15; text-transform: capitalize;
   }
-  .session-card .sub { font-size: 12.5px; color: var(--text-secondary); margin: 3px 0 0; }
+  .session-card .sub { font-size: 13px; font-weight: 600; color: #3A3418; margin: 3px 0 0; }
   .session-card .aside { text-align: right; font-family: var(--mono); flex-shrink: 0; }
   .session-card .aside em {
     display: block; font-style: normal; font-size: 9.5px;
-    letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted);
+    letter-spacing: 0.1em; text-transform: uppercase; color: #5A4700;
   }
   .session-card .aside i { font-style: normal; font-size: 21px; font-weight: 600; }
 
   .cta {
     display: block; width: 100%; text-align: center; border: 0;
-    border-radius: 10px; padding: 13px; background: var(--club-yellow-bright);
-    color: #231E06; font-size: 15px; font-weight: 600; text-decoration: none;
+    border-radius: 18px; padding: 13px; background: var(--yellow-tint);
+    border: 1px solid rgba(245,197,24,0.55); color: var(--club-yellow);
+    font-size: 15px; font-weight: 800; text-decoration: none;
     cursor: pointer; font-family: inherit;
   }
 
@@ -343,13 +380,13 @@
     text-transform: uppercase; color: var(--text-muted);
   }
   .lane button.is-today {
-    background: var(--club-blue); border-color: var(--club-blue); color: #fff;
+    background: var(--club-yellow); border-color: var(--club-yellow); color: var(--on-yellow);
     transform: translateY(-4px);
   }
-  .lane button.is-today em, .lane button.is-today s { color: rgba(255,255,255,0.8); }
-  .lane button[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--club-yellow); }
+  .lane button.is-today em, .lane button.is-today s { color: #5A4700; }
+  .lane button[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--club-blue); }
   .daynote {
-    margin-top: 9px; border: 1px solid var(--border); border-radius: 10px;
+    margin-top: 9px; border: 1px solid var(--border); border-radius: 14px;
     background: var(--surface-2); padding: 10px 12px; font-size: 12.5px;
     color: var(--text-secondary); line-height: 1.45;
   }
@@ -429,6 +466,7 @@
     }
     #content > #errorBox { grid-column: 1 / -1; }
     #todayTop { position: sticky; top: 16px; }
+    .tabs { max-width: 520px; }
     #tab-plan > .sect:first-child,
     #tab-plan > div:first-child { margin-top: 0; }
     #tab-coach, #panel-recovery { max-width: 860px; }
@@ -447,9 +485,12 @@
 <body>
 
   <div class="header">
-    <p class="eyebrow">Garmin + Open-Meteo</p>
-    <h1>Coaching dashboard</h1>
-    <p class="sub" id="dateLabel">Loading...</p>
+    <div>
+      <p class="eyebrow" id="dateLabel">Loading...</p>
+      <h1 id="greeting">Shep</h1>
+      <p class="sub" id="staleLabel" hidden></p>
+    </div>
+    <div class="countdown" id="countdown" hidden></div>
   </div>
 
   <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:1.25rem;" id="formLinks"></div>
@@ -463,13 +504,13 @@
        fixtures they are projecting for, so they live in Races.
        Nothing was dropped — the panels below still host each
        original builder's output by its original id. -->
-  <div class="tabs" style="flex-wrap:wrap;">
-    <button class="tab-btn active" data-tab="today">Today</button>
-    <button class="tab-btn" data-tab="recovery">Recovery</button>
-    <button class="tab-btn" data-tab="trends">Trends</button>
-    <button class="tab-btn" data-tab="races">Races</button>
-    <button class="tab-btn" data-tab="coach">Coach</button>
-  </div>
+  <nav class="tabs" aria-label="Sections">
+    <button class="tab-btn active" data-tab="today"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>Today</button>
+    <button class="tab-btn" data-tab="recovery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21.2l8.8-8.8a5.5 5.5 0 0 0 0-7.8z"/></svg>Recovery</button>
+    <button class="tab-btn" data-tab="trends"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>Trends</button>
+    <button class="tab-btn" data-tab="races"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h12l-2 4 2 4H5"/></svg>Races</button>
+    <button class="tab-btn" data-tab="coach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Coach</button>
+  </nav>
 
   <div id="content">
     <p class="error" style="display:none;" id="errorBox"></p>
@@ -516,8 +557,9 @@ function loadTheme() {
   THEME.muted = cssVar('--text-muted');
 }
 loadTheme();
-if (window.matchMedia) {
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => location.reload());
+if (Chart.defaults) {
+  Chart.defaults.color = THEME.tick;
+  Chart.defaults.font.family = 'Manrope, -apple-system, "Segoe UI", sans-serif';
 }
 function axisXY(opts = {}) {
   return {
@@ -638,8 +680,16 @@ async function loadDashboard() {
 
   document.getElementById('dateLabel').textContent =
     new Date(todayStr + 'T00:00:00').toLocaleDateString('en-GB',
-      { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
-    + (stale ? ` · data to ${fmtDayMonth(latest.date)}` : '');
+      { weekday: 'short', day: 'numeric', month: 'short' });
+  const hour = new Date().getHours();
+  document.getElementById('greeting').textContent =
+    (hour < 12 ? 'Morning' : hour < 18 ? 'Afternoon' : 'Evening') + ', Shep';
+  if (stale) {
+    const sl = document.getElementById('staleLabel');
+    sl.textContent = `Garmin data to ${fmtDayMonth(latest.date)}`;
+    sl.hidden = false;
+  }
+  renderCountdown(todayStr);
 
   // Today's planned session for the hero briefing
   let planAll = [];
@@ -681,59 +731,34 @@ async function loadDashboard() {
 
   const level = today.readiness_level || 'good';
   const levelTag = { good: 'All clear', caution: 'Worth noting', flag: 'Readiness flag' }[level] || 'All clear';
-  const levelIcon = { good: '✓', caution: '△', flag: '✕' }[level] || '✓';
   const heatChip = today.heat_risk === 'high'
     ? '<span class="chip bad">Heat risk high</span>'
     : today.heat_risk === 'moderate' ? '<span class="chip warn">Heat moderate</span>' : '';
 
-  // The supporting line under the verdict: the figures that produced
-  // it, stated rather than implied. A verdict you cannot check is a
-  // verdict you stop trusting.
-  const evidence = [];
-  if (today.hrv_last_night != null) {
-    evidence.push(`HRV ${today.hrv_last_night}` +
-      (today.hrv_baseline_7d != null ? ` against a ${today.hrv_baseline_7d} baseline` : ''));
-  }
-  if (today.rhr != null) {
-    evidence.push(`RHR ${today.rhr}` +
-      (today.rhr_baseline_7d != null ? ` against ${today.rhr_baseline_7d}` : ''));
-  }
-  if (today.sleep_score != null) evidence.push(`sleep ${today.sleep_score}`);
-  if (today.achilles_score != null) evidence.push(`achilles ${today.achilles_score}`);
   const confounders = today.recovery_confounders || [];
-  const evidenceLine = evidence.length
-    ? evidence.join(', ') + '.' + (confounders.length
-        ? ` ${confounders.join(' and ')} logged — an explained dip, not a trend.`
-        : '')
-    : '';
 
   document.getElementById('todayTop').innerHTML = `
-    <div class="verdict ${level}">
-      <p class="tag">${levelIcon} ${levelTag}</p>
-      <h2>${esc(today.today_summary || 'No readiness data yet.')}</h2>
-      ${evidenceLine ? `<p>${esc(evidenceLine)}</p>` : ''}
-    </div>
-
+    ${readinessRingHtml(today, level, levelTag, confounders)}
     <div class="session-card">
       <div>
-        <p class="lab">Today${stale ? '' : ''}</p>
+        <p class="lab">Today's session</p>
         <p class="big">${todayPlan ? esc(todayPlan.session_type) : 'Nothing planned'}${todayPlan && todayPlan.target_distance_km ? ` · ${fmtKm(todayPlan.target_distance_km)} km` : ''}</p>
         ${todayPlan && todayPlan.target_pace ? `<p class="sub">${esc(todayPlan.target_pace)}</p>` : ''}
+        ${todayPlan && todayPlan.notes ? `<p class="sub">${esc(noteLead(todayPlan.notes))}</p>` : ''}
         ${nextSessionLine(planAll, todayStr)}
       </div>
       ${today.achilles_score != null ? `
         <div class="aside">
           <em>Achilles</em>
-          <i style="color:${today.achilles_score >= 3 ? 'var(--bad)' : 'var(--good)'};">${today.achilles_score}</i>
+          <i style="color:${today.achilles_score >= 3 ? '#8A1F1F' : 'var(--on-yellow)'};">${today.achilles_score}</i>
         </div>` : ''}
     </div>
 
+    ${miniRingsHtml(weekly, planAll, todayStr)}
     <div style="margin-bottom:4px;">
       ${stale ? `<span class="chip warn">Readiness from ${fmtDayMonth(latest.date)}</span>` : ''}
       ${heatChip}
       ${today.achilles_score >= 3 ? `<span class="chip bad">Achilles ${today.achilles_score}/10</span>` : ''}
-      ${confounders.map(c => `<span class="chip">${esc(c)} noted</span>`).join('')}
-      ${today.acwr ? `<span class="chip">ACWR ${today.acwr}${today.acwr_status ? ' · ' + today.acwr_status.toLowerCase() : ''}</span>` : ''}
     </div>
 
     <div style="margin-top:12px;">${logStripHtml}</div>
@@ -923,6 +948,106 @@ function nextSessionLine(plan, todayStr) {
   const day = new Date(next.date + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short' });
   const dist = next.target_distance_km ? ` ${fmtKm(next.target_distance_km)} km` : '';
   return `<p class="sub">Next: ${esc(next.session_type)}${dist}, ${day}</p>`;
+}
+
+// The opening of a plan note, for the session card: the first two
+// sentences, which in this plan always say what the session is. The
+// whole note is one tap away in the week lane below.
+function noteLead(notes) {
+  const parts = String(notes).match(/[^.!?]+[.!?]+/g) || [String(notes)];
+  let out = parts[0].trim();
+  if (parts[1] && (out + ' ' + parts[1].trim()).length <= 110) out += ' ' + parts[1].trim();
+  return out.length > 120 ? out.slice(0, 117).trimEnd() + '…' : out;
+}
+
+// The A race and the start of its build. The build start is the day
+// the winter volume was agreed (6 Oct 2026); the ring is time through
+// the block, not fitness — it says where you are, not how it is going.
+const A_RACE = { name: 'Manchester', date: '2027-04-18' };
+const BUILD_START = '2026-10-06';
+function daysBetween(a, b) {
+  return Math.round((new Date(b + 'T00:00:00') - new Date(a + 'T00:00:00')) / 86400000);
+}
+function renderCountdown(todayStr) {
+  const days = daysBetween(todayStr, A_RACE.date);
+  if (days < 0) return;
+  const el = document.getElementById('countdown');
+  el.innerHTML = days > 21
+    ? `<b>${Math.floor(days / 7)}</b><span>wks to ${esc(A_RACE.name)}</span>`
+    : `<b>${days}</b><span>days to ${esc(A_RACE.name)}</span>`;
+  el.hidden = false;
+}
+
+// One SVG ring. frac 0..1; the track is faint white so it reads on glass.
+function ringSvg(size, stroke, frac, color) {
+  const r = (size - stroke) / 2;
+  const c = 2 * Math.PI * r;
+  const f = Math.max(0, Math.min(1, frac || 0));
+  return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" aria-hidden="true">
+    <circle cx="${size / 2}" cy="${size / 2}" r="${r}" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="${stroke}"/>
+    ${f > 0 ? `<circle cx="${size / 2}" cy="${size / 2}" r="${r}" fill="none" stroke="${color}" stroke-width="${stroke}"
+      stroke-linecap="round" stroke-dasharray="${c.toFixed(1)}" stroke-dashoffset="${(c * (1 - f)).toFixed(1)}"
+      transform="rotate(-90 ${size / 2} ${size / 2})"/>` : ''}
+  </svg>`;
+}
+
+// The verdict card. Ring = last night's HRV as a share of its 7-day
+// baseline (full at or above baseline), in the verdict's colour; the
+// verdict itself is still the sentence from build_computed.py.
+function readinessRingHtml(today, level, levelTag, confounders) {
+  const colour = { good: THEME.good, caution: THEME.warn, flag: THEME.bad }[level] || THEME.good;
+  const hrv = today.hrv_last_night, base = today.hrv_baseline_7d;
+  const frac = hrv != null && base ? hrv / base : 0;
+  const rhrDelta = today.rhr != null && today.rhr_baseline_7d != null ? today.rhr - today.rhr_baseline_7d : null;
+  const rhrCls = rhrDelta == null ? 'd-mute' : rhrDelta > 2 ? 'd-warn' : 'd-good';
+  const acwr = today.acwr != null
+    ? `<div><span>Load ratio</span><b>${today.acwr}${today.acwr_status ? `<i class="d-mute">${esc(today.acwr_status.toLowerCase())}</i>` : ''}</b></div>` : '';
+  const why = (confounders || []).length
+    ? `${confounders.join(' and ')} logged — an explained dip, not a trend.` : '';
+  return `
+    <div class="ringcard">
+      <div class="top">
+        <div class="ring" style="width:150px;height:150px;">
+          ${ringSvg(150, 12, frac, colour)}
+          <div class="mid">
+            <b>${hrv != null ? hrv : '–'}</b>
+            <small>HRV${base != null ? ' · base ' + base : ''}</small>
+            <span class="pill ${level}">${esc(levelTag)}</span>
+          </div>
+        </div>
+        <div class="stats">
+          ${today.rhr != null ? `<div><span>Resting HR</span><b>${today.rhr}${today.rhr_baseline_7d != null ? `<i class="${rhrCls}">base ${today.rhr_baseline_7d}</i>` : ''}</b></div>` : ''}
+          ${today.sleep_score != null ? `<div><span>Sleep</span><b>${today.sleep_score}</b></div>` : ''}
+          ${acwr}
+        </div>
+      </div>
+      <p class="say">${esc(today.today_summary || 'No readiness data yet.')}</p>
+      ${why ? `<p class="why">${esc(why)}</p>` : ''}
+    </div>`;
+}
+
+// Two small rings: km run this week against km planned, and time
+// through the build. The km ring is actual-against-plan, so a bike
+// week shows as one rather than as an empty failure.
+function miniRingsHtml(weekly, plan, todayStr) {
+  const weekStart = getWeekStart(todayStr);
+  const end = new Date(weekStart + 'T00:00:00'); end.setDate(end.getDate() + 6);
+  const weekEnd = toDateStr(end);
+  const planned = (plan || []).filter(s => s.date >= weekStart && s.date <= weekEnd)
+    .reduce((t, s) => t + (s.target_distance_km || 0), 0);
+  const cur = ((weekly && weekly.weeks) || []).find(w => w.week_start === weekStart);
+  const run = cur ? cur.km || 0 : 0;
+  const weekTile = planned
+    ? `<div class="miniring">${ringSvg(52, 7, run / planned, THEME.blue)}
+        <div><b>${fmtKm(run)} / ${fmtKm(planned)}</b><span>km this week</span></div></div>`
+    : `<div class="miniring">${ringSvg(52, 7, 0, THEME.blue)}
+        <div><b>${fmtKm(run)} km</b><span>run this week</span></div></div>`;
+  const total = daysBetween(BUILD_START, A_RACE.date);
+  const done = daysBetween(BUILD_START, todayStr);
+  const buildTile = done >= 0 && done <= total
+    ? `<div class="miniring">${ringSvg(52, 7, done / total, THEME.yellow)}
+        <div><b>${Math.round(done / total * 100)}%</b><span>of the build</span></div></div>` : '';
+  return `<div class="minirings">${weekTile}${buildTile}</div>`;
 }
 
 // The countdown, as a rail. Nearest three fixtures with a date.
@@ -1229,7 +1354,7 @@ async function buildCoachTab() {
     if (REVIEW_FORM_URL && !proposalLive) {
       respondBlock += `
         <div style="border-top:1px solid var(--border); margin-top:10px; padding-top:10px;">
-          <a href="${REVIEW_FORM_URL}" rel="noopener" style="display:inline-block; background:var(--blue); color:#fff; font-size:13px; padding:8px 14px; border-radius:6px; text-decoration:none;">${turns.length ? 'Ask a follow-up' : 'Respond / ask the coach'}</a>
+          <a href="${REVIEW_FORM_URL}" rel="noopener" style="display:inline-block; background:var(--blue); color:var(--on-blue); font-weight:700; font-size:13px; padding:8px 14px; border-radius:6px; text-decoration:none;">${turns.length ? 'Ask a follow-up' : 'Respond / ask the coach'}</a>
           <p style="font-size:12px; color:var(--text-muted); margin:6px 0 0;">${awaitingReply
             ? 'A reply to the question above is being written — but ask another any time.'
             : 'Any day, as often as you like — question, disagreement, or how a session felt. Reply lands here in about a minute.'}</p>
@@ -1283,7 +1408,7 @@ async function buildCoachTab() {
           </tbody>
         </table>
         ${REVIEW_FORM_URL
-          ? `<a href="${REVIEW_FORM_URL}" rel="noopener" style="display:inline-block; margin-top:10px; background:var(--blue); color:#fff; font-size:13px; padding:8px 14px; border-radius:6px; text-decoration:none;">Respond (approve / amend / reject)</a>`
+          ? `<a href="${REVIEW_FORM_URL}" rel="noopener" style="display:inline-block; margin-top:10px; background:var(--blue); color:var(--on-blue); font-weight:700; font-size:13px; padding:8px 14px; border-radius:6px; text-decoration:none;">Respond (approve / amend / reject)</a>`
           : `<p style="font-size:12px; color:var(--warn); margin:10px 0 0;">Respond via the weekly review form (set REVIEW_FORM_URL in index.html to get a button here).</p>`}
       </div>
     `;
@@ -1400,7 +1525,7 @@ async function buildCoachTab() {
           label: 'km',
           data: weekly.weeks.map(w => w.km),
           backgroundColor: weekly.weeks.map(w =>
-            w.in_progress ? 'rgba(212,168,0,0.35)' : THEME.yellow),
+            w.in_progress ? 'rgba(245,197,24,0.35)' : THEME.yellow),
           borderRadius: 4,
         }],
       },
