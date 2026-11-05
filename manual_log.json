@@ -734,5 +734,13 @@
     "rpe": 0.0,
     "on_target": true,
     "session_notes": "Daughters graduation"
+  },
+  {
+    "date": "2026-11-05",
+    "achilles_score": 0,
+    "session_type": "rest",
+    "rpe": 0.0,
+    "on_target": true,
+    "session_notes": "Daughters graduation."
   }
 ]
