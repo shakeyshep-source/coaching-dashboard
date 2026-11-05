@@ -517,5 +517,15 @@
     "action_taken": "plan_updated",
     "athlete_thoughts": "Ok",
     "changes_count": 21
+  },
+  {
+    "logged_at": "2026-11-05T21:55:02",
+    "proposal_id": null,
+    "review_date": "2026-11-01",
+    "response_timestamp": "05/11/2026 21:54:45",
+    "decision": "amend",
+    "action_taken": "review_query_logged",
+    "athlete_thoughts": "Day off tomorrow so off to the gym... Leg feels OK, should I try an easy short run tomorrow? And follow with some. Strength work",
+    "changes_count": 0
   }
 ]
