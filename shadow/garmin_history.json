@@ -263,12 +263,29 @@
     "sleep_score": 91,
     "sleep_duration_hrs": 8.2,
     "body_battery_high": 93,
-    "body_battery_low": 58,
+    "body_battery_low": 48,
     "training_load_acute": 362.6,
     "training_load_chronic": 722.3,
     "vo2max": null,
     "vo2max_date": null,
     "training_status_feedback": null,
     "acwr_estimate": 0.5
+  },
+  {
+    "date": "2026-11-05",
+    "rhr": 47,
+    "hrv_last_night": 35,
+    "hrv_status": "BALANCED",
+    "hrv_weekly_avg": 36,
+    "sleep_score": 91,
+    "sleep_duration_hrs": 7.55,
+    "body_battery_high": 95,
+    "body_battery_low": 57,
+    "training_load_acute": 347.1,
+    "training_load_chronic": 701.6,
+    "vo2max": null,
+    "vo2max_date": null,
+    "training_status_feedback": null,
+    "acwr_estimate": 0.49
   }
 ]

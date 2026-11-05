@@ -1,45 +1,45 @@
 {
   "wellness": {
-    "days": 16,
+    "days": 17,
     "fields": {
       "rhr": {
-        "compared": 16,
-        "agree": 16,
+        "compared": 17,
+        "agree": 17,
         "official_missing": 0
       },
       "hrv_last_night": {
-        "compared": 16,
-        "agree": 16,
+        "compared": 17,
+        "agree": 17,
         "official_missing": 0
       },
       "hrv_status": {
-        "compared": 16,
-        "agree": 16,
+        "compared": 17,
+        "agree": 17,
         "official_missing": 0
       },
       "hrv_weekly_avg": {
-        "compared": 16,
-        "agree": 16,
+        "compared": 17,
+        "agree": 17,
         "official_missing": 0
       },
       "sleep_score": {
-        "compared": 16,
-        "agree": 16,
+        "compared": 17,
+        "agree": 17,
         "official_missing": 0
       },
       "sleep_duration_hrs": {
-        "compared": 16,
-        "agree": 16,
+        "compared": 17,
+        "agree": 17,
         "official_missing": 0
       },
       "body_battery_high": {
-        "compared": 16,
-        "agree": 16,
+        "compared": 17,
+        "agree": 17,
         "official_missing": 0
       },
       "body_battery_low": {
-        "compared": 16,
-        "agree": 16,
+        "compared": 17,
+        "agree": 17,
         "official_missing": 0
       }
     }
