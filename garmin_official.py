@@ -1,5 +1,14 @@
 """
-garmin_official.py — RAW DATA LAYER, official route (shadow mode, Nov 2026)
+garmin_official.py — RAW DATA LAYER, official route
+
+Since 6 Nov 2026 this is the PRIMARY route: garmin_pull.py imports the
+session class and parsers below and writes the dashboard's files with
+them, falling back to the unofficial login only where a call fails.
+Running this file directly still does the original shadow pull into
+shadow/, which compare_official.py checks against the main files — kept
+for a manual cross-check if the two routes ever seem to disagree.
+
+History, as first written:
 
 The same job as garmin_pull.py — wellness days, activities, laps and
 within-run samples — but through Garmin's official Personal API

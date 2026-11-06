@@ -282,8 +282,12 @@ a late cron arriving while a pull is running waits its turn.
 `GARMIN_API_KEY` (Actions secret) is the personal key from Garmin
 Connect → Settings → Personal API Key. **It expires 30 Oct 2027.**
 Before then: delete it there, generate a new one, and paste it over the
-secret (Garmin shows a key only once). It feeds `garmin_official.py`,
-running in shadow mode from Nov 2026 — see shadow/comparison.json.
+secret (Garmin shows a key only once). Since 6 Nov 2026 it is the
+primary Garmin route (`garmin_pull.py` via `garmin_official.py`); if it
+lapses, the pull falls back to the old login (`GARMIN_TOKENS_B64`) and
+carries on, so an expired key shows as a log line, not a blank dashboard.
+The old login still supplies VO2 max and Garmin's training status/ACWR,
+so `GARMIN_TOKENS_B64` (renew roughly yearly) is still needed too.
 
 ## 5. Retire the laptop cron
 

@@ -452,6 +452,13 @@ def main():
 
         acwr = row.get("acwr_garmin")
         acwr_status = row.get("acwr_status")
+        # Garmin's own ACWR comes only by the unofficial login. If that
+        # route fails, use the estimate garmin_pull.py works out from each
+        # activity's training load (within ~0.09 of Garmin's on the Nov
+        # 2026 comparison) rather than a gap; it carries no status word.
+        if acwr is None and row.get("acwr_estimate") is not None:
+            acwr = row["acwr_estimate"]
+            acwr_status = None
 
         confounders = detect_confounders(
             manual.get("session_notes"), thread_by_date.get(row["date"])

@@ -1,8 +1,29 @@
 """
 garmin_pull.py — RAW DATA LAYER
 
-Job: fetch data from Garmin Connect and write it to garmin_data.json.
-Nothing else. No calculations, no derived fields, no renaming games.
+Job: fetch data from Garmin and write garmin_data.json, garmin_history.json,
+garmin_activities.json, garmin_laps.json and garmin_streams.json. Nothing
+else. No calculations beyond unit conversion, no renaming games.
+
+Two routes into Garmin, since 6 Nov 2026:
+
+  * PRIMARY — Garmin's official Personal API (garmin_official.py, key in
+    the GARMIN_API_KEY secret, expires 30 Oct 2027): wellness days, the
+    activity list, and laps + within-run samples from each run's FIT file.
+    Switched to after a shadow run (2-6 Nov) matched the old route on
+    every wellness field, every activity, all 510 laps, and stream HR
+    within 1.1 bpm.
+  * SECONDARY — the unofficial garminconnect login (GARMIN_TOKENSTORE).
+    Still the only source of Garmin's own training status, acute/chronic
+    load, ACWR and VO2 max, which the official API does not offer; and
+    the fallback for anything the official route fails to return — the
+    whole route if its token cannot be had, or a single day, activity
+    list or FIT file if one call fails.
+
+Either route alone keeps the dashboard running. If the unofficial login
+breaks, ACWR falls back to an estimate from per-activity training load
+(acwr_estimate, see garmin_official.add_load_estimates) and VO2 max
+simply stops updating until it is fixed.
 
 LOCKED SCHEMA — do not change these field names without updating
 build_computed.py and every chart that reads computed_data.json.
@@ -21,14 +42,17 @@ build_computed.py and every chart that reads computed_data.json.
       "training_load_chronic": float | null
     }
 
-If Garmin's API shape ever changes again, this is the ONLY file that
-should need editing. Everything downstream reads these exact keys.
+If Garmin's API shape ever changes again, this file and
+garmin_official.py are the ONLY files that should need editing.
+Everything downstream reads these exact keys.
 """
 
 import json
 import os
 from datetime import date, timedelta
-from garminconnect import Garmin
+
+from garmin_official import (Official, activity_row, add_load_estimates, laps_from_fit,
+                             read_fit, samples_from_fit, wellness_row)
 
 # Tokenstore path: overridable via env var so the same script runs on the
 # laptop (default path) and in GitHub Actions (tokens restored from the
@@ -125,31 +149,125 @@ def pull_day(client, date_str):
         row["body_battery_high"] = stats.get("bodyBatteryHighestValue")
         row["body_battery_low"] = stats.get("bodyBatteryLowestValue")
 
-    # --- Training load / ACWR from get_training_status (Garmin calculates ACWR itself) ---
-    status = safe_get(client.get_training_status, date_str)
-    if status:
-        try:
-            latest = (status.get("mostRecentTrainingStatus") or {}).get("latestTrainingStatusData") or {}
-            if not latest:
-                raise KeyError("no training status data for this date")
-            device_id = list(latest.keys())[0]
-            acute_dto = latest[device_id].get("acuteTrainingLoadDTO", {})
-            row["training_load_acute"] = acute_dto.get("dailyTrainingLoadAcute")
-            row["training_load_chronic"] = acute_dto.get("dailyTrainingLoadChronic")
-            row["acwr_garmin"] = acute_dto.get("dailyAcuteChronicWorkloadRatio")
-            row["acwr_status"] = acute_dto.get("acwrStatus")
-            row["training_status_feedback"] = latest[device_id].get("trainingStatusFeedbackPhrase")
-        except (KeyError, IndexError, TypeError):
-            pass
-
-        try:
-            vo2 = (status.get("mostRecentVO2Max") or {}).get("generic") or {}
-            row["vo2max"] = vo2.get("vo2MaxValue")
-            row["vo2max_date"] = vo2.get("calendarDate")
-        except (KeyError, IndexError, TypeError, AttributeError):
-            pass
+    for k, v in pull_training_status(client, date_str).items():
+        if v is not None:
+            row[k] = v
 
     return row
+
+
+# Fields only the unofficial route has: Garmin's own training status,
+# load and ACWR, and VO2 max.
+STATUS_FIELDS = ("training_load_acute", "training_load_chronic", "acwr_garmin",
+                 "acwr_status", "training_status_feedback", "vo2max", "vo2max_date")
+WELLNESS_CORE = ("rhr", "hrv_last_night", "sleep_score", "body_battery_high")
+
+
+def pull_training_status(client, date_str):
+    """Garmin's own training status for a day (unofficial route only).
+    Every STATUS_FIELDS key is returned, None where Garmin gave nothing."""
+    out = dict.fromkeys(STATUS_FIELDS)
+    status = safe_get(client.get_training_status, date_str)
+    if not status:
+        return out
+    try:
+        latest = (status.get("mostRecentTrainingStatus") or {}).get("latestTrainingStatusData") or {}
+        if latest:
+            device_id = list(latest.keys())[0]
+            acute_dto = latest[device_id].get("acuteTrainingLoadDTO", {})
+            out["training_load_acute"] = acute_dto.get("dailyTrainingLoadAcute")
+            out["training_load_chronic"] = acute_dto.get("dailyTrainingLoadChronic")
+            out["acwr_garmin"] = acute_dto.get("dailyAcuteChronicWorkloadRatio")
+            out["acwr_status"] = acute_dto.get("acwrStatus")
+            out["training_status_feedback"] = latest[device_id].get("trainingStatusFeedbackPhrase")
+    except (KeyError, IndexError, TypeError, AttributeError):
+        pass
+    try:
+        vo2 = (status.get("mostRecentVO2Max") or {}).get("generic") or {}
+        out["vo2max"] = vo2.get("vo2MaxValue")
+        out["vo2max_date"] = vo2.get("calendarDate")
+    except (KeyError, IndexError, TypeError, AttributeError):
+        pass
+    return out
+
+
+def has_wellness(row):
+    return any(row.get(k) is not None for k in WELLNESS_CORE)
+
+
+def official_wellness(api, date_str):
+    return wellness_row(
+        date_str,
+        api.get(f"/hrv-service/hrv/{date_str}"),
+        api.get("/sleep-service/sleep/dailySleep", date=date_str),
+        api.get("/usersummary-service/usersummary/daily", calendarDate=date_str),
+    )
+
+
+def build_days(api, client, dates):
+    """Wellness rows for `dates`: official first, unofficial for any day the
+    official route returned nothing for. Returns (rows, status_by_date,
+    sources) — status is overlaid later, after the load estimates, so
+    Garmin's own acute/chronic load wins wherever it exists."""
+    rows, status_by_date = [], {}
+    sources = {"official": 0, "unofficial": 0, "none": 0}
+    for d in dates:
+        row = official_wellness(api, d) if api else None
+        if row is not None and has_wellness(row):
+            sources["official"] += 1
+            status_by_date[d] = pull_training_status(client, d) if client else {}
+        elif client:
+            fallback = pull_day(client, d)
+            if row is None or has_wellness(fallback):
+                row = fallback
+                sources["unofficial" if has_wellness(fallback) else "none"] += 1
+            else:
+                sources["none"] += 1
+            status_by_date[d] = {k: fallback.get(k) for k in STATUS_FIELDS}
+        else:
+            sources["none"] += 1
+            status_by_date[d] = {}
+        rows.append(row)
+    rows.sort(key=lambda r: r["date"])
+    return rows, status_by_date, sources
+
+
+def overlay_status(rows, status_by_date):
+    for row in rows:
+        for k, v in (status_by_date.get(row["date"]) or {}).items():
+            if v is not None:
+                row[k] = v
+    return rows
+
+
+def official_activities(api, since):
+    """Activity rows since `since` from the official list, paged; None if
+    the list could not be had at all (so the caller falls back)."""
+    rows = []
+    for page in range(5):
+        listing = api.get("/activitylist-service/activities/search/activities",
+                          limit=100, start=page * 100)
+        if listing is None:
+            return None if page == 0 else rows
+        rows += [activity_row(a) for a in listing if (a.get("startTimeLocal") or "")[:10] >= since]
+        oldest = min(((a.get("startTimeLocal") or "")[:10] for a in listing), default="")
+        if len(listing) < 100 or oldest < since:
+            break
+    rows.sort(key=lambda r: (r["date"], r["activity_id"] or 0))
+    return rows
+
+
+def merge_activities(existing, fresh):
+    """A freshly pulled activity wins — Garmin revises HR and pace after a
+    sync — but anything outside the window is kept, and a training_load
+    already held is not lost if this pull came by the route without it."""
+    known = {a.get("activity_id"): a for a in existing}
+    for a in fresh:
+        old = known.get(a.get("activity_id"))
+        if old and a.get("training_load") is None and old.get("training_load") is not None:
+            a = {**a, "training_load": old["training_load"]}
+        known[a.get("activity_id")] = a
+    return sorted(known.values(), key=lambda a: (a.get("date") or "", a.get("activity_id") or 0))
 
 
 def pull_activities(client):
@@ -249,38 +367,6 @@ def parse_laps(payload):
     return rows
 
 
-def pull_laps(client, activities, existing):
-    """Fetch splits for runs we do not already hold.
-
-    One HTTP request per activity, so this only ever asks about activities
-    missing from garmin_laps.json — a normal daily run adds one request,
-    and a first run over 8 weeks of history adds ~50 once.
-    """
-    have = {row.get("activity_id") for row in existing}
-    rows = list(existing)
-    fetched = 0
-    for a in activities:
-        activity_id = a.get("activity_id")
-        if not activity_id or activity_id in have:
-            continue
-        if (a.get("type") or "") not in LAP_ACTIVITY_TYPES:
-            continue
-        payload = safe_get(client.get_activity_splits, activity_id)
-        laps = parse_laps(payload)
-        if not laps:
-            continue
-        rows.append({
-            "activity_id": activity_id,
-            "date": a.get("date"),
-            "name": a.get("name"),
-            "type": a.get("type"),
-            "laps": laps,
-        })
-        fetched += 1
-    rows.sort(key=lambda r: (r.get("date") or "", r.get("activity_id") or 0))
-    return rows, fetched
-
-
 def parse_stream(payload):
     """Turn Garmin's activity-details payload into time/HR/speed samples.
 
@@ -336,109 +422,153 @@ def parse_stream(payload):
     return rows
 
 
-def pull_streams(client, activities, existing):
-    """Fetch within-run samples for long enough runs we do not hold."""
-    have = {row.get("activity_id") for row in existing}
-    rows = list(existing)
-    fetched = 0
+def pull_laps_and_streams(api, client, activities, laps, streams):
+    """Laps for every run not yet held, and within-run samples for runs of
+    STREAM_MIN_DURATION_MIN or more. Official route: one FIT file gives
+    both. Unofficial route: splits and details requests, used only for
+    what the FIT file could not supply.
+
+    Only activities missing from the files are fetched, so a normal day
+    costs one or two requests."""
+    have_laps = {r.get("activity_id") for r in laps}
+    have_streams = {r.get("activity_id") for r in streams}
+    counts = {"fit": 0, "unofficial_laps": 0, "unofficial_streams": 0}
     for a in activities:
         activity_id = a.get("activity_id")
-        if not activity_id or activity_id in have:
+        if not activity_id or (a.get("type") or "") not in LAP_ACTIVITY_TYPES:
             continue
-        if (a.get("type") or "") not in LAP_ACTIVITY_TYPES:
+        need_laps = activity_id not in have_laps
+        need_stream = (activity_id not in have_streams
+                       and (a.get("duration_min") or 0) >= STREAM_MIN_DURATION_MIN)
+        if not need_laps and not need_stream:
             continue
-        if (a.get("duration_min") or 0) < STREAM_MIN_DURATION_MIN:
-            continue
-        payload = safe_get(client.get_activity_details, activity_id, STREAM_SAMPLES, 0)
-        samples = parse_stream(payload)
-        if len(samples) < 20:
-            continue
-        rows.append({
-            "activity_id": activity_id,
-            "date": a.get("date"),
-            "type": a.get("type"),
-            "samples": samples,
-        })
-        fetched += 1
-    rows.sort(key=lambda r: (r.get("date") or "", r.get("activity_id") or 0))
-    return rows, fetched
+        meta = {"activity_id": activity_id, "date": a.get("date"), "type": a.get("type")}
+
+        if api:
+            data = api.fit(activity_id)
+            if data:
+                try:
+                    fit_laps, records = read_fit(data)
+                except Exception as e:  # a bad file must not stop the rest
+                    print(f"FIT parse failed for {activity_id}: {type(e).__name__}")
+                    fit_laps, records = [], []
+                if fit_laps or records:
+                    counts["fit"] += 1
+                if need_laps and fit_laps:
+                    laps.append({**meta, "name": a.get("name"), "laps": laps_from_fit(fit_laps)})
+                    need_laps = False
+                if need_stream:
+                    samples = samples_from_fit(records)
+                    if len(samples) >= 20:
+                        streams.append({**meta, "samples": samples})
+                        need_stream = False
+
+        if client and need_laps:
+            rows = parse_laps(safe_get(client.get_activity_splits, activity_id))
+            if rows:
+                laps.append({**meta, "name": a.get("name"), "laps": rows})
+                counts["unofficial_laps"] += 1
+        if client and need_stream:
+            samples = parse_stream(safe_get(client.get_activity_details, activity_id, STREAM_SAMPLES, 0))
+            if len(samples) >= 20:
+                streams.append({**meta, "samples": samples})
+                counts["unofficial_streams"] += 1
+
+    laps.sort(key=lambda r: (r.get("date") or "", r.get("activity_id") or 0))
+    streams.sort(key=lambda r: (r.get("date") or "", r.get("activity_id") or 0))
+    return laps, streams, counts
+
+
+def official_session():
+    key = os.environ.get("GARMIN_API_KEY")
+    if not key:
+        print("GARMIN_API_KEY not set - official route skipped.")
+        return None
+    try:
+        return Official(key)
+    except Exception as e:
+        print(f"Official API token failed ({type(e).__name__}) - using the unofficial route.")
+        return None
+
+
+def unofficial_session():
+    try:
+        from garminconnect import Garmin
+        client = Garmin()
+        client.login(tokenstore=TOKENSTORE)
+        return client
+    except Exception as e:
+        print(f"Unofficial login failed ({type(e).__name__}) - no training status, "
+              f"ACWR from the estimate, VO2 max not updated.")
+        return None
+
+
+def load_json(path):
+    try:
+        with open(path) as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return []
+
+
+def save_json(path, data):
+    with open(path, "w") as f:
+        json.dump(data, f, indent=2)
 
 
 def main():
-    client = Garmin()
-    client.login(tokenstore=TOKENSTORE)
+    api = official_session()
+    client = unofficial_session()
+    if not api and not client:
+        raise SystemExit("Neither Garmin route is available - nothing pulled.")
 
     today = date.today()
-    results = []
-    for i in range(DAYS_TO_PULL):
-        d = today - timedelta(days=i)
-        date_str = d.isoformat()
-        row = pull_day(client, date_str)
-        results.append(row)
-        print(f"{date_str}  RHR: {row['rhr']}  HRV: {row['hrv_last_night']}  "
+    dates = [(today - timedelta(days=i)).isoformat() for i in range(DAYS_TO_PULL)]
+    results, status_by_date, day_sources = build_days(api, client, dates)
+
+    since = (today - timedelta(days=ACTIVITY_DAYS_TO_PULL)).isoformat()
+    fresh = official_activities(api, since) if api else None
+    activity_source = "official"
+    if fresh is None:
+        fresh = pull_activities(client) if client else []
+        activity_source = "unofficial" if client else "none"
+    activities = merge_activities(load_json(ACTIVITIES_FILE), fresh)
+
+    # Our own acute/chronic estimate first, then Garmin's own load and
+    # ACWR laid over it wherever the unofficial route supplied them.
+    add_load_estimates(results, activities)
+    overlay_status(results, status_by_date)
+
+    for row in results:
+        print(f"{row['date']}  RHR: {row['rhr']}  HRV: {row['hrv_last_night']}  "
               f"Sleep: {row['sleep_score']}  BB: {row['body_battery_high']}")
+    print(f"Wellness by route: {day_sources}")
 
-    results.sort(key=lambda r: r["date"])
-
-    with open(OUTPUT_FILE, "w") as f:
-        json.dump(results, f, indent=2)
-
+    save_json(OUTPUT_FILE, results)
     print(f"\nSaved {len(results)} days to {OUTPUT_FILE}")
 
-    try:
-        with open(HISTORY_FILE) as f:
-            history = json.load(f)
-    except FileNotFoundError:
-        history = []
-    by_date = {r["date"]: r for r in history}
+    by_date = {r["date"]: r for r in load_json(HISTORY_FILE)}
     for r in results:
         # A freshly pulled day wins: Garmin backfills sleep and HRV for a
         # day some hours after it ends, so today's value for yesterday is
-        # more complete than yesterday's was.
-        by_date[r["date"]] = r
+        # more complete than yesterday's was. But an empty pull (both
+        # routes failed for that day) never blanks a day already held.
+        if has_wellness(r) or not has_wellness(by_date.get(r["date"]) or {}):
+            by_date[r["date"]] = r
     history = sorted(by_date.values(), key=lambda r: r["date"])
-    with open(HISTORY_FILE, "w") as f:
-        json.dump(history, f, indent=2)
+    save_json(HISTORY_FILE, history)
     print(f"Wellness history now spans {len(history)} days "
           f"({history[0]['date']} to {history[-1]['date']})")
 
-    fresh = pull_activities(client)
-    try:
-        with open(ACTIVITIES_FILE) as f:
-            known = {a.get("activity_id"): a for a in json.load(f)}
-    except FileNotFoundError:
-        known = {}
-    # A freshly pulled activity wins — Garmin revises HR and pace after a
-    # sync — but anything outside the 56-day window is kept rather than
-    # dropped, so the history accumulates like the wellness data does.
-    for a in fresh:
-        known[a.get("activity_id")] = a
-    activities = sorted(known.values(), key=lambda a: (a.get("date") or "", a.get("activity_id") or 0))
-    with open(ACTIVITIES_FILE, "w") as f:
-        json.dump(activities, f, indent=2)
-    print(f"Saved {len(fresh)} recent activities; {len(activities)} held in {ACTIVITIES_FILE}")
+    save_json(ACTIVITIES_FILE, activities)
+    print(f"Saved {len(fresh)} recent activities ({activity_source} route); "
+          f"{len(activities)} held in {ACTIVITIES_FILE}")
 
-    try:
-        with open(LAPS_FILE) as f:
-            existing_laps = json.load(f)
-    except FileNotFoundError:
-        existing_laps = []
-    laps, fetched = pull_laps(client, activities, existing_laps)
-    with open(LAPS_FILE, "w") as f:
-        json.dump(laps, f, indent=2)
-    print(f"Laps: {fetched} new activity/activities fetched, "
-          f"{len(laps)} held in {LAPS_FILE}")
-
-    try:
-        with open(STREAMS_FILE) as f:
-            existing_streams = json.load(f)
-    except FileNotFoundError:
-        existing_streams = []
-    streams, stream_count = pull_streams(client, activities, existing_streams)
-    with open(STREAMS_FILE, "w") as f:
-        json.dump(streams, f, indent=2)
-    print(f"Streams: {stream_count} new run(s) fetched, "
-          f"{len(streams)} held in {STREAMS_FILE}")
+    laps, streams, counts = pull_laps_and_streams(
+        api, client, activities, load_json(LAPS_FILE), load_json(STREAMS_FILE))
+    save_json(LAPS_FILE, laps)
+    save_json(STREAMS_FILE, streams)
+    print(f"Laps/streams fetched: {counts}; {len(laps)} lap sets, {len(streams)} streams held")
 
 
 if __name__ == "__main__":
