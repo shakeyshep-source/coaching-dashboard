@@ -6402,7 +6402,8 @@
     "elevation_gain_m": 37.0,
     "cadence": 167.046875,
     "aerobic_te": 2.5,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 57.79457092285156
   },
   {
     "date": "2026-09-12",
@@ -6417,7 +6418,8 @@
     "elevation_gain_m": 143.0,
     "cadence": 174.453125,
     "aerobic_te": 3.299999952316284,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 114.66361999511719
   },
   {
     "date": "2026-09-12",
@@ -6432,7 +6434,8 @@
     "elevation_gain_m": null,
     "cadence": null,
     "aerobic_te": 0.6000000238418579,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 8.515045166015625
   },
   {
     "date": "2026-09-12",
@@ -6447,7 +6450,8 @@
     "elevation_gain_m": 131.0,
     "cadence": 3.09375,
     "aerobic_te": 0.800000011920929,
-    "anaerobic_te": 0.10000000149011612
+    "anaerobic_te": 0.10000000149011612,
+    "training_load": 12.6522216796875
   },
   {
     "date": "2026-09-13",
@@ -6462,7 +6466,8 @@
     "elevation_gain_m": 469.0,
     "cadence": 172.453125,
     "aerobic_te": 3.5999999046325684,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 148.70103454589844
   },
   {
     "date": "2026-09-13",
@@ -6477,7 +6482,8 @@
     "elevation_gain_m": 21.0,
     "cadence": 1.625,
     "aerobic_te": 0.5,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 6.8135833740234375
   },
   {
     "date": "2026-09-14",
@@ -6492,7 +6498,8 @@
     "elevation_gain_m": 137.0,
     "cadence": 0.90625,
     "aerobic_te": 0.5,
-    "anaerobic_te": 0.6000000238418579
+    "anaerobic_te": 0.6000000238418579,
+    "training_load": 16.072540283203125
   },
   {
     "date": "2026-09-15",
@@ -6507,7 +6514,8 @@
     "elevation_gain_m": 138.0,
     "cadence": 155.375,
     "aerobic_te": 3.0,
-    "anaerobic_te": 2.0
+    "anaerobic_te": 2.0,
+    "training_load": 114.08967590332031
   },
   {
     "date": "2026-09-16",
@@ -6522,7 +6530,8 @@
     "elevation_gain_m": 28.0,
     "cadence": 160.78125,
     "aerobic_te": 2.9000000953674316,
-    "anaerobic_te": 0.8999999761581421
+    "anaerobic_te": 0.8999999761581421,
+    "training_load": 90.76934814453125
   },
   {
     "date": "2026-09-17",
@@ -6537,7 +6546,8 @@
     "elevation_gain_m": 48.0,
     "cadence": 171.375,
     "aerobic_te": 3.0,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 80.955322265625
   },
   {
     "date": "2026-09-17",
@@ -6552,7 +6562,8 @@
     "elevation_gain_m": 200.0,
     "cadence": 1.03125,
     "aerobic_te": 0.20000000298023224,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 3.7139434814453125
   },
   {
     "date": "2026-09-19",
@@ -6567,7 +6578,8 @@
     "elevation_gain_m": 23.0,
     "cadence": 159.578125,
     "aerobic_te": 2.4000000953674316,
-    "anaerobic_te": 1.2999999523162842
+    "anaerobic_te": 1.2999999523162842,
+    "training_load": 66.19935607910156
   },
   {
     "date": "2026-09-20",
@@ -6582,7 +6594,8 @@
     "elevation_gain_m": 11.0,
     "cadence": 171.8125,
     "aerobic_te": 2.200000047683716,
-    "anaerobic_te": 0.30000001192092896
+    "anaerobic_te": 0.30000001192092896,
+    "training_load": 41.281402587890625
   },
   {
     "date": "2026-09-20",
@@ -6597,7 +6610,8 @@
     "elevation_gain_m": 577.0,
     "cadence": 179.328125,
     "aerobic_te": 5.0,
-    "anaerobic_te": 0.8999999761581421
+    "anaerobic_te": 0.8999999761581421,
+    "training_load": 396.626220703125
   },
   {
     "date": "2026-09-23",
@@ -6612,7 +6626,8 @@
     "elevation_gain_m": 62.0,
     "cadence": 168.875,
     "aerobic_te": 2.700000047683716,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 61.61305236816406
   },
   {
     "date": "2026-09-23",
@@ -6627,7 +6642,8 @@
     "elevation_gain_m": 0.0,
     "cadence": 1.4375,
     "aerobic_te": 0.8999999761581421,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 11.614822387695312
   },
   {
     "date": "2026-09-24",
@@ -6642,7 +6658,8 @@
     "elevation_gain_m": 149.0,
     "cadence": 168.09375,
     "aerobic_te": 2.799999952316284,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 70.47200012207031
   },
   {
     "date": "2026-09-25",
@@ -6657,7 +6674,8 @@
     "elevation_gain_m": 51.0,
     "cadence": 169.109375,
     "aerobic_te": 3.0999999046325684,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 90.72496032714844
   },
   {
     "date": "2026-09-27",
@@ -6672,7 +6690,8 @@
     "elevation_gain_m": 106.0,
     "cadence": 170.125,
     "aerobic_te": 3.299999952316284,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 111.53225708007812
   },
   {
     "date": "2026-09-27",
@@ -6687,7 +6706,8 @@
     "elevation_gain_m": 208.0,
     "cadence": 0.703125,
     "aerobic_te": 0.6000000238418579,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 8.438156127929688
   },
   {
     "date": "2026-09-29",
@@ -6702,7 +6722,8 @@
     "elevation_gain_m": 80.0,
     "cadence": 171.078125,
     "aerobic_te": 3.299999952316284,
-    "anaerobic_te": 0.10000000149011612
+    "anaerobic_te": 0.10000000149011612,
+    "training_load": 107.62089538574219
   },
   {
     "date": "2026-09-30",
@@ -6717,7 +6738,8 @@
     "elevation_gain_m": 24.0,
     "cadence": 154.46875,
     "aerobic_te": 2.9000000953674316,
-    "anaerobic_te": 2.0999999046325684
+    "anaerobic_te": 2.0999999046325684,
+    "training_load": 105.01399230957031
   },
   {
     "date": "2026-10-01",
@@ -6732,7 +6754,8 @@
     "elevation_gain_m": 43.0,
     "cadence": 168.71875,
     "aerobic_te": 3.0,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 77.33015441894531
   },
   {
     "date": "2026-10-01",
@@ -6747,7 +6770,8 @@
     "elevation_gain_m": null,
     "cadence": null,
     "aerobic_te": 0.4000000059604645,
-    "anaerobic_te": 0.4000000059604645
+    "anaerobic_te": 0.4000000059604645,
+    "training_load": 11.891128540039062
   },
   {
     "date": "2026-10-01",
@@ -6762,7 +6786,8 @@
     "elevation_gain_m": 129.0,
     "cadence": 1.015625,
     "aerobic_te": 0.30000001192092896,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 4.500457763671875
   },
   {
     "date": "2026-10-02",
@@ -6777,7 +6802,8 @@
     "elevation_gain_m": 105.0,
     "cadence": 145.859375,
     "aerobic_te": 3.0,
-    "anaerobic_te": 2.0999999046325684
+    "anaerobic_te": 2.0999999046325684,
+    "training_load": 108.14871215820312
   },
   {
     "date": "2026-10-03",
@@ -6792,7 +6818,8 @@
     "elevation_gain_m": 15.0,
     "cadence": 166.84375,
     "aerobic_te": 2.9000000953674316,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 74.52073669433594
   },
   {
     "date": "2026-10-03",
@@ -6807,7 +6834,8 @@
     "elevation_gain_m": 0.0,
     "cadence": 2.046875,
     "aerobic_te": 0.800000011920929,
-    "anaerobic_te": 0.6000000238418579
+    "anaerobic_te": 0.6000000238418579,
+    "training_load": 18.508392333984375
   },
   {
     "date": "2026-10-04",
@@ -6822,7 +6850,8 @@
     "elevation_gain_m": 3.0,
     "cadence": 147.09375,
     "aerobic_te": 2.0999999046325684,
-    "anaerobic_te": 1.2000000476837158
+    "anaerobic_te": 1.2000000476837158,
+    "training_load": 50.957275390625
   },
   {
     "date": "2026-10-04",
@@ -6837,7 +6866,8 @@
     "elevation_gain_m": 115.0,
     "cadence": 181.625,
     "aerobic_te": 3.9000000953674316,
-    "anaerobic_te": 1.100000023841858
+    "anaerobic_te": 1.100000023841858,
+    "training_load": 178.73196411132812
   },
   {
     "date": "2026-10-04",
@@ -6852,7 +6882,8 @@
     "elevation_gain_m": 250.0,
     "cadence": 170.953125,
     "aerobic_te": 2.5,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 52.18449401855469
   },
   {
     "date": "2026-10-04",
@@ -6867,7 +6898,8 @@
     "elevation_gain_m": 125.0,
     "cadence": 3.5625,
     "aerobic_te": 1.100000023841858,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 14.987747192382812
   },
   {
     "date": "2026-10-06",
@@ -6882,7 +6914,8 @@
     "elevation_gain_m": 36.0,
     "cadence": 167.8125,
     "aerobic_te": 3.0999999046325684,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 91.69969177246094
   },
   {
     "date": "2026-10-06",
@@ -6897,7 +6930,8 @@
     "elevation_gain_m": null,
     "cadence": null,
     "aerobic_te": 0.699999988079071,
-    "anaerobic_te": 0.20000000298023224
+    "anaerobic_te": 0.20000000298023224,
+    "training_load": 13.067398071289062
   },
   {
     "date": "2026-10-06",
@@ -6912,7 +6946,8 @@
     "elevation_gain_m": 0.0,
     "cadence": 2.53125,
     "aerobic_te": 1.5,
-    "anaerobic_te": 0.4000000059604645
+    "anaerobic_te": 0.4000000059604645,
+    "training_load": 24.7977294921875
   },
   {
     "date": "2026-10-07",
@@ -6927,7 +6962,8 @@
     "elevation_gain_m": 46.0,
     "cadence": 154.53125,
     "aerobic_te": 4.0,
-    "anaerobic_te": 2.200000047683716
+    "anaerobic_te": 2.200000047683716,
+    "training_load": 213.08831787109375
   },
   {
     "date": "2026-10-07",
@@ -6942,7 +6978,8 @@
     "elevation_gain_m": 164.0,
     "cadence": 2.546875,
     "aerobic_te": 0.4000000059604645,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 6.2630157470703125
   },
   {
     "date": "2026-10-08",
@@ -6957,7 +6994,8 @@
     "elevation_gain_m": 15.0,
     "cadence": 164.28125,
     "aerobic_te": 2.299999952316284,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 44.403167724609375
   },
   {
     "date": "2026-10-08",
@@ -6972,7 +7010,8 @@
     "elevation_gain_m": 4.0,
     "cadence": 162.265625,
     "aerobic_te": 2.0,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 27.999603271484375
   },
   {
     "date": "2026-10-08",
@@ -6987,7 +7026,8 @@
     "elevation_gain_m": null,
     "cadence": null,
     "aerobic_te": 0.20000000298023224,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 2.9683380126953125
   },
   {
     "date": "2026-10-08",
@@ -7002,7 +7042,8 @@
     "elevation_gain_m": 13.0,
     "cadence": 3.09375,
     "aerobic_te": 0.5,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 7.4036407470703125
   },
   {
     "date": "2026-10-09",
@@ -7017,7 +7058,8 @@
     "elevation_gain_m": 45.0,
     "cadence": 165.34375,
     "aerobic_te": 2.700000047683716,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 60.90849304199219
   },
   {
     "date": "2026-10-10",
@@ -7032,7 +7074,8 @@
     "elevation_gain_m": 0.0,
     "cadence": 165.78125,
     "aerobic_te": 0.20000000298023224,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 3.4730987548828125
   },
   {
     "date": "2026-10-10",
@@ -7047,7 +7090,8 @@
     "elevation_gain_m": 24.0,
     "cadence": 162.90625,
     "aerobic_te": 4.0,
-    "anaerobic_te": 0.8999999761581421
+    "anaerobic_te": 0.8999999761581421,
+    "training_load": 190.00442504882812
   },
   {
     "date": "2026-10-10",
@@ -7062,7 +7106,8 @@
     "elevation_gain_m": 107.0,
     "cadence": 1.75,
     "aerobic_te": 0.8999999761581421,
-    "anaerobic_te": 2.0999999046325684
+    "anaerobic_te": 2.0999999046325684,
+    "training_load": 44.8980712890625
   },
   {
     "date": "2026-10-11",
@@ -7077,7 +7122,8 @@
     "elevation_gain_m": 98.0,
     "cadence": 167.328125,
     "aerobic_te": 3.299999952316284,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 110.06721496582031
   },
   {
     "date": "2026-10-11",
@@ -7092,7 +7138,8 @@
     "elevation_gain_m": 90.0,
     "cadence": 1.96875,
     "aerobic_te": 0.30000001192092896,
-    "anaerobic_te": 0.20000000298023224
+    "anaerobic_te": 0.20000000298023224,
+    "training_load": 7.87384033203125
   },
   {
     "date": "2026-10-13",
@@ -7107,7 +7154,8 @@
     "elevation_gain_m": 33.0,
     "cadence": 172.1875,
     "aerobic_te": 3.299999952316284,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 109.48817443847656
   },
   {
     "date": "2026-10-13",
@@ -7122,7 +7170,8 @@
     "elevation_gain_m": 0.0,
     "cadence": 2.671875,
     "aerobic_te": 0.6000000238418579,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 7.727203369140625
   },
   {
     "date": "2026-10-14",
@@ -7137,7 +7186,8 @@
     "elevation_gain_m": 31.0,
     "cadence": 156.234375,
     "aerobic_te": 3.9000000953674316,
-    "anaerobic_te": 2.0
+    "anaerobic_te": 2.0,
+    "training_load": 193.0633544921875
   },
   {
     "date": "2026-10-14",
@@ -7152,7 +7202,8 @@
     "elevation_gain_m": 34.0,
     "cadence": 0.9375,
     "aerobic_te": 0.6000000238418579,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 8.43896484375
   },
   {
     "date": "2026-10-15",
@@ -7167,7 +7218,8 @@
     "elevation_gain_m": 69.0,
     "cadence": 169.140625,
     "aerobic_te": 3.0,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 85.8358154296875
   },
   {
     "date": "2026-10-15",
@@ -7182,7 +7234,8 @@
     "elevation_gain_m": null,
     "cadence": null,
     "aerobic_te": 0.6000000238418579,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 8.804794311523438
   },
   {
     "date": "2026-10-15",
@@ -7197,7 +7250,8 @@
     "elevation_gain_m": 284.0,
     "cadence": 2.015625,
     "aerobic_te": 0.800000011920929,
-    "anaerobic_te": 2.0
+    "anaerobic_te": 2.0,
+    "training_load": 38.93621826171875
   },
   {
     "date": "2026-10-16",
@@ -7212,7 +7266,8 @@
     "elevation_gain_m": 22.0,
     "cadence": 169.078125,
     "aerobic_te": 3.0,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 84.57925415039062
   },
   {
     "date": "2026-10-17",
@@ -7227,7 +7282,8 @@
     "elevation_gain_m": 51.0,
     "cadence": 166.0625,
     "aerobic_te": 4.300000190734863,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 216.07469177246094
   },
   {
     "date": "2026-10-18",
@@ -7242,7 +7298,8 @@
     "elevation_gain_m": 105.0,
     "cadence": 170.078125,
     "aerobic_te": 3.700000047683716,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 145.18218994140625
   },
   {
     "date": "2026-10-18",
@@ -7257,7 +7314,8 @@
     "elevation_gain_m": 79.0,
     "cadence": 3.296875,
     "aerobic_te": 0.699999988079071,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 10.078536987304688
   },
   {
     "date": "2026-10-20",
@@ -7272,7 +7330,8 @@
     "elevation_gain_m": 33.0,
     "cadence": 170.625,
     "aerobic_te": 3.0999999046325684,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 95.28292846679688
   },
   {
     "date": "2026-10-21",
@@ -7287,7 +7346,8 @@
     "elevation_gain_m": 30.0,
     "cadence": 168.90625,
     "aerobic_te": 3.5,
-    "anaerobic_te": 2.700000047683716
+    "anaerobic_te": 2.700000047683716,
+    "training_load": 199.60159301757812
   },
   {
     "date": "2026-10-21",
@@ -7302,7 +7362,8 @@
     "elevation_gain_m": 0.0,
     "cadence": 0.9375,
     "aerobic_te": 0.6000000238418579,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 9.06805419921875
   },
   {
     "date": "2026-10-22",
@@ -7317,7 +7378,8 @@
     "elevation_gain_m": 23.0,
     "cadence": 167.84375,
     "aerobic_te": 3.0,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 80.59506225585938
   },
   {
     "date": "2026-10-22",
@@ -7332,7 +7394,8 @@
     "elevation_gain_m": 160.0,
     "cadence": 0.5,
     "aerobic_te": 0.800000011920929,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 11.2994384765625
   },
   {
     "date": "2026-10-23",
@@ -7347,7 +7410,8 @@
     "elevation_gain_m": 41.0,
     "cadence": 173.203125,
     "aerobic_te": 3.0,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 84.05270385742188
   },
   {
     "date": "2026-10-25",
@@ -7362,7 +7426,8 @@
     "elevation_gain_m": 11.0,
     "cadence": 161.875,
     "aerobic_te": 1.600000023841858,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 21.389404296875
   },
   {
     "date": "2026-10-25",
@@ -7377,7 +7442,8 @@
     "elevation_gain_m": 15.0,
     "cadence": 172.203125,
     "aerobic_te": 2.0,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 31.446060180664062
   },
   {
     "date": "2026-10-25",
@@ -7392,7 +7458,8 @@
     "elevation_gain_m": 69.0,
     "cadence": 179.140625,
     "aerobic_te": 4.599999904632568,
-    "anaerobic_te": 1.0
+    "anaerobic_te": 1.0,
+    "training_load": 269.2581787109375
   },
   {
     "date": "2026-10-25",
@@ -7407,7 +7474,8 @@
     "elevation_gain_m": 0.0,
     "cadence": 1.265625,
     "aerobic_te": 0.699999988079071,
-    "anaerobic_te": 1.7999999523162842
+    "anaerobic_te": 1.7999999523162842,
+    "training_load": 34.95045471191406
   },
   {
     "date": "2026-10-27",
@@ -7422,7 +7490,8 @@
     "elevation_gain_m": 34.0,
     "cadence": 171.765625,
     "aerobic_te": 3.200000047683716,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 101.7171630859375
   },
   {
     "date": "2026-10-28",
@@ -7437,7 +7506,8 @@
     "elevation_gain_m": 9.0,
     "cadence": 156.25,
     "aerobic_te": 2.5999999046325684,
-    "anaerobic_te": 2.700000047683716
+    "anaerobic_te": 2.700000047683716,
+    "training_load": 131.76942443847656
   },
   {
     "date": "2026-10-28",
@@ -7452,7 +7522,8 @@
     "elevation_gain_m": 23.0,
     "cadence": 159.515625,
     "aerobic_te": 2.4000000953674316,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 48.108428955078125
   },
   {
     "date": "2026-10-29",
@@ -7467,7 +7538,8 @@
     "elevation_gain_m": 0.0,
     "cadence": 3.125,
     "aerobic_te": 0.5,
-    "anaerobic_te": 0.6000000238418579
+    "anaerobic_te": 0.6000000238418579,
+    "training_load": 15.501739501953125
   },
   {
     "date": "2026-10-30",
@@ -7482,7 +7554,8 @@
     "elevation_gain_m": 32.0,
     "cadence": 168.6875,
     "aerobic_te": 2.9000000953674316,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 78.99467468261719
   },
   {
     "date": "2026-10-31",
@@ -7497,7 +7570,8 @@
     "elevation_gain_m": 9.0,
     "cadence": 166.34375,
     "aerobic_te": 2.700000047683716,
-    "anaerobic_te": 0.8999999761581421
+    "anaerobic_te": 0.8999999761581421,
+    "training_load": 76.29887390136719
   },
   {
     "date": "2026-10-31",
@@ -7512,7 +7586,8 @@
     "elevation_gain_m": 185.0,
     "cadence": 2.84375,
     "aerobic_te": 1.600000023841858,
-    "anaerobic_te": 0.20000000298023224
+    "anaerobic_te": 0.20000000298023224,
+    "training_load": 25.254470825195312
   },
   {
     "date": "2026-11-01",
@@ -7527,7 +7602,8 @@
     "elevation_gain_m": 4.0,
     "cadence": 160.765625,
     "aerobic_te": 2.0999999046325684,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 33.49415588378906
   },
   {
     "date": "2026-11-01",
@@ -7542,7 +7618,8 @@
     "elevation_gain_m": 1.0,
     "cadence": 162.53125,
     "aerobic_te": 2.0999999046325684,
-    "anaerobic_te": 0.5
+    "anaerobic_te": 0.5,
+    "training_load": 39.83180236816406
   },
   {
     "date": "2026-11-01",
@@ -7557,7 +7634,8 @@
     "elevation_gain_m": 3.0,
     "cadence": 182.125,
     "aerobic_te": 1.5,
-    "anaerobic_te": 2.200000047683716
+    "anaerobic_te": 2.200000047683716,
+    "training_load": 60.33961486816406
   },
   {
     "date": "2026-11-02",
@@ -7572,7 +7650,8 @@
     "elevation_gain_m": 2.0,
     "cadence": 2.921875,
     "aerobic_te": 0.4000000059604645,
-    "anaerobic_te": 1.2999999523162842
+    "anaerobic_te": 1.2999999523162842,
+    "training_load": 23.841201782226562
   },
   {
     "date": "2026-11-03",
@@ -7587,7 +7666,8 @@
     "elevation_gain_m": null,
     "cadence": 98.4375,
     "aerobic_te": 0.0,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 1.09075927734375
   },
   {
     "date": "2026-11-03",
@@ -7602,7 +7682,8 @@
     "elevation_gain_m": null,
     "cadence": null,
     "aerobic_te": 0.30000001192092896,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 4.7009429931640625
   },
   {
     "date": "2026-11-03",
@@ -7617,6 +7698,7 @@
     "elevation_gain_m": 0.0,
     "cadence": 0.265625,
     "aerobic_te": 0.20000000298023224,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 3.2623443603515625
   }
 ]
