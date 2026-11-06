@@ -72,8 +72,12 @@ jobs:
         # run_all.py exits non-zero if any step failed but still builds
         # the computed layer from whatever data it has — so we always
         # continue to the commit step and surface failures as a warning.
+        # Garmin: official Personal API first (GARMIN_API_KEY), the
+        # unofficial login for training status/ACWR/VO2 max and as the
+        # fallback (GARMIN_TOKENSTORE). Either alone keeps it running.
         env:
           GARMIN_TOKENSTORE: /home/runner/.garmin_tokens
+          GARMIN_API_KEY: ${{ secrets.GARMIN_API_KEY }}
         run: |
           python run_all.py || echo "::warning::One or more pipeline steps failed - check the log above"
 
@@ -85,17 +89,6 @@ jobs:
         run: |
           python backfill_vo2max.py "$(date -d '-21 days' +%F)" \
             || echo "::warning::VO2max top-up failed - trend may lag a few days"
-
-      # Shadow run of Garmin's official Personal API (Nov 2026): writes
-      # shadow/ only, same schemas, so it can be compared with the
-      # current route for a few days before the dashboard switches.
-      # Nothing reads shadow/, so a failure here changes nothing.
-      - name: Shadow pull (official Garmin API)
-        env:
-          GARMIN_API_KEY: ${{ secrets.GARMIN_API_KEY }}
-        run: |
-          python garmin_official.py && python compare_official.py \
-            || echo "::warning::Official-API shadow pull failed - dashboard unaffected"
 
       - name: Commit and push updated data
         run: |
