@@ -801,24 +801,24 @@
   },
   {
     "date": "2026-11-07",
-    "temp_max_c": 10.5,
+    "temp_max_c": 10.0,
     "temp_min_c": 7.0,
-    "humidity_pct": 87,
+    "humidity_pct": 88,
     "wind_speed_kmh": 5.8,
     "heat_risk": "low"
   },
   {
     "date": "2026-11-08",
-    "temp_max_c": 10.7,
-    "temp_min_c": 4.8,
-    "humidity_pct": 90,
+    "temp_max_c": 10.5,
+    "temp_min_c": 4.9,
+    "humidity_pct": 89,
     "wind_speed_kmh": 5.8,
     "heat_risk": "low"
   },
   {
     "date": "2026-11-09",
     "temp_max_c": 8.2,
-    "temp_min_c": 3.2,
+    "temp_min_c": 2.9,
     "humidity_pct": 90,
     "wind_speed_kmh": 15.8,
     "heat_risk": "low"
