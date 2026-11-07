@@ -126,6 +126,11 @@ def analyse(stream, activity, is_quality):
         unreliable.append("quality session — halves are not comparable")
     if gradient is not None and gradient > HILLY_M_PER_KM:
         unreliable.append(f"hilly ({gradient:.0f} m/km climb)")
+    # Indoors the speed samples are the watch's wrist estimate, not
+    # measured, and HR drifts with the heat of a still room — same
+    # reason they are out of the efficiency trend (7 Nov 2026).
+    if (activity or {}).get("type") == "treadmill_running":
+        unreliable.append("treadmill — pace is the watch's estimate")
 
     def pace_sec_per_km(ef_samples):
         speeds = [s["speed_mps"] for s in ef_samples if s.get("speed_mps")]

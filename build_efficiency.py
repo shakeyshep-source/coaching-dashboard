@@ -43,7 +43,11 @@ WEATHER_LOG_FILE = "weather_log.json"
 SESSION_DETAIL_FILE = "session_detail.json"
 OUTPUT_FILE = "efficiency_history.json"
 
-RUN_TYPES = ("running", "trail_running", "track_running", "treadmill_running")
+# Treadmill runs are left out (his call, 7 Nov 2026): indoors the watch
+# has no GPS and estimates pace from wrist motion, often 5-10% off the
+# belt, so pace-per-heartbeat would be measuring the estimate, not him.
+# Indoor heat and no airflow lift HR as well.
+RUN_TYPES = ("running", "trail_running", "track_running")
 QUALITY_TYPES = {"intervals", "tempo", "threshold", "race", "fartlek", "hills"}
 MIN_DURATION_MIN = 20
 # Same threshold as build_decoupling: above this the pace-for-HR bargain

@@ -21,16 +21,6 @@
       "gradient_m_per_km": 1.5
     },
     {
-      "date": "2026-01-09",
-      "activity_id": 21494425803,
-      "name": "Treadmill Running",
-      "distance_km": 5.14,
-      "pace_min_per_km": 4.81,
-      "avg_hr": 132.0,
-      "efficiency": 1.575,
-      "gradient_m_per_km": null
-    },
-    {
       "date": "2026-01-10",
       "activity_id": 21499650050,
       "name": "Tewkesbury Running",
@@ -39,16 +29,6 @@
       "avg_hr": 142.0,
       "efficiency": 1.4888,
       "gradient_m_per_km": 6.2
-    },
-    {
-      "date": "2026-01-11",
-      "activity_id": 21513863182,
-      "name": "Recovery",
-      "distance_km": 6.0,
-      "pace_min_per_km": 5.01,
-      "avg_hr": 131.0,
-      "efficiency": 1.5237,
-      "gradient_m_per_km": null
     },
     {
       "date": "2026-01-15",
@@ -1503,10 +1483,10 @@
   "months": [
     {
       "month": "2026-01",
-      "runs": 12,
-      "efficiency": 1.4041,
-      "pace_min_per_km": 4.96,
-      "avg_hr": 141.5,
+      "runs": 10,
+      "efficiency": 1.3977,
+      "pace_min_per_km": 5.01,
+      "avg_hr": 142.0,
       "avg_temp_c": null
     },
     {
@@ -1585,10 +1565,10 @@
   "summary": {
     "from_month": "2026-01",
     "to_month": "2026-10",
-    "from_efficiency": 1.4041,
+    "from_efficiency": 1.3977,
     "to_efficiency": 1.4647,
-    "change_pct": 4.3,
-    "from_hr_at_pace": "142 bpm at 4.96 min/km",
+    "change_pct": 4.8,
+    "from_hr_at_pace": "142 bpm at 5.01 min/km",
     "to_hr_at_pace": "141 bpm at 4.85 min/km",
     "warmer_now": false
   }
