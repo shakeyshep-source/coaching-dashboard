@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-06",
+  "as_of": "2026-11-07",
   "window_days": 28,
   "beat_margin_sec_per_km": 3.0,
   "sessions": [
@@ -214,9 +214,7 @@
       "skipped": "no rep detail \u2014 laps not pulled, or no identifiable reps"
     }
   ],
-  "qualifying_in_window": [
-    "2026-10-10"
-  ],
+  "qualifying_in_window": [],
   "flag": null,
   "cooldown_remaining": 0,
   "last_flagged": "2026-10-10",
