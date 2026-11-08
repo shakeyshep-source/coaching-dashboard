@@ -962,12 +962,12 @@
   },
   {
     "date": "2026-11-09",
-    "session_type": "rest",
+    "session_type": "easy",
     "target_distance_km": null,
     "target_pace": null,
-    "notes": "Provisional \u2014 Rest.",
+    "notes": "Provisional \u2014 No run. Easy bike 30-40 min, seated, normal cadence, if you want to move. A third run in three days is the one I'd hold back; see rationale.",
     "source": "coach",
-    "updated_at": "2026-11-01T20:08:35"
+    "updated_at": "2026-11-08T17:07:32"
   },
   {
     "date": "2026-11-10",
@@ -1085,5 +1085,68 @@
     "notes": "Provisional \u2014 Long run 16 km easy (~5:00/km or slower); gel from 20 min then every ~25 min, log what you took. Week ~55 km. The 18-22 km progression restarts from here once the calf has been clear a week; the November volume step waits, as agreed.",
     "source": "coach",
     "updated_at": "2026-11-01T20:08:35"
+  },
+  {
+    "date": "2026-11-23",
+    "session_type": "easy",
+    "target_distance_km": 6,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 6 km, Vomeros, flat. Replaces the rest day: by then the calf will have two clear weeks. Only if the calf has been silent through 16-22 Nov.",
+    "source": "coach",
+    "updated_at": "2026-11-08T17:07:32"
+  },
+  {
+    "date": "2026-11-24",
+    "session_type": "easy",
+    "target_distance_km": 8,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 8 km, Vomeros, flat. Shortened from 10 as Monday now carries a run.",
+    "source": "coach",
+    "updated_at": "2026-11-08T17:07:32"
+  },
+  {
+    "date": "2026-11-25",
+    "session_type": "easy",
+    "target_distance_km": 8,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 8 km with 4 x 15 s relaxed strides at the end (Speed 5). First touch of speed, smooth not hard. Drop them if the calf has any doubt.",
+    "source": "coach",
+    "updated_at": "2026-11-08T17:07:32"
+  },
+  {
+    "date": "2026-11-26",
+    "session_type": "easy",
+    "target_distance_km": 8,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 8 km. Leg gym on or after today.",
+    "source": "coach",
+    "updated_at": "2026-11-08T17:07:32"
+  },
+  {
+    "date": "2026-11-27",
+    "session_type": "rest",
+    "target_distance_km": null,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Rest or light bike.",
+    "source": "coach",
+    "updated_at": "2026-11-08T17:07:32"
+  },
+  {
+    "date": "2026-11-28",
+    "session_type": "easy",
+    "target_distance_km": 8,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 8 km + 4 strides. Shortened from 10 to keep the week near 56 km. Tempo waits one more week; 5 Dec at the earliest.",
+    "source": "coach",
+    "updated_at": "2026-11-08T17:07:32"
+  },
+  {
+    "date": "2026-11-29",
+    "session_type": "long",
+    "target_distance_km": 18,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Long run 18 km easy (~5:00/km or slower, HR ~135 or under). Gel from 20 min then every ~25 min; log what you took. Week ~54 km: volume holds while strides return; the step up follows in December.",
+    "source": "coach",
+    "updated_at": "2026-11-08T17:07:32"
   }
 ]

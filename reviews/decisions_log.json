@@ -545,5 +545,13 @@
     "action_taken": "amendment_requested",
     "athlete_thoughts": "Is there any need for the rest day?  I have the day off too. I'm definitely not tired, can just put in an easy run",
     "changes_count": 7
+  },
+  {
+    "logged_at": "2026-11-08T17:07:32",
+    "proposal_id": "2026-11-08",
+    "decision": "approve",
+    "action_taken": "plan_updated",
+    "athlete_thoughts": null,
+    "changes_count": 8
   }
 ]
