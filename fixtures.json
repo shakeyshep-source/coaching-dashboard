@@ -5,7 +5,7 @@
     "distance_km": 21.0975,
     "status": "confirmed",
     "intent": "target",
-    "notes": "The A race. Target 1:21-1:23, model predicts 1:22:23. COURSE (from a clubmate's 2025 file \u2014 her run, not his \u2014 who ran 1:21:02, so her splits map the course at almost exactly his goal pace): 101m gain over 21.09km, ~4.8m/km, rolling rather than flat, net slightly downhill start to finish. Her watch had no barometric altimeter, so treat the metres as approximate and the shape as the signal. Km 1 is downhill and her fastest of the day (3:38) \u2014 the start is a trap. Highest ground is the first 8km, which roll continuously. Flattest running is roughly 14-18km. The sting is km 19-20: a climb of about 11m that produced her slowest split of the race (4:11, seven seconds off anything else), immediately followed by a 6m drop to the line where she ran 3:54. Expect the 20km split to look bad and the last km to be free. HER PACING IS THE WARNING: first 10km 37:08 (3:43/km), second 10km 39:33 (3:57/km) \u2014 2:25 lost in the back half after going out 7 sec/km faster than her own average. 3:43/km is Shep's current 10K race pace, so running with that early group means racing a half at 10K pace."
+    "notes": "The A race. Target 1:21-1:23, model predicts 1:22:23. COURSE (from a clubmate's 2025 file — her run, not his — who ran 1:21:02, so her splits map the course at almost exactly his goal pace): 101m gain over 21.09km, ~4.8m/km, rolling rather than flat, net slightly downhill start to finish. Her watch had no barometric altimeter, so treat the metres as approximate and the shape as the signal. Km 1 is downhill and her fastest of the day (3:38) — the start is a trap. Highest ground is the first 8km, which roll continuously. Flattest running is roughly 14-18km. The sting is km 19-20: a climb of about 11m that produced her slowest split of the race (4:11, seven seconds off anything else), immediately followed by a 6m drop to the line where she ran 3:54. Expect the 20km split to look bad and the last km to be free. HER PACING IS THE WARNING: first 10km 37:08 (3:43/km), second 10km 39:33 (3:57/km) — 2:25 lost in the back half after going out 7 sec/km faster than her own average. 3:43/km is Shep's current 10K race pace, so running with that early group means racing a half at 10K pace."
   },
   {
     "date": "2026-10-04",
@@ -37,7 +37,7 @@
     "distance_km": null,
     "status": "possible",
     "intent": "not raced",
-    "notes": "Trail shoes, no spikes. Sits in base / early marathon build \u2014 no conflict. OPTIONAL again: the XC league needed 3 of 4 and he has now dropped both 31 Oct and 18 Oct, so the league cannot be completed and this fixture is no longer load-bearing. Run it if he fancies a hard off-road effort; skip it without cost."
+    "notes": "Trail shoes, no spikes. Sits in base / early marathon build — no conflict. OPTIONAL again: the XC league needed 3 of 4 and he has now dropped both 31 Oct and 18 Oct, so the league cannot be completed and this fixture is no longer load-bearing. Run it if he fancies a hard off-road effort; skip it without cost."
   },
   {
     "date": "2027-01-17",
@@ -46,7 +46,7 @@
     "distance_km": 8.047,
     "status": "confirmed",
     "intent": "target",
-    "notes": "5 miles, raised 4 Oct as the next shot at the club 5-mile record (29:12) once Guy Fawkes became an experiment. Date and entry not yet confirmed - get both. It falls inside the marathon base, so he arrives fitter but less sharp than in a dedicated block; whether it gets a short taper is a decision for when the date is known, weighed against Boddington 10 on 31 Jan. CONFIRMED 1 Nov 2026 (his info): Sun 17 Jan 2027; entries open 12:00 on Sun 8 Nov 2026, 300 places, last year sold out in 2 h 20 min - reminder set. Two weeks before Boddington 10 (31 Jan), inside the January 80-85 km base: a short ease-off (3-4 days, no new intensity) rather than a full taper, and the January bloods go outside the 3 days either side of it."
+    "notes": "5 miles, raised 4 Oct as the next shot at the club 5-mile record (29:12) once Guy Fawkes became an experiment. ENTERED 8 Nov 2026 (entries opened 12:00 that day); date confirmed Sun 17 Jan 2027. It falls inside the marathon base, so he arrives fitter but less sharp than in a dedicated block; whether it gets a short taper is a decision for when the date is known, weighed against Boddington 10 on 31 Jan. CONFIRMED 1 Nov 2026 (his info): Sun 17 Jan 2027; entries open 12:00 on Sun 8 Nov 2026, 300 places, last year sold out in 2 h 20 min - reminder set. Two weeks before Boddington 10 (31 Jan), inside the January 80-85 km base: a short ease-off (3-4 days, no new intensity) rather than a full taper, and the January bloods go outside the 3 days either side of it."
   },
   {
     "date": "2027-01-31",
@@ -54,7 +54,7 @@
     "distance_km": 16.09,
     "status": "confirmed",
     "intent": "target",
-    "notes": "Club record up for grabs at 1:01:00. Course confirmed flat, so Riegel holds without a downward adjustment. TWO PROJECTIONS: off Cheltenham alone (1:21:03) 1:00:50, ten seconds inside; off race_prediction.json's four-race blend 1:01:38, 38 seconds short. The blend is the planning number. Either way this is closer than it was in September, and it has four months of marathon base-building in front of it \u2014 the aerobic work for Manchester is exactly the work that moves a 10-mile time. Falls mid-way through that build, so it needs a short taper written into the block rather than being run off unbroken loading. CONFIRMED 1 Nov 2026 (his info): 9:00 start, HQ The Gloucester Old Spot, Cheltenham GL51 9SY, hosted by CLC Striders; entries open 12:00 Sun 15 Nov 2026 - reminder set.",
+    "notes": "Club record up for grabs at 1:01:00. Course confirmed flat, so Riegel holds without a downward adjustment. TWO PROJECTIONS: off Cheltenham alone (1:21:03) 1:00:50, ten seconds inside; off race_prediction.json's four-race blend 1:01:38, 38 seconds short. The blend is the planning number. Either way this is closer than it was in September, and it has four months of marathon base-building in front of it — the aerobic work for Manchester is exactly the work that moves a 10-mile time. Falls mid-way through that build, so it needs a short taper written into the block rather than being run off unbroken loading. CONFIRMED 1 Nov 2026 (his info): 9:00 start, HQ The Gloucester Old Spot, Cheltenham GL51 9SY, hosted by CLC Striders; entries open 12:00 Sun 15 Nov 2026 - reminder set.",
     "date_note": "Sun 31 Jan 2027, 9:00. HQ The Gloucester Old Spot, Cheltenham GL51 9SY (CLC Striders). ENTRIES OPEN 12:00 SUN 15 NOV 2026."
   },
   {

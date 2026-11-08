@@ -455,8 +455,8 @@ preventer itself is a prescribing decision for his GP or asthma nurse.
     stretch fresh; the week between is genuinely easy, and it is raced
     on feel rather than as a record attempt.
   - **Linda Franks 5, Sun 17 Jan 2027** — the next shot at the 5-mile
-    record (29:12). Entries open 12:00 Sun 8 Nov 2026 and sold out in
-    2 h 20 min last year (reminder set). Two weeks before Boddington
+    record (29:12). **Entered 8 Nov 2026** (entries opened 12:00 that
+    day; it sold out in 2 h 20 min the year before). Two weeks before Boddington
     10, inside the January base: a short ease-off, not a full taper.
     If he wants to try bicarb, trial it in a hard session in December
     first, never new on race day.
