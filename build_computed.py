@@ -37,8 +37,10 @@ import json
 import re
 from datetime import date, datetime
 from statistics import mean
+from zoneinfo import ZoneInfo
 
 import pace_target_check
+import volume_check
 
 GARMIN_FILE = "garmin_data.json"
 HISTORY_FILE = "garmin_history.json"
@@ -53,6 +55,13 @@ FLAGS_LOG_FILE = "flags_log.json"
 RECOVERY_FILE = "recovery_log.json"
 SESSION_DETAIL_FILE = "session_detail.json"
 PACE_TARGET_FILE = "pace_target.json"
+# Is the planned load keeping up with the agreed winter curve, or running
+# ahead of a safe climb? Logic in volume_check.py; the curve itself is
+# data in load_plan.json.
+VOLUME_TARGET_FILE = "volume_target.json"
+LOAD_PLAN_FILE = "load_plan.json"
+WEEKLY_FILE = "weekly_summary.json"
+FIXTURES_FILE = "fixtures.json"
 OUTPUT_FILE = "computed_data.json"
 
 HARD_SESSION_TYPES = {"intervals", "tempo", "long", "race"}
@@ -529,6 +538,25 @@ def main():
         pace_result["last_flagged_sessions"] = fired_for
     with open(PACE_TARGET_FILE, "w") as f:
         json.dump(pace_result, f, indent=2)
+
+    # --- Is the planned load on the agreed curve? ---
+    # His instruction (8 Nov 2026): notice when the load is behind the
+    # curve before he has to say so. Flags only; the plan still moves
+    # through a proposal he approves.
+    volume = volume_check.evaluate(
+        plan_by_date,
+        (load(WEEKLY_FILE) or {}).get("weeks") or [],
+        load(LOAD_PLAN_FILE) or {},
+        manual_by_date,
+        computed,
+        load(FIXTURES_FILE) or [],
+        today=datetime.now(ZoneInfo("Europe/London")).date(),
+    )
+    with open(VOLUME_TARGET_FILE, "w") as f:
+        json.dump(volume, f, indent=2)
+    print(f"Volume vs curve: {volume['status']}"
+          + (f" — {volume['headline']}" if volume.get("headline") else "")
+          + f" -> {VOLUME_TARGET_FILE}")
 
     # Recovery works off accumulated history, not the 14-day window, so
     # the trend can eventually span months rather than a fortnight.

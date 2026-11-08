@@ -18,8 +18,8 @@ The session must:
    `weekly_summary.json`, `computed_data.json`, `manual_log.json`
    (notes!), `training_plan.json`, `plan_proposal.json`,
    `review_responses.json`, `race_prediction.json`,
-   `weekly_review_latest.json` (last week's review and any response to
-   it).
+   `volume_target.json`, `weekly_review_latest.json` (last week's review
+   and any response to it).
 2. If the current proposal is `amend_requested`: handle it per "Plan
    proposals → Amend requests" in CLAUDE.md, and skip to step 5.
 2b. **Answer any query on the last review.** A "hold" review proposes
@@ -67,6 +67,17 @@ The session must:
    **hold** — "hold" is about whether anything already planned should
    change; extending the horizon by a week is not a change of course.
    Say which it is in the rationale's first line.
+   **Load must lead, not follow** (his instruction, 8 Nov 2026 — see
+   "Load leads" in CLAUDE.md). Before writing the weeks, read
+   `volume_target.json`. Every week it marks `under` gets raised to its
+   `recommended_km` in this proposal — through longer easy runs and the
+   long run, never by adding intensity — and the rationale says so first,
+   unprompted: "Week of X was at Y km against a curve of Z; raised to W."
+   Not raising one is allowed only for a reason you state with evidence
+   (a gate, a note, a race). Every week marked `over` gets cut to its
+   `ramp_cap_km`, and says why. Then check the new weeks by eye against
+   the same curve and cap: none should still read `under` or `over`
+   without a stated reason.
    **Never edit `training_plan.json` yourself.**
 6. Commit everything and push to `main` (commit message:
    `Weekly coach review YYYY-MM-DD`) — unless running inside the

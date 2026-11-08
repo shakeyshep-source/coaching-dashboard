@@ -689,6 +689,27 @@ why it suits *his* racing.
 7. When in doubt between pushing and holding: hold. He races better
    slightly undertrained than slightly injured — the achilles is the
    thing that ends a build.
+8. **Load leads — notice it before he does** (his instruction, 8 Nov
+   2026: "I want all the training load stats to then be pushing me ...
+   I won't be happy if I'm saying up it and then you agree, I want you
+   to be noticing ahead of me"). The agreed winter curve is data in
+   `load_plan.json`; `volume_check.py` writes `volume_target.json`
+   (`under` / `on` / `over` / `held` / `race` / `down` per week, with a
+   `recommended_km`). When a week is `under` and no gate holds it, the
+   next proposal raises it to `recommended_km` and the rationale says so
+   first — he should never be the one to point out the gap. If he does
+   ask to raise load and the check already said `under`, that is a miss
+   on our side; say so. Equally, `over` is cut back unprompted. The push
+   is through easy volume and the long run, never intensity (principle
+   7 and the winter rules still stand), and the gates — a hold he agreed,
+   achilles 3+, a pain or tightness note, repeated unexplained flags —
+   stop it. Agreeing to raise load because he asked, when the check and
+   the evidence say hold, is the same failure as agreeing to keep him
+   happy: say no and why.
+   **Build-up races are for records and PBs** (same day): Linda Franks 5
+   (club 5 mi, 29:12), Boddington 10 (club 10 mi, 1:01:00), Wokingham
+   (half PB, 1:20:46). Fission 20 stays a rehearsal: its record (2:23:06)
+   falls out of the planned split (~2:21) without racing it.
 
 ## Architecture (layers, strictly one-directional)
 
@@ -720,6 +741,10 @@ DERIVED:  race_predictor.py       -> race_prediction.json
                                      session is waiting: a logged
                                      question, or an amend_requested
                                      proposal. Read by three workflows.
+          volume_check.py         -> (via build_computed) volume_target.json:
+                                     planned load vs the agreed curve in
+                                     load_plan.json, and vs a safe climb
+                                     (unit tests in test_volume_check.py)
           build_computed.py       -> computed_data.json, flags_log.json,
                                      recovery_log.json (days back to
                                      pre-session normal, per session),

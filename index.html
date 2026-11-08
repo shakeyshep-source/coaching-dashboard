@@ -705,6 +705,7 @@ async function loadDashboard() {
   } catch (e) { /* hero renders without the session */ }
 
   const weekly = await fetchJson('weekly_summary.json');
+  const volumeCheck = await fetchJson('volume_target.json');
   // VO2max to one decimal. computed_data carries Garmin's rounded
   // integer; vo2max_history.json keeps the precision, and at this
   // level a tenth is the difference between drifting and climbing.
@@ -765,6 +766,7 @@ async function loadDashboard() {
 
     ${weekLaneHtml(planAll, todayStr)}
     ${volumeBarsHtml(weekly, planAll, todayStr)}
+    ${volumeCheckHtml(volumeCheck)}
   `;
   wireLane();
 
@@ -1179,6 +1181,16 @@ function volumeBarsHtml(weekly, plan, todayStr) {
       ${plannedKm ? `<p class="plain" style="margin-top:10px;">Yellow is this week, and
         <b>planned rather than run</b> — it fills in as sessions are logged.</p>` : ''}
     </div>`;
+}
+
+// The load check (volume_check.py): is the plan keeping up with the
+// agreed winter curve, or climbing faster than is safe? Shown only when
+// there is something to act on, so a quiet line means the plan is on it.
+function volumeCheckHtml(v) {
+  if (!v || !v.headline) return '';
+  const cls = v.status === 'over' ? 'chip warn' : 'chip';
+  const label = v.status === 'over' ? 'Climbing too fast' : 'Behind the curve';
+  return `<p class="plain" style="margin-top:10px;"><span class="${cls}" style="margin:0 6px 0 0;">${label}</span>${esc(v.headline)}</p>`;
 }
 
 // Tab name -> the element that holds it. "today" is the original
