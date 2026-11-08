@@ -1,7 +1,7 @@
 [
   {
     "date": "2026-10-26",
-    "rhr": 47.0,
+    "rhr": 47,
     "hrv_last_night": 34,
     "hrv_weekly_avg": 35,
     "sleep_score": 78,
@@ -28,7 +28,7 @@
   },
   {
     "date": "2026-10-27",
-    "rhr": 47.0,
+    "rhr": 47,
     "hrv_last_night": 42,
     "hrv_weekly_avg": 36,
     "sleep_score": 92,
@@ -45,8 +45,8 @@
     "training_status_feedback": "MAINTAINING_4",
     "hrv_baseline_7d": 34,
     "hrv_delta_from_baseline": 8,
-    "rhr_baseline_7d": 47.0,
-    "rhr_delta_from_baseline": 0.0,
+    "rhr_baseline_7d": 47,
+    "rhr_delta_from_baseline": 0,
     "heat_risk": "low",
     "recovery_confounders": [],
     "today_summary": "Recovery looks normal. Fine for planned training.",
@@ -55,7 +55,7 @@
   },
   {
     "date": "2026-10-28",
-    "rhr": 50.0,
+    "rhr": 50,
     "hrv_last_night": 32,
     "hrv_weekly_avg": 35,
     "sleep_score": 86,
@@ -72,8 +72,8 @@
     "training_status_feedback": "MAINTAINING_4",
     "hrv_baseline_7d": 38,
     "hrv_delta_from_baseline": -6,
-    "rhr_baseline_7d": 47.0,
-    "rhr_delta_from_baseline": 3.0,
+    "rhr_baseline_7d": 47,
+    "rhr_delta_from_baseline": 3,
     "heat_risk": "low",
     "recovery_confounders": [],
     "today_summary": "Recovery below baseline on both HRV and RHR. Keep today easy.",
@@ -84,7 +84,7 @@
   },
   {
     "date": "2026-10-29",
-    "rhr": 50.0,
+    "rhr": 50,
     "hrv_last_night": 35,
     "hrv_weekly_avg": 35,
     "sleep_score": 79,
@@ -101,8 +101,8 @@
     "training_status_feedback": "MAINTAINING_4",
     "hrv_baseline_7d": 36,
     "hrv_delta_from_baseline": -1,
-    "rhr_baseline_7d": 48.0,
-    "rhr_delta_from_baseline": 2.0,
+    "rhr_baseline_7d": 48,
+    "rhr_delta_from_baseline": 2,
     "heat_risk": "low",
     "recovery_confounders": [],
     "today_summary": "Recovery looks normal. Fine for planned training.",
@@ -111,7 +111,7 @@
   },
   {
     "date": "2026-10-30",
-    "rhr": 50.0,
+    "rhr": 50,
     "hrv_last_night": 39,
     "hrv_weekly_avg": 35,
     "sleep_score": 84,
@@ -138,7 +138,7 @@
   },
   {
     "date": "2026-10-31",
-    "rhr": 48.0,
+    "rhr": 48,
     "hrv_last_night": 35,
     "hrv_weekly_avg": 36,
     "sleep_score": 80,
@@ -165,7 +165,7 @@
   },
   {
     "date": "2026-11-01",
-    "rhr": 48.0,
+    "rhr": 48,
     "hrv_last_night": 37,
     "hrv_weekly_avg": 36,
     "sleep_score": 89,
@@ -192,7 +192,7 @@
   },
   {
     "date": "2026-11-02",
-    "rhr": 48.0,
+    "rhr": 48,
     "hrv_last_night": 33,
     "hrv_weekly_avg": 36,
     "sleep_score": 86,
@@ -219,7 +219,7 @@
   },
   {
     "date": "2026-11-03",
-    "rhr": 47.0,
+    "rhr": 47,
     "hrv_last_night": 41,
     "hrv_weekly_avg": 36,
     "sleep_score": 91,
@@ -246,7 +246,7 @@
   },
   {
     "date": "2026-11-04",
-    "rhr": 47.0,
+    "rhr": 47,
     "hrv_last_night": 33,
     "hrv_weekly_avg": 36,
     "sleep_score": 91,
@@ -273,7 +273,7 @@
   },
   {
     "date": "2026-11-05",
-    "rhr": 47.0,
+    "rhr": 47,
     "hrv_last_night": 35,
     "hrv_weekly_avg": 36,
     "sleep_score": 91,
@@ -300,7 +300,7 @@
   },
   {
     "date": "2026-11-06",
-    "rhr": 47.0,
+    "rhr": 47,
     "hrv_last_night": 40,
     "hrv_weekly_avg": 36,
     "sleep_score": 82,
@@ -327,7 +327,7 @@
   },
   {
     "date": "2026-11-07",
-    "rhr": 47.0,
+    "rhr": 47,
     "hrv_last_night": 34,
     "hrv_weekly_avg": 36,
     "sleep_score": 89,
@@ -356,7 +356,7 @@
   },
   {
     "date": "2026-11-08",
-    "rhr": 48.0,
+    "rhr": 48,
     "hrv_last_night": 36,
     "hrv_weekly_avg": 36,
     "sleep_score": 87,
