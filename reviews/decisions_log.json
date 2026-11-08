@@ -537,5 +537,13 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": "See today's notes, all good",
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-11-08T16:25:59",
+    "proposal_id": "2026-11-08",
+    "decision": "amend",
+    "action_taken": "amendment_requested",
+    "athlete_thoughts": "Is there any need for the rest day?  I have the day off too. I'm definitely not tired, can just put in an easy run",
+    "changes_count": 7
   }
 ]

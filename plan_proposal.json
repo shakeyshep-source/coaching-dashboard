@@ -1,15 +1,63 @@
 {
   "id": "2026-11-08",
   "created": "2026-11-08T14:00:00",
-  "status": "pending",
+  "status": "amend_requested",
   "rationale": "Hold: nothing already planned changes. This extends the horizon by one week (23-29 Nov, provisional) and carries 9-15 and 16-22 Nov forward unchanged. Two clean easy runs (6.4 and 7.0 km, achilles 0, HRV/RHR flat) support the rebuild but are not yet a calf-clear week; that is the coming one. In 23-29 Nov volume holds at about 54 km while strides return, because volume and intensity should not rise in the same week. Tempo waits until 5 Dec at the earliest.",
   "changes": [
-    {"date": "2026-11-23", "session_type": "rest", "target_distance_km": null, "target_pace": null, "notes": "Provisional — Rest."},
-    {"date": "2026-11-24", "session_type": "easy", "target_distance_km": 10, "target_pace": null, "notes": "Provisional — Easy 10 km, Vomeros, flat. Only if the calf has been silent through 16-22 Nov."},
-    {"date": "2026-11-25", "session_type": "easy", "target_distance_km": 8, "target_pace": null, "notes": "Provisional — Easy 8 km with 4 x 15 s relaxed strides at the end (Speed 5). First touch of speed, smooth not hard. Drop them if the calf has any doubt."},
-    {"date": "2026-11-26", "session_type": "easy", "target_distance_km": 8, "target_pace": null, "notes": "Provisional — Easy 8 km. Leg gym on or after today."},
-    {"date": "2026-11-27", "session_type": "rest", "target_distance_km": null, "target_pace": null, "notes": "Provisional — Rest or light bike."},
-    {"date": "2026-11-28", "session_type": "easy", "target_distance_km": 10, "target_pace": null, "notes": "Provisional — Easy 10 km + 4 strides. Tempo waits one more week; 5 Dec at the earliest."},
-    {"date": "2026-11-29", "session_type": "long", "target_distance_km": 18, "target_pace": null, "notes": "Provisional — Long run 18 km easy (~5:00/km or slower, HR ~135 or under). Gel from 20 min then every ~25 min; log what you took. Week ~54 km: volume holds while strides return; the step up follows in December."}
-  ]
+    {
+      "date": "2026-11-23",
+      "session_type": "rest",
+      "target_distance_km": null,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Rest."
+    },
+    {
+      "date": "2026-11-24",
+      "session_type": "easy",
+      "target_distance_km": 10,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Easy 10 km, Vomeros, flat. Only if the calf has been silent through 16-22 Nov."
+    },
+    {
+      "date": "2026-11-25",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Easy 8 km with 4 x 15 s relaxed strides at the end (Speed 5). First touch of speed, smooth not hard. Drop them if the calf has any doubt."
+    },
+    {
+      "date": "2026-11-26",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Easy 8 km. Leg gym on or after today."
+    },
+    {
+      "date": "2026-11-27",
+      "session_type": "rest",
+      "target_distance_km": null,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Rest or light bike."
+    },
+    {
+      "date": "2026-11-28",
+      "session_type": "easy",
+      "target_distance_km": 10,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Easy 10 km + 4 strides. Tempo waits one more week; 5 Dec at the earliest."
+    },
+    {
+      "date": "2026-11-29",
+      "session_type": "long",
+      "target_distance_km": 18,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Long run 18 km easy (~5:00/km or slower, HR ~135 or under). Gel from 20 min then every ~25 min; log what you took. Week ~54 km: volume holds while strides return; the step up follows in December."
+    }
+  ],
+  "athlete_response": {
+    "timestamp": "08/11/2026 16:25:46",
+    "review_date": "2026-11-08",
+    "decision": "amend",
+    "thoughts": "Is there any need for the rest day?  I have the day off too. I'm definitely not tired, can just put in an easy run"
+  }
 }
