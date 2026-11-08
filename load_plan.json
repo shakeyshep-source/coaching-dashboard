@@ -1,0 +1,31 @@
+{
+  "_about": "The agreed winter load curve (CLAUDE.md, agreed 6 Oct 2026) as data, read by volume_check.py. Hand-maintained by coach sessions: change it when Shep agrees a change, never to make a flag go away. Monthly ranges ramp linearly from the first to the last day of the month.",
+  "weekly_km": {
+    "2026-11": [55, 70],
+    "2026-12": [70, 80],
+    "2027-01": [80, 85],
+    "2027-02": [85, 90],
+    "2027-03": [90, 100],
+    "2027-04": [75, 45]
+  },
+  "long_run_km": {
+    "2026-11": [18, 22],
+    "2026-12": [22, 26],
+    "2027-01": [26, 29],
+    "2027-02": [29, 32],
+    "2027-03": [32, 35]
+  },
+  "ramp": {
+    "_about": "How fast a week may climb towards the curve when it is below it (a return from injury or illness). The curve's own slope governs once he is on it.",
+    "max_pct": 25,
+    "max_km": 12
+  },
+  "tolerance_km": 3,
+  "holds": [
+    {
+      "from": "2026-11-02",
+      "until": "2026-11-15",
+      "reason": "Calf return: the week of 9 Nov is easy by agreement (8 Nov). The November step starts once the calf has had a week of normal running."
+    }
+  ]
+}
