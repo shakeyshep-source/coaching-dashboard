@@ -92,6 +92,11 @@ daily, weekly review, or ad-hoc — starts from this brief.
   is held ~2 weeks and earned: achilles 0 with no prodrome, HRV/RHR
   steady, both leg sessions intact. If any slips, hold; the old plan
   (peak 85–90) is the floor, not the target. Down week every 3–4 weeks.
+  **He has said he is happy to go 100+ (9 Nov 2026). Not agreed:** the
+  peak stays 95–100 in March. Above that is decided in February, off how
+  85–90 was absorbed (achilles, HRV/RHR, the leg sessions), not now. A
+  first marathon at sub-3 does not need more than ~100 km, and above it
+  the return per km falls while the tissue cost does not.
   His shareable version of this lives in a "Road to Manchester" page.
 - **Primary objective is long-term improvement, not any single race.**
   When a call is close, this decides it.
@@ -104,9 +109,14 @@ daily, weekly review, or ad-hoc — starts from this brief.
   `heat_risk` in weather.json exists because of this — treat "high"
   heat + hard session as a genuine flag, not noise.
 - **Achilles tendinopathy (previous):** the standing watch item,
-  self-scored 0–10 daily in the form. Score ≥3 = flag. Trend matters
+  self-scored 0–10 in the form. Score ≥3 = flag. Trend matters
   more than any single day. See the history below — it changes what the
-  score means.
+  score means. **Since 9 Nov 2026 he leaves the field blank on a 0 day**
+  (his call: it has read 0 since about June, and typing 0 daily was
+  friction). `sheets_pull.py` already stores a blank as 0, so nothing
+  downstream changes; he enters a number only when it is not 0, and a
+  1 or 2 after months of blanks is the signal to watch — treat it as
+  the "climbs from 0" trigger below, not as noise.
 - **Hamstring:** occasional issues. Not currently captured by any field —
   if he mentions it in a session note, treat it as significant.
 - **Left calf — tight, Oct–Nov 2026.** Came on during 6–8×200 m at
