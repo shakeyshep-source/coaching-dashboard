@@ -1,144 +1,8 @@
 {
-  "generated": "2026-11-08",
+  "generated": "2026-11-09",
   "next_race": null,
   "race_readiness": null,
   "weeks": [
-    {
-      "week_start": "2026-09-14",
-      "week_end": "2026-09-20",
-      "in_progress": false,
-      "km": 48.0,
-      "runs": 6,
-      "time_min": 217.0,
-      "elevation_m": 825.0,
-      "planned_sessions": 5,
-      "logged_sessions": 6,
-      "hard_sessions_planned": 1,
-      "quality_time_min": 134,
-      "easy_pct": 39,
-      "long_run_min": 81,
-      "long_run_km": 20.99,
-      "on_target_pct": 100,
-      "avg_rpe": 2.7,
-      "max_achilles": 0,
-      "avg_hrv": null,
-      "avg_rhr": null,
-      "avg_sleep_score": null,
-      "avg_sleep_hrs": null,
-      "easy_pace_min_km": 5.08,
-      "easy_avg_hr": 139.3,
-      "efficiency": 1.417,
-      "session_log": [
-        {
-          "date": "2026-09-14",
-          "temp_max_c": 22.6,
-          "heat_risk": "high",
-          "session_type": "rest",
-          "rpe": 0.0,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "Just a sauna and hydropool",
-          "km": null,
-          "pace": null,
-          "avg_hr": null,
-          "segments": null,
-          "fastest_segment": null
-        },
-        {
-          "date": "2026-09-15",
-          "temp_max_c": 20.7,
-          "heat_risk": "moderate",
-          "session_type": "easy",
-          "rpe": 2.0,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "Easy, with an impromptu catch up half way. Ended with strides but may have done them a bit quick, just felt like a natural pace, not pushing it",
-          "km": 6.8,
-          "pace": 5.15,
-          "avg_hr": 138,
-          "segments": null,
-          "fastest_segment": null
-        },
-        {
-          "date": "2026-09-16",
-          "temp_max_c": 18.4,
-          "heat_risk": "moderate",
-          "session_type": "intervals",
-          "rpe": 3.0,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "Ran them all too quick... Was trying to run slow and literally walking the last bit but it just felt really easy",
-          "km": 8.2,
-          "pace": 5.0,
-          "avg_hr": 137,
-          "segments": null,
-          "fastest_segment": null
-        },
-        {
-          "date": "2026-09-17",
-          "temp_max_c": 19.0,
-          "heat_risk": "moderate",
-          "session_type": "easy",
-          "rpe": 2.0,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "easy plod",
-          "km": 5.3,
-          "pace": 4.79,
-          "avg_hr": 150,
-          "segments": null,
-          "fastest_segment": null
-        },
-        {
-          "date": "2026-09-19",
-          "temp_max_c": 19.6,
-          "heat_risk": "moderate",
-          "session_type": "easy",
-          "rpe": 1.0,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "Easy",
-          "km": 4.4,
-          "pace": 5.34,
-          "avg_hr": 130,
-          "segments": null,
-          "fastest_segment": null
-        },
-        {
-          "date": "2026-09-20",
-          "temp_max_c": 20.1,
-          "heat_risk": "moderate",
-          "session_type": "race",
-          "rpe": 8.0,
-          "on_target": true,
-          "achilles_score": 0,
-          "note": "Yeah done as to plan, picked up the pace/effort around the 14/15k mark, caught and passed so many, on that last bit. The hilly part is brutal I'd say more than just a km, as it mixes in climbs with decent... Happy with run and a time of 1:21:04",
-          "km": 23.3,
-          "pace": 3.97,
-          "avg_hr": 161,
-          "segments": [
-            {
-              "km": 2.28,
-              "min": 11.3,
-              "pace": 4.98,
-              "avg_hr": 143.0
-            },
-            {
-              "km": 20.99,
-              "min": 81.2,
-              "pace": 3.87,
-              "avg_hr": 164.0
-            }
-          ],
-          "fastest_segment": {
-            "km": 20.99,
-            "min": 81.2,
-            "pace": 3.87,
-            "avg_hr": 164.0
-          }
-        }
-      ]
-    },
     {
       "week_start": "2026-09-21",
       "week_end": "2026-09-27",
@@ -891,10 +755,10 @@
       "on_target_pct": 100,
       "avg_rpe": 1.4,
       "max_achilles": 0,
-      "avg_hrv": 36.3,
-      "avg_rhr": 48.6,
-      "avg_sleep_score": 84,
-      "avg_sleep_hrs": 7.7,
+      "avg_hrv": 36.7,
+      "avg_rhr": 48.8,
+      "avg_sleep_score": 85,
+      "avg_sleep_hrs": 7.8,
       "easy_pace_min_km": 4.99,
       "easy_avg_hr": 138.7,
       "efficiency": 1.447,
@@ -1051,7 +915,7 @@
     {
       "week_start": "2026-11-02",
       "week_end": "2026-11-08",
-      "in_progress": true,
+      "in_progress": false,
       "km": 13.4,
       "runs": 2,
       "time_min": 70.0,
@@ -1180,6 +1044,33 @@
           "fastest_segment": null
         }
       ]
+    },
+    {
+      "week_start": "2026-11-09",
+      "week_end": "2026-11-15",
+      "in_progress": true,
+      "km": 0,
+      "runs": 0,
+      "time_min": 0,
+      "elevation_m": 0,
+      "planned_sessions": 6,
+      "logged_sessions": 0,
+      "hard_sessions_planned": 1,
+      "quality_time_min": 0,
+      "easy_pct": null,
+      "long_run_min": null,
+      "long_run_km": null,
+      "on_target_pct": null,
+      "avg_rpe": null,
+      "max_achilles": null,
+      "avg_hrv": 32,
+      "avg_rhr": 48,
+      "avg_sleep_score": 91,
+      "avg_sleep_hrs": 8.5,
+      "easy_pace_min_km": null,
+      "easy_avg_hr": null,
+      "efficiency": null,
+      "session_log": []
     }
   ]
 }

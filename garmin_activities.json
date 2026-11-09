@@ -7796,5 +7796,53 @@
     "aerobic_te": 3.0,
     "anaerobic_te": 0.0,
     "training_load": 83.36747741699219
+  },
+  {
+    "date": "2026-11-09",
+    "activity_id": 25017513066,
+    "name": "Cardio",
+    "type": "indoor_cardio",
+    "distance_km": null,
+    "duration_min": 5.1,
+    "avg_pace_min_per_km": null,
+    "avg_hr": 132.0,
+    "max_hr": 156.0,
+    "elevation_gain_m": null,
+    "cadence": null,
+    "aerobic_te": 1.5,
+    "anaerobic_te": 0.5,
+    "training_load": 25.6229248046875
+  },
+  {
+    "date": "2026-11-09",
+    "activity_id": 25017835721,
+    "name": "Indoor Cycling",
+    "type": "indoor_cycling",
+    "distance_km": 11.82,
+    "duration_min": 35.0,
+    "avg_pace_min_per_km": 2.96,
+    "avg_hr": 117.0,
+    "max_hr": 129.0,
+    "elevation_gain_m": null,
+    "cadence": null,
+    "aerobic_te": 2.0,
+    "anaerobic_te": 0.0,
+    "training_load": 29.751495361328125
+  },
+  {
+    "date": "2026-11-09",
+    "activity_id": 25018284959,
+    "name": "Strength",
+    "type": "strength_training",
+    "distance_km": null,
+    "duration_min": 45.4,
+    "avg_pace_min_per_km": null,
+    "avg_hr": 89.0,
+    "max_hr": 127.0,
+    "elevation_gain_m": null,
+    "cadence": null,
+    "aerobic_te": 0.5,
+    "anaerobic_te": 0.0,
+    "training_load": 6.84228515625
   }
 ]
