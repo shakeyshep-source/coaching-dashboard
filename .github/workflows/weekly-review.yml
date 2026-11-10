@@ -58,6 +58,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main   # a queued run must not start from a stale tree
           fetch-depth: 0
 
       # Europe/London, per the brief - never UTC for day boundaries.
@@ -107,6 +108,7 @@ jobs:
         # the derived layer from whatever is on disk.
         env:
           GARMIN_TOKENSTORE: /home/runner/.garmin_tokens
+          GARMIN_API_KEY: ${{ secrets.GARMIN_API_KEY }}
         run: |
           python run_all.py || echo "::warning::One or more pipeline steps failed - the review runs on the data that did build"
 

@@ -47,17 +47,21 @@ jobs:
       - name: Backfill VO2max
         env:
           GARMIN_TOKENSTORE: /home/runner/.garmin_tokens
-        run: python backfill_vo2max.py "${{ inputs.start_date }}"
+          START_DATE: ${{ inputs.start_date }}
+        run: python backfill_vo2max.py "$START_DATE"
 
       # Activities too: the daily pull only fetches 56 days, so easy-run
       # efficiency could not see past July until this recovered the rest.
       - name: Backfill activities
         env:
           GARMIN_TOKENSTORE: /home/runner/.garmin_tokens
+          START_DATE: ${{ inputs.start_date }}
         run: |
-          python backfill_activities.py "${{ inputs.start_date }}"
+          python backfill_activities.py "$START_DATE"
           python build_efficiency.py
       - name: Commit
+        env:
+          START_DATE: ${{ inputs.start_date }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -65,7 +69,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No new VO2max readings."
           else
-            git commit -m "Backfill history from ${{ inputs.start_date }}"
+            git commit -m "Backfill history from $START_DATE"
             git pull --rebase origin main
             git push origin main
           fi

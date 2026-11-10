@@ -40,7 +40,12 @@ jobs:
     outputs:
       reply: ${{ steps.query.outputs.reply }}
     steps:
+      # main, not the SHA that triggered the run: a run that waited in
+      # the data-pipeline queue would otherwise rebuild from a stale tree
+      # and fail its rebase against what the run ahead of it pushed.
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - uses: actions/setup-python@v5
         with:

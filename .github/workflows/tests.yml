@@ -1,0 +1,28 @@
+# Unit tests for the pipeline's decision logic (the approval gate, the
+# coach-reply gate, pace and volume checks, the predictor). They existed
+# but nothing ran them, so a change could break one unnoticed.
+
+name: Tests
+
+on:
+  pull_request:
+    paths: ['**.py', 'requirements.txt', '.github/workflows/tests.yml']
+  push:
+    branches: [main]
+    paths: ['**.py', 'requirements.txt', '.github/workflows/tests.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run unit tests
+        run: python -m unittest -v
