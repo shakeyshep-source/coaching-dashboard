@@ -7860,5 +7860,21 @@
     "aerobic_te": 0.699999988079071,
     "anaerobic_te": 0.0,
     "training_load": 9.440582275390625
+  },
+  {
+    "date": "2026-11-10",
+    "activity_id": 25029214392,
+    "name": "Gloucester Running",
+    "type": "running",
+    "distance_km": 5.19,
+    "duration_min": 26.6,
+    "avg_pace_min_per_km": 5.12,
+    "avg_hr": 138.0,
+    "max_hr": 149.0,
+    "elevation_gain_m": 26.0,
+    "cadence": 170.1875,
+    "aerobic_te": 2.9000000953674316,
+    "anaerobic_te": 0.0,
+    "training_load": 73.07818603515625
   }
 ]

@@ -34487,5 +34487,79 @@
         "elevation_gain_m": 0
       }
     ]
+  },
+  {
+    "activity_id": 25029214392,
+    "date": "2026-11-10",
+    "type": "running",
+    "name": "Gloucester Running",
+    "laps": [
+      {
+        "index": 1,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 319.4,
+        "pace_min_per_km": 5.32,
+        "avg_hr": 134,
+        "max_hr": 146,
+        "cadence": 167.0,
+        "elevation_gain_m": 0
+      },
+      {
+        "index": 2,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 302.9,
+        "pace_min_per_km": 5.05,
+        "avg_hr": 140,
+        "max_hr": 149,
+        "cadence": 171.5,
+        "elevation_gain_m": 5
+      },
+      {
+        "index": 3,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 303.7,
+        "pace_min_per_km": 5.06,
+        "avg_hr": 137,
+        "max_hr": 141,
+        "cadence": 170.4,
+        "elevation_gain_m": 2
+      },
+      {
+        "index": 4,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 305.5,
+        "pace_min_per_km": 5.09,
+        "avg_hr": 138,
+        "max_hr": 143,
+        "cadence": 171.0,
+        "elevation_gain_m": 4
+      },
+      {
+        "index": 5,
+        "intensity_type": "INTERVAL",
+        "distance_km": 1.0,
+        "duration_sec": 308.4,
+        "pace_min_per_km": 5.14,
+        "avg_hr": 140,
+        "max_hr": 144,
+        "cadence": 170.9,
+        "elevation_gain_m": 12
+      },
+      {
+        "index": 6,
+        "intensity_type": "INTERVAL",
+        "distance_km": 0.193,
+        "duration_sec": 55.7,
+        "pace_min_per_km": 4.81,
+        "avg_hr": 140,
+        "max_hr": 142,
+        "cadence": 172.1,
+        "elevation_gain_m": 2
+      }
+    ]
   }
 ]
