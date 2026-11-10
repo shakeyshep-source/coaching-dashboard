@@ -1088,7 +1088,7 @@
         },
         {
           "date": "2026-11-10",
-          "temp_max_c": 9.8,
+          "temp_max_c": 9.6,
           "heat_risk": "low",
           "session_type": "easy",
           "rpe": 1.0,
