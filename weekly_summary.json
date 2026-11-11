@@ -1054,7 +1054,7 @@
       "time_min": 27.0,
       "elevation_m": 26.0,
       "planned_sessions": 6,
-      "logged_sessions": 2,
+      "logged_sessions": 3,
       "hard_sessions_planned": 1,
       "quality_time_min": 0,
       "easy_pct": 100,
@@ -1098,6 +1098,21 @@
           "km": 5.2,
           "pace": 5.12,
           "avg_hr": 138,
+          "segments": null,
+          "fastest_segment": null
+        },
+        {
+          "date": "2026-11-11",
+          "temp_max_c": 10.2,
+          "heat_risk": "low",
+          "session_type": "easy",
+          "rpe": 1.0,
+          "on_target": true,
+          "achilles_score": 0,
+          "note": "Fine maybe a tiny bit tight near the end",
+          "km": null,
+          "pace": null,
+          "avg_hr": null,
           "segments": null,
           "fastest_segment": null
         }
