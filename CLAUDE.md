@@ -483,6 +483,18 @@ preventer itself is a prescribing decision for his GP or asthma nurse.
     Its half option is not the PB attempt; that wants a separate half
     in late Feb. Details in `fixtures.json`.
   - **XC Sun 13 Dec**
+  - **Glos AAA road championship 2027** (list shared 11 Nov 2026,
+    dates marked * provisional): best **8 of 13** count, so none is
+    compulsory. Boddington 10 (31 Jan) and Fission 20 (14 Mar) are
+    already in the plan and both count. Then: Bourton One Mile 7 May*
+    (County Champs — day 19 after Manchester, decide in late April off
+    how recovery went, not now), Stroud Beer Race 7.2 mi 2 Jun*,
+    Cirencester 10k 9 Jun*, Blaisdon 10k 13 Jul*, Bugatti 10k 28 Jul*,
+    Cranham Boundary Chase 4 Sep*, Angels 10k 19 Sep* (CC), Bourton
+    Half 26 Sep* (CC), Sharpness 4 3 Oct*, Guy Fawkes 5 7 Nov*. Aim for
+    9–10 so one DNF or illness does not cost the count; July races are
+    heat-and-asthma races, so pick by start time and shade. Add each to
+    `fixtures.json` once its date is confirmed, not before.
   - ~~XC Sat 27 Feb 2027~~ — **cancelled by him, 1 Nov 2026.** Removed
     from `fixtures.json`; the weekend belongs to Wokingham recovery.
 
