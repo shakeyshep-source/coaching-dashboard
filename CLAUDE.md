@@ -495,6 +495,20 @@ preventer itself is a prescribing decision for his GP or asthma nurse.
     9–10 so one DNF or illness does not cost the count; July races are
     heat-and-asthma races, so pick by start time and shade. Add each to
     `fixtures.json` once its date is confirmed, not before.
+    **Scoring is position in the V50 category: 10 for 1st, 9 for 2nd,
+    and so on; best 8, minimum 5 to qualify.** 2026 V50 table (shared
+    11 Nov): Anthony Bailey (Westn) won all 8 he entered — 80, the
+    maximum — and Shep rates him quicker for now; Shep is confident of
+    beating the rest (Ross Bridges, Severn, was 2nd on 62 from 11
+    races). Anthony skipped the long ones: Boddington 10, Berkeley 20
+    and Bourton Half. So the plan is **10s where Anthony is absent**
+    (Boddington, Fission, Bourton Half — the distances a marathon build
+    favours) **and 9s where he runs** (Stroud Beer, Cirencester, one
+    July 10k, Sharpness, Guy Fawkes), with Angels/Cranham/Bourton Mile/
+    the other July race as cover: about 75 at best, ahead of everyone
+    but Anthony unless he misses races or Shep beats him. Bourton Half
+    outranks Angels the week before. Re-check his entries each year;
+    this is his 2026 pattern, not a promise.
   - ~~XC Sat 27 Feb 2027~~ — **cancelled by him, 1 Nov 2026.** Removed
     from `fixtures.json`; the weekend belongs to Wokingham recovery.
 
