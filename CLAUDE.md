@@ -509,6 +509,18 @@ preventer itself is a prescribing decision for his GP or asthma nurse.
     but Anthony unless he misses races or Shep beats him. Bourton Half
     outranks Angels the week before. Re-check his entries each year;
     this is his 2026 pattern, not a promise.
+    **Courses, his account (12 Nov):** Stroud Beer hilly; Angels lumpy;
+    Bourton Half hilly; Cranham on road with a monumental hill at the
+    finish; Cirencester 10k is where he pulled out two years ago with
+    asthma and achilles (uncoached, pre-rehab, pre-protocol — history,
+    not a reason to skip it, but it is a June race, so heat and start
+    time decide it). He will likely sit out the Bourton Mile. Hills
+    cost everyone in a position-scored race, so they do not change the
+    picks; they change the summer preparation — hill work goes in when
+    volume is holding, never in the same weeks as volume and speed
+    rising (the old achilles triad), and steep uphill is the heaviest
+    calf/achilles load on the list, so Cranham wants hill reps behind
+    it, not a debut.
   - ~~XC Sat 27 Feb 2027~~ — **cancelled by him, 1 Nov 2026.** Removed
     from `fixtures.json`; the weekend belongs to Wokingham recovery.
 
