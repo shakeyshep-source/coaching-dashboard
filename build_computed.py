@@ -196,6 +196,12 @@ CONFOUNDER_PATTERNS = {
                r"|man ?flu|streaming|snotty)\b|\b(a|bad|head|chest|full of|rotten) cold\b",
     "stress": r"\b(stress(ed|ful)?)\b",
     "travel": r"\b(travell?ing|travelled|flight|flew|jet ?lag|long drive)\b",
+    # A big meal close to bed lifts overnight heart rate and lowers HRV
+    # while it is digested - 13 Nov 2026 (four burgers at 20:00, bed
+    # ~22:30) gave his lowest HRV on record and his joint-highest RHR.
+    # Explicit phrases only: "burger" on its own is just dinner.
+    "late meal": r"\b(late (meal|dinner|tea|supper|takeaway|food)|ate late|eating late"
+                 r"|big (meal|dinner|tea)|heavy (meal|dinner)|takeaway)\b",
 }
 
 
