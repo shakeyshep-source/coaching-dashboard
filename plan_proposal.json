@@ -1,71 +1,22 @@
 {
-  "id": "2026-11-08",
-  "created": "2026-11-08T14:00:00",
-  "status": "applied",
-  "rationale": "What I changed: 23 Nov is now an easy 6 km instead of rest, with Tue and Sat trimmed by 2 km each so the week lands ~56 km rather than jumping; and 9 Nov (tomorrow) is a bike option rather than a pure rest. What I didn't change: tomorrow stays run-free. You're right that you're not tired - HRV/RHR are flat and that was never the reason. The reason is the calf: on 1 Nov it was fine in the warm-up and tightened inside 0.8 km, and the load response of calf and tendon lags 24-48 h, so Sunday's run hasn't fully reported yet. A third run in three days adds no fitness at 6 km and risks the one thing that matters; the bike keeps you moving. Once a clear week of running is banked, rest days become a fitness question rather than a calf one, and I'm happy to trade them for easy runs. 13 and 16 Nov stay as planned: the step to ~58 km that week is already the load rise.\n\nOriginal: hold; two clean easy runs support the rebuild but are not yet a calf-clear week. 23-29 Nov volume holds ~56 km while strides return; tempo waits until 5 Dec at the earliest.",
+  "id": "2026-11-13",
+  "created": "2026-11-13T20:53:05",
+  "status": "pending",
+  "rationale": "Calf was felt on two of the last three runs (tight near the end on 11 Nov, a tiny amount on the 13 Nov treadmill run). That is a repeating low-level signal, not a clear week, so I'm trimming this weekend: Sat 14 Nov 10 km becomes 6 km and Sun 15 Nov 12 km becomes rest or bike. 16-22 Nov is carried forward unchanged if the calf is silent Saturday and Tuesday; otherwise it slides. Achilles 0, HRV/RHR steady, so this is a short trim, not a cut.",
   "changes": [
     {
-      "date": "2026-11-09",
-      "session_type": "easy",
-      "target_distance_km": null,
-      "target_pace": null,
-      "notes": "Provisional \u2014 No run. Easy bike 30-40 min, seated, normal cadence, if you want to move. A third run in three days is the one I'd hold back; see rationale."
-    },
-    {
-      "date": "2026-11-23",
+      "date": "2026-11-14",
       "session_type": "easy",
       "target_distance_km": 6,
       "target_pace": null,
-      "notes": "Provisional \u2014 Easy 6 km, Vomeros, flat. Replaces the rest day: by then the calf will have two clear weeks. Only if the calf has been silent through 16-22 Nov."
+      "notes": "Easy 6 km, flat, Vomeros, no strides. Shortened from 10 after the calf was felt on 11 and 13 Nov. Stop at the first tightening and take the bike. Log when you noticed the calf, if at all."
     },
     {
-      "date": "2026-11-24",
-      "session_type": "easy",
-      "target_distance_km": 8,
-      "target_pace": null,
-      "notes": "Provisional \u2014 Easy 8 km, Vomeros, flat. Shortened from 10 as Monday now carries a run."
-    },
-    {
-      "date": "2026-11-25",
-      "session_type": "easy",
-      "target_distance_km": 8,
-      "target_pace": null,
-      "notes": "Provisional \u2014 Easy 8 km with 4 x 15 s relaxed strides at the end (Speed 5). First touch of speed, smooth not hard. Drop them if the calf has any doubt."
-    },
-    {
-      "date": "2026-11-26",
-      "session_type": "easy",
-      "target_distance_km": 8,
-      "target_pace": null,
-      "notes": "Provisional \u2014 Easy 8 km. Leg gym on or after today."
-    },
-    {
-      "date": "2026-11-27",
+      "date": "2026-11-15",
       "session_type": "rest",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Provisional \u2014 Rest or light bike."
-    },
-    {
-      "date": "2026-11-28",
-      "session_type": "easy",
-      "target_distance_km": 8,
-      "target_pace": null,
-      "notes": "Provisional \u2014 Easy 8 km + 4 strides. Shortened from 10 to keep the week near 56 km. Tempo waits one more week; 5 Dec at the earliest."
-    },
-    {
-      "date": "2026-11-29",
-      "session_type": "long",
-      "target_distance_km": 18,
-      "target_pace": null,
-      "notes": "Provisional \u2014 Long run 18 km easy (~5:00/km or slower, HR ~135 or under). Gel from 20 min then every ~25 min; log what you took. Week ~54 km: volume holds while strides return; the step up follows in December."
+      "notes": "Rest or easy seated bike 30-40 min. The 12 km long run is dropped; the calf needs a clear run first. Leg gym (calf/soleus isometrics) fine if pain-free."
     }
-  ],
-  "athlete_response": {
-    "timestamp": "08/11/2026 17:07:16",
-    "review_date": "2026-11-08",
-    "decision": "approve",
-    "thoughts": null
-  },
-  "applied_at": "2026-11-08T17:07:32"
+  ]
 }
