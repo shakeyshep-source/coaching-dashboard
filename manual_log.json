@@ -790,5 +790,13 @@
     "rpe": 1.0,
     "on_target": true,
     "session_notes": "Fine maybe a tiny bit tight near the end"
+  },
+  {
+    "date": "2026-11-12",
+    "achilles_score": 0,
+    "session_type": "rest",
+    "rpe": 0.0,
+    "on_target": true,
+    "session_notes": "rest"
   }
 ]
