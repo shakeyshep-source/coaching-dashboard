@@ -1008,20 +1008,20 @@
   {
     "date": "2026-11-14",
     "session_type": "easy",
-    "target_distance_km": 10,
+    "target_distance_km": 6,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 10 km, no strides. No tempo: a week of normal running must pass first.",
+    "notes": "Easy 6 km, flat, Vomeros, no strides. Shortened from 10 after the calf was felt on 11 and 13 Nov. Stop at the first tightening and take the bike. Log when you noticed the calf, if at all.",
     "source": "coach",
-    "updated_at": "2026-11-01T20:08:35"
+    "updated_at": "2026-11-13T21:00:09"
   },
   {
     "date": "2026-11-15",
-    "session_type": "long",
-    "target_distance_km": 12,
+    "session_type": "rest",
+    "target_distance_km": null,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 12 km, ~5:00/km or slower, one gel at ~40 min for practice. Only if achilles 0, calf silent and HRV/RHR steady.",
+    "notes": "Rest or easy seated bike 30-40 min. The 12 km long run is dropped; the calf needs a clear run first. Leg gym (calf/soleus isometrics) fine if pain-free.",
     "source": "coach",
-    "updated_at": "2026-11-01T20:08:35"
+    "updated_at": "2026-11-13T21:00:09"
   },
   {
     "date": "2026-11-16",

@@ -563,5 +563,13 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": "Treadmill run today.. Thought I'd try running in the warm over the cold... Watch speed seemed out compared to treadmill. Ran 40mins at 6min km pace, as per treadmill. could feel the calf a tiny bit but nothing to say stop. Could have carried on.",
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-11-13T21:00:09",
+    "proposal_id": "2026-11-13",
+    "decision": "approve",
+    "action_taken": "plan_updated",
+    "athlete_thoughts": null,
+    "changes_count": 2
   }
 ]

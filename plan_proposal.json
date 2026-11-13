@@ -1,7 +1,7 @@
 {
   "id": "2026-11-13",
   "created": "2026-11-13T20:53:05",
-  "status": "pending",
+  "status": "applied",
   "rationale": "Calf was felt on two of the last three runs (tight near the end on 11 Nov, a tiny amount on the 13 Nov treadmill run). That is a repeating low-level signal, not a clear week, so I'm trimming this weekend: Sat 14 Nov 10 km becomes 6 km and Sun 15 Nov 12 km becomes rest or bike. 16-22 Nov is carried forward unchanged if the calf is silent Saturday and Tuesday; otherwise it slides. Achilles 0, HRV/RHR steady, so this is a short trim, not a cut.",
   "changes": [
     {
@@ -18,5 +18,12 @@
       "target_pace": null,
       "notes": "Rest or easy seated bike 30-40 min. The 12 km long run is dropped; the calf needs a clear run first. Leg gym (calf/soleus isometrics) fine if pain-free."
     }
-  ]
+  ],
+  "athlete_response": {
+    "timestamp": "13/11/2026 20:59:37",
+    "review_date": "2026-11-13",
+    "decision": "approve",
+    "thoughts": null
+  },
+  "applied_at": "2026-11-13T21:00:09"
 }

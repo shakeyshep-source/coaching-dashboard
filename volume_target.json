@@ -1,15 +1,15 @@
 {
   "as_of": "2026-11-13",
   "status": "over",
-  "headline": "Week of 2026-11-16: plan 58 km climbs too fast from 36 \u2014 about 45 km is a safe step.",
+  "headline": "Week of 2026-11-16: plan 58 km climbs too fast from 20 \u2014 about 25 km is a safe step.",
   "gates": [
     "pain/tightness in the note on 2026-11-11"
   ],
   "weeks": [
     {
       "week_start": "2026-11-09",
-      "planned_km": 36,
-      "planned_long_km": 12,
+      "planned_km": 20,
+      "planned_long_km": null,
       "curve_km": 60.7,
       "long_curve_km": 19.5,
       "ramp_cap_km": 16.8,
@@ -24,11 +24,11 @@
       "planned_long_km": 16,
       "curve_km": 64.3,
       "long_curve_km": 20.5,
-      "ramp_cap_km": 45.0,
-      "recommended_km": 45.0,
+      "ramp_cap_km": 25.0,
+      "recommended_km": 25.0,
       "actual_km": null,
       "status": "over",
-      "reason": "plan 58 km climbs too fast from 36 \u2014 about 45 km is a safe step"
+      "reason": "plan 58 km climbs too fast from 20 \u2014 about 25 km is a safe step"
     },
     {
       "week_start": "2026-11-23",
@@ -36,11 +36,11 @@
       "planned_long_km": 18,
       "curve_km": 67.9,
       "long_curve_km": 21.4,
-      "ramp_cap_km": 56.2,
-      "recommended_km": 56.2,
+      "ramp_cap_km": 31.2,
+      "recommended_km": 31.2,
       "actual_km": null,
-      "status": "on",
-      "reason": ""
+      "status": "over",
+      "reason": "plan 56 km climbs too fast from 25 \u2014 about 31.2 km is a safe step"
     }
   ]
 }
