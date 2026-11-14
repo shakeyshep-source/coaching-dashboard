@@ -591,5 +591,15 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": "Started the run, and could feel calf but very minor.. Seemed to ease of as I ran, to literally nothing so ended up doing 10k",
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-11-14T14:35:10",
+    "proposal_id": null,
+    "review_date": "2026-11-08",
+    "response_timestamp": "14/11/2026 14:34:53",
+    "decision": "amend",
+    "action_taken": "review_query_logged",
+    "athlete_thoughts": "OK bike tomorrow but min day rest seems excessive",
+    "changes_count": 0
   }
 ]
