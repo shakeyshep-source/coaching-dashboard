@@ -3,7 +3,8 @@
   "status": "over",
   "headline": "Week of 2026-11-16: plan 58 km climbs too fast from 20 \u2014 about 25 km is a safe step.",
   "gates": [
-    "pain/tightness in the note on 2026-11-11"
+    "pain/tightness in the note on 2026-11-11",
+    "2 unexplained readiness flags in 7 days"
   ],
   "weeks": [
     {
@@ -14,7 +15,7 @@
       "long_curve_km": 19.5,
       "ramp_cap_km": 16.8,
       "recommended_km": 16.8,
-      "actual_km": 12.2,
+      "actual_km": 30.2,
       "status": "held",
       "reason": "Calf return: the week of 9 Nov is easy by agreement (8 Nov). The November step starts once the calf has had a week of normal running."
     },

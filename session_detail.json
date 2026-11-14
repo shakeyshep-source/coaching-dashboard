@@ -8068,5 +8068,43 @@
     "avg_hr": 139.0,
     "aerobic_te": 3.0,
     "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-11-13",
+    "activity_id": 25068510413,
+    "name": "Treadmill Running",
+    "structured": true,
+    "lap_count": 9,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 8.01
+    },
+    "avg_hr": 123.0,
+    "aerobic_te": 2.299999952316284,
+    "anaerobic_te": 0.0
+  },
+  {
+    "date": "2026-11-14",
+    "activity_id": 25073551755,
+    "name": "Gloucester Running",
+    "structured": true,
+    "lap_count": 11,
+    "reps": null,
+    "recoveries": null,
+    "volume": {
+      "warmup_km": null,
+      "cooldown_km": null,
+      "work_km": null,
+      "recovery_km": null,
+      "total_km": 10.01
+    },
+    "avg_hr": 143.0,
+    "aerobic_te": 3.5,
+    "anaerobic_te": 0.0
   }
 ]
