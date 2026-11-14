@@ -7,12 +7,12 @@
   "proposal_id": "2026-11-14",
   "proposal_status": "applied",
   "athlete_response": {
-    "timestamp": "14/11/2026 14:34:53",
-    "review_date": "2026-11-14",
-    "decision": "amend",
-    "thoughts": "OK bike tomorrow but min day rest seems excessive"
+    "timestamp": "13/11/2026 20:59:37",
+    "review_date": "2026-11-13",
+    "decision": "approve",
+    "thoughts": null
   },
-  "athlete_response_status": "answered",
+  "athlete_response_status": "logged",
   "conversation": [
     {
       "athlete_timestamp": "13/11/2026 20:51:45",
@@ -34,8 +34,13 @@
       "athlete_thoughts": "Started the run, and could feel calf but very minor.. Seemed to ease of as I ran, to literally nothing so ended up doing 10k",
       "coach_reply": "Shep \u2014 thanks for the timing detail, it's what I asked for, and it's useful.\n\n**What I make of it.** You ran 10 km (4:52/km, HR 143) against a 6 km prescription. I'd rather you'd stopped at 6, because the cap existed precisely so that \"it faded, I'll carry on\" wasn't the deciding call. But the pattern you describe is the benign one: felt at about 1/10 at the start, then faded to nothing. On 1 Nov it went the other way: fine in the warm-up, then it tightened as you ran. A calf that eases as it warms is a much better sign than one that builds. Achilles 0, RPE 1, and no tightening late in the run all count in your favour. I'm not alarmed and I'm not going to tell you off for it.\n\n**What it doesn't do.** It doesn't make this a clear week. Calf awareness showed up on 11 Nov (end), 13 Nov (treadmill) and 14 Nov (start): three of your last four runs. The fade today is encouraging, but it's one run. The extra 4 km was also load on a calf that hasn't had a silent run yet. So the rule stands: the November step waits for a week of normal running with nothing felt. I'm not proposing a plan change. There's no pending proposal to amend, and what's already applied still fits.\n\n**Next.** Sunday 15 Nov stays rest or the easy bike. Gym calf and soleus work is fine if pain-free. Tuesday 17 Nov, 10 km, is the real test. If the calf is silent from the first step to the last, 16\u201322 Nov runs as written. If it's felt again, even at 1/10, stay at 6\u20138 km and go to the bike if it builds. A third consecutive run with the calf felt is when I'd want your physio to look at it. One line in the log after Tuesday, as before: when you noticed it, and whether it faded or built.",
       "coach_reply_at": "2026-11-14T13:40:00"
+    },
+    {
+      "athlete_timestamp": "14/11/2026 14:34:53",
+      "athlete_decision": "amend",
+      "athlete_thoughts": "OK bike tomorrow but min day rest seems excessive",
+      "coach_reply": "Shep \u2014 fair challenge, and part of it lands.\n\n**What I'm changing.** Monday is still a no-run day, but not a dead one: I've proposed an optional easy seated bike (30\u201340 min) and your calf/soleus work, if pain-free. That's the \"rest\" that costs nothing. Approve it on the dashboard if you're happy.\n\n**What I'm not changing.** I'm keeping the run-free gap before Tuesday. You ran 10 km on Saturday on a calf you could feel at the start (it faded, which is the benign pattern), and it was 4 km more than prescribed. Calf awareness has now shown up on 11, 13 and 14 Nov, and the November step waits for a week with nothing felt. Tuesday's 10 km is the test. A run on Monday would stack a fourth day onto a calf that hasn't had one silent run yet, and one more easy day costs you no fitness. The evidence for an easy-run day this week is thin, and the cost of getting it wrong is the same calf\u2013achilles loop as before. Keeping you training consistently beats one extra easy 6 km.\n\n**One thing I'll flag.** The load check marks 16\u201322 Nov as over: the 58 km plan against about 25 km as a safe step from the 20 km plan. The week of 9 Nov actually came in around 30 km, so the real jump is smaller than that. But 58 is still a big step off a calf that is not yet clear. If Tuesday is silent, I'll hold the week roughly as written. If it is felt again, it slides down. I'll settle that after Tuesday rather than pre-cutting it today. One line in the log after Tuesday, as before: when you noticed the calf and whether it faded or built.",
+      "coach_reply_at": "2026-11-14T14:50:00"
     }
-  ],
-  "coach_reply": "Shep \u2014 fair challenge, and part of it lands.\n\n**What I'm changing.** Monday is still a no-run day, but not a dead one: I've proposed an optional easy seated bike (30\u201340 min) and your calf/soleus work, if pain-free. That's the \"rest\" that costs nothing. Approve it on the dashboard if you're happy.\n\n**What I'm not changing.** I'm keeping the run-free gap before Tuesday. You ran 10 km on Saturday on a calf you could feel at the start (it faded, which is the benign pattern), and it was 4 km more than prescribed. Calf awareness has now shown up on 11, 13 and 14 Nov, and the November step waits for a week with nothing felt. Tuesday's 10 km is the test. A run on Monday would stack a fourth day onto a calf that hasn't had one silent run yet, and one more easy day costs you no fitness. The evidence for an easy-run day this week is thin, and the cost of getting it wrong is the same calf\u2013achilles loop as before. Keeping you training consistently beats one extra easy 6 km.\n\n**One thing I'll flag.** The load check marks 16\u201322 Nov as over: the 58 km plan against about 25 km as a safe step from the 20 km plan. The week of 9 Nov actually came in around 30 km, so the real jump is smaller than that. But 58 is still a big step off a calf that is not yet clear. If Tuesday is silent, I'll hold the week roughly as written. If it is felt again, it slides down. I'll settle that after Tuesday rather than pre-cutting it today. One line in the log after Tuesday, as before: when you noticed the calf and whether it faded or built.",
-  "coach_reply_at": "2026-11-14T14:50:00"
+  ]
 }
