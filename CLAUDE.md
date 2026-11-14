@@ -359,6 +359,15 @@ preventer itself is a prescribing decision for his GP or asthma nurse.
   | 75–100 min | one gel, for practice rather than need |
   | 100–150 min | 30–60 g/h |
   | over 150 min, or any long run carrying MP work | 60–90 g/h |
+  | quality session (threshold/intervals) of 60+ min all-in | ~30 g/h, from the warm-up |
+
+  The last row was added 14 Nov 2026 after he raised Josh Kerr fuelling
+  every 15 min in sessions "so he doesn't feel smashed after". The case
+  is recovery, not glycogen: carbohydrate during hard work blunts the
+  stress-hormone and immune hit, lowers perceived effort, and may damp
+  the post-exercise hepcidin rise that blocks iron absorption (smaller
+  evidence base — say so if quoting it). Easy runs under 75 min still
+  need nothing. It also doubles as gut training for Manchester.
 
   **Timing:** first gel at about 20 minutes, then every 20–30 min.
   Little and often beats a big dose, and starting before he needs it
