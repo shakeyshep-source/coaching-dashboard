@@ -1,10 +1,10 @@
 [
   {
     "date": "2026-11-14",
-    "temp_max_c": 8.8,
-    "temp_min_c": -0.6,
+    "temp_max_c": 8.5,
+    "temp_min_c": -0.8,
     "humidity_pct": 80,
-    "wind_speed_kmh": 13.0,
+    "wind_speed_kmh": 11.2,
     "heat_risk": "low"
   },
   {
