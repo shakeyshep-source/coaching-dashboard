@@ -1,29 +1,15 @@
 {
-  "id": "2026-11-13",
-  "created": "2026-11-13T20:53:05",
-  "status": "applied",
-  "rationale": "Calf was felt on two of the last three runs (tight near the end on 11 Nov, a tiny amount on the 13 Nov treadmill run). That is a repeating low-level signal, not a clear week, so I'm trimming this weekend: Sat 14 Nov 10 km becomes 6 km and Sun 15 Nov 12 km becomes rest or bike. 16-22 Nov is carried forward unchanged if the calf is silent Saturday and Tuesday; otherwise it slides. Achilles 0, HRV/RHR steady, so this is a short trim, not a cut.",
+  "id": "2026-11-14",
+  "created": "2026-11-14T14:50:00",
+  "status": "pending",
+  "rationale": "Changed Monday 16 Nov from 'Rest' to rest from running with an optional easy seated bike (30-40 min) and calf/soleus work, because you said a full rest day felt excessive. What does not change: no run on Monday. Saturday's 10 km was run on a calf you could feel at the start, and Tuesday's 10 km is the test, so the run-free gap before it stays. Everything else is carried forward as it stands.",
   "changes": [
     {
-      "date": "2026-11-14",
-      "session_type": "easy",
-      "target_distance_km": 6,
-      "target_pace": null,
-      "notes": "Easy 6 km, flat, Vomeros, no strides. Shortened from 10 after the calf was felt on 11 and 13 Nov. Stop at the first tightening and take the bike. Log when you noticed the calf, if at all."
-    },
-    {
-      "date": "2026-11-15",
+      "date": "2026-11-16",
       "session_type": "rest",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Rest or easy seated bike 30-40 min. The 12 km long run is dropped; the calf needs a clear run first. Leg gym (calf/soleus isometrics) fine if pain-free."
+      "notes": "No run. Optional easy seated bike 30-40 min, normal cadence, and calf/soleus isometrics if pain-free. Tuesday's 10 km is the calf test."
     }
-  ],
-  "athlete_response": {
-    "timestamp": "13/11/2026 20:59:37",
-    "review_date": "2026-11-13",
-    "decision": "approve",
-    "thoughts": null
-  },
-  "applied_at": "2026-11-13T21:00:09"
+  ]
 }
