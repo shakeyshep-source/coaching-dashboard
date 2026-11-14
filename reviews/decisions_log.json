@@ -601,5 +601,13 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": "OK bike tomorrow but min day rest seems excessive",
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-11-14T14:41:52",
+    "proposal_id": "2026-11-14",
+    "decision": "approve",
+    "action_taken": "plan_updated",
+    "athlete_thoughts": null,
+    "changes_count": 1
   }
 ]

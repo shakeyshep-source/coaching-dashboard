@@ -1,7 +1,7 @@
 {
   "id": "2026-11-14",
   "created": "2026-11-14T14:50:00",
-  "status": "pending",
+  "status": "applied",
   "rationale": "Changed Monday 16 Nov from 'Rest' to rest from running with an optional easy seated bike (30-40 min) and calf/soleus work, because you said a full rest day felt excessive. What does not change: no run on Monday. Saturday's 10 km was run on a calf you could feel at the start, and Tuesday's 10 km is the test, so the run-free gap before it stays. Everything else is carried forward as it stands.",
   "changes": [
     {
@@ -11,5 +11,12 @@
       "target_pace": null,
       "notes": "No run. Optional easy seated bike 30-40 min, normal cadence, and calf/soleus isometrics if pain-free. Tuesday's 10 km is the calf test."
     }
-  ]
+  ],
+  "athlete_response": {
+    "timestamp": "14/11/2026 14:41:39",
+    "review_date": "2026-11-15",
+    "decision": "approve",
+    "thoughts": null
+  },
+  "applied_at": "2026-11-14T14:41:52"
 }
