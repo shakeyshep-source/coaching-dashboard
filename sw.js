@@ -8,9 +8,10 @@
 //
 // Bump CACHE whenever this file changes so old caches are cleared and
 // the new worker takes over on the next launch.
-const CACHE = 'coaching-v4';
+const CACHE = 'coaching-v5';
 const BASE = '/coaching-dashboard/';
-const SHELL = [BASE, BASE + 'index.html', BASE + 'manifest.json'];
+const SHELL = [BASE, BASE + 'index.html', BASE + 'manifest.json',
+               BASE + 'icon-192.png', BASE + 'icon-512.png'];
 
 // Data files are requested with a ?v=<timestamp> cache-buster, so each
 // request would otherwise land under a unique key and never be found
