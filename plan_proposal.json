@@ -1,22 +1,148 @@
 {
-  "id": "2026-11-14",
-  "created": "2026-11-14T14:50:00",
-  "status": "applied",
-  "rationale": "Changed Monday 16 Nov from 'Rest' to rest from running with an optional easy seated bike (30-40 min) and calf/soleus work, because you said a full rest day felt excessive. What does not change: no run on Monday. Saturday's 10 km was run on a calf you could feel at the start, and Tuesday's 10 km is the test, so the run-free gap before it stays. Everything else is carried forward as it stands.",
+  "id": "2026-11-15",
+  "created": "2026-11-15T14:00:00",
+  "status": "pending",
+  "rationale": "Adjust. Week of 9 Nov came in at 30.2 km against ~36 planned, with the calf felt on three of four runs and the HRV baseline sliding 36\u219232 (12 Nov flag, RHR 52, no confounder). 16\u201322 Nov was planned at 58 km against a ramp cap of 37.8, so it is cut to ~38 with the long run reduced to 8 km. 23\u201329 Nov was marked under the curve (56 vs 67.9); I am NOT raising it, because two gates hold it \u2014 the repeated calf notes and the unexplained HRV slide \u2014 and it is lowered to ~48 provisionally. 30 Nov\u20136 Dec is added at ~52, provisional. If Tuesday's run is silent and HRV recovers, next Sunday moves toward the curve.",
   "changes": [
     {
-      "date": "2026-11-16",
+      "date": "2026-11-17",
+      "session_type": "easy",
+      "target_distance_km": 10,
+      "target_pace": null,
+      "notes": "Easy 10 km, flat, Vomeros. The calf test. Log when you noticed it (if at all) and whether it faded or built. Stop at the first build and take the bike."
+    },
+    {
+      "date": "2026-11-18",
+      "session_type": "easy",
+      "target_distance_km": 6,
+      "target_pace": null,
+      "notes": "Easy 6 km, flat. Replaces 8 km: HRV baseline has slid to 32. Leg gym on or after today, pain-free."
+    },
+    {
+      "date": "2026-11-19",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "Easy 8 km, Vomeros. Leg gym on or after today if not done Wednesday."
+    },
+    {
+      "date": "2026-11-20",
       "session_type": "rest",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "No run. Optional easy seated bike 30-40 min, normal cadence, and calf/soleus isometrics if pain-free. Tuesday's 10 km is the calf test."
+      "notes": "Rest or light seated bike."
+    },
+    {
+      "date": "2026-11-21",
+      "session_type": "easy",
+      "target_distance_km": 6,
+      "target_pace": null,
+      "notes": "Easy 6 km. No strides. Tempo waits."
+    },
+    {
+      "date": "2026-11-22",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "Easy 8 km, HR ~135 or under. Replaces the 16 km long run; the long run resumes when the calf is silent and HRV back near 35. Neck check applies as ever."
+    },
+    {
+      "date": "2026-11-23",
+      "session_type": "rest",
+      "target_distance_km": null,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Rest, optional seated bike."
+    },
+    {
+      "date": "2026-11-24",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Easy 8 km, Vomeros, flat."
+    },
+    {
+      "date": "2026-11-25",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Easy 8 km, 4 x 15 s relaxed strides at the end only if calf silent and HRV baseline ~35+; otherwise strides-free."
+    },
+    {
+      "date": "2026-11-26",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Easy 8 km. Leg gym on or after today."
+    },
+    {
+      "date": "2026-11-27",
+      "session_type": "rest",
+      "target_distance_km": null,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Rest or light bike."
+    },
+    {
+      "date": "2026-11-28",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Easy 8 km (+4 strides if Wed's were clean). Tempo waits."
+    },
+    {
+      "date": "2026-11-29",
+      "session_type": "long",
+      "target_distance_km": 12,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Long run 12 km easy, HR ~135 or under. Gel from 20 min is optional at this length (75 min rule)."
+    },
+    {
+      "date": "2026-11-30",
+      "session_type": "rest",
+      "target_distance_km": null,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Rest, optional seated bike."
+    },
+    {
+      "date": "2026-12-01",
+      "session_type": "easy",
+      "target_distance_km": 10,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Easy 10 km, Vomeros."
+    },
+    {
+      "date": "2026-12-02",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Easy 8 km + 4 strides."
+    },
+    {
+      "date": "2026-12-03",
+      "session_type": "easy",
+      "target_distance_km": 8,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Easy 8 km. Leg gym on or after today."
+    },
+    {
+      "date": "2026-12-04",
+      "session_type": "rest",
+      "target_distance_km": null,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Rest or light bike."
+    },
+    {
+      "date": "2026-12-05",
+      "session_type": "easy",
+      "target_distance_km": 10,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Easy 10 km + 4 strides. Tempo not before the following week, and not in a week volume is also rising."
+    },
+    {
+      "date": "2026-12-06",
+      "session_type": "long",
+      "target_distance_km": 16,
+      "target_pace": null,
+      "notes": "Provisional \u2014 Long run 16 km easy, gel from 20 min then every ~25 min, log what you took."
     }
-  ],
-  "athlete_response": {
-    "timestamp": "14/11/2026 14:41:39",
-    "review_date": "2026-11-15",
-    "decision": "approve",
-    "thoughts": null
-  },
-  "applied_at": "2026-11-14T14:41:52"
+  ]
 }
