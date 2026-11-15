@@ -1,35 +1,23 @@
 {
-  "as_of": "2026-11-14",
-  "status": "over",
-  "headline": "Week of 2026-11-16: plan 58 km climbs too fast from 20 \u2014 about 25 km is a safe step.",
+  "as_of": "2026-11-15",
+  "status": "under",
+  "headline": "Week of 2026-11-23: plan 56 km is under the agreed curve \u2014 the next proposal raises it towards 67.9 km.",
   "gates": [
     "pain/tightness in the note on 2026-11-11",
     "2 unexplained readiness flags in 7 days"
   ],
   "weeks": [
     {
-      "week_start": "2026-11-09",
-      "planned_km": 20,
-      "planned_long_km": null,
-      "curve_km": 60.7,
-      "long_curve_km": 19.5,
-      "ramp_cap_km": 16.8,
-      "recommended_km": 16.8,
-      "actual_km": 30.2,
-      "status": "held",
-      "reason": "Calf return: the week of 9 Nov is easy by agreement (8 Nov). The November step starts once the calf has had a week of normal running."
-    },
-    {
       "week_start": "2026-11-16",
       "planned_km": 58,
       "planned_long_km": 16,
       "curve_km": 64.3,
       "long_curve_km": 20.5,
-      "ramp_cap_km": 25.0,
-      "recommended_km": 25.0,
+      "ramp_cap_km": 37.8,
+      "recommended_km": 37.8,
       "actual_km": null,
-      "status": "over",
-      "reason": "plan 58 km climbs too fast from 20 \u2014 about 25 km is a safe step"
+      "status": "held",
+      "reason": "gate: pain/tightness in the note on 2026-11-11; 2 unexplained readiness flags in 7 days"
     },
     {
       "week_start": "2026-11-23",
@@ -37,11 +25,23 @@
       "planned_long_km": 18,
       "curve_km": 67.9,
       "long_curve_km": 21.4,
-      "ramp_cap_km": 31.2,
-      "recommended_km": 31.2,
+      "ramp_cap_km": 70,
+      "recommended_km": 67.9,
       "actual_km": null,
-      "status": "over",
-      "reason": "plan 56 km climbs too fast from 25 \u2014 about 31.2 km is a safe step"
+      "status": "under",
+      "reason": "plan 56 km, curve 67.9, safe climb allows 70 \u2014 raise towards 67.9 km; long run 18 km against 21.4"
+    },
+    {
+      "week_start": "2026-11-30",
+      "planned_km": 0,
+      "planned_long_km": null,
+      "curve_km": 70.7,
+      "long_curve_km": 22.3,
+      "ramp_cap_km": 79.9,
+      "recommended_km": 70.7,
+      "actual_km": null,
+      "status": "unplanned",
+      "reason": "nothing planned yet"
     }
   ]
 }
