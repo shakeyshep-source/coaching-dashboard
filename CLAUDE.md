@@ -50,7 +50,8 @@ daily, weekly review, or ad-hoc — starts from this brief.
   24 s slower than the first, and the last km was the fastest of the
   race. Settled; do not re-open it.
   **The PB attempt is now in the calendar: Wokingham Half, Sun 21 Feb
-  2027** (added 1 Nov 2026, entry still to make — it sells out). Fast,
+  2027** (added 1 Nov 2026; entries open as of 15 Nov, he enters at
+  end-of-November payday — it sells out). Fast,
   mostly flat, 8 weeks before Manchester and 3 weeks either side of
   Boddington 10 and Fission 20, so it doubles as the standard
   marathon-build tune-up half. It replaces that week's long run and
