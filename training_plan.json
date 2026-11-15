@@ -1098,29 +1098,29 @@
   {
     "date": "2026-11-24",
     "session_type": "easy",
-    "target_distance_km": 8,
+    "target_distance_km": 9,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 8 km, Vomeros, flat.",
+    "notes": "Provisional \u2014 Easy 9 km, Vomeros, flat. Calf check as ever.",
     "source": "coach",
-    "updated_at": "2026-11-15T14:03:51"
+    "updated_at": "2026-11-15T17:27:19"
   },
   {
     "date": "2026-11-25",
     "session_type": "easy",
-    "target_distance_km": 8,
+    "target_distance_km": 9,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 8 km, 4 x 15 s relaxed strides at the end only if calf silent and HRV baseline ~35+; otherwise strides-free.",
+    "notes": "Provisional \u2014 Easy 9 km, 4 x 15 s relaxed strides at the end only if the calf has been silent; otherwise strides-free.",
     "source": "coach",
-    "updated_at": "2026-11-15T14:03:51"
+    "updated_at": "2026-11-15T17:27:19"
   },
   {
     "date": "2026-11-26",
     "session_type": "easy",
-    "target_distance_km": 8,
+    "target_distance_km": 9,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 8 km. Leg gym on or after today.",
+    "notes": "Provisional \u2014 Easy 9 km. Leg gym on or after today.",
     "source": "coach",
-    "updated_at": "2026-11-15T14:03:51"
+    "updated_at": "2026-11-15T17:27:19"
   },
   {
     "date": "2026-11-27",
@@ -1136,18 +1136,18 @@
     "session_type": "easy",
     "target_distance_km": 8,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 8 km (+4 strides if Wed's were clean). Tempo waits.",
+    "notes": "Provisional \u2014 Easy 8 km. Tempo still waits.",
     "source": "coach",
-    "updated_at": "2026-11-15T14:03:51"
+    "updated_at": "2026-11-15T17:27:19"
   },
   {
     "date": "2026-11-29",
     "session_type": "long",
     "target_distance_km": 12,
     "target_pace": null,
-    "notes": "Provisional \u2014 Long run 12 km easy, HR ~135 or under. Gel from 20 min is optional at this length (75 min rule).",
+    "notes": "Provisional \u2014 Long run 12 km easy, HR ~135 or under. Gel optional at this length (75 min rule).",
     "source": "coach",
-    "updated_at": "2026-11-15T14:03:51"
+    "updated_at": "2026-11-15T17:27:19"
   },
   {
     "date": "2026-11-30",
@@ -1165,25 +1165,25 @@
     "target_pace": null,
     "notes": "Provisional \u2014 Easy 10 km, Vomeros.",
     "source": "coach",
-    "updated_at": "2026-11-15T14:03:51"
+    "updated_at": "2026-11-15T17:27:19"
   },
   {
     "date": "2026-12-02",
     "session_type": "easy",
-    "target_distance_km": 8,
+    "target_distance_km": 10,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 8 km + 4 strides.",
+    "notes": "Provisional \u2014 Easy 10 km + 4 strides.",
     "source": "coach",
-    "updated_at": "2026-11-15T14:03:51"
+    "updated_at": "2026-11-15T17:27:19"
   },
   {
     "date": "2026-12-03",
     "session_type": "easy",
-    "target_distance_km": 8,
+    "target_distance_km": 10,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 8 km. Leg gym on or after today.",
+    "notes": "Provisional \u2014 Easy 10 km. Leg gym on or after today.",
     "source": "coach",
-    "updated_at": "2026-11-15T14:03:51"
+    "updated_at": "2026-11-15T17:27:19"
   },
   {
     "date": "2026-12-04",
@@ -1199,9 +1199,9 @@
     "session_type": "easy",
     "target_distance_km": 10,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 10 km + 4 strides. Tempo not before the following week, and not in a week volume is also rising.",
+    "notes": "Provisional \u2014 Easy 10 km + 4 strides. Tempo not in a week volume is also rising.",
     "source": "coach",
-    "updated_at": "2026-11-15T14:03:51"
+    "updated_at": "2026-11-15T17:27:19"
   },
   {
     "date": "2026-12-06",
@@ -1210,6 +1210,6 @@
     "target_pace": null,
     "notes": "Provisional \u2014 Long run 16 km easy, gel from 20 min then every ~25 min, log what you took.",
     "source": "coach",
-    "updated_at": "2026-11-15T14:03:51"
+    "updated_at": "2026-11-15T17:27:19"
   }
 ]

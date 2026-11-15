@@ -1,7 +1,7 @@
 {
   "as_of": "2026-11-15",
-  "status": "under",
-  "headline": "Week of 2026-11-23: plan 44 km is under the agreed curve \u2014 the next proposal raises it towards 47.5 km.",
+  "status": "held",
+  "headline": null,
   "gates": [
     "pain/tightness in the note on 2026-11-11",
     "2 unexplained readiness flags in 7 days"
@@ -21,27 +21,27 @@
     },
     {
       "week_start": "2026-11-23",
-      "planned_km": 44,
+      "planned_km": 47,
       "planned_long_km": 12,
       "curve_km": 67.9,
       "long_curve_km": 21.4,
       "ramp_cap_km": 47.5,
       "recommended_km": 47.5,
       "actual_km": null,
-      "status": "under",
-      "reason": "plan 44 km, curve 67.9, safe climb allows 47.5 \u2014 raise towards 47.5 km; long run 12 km against 21.4"
+      "status": "on",
+      "reason": ""
     },
     {
       "week_start": "2026-11-30",
-      "planned_km": 52,
+      "planned_km": 56,
       "planned_long_km": 16,
       "curve_km": 70.7,
       "long_curve_km": 22.3,
-      "ramp_cap_km": 59.4,
-      "recommended_km": 59.4,
+      "ramp_cap_km": 58.8,
+      "recommended_km": 58.8,
       "actual_km": null,
-      "status": "under",
-      "reason": "plan 52 km, curve 70.7, safe climb allows 59.4 \u2014 raise towards 59.4 km; long run 16 km against 22.3"
+      "status": "on",
+      "reason": ""
     }
   ]
 }

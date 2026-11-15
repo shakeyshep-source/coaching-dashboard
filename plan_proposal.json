@@ -1,7 +1,7 @@
 {
   "id": "2026-11-15",
   "created": "2026-11-15T18:00:00",
-  "status": "pending",
+  "status": "applied",
   "rationale": "Amend: you overruled the HRV call, so I have taken it out as a brake. You feel fine, have no symptoms, and the load is tiny; I have said the risk once (an unexplained slide can precede illness, so the neck check stands) and will not re-argue it. What changes: 23\u201329 Nov goes 44\u219247 km and 30 Nov\u20136 Dec 52\u219256 km, both provisional. What does NOT change: 16\u201322 Nov stays ~38 km, because that is the ramp cap off a 30 km week and the calf, not HRV. The calf is the one gate left, and Tuesday 17 Nov is its test. If it is felt again, this proposal is wrong and we hold. The rest of the week 16\u201322 Nov is unchanged.",
   "changes": [
     {
@@ -74,5 +74,12 @@
       "target_pace": null,
       "notes": "Provisional \u2014 Long run 16 km easy, gel from 20 min then every ~25 min, log what you took."
     }
-  ]
+  ],
+  "athlete_response": {
+    "timestamp": "15/11/2026 17:27:04",
+    "review_date": "2026-11-15",
+    "decision": "approve",
+    "thoughts": null
+  },
+  "applied_at": "2026-11-15T17:27:19"
 }
