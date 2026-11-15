@@ -627,5 +627,15 @@
     "action_taken": "plan_updated",
     "athlete_thoughts": null,
     "changes_count": 20
+  },
+  {
+    "logged_at": "2026-11-15T17:14:41",
+    "proposal_id": null,
+    "review_date": "2026-11-15",
+    "response_timestamp": "15/11/2026 17:14:27",
+    "decision": "amend",
+    "action_taken": "review_query_logged",
+    "athlete_thoughts": "I acknowledge the HRV drop but I'm doing hardly anything and feel totally fine and have done so for weeks.  If the calf was fine I'd be carrying on as normal. Once calf is ok the HRV will NOT be slowing my progress because it's down when I'm feeling totally fine",
+    "changes_count": 0
   }
 ]
