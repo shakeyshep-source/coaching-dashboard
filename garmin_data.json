@@ -1,7 +1,7 @@
 [
   {
     "date": "2026-11-02",
-    "rhr": 48.0,
+    "rhr": 48,
     "hrv_last_night": 33,
     "hrv_status": "BALANCED",
     "hrv_weekly_avg": 36,
@@ -14,13 +14,13 @@
     "vo2max": 58.0,
     "vo2max_date": "2026-11-01",
     "training_status_feedback": "MAINTAINING_4",
+    "acwr_estimate": 0.79,
     "acwr_garmin": 0.7,
-    "acwr_status": "LOW",
-    "acwr_estimate": 0.79
+    "acwr_status": "LOW"
   },
   {
     "date": "2026-11-03",
-    "rhr": 47.0,
+    "rhr": 47,
     "hrv_last_night": 41,
     "hrv_status": "UNBALANCED",
     "hrv_weekly_avg": 36,
@@ -33,13 +33,13 @@
     "vo2max": 58.0,
     "vo2max_date": "2026-11-01",
     "training_status_feedback": "RECOVERY_2",
+    "acwr_estimate": 0.7,
     "acwr_garmin": 0.6,
-    "acwr_status": "LOW",
-    "acwr_estimate": 0.7
+    "acwr_status": "LOW"
   },
   {
     "date": "2026-11-04",
-    "rhr": 47.0,
+    "rhr": 47,
     "hrv_last_night": 33,
     "hrv_status": "BALANCED",
     "hrv_weekly_avg": 36,
@@ -52,13 +52,13 @@
     "vo2max": 58.0,
     "vo2max_date": "2026-11-01",
     "training_status_feedback": "RECOVERY_2",
+    "acwr_estimate": 0.5,
     "acwr_garmin": 0.5,
-    "acwr_status": "LOW",
-    "acwr_estimate": 0.5
+    "acwr_status": "LOW"
   },
   {
     "date": "2026-11-05",
-    "rhr": 47.0,
+    "rhr": 47,
     "hrv_last_night": 35,
     "hrv_status": "BALANCED",
     "hrv_weekly_avg": 36,
@@ -71,13 +71,13 @@
     "vo2max": 58.0,
     "vo2max_date": "2026-11-01",
     "training_status_feedback": "RECOVERY_2",
+    "acwr_estimate": 0.49,
     "acwr_garmin": 0.4,
-    "acwr_status": "LOW",
-    "acwr_estimate": 0.49
+    "acwr_status": "LOW"
   },
   {
     "date": "2026-11-06",
-    "rhr": 47.0,
+    "rhr": 47,
     "hrv_last_night": 40,
     "hrv_status": "BALANCED",
     "hrv_weekly_avg": 36,
@@ -90,13 +90,13 @@
     "vo2max": 58.0,
     "vo2max_date": "2026-11-01",
     "training_status_feedback": "RECOVERY_2",
+    "acwr_estimate": 0.51,
     "acwr_garmin": 0.4,
-    "acwr_status": "LOW",
-    "acwr_estimate": 0.51
+    "acwr_status": "LOW"
   },
   {
     "date": "2026-11-07",
-    "rhr": 47.0,
+    "rhr": 47,
     "hrv_last_night": 34,
     "hrv_status": "BALANCED",
     "hrv_weekly_avg": 36,
@@ -109,13 +109,13 @@
     "vo2max": 58.0,
     "vo2max_date": "2026-11-07",
     "training_status_feedback": "RECOVERY_2",
+    "acwr_estimate": 0.51,
     "acwr_garmin": 0.5,
-    "acwr_status": "LOW",
-    "acwr_estimate": 0.51
+    "acwr_status": "LOW"
   },
   {
     "date": "2026-11-08",
-    "rhr": 48.0,
+    "rhr": 48,
     "hrv_last_night": 36,
     "hrv_status": "BALANCED",
     "hrv_weekly_avg": 36,
@@ -128,13 +128,13 @@
     "vo2max": 58.0,
     "vo2max_date": "2026-11-08",
     "training_status_feedback": "RECOVERY_2",
+    "acwr_estimate": 0.44,
     "acwr_garmin": 0.6,
-    "acwr_status": "LOW",
-    "acwr_estimate": 0.44
+    "acwr_status": "LOW"
   },
   {
     "date": "2026-11-09",
-    "rhr": 48.0,
+    "rhr": 48,
     "hrv_last_night": 32,
     "hrv_status": "BALANCED",
     "hrv_weekly_avg": 36,
@@ -147,13 +147,13 @@
     "vo2max": 58.0,
     "vo2max_date": "2026-11-08",
     "training_status_feedback": "RECOVERY_2",
+    "acwr_estimate": 0.5,
     "acwr_garmin": 0.6,
-    "acwr_status": "LOW",
-    "acwr_estimate": 0.5
+    "acwr_status": "LOW"
   },
   {
     "date": "2026-11-10",
-    "rhr": 48.0,
+    "rhr": 48,
     "hrv_last_night": 32,
     "hrv_status": "UNBALANCED",
     "hrv_weekly_avg": 34,
@@ -166,13 +166,13 @@
     "vo2max": 58.0,
     "vo2max_date": "2026-11-10",
     "training_status_feedback": "RECOVERY_2",
+    "acwr_estimate": 0.61,
     "acwr_garmin": 0.6,
-    "acwr_status": "LOW",
-    "acwr_estimate": 0.61
+    "acwr_status": "LOW"
   },
   {
     "date": "2026-11-11",
-    "rhr": 46.0,
+    "rhr": 46,
     "hrv_last_night": 37,
     "hrv_status": "UNBALANCED",
     "hrv_weekly_avg": 35,
@@ -185,13 +185,13 @@
     "vo2max": 58.0,
     "vo2max_date": "2026-11-11",
     "training_status_feedback": "MAINTAINING_2",
+    "acwr_estimate": 0.81,
     "acwr_garmin": 0.8,
-    "acwr_status": "OPTIMAL",
-    "acwr_estimate": 0.81
+    "acwr_status": "OPTIMAL"
   },
   {
     "date": "2026-11-12",
-    "rhr": 52.0,
+    "rhr": 52,
     "hrv_last_night": 28,
     "hrv_status": "UNBALANCED",
     "hrv_weekly_avg": 34,
@@ -204,13 +204,13 @@
     "vo2max": 58.0,
     "vo2max_date": "2026-11-11",
     "training_status_feedback": "STRAINED_1",
+    "acwr_estimate": 0.86,
     "acwr_garmin": 0.7,
-    "acwr_status": "LOW",
-    "acwr_estimate": 0.86
+    "acwr_status": "LOW"
   },
   {
     "date": "2026-11-13",
-    "rhr": 49.0,
+    "rhr": 49,
     "hrv_last_night": 33,
     "hrv_status": "LOW",
     "hrv_weekly_avg": 33,
@@ -223,13 +223,13 @@
     "vo2max": 58.0,
     "vo2max_date": "2026-11-11",
     "training_status_feedback": "STRAINED_1",
+    "acwr_estimate": 0.8,
     "acwr_garmin": 0.7,
-    "acwr_status": "LOW",
-    "acwr_estimate": 0.8
+    "acwr_status": "LOW"
   },
   {
     "date": "2026-11-14",
-    "rhr": 51.0,
+    "rhr": 51,
     "hrv_last_night": 31,
     "hrv_status": "LOW",
     "hrv_weekly_avg": 33,
@@ -242,13 +242,13 @@
     "vo2max": 57.0,
     "vo2max_date": "2026-11-14",
     "training_status_feedback": "STRAINED_1",
+    "acwr_estimate": 0.94,
     "acwr_garmin": 0.9,
-    "acwr_status": "OPTIMAL",
-    "acwr_estimate": 0.94
+    "acwr_status": "OPTIMAL"
   },
   {
     "date": "2026-11-15",
-    "rhr": 48.0,
+    "rhr": 48,
     "hrv_last_night": 32,
     "hrv_status": "LOW",
     "hrv_weekly_avg": 32,
@@ -261,8 +261,8 @@
     "vo2max": 57.0,
     "vo2max_date": "2026-11-14",
     "training_status_feedback": "STRAINED_1",
+    "acwr_estimate": 0.91,
     "acwr_garmin": 0.9,
-    "acwr_status": "OPTIMAL",
-    "acwr_estimate": 0.9
+    "acwr_status": "OPTIMAL"
   }
 ]

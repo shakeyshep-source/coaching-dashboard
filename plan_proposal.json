@@ -1,7 +1,7 @@
 {
   "id": "2026-11-15",
   "created": "2026-11-15T14:00:00",
-  "status": "pending",
+  "status": "applied",
   "rationale": "Adjust. Week of 9 Nov came in at 30.2 km against ~36 planned, with the calf felt on three of four runs and the HRV baseline sliding 36\u219232 (12 Nov flag, RHR 52, no confounder). 16\u201322 Nov was planned at 58 km against a ramp cap of 37.8, so it is cut to ~38 with the long run reduced to 8 km. 23\u201329 Nov was marked under the curve (56 vs 67.9); I am NOT raising it, because two gates hold it \u2014 the repeated calf notes and the unexplained HRV slide \u2014 and it is lowered to ~48 provisionally. 30 Nov\u20136 Dec is added at ~52, provisional. If Tuesday's run is silent and HRV recovers, next Sunday moves toward the curve.",
   "changes": [
     {
@@ -144,5 +144,12 @@
       "target_pace": null,
       "notes": "Provisional \u2014 Long run 16 km easy, gel from 20 min then every ~25 min, log what you took."
     }
-  ]
+  ],
+  "athlete_response": {
+    "timestamp": "14/11/2026 14:41:39",
+    "review_date": "2026-11-15",
+    "decision": "approve",
+    "thoughts": null
+  },
+  "applied_at": "2026-11-15T14:03:51"
 }

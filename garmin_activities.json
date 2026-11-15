@@ -8034,6 +8034,7 @@
     "elevation_gain_m": 0.0,
     "cadence": 0.984375,
     "aerobic_te": 0.30000001192092896,
-    "anaerobic_te": 0.0
+    "anaerobic_te": 0.0,
+    "training_load": 4.58642578125
   }
 ]
