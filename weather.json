@@ -1,9 +1,9 @@
 [
   {
     "date": "2026-11-15",
-    "temp_max_c": 7.8,
+    "temp_max_c": 7.7,
     "temp_min_c": 4.0,
-    "humidity_pct": 89,
+    "humidity_pct": 90,
     "wind_speed_kmh": 14.8,
     "heat_risk": "low"
   },
@@ -17,10 +17,10 @@
   },
   {
     "date": "2026-11-17",
-    "temp_max_c": 10.6,
+    "temp_max_c": 10.8,
     "temp_min_c": 4.0,
     "humidity_pct": 90,
-    "wind_speed_kmh": 20.3,
+    "wind_speed_kmh": 22.1,
     "heat_risk": "low"
   },
   {
