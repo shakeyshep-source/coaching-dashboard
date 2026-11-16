@@ -822,5 +822,13 @@
     "rpe": 1.0,
     "on_target": true,
     "session_notes": "Bike 50mins easy"
+  },
+  {
+    "date": "2026-11-16",
+    "achilles_score": 0,
+    "session_type": "easy",
+    "rpe": 1.0,
+    "on_target": true,
+    "session_notes": "Bike"
   }
 ]
