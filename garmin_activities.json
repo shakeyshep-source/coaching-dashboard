@@ -8036,5 +8036,53 @@
     "aerobic_te": 0.30000001192092896,
     "anaerobic_te": 0.0,
     "training_load": 4.58642578125
+  },
+  {
+    "date": "2026-11-16",
+    "activity_id": 25099955802,
+    "name": "Indoor Cycling",
+    "type": "indoor_cycling",
+    "distance_km": 5.18,
+    "duration_min": 30.0,
+    "avg_pace_min_per_km": 5.8,
+    "avg_hr": 113.0,
+    "max_hr": 133.0,
+    "elevation_gain_m": null,
+    "cadence": null,
+    "aerobic_te": 1.899999976158142,
+    "anaerobic_te": 0.0,
+    "training_load": 24.867355346679688
+  },
+  {
+    "date": "2026-11-16",
+    "activity_id": 25100973899,
+    "name": "Strength",
+    "type": "strength_training",
+    "distance_km": null,
+    "duration_min": 22.3,
+    "avg_pace_min_per_km": null,
+    "avg_hr": 78.0,
+    "max_hr": 112.0,
+    "elevation_gain_m": null,
+    "cadence": null,
+    "aerobic_te": 0.10000000149011612,
+    "anaerobic_te": 0.0,
+    "training_load": 2.07196044921875
+  },
+  {
+    "date": "2026-11-16",
+    "activity_id": 25100974649,
+    "name": "Tewkesbury SPA retreat",
+    "type": "other",
+    "distance_km": 0.05,
+    "duration_min": 30.6,
+    "avg_pace_min_per_km": 666.67,
+    "avg_hr": 87.0,
+    "max_hr": 120.0,
+    "elevation_gain_m": 4.0,
+    "cadence": 5.265625,
+    "aerobic_te": 0.4000000059604645,
+    "anaerobic_te": 0.0,
+    "training_load": 5.242156982421875
   }
 ]

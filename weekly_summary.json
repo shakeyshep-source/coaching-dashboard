@@ -1073,7 +1073,7 @@
       "session_log": [
         {
           "date": "2026-11-16",
-          "temp_max_c": 7.1,
+          "temp_max_c": 8.0,
           "heat_risk": "low",
           "session_type": "easy",
           "rpe": 1.0,
