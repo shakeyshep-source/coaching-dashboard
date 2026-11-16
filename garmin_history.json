@@ -1978,5 +1978,24 @@
     "acwr_estimate": 0.91,
     "acwr_garmin": 0.9,
     "acwr_status": "OPTIMAL"
+  },
+  {
+    "date": "2026-11-16",
+    "rhr": 50,
+    "hrv_last_night": 36,
+    "hrv_status": "LOW",
+    "hrv_weekly_avg": 33,
+    "sleep_score": 87,
+    "sleep_duration_hrs": 7.67,
+    "body_battery_high": 85,
+    "body_battery_low": 53,
+    "training_load_acute": 419,
+    "training_load_chronic": 532,
+    "vo2max": 57.0,
+    "vo2max_date": "2026-11-14",
+    "training_status_feedback": "STRAINED_1",
+    "acwr_estimate": 0.78,
+    "acwr_garmin": 0.7,
+    "acwr_status": "LOW"
   }
 ]

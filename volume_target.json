@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-15",
+  "as_of": "2026-11-16",
   "status": "held",
   "headline": null,
   "gates": [
@@ -15,7 +15,7 @@
       "long_curve_km": 20.5,
       "ramp_cap_km": 37.8,
       "recommended_km": 37.8,
-      "actual_km": null,
+      "actual_km": 0,
       "status": "held",
       "reason": "gate: pain/tightness in the note on 2026-11-11; 2 unexplained readiness flags in 7 days"
     },
