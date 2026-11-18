@@ -7,12 +7,19 @@
   "proposal_id": "2026-11-15",
   "proposal_status": "applied",
   "athlete_response": {
-    "timestamp": "15/11/2026 17:14:27",
+    "timestamp": "15/11/2026 17:27:04",
     "review_date": "2026-11-15",
-    "decision": "amend",
-    "thoughts": "I acknowledge the HRV drop but I'm doing hardly anything and feel totally fine and have done so for weeks.  If the calf was fine I'd be carrying on as normal. Once calf is ok the HRV will NOT be slowing my progress because it's down when I'm feeling totally fine"
+    "decision": "approve",
+    "thoughts": null
   },
-  "athlete_response_status": "answered",
-  "coach_reply": "Shep \u2014 you're right on the HRV, and I'm taking it out as a brake.\n\nYou feel fine, you have no symptoms, and the load is about as low as it gets (ACWR 0.7\u20130.9, all RPE 1). Under your 4 Oct instruction that is yours to overrule, so I've done it. One sentence of risk, then I drop it: an unexplained HRV slide with no load behind it is also what illness looks like before it's felt, so the neck check still applies (chest symptoms, temperature or aches mean no hard session). I'm not treating it as a limit on the November build.\n\nBut it wasn't the main reason for the cut, so that part doesn't move. 16\u201322 Nov stays at ~38 km because the ramp cap off a 30 km week is 37.8, and because the calf has been felt on three of four runs. \"Tiny, faded as I warmed\" is the benign pattern, but it hasn't yet been a week of nothing. You said yourself that if the calf were fine you'd carry on as normal. That is the gate, and Tuesday's 10 km is the test.\n\nWhat changes is the weeks after, provisionally: 23\u201329 Nov to 47 km (was 44) and 30 Nov\u20136 Dec to 56 km (was 52), the long run building to 16. That's the ramp cap, not the curve, which I still won't chase while the calf is unsettled. If Tuesday is silent and the next week stays silent, the following review moves toward the curve. If the calf is felt a fourth time, it's the physio call, not a debate about numbers. The revised proposal is on the dashboard for you to approve.",
-  "coach_reply_at": "2026-11-15T18:00:00"
+  "athlete_response_status": "logged",
+  "conversation": [
+    {
+      "athlete_timestamp": "15/11/2026 17:14:27",
+      "athlete_decision": "amend",
+      "athlete_thoughts": "I acknowledge the HRV drop but I'm doing hardly anything and feel totally fine and have done so for weeks.  If the calf was fine I'd be carrying on as normal. Once calf is ok the HRV will NOT be slowing my progress because it's down when I'm feeling totally fine",
+      "coach_reply": "Shep \u2014 you're right on the HRV, and I'm taking it out as a brake.\n\nYou feel fine, you have no symptoms, and the load is about as low as it gets (ACWR 0.7\u20130.9, all RPE 1). Under your 4 Oct instruction that is yours to overrule, so I've done it. One sentence of risk, then I drop it: an unexplained HRV slide with no load behind it is also what illness looks like before it's felt, so the neck check still applies (chest symptoms, temperature or aches mean no hard session). I'm not treating it as a limit on the November build.\n\nBut it wasn't the main reason for the cut, so that part doesn't move. 16\u201322 Nov stays at ~38 km because the ramp cap off a 30 km week is 37.8, and because the calf has been felt on three of four runs. \"Tiny, faded as I warmed\" is the benign pattern, but it hasn't yet been a week of nothing. You said yourself that if the calf were fine you'd carry on as normal. That is the gate, and Tuesday's 10 km is the test.\n\nWhat changes is the weeks after, provisionally: 23\u201329 Nov to 47 km (was 44) and 30 Nov\u20136 Dec to 56 km (was 52), the long run building to 16. That's the ramp cap, not the curve, which I still won't chase while the calf is unsettled. If Tuesday is silent and the next week stays silent, the following review moves toward the curve. If the calf is felt a fourth time, it's the physio call, not a debate about numbers. The revised proposal is on the dashboard for you to approve.",
+      "coach_reply_at": "2026-11-15T18:00:00"
+    }
+  ]
 }
