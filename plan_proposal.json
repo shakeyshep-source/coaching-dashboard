@@ -1,22 +1,22 @@
 {
   "id": "2026-11-18",
   "created": "2026-11-18T12:00:00",
-  "status": "pending",
-  "rationale": "Hold, as Sunday's proposal said it would: Tuesday's 10 km was the calf test, and the calf was felt the whole way (\"like a bruise\", easing a little after 5 km). That is the wrong direction — on 11 Nov it came in the last km, on 14 Nov it faded to nothing, and now it is there from the start — and your physio now thinks it is a strain, not overload. A strain heals on its own timescale, and running on it at 1/10 keeps it irritated, which is why three weeks of easing back have not cleared it. So: no running until it is 0/10 — not 1 — on walking, stairs, single-leg calf raises and hops for three days, and your physio has cleared you. Bike for the aerobic work (seated, normal cadence) and her calf loading in the gym. The next two weeks are a provisional return: run-walk, then short continuous runs every other day, each gated on 0/10 during and the next morning. Your HRV baseline has also slid from ~36 to ~32 over the week with almost no load, which is one more reason not to push. Manchester is 21 weeks away; the plan can absorb three more weeks of bike far better than a strain that keeps recurring through December. Her view outranks this plan — if she says differently, tell me and I will rewrite it.",
+  "status": "applied",
+  "rationale": "Hold, as Sunday's proposal said it would: Tuesday's 10 km was the calf test, and the calf was felt the whole way (\"like a bruise\", easing a little after 5 km). That is the wrong direction \u2014 on 11 Nov it came in the last km, on 14 Nov it faded to nothing, and now it is there from the start \u2014 and your physio now thinks it is a strain, not overload. A strain heals on its own timescale, and running on it at 1/10 keeps it irritated, which is why three weeks of easing back have not cleared it. So: no running until it is 0/10 \u2014 not 1 \u2014 on walking, stairs, single-leg calf raises and hops for three days, and your physio has cleared you. Bike for the aerobic work (seated, normal cadence) and her calf loading in the gym. The next two weeks are a provisional return: run-walk, then short continuous runs every other day, each gated on 0/10 during and the next morning. Your HRV baseline has also slid from ~36 to ~32 over the week with almost no load, which is one more reason not to push. Manchester is 21 weeks away; the plan can absorb three more weeks of bike far better than a strain that keeps recurring through December. Her view outranks this plan \u2014 if she says differently, tell me and I will rewrite it.",
   "changes": [
     {
       "date": "2026-11-18",
       "session_type": "easy",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Bike, not a run (replaces 6 km). 40–50 min easy, seated, normal cadence. The calf was felt for the whole of yesterday's 10 km; the test we set says hold."
+      "notes": "Bike, not a run (replaces 6 km). 40\u201350 min easy, seated, normal cadence. The calf was felt for the whole of yesterday's 10 km; the test we set says hold."
     },
     {
       "date": "2026-11-19",
       "session_type": "easy",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Bike 40–50 min easy, then leg gym with the calf work your physio sets for a strain (typically slow straight- and bent-knee calf raises and isometrics, kept under 2/10). Upper body and non-calf lower as normal. Replaces the 8 km run."
+      "notes": "Bike 40\u201350 min easy, then leg gym with the calf work your physio sets for a strain (typically slow straight- and bent-knee calf raises and isometrics, kept under 2/10). Upper body and non-calf lower as normal. Replaces the 8 km run."
     },
     {
       "date": "2026-11-20",
@@ -30,7 +30,7 @@
       "session_type": "easy",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Bike 50–60 min easy, conversational. Replaces the 6 km run."
+      "notes": "Bike 50\u201360 min easy, conversational. Replaces the 6 km run."
     },
     {
       "date": "2026-11-22",
@@ -44,98 +44,105 @@
       "session_type": "rest",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Provisional — Rest; calf exercises per physio."
+      "notes": "Provisional \u2014 Rest; calf exercises per physio."
     },
     {
       "date": "2026-11-24",
       "session_type": "easy",
       "target_distance_km": 3,
       "target_pace": null,
-      "notes": "Provisional — Run-walk 20 min: 4 × (4 min easy run / 1 min walk), flat, Vomeros. Only if the physio has cleared running and, for 3 days running, walking, stairs, 25 single-leg calf raises (straight and bent knee) and 20 hops are all 0/10 — not 1. Otherwise bike 40–50 min."
+      "notes": "Provisional \u2014 Run-walk 20 min: 4 \u00d7 (4 min easy run / 1 min walk), flat, Vomeros. Only if the physio has cleared running and, for 3 days running, walking, stairs, 25 single-leg calf raises (straight and bent knee) and 20 hops are all 0/10 \u2014 not 1. Otherwise bike 40\u201350 min."
     },
     {
       "date": "2026-11-25",
       "session_type": "easy",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Provisional — Bike 45 min easy, then leg gym (calf loading per physio)."
+      "notes": "Provisional \u2014 Bike 45 min easy, then leg gym (calf loading per physio)."
     },
     {
       "date": "2026-11-26",
       "session_type": "easy",
       "target_distance_km": 4,
       "target_pace": null,
-      "notes": "Provisional — Run-walk 25 min: 5 × (4 min run / 1 min walk), only if Tuesday's was 0/10 during and the next morning. Otherwise bike."
+      "notes": "Provisional \u2014 Run-walk 25 min: 5 \u00d7 (4 min run / 1 min walk), only if Tuesday's was 0/10 during and the next morning. Otherwise bike."
     },
     {
       "date": "2026-11-27",
       "session_type": "rest",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Provisional — Rest or light bike."
+      "notes": "Provisional \u2014 Rest or light bike."
     },
     {
       "date": "2026-11-28",
       "session_type": "easy",
       "target_distance_km": 5,
       "target_pace": null,
-      "notes": "Provisional — Continuous easy run 25 min, only if both run-walks were 0/10. Otherwise repeat the run-walk."
+      "notes": "Provisional \u2014 Continuous easy run 25 min, only if both run-walks were 0/10. Otherwise repeat the run-walk."
     },
     {
       "date": "2026-11-29",
       "session_type": "easy",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Provisional — Bike 60 min easy. No long run yet."
+      "notes": "Provisional \u2014 Bike 60 min easy. No long run yet."
     },
     {
       "date": "2026-11-30",
       "session_type": "rest",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Provisional — Rest; leg gym."
+      "notes": "Provisional \u2014 Rest; leg gym."
     },
     {
       "date": "2026-12-01",
       "session_type": "easy",
       "target_distance_km": 6,
       "target_pace": null,
-      "notes": "Provisional — Easy 30 min continuous, flat, Vomeros, HR ~135. Calf 0/10 is the gate, not 1."
+      "notes": "Provisional \u2014 Easy 30 min continuous, flat, Vomeros, HR ~135. Calf 0/10 is the gate, not 1."
     },
     {
       "date": "2026-12-02",
       "session_type": "easy",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Provisional — Bike 45 min, then leg gym."
+      "notes": "Provisional \u2014 Bike 45 min, then leg gym."
     },
     {
       "date": "2026-12-03",
       "session_type": "easy",
       "target_distance_km": 6,
       "target_pace": null,
-      "notes": "Provisional — Easy 30–35 min, only if Tuesday's run and the next morning were 0/10."
+      "notes": "Provisional \u2014 Easy 30\u201335 min, only if Tuesday's run and the next morning were 0/10."
     },
     {
       "date": "2026-12-04",
       "session_type": "rest",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Provisional — Rest."
+      "notes": "Provisional \u2014 Rest."
     },
     {
       "date": "2026-12-05",
       "session_type": "easy",
       "target_distance_km": 7,
       "target_pace": null,
-      "notes": "Provisional — Easy 35 min."
+      "notes": "Provisional \u2014 Easy 35 min."
     },
     {
       "date": "2026-12-06",
       "session_type": "easy",
       "target_distance_km": 8,
       "target_pace": null,
-      "notes": "Provisional — Easy 40 min, the longest run of the week. The long run returns only after a full week at 0/10."
+      "notes": "Provisional \u2014 Easy 40 min, the longest run of the week. The long run returns only after a full week at 0/10."
     }
-  ]
+  ],
+  "athlete_response": {
+    "timestamp": "18/11/2026 09:05:13",
+    "review_date": "2026-11-18",
+    "decision": "approve",
+    "thoughts": null
+  },
+  "applied_at": "2026-11-18T09:05:41"
 }

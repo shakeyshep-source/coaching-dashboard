@@ -1,15 +1,15 @@
 {
-  "as_of": "2026-11-17",
-  "status": "held",
-  "headline": null,
+  "as_of": "2026-11-18",
+  "status": "over",
+  "headline": "Week of 2026-11-30: plan 27 km climbs too fast from 12 \u2014 about 15 km is a safe step.",
   "gates": [
-    "pain/tightness in the note on 2026-11-11",
+    "pain/tightness in the note on 2026-11-17",
     "2 unexplained readiness flags in 7 days"
   ],
   "weeks": [
     {
       "week_start": "2026-11-16",
-      "planned_km": 38,
+      "planned_km": 10,
       "planned_long_km": null,
       "curve_km": 64.3,
       "long_curve_km": 20.5,
@@ -17,31 +17,31 @@
       "recommended_km": 37.8,
       "actual_km": 10.0,
       "status": "held",
-      "reason": "gate: pain/tightness in the note on 2026-11-11; 2 unexplained readiness flags in 7 days"
+      "reason": "gate: pain/tightness in the note on 2026-11-17; 2 unexplained readiness flags in 7 days"
     },
     {
       "week_start": "2026-11-23",
-      "planned_km": 47,
-      "planned_long_km": 12,
+      "planned_km": 12,
+      "planned_long_km": null,
       "curve_km": 67.9,
       "long_curve_km": 21.4,
-      "ramp_cap_km": 47.5,
-      "recommended_km": 47.5,
+      "ramp_cap_km": 12.5,
+      "recommended_km": 12.5,
       "actual_km": null,
       "status": "on",
       "reason": ""
     },
     {
       "week_start": "2026-11-30",
-      "planned_km": 56,
-      "planned_long_km": 16,
+      "planned_km": 27,
+      "planned_long_km": null,
       "curve_km": 70.7,
       "long_curve_km": 22.3,
-      "ramp_cap_km": 58.8,
-      "recommended_km": 58.8,
+      "ramp_cap_km": 15.0,
+      "recommended_km": 15.0,
       "actual_km": null,
-      "status": "on",
-      "reason": ""
+      "status": "over",
+      "reason": "plan 27 km climbs too fast from 12 \u2014 about 15 km is a safe step"
     }
   ]
 }

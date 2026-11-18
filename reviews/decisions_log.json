@@ -645,5 +645,13 @@
     "action_taken": "plan_updated",
     "athlete_thoughts": null,
     "changes_count": 10
+  },
+  {
+    "logged_at": "2026-11-18T09:05:41",
+    "proposal_id": "2026-11-18",
+    "decision": "approve",
+    "action_taken": "plan_updated",
+    "athlete_thoughts": null,
+    "changes_count": 19
   }
 ]
