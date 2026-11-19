@@ -136,6 +136,16 @@ daily, weekly review, or ad-hoc — starts from this brief.
   flat, Vomeros. The November volume step waits until the calf has
   been clear for a week of normal running. His physio's view outranks
   this note.
+  **Update 17–19 Nov:** felt for the whole of an easy 10 km on 17 Nov
+  ("like a bruise"), after it had faded mid-run on 14 Nov — so running
+  was stopped (proposal 18 Nov, approved). **Physio 19 Nov: a strain,
+  in the gastrocnemius more than the soleus** (his own bent-knee test
+  had pointed at soleus; hers outranks it). Treated (massage, needling,
+  infra-red). **Her rule: OK to run, stop if it goes above 3/10** — that
+  replaces the coach's stricter 0/10 gate. Test run Sat 21 Nov; he
+  reports back to her after it. Gastrocnemius is the faster, straight-
+  knee calf muscle: it is loaded hardest by faster running, strides,
+  hills and push-off, which fits it going during the 200s.
 - Never prescribe a session without weighing injury risk. **Keeping him
   training consistently beats any one perfect workout** — that is his
   stated preference and it matches the evidence for masters athletes.
