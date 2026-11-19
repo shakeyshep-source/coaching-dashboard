@@ -905,17 +905,17 @@
   },
   {
     "date": "2026-11-20",
-    "temp_max_c": 8.5,
-    "temp_min_c": 6.4,
-    "humidity_pct": 85,
-    "wind_speed_kmh": 14.8,
+    "temp_max_c": 8.8,
+    "temp_min_c": 4.5,
+    "humidity_pct": 84,
+    "wind_speed_kmh": 16.2,
     "heat_risk": "low"
   },
   {
     "date": "2026-11-21",
-    "temp_max_c": 8.1,
-    "temp_min_c": 2.3,
-    "humidity_pct": 84,
+    "temp_max_c": 8.3,
+    "temp_min_c": 1.4,
+    "humidity_pct": 85,
     "wind_speed_kmh": 18.4,
     "heat_risk": "low"
   },
