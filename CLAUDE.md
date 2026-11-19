@@ -146,6 +146,21 @@ daily, weekly review, or ad-hoc — starts from this brief.
   reports back to her after it. Gastrocnemius is the faster, straight-
   knee calf muscle: it is loaded hardest by faster running, strides,
   hills and push-off, which fits it going during the 200s.
+  **It is a pattern, not a one-off (his account, 20 Nov):** about a year
+  ago he tweaked it on the 6th stride after an easy run, going too
+  quick, before Guy Fawkes; on 28 Oct the same calf went in fast reps.
+  His words: intervals or strides **quicker than ~3:00/km, in the cold,
+  his calves have not liked**. So, standing rules for every session
+  written from now on: **no rep or stride quicker than ~3:15/km** (his
+  mile pace — anything faster is sprinting, not a stride, and buys
+  nothing for a marathon or a 5-mile); strides are relaxed, 4–6 at
+  most, stopped the moment one feels like effort, never "one more";
+  **below ~8 °C** they come after a proper 10–15 min warm-up in tights,
+  not tacked on the end of a long easy run when the calf is tired and
+  cooling; no flat-out sprint finishes in cold races. Speed returns
+  only after 2–3 weeks of symptom-free running, and the straight-knee
+  calf strength and later plyometric work (per physio) is what earns
+  it back.
 - Never prescribe a session without weighing injury risk. **Keeping him
   training consistently beats any one perfect workout** — that is his
   stated preference and it matches the evidence for masters athletes.
