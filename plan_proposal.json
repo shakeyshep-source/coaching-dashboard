@@ -1,22 +1,29 @@
 {
   "id": "2026-11-19",
   "created": "2026-11-19T21:30:00",
-  "status": "pending",
-  "rationale": "Changed after your physio tonight: she places the strain in the gastrocnemius rather than the soleus, has treated it, and is happy for you to run Saturday as a test, stopping if it goes above 3/10. Her rule replaces my 0/10 gate — she has seen it and I have not. So Saturday becomes a short test run instead of the bike, and Sunday depends on how Saturday and Sunday morning go. I've kept the test short, flat and slow: the gastrocnemius is loaded hardest by pace and push-off, so speed is the thing to keep out of it, more than distance. Next week is left as it is for now; Sunday's review rewrites it from Saturday's result and her feedback.",
+  "status": "applied",
+  "rationale": "Changed after your physio tonight: she places the strain in the gastrocnemius rather than the soleus, has treated it, and is happy for you to run Saturday as a test, stopping if it goes above 3/10. Her rule replaces my 0/10 gate \u2014 she has seen it and I have not. So Saturday becomes a short test run instead of the bike, and Sunday depends on how Saturday and Sunday morning go. I've kept the test short, flat and slow: the gastrocnemius is loaded hardest by pace and push-off, so speed is the thing to keep out of it, more than distance. Next week is left as it is for now; Sunday's review rewrites it from Saturday's result and her feedback.",
   "changes": [
     {
       "date": "2026-11-21",
       "session_type": "easy",
       "target_distance_km": 5,
       "target_pace": null,
-      "notes": "Test run, cleared by your physio: 25–30 min easy, flat, Vomeros, 5:15/km or slower, HR ~135. No strides, no hills. Her rule: stop if it goes above 3/10. Mine on top: also stop if it is climbing steadily through the run, even below 3. Log the score at the start, middle and end, and again first thing Sunday morning. Report to her as agreed."
+      "notes": "Test run, cleared by your physio: 25\u201330 min easy, flat, Vomeros, 5:15/km or slower, HR ~135. No strides, no hills. Her rule: stop if it goes above 3/10. Mine on top: also stop if it is climbing steadily through the run, even below 3. Log the score at the start, middle and end, and again first thing Sunday morning. Report to her as agreed."
     },
     {
       "date": "2026-11-22",
       "session_type": "easy",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Decided by Saturday. If Saturday stayed at 2/10 or under and Sunday morning is no worse than Saturday morning: easy 30 min, flat, Vomeros. Otherwise bike 50–60 min easy. No long run this week."
+      "notes": "Decided by Saturday. If Saturday stayed at 2/10 or under and Sunday morning is no worse than Saturday morning: easy 30 min, flat, Vomeros. Otherwise bike 50\u201360 min easy. No long run this week."
     }
-  ]
+  ],
+  "athlete_response": {
+    "timestamp": "19/11/2026 21:57:44",
+    "review_date": "2026-11-19",
+    "decision": "approve",
+    "thoughts": null
+  },
+  "applied_at": "2026-11-19T21:58:13"
 }

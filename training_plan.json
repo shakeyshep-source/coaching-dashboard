@@ -1071,20 +1071,20 @@
   {
     "date": "2026-11-21",
     "session_type": "easy",
-    "target_distance_km": null,
+    "target_distance_km": 5,
     "target_pace": null,
-    "notes": "Bike 50\u201360 min easy, conversational. Replaces the 6 km run.",
+    "notes": "Test run, cleared by your physio: 25\u201330 min easy, flat, Vomeros, 5:15/km or slower, HR ~135. No strides, no hills. Her rule: stop if it goes above 3/10. Mine on top: also stop if it is climbing steadily through the run, even below 3. Log the score at the start, middle and end, and again first thing Sunday morning. Report to her as agreed.",
     "source": "coach",
-    "updated_at": "2026-11-18T09:05:41"
+    "updated_at": "2026-11-19T21:58:13"
   },
   {
     "date": "2026-11-22",
     "session_type": "easy",
     "target_distance_km": null,
     "target_pace": null,
-    "notes": "Bike 60 min easy, plus the physio's calf loading. Replaces the 8 km run. No long run this week.",
+    "notes": "Decided by Saturday. If Saturday stayed at 2/10 or under and Sunday morning is no worse than Saturday morning: easy 30 min, flat, Vomeros. Otherwise bike 50\u201360 min easy. No long run this week.",
     "source": "coach",
-    "updated_at": "2026-11-18T09:05:41"
+    "updated_at": "2026-11-19T21:58:13"
   },
   {
     "date": "2026-11-23",

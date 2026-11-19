@@ -663,5 +663,13 @@
     "action_taken": "review_query_logged",
     "athlete_thoughts": null,
     "changes_count": 0
+  },
+  {
+    "logged_at": "2026-11-19T21:58:13",
+    "proposal_id": "2026-11-19",
+    "decision": "approve",
+    "action_taken": "plan_updated",
+    "athlete_thoughts": null,
+    "changes_count": 2
   }
 ]

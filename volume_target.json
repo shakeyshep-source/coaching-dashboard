@@ -1,14 +1,14 @@
 {
   "as_of": "2026-11-19",
-  "status": "over",
-  "headline": "Week of 2026-11-30: plan 27 km climbs too fast from 12 \u2014 about 15 km is a safe step.",
+  "status": "under",
+  "headline": "Week of 2026-11-23: plan 12 km is under the agreed curve \u2014 the next proposal raises it towards 18.8 km.",
   "gates": [
     "pain/tightness in the note on 2026-11-17"
   ],
   "weeks": [
     {
       "week_start": "2026-11-16",
-      "planned_km": 10,
+      "planned_km": 15,
       "planned_long_km": null,
       "curve_km": 64.3,
       "long_curve_km": 20.5,
@@ -24,11 +24,11 @@
       "planned_long_km": null,
       "curve_km": 67.9,
       "long_curve_km": 21.4,
-      "ramp_cap_km": 12.5,
-      "recommended_km": 12.5,
+      "ramp_cap_km": 18.8,
+      "recommended_km": 18.8,
       "actual_km": null,
-      "status": "on",
-      "reason": ""
+      "status": "under",
+      "reason": "plan 12 km, curve 67.9, safe climb allows 18.8 \u2014 raise towards 18.8 km"
     },
     {
       "week_start": "2026-11-30",
@@ -36,11 +36,11 @@
       "planned_long_km": null,
       "curve_km": 70.7,
       "long_curve_km": 22.3,
-      "ramp_cap_km": 15.0,
-      "recommended_km": 15.0,
+      "ramp_cap_km": 23.5,
+      "recommended_km": 23.5,
       "actual_km": null,
       "status": "over",
-      "reason": "plan 27 km climbs too fast from 12 \u2014 about 15 km is a safe step"
+      "reason": "plan 27 km climbs too fast from 18.8 \u2014 about 23.5 km is a safe step"
     }
   ]
 }
