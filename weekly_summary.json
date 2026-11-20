@@ -1133,7 +1133,7 @@
         },
         {
           "date": "2026-11-20",
-          "temp_max_c": 8.5,
+          "temp_max_c": 8.9,
           "heat_risk": "low",
           "session_type": "rest",
           "rpe": 0.0,
