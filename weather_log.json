@@ -905,26 +905,26 @@
   },
   {
     "date": "2026-11-20",
-    "temp_max_c": 8.6,
-    "temp_min_c": 5.2,
+    "temp_max_c": 8.5,
+    "temp_min_c": 3.4,
     "humidity_pct": 87,
-    "wind_speed_kmh": 16.2,
+    "wind_speed_kmh": 15.8,
     "heat_risk": "low"
   },
   {
     "date": "2026-11-21",
-    "temp_max_c": 9.9,
-    "temp_min_c": 3.8,
+    "temp_max_c": 9.4,
+    "temp_min_c": 2.3,
     "humidity_pct": 86,
-    "wind_speed_kmh": 10.1,
+    "wind_speed_kmh": 8.6,
     "heat_risk": "low"
   },
   {
     "date": "2026-11-22",
-    "temp_max_c": 8.1,
+    "temp_max_c": 8.7,
     "temp_min_c": 4.6,
     "humidity_pct": 79,
-    "wind_speed_kmh": 17.9,
+    "wind_speed_kmh": 20.2,
     "heat_risk": "low"
   },
   {
