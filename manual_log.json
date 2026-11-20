@@ -854,5 +854,13 @@
     "rpe": 0.0,
     "on_target": true,
     "session_notes": "Physio - so it appears to be in the gastronomic muscle more than the soleus.\nOK to run sat to test it, anywhere above a 3 stop.\nShe can see the area and how the muscles are reacting around the area.\nMassaged, needed, infra red and mini massage gun to get into the area.\nWill be reporting back Sat after the run"
+  },
+  {
+    "date": "2026-11-20",
+    "achilles_score": 0,
+    "session_type": "rest",
+    "rpe": 0.0,
+    "on_target": true,
+    "session_notes": null
   }
 ]
