@@ -913,50 +913,58 @@
   },
   {
     "date": "2026-11-21",
-    "temp_max_c": 9.5,
-    "temp_min_c": 2.6,
-    "humidity_pct": 84,
-    "wind_speed_kmh": 13.0,
+    "temp_max_c": 8.9,
+    "temp_min_c": 1.9,
+    "humidity_pct": 87,
+    "wind_speed_kmh": 11.5,
     "heat_risk": "low"
   },
   {
     "date": "2026-11-22",
-    "temp_max_c": 8.7,
-    "temp_min_c": 4.6,
-    "humidity_pct": 78,
-    "wind_speed_kmh": 19.4,
+    "temp_max_c": 9.0,
+    "temp_min_c": 3.6,
+    "humidity_pct": 79,
+    "wind_speed_kmh": 17.3,
     "heat_risk": "low"
   },
   {
     "date": "2026-11-23",
-    "temp_max_c": 7.3,
-    "temp_min_c": 1.9,
-    "humidity_pct": 87,
-    "wind_speed_kmh": 18.4,
+    "temp_max_c": 7.8,
+    "temp_min_c": 1.8,
+    "humidity_pct": 80,
+    "wind_speed_kmh": 20.5,
     "heat_risk": "low"
   },
   {
     "date": "2026-11-24",
-    "temp_max_c": 8.0,
-    "temp_min_c": 5.3,
-    "humidity_pct": 74,
-    "wind_speed_kmh": 21.2,
+    "temp_max_c": 10.6,
+    "temp_min_c": 5.7,
+    "humidity_pct": 87,
+    "wind_speed_kmh": 28.8,
     "heat_risk": "low"
   },
   {
     "date": "2026-11-25",
-    "temp_max_c": 7.0,
-    "temp_min_c": 4.0,
-    "humidity_pct": 92,
-    "wind_speed_kmh": 16.9,
+    "temp_max_c": 6.8,
+    "temp_min_c": 2.6,
+    "humidity_pct": 88,
+    "wind_speed_kmh": 19.8,
     "heat_risk": "low"
   },
   {
     "date": "2026-11-26",
-    "temp_max_c": 9.7,
-    "temp_min_c": 6.5,
-    "humidity_pct": 90,
-    "wind_speed_kmh": 17.6,
+    "temp_max_c": 3.6,
+    "temp_min_c": 1.8,
+    "humidity_pct": 80,
+    "wind_speed_kmh": 15.1,
+    "heat_risk": "low"
+  },
+  {
+    "date": "2026-11-27",
+    "temp_max_c": 4.5,
+    "temp_min_c": 1.6,
+    "humidity_pct": 73,
+    "wind_speed_kmh": 16.9,
     "heat_risk": "low"
   }
 ]
