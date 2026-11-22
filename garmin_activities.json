@@ -8146,7 +8146,8 @@
     "elevation_gain_m": null,
     "cadence": null,
     "aerobic_te": 1.0,
-    "anaerobic_te": 1.2000000476837158
+    "anaerobic_te": 1.2000000476837158,
+    "training_load": 26.303634643554688
   },
   {
     "date": "2026-11-22",
@@ -8161,6 +8162,7 @@
     "elevation_gain_m": 70.0,
     "cadence": 2.984375,
     "aerobic_te": 1.5,
-    "anaerobic_te": 1.100000023841858
+    "anaerobic_te": 1.100000023841858,
+    "training_load": 30.053512573242188
   }
 ]
