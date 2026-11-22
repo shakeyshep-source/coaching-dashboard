@@ -1091,63 +1091,63 @@
     "session_type": "rest",
     "target_distance_km": null,
     "target_pace": null,
-    "notes": "Provisional \u2014 Rest; calf exercises per physio.",
+    "notes": "Rest. Leg gym (calf straight/bent-knee, single-leg, RDL) as per physio, kept under 2/10.",
     "source": "coach",
-    "updated_at": "2026-11-18T09:05:41"
+    "updated_at": "2026-11-22T20:29:58"
   },
   {
     "date": "2026-11-24",
     "session_type": "easy",
-    "target_distance_km": 3,
+    "target_distance_km": 8,
     "target_pace": null,
-    "notes": "Provisional \u2014 Run-walk 20 min: 4 \u00d7 (4 min easy run / 1 min walk), flat, Vomeros. Only if the physio has cleared running and, for 3 days running, walking, stairs, 25 single-leg calf raises (straight and bent knee) and 20 hops are all 0/10 \u2014 not 1. Otherwise bike 40\u201350 min.",
+    "notes": "Easy 8 km (~42 min), flat, Vomeros, 5:15/km or slower, HR ~135, no strides or hills. Physio rule: stop if the calf goes above 3/10; mine on top: stop if it climbs steadily even below 3. Very easy, judged on feel.",
     "source": "coach",
-    "updated_at": "2026-11-18T09:05:41"
+    "updated_at": "2026-11-22T20:29:58"
   },
   {
     "date": "2026-11-25",
     "session_type": "easy",
-    "target_distance_km": null,
+    "target_distance_km": 6,
     "target_pace": null,
-    "notes": "Provisional \u2014 Bike 45 min easy, then leg gym (calf loading per physio).",
+    "notes": "Easy 6 km, same rules. Leg gym after, calf work per physio.",
     "source": "coach",
-    "updated_at": "2026-11-18T09:05:41"
+    "updated_at": "2026-11-22T20:29:58"
   },
   {
     "date": "2026-11-26",
     "session_type": "easy",
-    "target_distance_km": 4,
+    "target_distance_km": 7,
     "target_pace": null,
-    "notes": "Provisional \u2014 Run-walk 25 min: 5 \u00d7 (4 min run / 1 min walk), only if Tuesday's was 0/10 during and the next morning. Otherwise bike.",
+    "notes": "Easy 7 km, same rules.",
     "source": "coach",
-    "updated_at": "2026-11-18T09:05:41"
+    "updated_at": "2026-11-22T20:29:58"
   },
   {
     "date": "2026-11-27",
     "session_type": "rest",
     "target_distance_km": null,
     "target_pace": null,
-    "notes": "Provisional \u2014 Rest or light bike.",
+    "notes": "Rest \u2014 Xmas party. No run; no gym.",
     "source": "coach",
-    "updated_at": "2026-11-18T09:05:41"
+    "updated_at": "2026-11-22T20:29:58"
   },
   {
     "date": "2026-11-28",
     "session_type": "easy",
-    "target_distance_km": 5,
+    "target_distance_km": 7,
     "target_pace": null,
-    "notes": "Provisional \u2014 Continuous easy run 25 min, only if both run-walks were 0/10. Otherwise repeat the run-walk.",
+    "notes": "Easy 7 km, same rules. Day after the Xmas party: HRV/RHR dip is explained and not a reason to cut; run it on feel, and drop it only if you feel ill (neck check).",
     "source": "coach",
-    "updated_at": "2026-11-18T09:05:41"
+    "updated_at": "2026-11-22T20:29:58"
   },
   {
     "date": "2026-11-29",
     "session_type": "easy",
-    "target_distance_km": null,
+    "target_distance_km": 8,
     "target_pace": null,
-    "notes": "Provisional \u2014 Bike 60 min easy. No long run yet.",
+    "notes": "Easy 8 km (~42 min), the longest of the week. Same rules. No long run yet.",
     "source": "coach",
-    "updated_at": "2026-11-18T09:05:41"
+    "updated_at": "2026-11-22T20:29:58"
   },
   {
     "date": "2026-11-30",
@@ -1156,34 +1156,34 @@
     "target_pace": null,
     "notes": "Provisional \u2014 Rest; leg gym.",
     "source": "coach",
-    "updated_at": "2026-11-18T09:05:41"
+    "updated_at": "2026-11-22T20:29:58"
   },
   {
     "date": "2026-12-01",
     "session_type": "easy",
-    "target_distance_km": 6,
+    "target_distance_km": 9,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 30 min continuous, flat, Vomeros, HR ~135. Calf 0/10 is the gate, not 1.",
+    "notes": "Provisional \u2014 Easy 9 km. Easy, flat, Vomeros, 5:15/km or slower, HR ~135, no strides or hills.",
     "source": "coach",
-    "updated_at": "2026-11-18T09:05:41"
+    "updated_at": "2026-11-22T20:29:58"
   },
   {
     "date": "2026-12-02",
     "session_type": "easy",
-    "target_distance_km": null,
+    "target_distance_km": 7,
     "target_pace": null,
-    "notes": "Provisional \u2014 Bike 45 min, then leg gym.",
+    "notes": "Provisional \u2014 Easy 7 km, then leg gym.",
     "source": "coach",
-    "updated_at": "2026-11-18T09:05:41"
+    "updated_at": "2026-11-22T20:29:58"
   },
   {
     "date": "2026-12-03",
     "session_type": "easy",
-    "target_distance_km": 6,
+    "target_distance_km": 8,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 30\u201335 min, only if Tuesday's run and the next morning were 0/10.",
+    "notes": "Provisional \u2014 Easy 8 km.",
     "source": "coach",
-    "updated_at": "2026-11-18T09:05:41"
+    "updated_at": "2026-11-22T20:29:58"
   },
   {
     "date": "2026-12-04",
@@ -1192,24 +1192,87 @@
     "target_pace": null,
     "notes": "Provisional \u2014 Rest.",
     "source": "coach",
-    "updated_at": "2026-11-18T09:05:41"
+    "updated_at": "2026-11-22T20:29:58"
   },
   {
     "date": "2026-12-05",
     "session_type": "easy",
-    "target_distance_km": 7,
+    "target_distance_km": 8,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 35 min.",
+    "notes": "Provisional \u2014 Easy 8 km.",
     "source": "coach",
-    "updated_at": "2026-11-18T09:05:41"
+    "updated_at": "2026-11-22T20:29:58"
   },
   {
     "date": "2026-12-06",
     "session_type": "easy",
-    "target_distance_km": 8,
+    "target_distance_km": 12,
     "target_pace": null,
-    "notes": "Provisional \u2014 Easy 40 min, the longest run of the week. The long run returns only after a full week at 0/10.",
+    "notes": "Provisional \u2014 Easy 12 km, the long run returns, only if the prior week was calf 0\u20131. No strides yet.",
     "source": "coach",
-    "updated_at": "2026-11-18T09:05:41"
+    "updated_at": "2026-11-22T20:29:58"
+  },
+  {
+    "date": "2026-12-07",
+    "session_type": "rest",
+    "target_distance_km": null,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Rest; leg gym.",
+    "source": "coach",
+    "updated_at": "2026-11-22T20:29:58"
+  },
+  {
+    "date": "2026-12-08",
+    "session_type": "easy",
+    "target_distance_km": 10,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 10 km, flat, Vomeros. Alphafly introduction not yet; one change at a time.",
+    "source": "coach",
+    "updated_at": "2026-11-22T20:29:58"
+  },
+  {
+    "date": "2026-12-09",
+    "session_type": "easy",
+    "target_distance_km": 7,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 7 km, then leg gym.",
+    "source": "coach",
+    "updated_at": "2026-11-22T20:29:58"
+  },
+  {
+    "date": "2026-12-10",
+    "session_type": "easy",
+    "target_distance_km": 9,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 9 km.",
+    "source": "coach",
+    "updated_at": "2026-11-22T20:29:58"
+  },
+  {
+    "date": "2026-12-11",
+    "session_type": "rest",
+    "target_distance_km": null,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Rest.",
+    "source": "coach",
+    "updated_at": "2026-11-22T20:29:58"
+  },
+  {
+    "date": "2026-12-12",
+    "session_type": "easy",
+    "target_distance_km": 9,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 9 km. If calf has been silent 2+ weeks, 4 relaxed strides (slower than 3:15/km, after a 15 min warm-up) may return from here, not before.",
+    "source": "coach",
+    "updated_at": "2026-11-22T20:29:58"
+  },
+  {
+    "date": "2026-12-13",
+    "session_type": "easy",
+    "target_distance_km": 14,
+    "target_pace": null,
+    "notes": "Provisional \u2014 Easy 14 km long run, HR ~135. XC today is skipped by default.",
+    "source": "coach",
+    "updated_at": "2026-11-22T20:29:58"
   }
 ]

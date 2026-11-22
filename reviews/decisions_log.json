@@ -689,5 +689,13 @@
     "action_taken": "amendment_requested",
     "athlete_thoughts": "Your distances for each day are overly cautious and my physio agrees.  I will run veey easy all week and judge on feel and how it reacts.  Also note, Friday is Xmas party so HRV will be through the floor sat\ud83d\ude02",
     "changes_count": 21
+  },
+  {
+    "logged_at": "2026-11-22T20:29:58",
+    "proposal_id": "2026-11-22",
+    "decision": "approve",
+    "action_taken": "plan_updated",
+    "athlete_thoughts": null,
+    "changes_count": 21
   }
 ]
