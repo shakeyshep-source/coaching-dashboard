@@ -12,8 +12,8 @@
       "planned_long_km": null,
       "curve_km": 67.9,
       "long_curve_km": 21.4,
-      "ramp_cap_km": 21.5,
-      "recommended_km": 21.5,
+      "ramp_cap_km": 31.5,
+      "recommended_km": 31.5,
       "actual_km": null,
       "status": "held",
       "reason": "gate: pain/tightness in the note on 2026-11-17"

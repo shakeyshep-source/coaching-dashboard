@@ -8116,5 +8116,21 @@
     "aerobic_te": 2.9000000953674316,
     "anaerobic_te": 0.0,
     "training_load": 67.27369689941406
+  },
+  {
+    "date": "2026-11-22",
+    "activity_id": 25160795607,
+    "name": "Tewkesbury Running",
+    "type": "running",
+    "distance_km": 8.01,
+    "duration_min": 41.5,
+    "avg_pace_min_per_km": 5.17,
+    "avg_hr": 139.0,
+    "max_hr": 149.0,
+    "elevation_gain_m": 39.0,
+    "cadence": 173.84375,
+    "aerobic_te": 3.299999952316284,
+    "anaerobic_te": 0.0,
+    "training_load": 95.51780700683594
   }
 ]

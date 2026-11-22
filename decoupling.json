@@ -3268,11 +3268,32 @@
       "gradient_m_per_km": 5.4,
       "pace_delta_pct": 3.7,
       "unreliable_reasons": []
+    },
+    {
+      "date": "2026-11-22",
+      "activity_id": 25160795607,
+      "decoupling_pct": 0.7,
+      "within_threshold": true,
+      "analysed_min": 31.3,
+      "first_half": {
+        "pace": "5:08",
+        "avg_hr": 141,
+        "ef": 0.02301
+      },
+      "second_half": {
+        "pace": "5:07",
+        "avg_hr": 142.5,
+        "ef": 0.02285
+      },
+      "distance_km": 8.01,
+      "gradient_m_per_km": 8.6,
+      "pace_delta_pct": -0.3,
+      "unreliable_reasons": []
     }
   ],
   "trend": {
-    "comparable_runs": 60,
-    "recent_avg_pct": -0.22,
+    "comparable_runs": 61,
+    "recent_avg_pct": -0.19,
     "prior_avg_pct": -0.43,
     "direction": "stable"
   }
