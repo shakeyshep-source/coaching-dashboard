@@ -1,8 +1,8 @@
 {
   "id": "2026-11-22",
   "created": "2026-11-22T14:30:00",
-  "status": "amend_requested",
-  "rationale": "Hold course, extended a week. Two clean runs after the physio's all-clear: 7.2 km Sat and 8.0 km Sun, calf 0 and \u201cno pain\u201d, achilles 0 \u2014 so the run-walk ladder is skipped and Tuesday goes back to continuous easy running, under her 3/10 rule. Load check: `volume_target.json` marks 23\u201329 Nov `held` (gate: the 17 Nov calf note) with a curve of 67.9 km and ramp cap 31.5; I'm writing ~30 km, inside the cap, because two runs is not yet a week of normal running and the 11\u201317 Nov pattern (felt, faded, then felt all the way) is why. It is under the curve by a wide margin and I say so: the gate, not an oversight. 30 Nov was planned at 27 against a cap of 15 off the old 12 km base; since the base is now ~30, the cap moves and I've set ~37 (provisional), then ~42 for 7\u201313 Dec, each inside +25%. If the week is calf-silent the next review lifts toward the curve through easy volume and the long run \u2014 never intensity. Speed stays out: no strides until 2\u20133 weeks symptom-free and none faster than 3:15/km. HRV (35 last night, baseline 33) remains your overrule per 15 Nov; neck check still applies. Weeks 2 and 3 are provisional.",
+  "status": "pending",
+  "rationale": "Amended: raised the distances (week 1 30→36 km, week 2 37→44, week 3 42→49) and noted Friday's party. You said the distances were too cautious and your physio agrees. Her rule (run, stop above 3/10) already replaced my 0/10 gate, and she has seen the calf — I haven't — so her view outranks my cap. What I have not done: chase the curve. Two clean runs is a thin base, and the 14 Nov pattern (added 4 km, felt three days later) is why the steps stay modest: week 1 is ~14% over the 31.5 km ramp cap, not far beyond it, and the long run stays at 8 until the calf has had a normal week. Running very easy and judging on feel is the right method; keep paces 5:15/km or slower, no strides. Xmas party: Friday is rest, and a Saturday HRV dip after alcohol is an explained confounder that resolves in a day or two — it does not cut Saturday's easy run. Weeks 2 and 3 are provisional and rise only if this week is calf 0–1.",
   "changes": [
     {
       "date": "2026-11-23",
@@ -14,148 +14,148 @@
     {
       "date": "2026-11-24",
       "session_type": "easy",
-      "target_distance_km": 6,
+      "target_distance_km": 8,
       "target_pace": null,
-      "notes": "Easy 6 km (~32 min). Easy, flat, Vomeros, 5:15/km or slower, HR ~135, no strides or hills. Physio rule stands: stop if the calf goes above 3/10; mine on top: stop if it climbs steadily even below 3. Replaces the run-walk step, which Sat and Sun made unnecessary."
+      "notes": "Easy 8 km (~42 min), flat, Vomeros, 5:15/km or slower, HR ~135, no strides or hills. Physio rule: stop if the calf goes above 3/10; mine on top: stop if it climbs steadily even below 3. Very easy, judged on feel."
     },
     {
       "date": "2026-11-25",
       "session_type": "easy",
-      "target_distance_km": 5,
+      "target_distance_km": 6,
       "target_pace": null,
-      "notes": "Easy 5 km, same rules. Leg gym after (or Thu), calf work per physio."
+      "notes": "Easy 6 km, same rules. Leg gym after, calf work per physio."
     },
     {
       "date": "2026-11-26",
       "session_type": "easy",
-      "target_distance_km": 6,
+      "target_distance_km": 7,
       "target_pace": null,
-      "notes": "Easy 6 km, same rules."
+      "notes": "Easy 7 km, same rules."
     },
     {
       "date": "2026-11-27",
       "session_type": "rest",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Rest."
+      "notes": "Rest — Xmas party. No run; no gym."
     },
     {
       "date": "2026-11-28",
       "session_type": "easy",
-      "target_distance_km": 6,
+      "target_distance_km": 7,
       "target_pace": null,
-      "notes": "Easy 6 km, same rules. Not 10: you added 4 km last time and the calf then had a bad week."
+      "notes": "Easy 7 km, same rules. Day after the Xmas party: HRV/RHR dip is explained and not a reason to cut; run it on feel, and drop it only if you feel ill (neck check)."
     },
     {
       "date": "2026-11-29",
       "session_type": "easy",
-      "target_distance_km": 7,
+      "target_distance_km": 8,
       "target_pace": null,
-      "notes": "Easy 7 km (~37 min), the longest of the week. Same rules. No long run yet."
+      "notes": "Easy 8 km (~42 min), the longest of the week. Same rules. No long run yet."
     },
     {
       "date": "2026-11-30",
       "session_type": "rest",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Provisional \u2014 Rest; leg gym."
+      "notes": "Provisional — Rest; leg gym."
     },
     {
       "date": "2026-12-01",
       "session_type": "easy",
-      "target_distance_km": 7,
+      "target_distance_km": 9,
       "target_pace": null,
-      "notes": "Provisional \u2014 Easy 7 km. Easy, flat, Vomeros, 5:15/km or slower, HR ~135, no strides or hills."
+      "notes": "Provisional — Easy 9 km. Easy, flat, Vomeros, 5:15/km or slower, HR ~135, no strides or hills."
     },
     {
       "date": "2026-12-02",
       "session_type": "easy",
-      "target_distance_km": 6,
+      "target_distance_km": 7,
       "target_pace": null,
-      "notes": "Provisional \u2014 Easy 6 km, then leg gym."
+      "notes": "Provisional — Easy 7 km, then leg gym."
     },
     {
       "date": "2026-12-03",
       "session_type": "easy",
-      "target_distance_km": 7,
+      "target_distance_km": 8,
       "target_pace": null,
-      "notes": "Provisional \u2014 Easy 7 km."
+      "notes": "Provisional — Easy 8 km."
     },
     {
       "date": "2026-12-04",
       "session_type": "rest",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Provisional \u2014 Rest."
+      "notes": "Provisional — Rest."
     },
     {
       "date": "2026-12-05",
       "session_type": "easy",
-      "target_distance_km": 7,
+      "target_distance_km": 8,
       "target_pace": null,
-      "notes": "Provisional \u2014 Easy 7 km."
+      "notes": "Provisional — Easy 8 km."
     },
     {
       "date": "2026-12-06",
       "session_type": "easy",
-      "target_distance_km": 10,
+      "target_distance_km": 12,
       "target_pace": null,
-      "notes": "Provisional \u2014 Easy 10 km, the long run returns, only if the prior week was calf 0\u20131 with no build. No strides yet."
+      "notes": "Provisional — Easy 12 km, the long run returns, only if the prior week was calf 0–1. No strides yet."
     },
     {
       "date": "2026-12-07",
       "session_type": "rest",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Provisional \u2014 Rest; leg gym."
+      "notes": "Provisional — Rest; leg gym."
     },
     {
       "date": "2026-12-08",
       "session_type": "easy",
-      "target_distance_km": 8,
+      "target_distance_km": 10,
       "target_pace": null,
-      "notes": "Provisional \u2014 Easy 8 km, flat, Vomeros. Alphafly introduction not yet; one change at a time."
+      "notes": "Provisional — Easy 10 km, flat, Vomeros. Alphafly introduction not yet; one change at a time."
     },
     {
       "date": "2026-12-09",
       "session_type": "easy",
-      "target_distance_km": 6,
+      "target_distance_km": 7,
       "target_pace": null,
-      "notes": "Provisional \u2014 Easy 6 km, then leg gym."
+      "notes": "Provisional — Easy 7 km, then leg gym."
     },
     {
       "date": "2026-12-10",
       "session_type": "easy",
-      "target_distance_km": 8,
+      "target_distance_km": 9,
       "target_pace": null,
-      "notes": "Provisional \u2014 Easy 8 km."
+      "notes": "Provisional — Easy 9 km."
     },
     {
       "date": "2026-12-11",
       "session_type": "rest",
       "target_distance_km": null,
       "target_pace": null,
-      "notes": "Provisional \u2014 Rest."
+      "notes": "Provisional — Rest."
     },
     {
       "date": "2026-12-12",
       "session_type": "easy",
-      "target_distance_km": 8,
+      "target_distance_km": 9,
       "target_pace": null,
-      "notes": "Provisional \u2014 Easy 8 km. If calf has been silent 2+ weeks, 4 relaxed strides (slower than 3:15/km, after a 15 min warm-up) may return from here, not before."
+      "notes": "Provisional — Easy 9 km. If calf has been silent 2+ weeks, 4 relaxed strides (slower than 3:15/km, after a 15 min warm-up) may return from here, not before."
     },
     {
       "date": "2026-12-13",
       "session_type": "easy",
-      "target_distance_km": 12,
+      "target_distance_km": 14,
       "target_pace": null,
-      "notes": "Provisional \u2014 Easy 12 km long run, HR ~135. XC today is skipped by default."
+      "notes": "Provisional — Easy 14 km long run, HR ~135. XC today is skipped by default."
     }
   ],
   "athlete_response": {
     "timestamp": "22/11/2026 15:38:57",
     "review_date": "2026-11-22",
     "decision": "amend",
-    "thoughts": "Your distances for each day are overly cautious and my physio agrees.  I will run veey easy all week and judge on feel and how it reacts.  Also note, Friday is Xmas party so HRV will be through the floor sat\ud83d\ude02"
+    "thoughts": "Your distances for each day are overly cautious and my physio agrees.  I will run veey easy all week and judge on feel and how it reacts.  Also note, Friday is Xmas party so HRV will be through the floor sat😂"
   }
 }
