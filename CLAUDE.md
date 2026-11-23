@@ -556,6 +556,12 @@ preventer itself is a prescribing decision for his GP or asthma nurse.
     rising (the old achilles triad), and steep uphill is the heaviest
     calf/achilles load on the list, so Cranham wants hill reps behind
     it, not a debut.
+  - **Chepstow Harriers races he wants kept in view (23 Nov 2026):**
+    Rose Inn 4 (flat, fast, measured 4 mi; Tue 11 May and Tue 8 Jun
+    2027, 7:30pm) and **Magor 10K** (Sun 25 Jul 2027, 9:30am, super
+    flat 3-lap, his 10K PB course). In `fixtures.json` as possible.
+    Entry via Fabian4; reminder set to check entries in early Jan.
+    Clashes are noted in the fixture notes.
   - ~~XC Sat 27 Feb 2027~~ — **cancelled by him, 1 Nov 2026.** Removed
     from `fixtures.json`; the weekend belongs to Wokingham recovery.
 

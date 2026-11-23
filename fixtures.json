@@ -82,5 +82,29 @@
     "status": "confirmed",
     "intent": "target",
     "notes": "Goal sub-3 (4:16/km). Volume, not fitness, is the binding constraint, and Cheltenham widened the margin rather than closing a gap: race_prediction.json now projects 2:51:16 off four blended races (2:49 off Cheltenham alone), against 2:52 before the race. The fitness is comfortably there on paper. What is missing is that he has never run one, his longest run ever is ~29 km, and carbohydrate at marathon pace in marathon quantity is untested."
+  },
+  {
+    "date": "2027-05-11",
+    "name": "Rose Inn 4",
+    "distance_km": 6.437,
+    "status": "possible",
+    "intent": "race",
+    "notes": "Tue 7:30pm. Fast, flat, measured 4-mile road race, UKA permit. Chepstow Harriers race, enter via Fabian4 (QR on the club flyer, shared 23 Nov 2026). 23 days after Manchester — only if recovery is complete; otherwise take the 8 June running. A flat 4 miles is the place to better Sharpness (23:22, lumpy). Rules stand: no flat-out sprint finish if it is cold."
+  },
+  {
+    "date": "2027-06-08",
+    "name": "Rose Inn 4 (June)",
+    "distance_km": 6.437,
+    "status": "possible",
+    "intent": "race",
+    "notes": "Tue 7:30pm, second running of the Rose Inn 4. Chepstow Harriers race, enter via Fabian4 (QR on the club flyer, shared 23 Nov 2026). Clashes: Stroud Beer Race (Glos AAA) Wed 2 Jun and Cirencester 10k (Glos AAA) Wed 9 Jun, both provisional — Rose Inn the night before Cirencester is one race too many. Pick two of the three once dates are confirmed."
+  },
+  {
+    "date": "2027-07-25",
+    "name": "Magor 10K",
+    "distance_km": 10.0,
+    "status": "possible",
+    "intent": "target",
+    "notes": "Sun 9:30am. Super flat 3-lap course, officially measured, UKA permit — a genuine 10K PB course (lifetime 35:58; Stroud 37:24 was hilly). Chepstow Harriers race, enter via Fabian4 (QR on the club flyer, shared 23 Nov 2026). July: heat and asthma protocol apply, the 9:30 start helps. Three days before Bugatti 10k (Glos AAA, Wed 28 Jul, provisional) — if Magor is the PB attempt, Bugatti is skipped or jogged."
   }
 ]
