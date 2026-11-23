@@ -1,58 +1,58 @@
 [
   {
-    "date": "2026-11-22",
-    "temp_max_c": 8.5,
-    "temp_min_c": 2.9,
-    "humidity_pct": 79,
-    "wind_speed_kmh": 18.4,
-    "heat_risk": "low"
-  },
-  {
     "date": "2026-11-23",
-    "temp_max_c": 7.7,
-    "temp_min_c": 0.3,
-    "humidity_pct": 79,
-    "wind_speed_kmh": 17.3,
-    "heat_risk": "low"
-  },
-  {
-    "date": "2026-11-24",
-    "temp_max_c": 9.9,
-    "temp_min_c": 4.3,
-    "humidity_pct": 87,
-    "wind_speed_kmh": 26.4,
-    "heat_risk": "low"
-  },
-  {
-    "date": "2026-11-25",
-    "temp_max_c": 4.7,
-    "temp_min_c": 1.7,
-    "humidity_pct": 85,
-    "wind_speed_kmh": 10.4,
-    "heat_risk": "low"
-  },
-  {
-    "date": "2026-11-26",
-    "temp_max_c": 5.5,
-    "temp_min_c": 1.8,
+    "temp_max_c": 7.2,
+    "temp_min_c": 0.4,
     "humidity_pct": 81,
     "wind_speed_kmh": 14.0,
     "heat_risk": "low"
   },
   {
+    "date": "2026-11-24",
+    "temp_max_c": 11.7,
+    "temp_min_c": 5.1,
+    "humidity_pct": 86,
+    "wind_speed_kmh": 22.7,
+    "heat_risk": "low"
+  },
+  {
+    "date": "2026-11-25",
+    "temp_max_c": 5.1,
+    "temp_min_c": 2.9,
+    "humidity_pct": 74,
+    "wind_speed_kmh": 15.8,
+    "heat_risk": "low"
+  },
+  {
+    "date": "2026-11-26",
+    "temp_max_c": 3.5,
+    "temp_min_c": 1.7,
+    "humidity_pct": 73,
+    "wind_speed_kmh": 13.0,
+    "heat_risk": "low"
+  },
+  {
     "date": "2026-11-27",
-    "temp_max_c": 7.4,
-    "temp_min_c": 1.8,
-    "humidity_pct": 88,
-    "wind_speed_kmh": 25.2,
+    "temp_max_c": 6.1,
+    "temp_min_c": 1.2,
+    "humidity_pct": 86,
+    "wind_speed_kmh": 22.0,
     "heat_risk": "low"
   },
   {
     "date": "2026-11-28",
-    "temp_max_c": 8.0,
-    "temp_min_c": 4.5,
-    "humidity_pct": 96,
-    "wind_speed_kmh": 19.8,
+    "temp_max_c": 11.5,
+    "temp_min_c": 6.1,
+    "humidity_pct": 91,
+    "wind_speed_kmh": 31.7,
+    "heat_risk": "low"
+  },
+  {
+    "date": "2026-11-29",
+    "temp_max_c": 11.5,
+    "temp_min_c": 2.8,
+    "humidity_pct": 86,
+    "wind_speed_kmh": 31.0,
     "heat_risk": "low"
   }
 ]
