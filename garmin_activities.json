@@ -8196,5 +8196,21 @@
     "aerobic_te": 3.200000047683716,
     "anaerobic_te": 0.0,
     "training_load": 89.609375
+  },
+  {
+    "date": "2026-11-25",
+    "activity_id": 25198133182,
+    "name": "Strength",
+    "type": "strength_training",
+    "distance_km": null,
+    "duration_min": 59.0,
+    "avg_pace_min_per_km": null,
+    "avg_hr": 82.0,
+    "max_hr": 132.0,
+    "elevation_gain_m": null,
+    "cadence": null,
+    "aerobic_te": 0.4000000059604645,
+    "anaerobic_te": 0.4000000059604645,
+    "training_load": 10.02252197265625
   }
 ]
