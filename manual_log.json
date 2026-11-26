@@ -894,5 +894,13 @@
     "rpe": 1.0,
     "on_target": true,
     "session_notes": "All good..."
+  },
+  {
+    "date": "2026-11-25",
+    "achilles_score": 0,
+    "session_type": "rest",
+    "rpe": 0.0,
+    "on_target": true,
+    "session_notes": "Gym only - legs"
   }
 ]
