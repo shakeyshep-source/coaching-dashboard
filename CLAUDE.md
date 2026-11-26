@@ -161,6 +161,20 @@ daily, weekly review, or ad-hoc — starts from this brief.
   only after 2–3 weeks of symptom-free running, and the straight-knee
   calf strength and later plyometric work (per physio) is what earns
   it back.
+  **Return, 21–26 Nov:** four easy runs (7–8 km, HR 132–139), calf
+  silent, both leg sessions done. **26 Nov he chose 44 km for the week
+  of 30 Nov** against the check's ~38 (a ~+45% step from ~30), saying
+  his physio has called the coach too cautious before. **Agreed, and
+  not as a concession:** it is a return to a level he held six weeks
+  ago (60–65 km in early Oct), all easy, with no speed in it — the ramp
+  cap in `volume_check.py` is built for climbing to new levels, and is
+  conservative for re-loading one he recently tolerated. So the Sunday
+  review keeps the 44 even though the check reads `over`. What it does
+  not cover: no run over ~14 km that week, the speed ban stands, and
+  the calf next morning governs — any ache that is not gone by the
+  first few minutes of the next run means that run is cut short, and
+  above 3/10 he stops (her rule). Her view on the calf outranks the
+  coach's; his "play it by ear" is honoured within those limits.
 - Never prescribe a session without weighing injury risk. **Keeping him
   training consistently beats any one perfect workout** — that is his
   stated preference and it matches the evidence for masters athletes.
