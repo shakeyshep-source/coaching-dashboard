@@ -358,10 +358,10 @@
     "sleep_score": 82,
     "sleep_duration_hrs": 8.32,
     "body_battery_high": 76,
-    "achilles_score": null,
-    "rpe": null,
-    "session_type_logged": null,
-    "session_notes": null,
+    "achilles_score": 0,
+    "rpe": 0.0,
+    "session_type_logged": "rest",
+    "session_notes": "Beers",
     "acwr": 0.7,
     "acwr_status": "LOW",
     "vo2max": 57.0,
@@ -372,7 +372,9 @@
     "rhr_baseline_7d": 48.9,
     "rhr_delta_from_baseline": 1.1,
     "heat_risk": "low",
-    "recovery_confounders": [],
+    "recovery_confounders": [
+      "alcohol"
+    ],
     "today_summary": "Recovery looks normal. Fine for planned training.",
     "readiness_level": "good",
     "plan_flag_reasons": []
