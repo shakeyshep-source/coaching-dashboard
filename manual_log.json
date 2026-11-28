@@ -918,5 +918,13 @@
     "rpe": 0.0,
     "on_target": true,
     "session_notes": "Beers"
+  },
+  {
+    "date": "2026-11-28",
+    "achilles_score": 8,
+    "session_type": "easy",
+    "rpe": 1.0,
+    "on_target": true,
+    "session_notes": "Sweating out the alcohol"
   }
 ]

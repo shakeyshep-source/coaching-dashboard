@@ -360,10 +360,10 @@
     "sleep_score": 43,
     "sleep_duration_hrs": 6.05,
     "body_battery_high": 30,
-    "achilles_score": null,
-    "rpe": null,
-    "session_type_logged": null,
-    "session_notes": null,
+    "achilles_score": 8,
+    "rpe": 1.0,
+    "session_type_logged": "easy",
+    "session_notes": "Sweating out the alcohol",
     "acwr": 1.0,
     "acwr_status": "OPTIMAL",
     "vo2max": 57.0,
@@ -374,9 +374,13 @@
     "rhr_baseline_7d": 49,
     "rhr_delta_from_baseline": 4,
     "heat_risk": "low",
-    "recovery_confounders": [],
-    "today_summary": "Recovery below baseline on both HRV and RHR. Keep today easy.",
+    "recovery_confounders": [
+      "alcohol"
+    ],
+    "today_summary": "Achilles flagged. Consider an easy day or rest.",
     "readiness_level": "flag",
-    "plan_flag_reasons": []
+    "plan_flag_reasons": [
+      "Achilles scored 8 \u2014 worth keeping an eye on regardless of today's plan."
+    ]
   }
 ]

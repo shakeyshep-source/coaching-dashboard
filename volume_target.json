@@ -1,8 +1,10 @@
 {
   "as_of": "2026-11-28",
-  "status": "over",
-  "headline": "Week of 2026-11-23: plan 36 km climbs too fast from 25.2 \u2014 about 31.5 km is a safe step.",
-  "gates": [],
+  "status": "under",
+  "headline": "Week of 2026-12-07: plan 49 km is under the agreed curve \u2014 the next proposal raises it towards 55 km.",
+  "gates": [
+    "achilles 8 on 2026-11-28"
+  ],
   "weeks": [
     {
       "week_start": "2026-11-23",
@@ -13,8 +15,8 @@
       "ramp_cap_km": 31.5,
       "recommended_km": 31.5,
       "actual_km": 22.8,
-      "status": "over",
-      "reason": "plan 36 km climbs too fast from 25.2 \u2014 about 31.5 km is a safe step"
+      "status": "held",
+      "reason": "gate: achilles 8 on 2026-11-28"
     },
     {
       "week_start": "2026-11-30",
@@ -22,11 +24,11 @@
       "planned_long_km": null,
       "curve_km": 70.7,
       "long_curve_km": 22.3,
-      "ramp_cap_km": 39.4,
-      "recommended_km": 39.4,
+      "ramp_cap_km": 45.0,
+      "recommended_km": 45.0,
       "actual_km": null,
-      "status": "over",
-      "reason": "plan 44 km climbs too fast from 31.5 \u2014 about 39.4 km is a safe step"
+      "status": "on",
+      "reason": ""
     },
     {
       "week_start": "2026-12-07",
@@ -34,11 +36,11 @@
       "planned_long_km": null,
       "curve_km": 73.0,
       "long_curve_km": 23.2,
-      "ramp_cap_km": 49.2,
-      "recommended_km": 49.2,
+      "ramp_cap_km": 55.0,
+      "recommended_km": 55.0,
       "actual_km": null,
-      "status": "on",
-      "reason": ""
+      "status": "under",
+      "reason": "plan 49 km, curve 73, safe climb allows 55 \u2014 raise towards 55 km"
     }
   ]
 }
