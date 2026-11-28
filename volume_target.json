@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-27",
+  "as_of": "2026-11-28",
   "status": "over",
   "headline": "Week of 2026-11-23: plan 36 km climbs too fast from 25.2 \u2014 about 31.5 km is a safe step.",
   "gates": [],
@@ -12,7 +12,7 @@
       "long_curve_km": 21.4,
       "ramp_cap_km": 31.5,
       "recommended_km": 31.5,
-      "actual_km": 15.2,
+      "actual_km": 22.8,
       "status": "over",
       "reason": "plan 36 km climbs too fast from 25.2 \u2014 about 31.5 km is a safe step"
     },
